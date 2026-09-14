@@ -1,0 +1,6 @@
+# Correcciones manuales del cruce de identidades.
+# Una fila por jugador que el emparejamiento automático resuelve mal.
+# fantaking_id: el "id" que devuelve el mercado de Fantaking.
+# person_code: el "code" del censo oficial de la EuroLeague (ej. 003469).
+# Las filas que empiezan por # se ignoran.
+fantaking_id,person_code,nota

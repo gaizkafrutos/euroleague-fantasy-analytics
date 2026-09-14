@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / Next
+node_modules/
+.next/
+out/
+next-env.d.ts
+.vercel/
+*.tsbuildinfo
+
+# Secretos — nunca, bajo ningún concepto
+.env
+.env.*
+!.env.example
+*token*.txt
+
+# Sistema
+.DS_Store
+Thumbs.db

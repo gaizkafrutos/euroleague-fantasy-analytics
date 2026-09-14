@@ -1,0 +1,72 @@
+name: Captura de datos
+
+# Una ejecución diaria a las 07:00 UTC (09:00 en Madrid en horario de verano).
+# Las jornadas de EuroLiga son de martes a viernes, así que capturar cada
+# mañana garantiza tener el precio actualizado después de cada jornada sin
+# tener que adivinar el calendario.
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    inputs:
+      label:
+        description: 'Etiqueta del snapshot, por ejemplo "R03"'
+        required: false
+        type: string
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: Instalar el pipeline
+        run: pip install -e ./pipeline
+
+      - name: Ingerir datos oficiales
+        run: python -m efa ingest-official
+
+      - name: Capturar precios del Fantasy
+        id: snapshot
+        env:
+          FANTAKING_TOKEN: ${{ secrets.FANTAKING_TOKEN }}
+        run: python -m efa snapshot ${{ inputs.label && format('--label {0}', inputs.label) || '' }}
+        continue-on-error: true
+
+      - name: Avisar si el token ha caducado
+        if: steps.snapshot.outcome == 'failure'
+        run: |
+          echo "::warning title=Token caducado::No se pudieron capturar los precios." \
+               "Renueva FANTAKING_TOKEN en Settings > Secrets and variables > Actions." \
+               "Instrucciones en docs/TOKEN.md."
+
+      - name: Reconstruir los datos de la web
+        run: python -m efa build
+
+      - name: Verificar la fórmula de puntuación
+        run: python -m efa verify || true
+
+      - name: Commitear los cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data web/src/data
+          if git diff --staged --quiet; then
+            echo "Sin cambios que commitear."
+          else
+            git commit -m "datos: snapshot $(date -u +'%Y-%m-%d')"
+            git push
+          fi

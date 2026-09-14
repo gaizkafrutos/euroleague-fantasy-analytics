@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "euroleague-fantasy-analytics"
+version = "1.0.0"
+description = "Pipeline de datos del EuroLeague Fantasy Challenge: precios, estadisticas y senales de decision"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "requests>=2.31",
+    "pandas>=2.1",
+    "pyarrow>=14.0",
+    "numpy>=1.26",
+    "rapidfuzz>=3.5",
+    "pulp>=2.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+
+[project.scripts]
+efa = "efa.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["efa*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

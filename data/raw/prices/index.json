@@ -1,0 +1,40 @@
+[
+ {
+  "file": "prices_20260914_150700.parquet",
+  "csv": "prices_20260914_150700.csv",
+  "captured_at": "2026-09-14T15:07:00.709298+00:00",
+  "label": null,
+  "matchday_id": null,
+  "players": 347,
+  "columns": [
+   "fantaking_id",
+   "name",
+   "team",
+   "position",
+   "rank",
+   "fpt",
+   "quotation",
+   "plus",
+   "pts",
+   "reb",
+   "ast",
+   "stl",
+   "tov",
+   "blk",
+   "blka",
+   "fd",
+   "pf",
+   "fg_missed",
+   "ft_missed",
+   "win_1-10",
+   "win_11-20",
+   "win_20",
+   "win_ot",
+   "loss_1-10",
+   "loss_11-20",
+   "loss_20",
+   "loss_ot",
+   "captured_at"
+  ]
+ }
+]

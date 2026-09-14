@@ -1,0 +1,128 @@
+/** Piezas pequeñas que se repiten por toda la app. */
+import Link from "next/link";
+
+import { deltaClass, num, positionLabel } from "@/lib/format";
+import type { Player } from "@/lib/types";
+
+export function PositionBadge({ position }: { position: string | null }) {
+  if (!position) return <span className="muted">—</span>;
+  return (
+    <span className={`badge pos-${position}`}>
+      <i className="badge-dot" style={{ background: "var(--pos-color)" }} />
+      {positionLabel(position)}
+    </span>
+  );
+}
+
+export function Delta({
+  value,
+  digits = 1,
+  suffix = "",
+}: {
+  value: number | null | undefined;
+  digits?: number;
+  suffix?: string;
+}) {
+  if (value === null || value === undefined) return <span className="muted">—</span>;
+  const arrow = Math.abs(value) < 0.001 ? "" : value > 0 ? "▲" : "▼";
+  return (
+    <span className={deltaClass(value)}>
+      {arrow ? <span aria-hidden>{arrow}</span> : null}
+      {num(Math.abs(value), digits)}
+      {suffix}
+    </span>
+  );
+}
+
+export function PlayerCell({ player }: { player: Player }) {
+  return (
+    <Link href={`/jugador/${player.id}`} className="player-cell">
+      {player.image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="avatar" src={player.image} alt="" loading="lazy" />
+      ) : (
+        <span className="avatar avatar-initials" aria-hidden>
+          {initials(player.name)}
+        </span>
+      )}
+      <span>
+        <span className="player-name">{prettyName(player.name)}</span>
+        <br />
+        <span className="player-meta">
+          {player.clubShort ?? player.club ?? "—"} · {positionLabel(player.position)}
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+export function StatTile({
+  label,
+  value,
+  sub,
+}: {
+  label: string;
+  value: React.ReactNode;
+  sub?: React.ReactNode;
+}) {
+  return (
+    <div className="tile">
+      <div className="tile-label">{label}</div>
+      <div className="tile-value num">{value}</div>
+      {sub ? <div className="tile-sub">{sub}</div> : null}
+    </div>
+  );
+}
+
+export function Notice({
+  children,
+  tone = "warning",
+}: {
+  children: React.ReactNode;
+  tone?: "warning" | "serious";
+}) {
+  return (
+    <div className={`notice${tone === "serious" ? " notice-serious" : ""}`}>
+      <svg className="notice-icon" viewBox="0 0 16 16" fill="none" aria-hidden>
+        <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M8 4.5v4.2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <circle cx="8" cy="11.4" r="0.9" fill="currentColor" />
+      </svg>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+/** Iniciales para cuando no hay foto. */
+export function initials(raw: string | null | undefined): string {
+  if (!raw) return "";
+  const parts = raw.replace(",", " ").trim().split(/\s+/).filter(Boolean);
+  if (!parts.length) return "";
+  const first = parts[0][0];
+  const second = parts.length > 1 ? parts[1][0] : "";
+  return `${first}${second}`.toUpperCase();
+}
+
+/** Sufijos que no se capitalizan como palabra normal. */
+const NAME_SUFFIXES = new Set(["II", "III", "IV", "JR", "SR"]);
+
+/** "VEZENKOV, SASHA" -> "Sasha Vezenkov" */
+export function prettyName(raw: string | null | undefined): string {
+  if (!raw) return "—";
+  const capitalise = (word: string) =>
+    word
+      .split(/([ -])/)
+      .map((part) => {
+        if (part.length < 2) return part;
+        const bare = part.replace(/\./g, "").toUpperCase();
+        if (NAME_SUFFIXES.has(bare)) return bare === "JR" || bare === "SR" ? `${bare.charAt(0)}${bare.charAt(1).toLowerCase()}.` : bare;
+        return part.charAt(0) + part.slice(1).toLowerCase();
+      })
+      .join("");
+
+  if (raw.includes(",")) {
+    const [surname, given] = raw.split(",");
+    return `${capitalise(given.trim())} ${capitalise(surname.trim())}`.trim();
+  }
+  return capitalise(raw);
+}
