@@ -13,7 +13,15 @@ export default function MethodologyPage() {
     return accumulator;
   }, {});
 
-  const doubtful = matching.filter((row) => row.match_confidence < 95).slice(0, 12);
+  // Dos cosas distintas que antes salían mezcladas: los que no cruzaron (para
+  // los que el número no es una confianza, es lo cerca que quedó el candidato
+  // más parecido, que es otra cosa) y los que sí cruzaron por una vía con
+  // margen de error.
+  const unmatched = matching.filter((row) => !row.person_code);
+  const lowConfidence = matching
+    .filter((row) => row.person_code && row.match_confidence < 92)
+    .sort((a, b) => a.match_confidence - b.match_confidence)
+    .slice(0, 10);
 
   return (
     <section className="section shell">
@@ -194,24 +202,34 @@ export default function MethodologyPage() {
               </tbody>
             </table>
           </div>
-          {doubtful.length ? (
+          {unmatched.length ? (
+            <p className="card-note" style={{ marginTop: 12 }}>
+              <strong>{unmatched.length} sin cruzar.</strong> No es que el emparejamiento
+              dude: es que esos jugadores todavía no existen en el censo oficial. Son en su
+              mayoría fichajes llegados de la NBA y jugadores jóvenes que los clubes aún no
+              han inscrito. Se resuelve solo conforme avanza la pretemporada, porque el
+              censo se vuelve a descargar cada día.
+            </p>
+          ) : null}
+
+          {lowConfidence.length ? (
             <>
               <p className="card-note" style={{ marginTop: 12 }}>
-                Casos con confianza por debajo de 95, que conviene revisar a mano:
+                Emparejados por una vía con margen de error, que conviene mirar a mano:
               </p>
               <ul className="card-note" style={{ margin: 0 }}>
-                {doubtful.map((row) => (
+                {lowConfidence.map((row) => (
                   <li key={row.fantaking_id}>
-                    {row.fantaking_name} ({row.fantaking_team}) →{" "}
-                    {row.official_name ?? "sin cruzar"} · {num(row.match_confidence, 0)}
+                    {row.fantaking_name} ({row.fantaking_team}) → {row.official_name} ·{" "}
+                    {num(row.match_confidence, 0)}
                   </li>
                 ))}
               </ul>
             </>
           ) : (
             <p className="card-note" style={{ marginTop: 12 }}>
-              Ahora mismo no hay ningún caso dudoso: {percent(meta.matchRate)} de los
-              jugadores cruzados con confianza alta.
+              De los {meta.matched} cruzados, ninguno lo hizo por una vía dudosa:{" "}
+              {percent(meta.matchRate)} del mercado está identificado con garantías.
             </p>
           )}
         </article>

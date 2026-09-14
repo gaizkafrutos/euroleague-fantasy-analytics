@@ -42,6 +42,10 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
     ["Tiros libres fallados", player.market.missedFt],
   ];
 
+  // Antes de la jornada 1 el mercado devuelve 0.0 en todas las columnas salvo el
+  // precio. Mostrar la rejilla entera a cero parece un fallo del cálculo.
+  const hasMarketStats = marketRows.some(([, value]) => typeof value === "number" && value !== 0);
+
   return (
     <>
       <section className="section shell">
@@ -222,16 +226,24 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               </p>
             </div>
           </div>
-          <div className="grid grid-4">
-            {marketRows.map(([label, value]) => (
-              <div key={label}>
-                <div className="tile-label">{label}</div>
-                <div className="num" style={{ fontSize: "1.1rem", fontWeight: 600 }}>
-                  {num(value)}
+          {hasMarketStats ? (
+            <div className="grid grid-4">
+              {marketRows.map(([label, value]) => (
+                <div key={label}>
+                  <div className="tile-label">{label}</div>
+                  <div className="num" style={{ fontSize: "1.1rem", fontWeight: 600 }}>
+                    {num(value)}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="muted" style={{ margin: 0 }}>
+              El mercado todavía no publica medias: devuelve ceros en todas las columnas
+              hasta que se juega la primera jornada. Una rejilla de ceros no dice nada, así
+              que se muestra esto en su lugar.
+            </p>
+          )}
         </div>
       </section>
     </>
