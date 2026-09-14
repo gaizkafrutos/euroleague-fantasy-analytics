@@ -5,7 +5,9 @@ en créditos del juego oficial con las estadísticas reales de la EuroLiga para
 responder a la única pregunta que importa antes de fichar — *¿quién rinde más
 de lo que cuesta?*
 
-**[Ver la web](https://TU-DOMINIO.vercel.app)** · [Metodología](https://TU-DOMINIO.vercel.app/metodologia)
+**[Ver la web](https://euroleague-fantasy-analytics.vercel.app)** ·
+[Metodología](https://euroleague-fantasy-analytics.vercel.app/metodologia) ·
+[Guía de uso](docs/USO.md)
 
 ---
 
@@ -82,7 +84,7 @@ base de datos gestionada que en el plan gratuito se pausa por inactividad.
 ## Puesta en marcha
 
 ```bash
-git clone https://github.com/TU-USUARIO/euroleague-fantasy-analytics
+git clone https://github.com/gaizkafrutos/euroleague-fantasy-analytics
 cd euroleague-fantasy-analytics
 
 # Pipeline
