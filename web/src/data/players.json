@@ -20,7 +20,7 @@
   "priceOpen": 16.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -92,7 +92,7 @@
   "priceOpen": 17.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -164,7 +164,7 @@
   "priceOpen": 13.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -236,7 +236,7 @@
   "priceOpen": 14.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -308,7 +308,7 @@
   "priceOpen": 14.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -380,7 +380,7 @@
   "priceOpen": 15.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -452,7 +452,7 @@
   "priceOpen": 14.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -524,7 +524,7 @@
   "priceOpen": 13.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -596,7 +596,7 @@
   "priceOpen": 13.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -668,7 +668,7 @@
   "priceOpen": 12.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -740,7 +740,7 @@
   "priceOpen": 8.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -812,7 +812,7 @@
   "priceOpen": 12.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -884,7 +884,7 @@
   "priceOpen": 10.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -937,26 +937,26 @@
  },
  {
   "id": 3780,
-  "personCode": null,
-  "name": null,
+  "personCode": "005763",
+  "name": "KORKMAZ, FURKAN",
   "marketName": "F. Korkmaz",
   "club": "BES",
   "clubName": "Besiktas Istanbul",
   "clubShort": "Besiktas",
   "clubCrest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png",
   "position": "F",
-  "positionLabel": null,
+  "positionLabel": "Forward",
   "isCoach": false,
-  "dorsal": null,
+  "dorsal": "30",
   "image": null,
-  "height": null,
-  "country": null,
-  "birthDate": null,
+  "height": 202.0,
+  "country": "TUR",
+  "birthDate": "1997-07-24",
   "price": 8.3,
   "priceOpen": 8.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1003,8 +1003,8 @@
    "difficulty": 64.0
   },
   "match": {
-   "method": "unmatched",
-   "confidence": 47.6
+   "method": "initial-club",
+   "confidence": 99.0
   }
  },
  {
@@ -1028,7 +1028,7 @@
   "priceOpen": 15.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1100,7 +1100,7 @@
   "priceOpen": 12.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1172,7 +1172,7 @@
   "priceOpen": 13.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1244,7 +1244,7 @@
   "priceOpen": 13.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1316,7 +1316,7 @@
   "priceOpen": 13.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1388,7 +1388,7 @@
   "priceOpen": 10.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1460,7 +1460,7 @@
   "priceOpen": 13.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1532,7 +1532,7 @@
   "priceOpen": 13.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1604,7 +1604,7 @@
   "priceOpen": 14.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1676,7 +1676,7 @@
   "priceOpen": 8.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1748,7 +1748,7 @@
   "priceOpen": 13.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1820,7 +1820,7 @@
   "priceOpen": 8.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1892,7 +1892,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -1964,7 +1964,7 @@
   "priceOpen": 10.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2036,7 +2036,7 @@
   "priceOpen": 14.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2108,7 +2108,7 @@
   "priceOpen": 10.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2180,7 +2180,7 @@
   "priceOpen": 12.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2252,7 +2252,7 @@
   "priceOpen": 11.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2324,7 +2324,7 @@
   "priceOpen": 11.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2396,7 +2396,7 @@
   "priceOpen": 14.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2468,7 +2468,7 @@
   "priceOpen": 10.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2540,7 +2540,7 @@
   "priceOpen": 8.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2612,7 +2612,7 @@
   "priceOpen": 11.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2684,7 +2684,7 @@
   "priceOpen": 10.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2756,7 +2756,7 @@
   "priceOpen": 10.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2828,7 +2828,7 @@
   "priceOpen": 7.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2900,7 +2900,7 @@
   "priceOpen": 11.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -2972,7 +2972,7 @@
   "priceOpen": 7.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3044,7 +3044,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3116,7 +3116,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3188,7 +3188,7 @@
   "priceOpen": 8.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3260,7 +3260,7 @@
   "priceOpen": 10.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3332,7 +3332,7 @@
   "priceOpen": 14.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3404,7 +3404,7 @@
   "priceOpen": 6.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3476,7 +3476,7 @@
   "priceOpen": 5.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3548,7 +3548,7 @@
   "priceOpen": 8.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3620,7 +3620,7 @@
   "priceOpen": 9.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3692,7 +3692,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3764,7 +3764,7 @@
   "priceOpen": 14.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3836,7 +3836,7 @@
   "priceOpen": 9.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3908,7 +3908,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -3980,7 +3980,7 @@
   "priceOpen": 9.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4052,7 +4052,7 @@
   "priceOpen": 6.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4124,7 +4124,7 @@
   "priceOpen": 6.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4196,7 +4196,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4268,7 +4268,7 @@
   "priceOpen": 9.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4340,7 +4340,7 @@
   "priceOpen": 14.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4412,7 +4412,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4484,7 +4484,7 @@
   "priceOpen": 9.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4556,7 +4556,7 @@
   "priceOpen": 8.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4628,7 +4628,7 @@
   "priceOpen": 12.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4700,7 +4700,7 @@
   "priceOpen": 4.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4772,7 +4772,7 @@
   "priceOpen": 10.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -4844,7 +4844,7 @@
   "priceOpen": 6.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4916,7 +4916,7 @@
   "priceOpen": 12.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -4988,7 +4988,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -5060,7 +5060,7 @@
   "priceOpen": 12.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5132,7 +5132,7 @@
   "priceOpen": 9.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5204,7 +5204,7 @@
   "priceOpen": 8.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5276,7 +5276,7 @@
   "priceOpen": 8.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5348,7 +5348,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5420,7 +5420,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5492,7 +5492,7 @@
   "priceOpen": 10.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -5564,7 +5564,7 @@
   "priceOpen": 4.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5636,7 +5636,7 @@
   "priceOpen": 14.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5708,7 +5708,7 @@
   "priceOpen": 10.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5780,7 +5780,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5852,7 +5852,7 @@
   "priceOpen": 8.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5924,7 +5924,7 @@
   "priceOpen": 4.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -5996,7 +5996,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -6068,7 +6068,7 @@
   "priceOpen": 12.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6140,7 +6140,7 @@
   "priceOpen": 11.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6212,7 +6212,7 @@
   "priceOpen": 15.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6284,7 +6284,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6356,7 +6356,7 @@
   "priceOpen": 8.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6428,7 +6428,7 @@
   "priceOpen": 9.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6500,7 +6500,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -6572,7 +6572,7 @@
   "priceOpen": 13.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6644,7 +6644,7 @@
   "priceOpen": 7.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6716,7 +6716,7 @@
   "priceOpen": 9.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6788,7 +6788,7 @@
   "priceOpen": 6.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6860,7 +6860,7 @@
   "priceOpen": 4.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -6932,7 +6932,7 @@
   "priceOpen": 7.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7004,7 +7004,7 @@
   "priceOpen": 6.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7076,7 +7076,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -7148,7 +7148,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -7220,7 +7220,7 @@
   "priceOpen": 8.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7292,7 +7292,7 @@
   "priceOpen": 12.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7364,7 +7364,7 @@
   "priceOpen": 6.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7436,7 +7436,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7508,7 +7508,7 @@
   "priceOpen": 4.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7580,7 +7580,7 @@
   "priceOpen": 11.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7652,7 +7652,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7724,7 +7724,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -7796,7 +7796,7 @@
   "priceOpen": 10.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7868,7 +7868,7 @@
   "priceOpen": 7.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -7940,7 +7940,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -8012,7 +8012,7 @@
   "priceOpen": 10.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8084,7 +8084,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8156,7 +8156,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8228,7 +8228,7 @@
   "priceOpen": 6.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8300,7 +8300,7 @@
   "priceOpen": 5.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8372,7 +8372,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -8444,7 +8444,7 @@
   "priceOpen": 7.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8516,7 +8516,7 @@
   "priceOpen": 7.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8588,7 +8588,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -8660,7 +8660,7 @@
   "priceOpen": 5.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8732,7 +8732,7 @@
   "priceOpen": 7.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8804,7 +8804,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -8876,7 +8876,7 @@
   "priceOpen": 6.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -8948,7 +8948,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9020,7 +9020,7 @@
   "priceOpen": 5.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9092,7 +9092,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9164,7 +9164,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -9236,7 +9236,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9308,7 +9308,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9380,7 +9380,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9452,7 +9452,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9524,7 +9524,7 @@
   "priceOpen": 4.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9596,7 +9596,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9668,7 +9668,7 @@
   "priceOpen": 9.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9740,7 +9740,7 @@
   "priceOpen": 4.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9812,7 +9812,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9884,7 +9884,7 @@
   "priceOpen": 4.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -9956,7 +9956,7 @@
   "priceOpen": 4.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10028,7 +10028,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10100,7 +10100,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10172,7 +10172,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10244,7 +10244,7 @@
   "priceOpen": 10.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10316,7 +10316,7 @@
   "priceOpen": 4.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10388,7 +10388,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -10460,7 +10460,7 @@
   "priceOpen": 4.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10532,7 +10532,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10604,7 +10604,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10676,7 +10676,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10748,7 +10748,7 @@
   "priceOpen": 4.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10820,7 +10820,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -10892,7 +10892,7 @@
   "priceOpen": 4.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -10953,18 +10953,18 @@
   "clubShort": "Besiktas",
   "clubCrest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png",
   "position": "F",
-  "positionLabel": null,
+  "positionLabel": "Center",
   "isCoach": false,
-  "dorsal": null,
+  "dorsal": "11",
   "image": "https://media-cdn.cortextech.io/b901a276-9bce-4d94-9dba-3ed59eb7e670.png",
-  "height": null,
-  "country": null,
-  "birthDate": null,
+  "height": 205.0,
+  "country": "IRL",
+  "birthDate": "1995-04-06",
   "price": 5.5,
   "priceOpen": 5.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11011,8 +11011,8 @@
    "difficulty": 64.0
   },
   "match": {
-   "method": "prior-season",
-   "confidence": 90.0
+   "method": "initial-club",
+   "confidence": 99.0
   }
  },
  {
@@ -11036,7 +11036,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11108,7 +11108,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11180,7 +11180,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11252,7 +11252,7 @@
   "priceOpen": 6.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -11324,7 +11324,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11396,7 +11396,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11468,7 +11468,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11540,7 +11540,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11612,7 +11612,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11684,7 +11684,7 @@
   "priceOpen": 4.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11756,7 +11756,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11828,7 +11828,7 @@
   "priceOpen": 6.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11900,7 +11900,7 @@
   "priceOpen": 8.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -11972,7 +11972,7 @@
   "priceOpen": 6.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12044,7 +12044,7 @@
   "priceOpen": 6.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -12097,26 +12097,26 @@
  },
  {
   "id": 4088,
-  "personCode": null,
-  "name": null,
+  "personCode": "003783",
+  "name": "UGURLU, BERK",
   "marketName": "B. Ugurlu",
   "club": "BES",
   "clubName": "Besiktas Istanbul",
   "clubShort": "Besiktas",
   "clubCrest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png",
   "position": "G",
-  "positionLabel": null,
+  "positionLabel": "Guard",
   "isCoach": false,
-  "dorsal": null,
+  "dorsal": "6",
   "image": null,
-  "height": null,
-  "country": null,
-  "birthDate": null,
+  "height": 192.0,
+  "country": "TUR",
+  "birthDate": "1996-04-27",
   "price": 4.4,
   "priceOpen": 4.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12163,8 +12163,8 @@
    "difficulty": 64.0
   },
   "match": {
-   "method": "unmatched",
-   "confidence": 50.0
+   "method": "initial-club",
+   "confidence": 99.0
   }
  },
  {
@@ -12188,7 +12188,7 @@
   "priceOpen": 5.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12260,7 +12260,7 @@
   "priceOpen": 13.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12332,7 +12332,7 @@
   "priceOpen": 7.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12404,7 +12404,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12476,7 +12476,7 @@
   "priceOpen": 8.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12548,7 +12548,7 @@
   "priceOpen": 7.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12620,7 +12620,7 @@
   "priceOpen": 6.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12692,7 +12692,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12764,7 +12764,7 @@
   "priceOpen": 11.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12836,7 +12836,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12908,7 +12908,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -12980,7 +12980,7 @@
   "priceOpen": 8.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -13052,7 +13052,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13124,7 +13124,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13196,7 +13196,7 @@
   "priceOpen": 9.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13268,7 +13268,7 @@
   "priceOpen": 7.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13340,7 +13340,7 @@
   "priceOpen": 9.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13412,7 +13412,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13484,7 +13484,7 @@
   "priceOpen": 14.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13556,7 +13556,7 @@
   "priceOpen": 5.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13628,7 +13628,7 @@
   "priceOpen": 5.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13700,7 +13700,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13772,7 +13772,7 @@
   "priceOpen": 12.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13844,7 +13844,7 @@
   "priceOpen": 8.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13916,7 +13916,7 @@
   "priceOpen": 12.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -13963,8 +13963,8 @@
    "difficulty": 52.0
   },
   "match": {
-   "method": "initial-open",
-   "confidence": 93.0
+   "method": "initial-club",
+   "confidence": 99.0
   }
  },
  {
@@ -13988,7 +13988,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -14060,7 +14060,7 @@
   "priceOpen": 8.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14132,7 +14132,7 @@
   "priceOpen": 5.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14204,7 +14204,7 @@
   "priceOpen": 9.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14276,7 +14276,7 @@
   "priceOpen": 10.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14348,7 +14348,7 @@
   "priceOpen": 9.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14420,7 +14420,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14492,7 +14492,7 @@
   "priceOpen": 4.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14564,7 +14564,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14636,7 +14636,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14708,7 +14708,7 @@
   "priceOpen": 8.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14780,7 +14780,7 @@
   "priceOpen": 9.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14852,7 +14852,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14924,7 +14924,7 @@
   "priceOpen": 11.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -14996,7 +14996,7 @@
   "priceOpen": 7.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15068,7 +15068,7 @@
   "priceOpen": 10.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15140,7 +15140,7 @@
   "priceOpen": 12.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15212,7 +15212,7 @@
   "priceOpen": 9.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15284,7 +15284,7 @@
   "priceOpen": 12.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15356,7 +15356,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15428,7 +15428,7 @@
   "priceOpen": 10.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15500,7 +15500,7 @@
   "priceOpen": 12.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15572,7 +15572,7 @@
   "priceOpen": 12.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15644,7 +15644,7 @@
   "priceOpen": 8.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15716,7 +15716,7 @@
   "priceOpen": 10.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15788,7 +15788,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15860,7 +15860,7 @@
   "priceOpen": 8.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -15932,7 +15932,7 @@
   "priceOpen": 8.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16004,7 +16004,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16076,7 +16076,7 @@
   "priceOpen": 5.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16148,7 +16148,7 @@
   "priceOpen": 6.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16220,7 +16220,7 @@
   "priceOpen": 12.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16292,7 +16292,7 @@
   "priceOpen": 6.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16364,7 +16364,7 @@
   "priceOpen": 9.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16436,7 +16436,7 @@
   "priceOpen": 11.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16508,7 +16508,7 @@
   "priceOpen": 5.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16580,7 +16580,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16652,7 +16652,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16724,7 +16724,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16796,7 +16796,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16868,7 +16868,7 @@
   "priceOpen": 4.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -16940,7 +16940,7 @@
   "priceOpen": 5.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17012,7 +17012,7 @@
   "priceOpen": 6.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17084,7 +17084,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17156,7 +17156,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": null,
@@ -17228,7 +17228,7 @@
   "priceOpen": 10.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17300,7 +17300,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17372,7 +17372,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17444,7 +17444,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17516,7 +17516,7 @@
   "priceOpen": 7.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17588,7 +17588,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17660,7 +17660,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17732,7 +17732,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17804,7 +17804,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17876,7 +17876,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -17948,7 +17948,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18020,7 +18020,7 @@
   "priceOpen": 10.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18092,7 +18092,7 @@
   "priceOpen": 8.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18164,7 +18164,7 @@
   "priceOpen": 11.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18236,7 +18236,7 @@
   "priceOpen": 6.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18308,7 +18308,7 @@
   "priceOpen": 8.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18380,7 +18380,7 @@
   "priceOpen": 10.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18452,7 +18452,7 @@
   "priceOpen": 6.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18524,7 +18524,7 @@
   "priceOpen": 6.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18596,7 +18596,7 @@
   "priceOpen": 9.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18668,7 +18668,7 @@
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18740,7 +18740,7 @@
   "priceOpen": 7.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18812,7 +18812,7 @@
   "priceOpen": 10.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18884,7 +18884,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -18956,7 +18956,7 @@
   "priceOpen": 12.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19028,7 +19028,7 @@
   "priceOpen": 4.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19100,7 +19100,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19172,7 +19172,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19244,7 +19244,7 @@
   "priceOpen": 9.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19316,7 +19316,7 @@
   "priceOpen": 10.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19388,7 +19388,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19451,7 +19451,7 @@
   "position": "C",
   "positionLabel": "Center",
   "isCoach": false,
-  "dorsal": "25",
+  "dorsal": "21",
   "image": "https://media-cdn.cortextech.io/4f3880c6-6b3b-4af7-bc52-2d721c68372e.png",
   "height": 213.0,
   "country": "UKR",
@@ -19460,7 +19460,7 @@
   "priceOpen": 7.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19507,8 +19507,8 @@
    "difficulty": 100.0
   },
   "match": {
-   "method": "initial-open",
-   "confidence": 93.0
+   "method": "initial-club",
+   "confidence": 99.0
   }
  },
  {
@@ -19532,7 +19532,7 @@
   "priceOpen": 9.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19604,7 +19604,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19676,7 +19676,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19748,7 +19748,7 @@
   "priceOpen": 10.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19820,7 +19820,7 @@
   "priceOpen": 5.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19892,7 +19892,7 @@
   "priceOpen": 7.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -19964,7 +19964,7 @@
   "priceOpen": 8.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20036,7 +20036,7 @@
   "priceOpen": 7.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20108,7 +20108,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20180,7 +20180,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20252,7 +20252,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20324,7 +20324,7 @@
   "priceOpen": 10.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20396,7 +20396,7 @@
   "priceOpen": 14.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20468,7 +20468,7 @@
   "priceOpen": 8.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20540,7 +20540,7 @@
   "priceOpen": 9.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20612,7 +20612,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20684,7 +20684,7 @@
   "priceOpen": 9.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20756,7 +20756,7 @@
   "priceOpen": 9.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20828,7 +20828,7 @@
   "priceOpen": 8.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20900,7 +20900,7 @@
   "priceOpen": 10.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -20972,7 +20972,7 @@
   "priceOpen": 4.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21044,7 +21044,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21116,7 +21116,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21188,7 +21188,7 @@
   "priceOpen": 6.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21260,7 +21260,7 @@
   "priceOpen": 9.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21332,7 +21332,7 @@
   "priceOpen": 9.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21404,7 +21404,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21476,7 +21476,7 @@
   "priceOpen": 7.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21548,7 +21548,7 @@
   "priceOpen": 11.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21620,7 +21620,7 @@
   "priceOpen": 10.6,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21692,7 +21692,7 @@
   "priceOpen": 10.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21764,7 +21764,7 @@
   "priceOpen": 6.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21836,7 +21836,7 @@
   "priceOpen": 12.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21908,7 +21908,7 @@
   "priceOpen": 9.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -21980,7 +21980,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22052,7 +22052,7 @@
   "priceOpen": 5.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22124,7 +22124,7 @@
   "priceOpen": 10.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22196,7 +22196,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22268,7 +22268,7 @@
   "priceOpen": 8.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22340,7 +22340,7 @@
   "priceOpen": 12.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22412,7 +22412,7 @@
   "priceOpen": 9.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22484,7 +22484,7 @@
   "priceOpen": 9.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22556,7 +22556,7 @@
   "priceOpen": 9.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22628,7 +22628,7 @@
   "priceOpen": 9.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22700,7 +22700,7 @@
   "priceOpen": 8.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22772,7 +22772,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22844,7 +22844,7 @@
   "priceOpen": 4.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22916,7 +22916,7 @@
   "priceOpen": 10.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -22988,7 +22988,7 @@
   "priceOpen": 5.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23060,7 +23060,7 @@
   "priceOpen": 4.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23113,26 +23113,26 @@
  },
  {
   "id": 11525,
-  "personCode": null,
-  "name": null,
+  "personCode": "015126",
+  "name": "KARAGIANNIDIS, ANTONIS",
   "marketName": "A. Karagiannidis",
   "club": "OLY",
   "clubName": "Olympiacos Piraeus",
   "clubShort": "Olympiacos",
   "clubCrest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png",
   "position": "C",
-  "positionLabel": null,
+  "positionLabel": "Center",
   "isCoach": false,
-  "dorsal": null,
+  "dorsal": "29",
   "image": null,
-  "height": null,
-  "country": null,
-  "birthDate": null,
+  "height": 206.0,
+  "country": "GRE",
+  "birthDate": "2002-04-13",
   "price": 6.5,
   "priceOpen": 6.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23179,8 +23179,8 @@
    "difficulty": 52.0
   },
   "match": {
-   "method": "unmatched",
-   "confidence": 57.1
+   "method": "initial-club",
+   "confidence": 99.0
   }
  },
  {
@@ -23204,7 +23204,7 @@
   "priceOpen": 14.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23276,7 +23276,7 @@
   "priceOpen": 11.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23348,7 +23348,7 @@
   "priceOpen": 11.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23420,7 +23420,7 @@
   "priceOpen": 9.8,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23492,7 +23492,7 @@
   "priceOpen": 9.3,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23564,7 +23564,7 @@
   "priceOpen": 5.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23636,7 +23636,7 @@
   "priceOpen": 10.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23708,7 +23708,7 @@
   "priceOpen": 4.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23780,7 +23780,7 @@
   "priceOpen": 9.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23852,7 +23852,7 @@
   "priceOpen": 8.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23924,7 +23924,7 @@
   "priceOpen": 9.1,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -23996,7 +23996,7 @@
   "priceOpen": 9.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24068,7 +24068,7 @@
   "priceOpen": 8.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24140,7 +24140,7 @@
   "priceOpen": 7.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24212,7 +24212,7 @@
   "priceOpen": 4.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24284,7 +24284,7 @@
   "priceOpen": 4.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24356,7 +24356,7 @@
   "priceOpen": 4.2,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24428,7 +24428,7 @@
   "priceOpen": 11.0,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24500,7 +24500,7 @@
   "priceOpen": 10.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24572,7 +24572,7 @@
   "priceOpen": 9.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24644,7 +24644,7 @@
   "priceOpen": 9.9,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24716,7 +24716,7 @@
   "priceOpen": 8.7,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24769,26 +24769,26 @@
  },
  {
   "id": 11548,
-  "personCode": null,
-  "name": null,
+  "personCode": "006707",
+  "name": "BALDASSO, TOMMASO",
   "marketName": "T. Baldasso",
   "club": "VIR",
   "clubName": "Virtus Bologna",
   "clubShort": "Virtus",
   "clubCrest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png",
   "position": "G",
-  "positionLabel": null,
+  "positionLabel": "Guard",
   "isCoach": false,
-  "dorsal": null,
+  "dorsal": "11",
   "image": null,
-  "height": null,
-  "country": null,
-  "birthDate": null,
+  "height": 190.0,
+  "country": "ITA",
+  "birthDate": "1998-01-29",
   "price": 4.4,
   "priceOpen": 4.4,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24835,8 +24835,8 @@
    "difficulty": 99.0
   },
   "match": {
-   "method": "unmatched",
-   "confidence": 54.5
+   "method": "initial-club",
+   "confidence": 99.0
   }
  },
  {
@@ -24860,7 +24860,7 @@
   "priceOpen": 15.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,
@@ -24932,7 +24932,7 @@
   "priceOpen": 7.5,
   "priceDeltaLast": 0.0,
   "priceDeltaTotal": 0.0,
-  "priceSnapshots": 1,
+  "priceSnapshots": 2,
   "market": {
    "fpt": 0,
    "points": 0.0,

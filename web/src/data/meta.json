@@ -1,13 +1,13 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-14T15:19:56.645382+00:00",
+ "generatedAt": "2026-09-15T12:28:24.387084+00:00",
  "currentRound": 1,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 1,
- "lastPriceCapture": "2026-09-14T15:07:00.709298+00:00",
+ "priceSnapshots": 2,
+ "lastPriceCapture": "2026-09-15T12:28:17.195612+00:00",
  "performanceSource": {
   "source": "E2025",
   "isBaseline": true,
@@ -15,12 +15,12 @@
  },
  "teamStrengthSource": "temporada anterior",
  "players": 347,
- "matched": 291,
- "matchRate": 0.839,
+ "matched": 295,
+ "matchRate": 0.85,
  "budget": 100.0,
  "coachGames": 0,
  "warnings": [
   "La temporada 2026-27 aún no tiene partidos jugados: el rendimiento mostrado es la línea base de la 2025-26.",
-  "56 de 347 jugadores del mercado no están todavía en el censo oficial de la EuroLeague. En pretemporada es normal: los clubes aún están inscribiendo plantillas y el censo se completa solo conforme avanzan los días. Esos jugadores se muestran con precio pero sin histórico. El detalle está en data/processed/unmatched_players.csv."
+  "52 de 347 jugadores del mercado no están todavía en el censo oficial de la EuroLeague. En pretemporada es normal: los clubes aún están inscribiendo plantillas y el censo se completa solo conforme avanzan los días. Esos jugadores se muestran con precio pero sin histórico. El detalle está en data/processed/unmatched_players.csv."
  ]
 }

@@ -12,7 +12,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3776,W. Gabriel,BJK,BES,013383,"GABRIEL, WENYEN",initial-club,99.0
 3777,W. Clyburn,FBT,ULK,004888,"CLYBURN, WILL",initial-club,99.0
 3779,K. Sloukas,PAO,PAN,001926,"SLOUKAS, KOSTAS",initial-club,99.0
-3780,F. Korkmaz,BJK,BES,,,unmatched,47.6
+3780,F. Korkmaz,BJK,BES,005763,"KORKMAZ, FURKAN",initial-club,99.0
 3782,N. Milutinov,OLY,OLY,003941,"MILUTINOV, NIKOLA",initial-club,99.0
 3785,J. Nebo,BAR,BAR,011199,"NEBO, JOSH",initial-open,93.0
 3787,N. Hayes-davis,PAO,PAN,008962,"HAYES-DAVIS, NIGEL",initial-club,99.0
@@ -151,7 +151,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4005,E. Jackson,ASV,ASV,000229,"JACKSON, EDWIN",prior-season,90.0
 4006,T. Masiulis,ZAL,ZAL,ACX,"MASIULIS, TOMAS",prior-season,90.0
 4007,E. Yilmaz,EFS,IST,006372,"YILMAZ, ERKAN",initial-club,99.0
-4008,M. Birsen,BJK,BES,003091,"BIRSEN, METECAN",prior-season,90.0
+4008,M. Birsen,BJK,BES,003091,"BIRSEN, METECAN",initial-club,99.0
 4009,O. Diop,MIL,MIL,013385,"DIOP, OUSMANE",initial-club,99.0
 4012,G. Ricci,MIL,MIL,001518,"RICCI, GIAMPAOLO",initial-club,99.0
 4013,D. Flaccadori,MIL,MIL,005670,"FLACCADORI, DIEGO",initial-club,99.0
@@ -167,7 +167,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4081,C. Morgan,BJK,BES,009680,"MORGAN, CONOR",initial-club,99.0
 4084,D. Sleva,ZAL,ZAL,011927,"SLEVA, DUSTIN",initial-club,99.0
 4086,D. Alimpijevic,BJK,BES,,,unmatched,53.3
-4088,B. Ugurlu,BJK,BES,,,unmatched,50.0
+4088,B. Ugurlu,BJK,BES,003783,"UGURLU, BERK",initial-club,99.0
 4094,K. Kamenjas,DUB,DUB,008325,"KAMENJAS, KENAN",initial-club,99.0
 4096,M. Wright,DUB,DUB,012606,"WRIGHT IV, MCKINLEY",initial-club,99.0
 4097,N. Tanaskovic,PAR,PAR,005637,"TANASKOVIC, NIKOLA",initial-club,99.0
@@ -192,7 +192,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4246,S. Ojeleye,CZV,RED,011982,"OJELEYE, SEMI",initial-club,99.0
 4247,C. Jones,CZV,RED,010568,"JONES, CHRIS",initial-club,99.0
 4251,B. Badio,PAO,PAN,007527,"BADIO, BRANCOU",initial-club,99.0
-4252,J. Montero,OLY,OLY,010042,"MONTERO, JEAN",initial-open,93.0
+4252,J. Montero,OLY,OLY,010042,"MONTERO, JEAN",initial-club,99.0
 4255,X. Albert,VBC,PAM,,,unmatched,54.5
 4257,J. Pradilla,RMB,MAD,010393,"PRADILLA, JAIME",initial-club,99.0
 4258,J. Puerto,VBC,PAM,006643,"PUERTO, JOSEP",initial-club,99.0
@@ -269,7 +269,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 8714,K. Simmons,KBA,BAS,014152,"SIMMONS, KOBI",initial-club,99.0
 8721,J. Butler,CZV,RED,014163,"BUTLER, JARED",initial-club,99.0
 8727,B. Key,FBT,ULK,014168,"KEY, BRAXTON",initial-club,99.0
-8728,A. Len,KBA,BAS,014169,"LEN, ALEX",initial-open,93.0
+8728,A. Len,KBA,BAS,014169,"LEN, ALEX",initial-club,99.0
 8730,K. Faried,KBA,BAS,011284,"FARIED, KENNETH",initial-club,99.0
 8762,J. Rhoden,PBB,PRS,014178,"RHODEN, JARED",initial-club,99.0
 8770,R. Fenemen,EFS,IST,013422,"FENEMEN, RUZGAR",prior-season,90.0
@@ -320,7 +320,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 11522,K. Wallace,MTA,TEL,015085,"WALLACE, KEATON",initial-club,99.0
 11523,S. Hunter,MTA,TEL,,,unmatched,50.0
 11524,N. Plotas,OLY,OLY,,,unmatched,50.0
-11525,A. Karagiannidis,OLY,OLY,,,unmatched,57.1
+11525,A. Karagiannidis,OLY,OLY,015126,"KARAGIANNIDIS, ANTONIS",initial-club,99.0
 11526,G. Yabusele,PAO,PAN,010357,"YABUSELE, GUERSCHON",initial-club,99.0
 11527,T. Warren,PBB,PRS,,,unmatched,55.6
 11528,T. Etienne,PBB,PRS,,,unmatched,52.2
@@ -343,6 +343,6 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 11545,M. Carr,VIR,VIR,012707,"CARR, MARCUS",initial-club,99.0
 11546,B. Klintman,VIR,VIR,014738,"KLINTMAN, BO",initial-club,99.0
 11547,W. Moore Jr,VIR,VIR,014737,"MOORE, WENDELL",initial-club,99.0
-11548,T. Baldasso,VIR,VIR,,,unmatched,54.5
+11548,T. Baldasso,VIR,VIR,006707,"BALDASSO, TOMMASO",initial-club,99.0
 11549,J. Valanciunas,ZAL,ZAL,,,unmatched,50.0
 11558,J. Minaya,BAR,BAR,,,unmatched,47.1

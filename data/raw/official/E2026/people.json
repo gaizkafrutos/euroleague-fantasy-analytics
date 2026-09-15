@@ -1,6 +1,546 @@
 [
  {
   "person": {
+   "code": "014169",
+   "name": "LEN, ALEX",
+   "alias": "LEN, ALEX",
+   "aliasRaw": "LEN, ALEX",
+   "passportName": "OLEKSII",
+   "passportSurname": "LEN",
+   "jerseyName": "LEN",
+   "abbreviatedName": null,
+   "country": {
+    "code": "UKR",
+    "name": "Ukraine"
+   },
+   "height": 213,
+   "weight": 120,
+   "birthDate": "1993-06-16T00:00:00",
+   "birthCountry": {
+    "code": "UKR",
+    "name": "Ukraine"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T09:13:39.344",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "21",
+  "dorsalRaw": "21",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "REAL MADRID",
+  "externalId": 56712,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "005763",
+   "name": "KORKMAZ, FURKAN",
+   "alias": "Korkmaz",
+   "aliasRaw": "Korkmaz",
+   "passportName": "FURKAN",
+   "passportSurname": "KORKMAZ",
+   "jerseyName": "KORKMAZ",
+   "abbreviatedName": "Korkmaz, F.",
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "height": 202,
+   "weight": 92,
+   "birthDate": "1997-07-24T00:00:00",
+   "birthCountry": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "twitterAccount": "FurkanKorkmazFK",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T08:41:07.219",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "30",
+  "dorsalRaw": "30",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "BAHCESEHIR",
+  "externalId": 56707,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "003091",
+   "name": "BIRSEN, METECAN",
+   "alias": "BIRSEN, METECAN",
+   "aliasRaw": "BIRSEN, METECAN",
+   "passportName": "JAMES METECAN",
+   "passportSurname": "BIRSEN",
+   "jerseyName": "BIRSEN",
+   "abbreviatedName": "Birsen, M.",
+   "country": {
+    "code": "IRL",
+    "name": "Ireland"
+   },
+   "height": 205,
+   "weight": 89,
+   "birthDate": "1995-04-06T00:00:00",
+   "birthCountry": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "twitterAccount": "metecanbirsen",
+   "instagramAccount": "jamesbirsen/",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T08:41:07.003",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "11",
+  "dorsalRaw": "11",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "FENERBAHCE BEKO",
+  "externalId": 56706,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "012233",
+   "name": "AKSU, YAGIZ",
+   "alias": "AKSU, YAGIZ",
+   "aliasRaw": "AKSU, YAGIZ",
+   "passportName": "YAGIZ",
+   "passportSurname": "AKSU",
+   "jerseyName": "AKSU",
+   "abbreviatedName": "",
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "height": 197,
+   "weight": 92,
+   "birthDate": "2006-01-31T00:00:00",
+   "birthCountry": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T08:41:06.798",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "10",
+  "dorsalRaw": "10",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "BESIKTAS ISTANBUL",
+  "externalId": 56705,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "003783",
+   "name": "UGURLU, BERK",
+   "alias": "Ugurlu",
+   "aliasRaw": "Ugurlu",
+   "passportName": "BERK IBRAHIM",
+   "passportSurname": "UGURLU",
+   "jerseyName": "UGURLU",
+   "abbreviatedName": "Ugurlu, B.",
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "height": 192,
+   "weight": 90,
+   "birthDate": "1996-04-27T00:00:00",
+   "birthCountry": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T08:41:06.581",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "6",
+  "dorsalRaw": "6",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "BESIKTAS ISTANBUL",
+  "externalId": 56704,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "006707",
+   "name": "BALDASSO, TOMMASO",
+   "alias": "Baldasso",
+   "aliasRaw": "Baldasso",
+   "passportName": "TOMMASO",
+   "passportSurname": "BALDASSO",
+   "jerseyName": "Baldasso",
+   "abbreviatedName": "Baldasso, T.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 190,
+   "weight": 88,
+   "birthDate": "1998-01-29T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T08:13:13.512",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "11",
+  "dorsalRaw": "11",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "BERTRAM DERTHONA",
+  "externalId": 56699,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus Bologna",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "013141",
+   "name": "BOURNELES, GEORGIOS",
+   "alias": "MPOURNELES, GEORGIOS",
+   "aliasRaw": "MPOURNELES, GEORGIOS",
+   "passportName": "GEORGIOS",
+   "passportSurname": "BOURNELES",
+   "jerseyName": "BOURNELES",
+   "abbreviatedName": null,
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 192,
+   "weight": 85,
+   "birthDate": "2007-03-04T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T07:43:21.76",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "4",
+  "dorsalRaw": "4",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "OLYMPIACOS",
+  "externalId": 56695,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015126",
+   "name": "KARAGIANNIDIS, ANTONIS",
+   "alias": "KARAGIANNIDIS, ANTONIS",
+   "aliasRaw": "KARAGIANNIDIS, ANTONIS",
+   "passportName": "ANTONIS",
+   "passportSurname": "KARAGIANNIDIS",
+   "jerseyName": "KARAGIANNIDIS",
+   "abbreviatedName": null,
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 206,
+   "weight": 95,
+   "birthDate": "2002-04-13T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T06:53:00.244",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "29",
+  "dorsalRaw": "29",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "--",
+  "externalId": 56677,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "010042",
+   "name": "MONTERO, JEAN",
+   "alias": "MONTERO BERROA, JEAN CLAUDIO",
+   "aliasRaw": "MONTERO BERROA, JEAN CLAUDIO",
+   "passportName": "JEAN CLAUDIO",
+   "passportSurname": "MONTERO BERROA",
+   "jerseyName": "MONTERO",
+   "abbreviatedName": "Montero, J.",
+   "country": {
+    "code": "DOM",
+    "name": "Dominican Republic"
+   },
+   "height": 188,
+   "weight": 75,
+   "birthDate": "2003-07-03T00:00:00",
+   "birthCountry": {
+    "code": "DOM",
+    "name": "Dominican Republic"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-15T06:52:59.686",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "8",
+  "dorsalRaw": "8",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "VALENCIA",
+  "externalId": 56676,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "015103",
    "name": "JONES, DAMIAN",
    "alias": "JONES, DAMIAN",
@@ -9322,7 +9862,7 @@
     "name": "Dominican Republic"
    },
    "height": 188,
-   "weight": 80,
+   "weight": 75,
    "birthDate": "2003-07-03T00:00:00",
    "birthCountry": {
     "code": "DOM",
@@ -13420,9 +13960,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T08:00:45.522",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T09:20:40.021",
   "order": 0,
   "dorsal": "21",
   "dorsalRaw": "21",
@@ -13660,9 +14200,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T08:00:44.53",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T09:20:12.428",
   "order": 0,
   "dorsal": "8",
   "dorsalRaw": "8",
@@ -14980,9 +15520,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:53:42.156",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:53:26.393",
   "order": 0,
   "dorsal": "26",
   "dorsalRaw": "26",
@@ -15220,9 +15760,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:53:41.167",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:53:26.282",
   "order": 0,
   "dorsal": "20",
   "dorsalRaw": "20",
@@ -15340,9 +15880,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:53:40.717",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:58:40.876",
   "order": 0,
   "dorsal": "14",
   "dorsalRaw": "14",
@@ -15400,9 +15940,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:53:40.445",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:53:26.096",
   "order": 0,
   "dorsal": "11",
   "dorsalRaw": "11",
@@ -15520,9 +16060,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:53:39.953",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:58:40.774",
   "order": 0,
   "dorsal": "9",
   "dorsalRaw": "9",
@@ -15580,9 +16120,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:53:39.709",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:58:40.685",
   "order": 0,
   "dorsal": "6",
   "dorsalRaw": "6",
@@ -16780,9 +17320,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:43:59.2",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:44:02.778",
   "order": 0,
   "dorsal": "23",
   "dorsalRaw": "23",
@@ -16840,9 +17380,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:43:58.953",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:44:02.631",
   "order": 0,
   "dorsal": "21",
   "dorsalRaw": "21",
@@ -17020,9 +17560,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:43:58.284",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-15T08:44:02.477",
   "order": 0,
   "dorsal": "2",
   "dorsalRaw": "2",
