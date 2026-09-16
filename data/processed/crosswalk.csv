@@ -7,6 +7,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3770,C. Moneke,CZV,RED,012201,"MONEKE, CHIMA",initial-club,99.0
 3771,W. Baldwin,FBT,ULK,009863,"BALDWIN IV, WADE",initial-club,99.0
 3772,F. Campazzo,RMB,MAD,005928,"CAMPAZZO, FACUNDO",initial-club,99.0
+3773,N. Mirotic,VBC,PAM,000796,"MIROTIC, NIKOLA",prior-season,90.0
 3774,T. Shengelia,DUB,DUB,001133,"SHENGELIA, TORNIKE",initial-club,99.0
 3775,S. Shields,FBT,ULK,007831,"SHIELDS, SHAVON",initial-club,99.0
 3776,W. Gabriel,BJK,BES,013383,"GABRIEL, WENYEN",initial-club,99.0
@@ -14,7 +15,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3779,K. Sloukas,PAO,PAN,001926,"SLOUKAS, KOSTAS",initial-club,99.0
 3780,F. Korkmaz,BJK,BES,005763,"KORKMAZ, FURKAN",initial-club,99.0
 3782,N. Milutinov,OLY,OLY,003941,"MILUTINOV, NIKOLA",initial-club,99.0
-3785,J. Nebo,BAR,BAR,011199,"NEBO, JOSH",initial-open,93.0
+3785,J. Nebo,BAR,BAR,011199,"NEBO, JOSH",prior-season,90.0
 3787,N. Hayes-davis,PAO,PAN,008962,"HAYES-DAVIS, NIGEL",initial-club,99.0
 3790,D. Musa,DUB,DUB,006540,"MUSA, DZANAN",initial-club,99.0
 3791,C. Jones,PAR,PAR,013369,"JONES, CARLIK",initial-club,99.0
@@ -40,7 +41,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3822,J. Bolomboy,ASV,ASV,009035,"BOLOMBOY, JOEL",prior-season,90.0
 3824,L. Vildoza,PAR,PAR,007947,"VILDOZA, LUCA",initial-club,99.0
 3825,J. Hernangomez,PAO,PAN,012712,"HERNANGOMEZ, JUANCHO",initial-club,99.0
-3826,F. Ntilikina,PBB,PRS,006591,"NTILIKINA, FRANK",initial-open,93.0
+3826,F. Ntilikina,PBB,PRS,006591,"NTILIKINA, FRANK",prior-season,90.0
 3828,G. Papagiannis,EFS,IST,005844,"PAPAGIANNIS, GEORGIOS",initial-club,99.0
 3830,D. Sirvydis,ZAL,ZAL,007029,"SIRVYDIS, DEIVIDAS",initial-club,99.0
 3831,D. Thompson,MIL,MIL,011078,"THOMPSON, DARIUS",initial-club,99.0
@@ -79,7 +80,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3886,D. Hackett,VIR,VIR,001844,"HACKETT, DANIEL",initial-club,99.0
 3887,S. Francisco,PAO,PAN,007975,"FRANCISCO, SYLVAIN",initial-club,99.0
 3888,S. Brown,ZAL,ZAL,012720,"BROWN, STERLING",initial-club,99.0
-3891,V. Brown,BJK,BES,,,unmatched,60.0
+3891,V. Brown,BJK,BES,,,unmatched,57.1
 3892,R. Jokubaitis,BAY,MUN,007519,"JOKUBAITIS, ROKAS",initial-club,99.0
 3896,J. Nunez,BAR,BAR,010106,"NUNEZ, JUAN",initial-club,99.0
 3897,S. Jasikevicius,FBT,ULK,ADG,"JASIKEVICIUS, SARAS",prior-season,90.0
@@ -102,7 +103,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3925,D. Hall,MIL,MIL,011205,"HALL, DEVON",initial-club,99.0
 3926,F. Petrusev,DUB,DUB,011194,"PETRUSEV, FILIP",initial-club,99.0
 3927,D. Hommes,PBB,PRS,011949,"HOMMES, DAULTON",initial-club,99.0
-3930,Y. Madar,MTA,TEL,011052,"MADAR, YAM",initial-open,93.0
+3930,Y. Madar,MTA,TEL,011052,"MADAR, YAM",prior-season,90.0
 3933,L. Cavaliere,PBB,PRS,013373,"CAVALIERE, LEOPOLD",initial-club,99.0
 3934,I. Bonga,PAO,PAN,006760,"BONGA, ISAAC",initial-club,99.0
 3936,N. Rogkavopoulos,PAO,PAN,011085,"ROGKAVOPOULOS, NIKOLAOS",initial-club,99.0
@@ -114,7 +115,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3948,M. Ndiaye,OLY,OLY,012731,"NDIAYE, MBAYE",initial-club,99.0
 3950,O. Dobric,CZV,RED,004007,"DOBRIC, OGNJEN",initial-club,99.0
 3952,M. Jaiteh,DUB,DUB,,,unmatched,54.5
-3954,K. Diop,KBA,BAS,008072,"DIOP, KHALIFA",initial-club,99.0
+3954,K. Diop,KBA,BAS,008072,"DIOP, KHALIFA",prior-season,90.0
 3955,P. Galbiati,KBA,BAS,007886,"GALBIATI, PAOLO",prior-season,90.0
 3957,O. Da Silva,BAY,MUN,011244,"DA SILVA, OSCAR",initial-club,99.0
 3960,T. Blatt,HTA,HTA,011193,"BLATT, TAMIR",prior-season,90.0
@@ -131,7 +132,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3976,A. Lakic,PAR,PAR,007736,"LAKIC, ARIJAN",initial-club,99.0
 3977,S. Llull,RMB,MAD,TGB,"LLULL, SERGIO",initial-club,99.0
 3978,E. Ndiaye,RMB,MAD,,,unmatched,80.0
-3979,G. Larentzakis,OLY,OLY,010392,"LARENTZAKIS, GIANNOULIS",initial-club,99.0
+3979,G. Larentzakis,OLY,OLY,010392,"LARENTZAKIS, GIANNOULIS",prior-season,90.0
 3980,A. Balcerowski,BAR,BAR,,,unmatched,55.2
 3981,M. Diouf,VIR,VIR,013374,"DIOUF, MOUHAMET",initial-club,99.0
 3983,D. Davidovac,CZV,RED,007960,"DAVIDOVAC, DEJAN",initial-club,99.0
@@ -158,7 +159,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4014,T. Parker,ASV,ASV,000264,"PARKER, TJ",prior-season,90.0
 4016,N. Akele,MIL,MIL,011816,"AKELE, NICOLA",initial-club,99.0
 4019,P. Kalaitzakis,PAO,PAN,011209,"KALAITZAKIS, PANAGIOTIS",initial-club,99.0
-4023,M. Bosnjakovic,PAR,PAR,012167,"BOSNJAKOVIC, MITAR",initial-club,99.0
+4023,M. Bosnjakovic,PAR,PAR,012167,"BOSNJAKOVIC, MITAR",prior-season,90.0
 4026,B. Yildizli,EFS,IST,004093,"YILDIZLI, BURAKCAN",prior-season,90.0
 4036,M. Eksioglu,FBT,ULK,,,unmatched,57.1
 4038,D. Moraitis,PAO,PAN,,,unmatched,57.1
@@ -178,7 +179,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4159,K. Carrington,HTA,HTA,,,unmatched,58.3
 4164,J. Motley,CZV,RED,011157,"MOTLEY, JOHNATHAN",initial-club,99.0
 4165,T. Ginat,HTA,HTA,010550,"GINAT, TOMER",initial-club,99.0
-4167,I. Wainright,HTA,HTA,,,unmatched,61.5
+4167,I. Wainright,HTA,HTA,013284,"WAINRIGHT, ISH",initial-club,99.0
 4172,D. Itoudis,HTA,HTA,CAG,"ITOUDIS, DIMITRIS",prior-season,90.0
 4174,G. Palatin,HTA,HTA,013283,"PALATIN, GUY",initial-club,99.0
 4175,O. Blayzer,HTA,HTA,009877,"BLAYZER, OZ",initial-club,99.0
@@ -215,7 +216,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 7194,C. Okeke,RMB,MAD,014006,"OKEKE, CHUMA",initial-club,99.0
 7197,O. Brissett,MTA,TEL,014127,"BRISSETT, O'SHAE J",initial-club,99.0
 7201,D. Bacon,DUB,DUB,011286,"BACON, DWAYNE",initial-club,99.0
-7202,J. Robinson,BAR,BAR,014008,"ROBINSON, JUSTIN",initial-open,93.0
+7202,J. Robinson,BAR,BAR,014008,"ROBINSON, JUSTIN",prior-season,90.0
 7203,M. Norris,BAY,MUN,014134,"NORRIS, MILES",initial-club,99.0
 7204,T. Leaf,MTA,TEL,014012,"LEAF, TJ",initial-club,99.0
 7209,L. Stevens,PAR,PAR,014009,"STEVENS, LAMAR",initial-club,99.0
@@ -234,20 +235,20 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 7228,K. Prepelic,DUB,DUB,002661,"PREPELIC, KLEMEN",initial-club,99.0
 7229,M. Faye,PBB,PRS,012403,"FAYE, MOUHAMED",initial-club,99.0
 7230,A. Abass,DUB,DUB,003527,"ABASS, AWUDU",initial-club,99.0
-7231,B. Dessert,EFS,IST,010318,"DESSERT, BRICE",initial-club,99.0
+7231,B. Dessert,EFS,IST,010318,"DESSERT, BRICE",prior-season,90.0
 7232,B. Massa,ASV,ASV,012618,"MASSA, BODIAN",initial-club,99.0
 7234,Y. Sima,VBC,PAM,005596,"SIMA, YANKUBA",initial-club,99.0
 7235,X. Pascual,DUB,DUB,KOW,"PASCUAL, XAVI",prior-season,90.0
 7237,N. Reuvers,VBC,PAM,012738,"REUVERS, NATHAN",initial-club,99.0
 7238,R. Kurucs,KBA,BAS,005713,"KURUCS, RODIONS",initial-club,99.0
-7239,I. Almansa,RMB,MAD,010105,"ALMANSA, IZAN",initial-club,99.0
+7239,I. Almansa,RMB,MAD,010105,"ALMANSA, IZAN",prior-season,90.0
 7241,G. Lavy,MTA,TEL,,,unmatched,71.4
-7243,N. Sestina,ASV,ASV,011980,"SESTINA, NATHAN",initial-open,93.0
+7243,N. Sestina,ASV,ASV,011980,"SESTINA, NATHAN",prior-season,90.0
 7245,D. Mutaf,EFS,IST,008176,"MUTAF, DAVID",initial-club,99.0
 7246,S. Miljenovic,CZV,RED,014094,"MILJENOVIC, STEFAN",initial-club,99.0
 7248,N. Dangubic,DUB,DUB,005942,"DANGUBIC, NEMANJA",initial-club,99.0
 7250,I. Kouzeloglou,PAO,PAN,004451,"KOUZELOGLOU, IOANNIS",initial-club,99.0
-7254,I. Segev,HTA,HTA,004161,"SEGEV, ITAY",initial-club,99.0
+7254,I. Segev,HTA,HTA,004161,"SEGEV, ITAY",prior-season,90.0
 7255,O. Netzipoglou,OLY,OLY,014122,"NETZIPOGLOU, OMIROS",initial-club,99.0
 7258,D. Russell,EFS,IST,013943,"RUSSELL, DARON",initial-club,99.0
 7268,R. Cole,MIL,MIL,013929,"COLE, RJ",initial-club,99.0
@@ -287,7 +288,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 11489,J. Burnell,MIL,MIL,014782,"BURNELL, JASON",initial-club,99.0
 11490,G. Mathews,MIL,MIL,014783,"MATHEWS, GARRISON",initial-club,99.0
 11491,D. Dejulius,BJK,BES,013250,"DEJULIUS, DAVID",subset,95.0
-11492,J. Nowell,BJK,BES,,,unmatched,60.9
+11492,J. Nowell,BJK,BES,014786,"NOWELL, JAYLEN",initial-club,99.0
 11493,M. Sissoko,BJK,BES,,,unmatched,47.6
 11494,P. Baldwin Jr,CZV,RED,014728,"BALDWIN, PATRICK",initial-club,99.0
 11495,N. Djurisic,CZV,RED,010262,"DJURISIC, NIKOLA",subset,95.0
@@ -296,15 +297,15 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 11498,D. Mintz,DUB,DUB,014731,"MINTZ, DAVION",initial-club,99.0
 11499,T. Evbuomwan,BAR,BAR,,,unmatched,52.2
 11500,S. Umude,BAR,BAR,,,unmatched,44.4
-11501,T. Martin,BAR,BAR,,,unmatched,57.1
+11501,T. Martin,BAR,BAR,,,unmatched,52.6
 11502,O. Nkamboua,BAR,BAR,,,unmatched,50.0
 11503,M. Beauchamp,BAY,MUN,014732,"BEAUCHAMP, MARJON",initial-club,99.0
 11504,J. Thiemann,BAY,MUN,003958,"THIEMANN, JOHANNES",initial-club,99.0
 11505,J. Juzang,FBT,ULK,014733,"JUZANG, JOHNNY",initial-club,99.0
 11506,I. Sargiunas,FBT,ULK,006896,"SARGIUNAS, IGNAS",initial-club,99.0
-11507,A. Coffey,HTA,HTA,,,unmatched,45.5
+11507,A. Coffey,HTA,HTA,,,unmatched,44.4
 11508,J. Toppin,HTA,HTA,,,unmatched,50.0
-11509,E. German,HTA,HTA,,,unmatched,55.6
+11509,E. German,HTA,HTA,,,unmatched,50.0
 11510,F. Bourdillon,HTA,HTA,,,unmatched,56.0
 11511,C. Duarte,KBA,BAS,014735,"DUARTE, CHRIS",initial-club,99.0
 11512,A. Lawson,KBA,BAS,014734,"LAWSON, A.J.",initial-club,99.0
@@ -313,10 +314,10 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 11515,T. Waters,ASV,ASV,,,unmatched,63.6
 11516,J. Crowder,ASV,ASV,,,unmatched,62.5
 11517,T. Washington,ASV,ASV,,,unmatched,78.6
-11518,M. Dossou-yovo,ASV,ASV,,,unmatched,48.5
+11518,M. Dossou-yovo,ASV,ASV,,,unmatched,48.3
 11519,H. Besson,ASV,ASV,,,unmatched,55.6
 11520,Y. Pons,ASV,ASV,,,unmatched,52.6
-11521,M. Fodzo Dada,ASV,ASV,,,unmatched,47.6
+11521,M. Fodzo Dada,ASV,ASV,,,unmatched,44.4
 11522,K. Wallace,MTA,TEL,015085,"WALLACE, KEATON",initial-club,99.0
 11523,S. Hunter,MTA,TEL,,,unmatched,50.0
 11524,N. Plotas,OLY,OLY,,,unmatched,50.0
@@ -345,4 +346,4 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 11547,W. Moore Jr,VIR,VIR,014737,"MOORE, WENDELL",initial-club,99.0
 11548,T. Baldasso,VIR,VIR,006707,"BALDASSO, TOMMASO",initial-club,99.0
 11549,J. Valanciunas,ZAL,ZAL,,,unmatched,50.0
-11558,J. Minaya,BAR,BAR,,,unmatched,47.1
+11558,J. Minaya,BAR,BAR,,,unmatched,44.4

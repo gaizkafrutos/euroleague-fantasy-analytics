@@ -1,6 +1,186 @@
 [
  {
   "person": {
+   "code": "012453",
+   "name": "DANILOVIC, UROS",
+   "alias": "UROS, DANILOVIC",
+   "aliasRaw": "UROS, DANILOVIC",
+   "passportName": "UROS",
+   "passportSurname": "DANILOVIC",
+   "jerseyName": "Danilovic",
+   "abbreviatedName": null,
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 203,
+   "weight": 80,
+   "birthDate": "2007-09-15T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-16T09:01:38.433",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "44",
+  "dorsalRaw": "44",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "PARTIZAN MOZZART BET",
+  "externalId": 56722,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "013284",
+   "name": "WAINRIGHT, ISH",
+   "alias": "WAINRIGHT, ISHMAIL CARZELL",
+   "aliasRaw": "WAINRIGHT, ISHMAIL CARZELL",
+   "passportName": "ISHMAIL CARZELL",
+   "passportSurname": "WAINRIGHT",
+   "jerseyName": "WAINRIGHT",
+   "abbreviatedName": "",
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 196,
+   "weight": 111,
+   "birthDate": "1994-09-12T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-16T06:27:07.576",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "24",
+  "dorsalRaw": "24",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "HAPOEL IBI TEL AVIV",
+  "externalId": 56717,
+  "images": {},
+  "club": {
+   "code": "HTA",
+   "name": "Hapoel IBI Tel Aviv",
+   "abbreviatedName": "Hapoel TLV",
+   "editorialName": "Hapoel",
+   "tvCode": "HTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "014786",
+   "name": "NOWELL, JAYLEN",
+   "alias": "NOWELL, JAYLEN",
+   "aliasRaw": "NOWELL, JAYLEN",
+   "passportName": "JAYLEN CLINTON ANDREW",
+   "passportSurname": "NOWELL",
+   "jerseyName": "NOWELL",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 191,
+   "weight": 90,
+   "birthDate": "1999-07-09T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-16T05:55:48.244",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "24",
+  "dorsalRaw": "24",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "GIGANTES DE CAROLINA",
+  "externalId": 56716,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "014169",
    "name": "LEN, ALEX",
    "alias": "LEN, ALEX",
@@ -398,7 +578,10 @@
   "positionName": "Guard",
   "lastTeam": "OLYMPIACOS",
   "externalId": 56695,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -458,7 +641,10 @@
   "positionName": "Center",
   "lastTeam": "--",
   "externalId": 56677,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7f1ce27-dd93-4e42-870e-005f5cb1bcb0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7f1ce27-dd93-4e42-870e-005f5cb1bcb0.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -518,7 +704,10 @@
   "positionName": "Guard",
   "lastTeam": "VALENCIA",
   "externalId": 56676,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -578,7 +767,10 @@
   "positionName": "Center",
   "lastTeam": "VAQUEROS DE BAYAMON",
   "externalId": 56528,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/decefec7-7f25-40ea-bc54-574ea17bcbe0.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/decefec7-7f25-40ea-bc54-574ea17bcbe0.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -638,7 +830,10 @@
   "positionName": "Guard",
   "lastTeam": "REAL MADRID",
   "externalId": 56527,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/72e52546-ecdf-47ba-8e79-378b82b65d18.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/72e52546-ecdf-47ba-8e79-378b82b65d18.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -698,7 +893,10 @@
   "positionName": "Forward",
   "lastTeam": "FENERBAHCE TARFIN ISTANBUL",
   "externalId": 56526,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -758,7 +956,10 @@
   "positionName": "Forward",
   "lastTeam": "VALENCIA BASKET",
   "externalId": 56525,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eca8b0a9-a9dc-46b7-beb2-3193f2c1f690.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eca8b0a9-a9dc-46b7-beb2-3193f2c1f690.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -818,7 +1019,10 @@
   "positionName": "Forward",
   "lastTeam": "KOSNER BASKONIA VITORIA-GASTEIZ",
   "externalId": 56524,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d035eb31-8270-43df-9783-1e897ac93c5a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d035eb31-8270-43df-9783-1e897ac93c5a.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -878,7 +1082,10 @@
   "positionName": "Forward",
   "lastTeam": "BOSTON CELTICS",
   "externalId": 56523,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdac60fb-e653-4135-b2e9-52b8e96e9a82.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdac60fb-e653-4135-b2e9-52b8e96e9a82.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -940,7 +1147,10 @@
   "positionName": "Guard",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 56522,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -1000,7 +1210,10 @@
   "positionName": "Forward",
   "lastTeam": "AS MONACO BASKET",
   "externalId": 56521,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a637e8aa-f631-445b-86ed-3b35a556c867.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a637e8aa-f631-445b-86ed-3b35a556c867.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -1060,7 +1273,10 @@
   "positionName": "Guard",
   "lastTeam": "OLYMPIACOS BC",
   "externalId": 56520,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/821535cc-04f7-4f35-9724-2024d5f3c831.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/821535cc-04f7-4f35-9724-2024d5f3c831.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -1180,7 +1396,10 @@
   "positionName": "Forward",
   "lastTeam": "ASVEL",
   "externalId": 56518,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -1240,7 +1459,10 @@
   "positionName": "Guard",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 56517,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -1420,7 +1642,10 @@
   "positionName": "Guard",
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 56514,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/b81636a2-8ff0-4063-89ba-2392813337c5.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/b81636a2-8ff0-4063-89ba-2392813337c5.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -1480,7 +1705,10 @@
   "positionName": "Center",
   "lastTeam": "BESIKTAS GAIN ISTANBUL",
   "externalId": 56513,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7f9ef94-55fe-45de-a2ea-cdf851d3fb7b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7f9ef94-55fe-45de-a2ea-cdf851d3fb7b.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -1540,7 +1768,10 @@
   "positionName": "Forward",
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 56512,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/331f05d2-d5d8-4bd4-b95a-b3d2d74ac6a7.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/331f05d2-d5d8-4bd4-b95a-b3d2d74ac6a7.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -2680,7 +2911,10 @@
   "positionName": "Center",
   "lastTeam": "CLEVELAND CAVALIERS",
   "externalId": 55859,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0e0e6258-b2cc-4e28-b9f8-2311d18f1aaa.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0e0e6258-b2cc-4e28-b9f8-2311d18f1aaa.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -3040,7 +3274,10 @@
   "positionName": "Forward",
   "lastTeam": "OLYMPIACOS",
   "externalId": 55853,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c96fd3a3-635b-46b9-9a3a-aa416da84968.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c96fd3a3-635b-46b9-9a3a-aa416da84968.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -6404,7 +6641,10 @@
   "positionName": "Guard",
   "lastTeam": "BC RYTAS",
   "externalId": 55691,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bcfd60fd-93d3-4905-8de0-b4b4fe61e3d7.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bcfd60fd-93d3-4905-8de0-b4b4fe61e3d7.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -6464,7 +6704,10 @@
   "positionName": "Forward",
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 55690,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4adacf26-ab9b-4135-b5e7-fa796201e667.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4adacf26-ab9b-4135-b5e7-fa796201e667.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -6524,7 +6767,10 @@
   "positionName": "Forward",
   "lastTeam": "FC BARCELONA",
   "externalId": 55689,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5f169708-cc91-4700-9dc6-2e4b22c90b59.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5f169708-cc91-4700-9dc6-2e4b22c90b59.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -6584,7 +6830,10 @@
   "positionName": "Forward",
   "lastTeam": "VALENCIA BASKET",
   "externalId": 55688,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/527a3b93-eaa7-42ab-9590-3252f456053b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/527a3b93-eaa7-42ab-9590-3252f456053b.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -6644,7 +6893,10 @@
   "positionName": "Guard",
   "lastTeam": "KOSNER BASKONIA VITORIA-GASTEIZ",
   "externalId": 55687,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/09ca03e5-06f4-4d5d-acad-20fe31330c78.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/09ca03e5-06f4-4d5d-acad-20fe31330c78.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -6704,7 +6956,10 @@
   "positionName": "Forward",
   "lastTeam": "ZENIT BC",
   "externalId": 55686,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -6764,7 +7019,10 @@
   "positionName": "Center",
   "lastTeam": "UNICS KAZAN",
   "externalId": 55685,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3c7e7302-9d1a-44f2-bbe2-7884e4d5e4ef.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3c7e7302-9d1a-44f2-bbe2-7884e4d5e4ef.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -7424,7 +7682,10 @@
   "positionName": "Center",
   "lastTeam": "FC BARCELONA",
   "externalId": 55674,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e5269ade-cab3-4ddc-84df-0d58fb9adb9b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e5269ade-cab3-4ddc-84df-0d58fb9adb9b.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -7484,7 +7745,10 @@
   "positionName": "Center",
   "lastTeam": "SASKI BASCONIA",
   "externalId": 55673,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/701d7d33-8770-49b9-9a81-210629ef427a.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/701d7d33-8770-49b9-9a81-210629ef427a.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -7544,7 +7808,10 @@
   "positionName": "Guard",
   "lastTeam": "WURZBURG BASKETS",
   "externalId": 55672,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/83813e2e-120b-48e7-b65c-fd725e572040.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/83813e2e-120b-48e7-b65c-fd725e572040.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -8506,7 +8773,10 @@
   "positionName": "Forward",
   "lastTeam": "OLYMPIACOS",
   "externalId": 55216,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eff31705-1ec2-40d5-aaf6-3c83f603b456.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eff31705-1ec2-40d5-aaf6-3c83f603b456.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -8516,126 +8786,6 @@
    "isVirtual": false,
    "images": {
     "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "010392",
-   "name": "LARENTZAKIS, GIANNOULIS",
-   "alias": "LARENTZAKIS, GIANNOULIS",
-   "aliasRaw": "LARENTZAKIS, GIANNOULIS",
-   "passportName": "GIANNOULIS",
-   "passportSurname": "LARENTZAKIS",
-   "jerseyName": "LARENTZAKIS",
-   "abbreviatedName": "Larentzakis, G.",
-   "country": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "height": 196,
-   "weight": 88,
-   "birthDate": "1993-09-22T00:00:00",
-   "birthCountry": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "larentzakis_5/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-28T13:38:50.547",
-  "endDate": "2026-09-10T12:35:13.526",
-  "order": 0,
-  "dorsal": "5",
-  "dorsalRaw": "5",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 55215,
-  "images": {},
-  "club": {
-   "code": "OLY",
-   "name": "Olympiacos Piraeus",
-   "abbreviatedName": "Olympiacos",
-   "editorialName": "Olympiacos",
-   "tvCode": "OLY",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "003983",
-   "name": "AVRAMOVIC, ALEKSA",
-   "alias": "AVRAMOVIC, A.",
-   "aliasRaw": "AVRAMOVIC, A.",
-   "passportName": "ALEKSA",
-   "passportSurname": "AVRAMOVIC",
-   "jerseyName": "AVRAMOVIC",
-   "abbreviatedName": "Avramovic, A.",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 193,
-   "weight": 87,
-   "birthDate": "1994-10-25T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "aleksaavramovic",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:28:42.527",
-  "endDate": "2026-08-31T10:59:56.148",
-  "order": 0,
-  "dorsal": "4",
-  "dorsalRaw": "4",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54941,
-  "images": {},
-  "club": {
-   "code": "DUB",
-   "name": "Dubai Basketball",
-   "abbreviatedName": "Dubai",
-   "editorialName": "Dubai",
-   "tvCode": "DUB",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
    }
   },
   "season": {
@@ -8806,66 +8956,6 @@
   "positionName": "Forward",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54938,
-  "images": {},
-  "club": {
-   "code": "ZAL",
-   "name": "Zalgiris Kaunas",
-   "abbreviatedName": "Zalgiris",
-   "editorialName": "Zalgiris",
-   "tvCode": "ZAL",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "009299",
-   "name": "RUBSTAVICIUS, MANTAS",
-   "alias": "RUBSTAVICIUS, MANTAS",
-   "aliasRaw": "RUBSTAVICIUS, MANTAS",
-   "passportName": "MANTAS",
-   "passportSurname": "RUBSTAVICIUS",
-   "jerseyName": "RUBSTAVICIUS",
-   "abbreviatedName": "Rubstavicius, M.",
-   "country": {
-    "code": "LTU",
-    "name": "Lithuania"
-   },
-   "height": 198,
-   "weight": 84,
-   "birthDate": "2002-05-06T00:00:00",
-   "birthCountry": {
-    "code": "LTU",
-    "name": "Lithuania"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:26:01.584",
-  "endDate": "2026-08-31T12:24:42.589",
-  "order": 0,
-  "dorsal": "17",
-  "dorsalRaw": "17",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54937,
   "images": {},
   "club": {
    "code": "ZAL",
@@ -9069,66 +9159,6 @@
  },
  {
   "person": {
-   "code": "007975",
-   "name": "FRANCISCO, SYLVAIN",
-   "alias": "FRANCISCO, SYLVAIN",
-   "aliasRaw": "FRANCISCO, SYLVAIN",
-   "passportName": "SYLVAIN",
-   "passportSurname": "FRANCISCO",
-   "jerseyName": "FRANCISCO",
-   "abbreviatedName": "Francisco, S.",
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 185,
-   "weight": 79,
-   "birthDate": "1997-10-10T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:26:00.738",
-  "endDate": "2026-08-31T12:24:42.51",
-  "order": 0,
-  "dorsal": "3",
-  "dorsalRaw": "3",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54933,
-  "images": {},
-  "club": {
-   "code": "ZAL",
-   "name": "Zalgiris Kaunas",
-   "abbreviatedName": "Zalgiris",
-   "editorialName": "Zalgiris",
-   "tvCode": "ZAL",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "007982",
    "name": "WILLIAMS-GOSS, NIGEL",
    "alias": "WILLIAMS-GOSS, NIGEL",
@@ -9176,66 +9206,6 @@
    "isVirtual": false,
    "images": {
     "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "005422",
-   "name": "JALLOW, KARIM",
-   "alias": "Jallow",
-   "aliasRaw": "Jallow",
-   "passportName": "KARIM JOHANNES",
-   "passportSurname": "JALLOW",
-   "jerseyName": "Jallow",
-   "abbreviatedName": "Jallow, K.",
-   "country": {
-    "code": "GER",
-    "name": "Germany"
-   },
-   "height": 198,
-   "weight": 90,
-   "birthDate": "1997-04-13T00:00:00",
-   "birthCountry": {
-    "code": "GER",
-    "name": "Germany"
-   },
-   "twitterAccount": "jallow88",
-   "instagramAccount": "karim_jallow_",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:22:15.488",
-  "endDate": "2026-08-31T12:23:34.094",
-  "order": 0,
-  "dorsal": "34",
-  "dorsalRaw": "34",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54931,
-  "images": {},
-  "club": {
-   "code": "VIR",
-   "name": "Virtus Bologna",
-   "abbreviatedName": "Virtus Bologna",
-   "editorialName": "Virtus",
-   "tvCode": "VIR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
    }
   },
   "season": {
@@ -9369,66 +9339,6 @@
  },
  {
   "person": {
-   "code": "007705",
-   "name": "CANKA, ABRAMO",
-   "alias": "CANKA, ABRAMO",
-   "aliasRaw": "CANKA, ABRAMO",
-   "passportName": "ABRAMO",
-   "passportSurname": "CANKA",
-   "jerseyName": "CANKA",
-   "abbreviatedName": "Canka, A.",
-   "country": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "height": 196,
-   "weight": 80,
-   "birthDate": "2002-03-18T00:00:00",
-   "birthCountry": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "abramocanka",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:22:14.81",
-  "endDate": "2026-08-31T12:23:34",
-  "order": 0,
-  "dorsal": "22",
-  "dorsalRaw": "22",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54928,
-  "images": {},
-  "club": {
-   "code": "VIR",
-   "name": "Virtus Bologna",
-   "abbreviatedName": "Virtus Bologna",
-   "editorialName": "Virtus",
-   "tvCode": "VIR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "014005",
    "name": "ALSTON JR. , DERRICK",
    "alias": "ALSTON JR. , DERRICK SAMUEL",
@@ -9466,186 +9376,6 @@
   "positionName": "Forward",
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 54927,
-  "images": {},
-  "club": {
-   "code": "VIR",
-   "name": "Virtus Bologna",
-   "abbreviatedName": "Virtus Bologna",
-   "editorialName": "Virtus",
-   "tvCode": "VIR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011051",
-   "name": "SMAILAGIC, ALEN",
-   "alias": "SMAILAGIC, ALEN",
-   "aliasRaw": "SMAILAGIC, ALEN",
-   "passportName": "ALEN",
-   "passportSurname": "SMAILAGIC",
-   "jerseyName": "SMAILAGIC",
-   "abbreviatedName": "Smailagic, A.",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 206,
-   "weight": 105,
-   "birthDate": "2000-08-18T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "smajli_9",
-   "facebookAccount": "Alen-Smailagic-337797657129404",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:22:14.329",
-  "endDate": "2026-08-31T12:23:33.921",
-  "order": 0,
-  "dorsal": "9",
-  "dorsalRaw": "9",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54926,
-  "images": {},
-  "club": {
-   "code": "VIR",
-   "name": "Virtus Bologna",
-   "abbreviatedName": "Virtus Bologna",
-   "editorialName": "Virtus",
-   "tvCode": "VIR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "012687",
-   "name": "NIANG, SALIOU",
-   "alias": "NIANG, SALIOU",
-   "aliasRaw": "NIANG, SALIOU",
-   "passportName": "SALIOU",
-   "passportSurname": "NIANG",
-   "jerseyName": "NIANG",
-   "abbreviatedName": "",
-   "country": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "height": 199,
-   "weight": 86,
-   "birthDate": "2004-05-14T00:00:00",
-   "birthCountry": {
-    "code": "SEN",
-    "name": "Senegal"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:22:14.097",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "7",
-  "dorsalRaw": "7",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54925,
-  "images": {},
-  "club": {
-   "code": "VIR",
-   "name": "Virtus Bologna",
-   "abbreviatedName": "Virtus Bologna",
-   "editorialName": "Virtus",
-   "tvCode": "VIR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "007947",
-   "name": "VILDOZA, LUCA",
-   "alias": "VILDOZA, LUCA",
-   "aliasRaw": "VILDOZA, LUCA",
-   "passportName": "LUCA",
-   "passportSurname": "VILDOZA",
-   "jerseyName": "VILDOZA",
-   "abbreviatedName": "Vildoza, L.",
-   "country": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "height": 191,
-   "weight": 86,
-   "birthDate": "1995-08-11T00:00:00",
-   "birthCountry": {
-    "code": "ARG",
-    "name": "Argentina"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:22:13.89",
-  "endDate": "2026-08-31T12:23:33.841",
-  "order": 0,
-  "dorsal": "1",
-  "dorsalRaw": "1",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54924,
   "images": {},
   "club": {
    "code": "VIR",
@@ -9729,66 +9459,6 @@
  },
  {
   "person": {
-   "code": "011078",
-   "name": "THOMPSON, DARIUS",
-   "alias": "THOMPSON, DARIUS",
-   "aliasRaw": "THOMPSON, DARIUS",
-   "passportName": "DARIUS JAMAR",
-   "passportSurname": "THOMPSON",
-   "jerseyName": "THOMPSON",
-   "abbreviatedName": "Thompson, D.",
-   "country": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "height": 193,
-   "weight": 93,
-   "birthDate": "1995-05-04T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "dthomp15",
-   "instagramAccount": "dthomp_15",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:20:28.616",
-  "endDate": "2026-09-04T12:15:16.375",
-  "order": 0,
-  "dorsal": "13",
-  "dorsalRaw": "13",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54922,
-  "images": {},
-  "club": {
-   "code": "PAM",
-   "name": "Valencia Basket",
-   "abbreviatedName": "Valencia",
-   "editorialName": "Valencia",
-   "tvCode": "VBC",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "010545",
    "name": "SAKO, NEAL",
    "alias": "SAKO, NEAL",
@@ -9826,246 +9496,6 @@
   "positionName": "Center",
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 54921,
-  "images": {},
-  "club": {
-   "code": "PAM",
-   "name": "Valencia Basket",
-   "abbreviatedName": "Valencia",
-   "editorialName": "Valencia",
-   "tvCode": "VBC",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "010042",
-   "name": "MONTERO, JEAN",
-   "alias": "MONTERO BERROA, JEAN CLAUDIO",
-   "aliasRaw": "MONTERO BERROA, JEAN CLAUDIO",
-   "passportName": "JEAN CLAUDIO",
-   "passportSurname": "MONTERO BERROA",
-   "jerseyName": "MONTERO",
-   "abbreviatedName": "Montero, J.",
-   "country": {
-    "code": "DOM",
-    "name": "Dominican Republic"
-   },
-   "height": 188,
-   "weight": 75,
-   "birthDate": "2003-07-03T00:00:00",
-   "birthCountry": {
-    "code": "DOM",
-    "name": "Dominican Republic"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:20:28.115",
-  "endDate": "2026-09-10T13:41:33.163",
-  "order": 0,
-  "dorsal": "8",
-  "dorsalRaw": "8",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54920,
-  "images": {},
-  "club": {
-   "code": "PAM",
-   "name": "Valencia Basket",
-   "abbreviatedName": "Valencia",
-   "editorialName": "Valencia",
-   "tvCode": "VBC",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "005356",
-   "name": "LOPEZ-AROSTEGUI, XABI",
-   "alias": "LOPEZ, XABI",
-   "aliasRaw": "LOPEZ, XABI",
-   "passportName": "XABIER",
-   "passportSurname": "LOPEZ-AROSTEGUI",
-   "jerseyName": "LOPEZ-AROSTEGUI",
-   "abbreviatedName": "Lopez, X.",
-   "country": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "height": 200,
-   "weight": 92,
-   "birthDate": "1997-05-19T00:00:00",
-   "birthCountry": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "twitterAccount": "xabi6lopez",
-   "instagramAccount": "xabi6lopez",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:20:27.909",
-  "endDate": "2026-09-04T12:15:16.272",
-  "order": 0,
-  "dorsal": "6",
-  "dorsalRaw": "6",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54919,
-  "images": {},
-  "club": {
-   "code": "PAM",
-   "name": "Valencia Basket",
-   "abbreviatedName": "Valencia",
-   "editorialName": "Valencia",
-   "tvCode": "VBC",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "010750",
-   "name": "DE LARREA, SERGIO",
-   "alias": "DE LARREA, SERGIO",
-   "aliasRaw": "DE LARREA, SERGIO",
-   "passportName": "SERGIO",
-   "passportSurname": "DE LARREA",
-   "jerseyName": "De Larrea",
-   "abbreviatedName": "De Larrea, S.",
-   "country": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "height": 198,
-   "weight": 86,
-   "birthDate": "2005-12-04T00:00:00",
-   "birthCountry": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:20:27.684",
-  "endDate": "2026-09-04T12:15:16.178",
-  "order": 0,
-  "dorsal": "5",
-  "dorsalRaw": "5",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54918,
-  "images": {},
-  "club": {
-   "code": "PAM",
-   "name": "Valencia Basket",
-   "abbreviatedName": "Valencia",
-   "editorialName": "Valencia",
-   "tvCode": "VBC",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "010393",
-   "name": "PRADILLA, JAIME",
-   "alias": "PRADILLA, JAIME",
-   "aliasRaw": "PRADILLA, JAIME",
-   "passportName": "JAIME",
-   "passportSurname": "PRADILLA GAYAN",
-   "jerseyName": "PRADILLA",
-   "abbreviatedName": "Pradilla, J.",
-   "country": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "height": 205,
-   "weight": 104,
-   "birthDate": "2001-01-03T00:00:00",
-   "birthCountry": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "twitterAccount": "JpradillaG",
-   "instagramAccount": "jaimepradilla",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:20:27.394",
-  "endDate": "2026-09-10T13:41:33.052",
-  "order": 0,
-  "dorsal": "4",
-  "dorsalRaw": "4",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54917,
   "images": {},
   "club": {
    "code": "PAM",
@@ -10209,126 +9639,6 @@
  },
  {
   "person": {
-   "code": "007527",
-   "name": "BADIO, BRANCOU",
-   "alias": "BADIO, BRANCOU",
-   "aliasRaw": "BADIO, BRANCOU",
-   "passportName": "EL HADJI OMAR BRANCOU",
-   "passportSurname": "BADIO",
-   "jerseyName": "BRANCOU",
-   "abbreviatedName": "Badio, B.",
-   "country": {
-    "code": "SEN",
-    "name": "Senegal"
-   },
-   "height": 191,
-   "weight": 83,
-   "birthDate": "1999-02-17T00:00:00",
-   "birthCountry": {
-    "code": "SEN",
-    "name": "Senegal"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:20:26.704",
-  "endDate": "2026-09-10T13:41:32.944",
-  "order": 0,
-  "dorsal": "0",
-  "dorsalRaw": "0",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54914,
-  "images": {},
-  "club": {
-   "code": "PAM",
-   "name": "Valencia Basket",
-   "abbreviatedName": "Valencia",
-   "editorialName": "Valencia",
-   "tvCode": "VBC",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014169",
-   "name": "LEN, ALEX",
-   "alias": "LEN, ALEX",
-   "aliasRaw": "LEN, ALEX",
-   "passportName": "OLEKSII",
-   "passportSurname": "LEN",
-   "jerseyName": "LEN",
-   "abbreviatedName": null,
-   "country": {
-    "code": "UKR",
-    "name": "Ukraine"
-   },
-   "height": 213,
-   "weight": 120,
-   "birthDate": "1993-06-16T00:00:00",
-   "birthCountry": {
-    "code": "UKR",
-    "name": "Ukraine"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:18:28.93",
-  "endDate": "2026-09-01T12:16:07.872",
-  "order": 0,
-  "dorsal": "25",
-  "dorsalRaw": "25",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54913,
-  "images": {},
-  "club": {
-   "code": "MAD",
-   "name": "Real Madrid",
-   "abbreviatedName": "Real Madrid",
-   "editorialName": "Real",
-   "tvCode": "RMB",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "011247",
    "name": "FELIZ, ANDRES",
    "alias": "FELIZ, ANDRES",
@@ -10366,7 +9676,10 @@
   "positionName": "Guard",
   "lastTeam": "REAL MADRID",
   "externalId": 54912,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/875e6ce3-eb97-4f5e-8700-5913ccf4d1b4.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/875e6ce3-eb97-4f5e-8700-5913ccf4d1b4.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10426,7 +9739,10 @@
   "positionName": "Center",
   "lastTeam": "REAL MADRID",
   "externalId": 54911,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10486,7 +9802,10 @@
   "positionName": "Center",
   "lastTeam": "",
   "externalId": 54910,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f368dd07-526a-4d53-ae68-98e67bf84ec6.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f368dd07-526a-4d53-ae68-98e67bf84ec6.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10546,67 +9865,10 @@
   "positionName": "Forward",
   "lastTeam": "REAL MADRID",
   "externalId": 54909,
-  "images": {},
-  "club": {
-   "code": "MAD",
-   "name": "Real Madrid",
-   "abbreviatedName": "Real Madrid",
-   "editorialName": "Real",
-   "tvCode": "RMB",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
-   }
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c2e5c3f7-97b4-4b9a-98f6-abf2da5b7fad.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c2e5c3f7-97b4-4b9a-98f6-abf2da5b7fad.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "010105",
-   "name": "ALMANSA, IZAN",
-   "alias": "ALMANSA, IZAN",
-   "aliasRaw": "ALMANSA, IZAN",
-   "passportName": "IZAN",
-   "passportSurname": "ALMANSA",
-   "jerseyName": "ALMANSA",
-   "abbreviatedName": "Almansa, I.",
-   "country": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "height": 208,
-   "weight": 98,
-   "birthDate": "2005-06-07T00:00:00",
-   "birthCountry": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:18:27.714",
-  "endDate": "2026-09-01T12:15:29.43",
-  "order": 0,
-  "dorsal": "13",
-  "dorsalRaw": "13",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "REAL MADRID",
-  "externalId": 54908,
-  "images": {},
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10666,67 +9928,10 @@
   "positionName": "Guard",
   "lastTeam": "REAL MADRID",
   "externalId": 54907,
-  "images": {},
-  "club": {
-   "code": "MAD",
-   "name": "Real Madrid",
-   "abbreviatedName": "Real Madrid",
-   "editorialName": "Real",
-   "tvCode": "RMB",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
-   }
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/026014da-6397-4bd7-8ff7-5498c75854c1.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/026014da-6397-4bd7-8ff7-5498c75854c1.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "003108",
-   "name": "HEZONJA, MARIO",
-   "alias": "Hezonja",
-   "aliasRaw": "Hezonja",
-   "passportName": "MARIO",
-   "passportSurname": "HEZONJA",
-   "jerseyName": "HEZONJA",
-   "abbreviatedName": "Hezonja, M.",
-   "country": {
-    "code": "CRO",
-    "name": "Croatia"
-   },
-   "height": 206,
-   "weight": 110,
-   "birthDate": "1995-02-25T00:00:00",
-   "birthCountry": {
-    "code": "CRO",
-    "name": "Croatia"
-   },
-   "twitterAccount": "mariohezonja",
-   "instagramAccount": "supermariohezonja/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:18:27.233",
-  "endDate": "2026-09-04T12:50:40.646",
-  "order": 0,
-  "dorsal": "11",
-  "dorsalRaw": "11",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54906,
-  "images": {},
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10786,7 +9991,10 @@
   "positionName": "Forward",
   "lastTeam": "REAL MADRID",
   "externalId": 54905,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d76135f4-7f2f-44fa-b824-cf21392822be.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d76135f4-7f2f-44fa-b824-cf21392822be.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10846,7 +10054,10 @@
   "positionName": "Center",
   "lastTeam": "REAL MADRID",
   "externalId": 54904,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10906,7 +10117,10 @@
   "positionName": "Guard",
   "lastTeam": "REAL MADRID",
   "externalId": 54903,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/781f57a2-1686-45ef-bf10-1229bea609c7.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/781f57a2-1686-45ef-bf10-1229bea609c7.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10966,7 +10180,10 @@
   "positionName": "Forward",
   "lastTeam": "REAL MADRID",
   "externalId": 54902,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5110fa5e-f36a-411c-86ea-09aec7f4ed8e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5110fa5e-f36a-411c-86ea-09aec7f4ed8e.png"
+  },
   "club": {
    "code": "MAD",
    "name": "Real Madrid",
@@ -10976,126 +10193,6 @@
    "isVirtual": false,
    "images": {
     "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "013667",
-   "name": "FERNANDO, BRUNO",
-   "alias": "FERNANDO, BRUNO",
-   "aliasRaw": "FERNANDO, BRUNO",
-   "passportName": "BRUNO AFONSO DAVID",
-   "passportSurname": "FERNANDO",
-   "jerseyName": "FERNANDO",
-   "abbreviatedName": "",
-   "country": {
-    "code": "ANG",
-    "name": "Angola"
-   },
-   "height": 208,
-   "weight": 106,
-   "birthDate": "1998-08-15T00:00:00",
-   "birthCountry": {
-    "code": "ANG",
-    "name": "Angola"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:39.885",
-  "endDate": "2026-09-04T12:48:54.13",
-  "order": 0,
-  "dorsal": "24",
-  "dorsalRaw": "24",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54901,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "012745",
-   "name": "PARKER, JABARI",
-   "alias": "PARKER, JABARI",
-   "aliasRaw": "PARKER, JABARI",
-   "passportName": "JABARI ALI",
-   "passportSurname": "PARKER",
-   "jerseyName": "PARKER",
-   "abbreviatedName": "",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 203,
-   "weight": 113,
-   "birthDate": "1995-03-15T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:12:39.655",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "22",
-  "dorsalRaw": "22",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54900,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
    }
   },
   "season": {
@@ -11169,306 +10266,6 @@
  },
  {
   "person": {
-   "code": "006760",
-   "name": "BONGA, ISAAC",
-   "alias": "BONGA, ISAAC",
-   "aliasRaw": "BONGA, ISAAC",
-   "passportName": "ISAAC EVOLUE ETUE BOFENDA",
-   "passportSurname": "BONGA",
-   "jerseyName": "BONGA",
-   "abbreviatedName": "Bonga, I.",
-   "country": {
-    "code": "GER",
-    "name": "Germany"
-   },
-   "height": 203,
-   "weight": 105,
-   "birthDate": "1999-11-08T00:00:00",
-   "birthCountry": {
-    "code": "GER",
-    "name": "Germany"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:39.22",
-  "endDate": "2026-09-04T12:48:54.033",
-  "order": 0,
-  "dorsal": "17",
-  "dorsalRaw": "17",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54898,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "005683",
-   "name": "RADANOV, ALEKSA",
-   "alias": "ALEKSA RADANOV",
-   "aliasRaw": "ALEKSA RADANOV",
-   "passportName": "ALEKSA",
-   "passportSurname": "RADANOV",
-   "jerseyName": "RADANOV",
-   "abbreviatedName": "Radanov, A.",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 202,
-   "weight": 95,
-   "birthDate": "1998-02-01T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:39.003",
-  "endDate": "2026-09-04T12:48:53.955",
-  "order": 0,
-  "dorsal": "13",
-  "dorsalRaw": "13",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54897,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "012720",
-   "name": "BROWN, STERLING",
-   "alias": "BROWN, STERLING",
-   "aliasRaw": "BROWN, STERLING",
-   "passportName": "STERLING DAMARCO",
-   "passportSurname": "BROWN",
-   "jerseyName": "BROWN",
-   "abbreviatedName": "",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 198,
-   "weight": 102,
-   "birthDate": "1995-02-10T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:38.796",
-  "endDate": "2026-09-07T12:02:57.116",
-  "order": 0,
-  "dorsal": "12",
-  "dorsalRaw": "12",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54896,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "008232",
-   "name": "POKUSEVSKI, ALEKSEJ",
-   "alias": "POKUSEVSKI, ALEKSEJ",
-   "aliasRaw": "POKUSEVSKI, ALEKSEJ",
-   "passportName": "ALEKSEJ",
-   "passportSurname": "POKUSEVSKI",
-   "jerseyName": "POKUSEVSKI",
-   "abbreviatedName": "Pokusevski, A.",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 213,
-   "weight": 99,
-   "birthDate": "2001-12-26T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:38.585",
-  "endDate": "2026-09-04T12:48:53.862",
-  "order": 0,
-  "dorsal": "11",
-  "dorsalRaw": "11",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54895,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "012167",
-   "name": "BOSNJAKOVIC, MITAR",
-   "alias": "BOSNJAKOVIC, MITAR",
-   "aliasRaw": "BOSNJAKOVIC, MITAR",
-   "passportName": "MITAR",
-   "passportSurname": "BOSNJAKOVIC",
-   "jerseyName": "BOSNJAKOVIC",
-   "abbreviatedName": "",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 196,
-   "weight": 92,
-   "birthDate": "2006-08-24T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:38.368",
-  "endDate": "2026-09-04T12:48:53.74",
-  "order": 0,
-  "dorsal": "8",
-  "dorsalRaw": "8",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54894,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "007632",
    "name": "NAKIC, MARIO",
    "alias": "NAKIC, MARIO",
@@ -11506,186 +10303,6 @@
   "positionName": "Forward",
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 54893,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "010581",
-   "name": "OSETKOWSKI, DYLAN",
-   "alias": "OSETKOWSKI, DYLAN",
-   "aliasRaw": "OSETKOWSKI, DYLAN",
-   "passportName": "DYLAN",
-   "passportSurname": "OSETKOWSKI",
-   "jerseyName": "OSETKOWSKI",
-   "abbreviatedName": "Osetkowski, D.",
-   "country": {
-    "code": "GER",
-    "name": "Germany"
-   },
-   "height": 206,
-   "weight": 109,
-   "birthDate": "1996-08-08T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "dylanosetkowski/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:37.912",
-  "endDate": "2026-09-04T12:48:53.627",
-  "order": 0,
-  "dorsal": "5",
-  "dorsalRaw": "5",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54892,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "012997",
-   "name": "MUURINEN, MIIKKA",
-   "alias": "MUURINEN, MIIKKA OLIVERI",
-   "aliasRaw": "MUURINEN, MIIKKA OLIVERI",
-   "passportName": "MIIKKA OLIVERI",
-   "passportSurname": "MUURINEN",
-   "jerseyName": "MUURINEN",
-   "abbreviatedName": null,
-   "country": {
-    "code": "FIN",
-    "name": "Finland"
-   },
-   "height": 210,
-   "weight": 92,
-   "birthDate": "2007-03-04T00:00:00",
-   "birthCountry": {
-    "code": "FIN",
-    "name": "Finland"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:12:37.693",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "3",
-  "dorsalRaw": "3",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54891,
-  "images": {},
-  "club": {
-   "code": "PAR",
-   "name": "Partizan Mozzart Bet Belgrade",
-   "abbreviatedName": "Partizan",
-   "editorialName": "Partizan",
-   "tvCode": "PAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014007",
-   "name": "MILTON, SHAKE",
-   "alias": "MILTON, MALIK",
-   "aliasRaw": "MILTON, MALIK",
-   "passportName": "MALIK BENJAMIN",
-   "passportSurname": "MILTON",
-   "jerseyName": "MILTON",
-   "abbreviatedName": null,
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 196,
-   "weight": 93,
-   "birthDate": "1996-09-26T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:12:37.476",
-  "endDate": "2026-09-04T12:48:53.528",
-  "order": 0,
-  "dorsal": "2",
-  "dorsalRaw": "2",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54890,
   "images": {},
   "club": {
    "code": "PAR",
@@ -12129,66 +10746,6 @@
  },
  {
   "person": {
-   "code": "014008",
-   "name": "ROBINSON, JUSTIN",
-   "alias": "ROBINSON, JUSTIN",
-   "aliasRaw": "ROBINSON, JUSTIN",
-   "passportName": "JUSTIN MAURICE",
-   "passportSurname": "ROBINSON",
-   "jerseyName": "ROBINSON",
-   "abbreviatedName": null,
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 185,
-   "weight": 88,
-   "birthDate": "1997-10-12T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:09:56.423",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "5",
-  "dorsalRaw": "5",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54882,
-  "images": {},
-  "club": {
-   "code": "PRS",
-   "name": "Paris Basketball",
-   "abbreviatedName": "Paris",
-   "editorialName": "Paris",
-   "tvCode": "PBB",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "012640",
    "name": "HIFI, NADIR",
    "alias": "HIFI, NADIR",
@@ -12286,128 +10843,6 @@
   "positionName": "Forward",
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 54880,
-  "images": {},
-  "club": {
-   "code": "PAN",
-   "name": "Panathinaikos AKTOR Athens",
-   "abbreviatedName": "Panathinaikos",
-   "editorialName": "Panathinaikos",
-   "tvCode": "PAO",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "002328",
-   "name": "GRIGONIS, MARIUS",
-   "alias": "Grigonis",
-   "aliasRaw": "Grigonis",
-   "passportName": "MARIUS",
-   "passportSurname": "GRIGONIS",
-   "jerseyName": "GRIGONIS",
-   "abbreviatedName": "Grigonis, M.",
-   "country": {
-    "code": "LTU",
-    "name": "Lithuania"
-   },
-   "height": 198,
-   "weight": 93,
-   "birthDate": "1994-04-26T00:00:00",
-   "birthCountry": {
-    "code": "LTU",
-    "name": "Lithuania"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "grigulica/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {
-    "action": "https://media-cdn.incrowdsports.com/ef1ccd89-1bd0-4e98-9a2e-063cbb37966c.png"
-   }
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:07:02.505",
-  "endDate": "2026-08-31T12:21:46.781",
-  "order": 0,
-  "dorsal": "40",
-  "dorsalRaw": "40",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54879,
-  "images": {},
-  "club": {
-   "code": "PAN",
-   "name": "Panathinaikos AKTOR Athens",
-   "abbreviatedName": "Panathinaikos",
-   "editorialName": "Panathinaikos",
-   "tvCode": "PAO",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "004292",
-   "name": "TOLIOPOULOS, VASSILIS",
-   "alias": "Toliopoulos",
-   "aliasRaw": "Toliopoulos",
-   "passportName": "VASILEIOS",
-   "passportSurname": "TOLIOPOULOS",
-   "jerseyName": "TOLIOPOULOS",
-   "abbreviatedName": "Toliopoulos, V.",
-   "country": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "height": 187,
-   "weight": 80,
-   "birthDate": "1996-06-15T00:00:00",
-   "birthCountry": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:07:02.195",
-  "endDate": "2026-09-07T08:19:03.338",
-  "order": 0,
-  "dorsal": "27",
-  "dorsalRaw": "27",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54878,
   "images": {},
   "club": {
    "code": "PAN",
@@ -12671,66 +11106,6 @@
  },
  {
   "person": {
-   "code": "011442",
-   "name": "SAMODUROV, ALEXANDROS",
-   "alias": "SAMODUROV, ALEXANDROS",
-   "aliasRaw": "SAMODUROV, ALEXANDROS",
-   "passportName": "ALEXANDROS",
-   "passportSurname": "SAMONTOUROV",
-   "jerseyName": "SAMODUROV",
-   "abbreviatedName": "",
-   "country": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "height": 210,
-   "weight": 91,
-   "birthDate": "2005-04-20T00:00:00",
-   "birthCountry": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:07:00.913",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "20",
-  "dorsalRaw": "20",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54873,
-  "images": {},
-  "club": {
-   "code": "PAN",
-   "name": "Panathinaikos AKTOR Athens",
-   "abbreviatedName": "Panathinaikos",
-   "editorialName": "Panathinaikos",
-   "tvCode": "PAO",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "011085",
    "name": "ROGKAVOPOULOS, NIKOLAOS",
    "alias": "ROGKAVOPOULOS, NIKOLAOS",
@@ -12851,126 +11226,6 @@
  },
  {
   "person": {
-   "code": "014011",
-   "name": "HOLMES, RICHAUN",
-   "alias": "HOLMES, RICHAUN",
-   "aliasRaw": "HOLMES, RICHAUN",
-   "passportName": "RICHAUN DIANTE",
-   "passportSurname": "HOLMES",
-   "jerseyName": "HOLMES",
-   "abbreviatedName": null,
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 206,
-   "weight": 106,
-   "birthDate": "1993-10-15T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:07:00.18",
-  "endDate": "2026-08-31T12:21:46.698",
-  "order": 0,
-  "dorsal": "8",
-  "dorsalRaw": "8",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54870,
-  "images": {},
-  "club": {
-   "code": "PAN",
-   "name": "Panathinaikos AKTOR Athens",
-   "abbreviatedName": "Panathinaikos",
-   "editorialName": "Panathinaikos",
-   "tvCode": "PAO",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "004088",
-   "name": "OSMAN, CEDI",
-   "alias": "Osman",
-   "aliasRaw": "Osman",
-   "passportName": "CEDI",
-   "passportSurname": "OSMAN",
-   "jerseyName": "OSMAN",
-   "abbreviatedName": "Osman, C.",
-   "country": {
-    "code": "TUR",
-    "name": "Turkiye"
-   },
-   "height": 204,
-   "weight": 104,
-   "birthDate": "1995-04-08T00:00:00",
-   "birthCountry": {
-    "code": "MKD",
-    "name": "North Macedonia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:06:59.951",
-  "endDate": "2026-09-07T08:19:03.234",
-  "order": 0,
-  "dorsal": "6",
-  "dorsalRaw": "6",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54869,
-  "images": {},
-  "club": {
-   "code": "PAN",
-   "name": "Panathinaikos AKTOR Athens",
-   "abbreviatedName": "Panathinaikos",
-   "editorialName": "Panathinaikos",
-   "tvCode": "PAO",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "011209",
    "name": "KALAITZAKIS, PANAGIOTIS",
    "alias": "KALAITZAKIS, PANAGIOTIS",
@@ -13033,66 +11288,6 @@
  },
  {
   "person": {
-   "code": "012608",
-   "name": "SHORTS, TJ",
-   "alias": "SHORTS II, TIMOTHY NEOCARTES",
-   "aliasRaw": "SHORTS II, TIMOTHY NEOCARTES",
-   "passportName": "TIMOTHY NEOCARTES",
-   "passportSurname": "SHORTS VTORI",
-   "jerseyName": "SHORTS II",
-   "abbreviatedName": "",
-   "country": {
-    "code": "MKD",
-    "name": "North Macedonia"
-   },
-   "height": 175,
-   "weight": 73,
-   "birthDate": "1997-10-15T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:06:59.498",
-  "endDate": "2026-08-31T12:21:46.603",
-  "order": 0,
-  "dorsal": "0",
-  "dorsalRaw": "0",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54867,
-  "images": {},
-  "club": {
-   "code": "PAN",
-   "name": "Panathinaikos AKTOR Athens",
-   "abbreviatedName": "Panathinaikos",
-   "editorialName": "Panathinaikos",
-   "tvCode": "PAO",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "011981",
    "name": "JONES, TYRIQUE",
    "alias": "JONES, TYRIQUE",
@@ -13130,7 +11325,10 @@
   "positionName": "Center",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54866,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13190,67 +11388,10 @@
   "positionName": "Center",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54865,
-  "images": {},
-  "club": {
-   "code": "OLY",
-   "name": "Olympiacos Piraeus",
-   "abbreviatedName": "Olympiacos",
-   "editorialName": "Olympiacos",
-   "tvCode": "OLY",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-   }
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/32f569ac-f713-4611-9550-2c6a8da3522f.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/32f569ac-f713-4611-9550-2c6a8da3522f.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011221",
-   "name": "ANTETOKOUNMPO, KOSTAS",
-   "alias": "ANTETOKOUNMPO, KOSTAS",
-   "aliasRaw": "ANTETOKOUNMPO, KOSTAS",
-   "passportName": "NTOUMPOUISI",
-   "passportSurname": "ANTETOKOUNMPO",
-   "jerseyName": "K.ANTETOKOUNMPO",
-   "abbreviatedName": "Antetokounmpo, K.",
-   "country": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "height": 208,
-   "weight": 105,
-   "birthDate": "1997-11-20T00:00:00",
-   "birthCountry": {
-    "code": "GRE",
-    "name": "Greece"
-   },
-   "twitterAccount": "Kostas_ante13",
-   "instagramAccount": "kostas__ante13/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:03:28.894",
-  "endDate": "2026-09-09T14:49:10.905",
-  "order": 0,
-  "dorsal": "37",
-  "dorsalRaw": "37",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54864,
-  "images": {},
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13310,7 +11451,10 @@
   "positionName": "Guard",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54863,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13370,7 +11514,10 @@
   "positionName": "Center",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54862,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/330baf1d-0d04-4b6f-8362-6eaf34724d32.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/330baf1d-0d04-4b6f-8362-6eaf34724d32.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13430,7 +11577,10 @@
   "positionName": "Guard",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54861,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13490,7 +11640,10 @@
   "positionName": "Guard",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54860,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4266125c-54d5-4824-8f50-2906c194c6b2.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4266125c-54d5-4824-8f50-2906c194c6b2.png"
+  },
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13550,67 +11703,10 @@
   "positionName": "Forward",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54859,
-  "images": {},
-  "club": {
-   "code": "OLY",
-   "name": "Olympiacos Piraeus",
-   "abbreviatedName": "Olympiacos",
-   "editorialName": "Olympiacos",
-   "tvCode": "OLY",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-   }
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "008811",
-   "name": "FALL, MOUSTAPHA",
-   "alias": "FALL, MOUSTAPHA",
-   "aliasRaw": "FALL, MOUSTAPHA",
-   "passportName": "MOUSTAPHA FALOU",
-   "passportSurname": "FALL",
-   "jerseyName": "FALL",
-   "abbreviatedName": "Fall, M.",
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 218,
-   "weight": 127,
-   "birthDate": "1992-02-23T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "moustaphafall15",
-   "instagramAccount": "moustaphafall10/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:03:26.988",
-  "endDate": "2026-09-09T14:40:26.715",
-  "order": 0,
-  "dorsal": "10",
-  "dorsalRaw": "10",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54858,
-  "images": {},
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13670,187 +11766,10 @@
   "positionName": "Forward",
   "lastTeam": "OLYMPIACOS",
   "externalId": 54857,
-  "images": {},
-  "club": {
-   "code": "OLY",
-   "name": "Olympiacos Piraeus",
-   "abbreviatedName": "Olympiacos",
-   "editorialName": "Olympiacos",
-   "tvCode": "OLY",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-   }
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e73b9650-5c67-4a0a-be28-6412173ac60b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e73b9650-5c67-4a0a-be28-6412173ac60b.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011218",
-   "name": "EVANS, KEENAN",
-   "alias": "EVANS, KEENAN",
-   "aliasRaw": "EVANS, KEENAN",
-   "passportName": "KEENAN CORTEZ",
-   "passportSurname": "EVANS",
-   "jerseyName": "EVANS",
-   "abbreviatedName": "Evans, K.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 191,
-   "weight": 86,
-   "birthDate": "1996-08-23T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "K3vans12",
-   "instagramAccount": "k3vans12/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:03:26.439",
-  "endDate": "2026-09-09T14:40:26.627",
-  "order": 0,
-  "dorsal": "2",
-  "dorsalRaw": "2",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54856,
-  "images": {},
-  "club": {
-   "code": "OLY",
-   "name": "Olympiacos Piraeus",
-   "abbreviatedName": "Olympiacos",
-   "editorialName": "Olympiacos",
-   "tvCode": "OLY",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "006591",
-   "name": "NTILIKINA, FRANK",
-   "alias": "Ntilikina",
-   "aliasRaw": "Ntilikina",
-   "passportName": "FRANK, BRYAN",
-   "passportSurname": "NTILIKINA",
-   "jerseyName": "NTILIKINA",
-   "abbreviatedName": "Ntilikina, F.",
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 194,
-   "weight": 97,
-   "birthDate": "1998-07-28T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "FrankNtilikina",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:03:26.193",
-  "endDate": "2026-09-09T14:40:26.539",
-  "order": 0,
-  "dorsal": "1",
-  "dorsalRaw": "1",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54855,
-  "images": {},
-  "club": {
-   "code": "OLY",
-   "name": "Olympiacos Piraeus",
-   "abbreviatedName": "Olympiacos",
-   "editorialName": "Olympiacos",
-   "tvCode": "OLY",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "008855",
-   "name": "WALKUP, THOMAS",
-   "alias": "WALKUP, THOMAS",
-   "aliasRaw": "WALKUP, THOMAS",
-   "passportName": "THOMAS RYAN",
-   "passportSurname": "WALKUP",
-   "jerseyName": "WALKUP",
-   "abbreviatedName": "Walkup, T.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 193,
-   "weight": 90,
-   "birthDate": "1992-12-30T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "twalkup23",
-   "instagramAccount": "twalkup23/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:03:25.946",
-  "endDate": "2026-09-10T12:35:13.339",
-  "order": 0,
-  "dorsal": "0",
-  "dorsalRaw": "0",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "OLYMPIACOS",
-  "externalId": 54854,
-  "images": {},
   "club": {
    "code": "OLY",
    "name": "Olympiacos Piraeus",
@@ -13910,126 +11829,6 @@
   "positionName": "Forward",
   "lastTeam": "MACCABI TEL AVIV",
   "externalId": 54853,
-  "images": {},
-  "club": {
-   "code": "TEL",
-   "name": "Maccabi Rapyd Tel Aviv",
-   "abbreviatedName": "Maccabi",
-   "editorialName": "Maccabi",
-   "tvCode": "MTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014123",
-   "name": "DOWTIN JR, JEFFREY",
-   "alias": "DOWTIN JR, JEFFREY",
-   "aliasRaw": "DOWTIN JR, JEFFREY",
-   "passportName": "JEFFREY LEE",
-   "passportSurname": "DOWTIN JR",
-   "jerseyName": "DOWTIN JR",
-   "abbreviatedName": null,
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 191,
-   "weight": 95,
-   "birthDate": "1997-05-10T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:00:45.522",
-  "endDate": "2026-09-15T09:20:40.021",
-  "order": 0,
-  "dorsal": "21",
-  "dorsalRaw": "21",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54852,
-  "images": {},
-  "club": {
-   "code": "TEL",
-   "name": "Maccabi Rapyd Tel Aviv",
-   "abbreviatedName": "Maccabi",
-   "editorialName": "Maccabi",
-   "tvCode": "MTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014121",
-   "name": "OMORUYI, CLIFFORD",
-   "alias": "OMORUYI, CLIFFORD",
-   "aliasRaw": "OMORUYI, CLIFFORD",
-   "passportName": "CLIFFORD IYOBOSA",
-   "passportSurname": "OMORUYI",
-   "jerseyName": "OMORUYI",
-   "abbreviatedName": null,
-   "country": {
-    "code": "NGR",
-    "name": "Nigeria"
-   },
-   "height": 211,
-   "weight": 114,
-   "birthDate": "2001-10-11T00:00:00",
-   "birthCountry": {
-    "code": "BEN",
-    "name": "Benin"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:00:45.275",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "14",
-  "dorsalRaw": "14",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54851,
   "images": {},
   "club": {
    "code": "TEL",
@@ -14173,126 +11972,6 @@
  },
  {
   "person": {
-   "code": "013403",
-   "name": "WALKER IV, LONNIE",
-   "alias": "WALKER IV, LONNIE",
-   "aliasRaw": "WALKER IV, LONNIE",
-   "passportName": "LONNIE TERRANCE",
-   "passportSurname": "WALKER IV",
-   "jerseyName": "WALKER IV",
-   "abbreviatedName": "",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 196,
-   "weight": 87,
-   "birthDate": "1998-12-14T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T08:00:44.53",
-  "endDate": "2026-09-15T09:20:12.428",
-  "order": 0,
-  "dorsal": "8",
-  "dorsalRaw": "8",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54848,
-  "images": {},
-  "club": {
-   "code": "TEL",
-   "name": "Maccabi Rapyd Tel Aviv",
-   "abbreviatedName": "Maccabi",
-   "editorialName": "Maccabi",
-   "tvCode": "MTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "007673",
-   "name": "TRIFUNOVIC, UROS",
-   "alias": "TRIFUNOVIC, UROS",
-   "aliasRaw": "TRIFUNOVIC, UROS",
-   "passportName": "UROS",
-   "passportSurname": "TRIFUNOVIC",
-   "jerseyName": "TRIFUNOVIC",
-   "abbreviatedName": "Trifunovic, U.",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 200,
-   "weight": 99,
-   "birthDate": "2000-12-05T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "uros_trifunovic",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:00:44.291",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "6",
-  "dorsalRaw": "6",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54847,
-  "images": {},
-  "club": {
-   "code": "TEL",
-   "name": "Maccabi Rapyd Tel Aviv",
-   "abbreviatedName": "Maccabi",
-   "editorialName": "Maccabi",
-   "tvCode": "MTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "006020",
    "name": "EBO, AMIT",
    "alias": "Ebo",
@@ -14390,66 +12069,6 @@
   "positionName": "Forward",
   "lastTeam": "",
   "externalId": 54845,
-  "images": {},
-  "club": {
-   "code": "TEL",
-   "name": "Maccabi Rapyd Tel Aviv",
-   "abbreviatedName": "Maccabi",
-   "editorialName": "Maccabi",
-   "tvCode": "MTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "013289",
-   "name": "SANTOS, MARCIO",
-   "alias": "SANTOS, MARCIO",
-   "aliasRaw": "SANTOS, MARCIO",
-   "passportName": "MARCIO HENRIQUE",
-   "passportSurname": "DA COSTA SANTOS",
-   "jerseyName": "Marcio",
-   "abbreviatedName": "",
-   "country": {
-    "code": "BRA",
-    "name": "Brazil"
-   },
-   "height": 204,
-   "weight": 120,
-   "birthDate": "2002-11-02T00:00:00",
-   "birthCountry": {
-    "code": "BRA",
-    "name": "Brazil"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T08:00:43.634",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "3",
-  "dorsalRaw": "3",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54844,
   "images": {},
   "club": {
    "code": "TEL",
@@ -14593,126 +12212,6 @@
  },
  {
   "person": {
-   "code": "010319",
-   "name": "TRAORE, ARMEL",
-   "alias": "TRAORE, ARMEL",
-   "aliasRaw": "TRAORE, ARMEL",
-   "passportName": "ARMEL BAKARI TIMOTHE SIMON",
-   "passportSurname": "TRAORE",
-   "jerseyName": "TRAORE",
-   "abbreviatedName": "Traore, A.",
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 203,
-   "weight": 111,
-   "birthDate": "2003-01-23T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "Armel_Traor35",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T07:58:14.944",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "94",
-  "dorsalRaw": "94",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54841,
-  "images": {},
-  "club": {
-   "code": "ASV",
-   "name": "LDLC ASVEL Villeurbanne",
-   "abbreviatedName": "LDLC ASVEL",
-   "editorialName": "ASVEL",
-   "tvCode": "ASV",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014014",
-   "name": "VAUTIER, BASTIEN",
-   "alias": "VAUTIER, BASTIEN",
-   "aliasRaw": "VAUTIER, BASTIEN",
-   "passportName": "BASTIEN",
-   "passportSurname": "VAUTIER",
-   "jerseyName": "VAUTIER",
-   "abbreviatedName": null,
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 210,
-   "weight": 110,
-   "birthDate": "1998-11-15T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T07:58:14.667",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "32",
-  "dorsalRaw": "32",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54840,
-  "images": {},
-  "club": {
-   "code": "ASV",
-   "name": "LDLC ASVEL Villeurbanne",
-   "abbreviatedName": "LDLC ASVEL",
-   "editorialName": "ASVEL",
-   "tvCode": "ASV",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "012618",
    "name": "MASSA, BODIAN",
    "alias": "MASSA, BODIAN",
@@ -14773,66 +12272,6 @@
  },
  {
   "person": {
-   "code": "012268",
-   "name": "ATAMNA, ADAM",
-   "alias": "ATAMNA, ADAM",
-   "aliasRaw": "ATAMNA, ADAM",
-   "passportName": "ADAM",
-   "passportSurname": "ATAMNA",
-   "jerseyName": "ATAMNA",
-   "abbreviatedName": null,
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 192,
-   "weight": 90,
-   "birthDate": "2007-12-06T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T07:58:14.104",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "2",
-  "dorsalRaw": "2",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54838,
-  "images": {},
-  "club": {
-   "code": "ASV",
-   "name": "LDLC ASVEL Villeurbanne",
-   "abbreviatedName": "LDLC ASVEL",
-   "editorialName": "ASVEL",
-   "tvCode": "ASV",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "014026",
    "name": "FRISCH, CLEMENT",
    "alias": "FRISCH, CLEMENT",
@@ -14870,126 +12309,6 @@
   "positionName": "Forward",
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54837,
-  "images": {},
-  "club": {
-   "code": "BAS",
-   "name": "Kosner Baskonia Vitoria-Gasteiz",
-   "abbreviatedName": "Baskonia",
-   "editorialName": "Baskonia",
-   "tvCode": "KBA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "008072",
-   "name": "DIOP, KHALIFA",
-   "alias": "DIOP, KHALIFA",
-   "aliasRaw": "DIOP, KHALIFA",
-   "passportName": "KHALIFA ABABACAR",
-   "passportSurname": "DIOP",
-   "jerseyName": "KHALIFA",
-   "abbreviatedName": "Diop, K.",
-   "country": {
-    "code": "SEN",
-    "name": "Senegal"
-   },
-   "height": 208,
-   "weight": 108,
-   "birthDate": "2002-01-15T00:00:00",
-   "birthCountry": {
-    "code": "SEN",
-    "name": "Senegal"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "diopkhalifa18",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:56:52.176",
-  "endDate": "2026-09-09T14:31:46.858",
-  "order": 0,
-  "dorsal": "18",
-  "dorsalRaw": "18",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54836,
-  "images": {},
-  "club": {
-   "code": "BAS",
-   "name": "Kosner Baskonia Vitoria-Gasteiz",
-   "abbreviatedName": "Baskonia",
-   "editorialName": "Baskonia",
-   "tvCode": "KBA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014190",
-   "name": "RADZEVICIUS, GYTIS",
-   "alias": "RADZEVICIUS, GYTIS",
-   "aliasRaw": "RADZEVICIUS, GYTIS",
-   "passportName": "GYTIS",
-   "passportSurname": "RADZEVICIUS",
-   "jerseyName": "RADZEVICIUS",
-   "abbreviatedName": null,
-   "country": {
-    "code": "LTU",
-    "name": "Lithuania"
-   },
-   "height": 198,
-   "weight": 91,
-   "birthDate": "1995-07-17T00:00:00",
-   "birthCountry": {
-    "code": "LTU",
-    "name": "Lithuania"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:56:51.962",
-  "endDate": "2026-08-31T12:18:42.283",
-  "order": 0,
-  "dorsal": "17",
-  "dorsalRaw": "17",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54835,
   "images": {},
   "club": {
    "code": "BAS",
@@ -15193,186 +12512,6 @@
  },
  {
   "person": {
-   "code": "010035",
-   "name": "VILLAR, RAFA",
-   "alias": "VILLAR, RAFA",
-   "aliasRaw": "VILLAR, RAFA",
-   "passportName": "RAFAEL",
-   "passportSurname": "VILLAR CORNAGO",
-   "jerseyName": "VILLAR",
-   "abbreviatedName": "Villar, R.",
-   "country": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "height": 191,
-   "weight": 86,
-   "birthDate": "2004-08-09T00:00:00",
-   "birthCountry": {
-    "code": "ESP",
-    "name": "Spain"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "rafa_vilaa",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:56:50.97",
-  "endDate": "2026-08-31T12:18:42.187",
-  "order": 0,
-  "dorsal": "4",
-  "dorsalRaw": "4",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54831,
-  "images": {},
-  "club": {
-   "code": "BAS",
-   "name": "Kosner Baskonia Vitoria-Gasteiz",
-   "abbreviatedName": "Baskonia",
-   "editorialName": "Baskonia",
-   "tvCode": "KBA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014119",
-   "name": "NOWELL, MARKQUIS",
-   "alias": "NOWELL, MARKQUIS",
-   "aliasRaw": "NOWELL, MARKQUIS",
-   "passportName": "MARKQUIS MORRIS",
-   "passportSurname": "NOWELL",
-   "jerseyName": "NOWELL",
-   "abbreviatedName": null,
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 170,
-   "weight": 75,
-   "birthDate": "1999-12-25T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:56:50.753",
-  "endDate": "2026-08-31T12:18:42.105",
-  "order": 0,
-  "dorsal": "3",
-  "dorsalRaw": "3",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54830,
-  "images": {},
-  "club": {
-   "code": "BAS",
-   "name": "Kosner Baskonia Vitoria-Gasteiz",
-   "abbreviatedName": "Baskonia",
-   "editorialName": "Baskonia",
-   "tvCode": "KBA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "014027",
-   "name": "DIAKITE, MAMADI",
-   "alias": "DIAKITE, MAMADI",
-   "aliasRaw": "DIAKITE, MAMADI",
-   "passportName": "MAMADI",
-   "passportSurname": "DIAKITE",
-   "jerseyName": "DIAKITE",
-   "abbreviatedName": null,
-   "country": {
-    "code": "GUI",
-    "name": "Guinea"
-   },
-   "height": 206,
-   "weight": 100,
-   "birthDate": "1997-01-21T00:00:00",
-   "birthCountry": {
-    "code": "GUI",
-    "name": "Guinea"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:56:50.528",
-  "endDate": "2026-08-31T12:18:42.011",
-  "order": 0,
-  "dorsal": "1",
-  "dorsalRaw": "1",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54829,
-  "images": {},
-  "club": {
-   "code": "BAS",
-   "name": "Kosner Baskonia Vitoria-Gasteiz",
-   "abbreviatedName": "Baskonia",
-   "editorialName": "Baskonia",
-   "tvCode": "KBA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "011948",
    "name": "HOWARD, MARKUS",
    "alias": "HOWARD, MARKUS",
@@ -15470,66 +12609,6 @@
   "positionName": "Forward",
   "lastTeam": "HAPOEL IBI TEL AVIV",
   "externalId": 54827,
-  "images": {},
-  "club": {
-   "code": "HTA",
-   "name": "Hapoel IBI Tel Aviv",
-   "abbreviatedName": "Hapoel TLV",
-   "editorialName": "Hapoel",
-   "tvCode": "HTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011052",
-   "name": "MADAR, YAM",
-   "alias": "MADAR, YAM",
-   "aliasRaw": "MADAR, YAM",
-   "passportName": "YAM",
-   "passportSurname": "MADAR",
-   "jerseyName": "MADAR",
-   "abbreviatedName": "Madar, Y.",
-   "country": {
-    "code": "ISR",
-    "name": "Israel"
-   },
-   "height": 190,
-   "weight": 78,
-   "birthDate": "2000-12-21T00:00:00",
-   "birthCountry": {
-    "code": "ISR",
-    "name": "Israel"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "yam_madar11",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:53:42.156",
-  "endDate": "2026-09-15T08:53:26.393",
-  "order": 0,
-  "dorsal": "26",
-  "dorsalRaw": "26",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54826,
   "images": {},
   "club": {
    "code": "HTA",
@@ -15710,126 +12789,6 @@
   "positionName": "Center",
   "lastTeam": "HAPOEL IBI TEL AVIV",
   "externalId": 54823,
-  "images": {},
-  "club": {
-   "code": "HTA",
-   "name": "Hapoel IBI Tel Aviv",
-   "abbreviatedName": "Hapoel TLV",
-   "editorialName": "Hapoel",
-   "tvCode": "HTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "013382",
-   "name": "RANDOLPH, LEVI",
-   "alias": "RANDOLPH, LEVI",
-   "aliasRaw": "RANDOLPH, LEVI",
-   "passportName": "LEVI",
-   "passportSurname": "RANDOLPH",
-   "jerseyName": "RANDOLPH",
-   "abbreviatedName": "",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 198,
-   "weight": 98,
-   "birthDate": "1992-10-03T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:53:41.167",
-  "endDate": "2026-09-15T08:53:26.282",
-  "order": 0,
-  "dorsal": "20",
-  "dorsalRaw": "20",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54822,
-  "images": {},
-  "club": {
-   "code": "HTA",
-   "name": "Hapoel IBI Tel Aviv",
-   "abbreviatedName": "Hapoel TLV",
-   "editorialName": "Hapoel",
-   "tvCode": "HTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "012609",
-   "name": "MALCOLM, COLLIN",
-   "alias": "MALCOLM, COLLIN",
-   "aliasRaw": "MALCOLM, COLLIN",
-   "passportName": "COLLIN ANTHONY",
-   "passportSurname": "MALCOLM",
-   "jerseyName": "MALCOLM",
-   "abbreviatedName": "",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 200,
-   "weight": 91,
-   "birthDate": "1997-07-02T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:53:40.945",
-  "endDate": "2026-08-31T12:16:38.641",
-  "order": 0,
-  "dorsal": "17",
-  "dorsalRaw": "17",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54821,
   "images": {},
   "club": {
    "code": "HTA",
@@ -16093,66 +13052,6 @@
  },
  {
   "person": {
-   "code": "004161",
-   "name": "SEGEV, ITAY",
-   "alias": "Segev",
-   "aliasRaw": "Segev",
-   "passportName": "ITAY",
-   "passportSurname": "SEGEV",
-   "jerseyName": "SEGEV",
-   "abbreviatedName": "Segev, I.",
-   "country": {
-    "code": "ISR",
-    "name": "Israel"
-   },
-   "height": 204,
-   "weight": 103,
-   "birthDate": "1995-06-15T00:00:00",
-   "birthCountry": {
-    "code": "ISR",
-    "name": "Israel"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:53:39.709",
-  "endDate": "2026-09-15T08:58:40.685",
-  "order": 0,
-  "dorsal": "6",
-  "dorsalRaw": "6",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54816,
-  "images": {},
-  "club": {
-   "code": "HTA",
-   "name": "Hapoel IBI Tel Aviv",
-   "abbreviatedName": "Hapoel TLV",
-   "editorialName": "Hapoel",
-   "tvCode": "HTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "009846",
    "name": "BRYANT, ELIJAH",
    "alias": "BRYANT, ELIJAH",
@@ -16273,126 +13172,6 @@
  },
  {
   "person": {
-   "code": "011157",
-   "name": "MOTLEY, JOHNATHAN",
-   "alias": "MOTLEY, JOHNATHAN",
-   "aliasRaw": "MOTLEY, JOHNATHAN",
-   "passportName": "JOHNATHAN LANDUS",
-   "passportSurname": "MOTLEY-HARVEY",
-   "jerseyName": "MOTLEY",
-   "abbreviatedName": "Motley, J.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 206,
-   "weight": 109,
-   "birthDate": "1995-05-04T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "Moneymot5",
-   "instagramAccount": "moneymot5",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:53:39.008",
-  "endDate": "2026-08-31T12:16:38.509",
-  "order": 0,
-  "dorsal": "0",
-  "dorsalRaw": "0",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54813,
-  "images": {},
-  "club": {
-   "code": "HTA",
-   "name": "Hapoel IBI Tel Aviv",
-   "abbreviatedName": "Hapoel TLV",
-   "editorialName": "Hapoel",
-   "tvCode": "HTA",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "009783",
-   "name": "COLSON, BONZIE",
-   "alias": "COLSON, BONZIE",
-   "aliasRaw": "COLSON, BONZIE",
-   "passportName": "BONZIE ALEXANDER",
-   "passportSurname": "COLSON II",
-   "jerseyName": "COLSON II",
-   "abbreviatedName": "Colson, B.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 198,
-   "weight": 102,
-   "birthDate": "1996-01-12T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:49:43.355",
-  "endDate": "2026-08-31T11:43:30.565",
-  "order": 0,
-  "dorsal": "50",
-  "dorsalRaw": "50",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54812,
-  "images": {},
-  "club": {
-   "code": "ULK",
-   "name": "Fenerbahce Tarfin Istanbul",
-   "abbreviatedName": "Fenerbahce",
-   "editorialName": "Fenerbahce",
-   "tvCode": "FBT",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "014220",
    "name": "SILVA, CHRIS",
    "alias": "SILVA, CHRIS",
@@ -16430,67 +13209,10 @@
   "positionName": "Center",
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54811,
-  "images": {},
-  "club": {
-   "code": "ULK",
-   "name": "Fenerbahce Tarfin Istanbul",
-   "abbreviatedName": "Fenerbahce",
-   "editorialName": "Fenerbahce",
-   "tvCode": "FBT",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
-   }
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/feec6c35-12e0-40b5-b67e-4950139c43e6.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/feec6c35-12e0-40b5-b67e-4950139c43e6.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "012613",
-   "name": "JANTUNEN, MIKAEL",
-   "alias": "JANTUNEN, MIKAEL",
-   "aliasRaw": "JANTUNEN, MIKAEL",
-   "passportName": "MIKAEL OLLI AXEL",
-   "passportSurname": "JANTUNEN",
-   "jerseyName": "JANTUNEN",
-   "abbreviatedName": "",
-   "country": {
-    "code": "FIN",
-    "name": "Finland"
-   },
-   "height": 205,
-   "weight": 104,
-   "birthDate": "2000-04-20T00:00:00",
-   "birthCountry": {
-    "code": "FIN",
-    "name": "Finland"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:49:42.938",
-  "endDate": "2026-08-31T11:43:30.479",
-  "order": 0,
-  "dorsal": "18",
-  "dorsalRaw": "18",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54810,
-  "images": {},
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -16550,67 +13272,10 @@
   "positionName": "Forward",
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54809,
-  "images": {},
-  "club": {
-   "code": "ULK",
-   "name": "Fenerbahce Tarfin Istanbul",
-   "abbreviatedName": "Fenerbahce",
-   "editorialName": "Fenerbahce",
-   "tvCode": "FBT",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
-   }
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/ff796aeb-4ff5-432b-a4c2-78ded0dded1a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/ff796aeb-4ff5-432b-a4c2-78ded0dded1a.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "006961",
-   "name": "BIBEROVIC, TARIK",
-   "alias": "Biberovic",
-   "aliasRaw": "Biberovic",
-   "passportName": "TARIK",
-   "passportSurname": "BIBEROVIC",
-   "jerseyName": "TARIK",
-   "abbreviatedName": "Biberovic, T.",
-   "country": {
-    "code": "TUR",
-    "name": "Turkiye"
-   },
-   "height": 201,
-   "weight": 91,
-   "birthDate": "2001-01-28T00:00:00",
-   "birthCountry": {
-    "code": "BIH",
-    "name": "Bosnia and Herzegovina"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "tarik.biberovic/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:49:42.505",
-  "endDate": "2026-08-31T11:43:30.346",
-  "order": 0,
-  "dorsal": "13",
-  "dorsalRaw": "13",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54808,
-  "images": {},
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -16670,67 +13335,10 @@
   "positionName": "Guard",
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54807,
-  "images": {},
-  "club": {
-   "code": "ULK",
-   "name": "Fenerbahce Tarfin Istanbul",
-   "abbreviatedName": "Fenerbahce",
-   "editorialName": "Fenerbahce",
-   "tvCode": "FBT",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
-   }
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/442032c1-9577-4b21-abe6-dc14c2f21b05.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/442032c1-9577-4b21-abe6-dc14c2f21b05.png"
   },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "006661",
-   "name": "WILBEKIN, SCOTTIE",
-   "alias": "Wilbekin",
-   "aliasRaw": "Wilbekin",
-   "passportName": "SCOTT JORDAN",
-   "passportSurname": "WILBEKIN",
-   "jerseyName": "WILBEKIN",
-   "abbreviatedName": "Wilbekin, S.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 188,
-   "weight": 80,
-   "birthDate": "1993-04-05T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "scottiew_5",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:49:42.011",
-  "endDate": "2026-08-31T11:43:30.187",
-  "order": 0,
-  "dorsal": "3",
-  "dorsalRaw": "3",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54806,
-  "images": {},
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -16790,7 +13398,10 @@
   "positionName": "Guard",
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54805,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7d88a3f-13f2-4e71-a0ff-75a4cf3e0885.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7d88a3f-13f2-4e71-a0ff-75a4cf3e0885.png"
+  },
   "club": {
    "code": "ULK",
    "name": "Fenerbahce Tarfin Istanbul",
@@ -17293,126 +13904,6 @@
  },
  {
   "person": {
-   "code": "001133",
-   "name": "SHENGELIA, TORNIKE",
-   "alias": "Shengelia",
-   "aliasRaw": "Shengelia",
-   "passportName": "TORNIKE",
-   "passportSurname": "SHENGELIA",
-   "jerseyName": "SHENGELIA",
-   "abbreviatedName": "Shengelia, T.",
-   "country": {
-    "code": "GEO",
-    "name": "Georgia"
-   },
-   "height": 207,
-   "weight": 102,
-   "birthDate": "1991-10-05T00:00:00",
-   "birthCountry": {
-    "code": "GEO",
-    "name": "Georgia"
-   },
-   "twitterAccount": "TokoShengelia23",
-   "instagramAccount": "tshengel1a/",
-   "facebookAccount": "ShengeliaTornike/",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:43:59.2",
-  "endDate": "2026-09-15T08:44:02.778",
-  "order": 0,
-  "dorsal": "23",
-  "dorsalRaw": "23",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54791,
-  "images": {},
-  "club": {
-   "code": "BAR",
-   "name": "FC Barcelona",
-   "abbreviatedName": "FC Barcelona",
-   "editorialName": "Barca",
-   "tvCode": "BAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "004888",
-   "name": "CLYBURN, WILL",
-   "alias": "Clyburn",
-   "aliasRaw": "Clyburn",
-   "passportName": "WILLIAM DALEN",
-   "passportSurname": "CLYBURN",
-   "jerseyName": "CLYBURN",
-   "abbreviatedName": "Clyburn, W.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 201,
-   "weight": 99,
-   "birthDate": "1990-05-17T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "Da_Thrill21",
-   "instagramAccount": "thrill_21/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:43:58.953",
-  "endDate": "2026-09-15T08:44:02.631",
-  "order": 0,
-  "dorsal": "21",
-  "dorsalRaw": "21",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54790,
-  "images": {},
-  "club": {
-   "code": "BAR",
-   "name": "FC Barcelona",
-   "abbreviatedName": "FC Barcelona",
-   "editorialName": "Barca",
-   "tvCode": "BAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "010106",
    "name": "NUNEZ, JUAN",
    "alias": "NUNEZ, JUAN",
@@ -17533,66 +14024,6 @@
  },
  {
   "person": {
-   "code": "009948",
-   "name": "MARCOS, JUANI",
-   "alias": "MARCOS, JUANI",
-   "aliasRaw": "MARCOS, JUANI",
-   "passportName": "JUAN IGNACIO",
-   "passportSurname": "MARCOS",
-   "jerseyName": "MARCOS",
-   "abbreviatedName": "Marcos, J.",
-   "country": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "height": 190,
-   "weight": 80,
-   "birthDate": "2000-07-06T00:00:00",
-   "birthCountry": {
-    "code": "ARG",
-    "name": "Argentina"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:43:58.284",
-  "endDate": "2026-09-15T08:44:02.477",
-  "order": 0,
-  "dorsal": "2",
-  "dorsalRaw": "2",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54787,
-  "images": {},
-  "club": {
-   "code": "BAR",
-   "name": "FC Barcelona",
-   "abbreviatedName": "FC Barcelona",
-   "editorialName": "Barca",
-   "tvCode": "BAR",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "009862",
    "name": "PUNTER, KEVIN",
    "alias": "PUNTER, KEVIN",
@@ -17690,7 +14121,10 @@
   "positionName": "Center",
   "lastTeam": "",
   "externalId": 54785,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -17750,7 +14184,10 @@
   "positionName": "Center",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54784,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/646836ea-3fdd-498b-ab6c-ccbea13061b0.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/646836ea-3fdd-498b-ab6c-ccbea13061b0.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -17810,7 +14247,10 @@
   "positionName": "Center",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54783,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0bbbab43-98f1-4296-a58b-20f841bb5133.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0bbbab43-98f1-4296-a58b-20f841bb5133.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -17870,7 +14310,10 @@
   "positionName": "Guard",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54782,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/23d74c36-1398-44c2-bde6-1a14ba013993.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/23d74c36-1398-44c2-bde6-1a14ba013993.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -17930,7 +14373,10 @@
   "positionName": "Guard",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54781,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bc9bc395-efb1-46ff-8eee-039093e0f397.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bc9bc395-efb1-46ff-8eee-039093e0f397.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -17990,7 +14436,10 @@
   "positionName": "Forward",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54780,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -18050,7 +14499,10 @@
   "positionName": "Guard",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54779,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a8eba30d-2ec0-4169-9b31-a393345480c5.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a8eba30d-2ec0-4169-9b31-a393345480c5.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -18110,7 +14562,10 @@
   "positionName": "Guard",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54778,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2b6e8cc2-c349-437c-9512-d5cd7f2eca04.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2b6e8cc2-c349-437c-9512-d5cd7f2eca04.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -18230,7 +14685,10 @@
   "positionName": "Forward",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54776,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -18290,7 +14748,10 @@
   "positionName": "Forward",
   "lastTeam": "",
   "externalId": 54775,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cb63dd32-23db-47ea-94c6-6b7fb0520fab.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cb63dd32-23db-47ea-94c6-6b7fb0520fab.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
@@ -18350,66 +14811,6 @@
   "positionName": "Forward",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54774,
-  "images": {},
-  "club": {
-   "code": "RED",
-   "name": "Crvena Zvezda Meridianbet Belgrade",
-   "abbreviatedName": "Crvena Zvezda",
-   "editorialName": "Crvena",
-   "tvCode": "CZV",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011686",
-   "name": "RADOSIC, OGNJEN",
-   "alias": "RADOSIC, OGNJEN",
-   "aliasRaw": "RADOSIC, OGNJEN",
-   "passportName": "OGNJEN",
-   "passportSurname": "RADOSIC",
-   "jerseyName": "Radosic",
-   "abbreviatedName": null,
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 196,
-   "weight": 85,
-   "birthDate": "2006-05-26T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:37:55.914",
-  "endDate": "2026-09-03T11:43:50.477",
-  "order": 0,
-  "dorsal": "44",
-  "dorsalRaw": "44",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54773,
   "images": {},
   "club": {
    "code": "RED",
@@ -18613,66 +15014,6 @@
  },
  {
   "person": {
-   "code": "011214",
-   "name": "RIVERO, JASIEL",
-   "alias": "RIVERO, JASIEL",
-   "aliasRaw": "RIVERO, JASIEL",
-   "passportName": "JASIEL",
-   "passportSurname": "RIVERO FERNANDEZ",
-   "jerseyName": "RIVERO",
-   "abbreviatedName": "Rivero, J.",
-   "country": {
-    "code": "CUB",
-    "name": "Cuba"
-   },
-   "height": 206,
-   "weight": 110,
-   "birthDate": "1993-10-31T00:00:00",
-   "birthCountry": {
-    "code": "CUB",
-    "name": "Cuba"
-   },
-   "twitterAccount": "jasielrivero14",
-   "instagramAccount": "jasielriverofernandez",
-   "facebookAccount": "profile.php?id=100005650759164",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:37:54.999",
-  "endDate": "2026-09-03T11:43:50.378",
-  "order": 0,
-  "dorsal": "14",
-  "dorsalRaw": "14",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54769,
-  "images": {},
-  "club": {
-   "code": "RED",
-   "name": "Crvena Zvezda Meridianbet Belgrade",
-   "abbreviatedName": "Crvena Zvezda",
-   "editorialName": "Crvena",
-   "tvCode": "CZV",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "004007",
    "name": "DOBRIC, OGNJEN",
    "alias": "Dobric",
@@ -18710,66 +15051,6 @@
   "positionName": "Forward",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54768,
-  "images": {},
-  "club": {
-   "code": "RED",
-   "name": "Crvena Zvezda Meridianbet Belgrade",
-   "abbreviatedName": "Crvena Zvezda",
-   "editorialName": "Crvena",
-   "tvCode": "CZV",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "004866",
-   "name": "KALINIC, NIKOLA",
-   "alias": "Kalinic",
-   "aliasRaw": "Kalinic",
-   "passportName": "NIKOLA",
-   "passportSurname": "KALINIC",
-   "jerseyName": "KALINIC",
-   "abbreviatedName": "Kalinic, N.",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 0,
-   "weight": 0,
-   "birthDate": "1991-11-08T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "nikola_kalinic",
-   "instagramAccount": "nikola_kalina/",
-   "facebookAccount": "Nikola.Kalinic.Official/",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T07:37:54.517",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "12",
-  "dorsalRaw": "12",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54767,
   "images": {},
   "club": {
    "code": "RED",
@@ -18960,246 +15241,6 @@
    "isVirtual": false,
    "images": {
     "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "006240",
-   "name": "PLAVSIC, UROS",
-   "alias": "Plavsic",
-   "aliasRaw": "Plavsic",
-   "passportName": "UROS",
-   "passportSurname": "PLAVSIC",
-   "jerseyName": "PLAVSIC",
-   "abbreviatedName": "Plavsic, U.",
-   "country": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "height": 215,
-   "weight": 108,
-   "birthDate": "1998-12-22T00:00:00",
-   "birthCountry": {
-    "code": "SRB",
-    "name": "Serbia"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:37:53.599",
-  "endDate": "2026-09-03T11:43:50.169",
-  "order": 0,
-  "dorsal": "1",
-  "dorsalRaw": "1",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54763,
-  "images": {},
-  "club": {
-   "code": "RED",
-   "name": "Crvena Zvezda Meridianbet Belgrade",
-   "abbreviatedName": "Crvena Zvezda",
-   "editorialName": "Crvena",
-   "tvCode": "CZV",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011980",
-   "name": "SESTINA, NATHAN",
-   "alias": "SESTINA, NATHAN",
-   "aliasRaw": "SESTINA, NATHAN",
-   "passportName": "NATHAN MICHAEL",
-   "passportSurname": "SESTINA",
-   "jerseyName": "SESTINA",
-   "abbreviatedName": "",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 203,
-   "weight": 104,
-   "birthDate": "1997-05-12T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:35:06.854",
-  "endDate": "2026-08-31T10:56:34.822",
-  "order": 0,
-  "dorsal": "77",
-  "dorsalRaw": "77",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54762,
-  "images": {},
-  "club": {
-   "code": "MIL",
-   "name": "Armani Olimpia Milan",
-   "abbreviatedName": "Milan",
-   "editorialName": "Milan",
-   "tvCode": "MIL",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "006277",
-   "name": "TOTE, LEONARDO",
-   "alias": "TOTE, LEONARDO",
-   "aliasRaw": "TOTE, LEONARDO",
-   "passportName": "LEONARDO",
-   "passportSurname": "TOTE",
-   "jerseyName": "TOTÈ",
-   "abbreviatedName": null,
-   "country": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "height": 212,
-   "weight": 107,
-   "birthDate": "1997-07-08T00:00:00",
-   "birthCountry": {
-    "code": "ITA",
-    "name": "Italy"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:35:06.59",
-  "endDate": "2026-08-31T10:56:34.731",
-  "order": 0,
-  "dorsal": "35",
-  "dorsalRaw": "35",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54761,
-  "images": {},
-  "club": {
-   "code": "MIL",
-   "name": "Armani Olimpia Milan",
-   "abbreviatedName": "Milan",
-   "editorialName": "Milan",
-   "tvCode": "MIL",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011199",
-   "name": "NEBO, JOSH",
-   "alias": "NEBO, JOSH",
-   "aliasRaw": "NEBO, JOSH",
-   "passportName": "JOSHUA OKECHUKWU",
-   "passportSurname": "NEBO",
-   "jerseyName": "NEBO",
-   "abbreviatedName": "Nebo, J.",
-   "country": {
-    "code": "SLO",
-    "name": "Slovenia"
-   },
-   "height": 206,
-   "weight": 111,
-   "birthDate": "1997-07-17T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "Joshnebo",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:35:06.327",
-  "endDate": "2026-08-31T10:56:34.644",
-  "order": 0,
-  "dorsal": "32",
-  "dorsalRaw": "32",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54760,
-  "images": {},
-  "club": {
-   "code": "MIL",
-   "name": "Armani Olimpia Milan",
-   "abbreviatedName": "Milan",
-   "editorialName": "Milan",
-   "tvCode": "MIL",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
    }
   },
   "season": {
@@ -19513,126 +15554,6 @@
  },
  {
   "person": {
-   "code": "012593",
-   "name": "ELLIS, QUINN",
-   "alias": "ELLIS, QUINN",
-   "aliasRaw": "ELLIS, QUINN",
-   "passportName": "QUINN ALISTAIR",
-   "passportSurname": "ELLIS",
-   "jerseyName": "ELLIS",
-   "abbreviatedName": "",
-   "country": {
-    "code": "UK ",
-    "name": "United Kingdom"
-   },
-   "height": 195,
-   "weight": 83,
-   "birthDate": "2003-04-01T00:00:00",
-   "birthCountry": {
-    "code": "UK ",
-    "name": "United Kingdom"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:35:04.759",
-  "endDate": "2026-09-02T11:53:26.343",
-  "order": 0,
-  "dorsal": "3",
-  "dorsalRaw": "3",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54754,
-  "images": {},
-  "club": {
-   "code": "MIL",
-   "name": "Armani Olimpia Milan",
-   "abbreviatedName": "Milan",
-   "editorialName": "Milan",
-   "tvCode": "MIL",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "009622",
-   "name": "BROWN, LORENZO",
-   "alias": "BROWN, LORENZO",
-   "aliasRaw": "BROWN, LORENZO",
-   "passportName": "LORENZO DONTEZ",
-   "passportSurname": "BROWN",
-   "jerseyName": "BROWN",
-   "abbreviatedName": "Brown, L.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 196,
-   "weight": 89,
-   "birthDate": "1990-08-26T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "zo_brown",
-   "instagramAccount": "OfficialZobrown",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": true,
-  "startDate": "2026-08-12T07:35:04.492",
-  "endDate": "2027-06-30T00:00:00",
-  "order": 0,
-  "dorsal": "2",
-  "dorsalRaw": "2",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54753,
-  "images": {},
-  "club": {
-   "code": "MIL",
-   "name": "Armani Olimpia Milan",
-   "abbreviatedName": "Milan",
-   "editorialName": "Milan",
-   "tvCode": "MIL",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "006372",
    "name": "YILMAZ, ERKAN",
    "alias": "Yilmaz",
@@ -19813,66 +15734,6 @@
  },
  {
   "person": {
-   "code": "004887",
-   "name": "POIRIER, VINCENT",
-   "alias": "Poirier, Vincent",
-   "aliasRaw": "Poirier, Vincent",
-   "passportName": "VINCENT YANN",
-   "passportSurname": "POIRIER",
-   "jerseyName": "POIRIER",
-   "abbreviatedName": "Poirier, V.",
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 213,
-   "weight": 110,
-   "birthDate": "1993-10-17T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "viinze_17P",
-   "instagramAccount": "viinze_17p/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:32:09.895",
-  "endDate": "2026-08-31T10:54:29.39",
-  "order": 0,
-  "dorsal": "17",
-  "dorsalRaw": "17",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54749,
-  "images": {},
-  "club": {
-   "code": "IST",
-   "name": "Anadolu Efes Istanbul",
-   "abbreviatedName": "Anadolu Efes",
-   "editorialName": "Efes",
-   "tvCode": "EFS",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "012742",
    "name": "DOZIER, PJ",
    "alias": "DOZIER JR, PERRY",
@@ -19910,126 +15771,6 @@
   "positionName": "Guard",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 54748,
-  "images": {},
-  "club": {
-   "code": "IST",
-   "name": "Anadolu Efes Istanbul",
-   "abbreviatedName": "Anadolu Efes",
-   "editorialName": "Efes",
-   "tvCode": "EFS",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "010318",
-   "name": "DESSERT, BRICE",
-   "alias": "DESSERT, BRICE",
-   "aliasRaw": "DESSERT, BRICE",
-   "passportName": "BRICE PIERRE SIMON",
-   "passportSurname": "DESSERT",
-   "jerseyName": "DESSERT",
-   "abbreviatedName": "Dessert, B.",
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 211,
-   "weight": 113,
-   "birthDate": "2003-03-25T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:32:09.426",
-  "endDate": "2026-09-02T11:38:33.791",
-  "order": 0,
-  "dorsal": "13",
-  "dorsalRaw": "13",
-  "position": 3,
-  "positionName": "Center",
-  "lastTeam": "",
-  "externalId": 54747,
-  "images": {},
-  "club": {
-   "code": "IST",
-   "name": "Anadolu Efes Istanbul",
-   "abbreviatedName": "Anadolu Efes",
-   "editorialName": "Efes",
-   "tvCode": "EFS",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "007109",
-   "name": "SMITS, ROLANDS",
-   "alias": "SMITS, ROLANDS",
-   "aliasRaw": "SMITS, ROLANDS",
-   "passportName": "ROLANDS",
-   "passportSurname": "SMITS",
-   "jerseyName": "SMITS",
-   "abbreviatedName": "Smits, R.",
-   "country": {
-    "code": "LAT",
-    "name": "Latvia"
-   },
-   "height": 208,
-   "weight": 107,
-   "birthDate": "1995-06-25T00:00:00",
-   "birthCountry": {
-    "code": "LAT",
-    "name": "Latvia"
-   },
-   "twitterAccount": "Rolands_Smits",
-   "instagramAccount": "rolands_smits/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:32:09.198",
-  "endDate": "2026-08-31T10:54:29.28",
-  "order": 0,
-  "dorsal": "11",
-  "dorsalRaw": "11",
-  "position": 2,
-  "positionName": "Forward",
-  "lastTeam": "",
-  "externalId": 54746,
   "images": {},
   "club": {
    "code": "IST",
@@ -20173,248 +15914,6 @@
  },
  {
   "person": {
-   "code": "010391",
-   "name": "WEILER-BABB, NICK",
-   "alias": "WEILER-BABB, NICK",
-   "aliasRaw": "WEILER-BABB, NICK",
-   "passportName": "NICHOLAS ALAN",
-   "passportSurname": "WEILER-BABB",
-   "jerseyName": "WEILER-BABB",
-   "abbreviatedName": "Weiler-Babb, N.",
-   "country": {
-    "code": "GER",
-    "name": "Germany"
-   },
-   "height": 194,
-   "weight": 96,
-   "birthDate": "1995-12-12T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "nickbabb12",
-   "instagramAccount": "nickbabb1/",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:32:08.487",
-  "endDate": "2026-08-31T10:54:29.189",
-  "order": 0,
-  "dorsal": "8",
-  "dorsalRaw": "8",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54743,
-  "images": {},
-  "club": {
-   "code": "IST",
-   "name": "Anadolu Efes Istanbul",
-   "abbreviatedName": "Anadolu Efes",
-   "editorialName": "Efes",
-   "tvCode": "EFS",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "011201",
-   "name": "HAZER, SEHMUS",
-   "alias": "HAZER, SEHMUS",
-   "aliasRaw": "HAZER, SEHMUS",
-   "passportName": "SEHMUS",
-   "passportSurname": "HAZER",
-   "jerseyName": "HAZER",
-   "abbreviatedName": "Hazer, S.",
-   "country": {
-    "code": "TUR",
-    "name": "Turkiye"
-   },
-   "height": 195,
-   "weight": 87,
-   "birthDate": "1999-02-15T00:00:00",
-   "birthCountry": {
-    "code": "TUR",
-    "name": "Turkiye"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:32:08.236",
-  "endDate": "2026-08-31T10:54:29.105",
-  "order": 0,
-  "dorsal": "2",
-  "dorsalRaw": "2",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54742,
-  "images": {},
-  "club": {
-   "code": "IST",
-   "name": "Anadolu Efes Istanbul",
-   "abbreviatedName": "Anadolu Efes",
-   "editorialName": "Efes",
-   "tvCode": "EFS",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "006590",
-   "name": "BEAUBOIS, RODRIGUE",
-   "alias": "Beaubois",
-   "aliasRaw": "Beaubois",
-   "passportName": "RODRIGUE GABRIEL",
-   "passportSurname": "BEAUBOIS",
-   "jerseyName": "BEAUBOIS",
-   "abbreviatedName": "Beaubois, R.",
-   "country": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "height": 188,
-   "weight": 84,
-   "birthDate": "1988-02-24T00:00:00",
-   "birthCountry": {
-    "code": "FRA",
-    "name": "France"
-   },
-   "twitterAccount": "",
-   "instagramAccount": "",
-   "facebookAccount": "",
-   "isReferee": false,
-   "images": {}
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:32:08.001",
-  "endDate": "2026-08-31T10:54:29.016",
-  "order": 0,
-  "dorsal": "1",
-  "dorsalRaw": "1",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54741,
-  "images": {},
-  "club": {
-   "code": "IST",
-   "name": "Anadolu Efes Istanbul",
-   "abbreviatedName": "Anadolu Efes",
-   "editorialName": "Efes",
-   "tvCode": "EFS",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
-   "code": "007200",
-   "name": "LARKIN, SHANE",
-   "alias": "LARKIN, DESHANE DAVIS",
-   "aliasRaw": "LARKIN, DESHANE DAVIS",
-   "passportName": "DESHANE DAVIS",
-   "passportSurname": "LARKIN",
-   "jerseyName": "LARKIN",
-   "abbreviatedName": "Larkin, S.",
-   "country": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "height": 180,
-   "weight": 82,
-   "birthDate": "1992-10-02T00:00:00",
-   "birthCountry": {
-    "code": "USA",
-    "name": "United States of America"
-   },
-   "twitterAccount": "shanelarkin",
-   "instagramAccount": "shanelarkin",
-   "facebookAccount": "OfficialShaneLarkin/",
-   "isReferee": false,
-   "images": {
-    "headshot": "https://media-cdn.incrowdsports.com/012e431c-3640-40a4-ae27-ba8b67a784e3.jpeg"
-   }
-  },
-  "type": "J",
-  "typeName": "Player",
-  "active": false,
-  "startDate": "2026-08-12T07:32:07.696",
-  "endDate": "2026-08-31T10:54:28.821",
-  "order": 0,
-  "dorsal": "0",
-  "dorsalRaw": "0",
-  "position": 1,
-  "positionName": "Guard",
-  "lastTeam": "",
-  "externalId": 54740,
-  "images": {},
-  "club": {
-   "code": "IST",
-   "name": "Anadolu Efes Istanbul",
-   "abbreviatedName": "Anadolu Efes",
-   "editorialName": "Efes",
-   "tvCode": "EFS",
-   "isVirtual": false,
-   "images": {
-    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-   }
-  },
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  }
- },
- {
-  "person": {
    "code": "012606",
    "name": "WRIGHT IV, MCKINLEY",
    "alias": "WRIGHT IV, MCKINLEY",
@@ -20452,7 +15951,10 @@
   "positionName": "Guard",
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54738,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3ba17637-8f86-49cd-a1ea-33abf8a3a658.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3ba17637-8f86-49cd-a1ea-33abf8a3a658.png"
+  },
   "club": {
    "code": "DUB",
    "name": "Dubai Basketball",
