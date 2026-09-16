@@ -30,6 +30,8 @@ const STORAGE_KEY = "efa-squad";
 
 interface Props {
   market: Player[];
+  /** Proyección del once óptimo, para medir cuánto se deja sobre la mesa. */
+  optimalProjection?: number | null;
 }
 
 type RosterState =
@@ -39,7 +41,7 @@ type RosterState =
   | { status: "error"; message: string }
   | { status: "ready"; count: number };
 
-export default function SquadConsole({ market }: Props) {
+export default function SquadConsole({ market, optimalProjection }: Props) {
   const [ids, setIds] = useState<number[]>([]);
   const [budget, setBudget] = useState(DEFAULT_BUDGET);
   const [roster, setRoster] = useState<RosterState>({ status: "idle" });
@@ -159,7 +161,7 @@ export default function SquadConsole({ market }: Props) {
   return (
     <div className="stack" style={{ "--gap": "24px" } as React.CSSProperties}>
       {/* ------------------------------------------------------- controles */}
-      <div className="row" style={{ alignItems: "flex-end" }}>
+      <div className="squad-controls">
         <button type="button" className="chip" onClick={loadRoster}>
           {roster.status === "loading" ? "Cargando…" : "Cargar mi equipo real"}
         </button>
@@ -169,7 +171,7 @@ export default function SquadConsole({ market }: Props) {
         <button type="button" className="chip" onClick={() => setIds([])}>
           Vaciar
         </button>
-        <label className="control" style={{ marginLeft: "auto" }}>
+        <label className="control squad-budget">
           <span className="control-label">Presupuesto · {credits(budget)}</span>
           <input
             className="slider"
@@ -179,7 +181,6 @@ export default function SquadConsole({ market }: Props) {
             step={0.5}
             value={budget}
             onChange={(event) => setBudget(Number(event.target.value))}
-            style={{ width: 200 }}
           />
         </label>
       </div>
@@ -231,12 +232,31 @@ export default function SquadConsole({ market }: Props) {
             {captain ? `Capitán sugerido: ${prettyName(captain.name)}` : "—"}
           </div>
         </div>
+        {/* La cifra que de verdad se quiere saber aquí: cuánto se deja sobre la
+            mesa respecto a la mejor plantilla posible con el mismo dinero. */}
         <div className="tile">
-          <div className="tile-label">Estado</div>
-          <div className="tile-value" style={{ fontSize: "1.15rem" }}>
-            {check.valid ? "Válida" : squad.length < SQUAD_SIZE ? "Incompleta" : "Con problemas"}
-          </div>
-          <div className="tile-sub">Máx. {MAX_PER_CLUB} por club</div>
+          <div className="tile-label">Frente al óptimo</div>
+          {typeof optimalProjection === "number" && squad.length ? (
+            <>
+              <div
+                className={`tile-value num ${
+                  check.projection >= optimalProjection - 0.05 ? "delta-up" : "delta-down"
+                }`}
+              >
+                {signed(check.projection - optimalProjection)}
+              </div>
+              <div className="tile-sub">
+                puntos respecto a los {num(optimalProjection)} del once óptimo
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="tile-value" style={{ fontSize: "1.15rem" }}>
+                {check.valid ? "Válida" : squad.length < SQUAD_SIZE ? "Incompleta" : "Con problemas"}
+              </div>
+              <div className="tile-sub">Máx. {MAX_PER_CLUB} por club</div>
+            </>
+          )}
         </div>
       </div>
 
@@ -276,47 +296,73 @@ export default function SquadConsole({ market }: Props) {
         </div>
 
         {squad.length ? (
-          <div className="table-wrap" style={{ border: 0 }}>
-            <table className="data">
-              <thead>
-                <tr>
-                  <th>Jugador</th>
-                  <th className="num">Precio</th>
-                  <th className="num">Proyección</th>
-                  <th className="num">Pts/cr</th>
-                  <th className="num">Fiabilidad</th>
-                  <th className="num">Calendario</th>
-                  <th />
-                </tr>
-              </thead>
-              <tbody>
-                {squad.map((player) => (
-                  <tr key={player.id}>
-                    <td>
-                      <PlayerCell player={player} />
-                    </td>
-                    <td className="num credit">{credits(player.price)}</td>
-                    <td className="num">{num(player.projectedFp)}</td>
-                    <td className="num">
-                      {num(player.valueProjected ?? player.valuePerCredit, 2)}
-                    </td>
-                    <td className="num">{percent(player.perf.consistency)}</td>
-                    <td className="num">{num(player.schedule.difficulty, 0)}</td>
-                    <td>
-                      <button
-                        type="button"
-                        className="chip"
-                        onClick={() => remove(player.id)}
-                        aria-label={`Quitar a ${prettyName(player.name)}`}
-                      >
-                        Quitar
-                      </button>
-                    </td>
+          <>
+            <div className="table-wrap only-wide" style={{ border: 0 }}>
+              <table className="data">
+                <thead>
+                  <tr>
+                    <th>Jugador</th>
+                    <th className="num">Precio</th>
+                    <th className="num">Proyección</th>
+                    <th className="num">Pts/cr</th>
+                    <th className="num">Fiabilidad</th>
+                    <th className="num">Calendario</th>
+                    <th />
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {squad.map((player) => (
+                    <tr key={player.id}>
+                      <td>
+                        <PlayerCell player={player} />
+                      </td>
+                      <td className="num credit">{credits(player.price)}</td>
+                      <td className="num">{num(player.projectedFp)}</td>
+                      <td className="num">
+                        {num(player.valueProjected ?? player.valuePerCredit, 2)}
+                      </td>
+                      <td className="num">{percent(player.perf.consistency)}</td>
+                      <td className="num">{num(player.schedule.difficulty, 0)}</td>
+                      <td>
+                        <button
+                          type="button"
+                          className="chip"
+                          onClick={() => remove(player.id)}
+                          aria-label={`Quitar a ${prettyName(player.name)}`}
+                        >
+                          Quitar
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* En el móvil, una fila por jugador con el botón de quitar a un
+                toque: la tabla de siete columnas ahí no se puede usar. */}
+            <ul className="squad-list only-narrow">
+              {squad.map((player) => (
+                <li key={player.id}>
+                  <PlayerCell player={player} />
+                  <span className="squad-figures">
+                    <b className="num">{num(player.projectedFp)}</b>
+                    <i className="credit num">{credits(player.price)}</i>
+                  </span>
+                  <button
+                    type="button"
+                    className="icon-button"
+                    onClick={() => remove(player.id)}
+                    aria-label={`Quitar a ${prettyName(player.name)}`}
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+                      <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </>
         ) : (
           <p className="muted" style={{ margin: 0 }}>
             Añade jugadores desde el selector, carga tu equipo real o deja que lo rellene el
@@ -338,26 +384,23 @@ export default function SquadConsole({ market }: Props) {
               </div>
             </div>
             {weakest.length ? (
-              <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+              <ol className="rank-list">
                 {weakest.map((player) => (
-                  <li
-                    key={player.id}
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: 12,
-                      padding: "8px 0",
-                      borderTop: "1px solid var(--hairline)",
-                    }}
-                  >
+                  <li key={player.id}>
                     <PlayerCell player={player} />
-                    <span className="num">
-                      {num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr
+                    {/* Sin rojo: que sea el que menos renta de TU plantilla no
+                        lo convierte en un mal jugador, y pintarlo de alarma
+                        dice algo que el dato no dice. El orden ya ordena. */}
+                    <span className="rank-value">
+                      {num(player.valueProjected ?? player.valuePerCredit, 2)}
+                      <span className="muted" style={{ fontSize: "0.7em", fontWeight: 500 }}>
+                        {" "}
+                        pts/cr
+                      </span>
                     </span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             ) : (
               <p className="muted" style={{ margin: 0 }}>
                 Sin partidos jugados todavía para valorar el rendimiento.
@@ -376,30 +419,30 @@ export default function SquadConsole({ market }: Props) {
               </div>
             </div>
             {swaps.length ? (
-              <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+              <ul className="swap-list">
                 {swaps.map((swap) => (
-                  <li
-                    key={`${swap.out.id}-${swap.in.id}`}
-                    style={{ padding: "10px 0", borderTop: "1px solid var(--hairline)" }}
-                  >
-                    <div className="spread" style={{ gap: 8 }}>
-                      <span>
-                        <span className="muted">Sale</span>{" "}
-                        <strong>{prettyName(swap.out.name)}</strong>{" "}
-                        <span className="muted num">({credits(swap.out.price)})</span>
+                  <li key={`${swap.out.id}-${swap.in.id}`}>
+                    <div className="swap-move">
+                      <span className="swap-out">
+                        <span className="muted">Sale</span> {prettyName(swap.out.name)}
                       </span>
-                      <span className="delta delta-up num">{signed(swap.gain)} pts</span>
+                      <span className="swap-arrow" aria-hidden>
+                        →
+                      </span>
+                      <span className="swap-in">
+                        <span className="muted">Entra</span> {prettyName(swap.in.name)}
+                        <i className="muted num">
+                          {swap.in.clubShort} · {positionLabel(swap.in.position)} ·{" "}
+                          {credits(swap.in.price)}
+                        </i>
+                      </span>
                     </div>
-                    <div className="spread" style={{ gap: 8 }}>
-                      <span>
-                        <span className="muted">Entra</span>{" "}
-                        <strong>{prettyName(swap.in.name)}</strong>{" "}
-                        <span className="muted num">
-                          ({credits(swap.in.price)} · {swap.in.clubShort} ·{" "}
-                          {positionLabel(swap.in.position)})
-                        </span>
-                      </span>
-                      <span className="num muted">
+                    {/* La ganancia es la razón por la que se lee esta tarjeta:
+                        va en grande, y el coste debajo en pequeño. */}
+                    <div className="swap-gain">
+                      <b className="delta-up num">{signed(swap.gain)}</b>
+                      <i className="muted">pts</i>
+                      <span className="num">
                         <Delta value={swap.costDelta} digits={1} suffix=" cr" />
                       </span>
                     </div>

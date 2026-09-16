@@ -1,5 +1,5 @@
 import SquadConsole from "@/components/team/SquadConsole";
-import { meta, pricedPlayers, rosterPlayers } from "@/lib/data";
+import { lineup, meta, pricedPlayers, rosterPlayers } from "@/lib/data";
 
 export const metadata = {
   title: "Mi equipo",
@@ -12,18 +12,18 @@ export default function TeamPage() {
 
   return (
     <section className="section shell">
-      <div className="stack" style={{ "--gap": "12px", marginBottom: 26 } as React.CSSProperties}>
+      <div className="stack" style={{ "--gap": "12px", marginBottom: 24 } as React.CSSProperties}>
         <span className="eyebrow">Jornada {meta.currentRound}</span>
-        <h1 className="gradient-text">Tu plantilla, revisada</h1>
+        <h1>Tu plantilla, revisada</h1>
         <p className="lede">
-          Diez jugadores de campo — 4 bases, 4 aleros, 2 pívots — con 100 créditos y un
-          máximo de seis del mismo club. La consola valida esas reglas mientras montas el
-          equipo, señala a quién le estás pagando de más y propone el mejor recambio que
-          cabe en lo que te queda. El entrenador, la plaza once, se elige aparte y puntúa
-          solo por el marcador de su equipo.
+          Monta el equipo y la consola valida las reglas, señala a quién le pagas de más y
+          propone el mejor recambio que cabe en tu presupuesto.
         </p>
       </div>
-      <SquadConsole market={market} />
+      <SquadConsole
+        market={market}
+        optimalProjection={lineup.available ? (lineup.totalProjection ?? null) : null}
+      />
     </section>
   );
 }

@@ -1,8 +1,12 @@
 /** Piezas pequeñas que se repiten por toda la app. */
 import Link from "next/link";
 
-import { deltaClass, num, positionLabel } from "@/lib/format";
+import { deltaClass, initials, num, positionLabel, prettyName } from "@/lib/format";
 import type { Player } from "@/lib/types";
+
+/* `prettyName` e `initials` viven en lib/format: los necesita código que no
+   pinta nada. Se reexportan aquí porque media app los importa por este camino. */
+export { initials, prettyName };
 
 export function PositionBadge({ position }: { position: string | null }) {
   if (!position) return <span className="muted">—</span>;
@@ -56,6 +60,81 @@ export function PlayerCell({ player }: { player: Player }) {
   );
 }
 
+/** Número con una barra proporcional detrás.
+ *
+ *  Veinte filas de cifras se leen una a una; con la barra, la columna entera se
+ *  lee de un vistazo. Solo la llevan las columnas que de verdad se comparan: si
+ *  la llevaran todas, la tabla sería un gráfico de barras ilegible. */
+export function BarCell({
+  value,
+  fraction,
+  digits = 1,
+  strong = false,
+}: {
+  value: number | null | undefined;
+  fraction: number | null;
+  digits?: number;
+  strong?: boolean;
+}) {
+  const width = fraction === null ? 0 : Math.max(0, Math.min(1, fraction));
+  return (
+    <span className="bar-cell">
+      <span
+        className="bar-cell-fill"
+        style={{ width: `${width * 100}%` }}
+        aria-hidden
+      />
+      <span className="bar-cell-value">
+        {strong ? <strong>{num(value, digits)}</strong> : num(value, digits)}
+      </span>
+    </span>
+  );
+}
+
+/** Dónde cae un jugador dentro de los de su posición. */
+export function PercentileBar({
+  label,
+  percentile,
+  detail,
+}: {
+  label: string;
+  percentile: number;
+  detail?: string;
+}) {
+  const top = Math.max(1, Math.round((1 - percentile) * 100));
+  const strong = percentile >= 0.75;
+  const weak = percentile <= 0.25;
+  // "Top 49%" en la mediana es ruido con pinta de elogio. En la franja central
+  // se dice lo que es: está en la media.
+  const caption =
+    percentile >= 0.56
+      ? `Top ${top}%`
+      : percentile <= 0.44
+        ? `Percentil ${Math.round(percentile * 100)}`
+        : "En la media";
+  return (
+    <div className="pctl">
+      <div className="pctl-head">
+        <span className="pctl-label">{label}</span>
+        <span className={`pctl-value${strong ? " is-strong" : weak ? " is-weak" : ""}`}>
+          {caption}
+        </span>
+      </div>
+      <div
+        className="pctl-track"
+        role="img"
+        aria-label={`${label}: percentil ${Math.round(percentile * 100)} de su posición`}
+      >
+        <span
+          className={`pctl-fill${strong ? " is-strong" : weak ? " is-weak" : ""}`}
+          style={{ width: `${Math.max(2, percentile * 100)}%` }}
+        />
+      </div>
+      {detail ? <div className="pctl-detail num">{detail}</div> : null}
+    </div>
+  );
+}
+
 export function StatTile({
   label,
   value,
@@ -91,38 +170,4 @@ export function Notice({
       <div>{children}</div>
     </div>
   );
-}
-
-/** Iniciales para cuando no hay foto. */
-export function initials(raw: string | null | undefined): string {
-  if (!raw) return "";
-  const parts = raw.replace(",", " ").trim().split(/\s+/).filter(Boolean);
-  if (!parts.length) return "";
-  const first = parts[0][0];
-  const second = parts.length > 1 ? parts[1][0] : "";
-  return `${first}${second}`.toUpperCase();
-}
-
-/** Sufijos que no se capitalizan como palabra normal. */
-const NAME_SUFFIXES = new Set(["II", "III", "IV", "JR", "SR"]);
-
-/** "VEZENKOV, SASHA" -> "Sasha Vezenkov" */
-export function prettyName(raw: string | null | undefined): string {
-  if (!raw) return "—";
-  const capitalise = (word: string) =>
-    word
-      .split(/([ -])/)
-      .map((part) => {
-        if (part.length < 2) return part;
-        const bare = part.replace(/\./g, "").toUpperCase();
-        if (NAME_SUFFIXES.has(bare)) return bare === "JR" || bare === "SR" ? `${bare.charAt(0)}${bare.charAt(1).toLowerCase()}.` : bare;
-        return part.charAt(0) + part.slice(1).toLowerCase();
-      })
-      .join("");
-
-  if (raw.includes(",")) {
-    const [surname, given] = raw.split(",");
-    return `${capitalise(given.trim())} ${capitalise(surname.trim())}`.trim();
-  }
-  return capitalise(raw);
 }

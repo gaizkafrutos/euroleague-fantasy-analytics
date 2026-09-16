@@ -4,39 +4,59 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const LINKS = [
-  { href: "/", label: "Mercado" },
-  { href: "/mi-equipo", label: "Mi equipo" },
-  { href: "/equipos", label: "Equipos" },
-  { href: "/metodologia", label: "Metodología" },
-];
+import PlayerSearch from "./PlayerSearch";
+import { NAV_ITEMS, isCurrent } from "./nav-items";
 
-export default function Header() {
+interface Props {
+  round: number;
+  totalRounds: number;
+}
+
+export default function Header({ round, totalRounds }: Props) {
   const pathname = usePathname();
 
   return (
     <header className="masthead">
       <div className="shell masthead-inner">
-        <Link href="/" className="wordmark">
-          <span className="wordmark-mark" aria-hidden />
-          <span>
-            Fantasy<span className="muted">/</span>EuroLeague
+        <Link href="/" className="wordmark" aria-label="Euroanalysis, inicio">
+          <span className="wordmark-mark" aria-hidden>
+            {/* Tres barras ascendentes: análisis y progresión. Un símbolo
+                dibujado se lee como marca; un círculo con CSS, no. */}
+            <svg viewBox="0 0 20 20" fill="none">
+              <rect x="2" y="11" width="3.6" height="7" rx="1.2" fill="#fff" opacity="0.62" />
+              <rect x="8.2" y="6.5" width="3.6" height="11.5" rx="1.2" fill="#fff" opacity="0.82" />
+              <rect x="14.4" y="2" width="3.6" height="16" rx="1.2" fill="#fff" />
+            </svg>
+          </span>
+          <span className="wordmark-text">
+            <span className="wordmark-name">Euroanalysis</span>
+            <span className="wordmark-sub">Fantasy Challenge</span>
           </span>
         </Link>
+
+        {/* En el móvil la navegación baja a la barra inferior: ahí se llega con
+            el pulgar, y arriba no hay sitio para cuatro palabras. */}
         <nav className="nav" aria-label="Principal">
-          {LINKS.map((link) => (
+          {NAV_ITEMS.map((item) => (
             <Link
-              key={link.href}
-              href={link.href}
-              aria-current={
-                link.href === "/" ? (pathname === "/" ? "page" : undefined) : pathname.startsWith(link.href) ? "page" : undefined
-              }
+              key={item.href}
+              href={item.href}
+              aria-current={isCurrent(item.href, pathname) ? "page" : undefined}
             >
-              {link.label}
+              {item.label}
             </Link>
           ))}
         </nav>
-        <ThemeToggle />
+
+        <PlayerSearch />
+
+        <div className="masthead-tools">
+          <span className="round-pill">
+            Jornada <b>{round}</b>
+            <span className="muted">/ {totalRounds}</span>
+          </span>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
@@ -74,12 +94,20 @@ function ThemeToggle() {
   return (
     <button
       type="button"
-      className="chip"
+      className="icon-button"
       onClick={toggle}
       aria-label="Cambiar entre tema claro y oscuro"
-      style={{ flex: "none" }}
+      title="Cambiar tema"
     >
-      {theme === "dark" ? "Claro" : theme === "light" ? "Oscuro" : "Tema"}
+      {/* Un icono en vez de una palabra: ocupa menos y no compite con la
+          navegación por atención. */}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <path
+          d="M12 3v1.5M12 19.5V21M4.2 4.2l1.1 1.1M18.7 18.7l1.1 1.1M3 12h1.5M19.5 12H21M4.2 19.8l1.1-1.1M18.7 5.3l1.1-1.1"
+          strokeLinecap="round"
+        />
+        <circle cx="12" cy="12" r="3.9" />
+      </svg>
     </button>
   );
 }

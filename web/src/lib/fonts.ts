@@ -1,19 +1,20 @@
 /** Tipografías del proyecto.
  *
- *  `next/font` descarga y auto-hospeda las fuentes en tiempo de compilación:
- *  el navegador no pide nada a Google, no hay petición externa en runtime y no
- *  hay salto de texto al cargar.
+ *  `next/font` las descarga y auto-hospeda en tiempo de compilación: el
+ *  navegador del visitante no pide nada a Google y no hay salto de texto.
  *
- *  Archivo Black para titulares — pesada y ancha, en la línea de la gráfica
- *  oficial del Fantasy Challenge. El resto del texto y TODAS las cifras de los
- *  gráficos siguen en la sans del sistema: en una tabla de números lo que
- *  importa es que alineen, no que tengan personalidad.
+ *  Sora para titulares — geométrica, con carácter pero sin gritar. Se usa en
+ *  caja normal, no en mayúsculas: las mayúsculas grandes llaman la atención
+ *  sobre sí mismas, y aquí lo que tiene que destacar son los datos.
+ *
+ *  Inter para todo lo demás, incluidas TODAS las cifras. En una tabla de
+ *  números lo que importa es que aliñen, no que tengan personalidad.
  */
-import { Archivo_Black, Inter } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 
-export const display = Archivo_Black({
-  weight: "400",
+export const display = Sora({
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   display: "swap",
   variable: "--font-display",
 });

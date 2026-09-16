@@ -1,10 +1,14 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import GameLogBars from "@/components/charts/GameLogBars";
 import PriceHistory from "@/components/charts/PriceHistory";
-import { PositionBadge, StatTile, prettyName } from "@/components/ui/primitives";
+import { PercentileBar, PositionBadge, StatTile, prettyName } from "@/components/ui/primitives";
 import { getDetail, getPlayer, getTeam, players } from "@/lib/data";
-import { credits, dateShort, num, percent, signed } from "@/lib/format";
+import { POSITION_PLURAL, credits, dateShort, num, percent, signed } from "@/lib/format";
+import { percentileRows, poolSize, type PercentileKey } from "@/lib/percentiles";
+import { verdictFor } from "@/lib/verdict";
+import type { Player } from "@/lib/types";
 
 export function generateStaticParams() {
   return players.map((player) => ({ id: String(player.id) }));
@@ -20,6 +24,32 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
+const PERCENTILE_KEYS: PercentileKey[] = [
+  "projectedFp",
+  "valueProjected",
+  "fpAvg",
+  "consistency",
+  "minutesAvg",
+];
+
+/** El número real detrás de cada percentil: el percentil sitúa, el número ancla. */
+function percentileDetail(player: Player, key: PercentileKey): string {
+  switch (key) {
+    case "projectedFp":
+      return `${num(player.projectedFp)} pts`;
+    case "valueProjected":
+      return `${num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr`;
+    case "fpAvg":
+      return `${num(player.perf.fpAvg)} pts`;
+    case "consistency":
+      return percent(player.perf.consistency);
+    case "minutesAvg":
+      return `${num(player.perf.minutesAvg)} min`;
+    default:
+      return "";
+  }
+}
+
 export default async function PlayerPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const player = getPlayer(Number(id));
@@ -27,6 +57,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
   const detail = await getDetail(player.id);
   const team = getTeam(player.club);
+  const verdict = verdictFor(player);
+  const percentiles = percentileRows(player, PERCENTILE_KEYS);
+  const groupSize = poolSize(player.position);
 
   const marketRows: Array<[string, number | null | undefined]> = [
     ["Puntos", player.market.points],
@@ -48,24 +81,18 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
   return (
     <>
-      <section className="section shell">
-        <div className="row" style={{ gap: 18, alignItems: "flex-start" }}>
+      <section className="shell player-hero">
+        <Link href="/" className="crumb">
+          <span aria-hidden>←</span> Mercado
+        </Link>
+
+        <div className="player-head">
           {player.image ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={player.image}
-              alt=""
-              width={92}
-              height={92}
-              style={{
-                borderRadius: "50%",
-                objectFit: "cover",
-                border: "1px solid var(--ring)",
-                background: "var(--surface-2)",
-              }}
-            />
+            <img className="player-photo" src={player.image} alt="" width={108} height={108} />
           ) : null}
-          <div className="stack" style={{ "--gap": "8px" } as React.CSSProperties}>
+
+          <div className="player-identity">
             <span className="eyebrow">
               {team?.crest ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -74,31 +101,70 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               {player.clubName ?? "—"}
               {player.dorsal ? ` · #${player.dorsal}` : ""}
             </span>
-            <h1 className="gradient-text">{prettyName(player.name)}</h1>
-            <div className="row">
+            <h1>{prettyName(player.name)}</h1>
+            <div className="row player-facts">
               <PositionBadge position={player.position} />
               {player.height ? <span className="badge">{player.height} cm</span> : null}
+              {player.birthDate ? <span className="badge">{age(player.birthDate)} años</span> : null}
               {player.country ? <span className="badge">{player.country}</span> : null}
-              {player.birthDate ? (
-                <span className="badge">{age(player.birthDate)} años</span>
-              ) : null}
-              <span className="badge" title={`Cruce por ${player.match.method}`}>
-                ID oficial {player.personCode ?? "—"}
-              </span>
+            </div>
+          </div>
+
+          <div className="player-price">
+            <div className="tile-label">Precio</div>
+            <div className="player-price-value credit num">{credits(player.price)}</div>
+            <div className="tile-sub num">
+              {player.priceDeltaTotal
+                ? `${signed(player.priceDeltaTotal)} cr desde el inicio`
+                : "sin variación registrada"}
             </div>
           </div>
         </div>
 
-        <div className="grid grid-4" style={{ marginTop: 26 }}>
-          <StatTile
-            label="Precio"
-            value={<span className="credit">{credits(player.price)}</span>}
-            sub={
-              player.priceDeltaTotal
-                ? `${signed(player.priceDeltaTotal)} cr desde el inicio`
-                : "sin variación registrada"
-            }
-          />
+        {/* El juicio, antes que los datos que lo sostienen. La ficha tenía
+            dieciséis números y ninguna conclusión. */}
+        <div className={`verdict is-${verdict.tone}`}>
+          <p className="verdict-headline">{verdict.headline}</p>
+          {verdict.reasons.length ? (
+            <ul className="verdict-reasons">
+              {verdict.reasons.map((reason) => (
+                <li key={reason}>{reason}</li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------- percentiles */}
+      {percentiles.length ? (
+        <section className="section shell">
+          <div className="section-head">
+            <div>
+              <h2>Dónde cae entre los suyos</h2>
+              <p className="card-note" style={{ margin: "8px 0 0", maxWidth: "62ch" }}>
+                Comparado con los {groupSize}{" "}
+                {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()} del
+                mercado que han jugado.
+                Una media de 15 puntos no significa lo mismo en un pívot que en un base.
+              </p>
+            </div>
+          </div>
+          <div className="pctl-grid">
+            {percentiles.map((row) => (
+              <PercentileBar
+                key={row.key}
+                label={row.label}
+                percentile={row.percentile}
+                detail={percentileDetail(player, row.key)}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* ------------------------------------------------------------ cifras */}
+      <section className="section shell">
+        <div className="grid grid-4">
           <StatTile
             label="Proyección"
             value={num(player.projectedFp)}
@@ -113,6 +179,11 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             label="Fiabilidad"
             value={percent(player.perf.consistency)}
             sub={`desviación ${num(player.perf.fpStd)} pts`}
+          />
+          <StatTile
+            label="Calendario"
+            value={num(player.schedule.difficulty, 0)}
+            sub="dificultad de los 3 próximos rivales, sobre 100"
           />
         </div>
       </section>
@@ -156,7 +227,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             <div className="card-head">
               <div className="card-title">Rol en el equipo</div>
             </div>
-            <dl style={{ margin: 0, display: "grid", gap: 10 }}>
+            <dl className="fact-list">
               <Row label="Minutos por partido" value={num(player.perf.minutesAvg)} />
               <Row
                 label="Minutos últimos 5"
@@ -168,10 +239,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               />
               <Row label="Titularidades" value={percent(player.perf.startedRate)} />
               <Row label="Partidos sin jugar" value={percent(player.perf.dnpRate)} />
-              <Row
-                label="Puntos por minuto"
-                value={num(player.perf.fpPerMin, 2)}
-              />
+              <Row label="Puntos por minuto" value={num(player.perf.fpPerMin, 2)} />
             </dl>
           </div>
 
@@ -185,18 +253,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               </div>
             </div>
             {detail.fixtures.length ? (
-              <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+              <ul className="fixture-list">
                 {detail.fixtures.map((fixture) => (
-                  <li
-                    key={`${fixture.round}-${fixture.opponent}`}
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      gap: 12,
-                      padding: "8px 0",
-                      borderTop: "1px solid var(--hairline)",
-                    }}
-                  >
+                  <li key={`${fixture.round}-${fixture.opponent}`}>
                     <span>
                       <strong>J{fixture.round}</strong>{" "}
                       <span className="muted">{fixture.home ? "vs" : "@"}</span>{" "}
@@ -245,6 +304,15 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             </p>
           )}
         </div>
+
+        {/* La trazabilidad del cruce es una nota al pie, no una etiqueta de
+            depuración junto al nombre del jugador. */}
+        <p className="provenance">
+          Identificado con el censo oficial de la EuroLiga
+          {player.match.method ? ` por ${player.match.method}` : ""}
+          {player.personCode ? ` · ficha ${player.personCode}` : ""}.{" "}
+          <Link href="/metodologia">Cómo se cruzan los nombres</Link>
+        </p>
       </section>
     </>
   );
@@ -252,11 +320,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+    <div>
       <dt className="muted">{label}</dt>
-      <dd className="num" style={{ margin: 0, fontWeight: 600 }}>
-        {value}
-      </dd>
+      <dd className="num">{value}</dd>
     </div>
   );
 }

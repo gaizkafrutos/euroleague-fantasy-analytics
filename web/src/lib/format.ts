@@ -73,6 +73,52 @@ export function positionLabel(position: string | null | undefined): string {
   return POSITION_LABEL[position] ?? position;
 }
 
+/** Sufijos que no se capitalizan como palabra normal. */
+const NAME_SUFFIXES = new Set(["II", "III", "IV", "JR", "SR"]);
+
+/** "VEZENKOV, SASHA" -> "Sasha Vezenkov" */
+export function prettyName(raw: string | null | undefined): string {
+  if (!raw) return "—";
+  const capitalise = (word: string) =>
+    word
+      .split(/([ -])/)
+      .map((part) => {
+        if (part.length < 2) return part;
+        const bare = part.replace(/\./g, "").toUpperCase();
+        if (NAME_SUFFIXES.has(bare))
+          return bare === "JR" || bare === "SR"
+            ? `${bare.charAt(0)}${bare.charAt(1).toLowerCase()}.`
+            : bare;
+        return part.charAt(0) + part.slice(1).toLowerCase();
+      })
+      .join("");
+
+  if (raw.includes(",")) {
+    const [surname, given] = raw.split(",");
+    return `${capitalise(given.trim())} ${capitalise(surname.trim())}`.trim();
+  }
+  return capitalise(raw);
+}
+
+/** Iniciales para cuando no hay foto. */
+export function initials(raw: string | null | undefined): string {
+  if (!raw) return "";
+  const parts = raw.replace(",", " ").trim().split(/\s+/).filter(Boolean);
+  if (!parts.length) return "";
+  const first = parts[0][0];
+  const second = parts.length > 1 ? parts[1][0] : "";
+  return `${first}${second}`.toUpperCase();
+}
+
+/** Sin acentos y en minúscula: lo que se compara al buscar. */
+export function normalize(raw: string): string {
+  return raw
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 /** Clase CSS para un delta, según signo. */
 export function deltaClass(value: number | null | undefined, epsilon = 0.001): string {
   if (value === null || value === undefined || Math.abs(value) < epsilon) return "delta delta-flat";

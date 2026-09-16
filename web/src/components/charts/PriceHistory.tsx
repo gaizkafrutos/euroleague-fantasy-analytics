@@ -21,12 +21,26 @@ export default function PriceHistory({ points, height = 220 }: Props) {
   const [active, setActive] = useState<number | null>(null);
   const width = 720;
 
+  /* Con una sola captura no hay curva que dibujar. Un punto solitario en un eje
+     vacío parece un error del gráfico; mejor enseñar la lectura que hay y decir
+     cuándo aparecerá la línea. */
   if (points.length < 2) {
+    const only = points[0];
     return (
-      <p className="muted" style={{ margin: 0 }}>
-        Hace falta más de un snapshot para dibujar la evolución. El histórico se
-        construye solo, una captura por jornada.
-      </p>
+      <div className="single-reading">
+        {only ? (
+          <>
+            <div className="single-reading-value credit num">{credits(only.q)}</div>
+            <div className="muted num">Única captura, del {dateShort(only.t)}</div>
+          </>
+        ) : (
+          <div className="muted">Todavía no hay ninguna captura de precio.</div>
+        )}
+        <p className="card-note" style={{ margin: "10px 0 0" }}>
+          La curva aparece a partir de la segunda captura. El histórico se construye solo:
+          una foto del mercado al día.
+        </p>
+      </div>
     );
   }
 

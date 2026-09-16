@@ -20,16 +20,14 @@ export default function TeamsPage() {
     <section className="section shell">
       <div className="stack" style={{ "--gap": "12px", marginBottom: 24 } as React.CSSProperties}>
         <span className="eyebrow">{meta.seasonLabel}</span>
-        <h1 className="gradient-text">Equipos y calendario</h1>
+        <h1>Equipos y calendario</h1>
         <p className="lede">
           El rating de cada club y lo duro que tiene el calendario a tres jornadas vista.
-          Importa más de lo que parece: el bonus de victoria suma un 10% a la puntuación de
-          todos sus jugadores, y el entrenador puntúa solo por el marcador.
-          {meta.teamStrengthSource ? ` Ratings calculados con datos de la ${meta.teamStrengthSource}.` : ""}
+          Pesa más de lo que parece: el bonus de victoria suma un 10% a todos sus jugadores.
         </p>
       </div>
 
-      <div className="table-wrap">
+      <div className="table-wrap only-wide">
         <table className="data">
           <thead>
             <tr>
@@ -79,6 +77,55 @@ export default function TeamsPage() {
           </tbody>
         </table>
       </div>
+
+      {/* En el móvil, una ficha por club: ocho columnas con scroll lateral no
+          se leen, y el diferencial —lo único que ordena la lista— se pierde. */}
+      <ul className="team-cards only-narrow">
+        {ranked.map((team) => (
+          <li key={team.code} className="team-card">
+            <span className="player-cell">
+              {team.crest ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className="crest" src={team.crest} alt="" loading="lazy" />
+              ) : null}
+              <span>
+                <span className="player-name">{team.short ?? team.name}</span>
+                <br />
+                <span className="player-meta">{team.country}</span>
+              </span>
+            </span>
+            <span className="team-card-rating">
+              <b className="num">{num(team.netRating)}</b>
+              <i>diferencial</i>
+            </span>
+            <span className="team-card-stats">
+              <span>
+                <b className="num">{num(team.offense)}</b>
+                <i>anotados</i>
+              </span>
+              <span>
+                <b className="num">{num(team.defense)}</b>
+                <i>recibidos</i>
+              </span>
+              <span>
+                <b className="num">{percent(team.winRate)}</b>
+                <i>victorias</i>
+              </span>
+              <span>
+                <b className="num">{num(team.difficulty, 0)}</b>
+                <i>calendario</i>
+              </span>
+            </span>
+            <span className="team-card-next num">
+              {team.fixtures.length
+                ? team.fixtures
+                    .map((fixture) => `${fixture.home ? "vs" : "@"} ${fixture.opponent}`)
+                    .join(" · ")
+                : "Sin calendario"}
+            </span>
+          </li>
+        ))}
+      </ul>
 
       <p className="card-note" style={{ marginTop: 14 }}>
         Calendario: 100 es el trío de rivales más duro de la liga, 0 el más asequible. Jugar

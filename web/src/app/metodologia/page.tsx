@@ -27,7 +27,7 @@ export default function MethodologyPage() {
     <section className="section shell">
       <div className="stack" style={{ "--gap": "12px", marginBottom: 30 } as React.CSSProperties}>
         <span className="eyebrow">Cómo funciona</span>
-        <h1 className="gradient-text">Metodología</h1>
+        <h1>Metodología</h1>
         <p className="lede">
           Todo lo que hay en esta web sale de dos fuentes y una fórmula. Ninguna métrica es
           una caja negra: si una recomendación no se puede explicar, no sirve para decidir un

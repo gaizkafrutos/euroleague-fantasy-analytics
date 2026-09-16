@@ -1,15 +1,23 @@
 "use client";
 
-/** Explorador de mercado: filtros, nube de valor y tabla ordenable.
+/** Explorador de mercado.
  *
- *  Los 350 jugadores se filtran en cliente. No hace falta paginar ni pedir nada
- *  al servidor: el dataset completo pesa menos que una foto de jugador.
+ *  Tres decisiones de diseño que no son obvias:
+ *
+ *  1. En móvil no hay tabla. Una tabla de once columnas en 390 px es scroll
+ *     horizontal, y nadie compara jugadores haciendo scroll lateral. Ahí se
+ *     pintan fichas, con las tres cifras que deciden y nada más.
+ *  2. Tres columnas llevan barra de fondo. Solo tres: si la llevaran todas, la
+ *     tabla sería un gráfico de barras ilegible.
+ *  3. Los filtros viven en la URL. Si filtras pívots por debajo de 12 créditos
+ *     y pasas el enlace, al otro lado se ve lo mismo que estás viendo tú.
  */
-import { useDeferredValue, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 
 import Sparkline from "@/components/charts/Sparkline";
 import ValueScatter from "@/components/charts/ValueScatter";
-import { Delta, PlayerCell, PositionBadge } from "@/components/ui/primitives";
+import { BarCell, Delta, PlayerCell, PositionBadge } from "@/components/ui/primitives";
 import { credits, num, percent } from "@/lib/format";
 import type { Player, Team } from "@/lib/types";
 
@@ -25,18 +33,57 @@ type SortKey =
   | "priceDeltaLast"
   | "difficulty";
 
+const PAGE_SIZE = 20;
+
 const COLUMNS: Array<{ key: SortKey; label: string; title: string }> = [
-  { key: "price", label: "Precio", title: "Precio actual en créditos" },
-  { key: "priceDeltaLast", label: "Δ precio", title: "Variación desde el snapshot anterior" },
+  // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
+  // y la tabla ya usa ese patrón en Forma y en Minutos.
+  { key: "price", label: "Precio", title: "Precio actual y variación desde la captura anterior" },
   { key: "projectedFp", label: "Proyección", title: "Puntos fantasy esperados la próxima jornada" },
   { key: "valueProjected", label: "Pts/cr", title: "Puntos proyectados por crédito" },
   { key: "fpAvg", label: "Media", title: "Media de puntos fantasy por partido jugado" },
   { key: "form", label: "Forma", title: "Media de los últimos 5 partidos" },
   { key: "minutesAvg", label: "Min", title: "Minutos por partido y su tendencia" },
   { key: "consistency", label: "Fiabilidad", title: "1 = regular, 0 = lotería" },
-  { key: "difficulty", label: "Calendario", title: "Dificultad de los 3 próximos rivales (100 = lo más duro)" },
+  {
+    key: "difficulty",
+    label: "Calendario",
+    title: "Dificultad de los 3 próximos rivales (100 = lo más duro)",
+  },
   { key: "bargainScore", label: "Índice", title: "Índice compuesto de chollo" },
 ];
+
+/** Las columnas que llevan barra proporcional. */
+const BARRED: Partial<Record<SortKey, true>> = {
+  projectedFp: true,
+  valueProjected: true,
+  bargainScore: true,
+};
+
+function metric(player: Player, key: SortKey): number | null {
+  switch (key) {
+    case "price":
+      return player.price;
+    case "priceDeltaLast":
+      return player.priceDeltaLast;
+    case "projectedFp":
+      return player.projectedFp;
+    case "valueProjected":
+      return player.valueProjected ?? player.valuePerCredit;
+    case "fpAvg":
+      return player.perf.fpAvg;
+    case "form":
+      return player.perf.form;
+    case "minutesAvg":
+      return player.perf.minutesAvg;
+    case "consistency":
+      return player.perf.consistency;
+    case "difficulty":
+      return player.schedule.difficulty;
+    case "bargainScore":
+      return player.bargainScore;
+  }
+}
 
 interface Props {
   players: Player[];
@@ -46,6 +93,8 @@ interface Props {
 }
 
 export default function MarketExplorer({ players, teams, details, hasPrices }: Props) {
+  const router = useRouter();
+
   const [query, setQuery] = useState("");
   const [positions, setPositions] = useState<Set<string>>(new Set());
   const [team, setTeam] = useState("");
@@ -57,18 +106,64 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     desc: true,
   });
   const [view, setView] = useState<"tabla" | "grafico">("tabla");
+  const [visible, setVisible] = useState(PAGE_SIZE);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const deferredQuery = useDeferredValue(query);
+  const hydrated = useRef(false);
 
   const priceCeiling = useMemo(() => {
     const prices = players.map((p) => p.price ?? 0).filter((value) => value > 0);
     return prices.length ? Math.ceil(Math.max(...prices)) : 30;
   }, [players]);
 
+  /* ------------------------------------------------------------- URL: leer */
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const pos = params.get("pos");
+    if (pos) setPositions(new Set(pos.split(",").filter((value) => "GFC".includes(value))));
+    if (params.get("q")) setQuery(params.get("q") ?? "");
+    if (params.get("club")) setTeam(params.get("club") ?? "");
+    const max = Number(params.get("max"));
+    if (max > 0) setMaxPrice(max);
+    const games = Number(params.get("min"));
+    if (games > 0) setMinGames(games);
+    if (params.get("alza") === "1") setRisingOnly(true);
+    if (params.get("vista") === "grafico") setView("grafico");
+    const key = params.get("orden") as SortKey | null;
+    if (key && COLUMNS.some((column) => column.key === key)) {
+      setSort({ key, desc: params.get("dir") !== "asc" });
+    }
+    hydrated.current = true;
+  }, []);
+
+  /* ----------------------------------------------------------- URL: escribir */
+  useEffect(() => {
+    // Antes de leer la URL no se escribe: si no, el primer render la borraría.
+    if (!hydrated.current) return;
+    const params = new URLSearchParams();
+    if (query.trim()) params.set("q", query.trim());
+    if (positions.size) params.set("pos", [...positions].join(","));
+    if (team) params.set("club", team);
+    if (maxPrice !== null && maxPrice < priceCeiling) params.set("max", String(maxPrice));
+    if (minGames) params.set("min", String(minGames));
+    if (risingOnly) params.set("alza", "1");
+    if (view === "grafico") params.set("vista", "grafico");
+    const isDefaultSort = sort.key === (hasPrices ? "bargainScore" : "fpAvg") && sort.desc;
+    if (!isDefaultSort) {
+      params.set("orden", sort.key);
+      if (!sort.desc) params.set("dir", "asc");
+    }
+    const search = params.toString();
+    const url = `${window.location.pathname}${search ? `?${search}` : ""}`;
+    window.history.replaceState(null, "", url);
+  }, [query, positions, team, maxPrice, minGames, risingOnly, view, sort, priceCeiling, hasPrices]);
+
   const filtered = useMemo(() => {
     const needle = deferredQuery.trim().toLowerCase();
     return players.filter((player) => {
-      if (needle && !`${player.name} ${player.clubName ?? ""}`.toLowerCase().includes(needle)) return false;
+      if (needle && !`${player.name} ${player.clubName ?? ""}`.toLowerCase().includes(needle))
+        return false;
       if (positions.size && (!player.position || !positions.has(player.position))) return false;
       if (team && player.club !== team) return false;
       if (maxPrice !== null && (player.price ?? 0) > maxPrice) return false;
@@ -79,39 +174,58 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   }, [players, deferredQuery, positions, team, maxPrice, minGames, risingOnly]);
 
   const sorted = useMemo(() => {
-    const value = (player: Player, key: SortKey): number | null => {
-      switch (key) {
-        case "price":
-          return player.price;
-        case "priceDeltaLast":
-          return player.priceDeltaLast;
-        case "projectedFp":
-          return player.projectedFp;
-        case "valueProjected":
-          return player.valueProjected ?? player.valuePerCredit;
-        case "fpAvg":
-          return player.perf.fpAvg;
-        case "form":
-          return player.perf.form;
-        case "minutesAvg":
-          return player.perf.minutesAvg;
-        case "consistency":
-          return player.perf.consistency;
-        case "difficulty":
-          return player.schedule.difficulty;
-        case "bargainScore":
-          return player.bargainScore;
-      }
-    };
-
     return [...filtered].sort((a, b) => {
-      const left = value(a, sort.key);
-      const right = value(b, sort.key);
+      const left = metric(a, sort.key);
+      const right = metric(b, sort.key);
       if (left === null || left === undefined) return 1;
       if (right === null || right === undefined) return -1;
       return sort.desc ? right - left : left - right;
     });
   }, [filtered, sort]);
+
+  /** Rango de cada columna con barra, sobre lo que hay filtrado.
+   *
+   *  Se normaliza entre el mínimo y el máximo de lo filtrado, no entre 0 y el
+   *  máximo: las proyecciones van de 8 a 31 y los puntos por crédito de 0,7 a
+   *  1,6, así que midiendo desde cero todas las barras salen casi iguales y la
+   *  columna deja de comparar nada. Con un suelo del 6% para que la peor barra
+   *  siga siendo visible en vez de leerse como un cero. */
+  const ranges = useMemo(() => {
+    const result = {} as Record<SortKey, { min: number; span: number }>;
+    for (const key of Object.keys(BARRED) as SortKey[]) {
+      let min = Infinity;
+      let max = -Infinity;
+      for (const player of filtered) {
+        const value = metric(player, key);
+        if (typeof value !== "number" || !Number.isFinite(value)) continue;
+        if (value < min) min = value;
+        if (value > max) max = value;
+      }
+      result[key] = Number.isFinite(min)
+        ? { min, span: max - min || Math.abs(max) || 1 }
+        : { min: 0, span: 1 };
+    }
+    return result;
+  }, [filtered]);
+
+  function share(value: number | null | undefined, key: SortKey): number | null {
+    if (typeof value !== "number" || !Number.isFinite(value)) return null;
+    const { min, span } = ranges[key];
+    return 0.06 + 0.94 * Math.max(0, Math.min(1, (value - min) / span));
+  }
+
+  const activeFilters =
+    positions.size +
+    (team ? 1 : 0) +
+    (maxPrice !== null && maxPrice < priceCeiling ? 1 : 0) +
+    (minGames ? 1 : 0) +
+    (risingOnly ? 1 : 0);
+
+  // Cualquier cambio de filtro u orden reinicia la paginación: si no, el
+  // usuario se queda mirando la fila 80 de una lista que ya es otra.
+  useEffect(() => {
+    setVisible(PAGE_SIZE);
+  }, [deferredQuery, positions, team, maxPrice, minGames, risingOnly, sort]);
 
   function togglePosition(position: string) {
     setPositions((previous) => {
@@ -123,26 +237,64 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   }
 
   function applySort(key: SortKey) {
-    setSort((previous) =>
-      previous.key === key ? { key, desc: !previous.desc } : { key, desc: true },
-    );
+    setSort((previous) => (previous.key === key ? { key, desc: !previous.desc } : { key, desc: true }));
   }
 
+  function reset() {
+    setQuery("");
+    setPositions(new Set());
+    setTeam("");
+    setMaxPrice(null);
+    setMinGames(0);
+    setRisingOnly(false);
+  }
+
+  /** Clic en cualquier punto de la fila. El enlace del nombre sigue ahí para el
+   *  teclado y para "abrir en pestaña nueva"; esto es solo comodidad. */
+  function openPlayer(event: React.MouseEvent<HTMLTableRowElement>, id: number) {
+    const target = event.target as HTMLElement;
+    if (target.closest("a, button")) return;
+    router.push(`/jugador/${id}`);
+  }
+
+  const rows = sorted.slice(0, visible);
+
   return (
-    <div className="stack" style={{ "--gap": "20px" } as React.CSSProperties}>
+    <div className="stack" style={{ "--gap": "18px" } as React.CSSProperties}>
       {/* ---------------------------------------------------------- filtros */}
-      <div className="row" style={{ alignItems: "flex-end", gap: 16 }}>
-        <label className="control" style={{ flex: "1 1 220px" }}>
-          <span className="control-label">Buscar</span>
+      <div className="filter-bar">
+        <label className="control filter-search">
+          <span className="sr-only">Buscar en la tabla</span>
           <input
             className="input"
             type="search"
-            placeholder="Jugador o equipo"
+            placeholder="Filtrar por jugador o equipo"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
         </label>
 
+        <button
+          type="button"
+          className="chip filter-toggle"
+          aria-expanded={filtersOpen}
+          onClick={() => setFiltersOpen((open) => !open)}
+        >
+          Filtros
+          {activeFilters ? <span className="chip-count">{activeFilters}</span> : null}
+        </button>
+
+        <div className="segmented filter-view">
+          <button type="button" aria-pressed={view === "tabla"} onClick={() => setView("tabla")}>
+            Tabla
+          </button>
+          <button type="button" aria-pressed={view === "grafico"} onClick={() => setView("grafico")}>
+            Nube
+          </button>
+        </div>
+      </div>
+
+      <div className={`filter-panel${filtersOpen ? " is-open" : ""}`}>
         <div className="control">
           <span className="control-label">Posición</span>
           <div className="row" style={{ gap: 6 }}>
@@ -173,7 +325,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
         </label>
 
         {hasPrices ? (
-          <label className="control" style={{ flex: "0 1 190px" }}>
+          <label className="control filter-price">
             <span className="control-label">
               Precio máximo {maxPrice !== null ? `· ${maxPrice} cr` : ""}
             </span>
@@ -204,30 +356,41 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </select>
         </label>
 
-        <button
-          type="button"
-          className="chip"
-          aria-pressed={risingOnly}
-          onClick={() => setRisingOnly((value) => !value)}
-          title="Solo jugadores que están ganando peso en la rotación de su equipo"
-        >
-          Rol al alza
-        </button>
-
-        <div className="segmented" style={{ marginLeft: "auto" }}>
-          <button type="button" aria-pressed={view === "tabla"} onClick={() => setView("tabla")}>
-            Tabla
-          </button>
-          <button type="button" aria-pressed={view === "grafico"} onClick={() => setView("grafico")}>
-            Nube
+        <div className="control">
+          <span className="control-label">Rotación</span>
+          <button
+            type="button"
+            className="chip"
+            aria-pressed={risingOnly}
+            onClick={() => setRisingOnly((value) => !value)}
+            title="Solo jugadores que están ganando peso en la rotación de su equipo"
+          >
+            Rol al alza
           </button>
         </div>
-      </div>
 
-      <p className="card-note" style={{ margin: 0 }}>
-        {sorted.length} de {players.length} jugadores
-        {positions.size || team || query || minGames || risingOnly ? " tras los filtros" : ""}.
-      </p>
+        {/* Ordenar sin cabecera de tabla: en el móvil no hay dónde pinchar. */}
+        <label className="control filter-sort">
+          <span className="control-label">Ordenar por</span>
+          <select
+            className="select"
+            value={sort.key}
+            onChange={(event) => setSort({ key: event.target.value as SortKey, desc: true })}
+          >
+            {COLUMNS.map((column) => (
+              <option key={column.key} value={column.key}>
+                {column.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        {activeFilters ? (
+          <button type="button" className="button-ghost filter-reset" onClick={reset}>
+            Limpiar filtros
+          </button>
+        ) : null}
+      </div>
 
       {/* ------------------------------------------------------------ vista */}
       {view === "grafico" ? (
@@ -243,79 +406,175 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </div>
           <ValueScatter players={sorted} />
         </div>
-      ) : (
-        <div className="table-wrap">
-          <table className="data">
-            <thead>
-              <tr>
-                <th scope="col">Jugador</th>
-                {COLUMNS.map((column) => (
-                  <th
-                    key={column.key}
-                    scope="col"
-                    className="num"
-                    title={column.title}
-                    aria-sort={
-                      sort.key === column.key ? (sort.desc ? "descending" : "ascending") : undefined
-                    }
-                    onClick={() => applySort(column.key)}
-                  >
-                    {column.label}
-                    {sort.key === column.key ? (sort.desc ? " ↓" : " ↑") : ""}
-                  </th>
-                ))}
-                <th scope="col" className="hide-sm">
-                  Últimos
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {sorted.slice(0, 120).map((player) => (
-                <tr key={player.id}>
-                  <td>
-                    <PlayerCell player={player} />
-                  </td>
-                  <td className="num credit">{credits(player.price)}</td>
-                  <td className="num">
-                    <Delta value={player.priceDeltaLast} digits={2} />
-                  </td>
-                  <td className="num">{num(player.projectedFp)}</td>
-                  <td className="num">{num(player.valueProjected ?? player.valuePerCredit, 2)}</td>
-                  <td className="num">{num(player.perf.fpAvg)}</td>
-                  <td className="num">
-                    {num(player.perf.form)}{" "}
-                    <span className="muted" style={{ fontSize: "0.76em" }}>
-                      <Delta value={player.perf.formDelta} />
-                    </span>
-                  </td>
-                  <td className="num">
-                    {num(player.perf.minutesAvg)}{" "}
-                    <span style={{ fontSize: "0.76em" }}>
-                      <Delta value={player.perf.minutesTrend} />
-                    </span>
-                  </td>
-                  <td className="num">{percent(player.perf.consistency)}</td>
-                  <td className="num">{num(player.schedule.difficulty, 0)}</td>
-                  <td className="num">
-                    <strong>{num(player.bargainScore, 0)}</strong>
-                  </td>
-                  <td className="hide-sm">
-                    <Sparkline
-                      values={(details[String(player.id)]?.recent ?? []).map((game) => game.fp)}
-                      label={`Últimos partidos de ${player.name}`}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      ) : rows.length === 0 ? (
+        <div className="empty-state">
+          <p style={{ margin: 0 }}>Ningún jugador cumple esos filtros.</p>
+          <button type="button" className="button-ghost" onClick={reset}>
+            Limpiar filtros
+          </button>
         </div>
+      ) : (
+        <>
+          {/* -------------------------------------------------- escritorio */}
+          <div className="table-wrap only-wide">
+            <table className="data">
+              <thead>
+                <tr>
+                  <th scope="col">Jugador</th>
+                  {COLUMNS.map((column) => (
+                    <th
+                      key={column.key}
+                      scope="col"
+                      className="num"
+                      aria-sort={
+                        sort.key === column.key
+                          ? sort.desc
+                            ? "descending"
+                            : "ascending"
+                          : undefined
+                      }
+                    >
+                      <button
+                        type="button"
+                        className="th-sort"
+                        title={column.title}
+                        onClick={() => applySort(column.key)}
+                      >
+                        {column.label}
+                        <span className="th-arrow" aria-hidden>
+                          {sort.key === column.key ? (sort.desc ? "↓" : "↑") : ""}
+                        </span>
+                      </button>
+                    </th>
+                  ))}
+                  <th scope="col">Últimos</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((player) => (
+                  <tr
+                    key={player.id}
+                    className="is-clickable"
+                    onClick={(event) => openPlayer(event, player.id)}
+                  >
+                    <td>
+                      <PlayerCell player={player} />
+                    </td>
+                    <td className="num">
+                      <span className="credit">{credits(player.price)}</span>{" "}
+                      <span style={{ fontSize: "0.76em" }}>
+                        <Delta value={player.priceDeltaLast} digits={2} />
+                      </span>
+                    </td>
+                    <td className="num">
+                      <BarCell
+                        value={player.projectedFp}
+                        fraction={share(player.projectedFp, "projectedFp")}
+                      />
+                    </td>
+                    <td className="num">
+                      <BarCell
+                        value={player.valueProjected ?? player.valuePerCredit}
+                        fraction={share(
+                          player.valueProjected ?? player.valuePerCredit,
+                          "valueProjected",
+                        )}
+                        digits={2}
+                      />
+                    </td>
+                    <td className="num">{num(player.perf.fpAvg)}</td>
+                    <td className="num">
+                      {num(player.perf.form)}{" "}
+                      <span className="muted" style={{ fontSize: "0.76em" }}>
+                        <Delta value={player.perf.formDelta} />
+                      </span>
+                    </td>
+                    <td className="num">
+                      {num(player.perf.minutesAvg)}{" "}
+                      <span style={{ fontSize: "0.76em" }}>
+                        <Delta value={player.perf.minutesTrend} />
+                      </span>
+                    </td>
+                    <td className="num">{percent(player.perf.consistency)}</td>
+                    <td className="num">{num(player.schedule.difficulty, 0)}</td>
+                    <td className="num">
+                      <BarCell
+                        value={player.bargainScore}
+                        fraction={share(player.bargainScore, "bargainScore")}
+                        digits={0}
+                        strong
+                      />
+                    </td>
+                    <td>
+                      <Sparkline
+                        values={(details[String(player.id)]?.recent ?? []).map((game) => game.fp)}
+                        label={`Últimos partidos de ${player.name}`}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* ------------------------------------------------------- móvil */}
+          <ul className="player-cards only-narrow">
+            {rows.map((player) => (
+              <li key={player.id}>
+                <a className="player-card" href={`/jugador/${player.id}`}>
+                  <PlayerCell player={player} />
+                  <span className="player-card-price credit num">{credits(player.price)}</span>
+                  <span className="player-card-stats">
+                    <span>
+                      <b className="num">{num(player.projectedFp)}</b>
+                      <i>proyección</i>
+                    </span>
+                    <span>
+                      <b className="num">
+                        {num(player.valueProjected ?? player.valuePerCredit, 2)}
+                      </b>
+                      <i>pts/cr</i>
+                    </span>
+                    <span>
+                      <b className="num">{num(player.perf.fpAvg)}</b>
+                      <i>media</i>
+                    </span>
+                    <span>
+                      <b className="num">{percent(player.perf.consistency)}</b>
+                      <i>fiabilidad</i>
+                    </span>
+                  </span>
+                  {/* Índice de chollo como barra: la cifra suelta no dice nada
+                      sin el resto de la columna delante. */}
+                  <span className="player-card-bar">
+                    <i>índice {num(player.bargainScore, 0)}</i>
+                    <span aria-hidden>
+                      <span style={{ width: `${(share(player.bargainScore, "bargainScore") ?? 0) * 100}%` }} />
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
 
-      {sorted.length > 120 ? (
-        <p className="card-note" style={{ margin: 0 }}>
-          Mostrando los 120 primeros según el orden actual. Afina los filtros para ver el resto.
-        </p>
+      {view === "tabla" && sorted.length > 0 ? (
+        <div className="table-footer">
+          <span className="num">
+            {Math.min(visible, sorted.length)} de {sorted.length}
+            {sorted.length !== players.length ? ` (${players.length} en total)` : ""}
+          </span>
+          {visible < sorted.length ? (
+            <button
+              type="button"
+              className="button-ghost"
+              onClick={() => setVisible((current) => current + PAGE_SIZE)}
+            >
+              Mostrar {Math.min(PAGE_SIZE, sorted.length - visible)} más
+            </button>
+          ) : null}
+        </div>
       ) : null}
 
       {/* En la nube el propio gráfico ya lleva su leyenda: repetirla es ruido. */}
