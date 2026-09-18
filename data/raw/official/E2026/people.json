@@ -1,6 +1,804 @@
 [
  {
   "person": {
+   "code": "009400",
+   "name": "CASARIN, DAVIDE",
+   "alias": "CASARIN, DAVIDE",
+   "aliasRaw": "CASARIN, DAVIDE",
+   "passportName": "DAVIDE",
+   "passportSurname": "CASARIN",
+   "jerseyName": "CASARIN",
+   "abbreviatedName": "Casarin, D.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 197,
+   "weight": 87,
+   "birthDate": "2003-05-22T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-18T07:10:11.215",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "7",
+  "dorsalRaw": "7",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "REYER VENEZIA",
+  "externalId": 56876,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus Bologna",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "000898",
+   "name": "VALANCIUNAS, JONAS",
+   "alias": "Valanciunas",
+   "aliasRaw": "Valanciunas",
+   "passportName": "JONAS",
+   "passportSurname": "VALANCIUNAS",
+   "jerseyName": "VALANCIUNAS",
+   "abbreviatedName": "Valanciunas, J.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "height": 211,
+   "weight": 128,
+   "birthDate": "1992-05-06T00:00:00",
+   "birthCountry": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T16:07:50.77",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "17",
+  "dorsalRaw": "17",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "DENVER NUGGETS",
+  "externalId": 56875,
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ac66bdfd-0af2-486a-a35a-a54ff8cff2d2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ac66bdfd-0af2-486a-a35a-a54ff8cff2d2.png"
+  },
+  "club": {
+   "code": "ZAL",
+   "name": "Zalgiris Kaunas",
+   "abbreviatedName": "Zalgiris",
+   "editorialName": "Zalgiris",
+   "tvCode": "ZAL",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "011214",
+   "name": "RIVERO, JASIEL",
+   "alias": "RIVERO, JASIEL",
+   "aliasRaw": "RIVERO, JASIEL",
+   "passportName": "JASIEL",
+   "passportSurname": "RIVERO FERNANDEZ",
+   "jerseyName": "RIVERO",
+   "abbreviatedName": "Rivero, J.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 206,
+   "weight": 110,
+   "birthDate": "1993-10-31T00:00:00",
+   "birthCountry": {
+    "code": "CUB",
+    "name": "Cuba"
+   },
+   "twitterAccount": "jasielrivero14",
+   "instagramAccount": "jasielriverofernandez",
+   "facebookAccount": "profile.php?id=100005650759164",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T16:02:11.4",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "41",
+  "dorsalRaw": "41",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "ESTRELLA ROJA DE BELGRADO",
+  "externalId": 56874,
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/846bcba4-d936-4a76-964c-2a38b7f543da.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/846bcba4-d936-4a76-964c-2a38b7f543da.png"
+  },
+  "club": {
+   "code": "PAM",
+   "name": "Valencia Basket",
+   "abbreviatedName": "Valencia",
+   "editorialName": "Valencia",
+   "tvCode": "VBC",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "010754",
+   "name": "MARI, LUCAS",
+   "alias": "MARI, LUCAS",
+   "aliasRaw": "MARI, LUCAS",
+   "passportName": "LUCAS",
+   "passportSurname": "MARI TARDIO",
+   "jerseyName": "MARÍ",
+   "abbreviatedName": "Mari, L.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 198,
+   "weight": 98,
+   "birthDate": "2005-10-20T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T16:02:10.967",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "23",
+  "dorsalRaw": "23",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "VERMONT CATAMOUNTS",
+  "externalId": 56873,
+  "images": {},
+  "club": {
+   "code": "PAM",
+   "name": "Valencia Basket",
+   "abbreviatedName": "Valencia",
+   "editorialName": "Valencia",
+   "tvCode": "VBC",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "011706",
+   "name": "SAINT-SUPERY, MARIO",
+   "alias": "SAINT-SUPERY, MARIO",
+   "aliasRaw": "SAINT-SUPERY, MARIO",
+   "passportName": "MARIO",
+   "passportSurname": "SAINT-SUPERY FERNANDEZ",
+   "jerseyName": "SAINT-SUPÉRY",
+   "abbreviatedName": null,
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 192,
+   "weight": 80,
+   "birthDate": "2006-04-14T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T16:02:10.593",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "5",
+  "dorsalRaw": "5",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "UNICAJA MALAGA",
+  "externalId": 56872,
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/444fcffe-f94d-4843-bdb7-801ba2b9b2cc.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/444fcffe-f94d-4843-bdb7-801ba2b9b2cc.png"
+  },
+  "club": {
+   "code": "PAM",
+   "name": "Valencia Basket",
+   "abbreviatedName": "Valencia",
+   "editorialName": "Valencia",
+   "tvCode": "VBC",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015160",
+   "name": "JOHNSON, ALIZE",
+   "alias": "JOHNSON, ALIZE",
+   "aliasRaw": "JOHNSON, ALIZE",
+   "passportName": "ALIZE",
+   "passportSurname": "JOHNSON",
+   "jerseyName": "JOHNSON",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 206,
+   "weight": 92,
+   "birthDate": "1996-04-22T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T15:58:18.519",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "24",
+  "dorsalRaw": "24",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "SHENZHEN AVIATORS",
+  "externalId": 56871,
+  "images": {},
+  "club": {
+   "code": "PRS",
+   "name": "Paris Basketball",
+   "abbreviatedName": "Paris",
+   "editorialName": "Paris",
+   "tvCode": "PBB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015159",
+   "name": "VARVARITIS, IASON",
+   "alias": "VARVARITIS, IASON",
+   "aliasRaw": "VARVARITIS, IASON",
+   "passportName": "IASON",
+   "passportSurname": "VARVARITIS",
+   "jerseyName": "VARVARITIS",
+   "abbreviatedName": null,
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 203,
+   "weight": 81,
+   "birthDate": "2010-05-01T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T15:56:04.19",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "12",
+  "dorsalRaw": "12",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "PLATON SCHOOL",
+  "externalId": 56870,
+  "images": {},
+  "club": {
+   "code": "PAN",
+   "name": "Panathinaikos AKTOR Athens",
+   "abbreviatedName": "Panathinaikos",
+   "editorialName": "Panathinaikos",
+   "tvCode": "PAO",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "011052",
+   "name": "MADAR, YAM",
+   "alias": "MADAR, YAM",
+   "aliasRaw": "MADAR, YAM",
+   "passportName": "YAM",
+   "passportSurname": "MADAR",
+   "jerseyName": "MADAR",
+   "abbreviatedName": "Madar, Y.",
+   "country": {
+    "code": "ISR",
+    "name": "Israel"
+   },
+   "height": 190,
+   "weight": 78,
+   "birthDate": "2000-12-21T00:00:00",
+   "birthCountry": {
+    "code": "ISR",
+    "name": "Israel"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "yam_madar11",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T14:48:08.24",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "26",
+  "dorsalRaw": "26",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "HAPOEL TEL AVIV",
+  "externalId": 56869,
+  "images": {},
+  "club": {
+   "code": "TEL",
+   "name": "Maccabi Rapyd Tel Aviv",
+   "abbreviatedName": "Maccabi",
+   "editorialName": "Maccabi",
+   "tvCode": "MTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "005985",
+   "name": "JAMES, MIKE",
+   "alias": "James",
+   "aliasRaw": "James",
+   "passportName": "MICHAEL PERRY",
+   "passportSurname": "JAMES",
+   "jerseyName": "JAMES",
+   "abbreviatedName": "James, M.",
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 185,
+   "weight": 90,
+   "birthDate": "1990-08-18T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "TheNatural_05",
+   "instagramAccount": "mrnatural_05",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T14:35:17.264",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "55",
+  "dorsalRaw": "55",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "AS MONACO BASKET",
+  "externalId": 56804,
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/286b3dbb-72aa-4f86-aa59-d254a86448c5.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/286b3dbb-72aa-4f86-aa59-d254a86448c5.png"
+  },
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "008099",
+   "name": "STRAZEL, MATTHEW",
+   "alias": "STRAZEL, MATTHEW",
+   "aliasRaw": "STRAZEL, MATTHEW",
+   "passportName": "MATTHEW NELSON",
+   "passportSurname": "STRAZEL",
+   "jerseyName": "STRAZEL",
+   "abbreviatedName": "Strazel, M.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 184,
+   "weight": 78,
+   "birthDate": "2002-08-05T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "mtwbucket32/",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T14:35:16.944",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "32",
+  "dorsalRaw": "32",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "AS MONACO BASKET",
+  "externalId": 56803,
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d299652d-429d-4226-89d6-8286c61c0533.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d299652d-429d-4226-89d6-8286c61c0533.png"
+  },
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "003112",
+   "name": "SARIC, DARIO",
+   "alias": "Saric",
+   "aliasRaw": "Saric",
+   "passportName": "DARIO",
+   "passportSurname": "SARIC",
+   "jerseyName": "SARIC",
+   "abbreviatedName": "Saric, D.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "height": 207,
+   "weight": 101,
+   "birthDate": "1994-04-08T00:00:00",
+   "birthCountry": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T14:35:16.708",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "5",
+  "dorsalRaw": "5",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "DETROIT PISTONS",
+  "externalId": 56802,
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/afdb2e3e-694e-44f2-a8d9-d97aa89dd86e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/afdb2e3e-694e-44f2-a8d9-d97aa89dd86e.png"
+  },
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "010091",
+   "name": "PLOTAS, NIKOLAOS",
+   "alias": "PLOTAS, NIKOLAOS",
+   "aliasRaw": "PLOTAS, NIKOLAOS",
+   "passportName": "NIKOLAOS",
+   "passportSurname": "PLOTAS",
+   "jerseyName": "PLOTAS",
+   "abbreviatedName": "Plotas, N.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 195,
+   "weight": 80,
+   "birthDate": "2004-06-12T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "plotas_nikos",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T14:32:49.259",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "9",
+  "dorsalRaw": "9",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "PROMITHEAS PATRA",
+  "externalId": 56801,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "008912",
+   "name": "CARRINGTON, KHADEEN",
+   "alias": "CARRINGTON, KHADEEN",
+   "aliasRaw": "CARRINGTON, KHADEEN",
+   "passportName": "KHADEEN AKIL",
+   "passportSurname": "CARRINGTON",
+   "jerseyName": "CARRINGTON",
+   "abbreviatedName": "Carrington, K.",
+   "country": {
+    "code": "ISR",
+    "name": "Israel"
+   },
+   "height": 187,
+   "weight": 82,
+   "birthDate": "1995-10-03T00:00:00",
+   "birthCountry": {
+    "code": "TRI",
+    "name": "Trinidad and Tobago"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-17T14:07:04.243",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "5",
+  "dorsalRaw": "5",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "HAPOEL JERUSALEM",
+  "externalId": 56799,
+  "images": {},
+  "club": {
+   "code": "HTA",
+   "name": "Hapoel IBI Tel Aviv",
+   "abbreviatedName": "Hapoel TLV",
+   "editorialName": "Hapoel",
+   "tvCode": "HTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "012096",
    "name": "CABOCLO, BRUNO",
    "alias": "CABOCLO, BRUNO",
@@ -200,9 +998,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -260,9 +1058,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -320,9 +1118,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -398,7 +1196,10 @@
   "positionName": "Center",
   "lastTeam": "TOFAS BURSA",
   "externalId": 56779,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/656d0f39-73fb-44a9-8890-1284d8d8489d.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/656d0f39-73fb-44a9-8890-1284d8d8489d.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -458,7 +1259,10 @@
   "positionName": "Guard",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 56778,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b9843075-3b7e-4e22-b4b3-24ab71044c9e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b9843075-3b7e-4e22-b4b3-24ab71044c9e.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -500,9 +1304,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -518,7 +1322,10 @@
   "positionName": "Guard",
   "lastTeam": "LONG ISLAND NETS",
   "externalId": 56757,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/6ac06b8d-b588-4bcd-8bbe-8b06198c7ff5.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/6ac06b8d-b588-4bcd-8bbe-8b06198c7ff5.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -578,7 +1385,10 @@
   "positionName": "Center",
   "lastTeam": "AS MONACO",
   "externalId": 56756,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf600197-dfa3-4655-8141-f7b285190c36.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf600197-dfa3-4655-8141-f7b285190c36.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -638,7 +1448,10 @@
   "positionName": "Center",
   "lastTeam": "OLIMPIA MILANO",
   "externalId": 56755,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/be29a3c4-23df-47f2-9600-a69b977d1492.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/be29a3c4-23df-47f2-9600-a69b977d1492.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -698,7 +1511,10 @@
   "positionName": "Guard",
   "lastTeam": "OSCEOLA MAGIC",
   "externalId": 56754,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf6fbd14-c61e-4bb1-bdc6-0f0dd3e6f6e4.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf6fbd14-c61e-4bb1-bdc6-0f0dd3e6f6e4.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -758,7 +1574,10 @@
   "positionName": "Center",
   "lastTeam": "UNICAJA MALAGA",
   "externalId": 56753,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/98c4a713-a23c-48ab-9b5f-a85e335713e6.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/98c4a713-a23c-48ab-9b5f-a85e335713e6.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -800,9 +1619,9 @@
     "code": "UK ",
     "name": "United Kingdom"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -818,7 +1637,10 @@
   "positionName": "Forward",
   "lastTeam": "CHARLOTTE HORNETS",
   "externalId": 56752,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8d22e288-3f00-4049-8936-a088df36874b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8d22e288-3f00-4049-8936-a088df36874b.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -860,9 +1682,9 @@
     "code": "FIN",
     "name": "Finland"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -878,7 +1700,10 @@
   "positionName": "Forward",
   "lastTeam": "PALLACANESTRO VARESE",
   "externalId": 56751,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8361d06b-f258-4f93-8c46-f64ef63f0c4f.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8361d06b-f258-4f93-8c46-f64ef63f0c4f.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -938,7 +1763,10 @@
   "positionName": "Guard",
   "lastTeam": "BASQUET MANRESA",
   "externalId": 56750,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/39b2de60-fa01-4038-bf51-da9381d0d9e1.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/39b2de60-fa01-4038-bf51-da9381d0d9e1.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -998,7 +1826,10 @@
   "positionName": "Guard",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 56749,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d326f31e-8ffc-40bb-8d8f-ad41f16d794e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d326f31e-8ffc-40bb-8d8f-ad41f16d794e.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -1040,9 +1871,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -1058,7 +1889,10 @@
   "positionName": "Forward",
   "lastTeam": "SAN ANTONIO SPURS",
   "externalId": 56748,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8113804-254a-4e2c-a6b8-08cc6f2d4393.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8113804-254a-4e2c-a6b8-08cc6f2d4393.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -1100,9 +1934,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -1118,7 +1952,10 @@
   "positionName": "Forward",
   "lastTeam": "PHILADELPHIA 76ERS",
   "externalId": 56747,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df36712f-78ef-48d7-b1b8-a28fab2554ba.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df36712f-78ef-48d7-b1b8-a28fab2554ba.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -1178,7 +2015,10 @@
   "positionName": "Guard",
   "lastTeam": "CEDEVITA OLIMPIJA",
   "externalId": 56746,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/953aae61-f795-4df6-b558-ea91b4f9d7e5.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/953aae61-f795-4df6-b558-ea91b4f9d7e5.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -1605,8 +2445,8 @@
   "lastTeam": "FENERBAHCE BEKO",
   "externalId": 56706,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/41c4768b-f1cf-4198-8e2a-f17ed59fdeb1.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/41c4768b-f1cf-4198-8e2a-f17ed59fdeb1.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/41c4768b-f1cf-4198-8e2a-f17ed59fdeb1.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/41c4768b-f1cf-4198-8e2a-f17ed59fdeb1.png"
   },
   "club": {
    "code": "BES",
@@ -1793,7 +2633,10 @@
   "positionName": "Guard",
   "lastTeam": "BERTRAM DERTHONA",
   "externalId": 56699,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3e053ce0-5004-4a46-bce2-367a572df87d.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3e053ce0-5004-4a46-bce2-367a572df87d.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -1854,8 +2697,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 56695,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png"
   },
   "club": {
    "code": "OLY",
@@ -1980,8 +2823,8 @@
   "lastTeam": "VALENCIA",
   "externalId": 56676,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png"
   },
   "club": {
    "code": "OLY",
@@ -2024,9 +2867,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -2169,8 +3012,8 @@
   "lastTeam": "FENERBAHCE TARFIN ISTANBUL",
   "externalId": 56526,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png"
   },
   "club": {
    "code": "MAD",
@@ -2232,8 +3075,8 @@
   "lastTeam": "VALENCIA BASKET",
   "externalId": 56525,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eca8b0a9-a9dc-46b7-beb2-3193f2c1f690.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eca8b0a9-a9dc-46b7-beb2-3193f2c1f690.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eca8b0a9-a9dc-46b7-beb2-3193f2c1f690.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eca8b0a9-a9dc-46b7-beb2-3193f2c1f690.png"
   },
   "club": {
    "code": "MAD",
@@ -2339,9 +3182,9 @@
     "code": "UKR",
     "name": "Ukraine"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -2423,8 +3266,8 @@
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 56522,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png"
   },
   "club": {
    "code": "ULK",
@@ -2612,8 +3455,8 @@
   "lastTeam": "AS MONACO BASKET",
   "externalId": 56519,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/dc1ea7ec-98de-473b-80ea-8c799a84504a.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/dc1ea7ec-98de-473b-80ea-8c799a84504a.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/dc1ea7ec-98de-473b-80ea-8c799a84504a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/dc1ea7ec-98de-473b-80ea-8c799a84504a.png"
   },
   "club": {
    "code": "DUB",
@@ -2675,8 +3518,8 @@
   "lastTeam": "ASVEL",
   "externalId": 56518,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png"
   },
   "club": {
    "code": "OLY",
@@ -2738,8 +3581,8 @@
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 56517,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png"
   },
   "club": {
    "code": "OLY",
@@ -2861,8 +3704,8 @@
   "lastTeam": "MACCABI TEL AVIV",
   "externalId": 56515,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/03d55f7c-60e5-4129-9024-38b32702d9fa.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/03d55f7c-60e5-4129-9024-38b32702d9fa.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/03d55f7c-60e5-4129-9024-38b32702d9fa.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/03d55f7c-60e5-4129-9024-38b32702d9fa.png"
   },
   "club": {
    "code": "MUN",
@@ -2924,8 +3767,8 @@
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 56514,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/b81636a2-8ff0-4063-89ba-2392813337c5.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/b81636a2-8ff0-4063-89ba-2392813337c5.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/b81636a2-8ff0-4063-89ba-2392813337c5.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/b81636a2-8ff0-4063-89ba-2392813337c5.png"
   },
   "club": {
    "code": "ULK",
@@ -3112,7 +3955,10 @@
   "positionName": "Guard",
   "lastTeam": "VALENCIA BASKET",
   "externalId": 56485,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b1cbb8a2-0a79-41ff-ad4b-1f1b1feeb615.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b1cbb8a2-0a79-41ff-ad4b-1f1b1feeb615.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -3412,7 +4258,10 @@
   "positionName": "Guard",
   "lastTeam": "ZENIT ST. PETERSBURG",
   "externalId": 56363,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8414f77-acc5-4101-bec2-522b8eca7002.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8414f77-acc5-4101-bec2-522b8eca7002.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -3532,7 +4381,10 @@
   "positionName": "Guard",
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 56355,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f366b944-dbc4-4b06-984d-c6cad9800321.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f366b944-dbc4-4b06-984d-c6cad9800321.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -3773,8 +4625,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 56329,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png"
   },
   "club": {
    "code": "BAS",
@@ -3836,8 +4688,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 56328,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png"
   },
   "club": {
    "code": "BAS",
@@ -3899,8 +4751,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 56327,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0a550a35-2888-4a7a-8a0a-52ce8859b34b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0a550a35-2888-4a7a-8a0a-52ce8859b34b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0a550a35-2888-4a7a-8a0a-52ce8859b34b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0a550a35-2888-4a7a-8a0a-52ce8859b34b.png"
   },
   "club": {
    "code": "BAS",
@@ -4024,7 +4876,10 @@
   "positionName": "Center",
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 55862,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/44fceb26-24ea-4de5-b66b-724b5e569867.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/44fceb26-24ea-4de5-b66b-724b5e569867.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -4084,7 +4939,10 @@
   "positionName": "Guard",
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 55861,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f3a04739-9830-4126-8c40-d7ac9b7ef187.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f3a04739-9830-4126-8c40-d7ac9b7ef187.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -4144,7 +5002,10 @@
   "positionName": "Guard",
   "lastTeam": "ANTWERP GIANTS",
   "externalId": 55860,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd10838-d234-40a2-869f-c7edb73fbe8b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd10838-d234-40a2-869f-c7edb73fbe8b.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -4205,8 +5066,8 @@
   "lastTeam": "CLEVELAND CAVALIERS",
   "externalId": 55859,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0e0e6258-b2cc-4e28-b9f8-2311d18f1aaa.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0e0e6258-b2cc-4e28-b9f8-2311d18f1aaa.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0e0e6258-b2cc-4e28-b9f8-2311d18f1aaa.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0e0e6258-b2cc-4e28-b9f8-2311d18f1aaa.png"
   },
   "club": {
    "code": "MAD",
@@ -4267,7 +5128,10 @@
   "positionName": "Guard",
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 55858,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/18dc2e86-95e0-4c68-a949-f6897d477f8b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/18dc2e86-95e0-4c68-a949-f6897d477f8b.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -4327,7 +5191,10 @@
   "positionName": "Forward",
   "lastTeam": "MANISA BBSK",
   "externalId": 55857,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/619dbb6e-f8f0-4347-a4ee-eb27a43aa5d2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/619dbb6e-f8f0-4347-a4ee-eb27a43aa5d2.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -4387,7 +5254,10 @@
   "positionName": "Forward",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 55856,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a9317da-cdf8-40cb-8098-e6d083d631ac.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a9317da-cdf8-40cb-8098-e6d083d631ac.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -4447,7 +5317,10 @@
   "positionName": "Forward",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 55855,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/63c6b216-3410-4c21-8ad0-a8277380c6b1.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/63c6b216-3410-4c21-8ad0-a8277380c6b1.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -4507,7 +5380,10 @@
   "positionName": "Guard",
   "lastTeam": "AS MONACO",
   "externalId": 55854,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c9d9c3be-5f8b-4877-a12a-c757b239e3f0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c9d9c3be-5f8b-4877-a12a-c757b239e3f0.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -4568,8 +5444,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 55853,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c96fd3a3-635b-46b9-9a3a-aa416da84968.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c96fd3a3-635b-46b9-9a3a-aa416da84968.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c96fd3a3-635b-46b9-9a3a-aa416da84968.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c96fd3a3-635b-46b9-9a3a-aa416da84968.png"
   },
   "club": {
    "code": "OLY",
@@ -4631,8 +5507,8 @@
   "lastTeam": "CANGREJEROS DE SANTURCE",
   "externalId": 55844,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b0840890-3358-47e0-9672-0ef3c5172b90.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b0840890-3358-47e0-9672-0ef3c5172b90.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b0840890-3358-47e0-9672-0ef3c5172b90.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b0840890-3358-47e0-9672-0ef3c5172b90.png"
   },
   "club": {
    "code": "BAS",
@@ -4756,7 +5632,10 @@
   "positionName": "Guard",
   "lastTeam": "REAL MADRID",
   "externalId": 55837,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b3262454-3264-4960-9788-88c2c21edb88.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b3262454-3264-4960-9788-88c2c21edb88.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -4816,7 +5695,10 @@
   "positionName": "Guard",
   "lastTeam": "HAPOEL TEL AVIV",
   "externalId": 55836,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c65eadb-a044-456e-ba03-db9c4790c25d.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c65eadb-a044-456e-ba03-db9c4790c25d.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -4939,8 +5821,8 @@
   "lastTeam": "BESIKTAS ISTANBUL",
   "externalId": 55833,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png"
   },
   "club": {
    "code": "BES",
@@ -5128,8 +6010,8 @@
   "lastTeam": "FENERBAHCE BEKO",
   "externalId": 55829,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png"
   },
   "club": {
    "code": "BES",
@@ -5191,8 +6073,8 @@
   "lastTeam": "BESIKTAS ISTANBUL",
   "externalId": 55828,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/82716e49-3b79-4d6e-a9e1-909f5e456a12.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/82716e49-3b79-4d6e-a9e1-909f5e456a12.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/82716e49-3b79-4d6e-a9e1-909f5e456a12.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/82716e49-3b79-4d6e-a9e1-909f5e456a12.png"
   },
   "club": {
    "code": "BES",
@@ -5254,8 +6136,8 @@
   "lastTeam": "MEGA BASKET",
   "externalId": 55827,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/02472971-b450-4da6-9657-b0453b5bc041.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/02472971-b450-4da6-9657-b0453b5bc041.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/02472971-b450-4da6-9657-b0453b5bc041.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/02472971-b450-4da6-9657-b0453b5bc041.png"
   },
   "club": {
    "code": "BES",
@@ -5317,8 +6199,8 @@
   "lastTeam": "STOCKTON KINGS",
   "externalId": 55826,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5ac70ca2-f381-409d-9e82-71b78112a0d2.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5ac70ca2-f381-409d-9e82-71b78112a0d2.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5ac70ca2-f381-409d-9e82-71b78112a0d2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5ac70ca2-f381-409d-9e82-71b78112a0d2.png"
   },
   "club": {
    "code": "BES",
@@ -5380,8 +6262,8 @@
   "lastTeam": "BESIKTAS ISTANBUL",
   "externalId": 55825,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/72093b12-8294-4e00-9a8a-aec2692d2c9b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/72093b12-8294-4e00-9a8a-aec2692d2c9b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/72093b12-8294-4e00-9a8a-aec2692d2c9b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/72093b12-8294-4e00-9a8a-aec2692d2c9b.png"
   },
   "club": {
    "code": "BES",
@@ -5443,8 +6325,8 @@
   "lastTeam": "INDIANA PACERS",
   "externalId": 55813,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png"
   },
   "club": {
    "code": "MIL",
@@ -5506,8 +6388,8 @@
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 55811,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0b23dcbc-9c10-488a-9c33-d510c7b52a2b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0b23dcbc-9c10-488a-9c33-d510c7b52a2b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0b23dcbc-9c10-488a-9c33-d510c7b52a2b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/0b23dcbc-9c10-488a-9c33-d510c7b52a2b.png"
   },
   "club": {
    "code": "MIL",
@@ -5569,8 +6451,8 @@
   "lastTeam": "REYER VENEZIA",
   "externalId": 55810,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/692c8bf5-073e-4893-9597-d5dd163f54a0.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/692c8bf5-073e-4893-9597-d5dd163f54a0.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/692c8bf5-073e-4893-9597-d5dd163f54a0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/692c8bf5-073e-4893-9597-d5dd163f54a0.png"
   },
   "club": {
    "code": "MIL",
@@ -5694,7 +6576,10 @@
   "positionName": "Center",
   "lastTeam": "KK PARTIZAN MOZZART BET BEOGRAD",
   "externalId": 55787,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fc41fa87-3375-43b6-9a1d-f3778bc9f371.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fc41fa87-3375-43b6-9a1d-f3778bc9f371.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -5754,7 +6639,10 @@
   "positionName": "Forward",
   "lastTeam": "CASADEMONT ZARAGOZA",
   "externalId": 55786,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9bdd2088-7719-4be5-a88d-99d2dc6aaed2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9bdd2088-7719-4be5-a88d-99d2dc6aaed2.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -5814,7 +6702,10 @@
   "positionName": "Forward",
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 55744,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/90d5376e-f240-4e2f-93d5-3fca317e5301.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/90d5376e-f240-4e2f-93d5-3fca317e5301.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -5874,7 +6765,10 @@
   "positionName": "Forward",
   "lastTeam": "PARTIZAN BELGRADE",
   "externalId": 55743,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a8c7109-5192-4ff2-aa92-51bbaf656f60.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a8c7109-5192-4ff2-aa92-51bbaf656f60.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -5934,7 +6828,10 @@
   "positionName": "Forward",
   "lastTeam": "CHICAGO BULLS",
   "externalId": 55742,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cff617e-e2d9-4588-af8b-8d1360a1e307.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cff617e-e2d9-4588-af8b-8d1360a1e307.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -5994,7 +6891,10 @@
   "positionName": "Center",
   "lastTeam": "AI KUWAIT SC",
   "externalId": 55724,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/29c24c4c-db63-4912-ab0c-0a55817830e1.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/29c24c4c-db63-4912-ab0c-0a55817830e1.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6054,7 +6954,10 @@
   "positionName": "Guard",
   "lastTeam": "SEGAFREDO VIRTUS BOLOGNA",
   "externalId": 55723,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d80ae7ee-8755-47b7-8194-2d74312eefc9.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d80ae7ee-8755-47b7-8194-2d74312eefc9.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6114,7 +7017,10 @@
   "positionName": "Center",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 55722,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fff78d8f-32e7-48f7-a9c8-f56e536b4c85.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fff78d8f-32e7-48f7-a9c8-f56e536b4c85.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6174,7 +7080,10 @@
   "positionName": "Center",
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 55721,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ab062502-8a00-4f63-9eab-e01819440e8b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ab062502-8a00-4f63-9eab-e01819440e8b.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6234,7 +7143,10 @@
   "positionName": "Center",
   "lastTeam": "AS MONACO",
   "externalId": 55720,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd451e5-94a5-46fd-9b80-cb636427977a.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd451e5-94a5-46fd-9b80-cb636427977a.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6294,7 +7206,10 @@
   "positionName": "Forward",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 55719,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5add268d-bb5b-4c7d-934a-5214df1f201a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5add268d-bb5b-4c7d-934a-5214df1f201a.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6354,7 +7269,10 @@
   "positionName": "Center",
   "lastTeam": "BUDUCNOST VOLI",
   "externalId": 55718,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/006c0b2b-dc89-4472-b380-42b164584efd.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/006c0b2b-dc89-4472-b380-42b164584efd.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6414,7 +7332,10 @@
   "positionName": "Forward",
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 55717,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bf908c41-803f-45dd-82bb-3e7503bdd6ee.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bf908c41-803f-45dd-82bb-3e7503bdd6ee.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6474,7 +7395,10 @@
   "positionName": "Forward",
   "lastTeam": "NBA",
   "externalId": 55716,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2fadad36-f7fa-4856-92c2-60493c034f06.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2fadad36-f7fa-4856-92c2-60493c034f06.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6534,7 +7458,10 @@
   "positionName": "Guard",
   "lastTeam": "SEGAFREDO VIRTUS BOLOGNA",
   "externalId": 55715,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cabc4e6-be71-4962-9876-f7beda50343f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cabc4e6-be71-4962-9876-f7beda50343f.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6594,7 +7521,10 @@
   "positionName": "Guard",
   "lastTeam": "TURK TELEKOM SPOR KULUBU",
   "externalId": 55714,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/48a32899-b6b5-4dae-b435-52397b480cf3.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/48a32899-b6b5-4dae-b435-52397b480cf3.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -6636,9 +7566,9 @@
     "code": "ESP",
     "name": "Spain"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -6655,8 +7585,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 55713,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ea62ef7b-de8b-48f2-8965-bb1c97d1cf1e.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ea62ef7b-de8b-48f2-8965-bb1c97d1cf1e.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ea62ef7b-de8b-48f2-8965-bb1c97d1cf1e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ea62ef7b-de8b-48f2-8965-bb1c97d1cf1e.png"
   },
   "club": {
    "code": "PAM",
@@ -6699,9 +7629,9 @@
     "code": "ARG",
     "name": "Argentina"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -6718,8 +7648,8 @@
   "lastTeam": "CLUB BALONCESTO SAN PABLO BURGOS",
   "externalId": 55712,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/e1024451-a3cf-48a3-bf0f-192016801e03.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/e1024451-a3cf-48a3-bf0f-192016801e03.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/e1024451-a3cf-48a3-bf0f-192016801e03.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/e1024451-a3cf-48a3-bf0f-192016801e03.png"
   },
   "club": {
    "code": "PAM",
@@ -6762,9 +7692,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -6907,8 +7837,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 55709,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/68732c89-3262-41af-abe0-0798fbb5f77f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/68732c89-3262-41af-abe0-0798fbb5f77f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/68732c89-3262-41af-abe0-0798fbb5f77f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/68732c89-3262-41af-abe0-0798fbb5f77f.png"
   },
   "club": {
    "code": "PAM",
@@ -7158,7 +8088,10 @@
   "positionName": "Forward",
   "lastTeam": "DETROIT PISTONS",
   "externalId": 55705,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d0274316-1129-4094-87d7-1d434e9badd3.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d0274316-1129-4094-87d7-1d434e9badd3.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -7218,7 +8151,10 @@
   "positionName": "Forward",
   "lastTeam": "HAPOEL TEL AVIV",
   "externalId": 55704,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2a8752bb-1e79-44fb-9f45-1f0ebcfb7465.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2a8752bb-1e79-44fb-9f45-1f0ebcfb7465.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -7278,7 +8214,10 @@
   "positionName": "Guard",
   "lastTeam": "MOTOR CITY CRUISE",
   "externalId": 55703,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d92fbef-34d7-4af0-8786-eda390ffbb6a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d92fbef-34d7-4af0-8786-eda390ffbb6a.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -7338,7 +8277,10 @@
   "positionName": "Center",
   "lastTeam": "JL BOURG",
   "externalId": 55702,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b44a739e-fa05-4702-ac81-474770eccf49.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b44a739e-fa05-4702-ac81-474770eccf49.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -7398,7 +8340,10 @@
   "positionName": "Guard",
   "lastTeam": "WURZBURG BASKET",
   "externalId": 55701,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3c9492d7-56e9-4a4e-9d49-8d6c7c20b2c7.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3c9492d7-56e9-4a4e-9d49-8d6c7c20b2c7.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -7460,7 +8405,10 @@
   "positionName": "Guard",
   "lastTeam": "PANATHINAIKOS ATHENS",
   "externalId": 55700,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a937d295-3c94-4248-aa82-8a11f7caa809.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a937d295-3c94-4248-aa82-8a11f7caa809.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -7520,7 +8468,10 @@
   "positionName": "Guard",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 55699,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/1d48d694-eec0-4af9-b788-6b3aaa8d12bf.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/1d48d694-eec0-4af9-b788-6b3aaa8d12bf.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -7580,7 +8531,10 @@
   "positionName": "Guard",
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 55698,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bbb31a52-7c6a-4536-9039-9899b5c0f4f8.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bbb31a52-7c6a-4536-9039-9899b5c0f4f8.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -7640,7 +8594,10 @@
   "positionName": "Center",
   "lastTeam": "DALLAS MAVERICKS",
   "externalId": 55697,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a454d11a-9a18-4a6c-979b-b5bbe6cd0f40.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a454d11a-9a18-4a6c-979b-b5bbe6cd0f40.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -7700,7 +8657,10 @@
   "positionName": "Guard",
   "lastTeam": "PARTIZAN BELGRADE",
   "externalId": 55696,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d3819345-099e-4a06-8c2a-399d94b9766e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d3819345-099e-4a06-8c2a-399d94b9766e.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -7761,8 +8721,8 @@
   "lastTeam": "VALLEY SUNS",
   "externalId": 55695,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png"
   },
   "club": {
    "code": "BAS",
@@ -7887,8 +8847,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 55693,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b17aec54-7bd1-42a5-8b4c-c978b681473b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b17aec54-7bd1-42a5-8b4c-c978b681473b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b17aec54-7bd1-42a5-8b4c-c978b681473b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b17aec54-7bd1-42a5-8b4c-c978b681473b.png"
   },
   "club": {
    "code": "BAS",
@@ -7950,8 +8910,8 @@
   "lastTeam": "TORONTO RAPTORS 905",
   "externalId": 55692,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a9426b8e-4e4a-4d16-ae5c-c14540a8f11f.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a9426b8e-4e4a-4d16-ae5c-c14540a8f11f.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a9426b8e-4e4a-4d16-ae5c-c14540a8f11f.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a9426b8e-4e4a-4d16-ae5c-c14540a8f11f.png"
   },
   "club": {
    "code": "BAS",
@@ -8076,8 +9036,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 55690,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4adacf26-ab9b-4135-b5e7-fa796201e667.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4adacf26-ab9b-4135-b5e7-fa796201e667.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4adacf26-ab9b-4135-b5e7-fa796201e667.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4adacf26-ab9b-4135-b5e7-fa796201e667.png"
   },
   "club": {
    "code": "ULK",
@@ -8139,8 +9099,8 @@
   "lastTeam": "FC BARCELONA",
   "externalId": 55689,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5f169708-cc91-4700-9dc6-2e4b22c90b59.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5f169708-cc91-4700-9dc6-2e4b22c90b59.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5f169708-cc91-4700-9dc6-2e4b22c90b59.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5f169708-cc91-4700-9dc6-2e4b22c90b59.png"
   },
   "club": {
    "code": "ULK",
@@ -8309,9 +9269,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -8328,8 +9288,8 @@
   "lastTeam": "ZENIT BC",
   "externalId": 55686,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png"
   },
   "club": {
    "code": "ULK",
@@ -8454,8 +9414,8 @@
   "lastTeam": "HAPOEL BANK JAHAV JERUSALEM",
   "externalId": 55684,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/4fc56322-07ca-494a-8604-ac233c35cf4c.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/4fc56322-07ca-494a-8604-ac233c35cf4c.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/4fc56322-07ca-494a-8604-ac233c35cf4c.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/4fc56322-07ca-494a-8604-ac233c35cf4c.png"
   },
   "club": {
    "code": "MUN",
@@ -8637,8 +9597,8 @@
   "lastTeam": "GUNMA CRANE THUNDERS",
   "externalId": 55681,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/433d3d49-72bc-4d2e-b2e4-7e0af18677d6.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/433d3d49-72bc-4d2e-b2e4-7e0af18677d6.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/433d3d49-72bc-4d2e-b2e4-7e0af18677d6.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/433d3d49-72bc-4d2e-b2e4-7e0af18677d6.png"
   },
   "club": {
    "code": "MUN",
@@ -8760,8 +9720,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 55679,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png"
   },
   "club": {
    "code": "MUN",
@@ -8930,9 +9890,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -9012,8 +9972,8 @@
   "lastTeam": "FC BARCELONA",
   "externalId": 55675,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d6a2fbe4-7f6f-4b84-824f-f41630898d84.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d6a2fbe4-7f6f-4b84-824f-f41630898d84.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d6a2fbe4-7f6f-4b84-824f-f41630898d84.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d6a2fbe4-7f6f-4b84-824f-f41630898d84.png"
   },
   "club": {
    "code": "MUN",
@@ -9075,8 +10035,8 @@
   "lastTeam": "FC BARCELONA",
   "externalId": 55674,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e5269ade-cab3-4ddc-84df-0d58fb9adb9b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e5269ade-cab3-4ddc-84df-0d58fb9adb9b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e5269ade-cab3-4ddc-84df-0d58fb9adb9b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e5269ade-cab3-4ddc-84df-0d58fb9adb9b.png"
   },
   "club": {
    "code": "DUB",
@@ -9182,9 +10142,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -9263,7 +10223,10 @@
   "positionName": "Guard",
   "lastTeam": "REAL MADRID",
   "externalId": 55660,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d36c176-682d-40c2-84f2-db9583dc94cc.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d36c176-682d-40c2-84f2-db9583dc94cc.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -9305,9 +10268,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -9323,7 +10286,10 @@
   "positionName": "Forward",
   "lastTeam": "STOCKTON KINGS NBA GLEAGUE",
   "externalId": 55659,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/4282092b-c75b-47a1-bc85-50587b8bd108.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/4282092b-c75b-47a1-bc85-50587b8bd108.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -9383,7 +10349,10 @@
   "positionName": "Guard",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 55658,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/89b556bd-8c28-4908-8139-795baecdf4f2.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/89b556bd-8c28-4908-8139-795baecdf4f2.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -9443,7 +10412,10 @@
   "positionName": "Forward",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 55657,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/1f453365-d6ce-4d90-9074-58a096ea1bbc.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/1f453365-d6ce-4d90-9074-58a096ea1bbc.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -9564,8 +10536,8 @@
   "lastTeam": "OLYMPIACOS PIRAEUS",
   "externalId": 55642,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/246ecdad-02e8-4cd5-8fe2-4d2cc3a57d3d.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/246ecdad-02e8-4cd5-8fe2-4d2cc3a57d3d.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/246ecdad-02e8-4cd5-8fe2-4d2cc3a57d3d.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/246ecdad-02e8-4cd5-8fe2-4d2cc3a57d3d.png"
   },
   "club": {
    "code": "MIL",
@@ -9627,8 +10599,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 55641,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/49ea9e85-d32d-4d13-ac68-f5d21d39af2a.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/49ea9e85-d32d-4d13-ac68-f5d21d39af2a.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/49ea9e85-d32d-4d13-ac68-f5d21d39af2a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/49ea9e85-d32d-4d13-ac68-f5d21d39af2a.png"
   },
   "club": {
    "code": "MIL",
@@ -9943,7 +10915,10 @@
   "positionName": "Forward",
   "lastTeam": "HAPOEL SHLOMO TEL AVIV",
   "externalId": 55636,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf5b29e9-6800-41cf-91d0-caf5ef30e20f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf5b29e9-6800-41cf-91d0-caf5ef30e20f.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -10003,7 +10978,10 @@
   "positionName": "Guard",
   "lastTeam": "AS MONACO BASKET",
   "externalId": 55635,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bcca0fec-d463-42c1-942e-4d32eaebec50.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bcca0fec-d463-42c1-942e-4d32eaebec50.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -10063,7 +11041,10 @@
   "positionName": "Guard",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 55634,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/e404b8ed-9a3b-480e-8b3f-ce49905188b5.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/e404b8ed-9a3b-480e-8b3f-ce49905188b5.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -10123,7 +11104,10 @@
   "positionName": "Forward",
   "lastTeam": "U18 ANADOLU EFES ISTANBUL",
   "externalId": 55633,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d548b157-4579-4f9f-9816-e875f24b1ebd.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d548b157-4579-4f9f-9816-e875f24b1ebd.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -10184,8 +11168,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 55216,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eff31705-1ec2-40d5-aaf6-3c83f603b456.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eff31705-1ec2-40d5-aaf6-3c83f603b456.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eff31705-1ec2-40d5-aaf6-3c83f603b456.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/eff31705-1ec2-40d5-aaf6-3c83f603b456.png"
   },
   "club": {
    "code": "OLY",
@@ -10246,7 +11230,10 @@
   "positionName": "Forward",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54940,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5d1b2a2a-4d68-4723-8389-d86a4d6f8b6b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5d1b2a2a-4d68-4723-8389-d86a4d6f8b6b.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -10306,7 +11293,10 @@
   "positionName": "Guard",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54939,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f38f343-3a06-40e9-a3f6-999fae1df4cb.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f38f343-3a06-40e9-a3f6-999fae1df4cb.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -10366,7 +11356,10 @@
   "positionName": "Forward",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54938,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/30189b7a-3050-4119-9fbb-165978cd8f71.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/30189b7a-3050-4119-9fbb-165978cd8f71.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -10426,7 +11419,10 @@
   "positionName": "Forward",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54936,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f37f7850-396e-44d3-8dcc-c6503a4a76d3.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f37f7850-396e-44d3-8dcc-c6503a4a76d3.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -10486,7 +11482,10 @@
   "positionName": "Forward",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54935,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f86bd76-5ed2-47f4-b8ef-0bc5a88238d8.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f86bd76-5ed2-47f4-b8ef-0bc5a88238d8.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -10546,7 +11545,10 @@
   "positionName": "Guard",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54934,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/767fb622-9a2b-4fae-ad01-39b3c64f046b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/767fb622-9a2b-4fae-ad01-39b3c64f046b.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -10606,7 +11608,10 @@
   "positionName": "Guard",
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54932,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9f214a9f-c921-4175-abe6-7099abffeb35.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9f214a9f-c921-4175-abe6-7099abffeb35.png"
+  },
   "club": {
    "code": "ZAL",
    "name": "Zalgiris Kaunas",
@@ -10666,7 +11671,10 @@
   "positionName": "Center",
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 54930,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/622f5afe-0cda-41b3-8e86-f73efd580d9a.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/622f5afe-0cda-41b3-8e86-f73efd580d9a.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -10726,7 +11734,10 @@
   "positionName": "Forward",
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 54929,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c8a51e8-7003-4d2f-909f-208cb763fd00.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c8a51e8-7003-4d2f-909f-208cb763fd00.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -10786,7 +11797,10 @@
   "positionName": "Forward",
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 54927,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3351b25e-52eb-478a-ad83-0e1a659b6337.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3351b25e-52eb-478a-ad83-0e1a659b6337.png"
+  },
   "club": {
    "code": "VIR",
    "name": "Virtus Bologna",
@@ -10847,8 +11861,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 54923,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png"
   },
   "club": {
    "code": "PAM",
@@ -10910,8 +11924,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 54921,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png"
   },
   "club": {
    "code": "PAM",
@@ -11036,8 +12050,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 54915,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3b0e8ccd-7ede-4942-9275-87284f367e54.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3b0e8ccd-7ede-4942-9275-87284f367e54.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3b0e8ccd-7ede-4942-9275-87284f367e54.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3b0e8ccd-7ede-4942-9275-87284f367e54.png"
   },
   "club": {
    "code": "PAM",
@@ -11162,8 +12176,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54911,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png"
   },
   "club": {
    "code": "MAD",
@@ -11225,8 +12239,8 @@
   "lastTeam": "",
   "externalId": 54910,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f368dd07-526a-4d53-ae68-98e67bf84ec6.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f368dd07-526a-4d53-ae68-98e67bf84ec6.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f368dd07-526a-4d53-ae68-98e67bf84ec6.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f368dd07-526a-4d53-ae68-98e67bf84ec6.png"
   },
   "club": {
    "code": "MAD",
@@ -11288,8 +12302,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54909,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c2e5c3f7-97b4-4b9a-98f6-abf2da5b7fad.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c2e5c3f7-97b4-4b9a-98f6-abf2da5b7fad.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c2e5c3f7-97b4-4b9a-98f6-abf2da5b7fad.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c2e5c3f7-97b4-4b9a-98f6-abf2da5b7fad.png"
   },
   "club": {
    "code": "MAD",
@@ -11351,8 +12365,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54907,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/026014da-6397-4bd7-8ff7-5498c75854c1.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/026014da-6397-4bd7-8ff7-5498c75854c1.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/026014da-6397-4bd7-8ff7-5498c75854c1.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/026014da-6397-4bd7-8ff7-5498c75854c1.png"
   },
   "club": {
    "code": "MAD",
@@ -11477,8 +12491,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54904,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png"
   },
   "club": {
    "code": "MAD",
@@ -11540,8 +12554,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54903,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/781f57a2-1686-45ef-bf10-1229bea609c7.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/781f57a2-1686-45ef-bf10-1229bea609c7.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/781f57a2-1686-45ef-bf10-1229bea609c7.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/781f57a2-1686-45ef-bf10-1229bea609c7.png"
   },
   "club": {
    "code": "MAD",
@@ -11603,8 +12617,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54902,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5110fa5e-f36a-411c-86ea-09aec7f4ed8e.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5110fa5e-f36a-411c-86ea-09aec7f4ed8e.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5110fa5e-f36a-411c-86ea-09aec7f4ed8e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5110fa5e-f36a-411c-86ea-09aec7f4ed8e.png"
   },
   "club": {
    "code": "MAD",
@@ -11665,7 +12679,10 @@
   "positionName": "Forward",
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 54899,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d7f73eb-ff44-4a2a-8e85-7d535077120e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d7f73eb-ff44-4a2a-8e85-7d535077120e.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -11725,7 +12742,10 @@
   "positionName": "Forward",
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 54893,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5dbfec58-e546-482c-9400-b43f252e1b17.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5dbfec58-e546-482c-9400-b43f252e1b17.png"
+  },
   "club": {
    "code": "PAR",
    "name": "Partizan Mozzart Bet Belgrade",
@@ -11775,9 +12795,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T08:09:57.91",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-18T09:16:49.035",
   "order": 0,
   "dorsal": "22",
   "dorsalRaw": "22",
@@ -11845,7 +12865,10 @@
   "positionName": "Forward",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54888,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/86b88bde-0eb8-434c-97c5-1c343473963d.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/86b88bde-0eb8-434c-97c5-1c343473963d.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -11905,7 +12928,10 @@
   "positionName": "Center",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54887,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2a94cfc5-db7e-4018-9c6f-b9ee436dd7b4.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2a94cfc5-db7e-4018-9c6f-b9ee436dd7b4.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -11965,7 +12991,10 @@
   "positionName": "Center",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54886,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/33d6b1bb-2e42-42de-98e3-c02c475d36d1.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/33d6b1bb-2e42-42de-98e3-c02c475d36d1.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -12085,7 +13114,10 @@
   "positionName": "Guard",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54884,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7934ce9d-4a65-4f45-bc46-e22eb56660bc.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7934ce9d-4a65-4f45-bc46-e22eb56660bc.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -12205,7 +13237,10 @@
   "positionName": "Guard",
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54881,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c4dc8064-fc52-451a-b27c-0aa9ec164948.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c4dc8064-fc52-451a-b27c-0aa9ec164948.png"
+  },
   "club": {
    "code": "PRS",
    "name": "Paris Basketball",
@@ -12265,7 +13300,10 @@
   "positionName": "Forward",
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 54880,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9eb6f2b2-d265-4965-88bb-8ce2269e00ff.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9eb6f2b2-d265-4965-88bb-8ce2269e00ff.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -12325,7 +13363,10 @@
   "positionName": "Center",
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 54877,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c1a76676-300c-4059-9a26-bc18e0b35c9f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c1a76676-300c-4059-9a26-bc18e0b35c9f.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -12445,7 +13486,10 @@
   "positionName": "Center",
   "lastTeam": "",
   "externalId": 54875,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c248b31f-2d23-48b3-baa0-f052346dceb3.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c248b31f-2d23-48b3-baa0-f052346dceb3.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -12565,7 +13609,10 @@
   "positionName": "Forward",
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 54872,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92a266f5-b0cd-4993-b475-38a1e128ccc8.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92a266f5-b0cd-4993-b475-38a1e128ccc8.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -12687,7 +13734,10 @@
   "positionName": "Guard",
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 54868,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d9142339-64d6-403e-a019-0b74bec5611e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d9142339-64d6-403e-a019-0b74bec5611e.png"
+  },
   "club": {
    "code": "PAN",
    "name": "Panathinaikos AKTOR Athens",
@@ -12748,8 +13798,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54866,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png"
   },
   "club": {
    "code": "OLY",
@@ -12874,8 +13924,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54863,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png"
   },
   "club": {
    "code": "OLY",
@@ -13000,8 +14050,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54861,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png"
   },
   "club": {
    "code": "OLY",
@@ -13126,8 +14176,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54859,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png"
   },
   "club": {
    "code": "OLY",
@@ -13189,8 +14239,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54857,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e73b9650-5c67-4a0a-be28-6412173ac60b.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e73b9650-5c67-4a0a-be28-6412173ac60b.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e73b9650-5c67-4a0a-be28-6412173ac60b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e73b9650-5c67-4a0a-be28-6412173ac60b.png"
   },
   "club": {
    "code": "OLY",
@@ -13425,11 +14475,11 @@
   "startDate": "2026-08-12T08:00:44.071",
   "endDate": "2027-06-30T00:00:00",
   "order": 0,
-  "dorsal": "5",
-  "dorsalRaw": "5",
+  "dorsal": "3",
+  "dorsalRaw": "3",
   "position": 1,
   "positionName": "Guard",
-  "lastTeam": "",
+  "lastTeam": "MACCABI TEL AVIV",
   "externalId": 54846,
   "images": {},
   "club": {
@@ -13489,7 +14539,7 @@
   "dorsalRaw": "4",
   "position": 2,
   "positionName": "Forward",
-  "lastTeam": "",
+  "lastTeam": "MACCABI TEL AVIV",
   "externalId": 54845,
   "images": {},
   "club": {
@@ -13732,8 +14782,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54837,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png"
   },
   "club": {
    "code": "BAS",
@@ -13858,8 +14908,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54833,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png"
   },
   "club": {
    "code": "BAS",
@@ -13921,8 +14971,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54832,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png"
   },
   "club": {
    "code": "BAS",
@@ -15025,8 +16075,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 54799,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/97200fba-aa27-4309-bc62-88c7a1688fa1.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/97200fba-aa27-4309-bc62-88c7a1688fa1.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/97200fba-aa27-4309-bc62-88c7a1688fa1.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/97200fba-aa27-4309-bc62-88c7a1688fa1.png"
   },
   "club": {
    "code": "MUN",
@@ -15088,8 +16138,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 54798,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ca7c1847-03d2-4271-a334-84de89bcd58d.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ca7c1847-03d2-4271-a334-84de89bcd58d.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ca7c1847-03d2-4271-a334-84de89bcd58d.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/ca7c1847-03d2-4271-a334-84de89bcd58d.png"
   },
   "club": {
    "code": "MUN",
@@ -15214,8 +16264,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 54796,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/848ecece-6f58-4d77-be0a-494e195584bc.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/848ecece-6f58-4d77-be0a-494e195584bc.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/848ecece-6f58-4d77-be0a-494e195584bc.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/848ecece-6f58-4d77-be0a-494e195584bc.png"
   },
   "club": {
    "code": "MUN",
@@ -15277,8 +16327,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 54794,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png"
   },
   "club": {
    "code": "MUN",
@@ -15339,7 +16389,10 @@
   "positionName": "Forward",
   "lastTeam": "FC BARCELONA",
   "externalId": 54792,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9a56a310-cebf-4640-ab91-5c7690d16c51.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9a56a310-cebf-4640-ab91-5c7690d16c51.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -15399,7 +16452,10 @@
   "positionName": "Guard",
   "lastTeam": "FC BARCELONA",
   "externalId": 54789,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/4332f615-51df-4097-9082-c358043303ae.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/4332f615-51df-4097-9082-c358043303ae.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -15459,7 +16515,10 @@
   "positionName": "Guard",
   "lastTeam": "FC BARCELONA",
   "externalId": 54788,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ce0ebb86-2c93-4aa6-8892-9ef1334d2d45.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ce0ebb86-2c93-4aa6-8892-9ef1334d2d45.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -15519,7 +16578,10 @@
   "positionName": "Guard",
   "lastTeam": "FC BARCELONA",
   "externalId": 54786,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/675c5bac-7d19-44f6-944d-3c7373e09f3d.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/675c5bac-7d19-44f6-944d-3c7373e09f3d.png"
+  },
   "club": {
    "code": "BAR",
    "name": "FC Barcelona",
@@ -15569,9 +16631,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:41:25.555",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-17T14:39:15.355",
   "order": 0,
   "dorsal": "34",
   "dorsalRaw": "34",
@@ -15580,8 +16642,8 @@
   "lastTeam": "",
   "externalId": 54785,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png"
   },
   "club": {
    "code": "DUB",
@@ -15832,8 +16894,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54781,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bc9bc395-efb1-46ff-8eee-039093e0f397.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bc9bc395-efb1-46ff-8eee-039093e0f397.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bc9bc395-efb1-46ff-8eee-039093e0f397.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bc9bc395-efb1-46ff-8eee-039093e0f397.png"
   },
   "club": {
    "code": "DUB",
@@ -15895,8 +16957,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54780,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png"
   },
   "club": {
    "code": "DUB",
@@ -16144,8 +17206,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54776,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png"
   },
   "club": {
    "code": "DUB",
@@ -16196,9 +17258,9 @@
   },
   "type": "J",
   "typeName": "Player",
-  "active": true,
+  "active": false,
   "startDate": "2026-08-12T07:41:23.269",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-09-17T14:39:15.19",
   "order": 0,
   "dorsal": "2",
   "dorsalRaw": "2",
@@ -16269,7 +17331,10 @@
   "positionName": "Forward",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54774,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/08270e7f-2a17-43ae-a234-5b83ebc80a63.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/08270e7f-2a17-43ae-a234-5b83ebc80a63.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16329,7 +17394,10 @@
   "positionName": "Forward",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54772,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/734ca587-f81e-4974-985f-3857a1a66bf8.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/734ca587-f81e-4974-985f-3857a1a66bf8.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16389,7 +17457,10 @@
   "positionName": "Forward",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54771,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9398d5d9-12c5-4b31-8cd6-5a8ab6e253fb.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9398d5d9-12c5-4b31-8cd6-5a8ab6e253fb.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16449,7 +17520,10 @@
   "positionName": "Center",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54770,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/edc21d49-0112-45b4-b4ab-e5496c5c1600.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/edc21d49-0112-45b4-b4ab-e5496c5c1600.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16509,7 +17583,10 @@
   "positionName": "Forward",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54768,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/88d6f616-1540-408a-828b-6c2754d939f6.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/88d6f616-1540-408a-828b-6c2754d939f6.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16569,7 +17646,10 @@
   "positionName": "Guard",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54766,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d37da46b-3d80-49da-b17f-da29dc096626.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d37da46b-3d80-49da-b17f-da29dc096626.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16629,7 +17709,10 @@
   "positionName": "Guard",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54765,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df3943a2-33b5-43e8-9922-bc85f4c4c84e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df3943a2-33b5-43e8-9922-bc85f4c4c84e.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16689,7 +17772,10 @@
   "positionName": "Guard",
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54764,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8138f3db-604d-4f03-8279-94013721a3d7.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8138f3db-604d-4f03-8279-94013721a3d7.png"
+  },
   "club": {
    "code": "RED",
    "name": "Crvena Zvezda Meridianbet Belgrade",
@@ -16813,8 +17899,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 54758,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/455cdd44-0e90-4237-8ed5-4a439089a24f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/455cdd44-0e90-4237-8ed5-4a439089a24f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/455cdd44-0e90-4237-8ed5-4a439089a24f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/455cdd44-0e90-4237-8ed5-4a439089a24f.png"
   },
   "club": {
    "code": "MIL",
@@ -16876,8 +17962,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 54757,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png"
   },
   "club": {
    "code": "MIL",
@@ -16939,8 +18025,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 54756,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png"
   },
   "club": {
    "code": "MIL",
@@ -17064,7 +18150,10 @@
   "positionName": "Forward",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 54752,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/da191ebd-a494-4852-bdc6-d9d2ef8acb20.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/da191ebd-a494-4852-bdc6-d9d2ef8acb20.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -17124,7 +18213,10 @@
   "positionName": "Forward",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 54751,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c729041d-5c0b-41be-8118-be3d6ac73cb0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c729041d-5c0b-41be-8118-be3d6ac73cb0.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -17184,7 +18276,10 @@
   "positionName": "Guard",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 54750,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b784db84-127d-4604-b2e8-700288d9e097.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b784db84-127d-4604-b2e8-700288d9e097.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -17244,7 +18339,10 @@
   "positionName": "Guard",
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 54748,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92da8264-e1f6-434c-9923-a86d51b3affd.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92da8264-e1f6-434c-9923-a86d51b3affd.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -17304,7 +18402,10 @@
   "positionName": "Guard",
   "lastTeam": "",
   "externalId": 54745,
-  "images": {},
+  "images": {
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/faf1dbe4-c23a-4b7a-8175-72d536d41d52.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/faf1dbe4-c23a-4b7a-8175-72d536d41d52.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -17364,7 +18465,10 @@
   "positionName": "Center",
   "lastTeam": "",
   "externalId": 54744,
-  "images": {},
+  "images": {
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/764bed7f-f762-4b43-b542-6ae1ef78aed0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/764bed7f-f762-4b43-b542-6ae1ef78aed0.png"
+  },
   "club": {
    "code": "IST",
    "name": "Anadolu Efes Istanbul",
@@ -17425,8 +18529,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54738,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3ba17637-8f86-49cd-a1ea-33abf8a3a658.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3ba17637-8f86-49cd-a1ea-33abf8a3a658.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3ba17637-8f86-49cd-a1ea-33abf8a3a658.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/3ba17637-8f86-49cd-a1ea-33abf8a3a658.png"
   },
   "club": {
    "code": "DUB",

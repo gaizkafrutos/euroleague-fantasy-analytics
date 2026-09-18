@@ -7,16 +7,6 @@
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
-  "match_confidence": 44.4
- },
- {
-  "fantaking_id": 11493,
-  "fantaking_name": "M. Sissoko",
-  "fantaking_team": "BJK",
-  "club_code": "BES",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
   "match_confidence": 47.6
  },
  {
@@ -40,30 +30,20 @@
   "match_confidence": 50.0
  },
  {
-  "fantaking_id": 11524,
-  "fantaking_name": "N. Plotas",
-  "fantaking_team": "OLY",
-  "club_code": "OLY",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 50.0
- },
- {
-  "fantaking_id": 11549,
-  "fantaking_name": "J. Valanciunas",
-  "fantaking_team": "ZAL",
-  "club_code": "ZAL",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 50.0
- },
- {
   "fantaking_id": 7338,
   "fantaking_name": "B. Gach",
   "fantaking_team": "ASV",
   "club_code": "ASV",
+  "person_code": null,
+  "official_name": null,
+  "match_method": "unmatched",
+  "match_confidence": 50.0
+ },
+ {
+  "fantaking_id": 4215,
+  "fantaking_name": "M. Heidegger",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
@@ -90,40 +70,10 @@
   "match_confidence": 51.9
  },
  {
-  "fantaking_id": 4242,
-  "fantaking_name": "D. Casarin",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 52.2
- },
- {
   "fantaking_id": 11514,
   "fantaking_name": "P. Mills",
   "fantaking_team": "ASV",
   "club_code": "ASV",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 52.6
- },
- {
-  "fantaking_id": 11520,
-  "fantaking_name": "Y. Pons",
-  "fantaking_team": "ASV",
-  "club_code": "ASV",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 52.6
- },
- {
-  "fantaking_id": 12145,
-  "fantaking_name": "N. Smith Jr",
-  "fantaking_team": "RMB",
-  "club_code": "MAD",
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
@@ -150,6 +100,26 @@
   "match_confidence": 52.6
  },
  {
+  "fantaking_id": 11520,
+  "fantaking_name": "Y. Pons",
+  "fantaking_team": "ASV",
+  "club_code": "ASV",
+  "person_code": null,
+  "official_name": null,
+  "match_method": "unmatched",
+  "match_confidence": 52.6
+ },
+ {
+  "fantaking_id": 12145,
+  "fantaking_name": "N. Smith Jr",
+  "fantaking_team": "RMB",
+  "club_code": "MAD",
+  "person_code": null,
+  "official_name": null,
+  "match_method": "unmatched",
+  "match_confidence": 52.6
+ },
+ {
   "fantaking_id": 4086,
   "fantaking_name": "D. Alimpijevic",
   "fantaking_team": "BJK",
@@ -160,30 +130,10 @@
   "match_confidence": 53.3
  },
  {
-  "fantaking_id": 11540,
-  "fantaking_name": "M. Saint-supery",
-  "fantaking_team": "VBC",
-  "club_code": "PAM",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 53.8
- },
- {
   "fantaking_id": 4255,
   "fantaking_name": "X. Albert",
   "fantaking_team": "VBC",
   "club_code": "PAM",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 54.5
- },
- {
-  "fantaking_id": 3952,
-  "fantaking_name": "M. Jaiteh",
-  "fantaking_team": "DUB",
-  "club_code": "DUB",
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
@@ -200,20 +150,30 @@
   "match_confidence": 55.6
  },
  {
-  "fantaking_id": 11539,
-  "fantaking_name": "E. Valtonen",
-  "fantaking_team": "VBC",
-  "club_code": "PAM",
+  "fantaking_id": 11527,
+  "fantaking_name": "T. Warren",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
   "match_confidence": 55.6
  },
  {
-  "fantaking_id": 11527,
-  "fantaking_name": "T. Warren",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
+  "fantaking_id": 3952,
+  "fantaking_name": "M. Jaiteh",
+  "fantaking_team": "DUB",
+  "club_code": "DUB",
+  "person_code": null,
+  "official_name": null,
+  "match_method": "unmatched",
+  "match_confidence": 55.6
+ },
+ {
+  "fantaking_id": 11539,
+  "fantaking_name": "E. Valtonen",
+  "fantaking_team": "VBC",
+  "club_code": "PAM",
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
@@ -240,16 +200,6 @@
   "match_confidence": 57.1
  },
  {
-  "fantaking_id": 3891,
-  "fantaking_name": "V. Brown",
-  "fantaking_team": "BJK",
-  "club_code": "BES",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 57.1
- },
- {
   "fantaking_id": 4038,
   "fantaking_name": "D. Moraitis",
   "fantaking_team": "PAO",
@@ -260,40 +210,10 @@
   "match_confidence": 57.1
  },
  {
-  "fantaking_id": 4159,
-  "fantaking_name": "K. Carrington",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 58.3
- },
- {
   "fantaking_id": 3964,
   "fantaking_name": "A. Mumbru",
   "fantaking_team": "VIR",
   "club_code": "VIR",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 58.8
- },
- {
-  "fantaking_id": 11487,
-  "fantaking_name": "D. Saric",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 58.8
- },
- {
-  "fantaking_id": 11542,
-  "fantaking_name": "L. Mari",
-  "fantaking_team": "VBC",
-  "club_code": "PAM",
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
@@ -318,16 +238,6 @@
   "official_name": null,
   "match_method": "unmatched",
   "match_confidence": 62.5
- },
- {
-  "fantaking_id": 11529,
-  "fantaking_name": "A. Johnson",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 63.2
  },
  {
   "fantaking_id": 11515,
@@ -370,14 +280,94 @@
   "match_confidence": 78.6
  },
  {
-  "fantaking_id": 3978,
-  "fantaking_name": "E. Ndiaye",
-  "fantaking_team": "RMB",
-  "club_code": "MAD",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 80.0
+  "fantaking_id": 7254,
+  "fantaking_name": "I. Segev",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "004161",
+  "official_name": "SEGEV, ITAY",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 8463,
+  "fantaking_name": "K. Jones",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "014102",
+  "official_name": "JONES, KAI",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3826,
+  "fantaking_name": "F. Ntilikina",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "006591",
+  "official_name": "NTILIKINA, FRANK",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 9061,
+  "fantaking_name": "M. Baiocchi",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "013028",
+  "official_name": "BAIOCCHI, MATTEO",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3924,
+  "fantaking_name": "G. Poeta",
+  "fantaking_team": "MIL",
+  "club_code": "MIL",
+  "person_code": "002083",
+  "official_name": "POETA, GIUSEPPE",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3921,
+  "fantaking_name": "P. Laso",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "BSS",
+  "official_name": "LASO, PABLO",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3960,
+  "fantaking_name": "T. Blatt",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "011193",
+  "official_name": "BLATT, TAMIR",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 4129,
+  "fantaking_name": "M. Cale",
+  "fantaking_team": "ASV",
+  "club_code": "ASV",
+  "person_code": "013269",
+  "official_name": "CALE, MYLES",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 7231,
+  "fantaking_name": "B. Dessert",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "010318",
+  "official_name": "DESSERT, BRICE",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
  },
  {
   "fantaking_id": 8681,
@@ -400,182 +390,12 @@
   "match_confidence": 90.0
  },
  {
-  "fantaking_id": 3954,
-  "fantaking_name": "K. Diop",
-  "fantaking_team": "KBA",
-  "club_code": "BAS",
-  "person_code": "008072",
-  "official_name": "DIOP, KHALIFA",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 4023,
-  "fantaking_name": "M. Bosnjakovic",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "012167",
-  "official_name": "BOSNJAKOVIC, MITAR",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 7231,
-  "fantaking_name": "B. Dessert",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "010318",
-  "official_name": "DESSERT, BRICE",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 7239,
-  "fantaking_name": "I. Almansa",
-  "fantaking_team": "RMB",
-  "club_code": "MAD",
-  "person_code": "010105",
-  "official_name": "ALMANSA, IZAN",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 8770,
-  "fantaking_name": "R. Fenemen",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "013422",
-  "official_name": "FENEMEN, RUZGAR",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 4129,
-  "fantaking_name": "M. Cale",
-  "fantaking_team": "ASV",
-  "club_code": "ASV",
-  "person_code": "013269",
-  "official_name": "CALE, MYLES",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 4003,
-  "fantaking_name": "E. Shahrvin",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "012612",
-  "official_name": "SHAHRVIN, ENZO",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 4172,
-  "fantaking_name": "D. Itoudis",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": "CAG",
-  "official_name": "ITOUDIS, DIMITRIS",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3960,
-  "fantaking_name": "T. Blatt",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": "011193",
-  "official_name": "BLATT, TAMIR",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3955,
-  "fantaking_name": "P. Galbiati",
-  "fantaking_team": "KBA",
-  "club_code": "BAS",
-  "person_code": "007886",
-  "official_name": "GALBIATI, PAOLO",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 4006,
-  "fantaking_name": "T. Masiulis",
-  "fantaking_team": "ZAL",
-  "club_code": "ZAL",
-  "person_code": "ACX",
-  "official_name": "MASIULIS, TOMAS",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 4026,
-  "fantaking_name": "B. Yildizli",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "004093",
-  "official_name": "YILDIZLI, BURAKCAN",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3994,
-  "fantaking_name": "Y. Ouattara",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "004197",
-  "official_name": "OUATTARA, YAKUBA",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3868,
-  "fantaking_name": "Z. Obradovic",
-  "fantaking_team": "PAO",
-  "club_code": "PAN",
-  "person_code": "WBC",
-  "official_name": "OBRADOVIC, ZELJKO",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3993,
-  "fantaking_name": "M. Strazel",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "008099",
-  "official_name": "STRAZEL, MATTHEW",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
   "fantaking_id": 7235,
   "fantaking_name": "X. Pascual",
   "fantaking_team": "DUB",
   "club_code": "DUB",
   "person_code": "KOW",
   "official_name": "PASCUAL, XAVI",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 9061,
-  "fantaking_name": "M. Baiocchi",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": "013028",
-  "official_name": "BAIOCCHI, MATTEO",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 8463,
-  "fantaking_name": "K. Jones",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "014102",
-  "official_name": "JONES, KAI",
   "match_method": "prior-season",
   "match_confidence": 90.0
  },
@@ -590,132 +410,22 @@
   "match_confidence": 90.0
  },
  {
+  "fantaking_id": 4026,
+  "fantaking_name": "B. Yildizli",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "004093",
+  "official_name": "YILDIZLI, BURAKCAN",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
   "fantaking_id": 4005,
   "fantaking_name": "E. Jackson",
   "fantaking_team": "ASV",
   "club_code": "ASV",
   "person_code": "000229",
   "official_name": "JACKSON, EDWIN",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 4014,
-  "fantaking_name": "T. Parker",
-  "fantaking_team": "ASV",
-  "club_code": "ASV",
-  "person_code": "000264",
-  "official_name": "PARKER, TJ",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3826,
-  "fantaking_name": "F. Ntilikina",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "006591",
-  "official_name": "NTILIKINA, FRANK",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 7254,
-  "fantaking_name": "I. Segev",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": "004161",
-  "official_name": "SEGEV, ITAY",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3765,
-  "fantaking_name": "M. James",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "005985",
-  "official_name": "JAMES, MIKE",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 11533,
-  "fantaking_name": "U. Mijailovic",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "012943",
-  "official_name": "MIJAILOVIC, UROS",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 11531,
-  "fantaking_name": "N. Boungou-colo",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "002100",
-  "official_name": "DE COLO, NANDO",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3897,
-  "fantaking_name": "S. Jasikevicius",
-  "fantaking_team": "FBT",
-  "club_code": "ULK",
-  "person_code": "ADG",
-  "official_name": "JASIKEVICIUS, SARAS",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3924,
-  "fantaking_name": "G. Poeta",
-  "fantaking_team": "MIL",
-  "club_code": "MIL",
-  "person_code": "002083",
-  "official_name": "POETA, GIUSEPPE",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3909,
-  "fantaking_name": "A. Sekulic",
-  "fantaking_team": "BAR",
-  "club_code": "BAR",
-  "person_code": "003516",
-  "official_name": "SEKULIC, ALEKSANDER",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3885,
-  "fantaking_name": "G. Bartzokas",
-  "fantaking_team": "OLY",
-  "club_code": "OLY",
-  "person_code": "001869",
-  "official_name": "BARTZOKAS, GEORGIOS",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3872,
-  "fantaking_name": "P. Martinez",
-  "fantaking_team": "RMB",
-  "club_code": "MAD",
-  "person_code": "CWX",
-  "official_name": "MARTINEZ, PEDRO",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 3961,
-  "fantaking_name": "O. Kattash",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": "TFT",
-  "official_name": "KATTASH, ODED",
   "match_method": "prior-season",
   "match_confidence": 90.0
  },
@@ -730,32 +440,52 @@
   "match_confidence": 90.0
  },
  {
-  "fantaking_id": 3943,
-  "fantaking_name": "J. Penarroya",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "007973",
-  "official_name": "PENARROYA, JOAN",
+  "fantaking_id": 4014,
+  "fantaking_name": "T. Parker",
+  "fantaking_team": "ASV",
+  "club_code": "ASV",
+  "person_code": "000264",
+  "official_name": "PARKER, TJ",
   "match_method": "prior-season",
   "match_confidence": 90.0
  },
  {
-  "fantaking_id": 3930,
-  "fantaking_name": "Y. Madar",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": "011052",
-  "official_name": "MADAR, YAM",
+  "fantaking_id": 4006,
+  "fantaking_name": "T. Masiulis",
+  "fantaking_team": "ZAL",
+  "club_code": "ZAL",
+  "person_code": "ACX",
+  "official_name": "MASIULIS, TOMAS",
   "match_method": "prior-season",
   "match_confidence": 90.0
  },
  {
-  "fantaking_id": 3921,
-  "fantaking_name": "P. Laso",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "BSS",
-  "official_name": "LASO, PABLO",
+  "fantaking_id": 4172,
+  "fantaking_name": "D. Itoudis",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "CAG",
+  "official_name": "ITOUDIS, DIMITRIS",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 4003,
+  "fantaking_name": "E. Shahrvin",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "012612",
+  "official_name": "SHAHRVIN, ENZO",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3909,
+  "fantaking_name": "A. Sekulic",
+  "fantaking_team": "BAR",
+  "club_code": "BAR",
+  "person_code": "003516",
+  "official_name": "SEKULIC, ALEKSANDER",
   "match_method": "prior-season",
   "match_confidence": 90.0
  },
@@ -770,6 +500,116 @@
   "match_confidence": 90.0
  },
  {
+  "fantaking_id": 3897,
+  "fantaking_name": "S. Jasikevicius",
+  "fantaking_team": "FBT",
+  "club_code": "ULK",
+  "person_code": "ADG",
+  "official_name": "JASIKEVICIUS, SARAS",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3955,
+  "fantaking_name": "P. Galbiati",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "007886",
+  "official_name": "GALBIATI, PAOLO",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3872,
+  "fantaking_name": "P. Martinez",
+  "fantaking_team": "RMB",
+  "club_code": "MAD",
+  "person_code": "CWX",
+  "official_name": "MARTINEZ, PEDRO",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3885,
+  "fantaking_name": "G. Bartzokas",
+  "fantaking_team": "OLY",
+  "club_code": "OLY",
+  "person_code": "001869",
+  "official_name": "BARTZOKAS, GEORGIOS",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3961,
+  "fantaking_name": "O. Kattash",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "TFT",
+  "official_name": "KATTASH, ODED",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3868,
+  "fantaking_name": "Z. Obradovic",
+  "fantaking_team": "PAO",
+  "club_code": "PAN",
+  "person_code": "WBC",
+  "official_name": "OBRADOVIC, ZELJKO",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 11531,
+  "fantaking_name": "N. Boungou-colo",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "002100",
+  "official_name": "DE COLO, NANDO",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 11533,
+  "fantaking_name": "U. Mijailovic",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "012943",
+  "official_name": "MIJAILOVIC, UROS",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3943,
+  "fantaking_name": "J. Penarroya",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "007973",
+  "official_name": "PENARROYA, JOAN",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 8770,
+  "fantaking_name": "R. Fenemen",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "013422",
+  "official_name": "FENEMEN, RUZGAR",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 7219,
+  "fantaking_name": "A. M'baye",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "007993",
+  "official_name": "M'BAYE, AMATH",
+  "match_method": "subset",
+  "match_confidence": 95.0
+ },
+ {
   "fantaking_id": 11495,
   "fantaking_name": "N. Djurisic",
   "fantaking_team": "CZV",
@@ -780,12 +620,12 @@
   "match_confidence": 95.0
  },
  {
-  "fantaking_id": 7219,
-  "fantaking_name": "A. M'baye",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "007993",
-  "official_name": "M'BAYE, AMATH",
+  "fantaking_id": 3980,
+  "fantaking_name": "A. Balcerowski",
+  "fantaking_team": "BAR",
+  "club_code": "BAR",
+  "person_code": "007553",
+  "official_name": "BALCEROWSKI, OLEK",
   "match_method": "subset",
   "match_confidence": 95.0
  },
@@ -810,14 +650,44 @@
   "match_confidence": 95.0
  },
  {
-  "fantaking_id": 3980,
-  "fantaking_name": "A. Balcerowski",
-  "fantaking_team": "BAR",
-  "club_code": "BAR",
-  "person_code": "007553",
-  "official_name": "BALCEROWSKI, OLEK",
-  "match_method": "subset",
-  "match_confidence": 95.0
+  "fantaking_id": 11545,
+  "fantaking_name": "M. Carr",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "012707",
+  "official_name": "CARR, MARCUS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11544,
+  "fantaking_name": "T. Frazier",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "015029",
+  "official_name": "FRAZIER, TRENT",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11543,
+  "fantaking_name": "R. Bello",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "014802",
+  "official_name": "BELLO, RASHEED",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11542,
+  "fantaking_name": "L. Mari",
+  "fantaking_team": "VBC",
+  "club_code": "PAM",
+  "person_code": "010754",
+  "official_name": "MARI, LUCAS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
  },
  {
   "fantaking_id": 11541,
@@ -826,6 +696,16 @@
   "club_code": "PAM",
   "person_code": "014741",
   "official_name": "CARDENAS, ALVARO",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11540,
+  "fantaking_name": "M. Saint-supery",
+  "fantaking_team": "VBC",
+  "club_code": "PAM",
+  "person_code": "011706",
+  "official_name": "SAINT-SUPERY, MARIO",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -886,36 +766,6 @@
   "club_code": "PAR",
   "person_code": "014742",
   "official_name": "THOMPSON, ETHAN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 11528,
-  "fantaking_name": "T. Etienne",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "015143",
-  "official_name": "ETIENNE, TYSON",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3790,
-  "fantaking_name": "D. Musa",
-  "fantaking_team": "DUB",
-  "club_code": "DUB",
-  "person_code": "006540",
-  "official_name": "MUSA, DZANAN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3787,
-  "fantaking_name": "N. Hayes-davis",
-  "fantaking_team": "PAO",
-  "club_code": "PAN",
-  "person_code": "008962",
-  "official_name": "HAYES-DAVIS, NIGEL",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -1040,32 +890,32 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 11543,
-  "fantaking_name": "R. Bello",
+  "fantaking_id": 3768,
+  "fantaking_name": "M. Lessort",
+  "fantaking_team": "PAO",
+  "club_code": "PAN",
+  "person_code": "003842",
+  "official_name": "LESSORT, MATHIAS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3767,
+  "fantaking_name": "S. Larkin",
+  "fantaking_team": "FBT",
+  "club_code": "ULK",
+  "person_code": "007200",
+  "official_name": "LARKIN, SHANE",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11546,
+  "fantaking_name": "B. Klintman",
   "fantaking_team": "VIR",
   "club_code": "VIR",
-  "person_code": "014802",
-  "official_name": "BELLO, RASHEED",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3918,
-  "fantaking_name": "M. Grigonis",
-  "fantaking_team": "ZAL",
-  "club_code": "ZAL",
-  "person_code": "002328",
-  "official_name": "GRIGONIS, MARIUS",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3917,
-  "fantaking_name": "K. Baldwin",
-  "fantaking_team": "BAY",
-  "club_code": "MUN",
-  "person_code": "012597",
-  "official_name": "BALDWIN, KAMAR",
+  "person_code": "014738",
+  "official_name": "KLINTMAN, BO",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -1190,22 +1040,22 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 3950,
-  "fantaking_name": "O. Dobric",
-  "fantaking_team": "CZV",
-  "club_code": "RED",
-  "person_code": "004007",
-  "official_name": "DOBRIC, OGNJEN",
+  "fantaking_id": 3892,
+  "fantaking_name": "R. Jokubaitis",
+  "fantaking_team": "BAY",
+  "club_code": "MUN",
+  "person_code": "007519",
+  "official_name": "JOKUBAITIS, ROKAS",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 3948,
-  "fantaking_name": "M. Ndiaye",
-  "fantaking_team": "OLY",
-  "club_code": "OLY",
-  "person_code": "012731",
-  "official_name": "NDIAYE, MBAYE",
+  "fantaking_id": 3888,
+  "fantaking_name": "S. Brown",
+  "fantaking_team": "ZAL",
+  "club_code": "ZAL",
+  "person_code": "012720",
+  "official_name": "BROWN, STERLING",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -1270,6 +1120,16 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3930,
+  "fantaking_name": "Y. Madar",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "011052",
+  "official_name": "MADAR, YAM",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 3927,
   "fantaking_name": "D. Hommes",
   "fantaking_team": "PBB",
@@ -1300,112 +1160,22 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 3976,
-  "fantaking_name": "A. Lakic",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "007736",
-  "official_name": "LAKIC, ARIJAN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3975,
-  "fantaking_name": "S. Herrera",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "012611",
-  "official_name": "HERRERA, SEBASTIAN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3973,
-  "fantaking_name": "J. Parra",
-  "fantaking_team": "BAR",
-  "club_code": "BAR",
-  "person_code": "007464",
-  "official_name": "PARRA, JOEL",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3972,
-  "fantaking_name": "J. Hollatz",
-  "fantaking_team": "BAY",
-  "club_code": "MUN",
-  "person_code": "009513",
-  "official_name": "HOLLATZ, JUSTUS",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3971,
-  "fantaking_name": "V. Marinkovic",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "004761",
-  "official_name": "MARINKOVIC, VANJA",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3967,
-  "fantaking_name": "D. Brizuela",
-  "fantaking_team": "BAR",
-  "club_code": "BAR",
-  "person_code": "009992",
-  "official_name": "BRIZUELA, DARIO",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3963,
-  "fantaking_name": "A. Pajola",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "006739",
-  "official_name": "PAJOLA, ALESSANDRO",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3962,
-  "fantaking_name": "M. Nakic",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "007632",
-  "official_name": "NAKIC, MARIO",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3957,
-  "fantaking_name": "O. Da Silva",
-  "fantaking_team": "BAY",
-  "club_code": "MUN",
-  "person_code": "011244",
-  "official_name": "DA SILVA, OSCAR",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3892,
-  "fantaking_name": "R. Jokubaitis",
-  "fantaking_team": "BAY",
-  "club_code": "MUN",
-  "person_code": "007519",
-  "official_name": "JOKUBAITIS, ROKAS",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3888,
-  "fantaking_name": "S. Brown",
+  "fantaking_id": 3918,
+  "fantaking_name": "M. Grigonis",
   "fantaking_team": "ZAL",
   "club_code": "ZAL",
-  "person_code": "012720",
-  "official_name": "BROWN, STERLING",
+  "person_code": "002328",
+  "official_name": "GRIGONIS, MARIUS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3917,
+  "fantaking_name": "K. Baldwin",
+  "fantaking_team": "BAY",
+  "club_code": "MUN",
+  "person_code": "012597",
+  "official_name": "BALDWIN, KAMAR",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -1510,6 +1280,146 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3867,
+  "fantaking_name": "K. Papanikolaou",
+  "fantaking_team": "OLY",
+  "club_code": "OLY",
+  "person_code": "001255",
+  "official_name": "PAPANIKOLAOU, KOSTAS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3864,
+  "fantaking_name": "T. Luwawu-Cabarrot",
+  "fantaking_team": "RMB",
+  "club_code": "MAD",
+  "person_code": "012080",
+  "official_name": "LUWAWU-CABARROT, TIMOTHE",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3862,
+  "fantaking_name": "J. Rivero",
+  "fantaking_team": "VBC",
+  "club_code": "PAM",
+  "person_code": "011214",
+  "official_name": "RIVERO, JASIEL",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3975,
+  "fantaking_name": "S. Herrera",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "012611",
+  "official_name": "HERRERA, SEBASTIAN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3973,
+  "fantaking_name": "J. Parra",
+  "fantaking_team": "BAR",
+  "club_code": "BAR",
+  "person_code": "007464",
+  "official_name": "PARRA, JOEL",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3972,
+  "fantaking_name": "J. Hollatz",
+  "fantaking_team": "BAY",
+  "club_code": "MUN",
+  "person_code": "009513",
+  "official_name": "HOLLATZ, JUSTUS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3971,
+  "fantaking_name": "V. Marinkovic",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "004761",
+  "official_name": "MARINKOVIC, VANJA",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3967,
+  "fantaking_name": "D. Brizuela",
+  "fantaking_team": "BAR",
+  "club_code": "BAR",
+  "person_code": "009992",
+  "official_name": "BRIZUELA, DARIO",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3963,
+  "fantaking_name": "A. Pajola",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "006739",
+  "official_name": "PAJOLA, ALESSANDRO",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3962,
+  "fantaking_name": "M. Nakic",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "007632",
+  "official_name": "NAKIC, MARIO",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3957,
+  "fantaking_name": "O. Da Silva",
+  "fantaking_team": "BAY",
+  "club_code": "MUN",
+  "person_code": "011244",
+  "official_name": "DA SILVA, OSCAR",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3950,
+  "fantaking_name": "O. Dobric",
+  "fantaking_team": "CZV",
+  "club_code": "RED",
+  "person_code": "004007",
+  "official_name": "DOBRIC, OGNJEN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3948,
+  "fantaking_name": "M. Ndiaye",
+  "fantaking_team": "OLY",
+  "club_code": "OLY",
+  "person_code": "012731",
+  "official_name": "NDIAYE, MBAYE",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4000,
+  "fantaking_name": "M. Mahmutoglu",
+  "fantaking_team": "FBT",
+  "club_code": "ULK",
+  "person_code": "002969",
+  "official_name": "MAHMUTOGLU, MELIH",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 3998,
   "fantaking_name": "D. Giedraitis",
   "fantaking_team": "ZAL",
@@ -1526,6 +1436,16 @@
   "club_code": "MIL",
   "person_code": "006509",
   "official_name": "TONUT, STEFANO",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3993,
+  "fantaking_name": "M. Strazel",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "008099",
+  "official_name": "STRAZEL, MATTHEW",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -1600,6 +1520,26 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3976,
+  "fantaking_name": "A. Lakic",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "007736",
+  "official_name": "LAKIC, ARIJAN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4073,
+  "fantaking_name": "T. Odiase",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "011823",
+  "official_name": "ODIASE, TAI",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 4019,
   "fantaking_name": "P. Kalaitzakis",
   "fantaking_team": "PAO",
@@ -1666,156 +1606,6 @@
   "club_code": "IST",
   "person_code": "006372",
   "official_name": "YILMAZ, ERKAN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4000,
-  "fantaking_name": "M. Mahmutoglu",
-  "fantaking_team": "FBT",
-  "club_code": "ULK",
-  "person_code": "002969",
-  "official_name": "MAHMUTOGLU, MELIH",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4165,
-  "fantaking_name": "T. Ginat",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": "010550",
-  "official_name": "GINAT, TOMER",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4164,
-  "fantaking_name": "J. Motley",
-  "fantaking_team": "CZV",
-  "club_code": "RED",
-  "person_code": "011157",
-  "official_name": "MOTLEY, JOHNATHAN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4156,
-  "fantaking_name": "J. Morgan",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": "010431",
-  "official_name": "MORGAN, JEREMY",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4124,
-  "fantaking_name": "K. Kokila",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": "011837",
-  "official_name": "KOKILA, KEVIN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4108,
-  "fantaking_name": "D. Stewart",
-  "fantaking_team": "KBA",
-  "club_code": "BAS",
-  "person_code": "012700",
-  "official_name": "STEWART, DJ",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4097,
-  "fantaking_name": "N. Tanaskovic",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": "005637",
-  "official_name": "TANASKOVIC, NIKOLA",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4096,
-  "fantaking_name": "M. Wright",
-  "fantaking_team": "DUB",
-  "club_code": "DUB",
-  "person_code": "012606",
-  "official_name": "WRIGHT IV, MCKINLEY",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4094,
-  "fantaking_name": "K. Kamenjas",
-  "fantaking_team": "DUB",
-  "club_code": "DUB",
-  "person_code": "008325",
-  "official_name": "KAMENJAS, KENAN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4088,
-  "fantaking_name": "B. Ugurlu",
-  "fantaking_team": "BJK",
-  "club_code": "BES",
-  "person_code": "003783",
-  "official_name": "UGURLU, BERK",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4084,
-  "fantaking_name": "D. Sleva",
-  "fantaking_team": "ZAL",
-  "club_code": "ZAL",
-  "person_code": "011927",
-  "official_name": "SLEVA, DUSTIN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4081,
-  "fantaking_name": "C. Morgan",
-  "fantaking_team": "BJK",
-  "club_code": "BES",
-  "person_code": "009680",
-  "official_name": "MORGAN, CONOR",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 4073,
-  "fantaking_name": "T. Odiase",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": "011823",
-  "official_name": "ODIASE, TAI",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3867,
-  "fantaking_name": "K. Papanikolaou",
-  "fantaking_team": "OLY",
-  "club_code": "OLY",
-  "person_code": "001255",
-  "official_name": "PAPANIKOLAOU, KOSTAS",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3864,
-  "fantaking_name": "T. Luwawu-Cabarrot",
-  "fantaking_team": "RMB",
-  "club_code": "MAD",
-  "person_code": "012080",
-  "official_name": "LUWAWU-CABARROT, TIMOTHE",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -1960,6 +1750,166 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3838,
+  "fantaking_name": "C. Malcolm",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "012609",
+  "official_name": "MALCOLM, COLLIN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3836,
+  "fantaking_name": "K. Mitoglou",
+  "fantaking_team": "PAO",
+  "club_code": "PAN",
+  "person_code": "007866",
+  "official_name": "MITOGLOU, KONSTANTINOS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4167,
+  "fantaking_name": "I. Wainright",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "013284",
+  "official_name": "WAINRIGHT, ISH",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4165,
+  "fantaking_name": "T. Ginat",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "010550",
+  "official_name": "GINAT, TOMER",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4164,
+  "fantaking_name": "J. Motley",
+  "fantaking_team": "CZV",
+  "club_code": "RED",
+  "person_code": "011157",
+  "official_name": "MOTLEY, JOHNATHAN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4159,
+  "fantaking_name": "K. Carrington",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "008912",
+  "official_name": "CARRINGTON, KHADEEN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4156,
+  "fantaking_name": "J. Morgan",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "010431",
+  "official_name": "MORGAN, JEREMY",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4124,
+  "fantaking_name": "K. Kokila",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "011837",
+  "official_name": "KOKILA, KEVIN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4108,
+  "fantaking_name": "D. Stewart",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "012700",
+  "official_name": "STEWART, DJ",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4097,
+  "fantaking_name": "N. Tanaskovic",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "005637",
+  "official_name": "TANASKOVIC, NIKOLA",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4096,
+  "fantaking_name": "M. Wright",
+  "fantaking_team": "DUB",
+  "club_code": "DUB",
+  "person_code": "012606",
+  "official_name": "WRIGHT IV, MCKINLEY",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4094,
+  "fantaking_name": "K. Kamenjas",
+  "fantaking_team": "DUB",
+  "club_code": "DUB",
+  "person_code": "008325",
+  "official_name": "KAMENJAS, KENAN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4088,
+  "fantaking_name": "B. Ugurlu",
+  "fantaking_team": "BJK",
+  "club_code": "BES",
+  "person_code": "003783",
+  "official_name": "UGURLU, BERK",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4084,
+  "fantaking_name": "D. Sleva",
+  "fantaking_team": "ZAL",
+  "club_code": "ZAL",
+  "person_code": "011927",
+  "official_name": "SLEVA, DUSTIN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4081,
+  "fantaking_name": "C. Morgan",
+  "fantaking_team": "BJK",
+  "club_code": "BES",
+  "person_code": "009680",
+  "official_name": "MORGAN, CONOR",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4257,
+  "fantaking_name": "J. Pradilla",
+  "fantaking_team": "RMB",
+  "club_code": "MAD",
+  "person_code": "010393",
+  "official_name": "PRADILLA, JAIME",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 4252,
   "fantaking_name": "J. Montero",
   "fantaking_team": "OLY",
@@ -1996,6 +1946,16 @@
   "club_code": "RED",
   "person_code": "011982",
   "official_name": "OJELEYE, SEMI",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4242,
+  "fantaking_name": "D. Casarin",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "009400",
+  "official_name": "CASARIN, DAVIDE",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2080,12 +2040,12 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 4167,
-  "fantaking_name": "I. Wainright",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": "013284",
-  "official_name": "WAINRIGHT, ISH",
+  "fantaking_id": 4884,
+  "fantaking_name": "J. Clark III",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "013699",
+  "official_name": "CLARK III, JIMMY",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2240,12 +2200,12 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 4257,
-  "fantaking_name": "J. Pradilla",
-  "fantaking_team": "RMB",
-  "club_code": "MAD",
-  "person_code": "010393",
-  "official_name": "PRADILLA, JAIME",
+  "fantaking_id": 7220,
+  "fantaking_name": "E. Izundu",
+  "fantaking_team": "CZV",
+  "club_code": "RED",
+  "person_code": "014029",
+  "official_name": "IZUNDU, EBUKA",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2390,12 +2350,12 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 4884,
-  "fantaking_name": "J. Clark III",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": "013699",
-  "official_name": "CLARK III, JIMMY",
+  "fantaking_id": 7245,
+  "fantaking_name": "D. Mutaf",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "008176",
+  "official_name": "MUTAF, DAVID",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2520,12 +2480,22 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 7220,
-  "fantaking_name": "E. Izundu",
-  "fantaking_team": "CZV",
-  "club_code": "RED",
-  "person_code": "014029",
-  "official_name": "IZUNDU, EBUKA",
+  "fantaking_id": 7867,
+  "fantaking_name": "A. Bacot",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "014015",
+  "official_name": "BACOT JR., ARMANDO",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 7424,
+  "fantaking_name": "A. Diarra",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "014108",
+  "official_name": "DIARRA, ALIOU",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2650,12 +2620,22 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 7245,
-  "fantaking_name": "D. Mutaf",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "008176",
-  "official_name": "MUTAF, DAVID",
+  "fantaking_id": 8834,
+  "fantaking_name": "C. Silva",
+  "fantaking_team": "FBT",
+  "club_code": "ULK",
+  "person_code": "014220",
+  "official_name": "SILVA, CHRIS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 8830,
+  "fantaking_name": "F. Ferrari",
+  "fantaking_team": "VIR",
+  "club_code": "VIR",
+  "person_code": "014219",
+  "official_name": "FERRARI, FRANCESCO",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2766,46 +2746,6 @@
   "club_code": "DUB",
   "person_code": "014027",
   "official_name": "DIAKITE, MAMADI",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 7867,
-  "fantaking_name": "A. Bacot",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": "014015",
-  "official_name": "BACOT JR., ARMANDO",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 7424,
-  "fantaking_name": "A. Diarra",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": "014108",
-  "official_name": "DIARRA, ALIOU",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3838,
-  "fantaking_name": "C. Malcolm",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "012609",
-  "official_name": "MALCOLM, COLLIN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3836,
-  "fantaking_name": "K. Mitoglou",
-  "fantaking_team": "PAO",
-  "club_code": "PAN",
-  "person_code": "007866",
-  "official_name": "MITOGLOU, KONSTANTINOS",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2930,6 +2870,36 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3812,
+  "fantaking_name": "J. Hoard",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "006835",
+  "official_name": "HOARD, JAYLEN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3810,
+  "fantaking_name": "B. Colson",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "009783",
+  "official_name": "COLSON, BONZIE",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11496,
+  "fantaking_name": "A. Bjelic",
+  "fantaking_team": "CZV",
+  "club_code": "RED",
+  "person_code": "012806",
+  "official_name": "BJELIC, ANDREJ",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 11494,
   "fantaking_name": "P. Baldwin Jr",
   "fantaking_team": "CZV",
@@ -2976,6 +2946,16 @@
   "club_code": "IST",
   "person_code": "005368",
   "official_name": "YUSTA, SANTI",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11487,
+  "fantaking_name": "D. Saric",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "003112",
+  "official_name": "SARIC, DARIO",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3030,22 +3010,32 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 8834,
-  "fantaking_name": "C. Silva",
-  "fantaking_team": "FBT",
-  "club_code": "ULK",
-  "person_code": "014220",
-  "official_name": "SILVA, CHRIS",
+  "fantaking_id": 11513,
+  "fantaking_name": "D. Baugh",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "014736",
+  "official_name": "BAUGH, DAMION",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 8830,
-  "fantaking_name": "F. Ferrari",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": "014219",
-  "official_name": "FERRARI, FRANCESCO",
+  "fantaking_id": 11512,
+  "fantaking_name": "A. Lawson",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "014734",
+  "official_name": "LAWSON, A.J.",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11511,
+  "fantaking_name": "C. Duarte",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "014735",
+  "official_name": "DUARTE, CHRIS",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3160,12 +3150,22 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 11496,
-  "fantaking_name": "A. Bjelic",
-  "fantaking_team": "CZV",
-  "club_code": "RED",
-  "person_code": "012806",
-  "official_name": "BJELIC, ANDREJ",
+  "fantaking_id": 11529,
+  "fantaking_name": "A. Johnson",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "015160",
+  "official_name": "JOHNSON, ALIZE",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 11528,
+  "fantaking_name": "T. Etienne",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "015143",
+  "official_name": "ETIENNE, TYSON",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3190,62 +3190,22 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 11524,
+  "fantaking_name": "N. Plotas",
+  "fantaking_team": "OLY",
+  "club_code": "OLY",
+  "person_code": "010091",
+  "official_name": "PLOTAS, NIKOLAOS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 11522,
   "fantaking_name": "K. Wallace",
   "fantaking_team": "MTA",
   "club_code": "TEL",
   "person_code": "015085",
   "official_name": "WALLACE, KEATON",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 11513,
-  "fantaking_name": "D. Baugh",
-  "fantaking_team": "KBA",
-  "club_code": "BAS",
-  "person_code": "014736",
-  "official_name": "BAUGH, DAMION",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 11512,
-  "fantaking_name": "A. Lawson",
-  "fantaking_team": "KBA",
-  "club_code": "BAS",
-  "person_code": "014734",
-  "official_name": "LAWSON, A.J.",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 11511,
-  "fantaking_name": "C. Duarte",
-  "fantaking_team": "KBA",
-  "club_code": "BAS",
-  "person_code": "014735",
-  "official_name": "DUARTE, CHRIS",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3812,
-  "fantaking_name": "J. Hoard",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": "006835",
-  "official_name": "HOARD, JAYLEN",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3810,
-  "fantaking_name": "B. Colson",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": "009783",
-  "official_name": "COLSON, BONZIE",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3390,32 +3350,22 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 11544,
-  "fantaking_name": "T. Frazier",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": "015029",
-  "official_name": "FRAZIER, TRENT",
+  "fantaking_id": 3790,
+  "fantaking_name": "D. Musa",
+  "fantaking_team": "DUB",
+  "club_code": "DUB",
+  "person_code": "006540",
+  "official_name": "MUSA, DZANAN",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 11545,
-  "fantaking_name": "M. Carr",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": "012707",
-  "official_name": "CARR, MARCUS",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 11546,
-  "fantaking_name": "B. Klintman",
-  "fantaking_team": "VIR",
-  "club_code": "VIR",
-  "person_code": "014738",
-  "official_name": "KLINTMAN, BO",
+  "fantaking_id": 3787,
+  "fantaking_name": "N. Hayes-davis",
+  "fantaking_team": "PAO",
+  "club_code": "PAN",
+  "person_code": "008962",
+  "official_name": "HAYES-DAVIS, NIGEL",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3440,12 +3390,12 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 3768,
-  "fantaking_name": "M. Lessort",
-  "fantaking_team": "PAO",
-  "club_code": "PAN",
-  "person_code": "003842",
-  "official_name": "LESSORT, MATHIAS",
+  "fantaking_id": 11549,
+  "fantaking_name": "J. Valanciunas",
+  "fantaking_team": "ZAL",
+  "club_code": "ZAL",
+  "person_code": "000898",
+  "official_name": "VALANCIUNAS, JONAS",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3460,22 +3410,32 @@
   "match_confidence": 99.0
  },
  {
-  "fantaking_id": 3767,
-  "fantaking_name": "S. Larkin",
-  "fantaking_team": "FBT",
-  "club_code": "ULK",
-  "person_code": "007200",
-  "official_name": "LARKIN, SHANE",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
   "fantaking_id": 3766,
   "fantaking_name": "S. Vezenkov",
   "fantaking_team": "OLY",
   "club_code": "OLY",
   "person_code": "003469",
   "official_name": "VEZENKOV, SASHA",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 12460,
+  "fantaking_name": "D. Jeffries",
+  "fantaking_team": "BJK",
+  "club_code": "BES",
+  "person_code": "014785",
+  "official_name": "JEFFRIES, DAQUAN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3765,
+  "fantaking_name": "M. James",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "005985",
+  "official_name": "JAMES, MIKE",
   "match_method": "initial-club",
   "match_confidence": 99.0
  }
