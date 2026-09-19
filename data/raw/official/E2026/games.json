@@ -20690,10 +20690,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -23518,10 +23518,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -24528,10 +24528,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -25538,10 +25538,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -27962,10 +27962,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -28568,10 +28568,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -28987,6 +28987,107 @@
   "winner": null
  },
  {
+  "id": "1e30ce30-9703-4311-8e19-7a1872a861a7",
+  "identifier": "E2026_92",
+  "gameCode": 92,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 10,
+  "roundAlias": "Round 10",
+  "roundName": "Round 10",
+  "played": false,
+  "date": "2026-11-05T19:00:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 3,
+  "localDate": "2026-11-05T21:00:00",
+  "utcDate": "2026-11-05T18:00:00Z",
+  "local": {
+   "club": {
+    "code": "ULK",
+    "name": "Fenerbahce Tarfin Istanbul",
+    "abbreviatedName": "Fenerbahce",
+    "editorialName": "Fenerbahce",
+    "tvCode": "FBT",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "BAS",
+    "name": "Kosner Baskonia Vitoria-Gasteiz",
+    "abbreviatedName": "Baskonia",
+    "editorialName": "Baskonia",
+    "tvCode": "KBA",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "ULKER SPORTS AND EVENT HALL",
+   "code": "AMY",
+   "capacity": 13000,
+   "address": "Barbaros Mah. Ihlamur Sok. Batı Ataşehir, 34764 Istanbul, Turkiye ",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
   "id": "d5b53013-0f18-4373-8ac8-ae4ad145e0ab",
   "identifier": "E2026_95",
   "gameCode": 95,
@@ -29014,12 +29115,12 @@
   "roundAlias": "Round 10",
   "roundName": "Round 10",
   "played": false,
-  "date": "2026-11-05T18:30:00",
+  "date": "2026-11-05T18:15:00",
   "confirmedDate": true,
   "confirmedHour": true,
   "localTimeZone": 3,
-  "localDate": "2026-11-05T20:30:00",
-  "utcDate": "2026-11-05T17:30:00Z",
+  "localDate": "2026-11-05T20:15:00",
+  "utcDate": "2026-11-05T17:15:00Z",
   "local": {
    "club": {
     "code": "IST",
@@ -29178,107 +29279,6 @@
    "code": "ATI7",
    "capacity": 13109,
    "address": "Avenida de Felipe II 1, 28009, Madrid",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
-  "id": "1e30ce30-9703-4311-8e19-7a1872a861a7",
-  "identifier": "E2026_92",
-  "gameCode": 92,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 10,
-  "roundAlias": "Round 10",
-  "roundName": "Round 10",
-  "played": false,
-  "date": "2026-11-04T18:45:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 3,
-  "localDate": "2026-11-04T20:45:00",
-  "utcDate": "2026-11-04T17:45:00Z",
-  "local": {
-   "club": {
-    "code": "ULK",
-    "name": "Fenerbahce Tarfin Istanbul",
-    "abbreviatedName": "Fenerbahce",
-    "editorialName": "Fenerbahce",
-    "tvCode": "FBT",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "BAS",
-    "name": "Kosner Baskonia Vitoria-Gasteiz",
-    "abbreviatedName": "Baskonia",
-    "editorialName": "Baskonia",
-    "tvCode": "KBA",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "ULKER SPORTS AND EVENT HALL",
-   "code": "AMY",
-   "capacity": 13000,
-   "address": "Barbaros Mah. Ihlamur Sok. Batı Ataşehir, 34764 Istanbul, Turkiye ",
    "images": {
     "medium": null
    },
@@ -29578,10 +29578,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -31497,10 +31497,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -34628,10 +34628,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
+   "name": "SUNEL ARENA",
+   "code": "AVT1",
+   "capacity": 8300,
+   "address": "",
    "images": {
     "medium": null
    },
