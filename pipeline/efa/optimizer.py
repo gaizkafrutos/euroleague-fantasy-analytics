@@ -19,6 +19,8 @@ from dataclasses import dataclass
 from typing import Any
 
 from efa.config import (
+    BENCH_MULTIPLIER,
+    CAPTAIN_MULTIPLIER,
     MAX_PLAYERS_PER_CLUB,
     ROSTER_BUDGET,
     ROSTER_CENTERS,
@@ -29,6 +31,12 @@ from efa.config import (
 log = logging.getLogger(__name__)
 
 POSITION_QUOTA = {"G": ROSTER_GUARDS, "F": ROSTER_FORWARDS, "C": ROSTER_CENTERS}
+
+#: Cuántos de los diez puntúan al 100 %: el quinteto más el sexto hombre. Los
+#: otros cuatro son banquillo y puntúan a la mitad. El capitán sale del
+#: quinteto y dobla. Está en el reglamento de Classic Mode.
+STARTERS = 5
+FULL_SCORING_SLOTS = STARTERS + 1
 
 
 def normalize_position(raw: Any) -> str | None:
@@ -68,25 +76,70 @@ class Lineup:
     total_projection: float
     method: str
     captain: Candidate | None = None
+    coach: Candidate | None = None
+
+    @property
+    def starters(self) -> list[Candidate]:
+        """Los cinco del quinteto: los cinco mayores proyectados."""
+        return _by_projection(self.players)[:STARTERS]
+
+    @property
+    def sixth(self) -> Candidate | None:
+        """El sexto hombre, que también puntúa al 100 %."""
+        ordered = _by_projection(self.players)
+        return ordered[STARTERS] if len(ordered) > STARTERS else None
+
+    @property
+    def bench(self) -> list[Candidate]:
+        """Los cuatro que puntúan a la mitad."""
+        return _by_projection(self.players)[FULL_SCORING_SLOTS:]
+
+    @property
+    def scored_projection(self) -> float:
+        """Lo que de verdad puntuaría esta plantilla.
+
+        `total_projection` es la suma llana de los diez y se mantiene por
+        compatibilidad, pero no es lo que se juega: cuatro de esos diez puntúan
+        a la mitad y uno dobla.
+        """
+        ordered = _by_projection(self.players)
+        full = sum(c.projection for c in ordered[:FULL_SCORING_SLOTS])
+        half = BENCH_MULTIPLIER * sum(c.projection for c in ordered[FULL_SCORING_SLOTS:])
+        captain_bonus = (
+            (CAPTAIN_MULTIPLIER - 1) * self.captain.projection if self.captain else 0.0
+        )
+        coach = self.coach.projection if self.coach else 0.0
+        return full + half + captain_bonus + coach
 
     def as_dict(self) -> dict[str, Any]:
+        def brief(c: Candidate) -> dict[str, Any]:
+            return {
+                "key": c.key,
+                "name": c.name,
+                "position": c.position,
+                "club": c.club_code,
+                "price": round(c.price, 2),
+                "projection": round(c.projection, 2),
+            }
+
+        sixth = self.sixth
         return {
             "method": self.method,
             "totalPrice": round(self.total_price, 2),
             "totalProjection": round(self.total_projection, 2),
+            "scoredProjection": round(self.scored_projection, 2),
             "captain": self.captain.key if self.captain else None,
-            "players": [
-                {
-                    "key": c.key,
-                    "name": c.name,
-                    "position": c.position,
-                    "club": c.club_code,
-                    "price": round(c.price, 2),
-                    "projection": round(c.projection, 2),
-                }
-                for c in self.players
-            ],
+            "starters": [c.key for c in self.starters],
+            "sixth": sixth.key if sixth else None,
+            "bench": [c.key for c in self.bench],
+            "coach": brief(self.coach) if self.coach else None,
+            "players": [brief(c) for c in self.players],
         }
+
+
+def _by_projection(players: Sequence[Candidate]) -> list[Candidate]:
+    """De mayor a menor proyección. Quién va al quinteto sale de aquí."""
+    return sorted(players, key=lambda c: -c.projection)
 
 
 def _pick_captain(players: Sequence[Candidate]) -> Candidate | None:
@@ -101,25 +154,30 @@ def optimize(
     locked: Sequence[str] = (),
     excluded: Sequence[str] = (),
     max_per_club: int = MAX_PLAYERS_PER_CLUB,
+    coaches: Sequence[Candidate] = (),
 ) -> Lineup | None:
     """Mejor plantilla posible de 10 jugadores dentro del presupuesto.
 
-    El entrenador se elige aparte (su puntuación no depende del precio del
-    jugador ni compite por las mismas plazas), así que aquí solo van los 10.
+    El entrenador SÍ compite por el presupuesto: es obligatorio y cuesta entre
+    5 y 10 créditos. Si se pasa `coaches`, entra en el mismo problema y la
+    plantilla resultante es alineable; si no se pasa, se optimizan solo los 10
+    con todo el presupuesto, que es como se comportaba antes.
+
     `locked` fuerza la inclusión de jugadores; `excluded` los descarta.
     """
     pool = [c for c in candidates if c.key not in set(excluded) and c.position in POSITION_QUOTA]
     if not pool:
         return None
+    coach_pool = [c for c in coaches if c.key not in set(excluded) and c.price > 0]
 
     try:
-        return _optimize_ilp(pool, budget, set(locked), max_per_club)
+        return _optimize_ilp(pool, budget, set(locked), max_per_club, coach_pool)
     except ImportError:
         log.warning("PuLP no disponible: usando heurística voraz.")
-        return _optimize_greedy(pool, budget, set(locked), max_per_club)
+        return _optimize_greedy(pool, budget, set(locked), max_per_club, coach_pool)
     except Exception as exc:  # pragma: no cover - el solver no debería fallar
         log.warning("El solver ILP falló (%s): usando heurística voraz.", exc)
-        return _optimize_greedy(pool, budget, set(locked), max_per_club)
+        return _optimize_greedy(pool, budget, set(locked), max_per_club, coach_pool)
 
 
 def _silent_solver(pulp_module: Any):
@@ -138,16 +196,53 @@ def _silent_solver(pulp_module: Any):
 
 
 def _optimize_ilp(
-    pool: list[Candidate], budget: float, locked: set[str], max_per_club: int
+    pool: list[Candidate],
+    budget: float,
+    locked: set[str],
+    max_per_club: int,
+    coaches: Sequence[Candidate] = (),
 ) -> Lineup | None:
+    """Programación entera con el baremo real del juego.
+
+    Tres binarias por jugador en vez de una:
+      x = está en la plantilla        (paga precio, puntúa al menos al 50 %)
+      y = está en el grupo del 100 %  (quinteto + sexto hombre, seis en total)
+      z = es el capitán               (uno, y sale del grupo del 100 %)
+
+    Con z ≤ y ≤ x, el coeficiente `0,5·x + 0,5·y + z` vale 0,5 para el
+    banquillo, 1 para el quinteto y el sexto, y 2 para el capitán. Es
+    exactamente lo que dice el reglamento, y sigue siendo lineal.
+    """
     import pulp
 
     problem = pulp.LpProblem("fantasy_lineup", pulp.LpMaximize)
     variables = {c.key: pulp.LpVariable(f"x_{i}", cat="Binary") for i, c in enumerate(pool)}
+    scoring = {c.key: pulp.LpVariable(f"y_{i}", cat="Binary") for i, c in enumerate(pool)}
+    captain = {c.key: pulp.LpVariable(f"z_{i}", cat="Binary") for i, c in enumerate(pool)}
     by_key = {c.key: c for c in pool}
 
-    problem += pulp.lpSum(by_key[k].projection * v for k, v in variables.items())
-    problem += pulp.lpSum(by_key[k].price * v for k, v in variables.items()) <= budget
+    coach_vars = {c.key: pulp.LpVariable(f"e_{i}", cat="Binary") for i, c in enumerate(coaches)}
+    by_coach = {c.key: c for c in coaches}
+
+    problem += pulp.lpSum(
+        by_key[k].projection * (0.5 * variables[k] + 0.5 * scoring[k] + captain[k])
+        for k in variables
+    ) + pulp.lpSum(by_coach[k].projection * v for k, v in coach_vars.items())
+
+    problem += (
+        pulp.lpSum(by_key[k].price * v for k, v in variables.items())
+        + pulp.lpSum(by_coach[k].price * v for k, v in coach_vars.items())
+    ) <= budget
+
+    problem += pulp.lpSum(scoring.values()) == min(FULL_SCORING_SLOTS, len(pool))
+    problem += pulp.lpSum(captain.values()) == 1
+    for k in variables:
+        problem += scoring[k] <= variables[k]
+        problem += captain[k] <= scoring[k]
+
+    # El entrenador es obligatorio, pero solo si hay de dónde elegirlo.
+    if coach_vars:
+        problem += pulp.lpSum(coach_vars.values()) == 1
 
     for position, quota in POSITION_QUOTA.items():
         problem += (
@@ -170,11 +265,18 @@ def _optimize_ilp(
         return None
 
     chosen = [by_key[k] for k, v in variables.items() if v.value() and v.value() > 0.5]
-    return _build_lineup(chosen, "ilp")
+    picked_coach = next(
+        (by_coach[k] for k, v in coach_vars.items() if v.value() and v.value() > 0.5), None
+    )
+    return _build_lineup(chosen, "ilp", coach=picked_coach)
 
 
 def _optimize_greedy(
-    pool: list[Candidate], budget: float, locked: set[str], max_per_club: int
+    pool: list[Candidate],
+    budget: float,
+    locked: set[str],
+    max_per_club: int,
+    coaches: Sequence[Candidate] = (),
 ) -> Lineup | None:
     """Voraz por ratio valor/precio + intercambios de mejora.
 
@@ -183,6 +285,10 @@ def _optimize_greedy(
     reserva, la voracidad gasta el presupuesto arriba y se queda sin cubrir
     posiciones.
     """
+    # El entrenador es obligatorio: su plaza se reserva antes de gastar.
+    coach_floor = min((c.price for c in coaches), default=0.0)
+    budget = budget - coach_floor
+
     by_key = {c.key: c for c in pool}
     chosen: list[Candidate] = [by_key[k] for k in locked if k in by_key]
     remaining = [c for c in pool if c.key not in locked]
@@ -261,16 +367,22 @@ def _optimize_greedy(
                     improved = True
                     break
 
-    return _build_lineup(chosen, "greedy")
+    spent = sum(c.price for c in chosen)
+    affordable = [c for c in coaches if c.price <= budget + coach_floor - spent]
+    picked_coach = max(affordable, key=lambda c: (c.projection, -c.price), default=None)
+    return _build_lineup(chosen, "greedy", coach=picked_coach)
 
 
-def _build_lineup(players: list[Candidate], method: str) -> Lineup:
+def _build_lineup(
+    players: list[Candidate], method: str, *, coach: Candidate | None = None
+) -> Lineup:
     return Lineup(
         players=sorted(players, key=lambda c: ("GFC".index(c.position), -c.projection)),
-        total_price=sum(c.price for c in players),
+        total_price=sum(c.price for c in players) + (coach.price if coach else 0.0),
         total_projection=sum(c.projection for c in players),
         method=method,
         captain=_pick_captain(players),
+        coach=coach,
     )
 
 

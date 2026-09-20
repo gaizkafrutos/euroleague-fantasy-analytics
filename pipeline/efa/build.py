@@ -511,8 +511,16 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     clubs_index = {club["code"]: club for club in reference.get("clubs", [])}
     records = player_records(table, series, difficulty, clubs_index)
 
-    lineup = _build_optimal_lineup(records, budget=budget)
     coach_log = build_coach_gamelog(load_boxscores(SEASON_CODE), games)
+    if coach_log.empty:
+        # Igual que con los jugadores: si la temporada en curso no tiene
+        # partidos, la referencia es la anterior.
+        coach_log = build_coach_gamelog(
+            load_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", [])
+        )
+    _apply_coach_projections(records, coach_log)
+
+    lineup = _build_optimal_lineup(records, budget=budget)
 
     matched = int(table["person_code"].notna().sum())
     meta = {
@@ -585,14 +593,64 @@ def _usable_number(value: Any) -> float | None:
     return None if math.isnan(number) or math.isinf(number) else number
 
 
+def _apply_coach_projections(
+    records: list[dict[str, Any]], coach_log: pd.DataFrame
+) -> int:
+    """Proyección del entrenador: su media histórica de puntos fantasy.
+
+    Puntúa al 100 % y cuesta entre 5 y 10 de los 100 créditos, así que dejarlo
+    en 0 era elegirlo a ciegas. Su puntuación no sale de estadísticas suyas
+    sino del margen con el que gane o pierda su equipo (+10/+20/+25 y
+    −5/−10/−20), de modo que la media de lo que lleva hecho es la mejor
+    estimación disponible. Si no hay histórico suyo se usa el del banquillo de
+    su club: los entrenadores cambian, el equipo no tanto.
+    """
+    if coach_log is None or coach_log.empty:
+        return 0
+
+    by_person = coach_log.groupby("person_code")["fantasy_points"].mean()
+    by_club = coach_log.groupby("club_code")["fantasy_points"].mean()
+
+    applied = 0
+    for record in records:
+        if not record.get("isCoach"):
+            continue
+        value = by_person.get(str(record.get("personCode")))
+        if value is None or pd.isna(value):
+            value = by_club.get(str(record.get("club")))
+        if value is None or pd.isna(value):
+            continue
+        record["projectedFp"] = round(float(value), 2)
+        applied += 1
+
+    log.info("Proyección de entrenador aplicada a %d fichas", applied)
+    return applied
+
+
 def _build_optimal_lineup(records: list[dict[str, Any]], *, budget: float) -> dict[str, Any]:
     candidates = []
+    coaches = []
     for record in records:
-        if record["isCoach"] or record["position"] not in {"G", "F", "C"}:
-            continue
         price = _usable_number(record.get("price"))
         projection = _usable_number(record.get("projectedFp"))
-        if price is None or price <= 0 or projection is None:
+        if price is None or price <= 0:
+            continue
+        if record["isCoach"]:
+            # El entrenador compite por el mismo presupuesto: es obligatorio y
+            # cuesta entre 5 y 10 créditos. Antes se optimizaban los diez con
+            # los 100 enteros y salía una plantilla que no se podía alinear.
+            coaches.append(
+                Candidate(
+                    key=str(record["id"]),
+                    name=record["name"] or "",
+                    position="E",
+                    club_code=record["club"] or "",
+                    price=price,
+                    projection=projection or 0.0,
+                )
+            )
+            continue
+        if record["position"] not in {"G", "F", "C"} or projection is None:
             continue
         candidates.append(
             Candidate(
@@ -607,7 +665,7 @@ def _build_optimal_lineup(records: list[dict[str, Any]], *, budget: float) -> di
     if len(candidates) < 10:
         return {"available": False, "reason": "Faltan precios o proyecciones para optimizar."}
 
-    lineup = optimize(candidates, budget=budget)
+    lineup = optimize(candidates, budget=budget, coaches=coaches)
     if lineup is None:
         return {"available": False, "reason": "No hay ninguna combinación válida dentro del presupuesto."}
 

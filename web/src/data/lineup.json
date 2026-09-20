@@ -1,8 +1,31 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 168.53,
+ "totalPrice": 99.9,
+ "totalProjection": 154.35,
+ "scoredProjection": 171.61,
  "captain": "4252",
+ "starters": [
+  "4252",
+  "3887",
+  "3843",
+  "7221",
+  "3808"
+ ],
+ "sixth": "3905",
+ "bench": [
+  "11531",
+  "3835",
+  "7223",
+  "3976"
+ ],
+ "coach": {
+  "key": "4255",
+  "name": null,
+  "position": "E",
+  "club": "PAM",
+  "price": 7.0,
+  "projection": 7.39
+ },
  "players": [
   {
    "key": "4252",
@@ -21,6 +44,14 @@
    "projection": 24.91
   },
   {
+   "key": "3808",
+   "name": "MILLER-MCINTYRE, CODI",
+   "position": "G",
+   "club": "OLY",
+   "price": 11.0,
+   "projection": 17.46
+  },
+  {
    "key": "3905",
    "name": "LUNDBERG, IFFE",
    "position": "G",
@@ -29,36 +60,12 @@
    "projection": 16.66
   },
   {
-   "key": "4251",
-   "name": "BADIO, BRANCOU",
-   "position": "G",
-   "club": "PAN",
-   "price": 8.3,
-   "projection": 13.85
-  },
-  {
-   "key": "3777",
-   "name": "CLYBURN, WILL",
+   "key": "7221",
+   "name": "TUBELIS, AZUOLAS",
    "position": "F",
-   "club": "ULK",
-   "price": 12.4,
-   "projection": 17.93
-  },
-  {
-   "key": "3907",
-   "name": "BLOSSOMGAME, JARON",
-   "position": "F",
-   "club": "DUB",
-   "price": 9.4,
-   "projection": 14.38
-  },
-  {
-   "key": "3801",
-   "name": "MELLI, NICOLO",
-   "position": "F",
-   "club": "ULK",
-   "price": 8.2,
-   "projection": 13.97
+   "club": "ZAL",
+   "price": 11.1,
+   "projection": 17.77
   },
   {
    "key": "11531",
@@ -67,6 +74,22 @@
    "club": "PRS",
    "price": 5.7,
    "projection": 10.52
+  },
+  {
+   "key": "7223",
+   "name": "FRISCH, CLEMENT",
+   "position": "F",
+   "club": "BAS",
+   "price": 5.1,
+   "projection": 6.8
+  },
+  {
+   "key": "3976",
+   "name": "LAKIC, ARIJAN",
+   "position": "F",
+   "club": "PAR",
+   "price": 4.0,
+   "projection": 3.92
   },
   {
    "key": "3843",
