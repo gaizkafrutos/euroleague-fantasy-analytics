@@ -38,9 +38,16 @@ export function Delta({
   );
 }
 
-export function PlayerCell({ player }: { player: Player }) {
-  return (
-    <Link href={`/jugador/${player.id}`} className="player-cell">
+/** Avatar + nombre + club.
+ *
+ *  `linked` existe porque en la lista de fichas del móvil la tarjeta ENTERA ya
+ *  es un enlace, y un `<a>` dentro de otro `<a>` es HTML inválido: el navegador
+ *  reescribe el árbol y React se encuentra algo distinto a lo que sirvió el
+ *  servidor. Eso rompía la hidratación de la portada en móvil.
+ */
+export function PlayerCell({ player, linked = true }: { player: Player; linked?: boolean }) {
+  const inner = (
+    <>
       {player.image ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img className="avatar" src={player.image} alt="" loading="lazy" />
@@ -56,6 +63,14 @@ export function PlayerCell({ player }: { player: Player }) {
           {player.clubShort ?? player.club ?? "—"} · {positionLabel(player.position)}
         </span>
       </span>
+    </>
+  );
+
+  if (!linked) return <span className="player-cell">{inner}</span>;
+
+  return (
+    <Link href={`/jugador/${player.id}`} className="player-cell">
+      {inner}
     </Link>
   );
 }

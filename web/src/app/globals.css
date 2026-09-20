@@ -14,28 +14,37 @@
   color-scheme: dark;
 
   /* Planos */
-  --plane: #0a0c11;
-  --surface: #12151c;
-  --surface-2: #191d26;
-  --surface-3: #232834;
-  --surface-hover: #1c212b;
+  --plane: #07080c;
+  --surface: #101319;
+  --surface-2: #171b23;
+  --surface-3: #212734;
+  --surface-hover: #1a1f29;
 
   /* Tinta */
   --ink: #f2f4f8;
   --ink-2: #9aa3b2;
-  --ink-muted: #697384;
+  --ink-muted: #767f8f; /* 4,61:1 sobre --surface; el anterior se quedaba en 3,88 */
 
   /* Líneas */
   --hairline: rgba(255, 255, 255, 0.07);
   --rule: rgba(255, 255, 255, 0.14);
   --ring: rgba(255, 255, 255, 0.1);
 
-  /* Acento: uno solo, y se reserva para lo accionable */
-  --accent: #ff6a2b;
-  --accent-ink: #0a0c11;
-  --accent-soft: rgba(255, 106, 43, 0.13);
-  --accent-line: rgba(255, 106, 43, 0.4);
-  --mark: linear-gradient(140deg, #ff8a3d 0%, #ff5a4e 48%, #8b46f0 100%);
+  /* Acento: uno solo, y se reserva para lo accionable. 10,89:1 sobre tarjeta */
+  --accent: #4fd5ff;
+  --accent-ink: #07080c;
+  --accent-soft: rgba(79, 213, 255, 0.12);
+  --accent-line: rgba(79, 213, 255, 0.4);
+  /* Sin degradado: el logotipo es un plano de acento. En esta dirección no
+     hay degradados en ningún sitio, que es lo que hundió la primera versión. */
+  --mark: var(--accent);
+
+  /* Las señales de fantasy tienen color propio: ni del sitio ni del club. */
+  --fantasy: #9d7bff;
+
+  /* Color derivado del club para los aros de estadística. Por defecto el
+     acento; cada ficha lo sobreescribe con el suyo desde club_colors.csv. */
+  --stat: var(--accent);
 
   /* Créditos: oro contenido, no amarillo de rotulador */
   --credit: #e3b04b;
@@ -80,10 +89,11 @@
   --rule: rgba(12, 15, 22, 0.16);
   --ring: rgba(12, 15, 22, 0.1);
 
-  --accent: #e2551a;
+  --accent: #0e7490;
   --accent-ink: #ffffff;
-  --accent-soft: rgba(226, 85, 26, 0.1);
-  --accent-line: rgba(226, 85, 26, 0.35);
+  --accent-soft: rgba(14, 116, 144, 0.09);
+  --accent-line: rgba(14, 116, 144, 0.36);
+  --fantasy: #6d28d9;
 
   --credit: #8a6413;
 
@@ -114,10 +124,11 @@
     --hairline: rgba(12, 15, 22, 0.09);
     --rule: rgba(12, 15, 22, 0.16);
     --ring: rgba(12, 15, 22, 0.1);
-    --accent: #e2551a;
+    --accent: #0e7490;
     --accent-ink: #ffffff;
-    --accent-soft: rgba(226, 85, 26, 0.1);
-    --accent-line: rgba(226, 85, 26, 0.35);
+    --accent-soft: rgba(14, 116, 144, 0.09);
+    --accent-line: rgba(14, 116, 144, 0.36);
+    --fantasy: #6d28d9;
     --credit: #8a6413;
     --series-1: #2a78d6;
     --series-2: #eb6834;
@@ -351,6 +362,8 @@ p {
   height: 32px;
   border-radius: 9px;
   background: var(--mark);
+  /* Las barras del símbolo heredan este color: tinta sobre el acento. */
+  color: var(--accent-ink);
   display: grid;
   place-items: center;
   flex: none;

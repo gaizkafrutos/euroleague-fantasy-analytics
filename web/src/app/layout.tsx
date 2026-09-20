@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 
 import Header from "@/components/ui/Header";
 import MobileNav from "@/components/ui/MobileNav";
@@ -53,7 +54,7 @@ export const viewport: Viewport = {
   // barra de gestos se compensan luego con env(safe-area-inset-*).
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0c11" },
+    { media: "(prefers-color-scheme: dark)", color: "#07080c" },
     { media: "(prefers-color-scheme: light)", color: "#f6f7f9" },
   ],
 };
@@ -68,12 +69,25 @@ try {
 `;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // `data-scroll-behavior`: el CSS pone `scroll-behavior: smooth` en <html>, y
+  // este atributo le dice a Next que es intencionado, para que no lo desactive
+  // en los cambios de ruta.
   return (
-    <html lang="es" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }} />
-      </head>
+    <html
+      lang="es"
+      className={`${display.variable} ${body.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body>
+        {/* Con `next/script` en beforeInteractive, Next lo inyecta en el HTML
+            inicial. Un <script> suelto dentro del árbol de React avisa por
+            consola de que no se ejecuta al renderizar en cliente. */}
+        <Script
+          id="tema-antes-del-primer-pintado"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }}
+        />
         <a className="skip-link" href="#contenido">
           Saltar al contenido
         </a>

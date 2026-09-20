@@ -23,9 +23,9 @@ export default function Header({ round, totalRounds }: Props) {
             {/* Tres barras ascendentes: análisis y progresión. Un símbolo
                 dibujado se lee como marca; un círculo con CSS, no. */}
             <svg viewBox="0 0 20 20" fill="none">
-              <rect x="2" y="11" width="3.6" height="7" rx="1.2" fill="#fff" opacity="0.62" />
-              <rect x="8.2" y="6.5" width="3.6" height="11.5" rx="1.2" fill="#fff" opacity="0.82" />
-              <rect x="14.4" y="2" width="3.6" height="16" rx="1.2" fill="#fff" />
+              <rect x="2" y="11" width="3.6" height="7" rx="1.2" fill="currentColor" opacity="0.62" />
+              <rect x="8.2" y="6.5" width="3.6" height="11.5" rx="1.2" fill="currentColor" opacity="0.82" />
+              <rect x="14.4" y="2" width="3.6" height="16" rx="1.2" fill="currentColor" />
             </svg>
           </span>
           <span className="wordmark-text">

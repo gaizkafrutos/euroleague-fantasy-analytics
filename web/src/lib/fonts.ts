@@ -3,18 +3,19 @@
  *  `next/font` las descarga y auto-hospeda en tiempo de compilación: el
  *  navegador del visitante no pide nada a Google y no hay salto de texto.
  *
- *  Sora para titulares — geométrica, con carácter pero sin gritar. Se usa en
- *  caja normal, no en mayúsculas: las mayúsculas grandes llaman la atención
- *  sobre sí mismas, y aquí lo que tiene que destacar son los datos.
+ *  Archivo para titulares y cifras. Es variable en DOS ejes, y ahí está la
+ *  gracia: `wght` como siempre, y `wdth` de 62 a 125. Una sola familia cubre
+ *  los dos registros que pide la dirección — expandida para el nombre de un
+ *  jugador a pantalla completa, condensada para una cifra tabular en una
+ *  columna estrecha — sin cargar dos fuentes. Sustituye a Sora.
  *
- *  Inter para todo lo demás, incluidas TODAS las cifras. En una tabla de
- *  números lo que importa es que aliñen, no que tengan personalidad.
+ *  Inter para el texto corrido.
  */
-import { Inter, Sora } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
 
-export const display = Sora({
+export const display = Archivo({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  axes: ["wdth"],
   display: "swap",
   variable: "--font-display",
 });

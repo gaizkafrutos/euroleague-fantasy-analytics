@@ -522,7 +522,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             {rows.map((player) => (
               <li key={player.id}>
                 <a className="player-card" href={`/jugador/${player.id}`}>
-                  <PlayerCell player={player} />
+                  {/* La tarjeta ya es el enlace: la celda va sin el suyo. */}
+                  <PlayerCell player={player} linked={false} />
                   <span className="player-card-price credit num">{credits(player.price)}</span>
                   <span className="player-card-stats">
                     <span>
