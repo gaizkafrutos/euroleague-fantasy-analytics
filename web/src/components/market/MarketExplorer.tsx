@@ -18,7 +18,7 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import Sparkline from "@/components/charts/Sparkline";
 import ValueScatter from "@/components/charts/ValueScatter";
 import { BarCell, Delta, PlayerCell, PositionBadge } from "@/components/ui/primitives";
-import { credits, num, percent } from "@/lib/format";
+import { credits, displayName, num, percent } from "@/lib/format";
 import type { Player, Team } from "@/lib/types";
 
 type SortKey =
@@ -162,8 +162,10 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   const filtered = useMemo(() => {
     const needle = deferredQuery.trim().toLowerCase();
     return players.filter((player) => {
-      if (needle && !`${player.name} ${player.clubName ?? ""}`.toLowerCase().includes(needle))
-        return false;
+      // Se busca también por el nombre del mercado: los que no cruzan con el
+      // censo no tienen `name`, y sin esto eran inencontrables.
+      const haystack = `${player.name ?? ""} ${player.marketName ?? ""} ${player.clubName ?? ""}`;
+      if (needle && !haystack.toLowerCase().includes(needle)) return false;
       if (positions.size && (!player.position || !positions.has(player.position))) return false;
       if (team && player.club !== team) return false;
       if (maxPrice !== null && (player.price ?? 0) > maxPrice) return false;
@@ -508,7 +510,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     <td>
                       <Sparkline
                         values={(details[String(player.id)]?.recent ?? []).map((game) => game.fp)}
-                        label={`Últimos partidos de ${player.name}`}
+                        label={`Últimos partidos de ${displayName(player)}`}
                       />
                     </td>
                   </tr>

@@ -2411,6 +2411,503 @@ table.data th.num {
 }
 
 /* --------------------------------------------------------------------------
+   Ficha de jugador — el escenario
+
+   La ficha es la única pantalla donde el color del club entra a lo grande, y
+   entra dos veces: el halo lleva el tono del escudo, y los aros de estadística
+   ese mismo tono llevado a una luminosidad fija (OKLCH L 0,78 en oscuro; 0,50
+   en claro) para que los veinte clubes pasen contraste por construcción y no
+   a ojo. El acento del sitio no pinta nada aquí salvo el punto del epígrafe:
+   el club manda en su propia ficha.
+
+   Los tres valores llegan en línea desde `page.tsx` (`--club`, `--stat-dark`,
+   `--stat-light`), generados por el pipeline desde `club_colors.csv`.
+   -------------------------------------------------------------------------- */
+.ficha-stage {
+  position: relative;
+  overflow: hidden;
+  padding-block: 26px 4px;
+  --stat: var(--stat-dark, var(--accent));
+}
+
+:root[data-theme="light"] .ficha-stage {
+  --stat: var(--stat-light, var(--accent));
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .ficha-stage {
+    --stat: var(--stat-light, var(--accent));
+  }
+}
+
+.ficha-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.ficha-halo {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: min(980px, 160%);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--stat) 26%, transparent) 0%,
+    color-mix(in srgb, var(--club) 46%, transparent) 32%,
+    transparent 66%
+  );
+  pointer-events: none;
+}
+
+:root[data-theme="light"] .ficha-halo {
+  opacity: 0.26;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .ficha-halo {
+    opacity: 0.26;
+  }
+}
+
+/* Arco de zona: geometría de cancha, no un degradado decorativo. */
+.ficha-arc {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  width: min(660px, 96%);
+  aspect-ratio: 2 / 1;
+  transform: translateX(-50%);
+  border: 1px solid var(--rule);
+  border-bottom: 0;
+  border-radius: 100% 100% 0 0 / 100% 100% 0 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ficha-dorsal {
+  position: absolute;
+  left: 50%;
+  top: 226px;
+  transform: translateX(-50%);
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 125, "wght" 900;
+  font-size: clamp(9rem, 30vw, 20rem);
+  line-height: 0.78;
+  color: rgba(255, 255, 255, 0.035);
+  pointer-events: none;
+  user-select: none;
+}
+
+:root[data-theme="light"] .ficha-dorsal {
+  color: rgba(12, 15, 22, 0.045);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .ficha-dorsal {
+    color: rgba(12, 15, 22, 0.045);
+  }
+}
+
+.ficha-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.ficha-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+.ficha-name {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 118, "wght" 800;
+  font-size: clamp(2.5rem, 10.5vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.ficha-name .given {
+  display: block;
+  font-variation-settings: "wdth" 96, "wght" 500;
+  font-size: 0.34em;
+  letter-spacing: 0.06em;
+  color: var(--ink-2);
+  margin-bottom: 0.18em;
+}
+
+.ficha-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.ficha-crest {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.ficha-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  border: 1px solid color-mix(in srgb, var(--credit) 40%, transparent);
+  background: color-mix(in srgb, var(--credit) 10%, transparent);
+  color: var(--credit);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.ficha-price small {
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-size: 0.78em;
+}
+
+/* --------------------------------------------------------- retrato + globos
+
+   En móvil los globos NO bajan debajo del retrato: se quedan a los lados,
+   montados sobre sus bordes, que es donde el recorte del retrato ya es
+   transparente. El retrato cede algo de ancho; no cede el sitio.
+   -------------------------------------------------------------------------- */
+.ficha-orbit {
+  position: relative;
+  margin-top: 28px;
+}
+
+.ficha-metrics {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(26px, 7vw, 40px);
+  z-index: 2;
+}
+
+.ficha-metrics.is-left {
+  left: 0;
+}
+
+.ficha-metrics.is-right {
+  right: 0;
+}
+
+.ficha-portrait {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: min(270px, 62vw);
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.6));
+}
+
+:root[data-theme="light"] .ficha-portrait {
+  filter: drop-shadow(0 22px 34px rgba(12, 15, 22, 0.28));
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .ficha-portrait {
+    filter: drop-shadow(0 22px 34px rgba(12, 15, 22, 0.28));
+  }
+}
+
+.ficha-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ficha-portrait-empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--club) 26%, var(--surface));
+  border: 1px solid var(--hairline);
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 110, "wght" 800;
+  font-size: clamp(3rem, 14vw, 6rem);
+  color: var(--ink-muted);
+}
+
+/* Sin medias de caja no hay globos: el retrato se queda solo y centrado. */
+.ficha-orbit.is-bare .ficha-portrait {
+  width: min(300px, 70vw);
+}
+
+/* ------------------------------------------------------------------ globos */
+.orb {
+  position: relative;
+  width: clamp(72px, 20vw, 96px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.orb-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+/* Bastante opaco: el globo se monta sobre el retrato y tiene que leerse
+   encima de él, no solo sobre el halo. */
+.orb-ring-bg {
+  fill: color-mix(in srgb, var(--plane) 88%, transparent);
+  stroke: var(--surface-3);
+  stroke-width: 5;
+}
+
+.orb-ring-fg {
+  fill: none;
+  stroke: var(--stat);
+  stroke-width: 5;
+  stroke-linecap: round;
+  /* 2π·54 = 339,29. El percentil llega 0–100 en --dash. */
+  stroke-dasharray: calc(var(--dash) * 3.3929) 400;
+}
+
+.orb-body {
+  position: relative;
+  display: grid;
+  gap: 1px;
+  padding-inline: 6px;
+}
+
+.orb-value {
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 85, "wght" 700;
+  font-size: clamp(1.02rem, 3.9vw, 1.85rem);
+  line-height: 1;
+}
+
+.orb-value em {
+  font-style: normal;
+  font-size: 0.44em;
+  color: var(--ink-muted);
+  font-variation-settings: "wdth" 85, "wght" 500;
+  margin-left: 2px;
+}
+
+.orb-label {
+  font-size: clamp(0.48rem, 1.5vw, 0.58rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  line-height: 1.2;
+}
+
+.orb-pct {
+  position: absolute;
+  left: 50%;
+  bottom: -17px;
+  transform: translateX(-50%);
+  font-size: clamp(0.56rem, 1.7vw, 0.64rem);
+  color: var(--stat);
+  white-space: nowrap;
+}
+
+/* El ± es polaridad, no magnitud: sin arco, y con el aro discontinuo para que
+   nadie lo lea como "cuánto lleva lleno". */
+.orb.is-polarity .orb-ring-bg {
+  stroke-dasharray: 3 7;
+}
+
+.orb.is-polarity .orb-value {
+  color: var(--ink-2);
+}
+
+/* En pantallas muy estrechas "ASISTENCIAS" se sale del aro: la etiqueta
+   cede tracking antes que el globo ceda diámetro. */
+@media (max-width: 400px) {
+  .orb-body {
+    padding-inline: 2px;
+  }
+
+  .orb-label {
+    font-size: 0.46rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* -------------------------------------------------------- banda de fantasy */
+.ficha-band {
+  margin-top: 22px;
+  border-top: 1px solid color-mix(in srgb, var(--fantasy) 45%, transparent);
+  background: color-mix(in srgb, var(--fantasy) 13%, transparent);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 14px 16px 16px;
+}
+
+.ficha-band-label {
+  margin: 0 0 12px;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fantasy);
+}
+
+.ficha-band-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 18px;
+  margin: 0;
+}
+
+.ficha-band-grid > div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ficha-band-grid dt {
+  flex: 1 0 100%;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.ficha-band-grid dd {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 88, "wght" 700;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.ficha-band-grid dd em {
+  font-style: normal;
+  font-size: 0.5em;
+  color: var(--ink-muted);
+  margin-left: 3px;
+}
+
+.ficha-band-grid span {
+  font-size: 0.68rem;
+  color: var(--fantasy);
+}
+
+.ficha-note {
+  margin: 14px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  max-width: 66ch;
+}
+
+/* A partir de aquí los globos ya no hacen falta montados: caben al lado. */
+@media (min-width: 620px) {
+  .ficha-arc {
+    display: block;
+  }
+
+  .ficha-orbit {
+    display: grid;
+    position: static;
+    grid-template-columns: minmax(150px, 1fr) minmax(240px, 340px) minmax(150px, 1fr);
+    gap: clamp(16px, 3vw, 34px);
+    align-items: center;
+  }
+
+  .ficha-metrics {
+    position: static;
+    transform: none;
+    align-items: center;
+    gap: clamp(30px, 5vw, 44px);
+  }
+
+  .ficha-portrait {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .orb {
+    width: clamp(96px, 13vw, 138px);
+  }
+
+  .ficha-band-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  /* El globo del medio se aleja del retrato: es donde el arco es más ancho. */
+  .ficha-metrics.is-left .orb:nth-child(2) {
+    transform: translateX(-26px);
+  }
+
+  .ficha-metrics.is-right .orb:nth-child(2) {
+    transform: translateX(26px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ficha-portrait,
+  .ficha-name {
+    animation: ficha-rise 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+  }
+
+  /* Los globos solo funden: a partir de 900 px llevan su propio `transform`
+     para separarse del retrato, y una animación que lo tocara lo pisaría. */
+  .orb {
+    animation: ficha-fade 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+  }
+
+  .ficha-metrics .orb:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+
+  .ficha-metrics .orb:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .ficha-metrics .orb:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+
+  @keyframes ficha-rise {
+    from {
+      opacity: 0.001;
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes ficha-fade {
+    from {
+      opacity: 0.001;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
    Visibilidad por ancho
 
    En vez de una tabla con scroll lateral, cada ancho tiene su propia forma:

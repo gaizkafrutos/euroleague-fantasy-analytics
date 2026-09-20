@@ -17,7 +17,16 @@ export type PercentileKey =
   | "valueProjected"
   | "consistency"
   | "minutesAvg"
-  | "bargainScore";
+  | "bargainScore"
+  /* Medias de caja. Son las que pintan los globos de la ficha: el número
+     centra y el percentil lo sitúa. Llegan desde la 2025-26 agregada en el
+     pipeline, así que un players.json anterior al parche las deja a null y
+     el globo simplemente no dibuja arco. */
+  | "ptsAvg"
+  | "rebAvg"
+  | "astAvg"
+  | "pirAvg"
+  | "plusMinusAvg";
 
 /** Lo que se compara, y el nombre con el que se enseña. */
 export const PERCENTILE_LABEL: Record<PercentileKey, string> = {
@@ -27,6 +36,11 @@ export const PERCENTILE_LABEL: Record<PercentileKey, string> = {
   consistency: "Fiabilidad",
   minutesAvg: "Minutos",
   bargainScore: "Índice de chollo",
+  ptsAvg: "Puntos",
+  rebAvg: "Rebotes",
+  astAvg: "Asistencias",
+  pirAvg: "Valoración",
+  plusMinusAvg: "Más / menos",
 };
 
 function metric(player: Player, key: PercentileKey): number | null {
@@ -44,6 +58,16 @@ function metric(player: Player, key: PercentileKey): number | null {
         return player.perf.minutesAvg;
       case "bargainScore":
         return player.bargainScore;
+      case "ptsAvg":
+        return player.perf.ptsAvg ?? null;
+      case "rebAvg":
+        return player.perf.rebAvg ?? null;
+      case "astAvg":
+        return player.perf.astAvg ?? null;
+      case "pirAvg":
+        return player.perf.pirAvg ?? null;
+      case "plusMinusAvg":
+        return player.perf.plusMinusAvg ?? null;
     }
   })();
   return typeof raw === "number" && Number.isFinite(raw) ? raw : null;
@@ -56,6 +80,11 @@ const KEYS: PercentileKey[] = [
   "consistency",
   "minutesAvg",
   "bargainScore",
+  "ptsAvg",
+  "rebAvg",
+  "astAvg",
+  "pirAvg",
+  "plusMinusAvg",
 ];
 
 /** El grupo contra el que se compara: su misma posición, con partidos jugados.

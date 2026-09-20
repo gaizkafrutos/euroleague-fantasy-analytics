@@ -72,7 +72,9 @@ export interface MarketStats {
 export interface Player {
   id: number;
   personCode: string | null;
-  name: string;
+  /** Null en los que no cruzan con el censo oficial: ahí solo hay
+   *  `marketName`. Era `string` y mentía, y la ficha reventaba al construir. */
+  name: string | null;
   marketName: string | null;
   club: string | null;
   clubName: string | null;

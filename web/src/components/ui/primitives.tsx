@@ -1,7 +1,7 @@
 /** Piezas pequeñas que se repiten por toda la app. */
 import Link from "next/link";
 
-import { deltaClass, initials, num, positionLabel, prettyName } from "@/lib/format";
+import { deltaClass, displayName, initials, num, positionLabel, prettyName } from "@/lib/format";
 import type { Player } from "@/lib/types";
 
 /* `prettyName` e `initials` viven en lib/format: los necesita código que no
@@ -53,11 +53,11 @@ export function PlayerCell({ player, linked = true }: { player: Player; linked?:
         <img className="avatar" src={player.image} alt="" loading="lazy" />
       ) : (
         <span className="avatar avatar-initials" aria-hidden>
-          {initials(player.name)}
+          {initials(player.name ?? player.marketName)}
         </span>
       )}
       <span>
-        <span className="player-name">{prettyName(player.name)}</span>
+        <span className="player-name">{displayName(player)}</span>
         <br />
         <span className="player-meta">
           {player.clubShort ?? player.club ?? "—"} · {positionLabel(player.position)}

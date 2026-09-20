@@ -100,6 +100,15 @@ export function prettyName(raw: string | null | undefined): string {
   return capitalise(raw);
 }
 
+/** El nombre que se enseña.
+ *
+ *  Los jugadores que no cruzan con el censo oficial de la EuroLiga no tienen
+ *  `name`; ahí se cae al del mercado, que viene abreviado ("M. Jaiteh") pero
+ *  es mejor que un guion. */
+export function displayName(player: { name: string | null; marketName: string | null }): string {
+  return prettyName(player.name ?? player.marketName);
+}
+
 /** Iniciales para cuando no hay foto. */
 export function initials(raw: string | null | undefined): string {
   if (!raw) return "";

@@ -79,7 +79,7 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
 
     for (const player of ranked) {
       if (chosen.length >= labelCount) break;
-      const text = shortName(player.name);
+      const text = shortName(player);
       const x = geometry.x(player.price as number) + 9;
       const y = geometry.y(player.projectedFp as number) - 7;
       const box = { x, y: y - 11, w: text.length * 6.6, h: 14 };
@@ -199,7 +199,7 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
             strokeWidth={3}
             strokeLinejoin="round"
           >
-            {shortName(player.name)}
+            {shortName(player)}
           </text>
         ))}
 
@@ -244,8 +244,13 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
   );
 }
 
-function shortName(name: string): string {
-  const clean = name.includes(",") ? name.split(",")[0] : name.split(" ").slice(-1)[0];
-  const trimmed = clean.trim();
+/** Solo el apellido: en la nube de puntos no cabe más.
+ *
+ *  Toma el jugador y no el nombre porque los que no cruzan con el censo lo
+ *  tienen a null y solo traen el del mercado. */
+function shortName(player: Player): string {
+  const raw = player.name ?? player.marketName ?? "";
+  const clean = raw.includes(",") ? raw.split(",")[0] : raw.split(" ").slice(-1)[0];
+  const trimmed = (clean ?? "").trim();
   return trimmed.charAt(0) + trimmed.slice(1).toLowerCase();
 }

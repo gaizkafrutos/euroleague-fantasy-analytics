@@ -1,12 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { CSSProperties } from "react";
 
 import GameLogBars from "@/components/charts/GameLogBars";
 import PriceHistory from "@/components/charts/PriceHistory";
-import { PercentileBar, PositionBadge, StatTile, prettyName } from "@/components/ui/primitives";
+import { PositionBadge, prettyName } from "@/components/ui/primitives";
 import { getDetail, getPlayer, getTeam, players } from "@/lib/data";
-import { POSITION_PLURAL, credits, dateShort, num, percent, signed } from "@/lib/format";
-import { percentileRows, poolSize, type PercentileKey } from "@/lib/percentiles";
+import {
+  POSITION_PLURAL,
+  credits,
+  dateShort,
+  displayName,
+  num,
+  percent,
+  signed,
+} from "@/lib/format";
+import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
 import { verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
 
@@ -18,36 +28,25 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const player = getPlayer(Number(id));
   if (!player) return { title: "Jugador no encontrado" };
+  const name = displayName(player);
   return {
-    title: prettyName(player.name),
-    description: `${prettyName(player.name)} — ${player.clubName ?? ""}. Precio, proyección, consistencia y evolución en el EuroLeague Fantasy Challenge.`,
+    title: name,
+    description: `${name} — ${player.clubName ?? ""}. Precio, proyección, consistencia y evolución en el EuroLeague Fantasy Challenge.`,
   };
 }
 
-const PERCENTILE_KEYS: PercentileKey[] = [
-  "projectedFp",
-  "valueProjected",
-  "fpAvg",
-  "consistency",
-  "minutesAvg",
-];
-
-/** El número real detrás de cada percentil: el percentil sitúa, el número ancla. */
-function percentileDetail(player: Player, key: PercentileKey): string {
-  switch (key) {
-    case "projectedFp":
-      return `${num(player.projectedFp)} pts`;
-    case "valueProjected":
-      return `${num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr`;
-    case "fpAvg":
-      return `${num(player.perf.fpAvg)} pts`;
-    case "consistency":
-      return percent(player.perf.consistency);
-    case "minutesAvg":
-      return `${num(player.perf.minutesAvg)} min`;
-    default:
-      return "";
-  }
+/** Un globo: el número que importa, y dónde cae ese número entre los suyos.
+ *
+ *  Los seis son medias de caja, no puntuación fantasy: son las que explican
+ *  POR QUÉ puntúa, que es lo que la ficha anterior no contaba en ningún sitio.
+ */
+interface OrbSpec {
+  key: PercentileKey;
+  label: string;
+  value: number | null | undefined;
+  unit?: string;
+  /** El ± es polaridad, no magnitud: no lleva arco de percentil. */
+  polarity?: boolean;
 }
 
 export default async function PlayerPage({ params }: { params: Promise<{ id: string }> }) {
@@ -58,8 +57,31 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   const detail = await getDetail(player.id);
   const team = getTeam(player.club);
   const verdict = verdictFor(player);
-  const percentiles = percentileRows(player, PERCENTILE_KEYS);
   const groupSize = poolSize(player.position);
+  const perf = player.perf;
+  const { given, surname } = splitName(player);
+
+  // El color del club entra solo aquí, y entra dos veces: el halo con el tono
+  // del escudo, y los aros con ese mismo tono llevado a una luminosidad fija
+  // para que los veinte pasen contraste sin elegir ninguno a ojo. Si un club
+  // no tiene fila en club_colors.csv, todo cae al acento del sitio.
+  const stageStyle = {
+    "--club": team?.colors?.halo ?? "var(--surface-3)",
+    "--stat-dark": team?.colors?.statDark ?? "var(--accent)",
+    "--stat-light": team?.colors?.statLight ?? "var(--accent)",
+  } as CSSProperties;
+
+  const left: OrbSpec[] = [
+    { key: "ptsAvg", label: "Puntos", value: perf.ptsAvg },
+    { key: "rebAvg", label: "Rebotes", value: perf.rebAvg },
+    { key: "astAvg", label: "Asistencias", value: perf.astAvg },
+  ];
+  const right: OrbSpec[] = [
+    { key: "minutesAvg", label: "Minutos", value: perf.minutesAvg, unit: "min" },
+    { key: "pirAvg", label: "Valoración", value: perf.pirAvg },
+    { key: "plusMinusAvg", label: "Más / menos", value: perf.plusMinusAvg, polarity: true },
+  ];
+  const hasOrbs = [...left, ...right].some((spec) => usable(spec.value));
 
   const marketRows: Array<[string, number | null | undefined]> = [
     ["Puntos", player.market.points],
@@ -81,46 +103,129 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
   return (
     <>
-      <section className="shell player-hero">
-        <Link href="/" className="crumb">
-          <span aria-hidden>←</span> Mercado
-        </Link>
+      {/* ============================================================= stage */}
+      <section className="ficha-stage" style={stageStyle}>
+        <div className="ficha-halo" aria-hidden />
+        <div className="ficha-arc" aria-hidden />
+        {player.dorsal ? (
+          <div className="ficha-dorsal" aria-hidden>
+            {player.dorsal}
+          </div>
+        ) : null}
 
-        <div className="player-head">
-          {player.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img className="player-photo" src={player.image} alt="" width={108} height={108} />
-          ) : null}
+        <div className="shell ficha-inner">
+          <Link href="/" className="crumb">
+            <span aria-hidden>←</span> Mercado
+          </Link>
 
-          <div className="player-identity">
-            <span className="eyebrow">
-              {team?.crest ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className="crest" src={team.crest} alt="" />
-              ) : null}
-              {player.clubName ?? "—"}
-              {player.dorsal ? ` · #${player.dorsal}` : ""}
+          <p className="ficha-eyebrow">
+            <span className="ficha-dot" aria-hidden />
+            {player.clubName ?? "Sin equipo"}
+            {player.dorsal ? ` · dorsal ${player.dorsal}` : ""}
+          </p>
+
+          <h1 className="ficha-name">
+            {given ? <span className="given">{given}</span> : null}
+            {surname}
+          </h1>
+
+          <div className="ficha-meta">
+            {team?.crest ? (
+              <Image className="ficha-crest" src={team.crest} alt="" width={22} height={22} />
+            ) : null}
+            <PositionBadge position={player.position} />
+            {player.height ? <span className="badge">{player.height} cm</span> : null}
+            {player.birthDate ? <span className="badge">{age(player.birthDate)} años</span> : null}
+            {player.country ? <span className="badge">{player.country}</span> : null}
+            <span className="ficha-price num">
+              {credits(player.price)}
+              <small>
+                {player.priceDeltaTotal
+                  ? `${signed(player.priceDeltaTotal)} cr`
+                  : "sin variación"}
+              </small>
             </span>
-            <h1>{prettyName(player.name)}</h1>
-            <div className="row player-facts">
-              <PositionBadge position={player.position} />
-              {player.height ? <span className="badge">{player.height} cm</span> : null}
-              {player.birthDate ? <span className="badge">{age(player.birthDate)} años</span> : null}
-              {player.country ? <span className="badge">{player.country}</span> : null}
+          </div>
+
+          <div className={`ficha-orbit${hasOrbs ? "" : " is-bare"}`}>
+            <div className="ficha-metrics is-left">
+              {left.map((spec) => (
+                <Orb key={spec.key} player={player} spec={spec} />
+              ))}
+            </div>
+
+            <figure className="ficha-portrait">
+              {player.image ? (
+                <Image
+                  src={player.image}
+                  alt=""
+                  width={750}
+                  height={1000}
+                  sizes="(min-width: 620px) 340px, 62vw"
+                  priority
+                />
+              ) : (
+                <div className="ficha-portrait-empty" aria-hidden>
+                  {surname.slice(0, 1)}
+                </div>
+              )}
+            </figure>
+
+            <div className="ficha-metrics is-right">
+              {right.map((spec) => (
+                <Orb key={spec.key} player={player} spec={spec} />
+              ))}
             </div>
           </div>
 
-          <div className="player-price">
-            <div className="tile-label">Precio</div>
-            <div className="player-price-value credit num">{credits(player.price)}</div>
-            <div className="tile-sub num">
-              {player.priceDeltaTotal
-                ? `${signed(player.priceDeltaTotal)} cr desde el inicio`
-                : "sin variación registrada"}
-            </div>
+          {/* Lo que solo está aquí: la capa de fantasy tiene color propio,
+              ni el del sitio ni el del club. */}
+          <div className="ficha-band">
+            <p className="ficha-band-label">Para la jornada</p>
+            <dl className="ficha-band-grid">
+              <BandItem
+                label="Proyección"
+                value={num(player.projectedFp)}
+                unit="pts"
+                note={pctNote(player, "projectedFp")}
+              />
+              <BandItem
+                label="Por crédito"
+                value={num(player.valueProjected ?? player.valuePerCredit, 2)}
+                unit="pts/cr"
+                note={pctNote(player, "valueProjected")}
+              />
+              <BandItem
+                label="Fiabilidad"
+                value={percent(perf.consistency)}
+                note={pctNote(player, "consistency")}
+              />
+              <BandItem
+                label="Forma"
+                value={num(perf.form)}
+                unit="pts"
+                note={
+                  typeof perf.formDelta === "number"
+                    ? `${signed(perf.formDelta)} vs su media`
+                    : null
+                }
+              />
+            </dl>
           </div>
+
+          {groupSize ? (
+            <p className="ficha-note">
+              Los percentiles comparan con los {groupSize}{" "}
+              {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()} del mercado
+              que han jugado. Una media de 15 puntos no significa lo mismo en un pívot que en un
+              base.
+            </p>
+          ) : null}
         </div>
+      </section>
 
+      {/* ========================================================= veredicto */}
+      <section className="section shell">
         {/* El juicio, antes que los datos que lo sostienen. La ficha tenía
             dieciséis números y ninguna conclusión. */}
         <div className={`verdict is-${verdict.tone}`}>
@@ -132,59 +237,6 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               ))}
             </ul>
           ) : null}
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------- percentiles */}
-      {percentiles.length ? (
-        <section className="section shell">
-          <div className="section-head">
-            <div>
-              <h2>Dónde cae entre los suyos</h2>
-              <p className="card-note" style={{ margin: "8px 0 0", maxWidth: "62ch" }}>
-                Comparado con los {groupSize}{" "}
-                {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()} del
-                mercado que han jugado.
-                Una media de 15 puntos no significa lo mismo en un pívot que en un base.
-              </p>
-            </div>
-          </div>
-          <div className="pctl-grid">
-            {percentiles.map((row) => (
-              <PercentileBar
-                key={row.key}
-                label={row.label}
-                percentile={row.percentile}
-                detail={percentileDetail(player, row.key)}
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {/* ------------------------------------------------------------ cifras */}
-      <section className="section shell">
-        <div className="grid grid-4">
-          <StatTile
-            label="Proyección"
-            value={num(player.projectedFp)}
-            sub={`${num(player.valueProjected ?? player.valuePerCredit, 2)} pts por crédito`}
-          />
-          <StatTile
-            label="Media / Forma"
-            value={`${num(player.perf.fpAvg)} / ${num(player.perf.form)}`}
-            sub={`suelo ${num(player.perf.fpFloor)} · techo ${num(player.perf.fpCeiling)}`}
-          />
-          <StatTile
-            label="Fiabilidad"
-            value={percent(player.perf.consistency)}
-            sub={`desviación ${num(player.perf.fpStd)} pts`}
-          />
-          <StatTile
-            label="Calendario"
-            value={num(player.schedule.difficulty, 0)}
-            sub="dificultad de los 3 próximos rivales, sobre 100"
-          />
         </div>
       </section>
 
@@ -202,8 +254,8 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             </div>
             <GameLogBars
               games={detail.recent}
-              average={player.perf.fpAvg}
-              floor={player.perf.fpFloor}
+              average={perf.fpAvg}
+              floor={perf.fpFloor}
             />
           </div>
 
@@ -225,21 +277,25 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         <div className="grid grid-2">
           <div className="card">
             <div className="card-head">
-              <div className="card-title">Rol en el equipo</div>
+              <div className="card-title">Rol y recorrido</div>
             </div>
             <dl className="fact-list">
-              <Row label="Minutos por partido" value={num(player.perf.minutesAvg)} />
               <Row
                 label="Minutos últimos 5"
-                value={`${num(player.perf.minutesRecent)} (${signed(player.perf.minutesTrend)})`}
+                value={`${num(perf.minutesRecent)} (${signed(perf.minutesTrend)})`}
               />
               <Row
                 label="Cuota de minutos del equipo"
-                value={percent(player.perf.minutesShareRecent, 1)}
+                value={percent(perf.minutesShareRecent, 1)}
               />
-              <Row label="Titularidades" value={percent(player.perf.startedRate)} />
-              <Row label="Partidos sin jugar" value={percent(player.perf.dnpRate)} />
-              <Row label="Puntos por minuto" value={num(player.perf.fpPerMin, 2)} />
+              <Row label="Titularidades" value={percent(perf.startedRate)} />
+              <Row label="Partidos sin jugar" value={percent(perf.dnpRate)} />
+              <Row label="Puntos fantasy por minuto" value={num(perf.fpPerMin, 2)} />
+              <Row
+                label="Suelo / techo"
+                value={`${num(perf.fpFloor)} — ${num(perf.fpCeiling)}`}
+              />
+              <Row label="Desviación típica" value={`${num(perf.fpStd)} pts`} />
             </dl>
           </div>
 
@@ -316,6 +372,95 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
       </section>
     </>
   );
+}
+
+function usable(value: number | null | undefined): value is number {
+  return typeof value === "number" && Number.isFinite(value);
+}
+
+function Orb({ player, spec }: { player: Player; spec: OrbSpec }) {
+  if (!usable(spec.value)) return null;
+
+  const ratio = spec.polarity ? null : percentileOf(player, spec.key);
+  const pct = ratio === null ? null : Math.round(ratio * 100);
+  const group = (POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase();
+  const title = spec.polarity
+    ? `${signed(spec.value)} de diferencial medio con él en pista`
+    : pct === null
+      ? `${num(spec.value)} ${spec.label.toLowerCase()} por partido`
+      : `${num(spec.value)} ${spec.label.toLowerCase()} por partido · mejor que el ${pct} % de los ${group}`;
+
+  return (
+    <div className={`orb${spec.polarity ? " is-polarity" : ""}`} title={title}>
+      <svg className="orb-ring" viewBox="0 0 120 120" aria-hidden>
+        <circle className="orb-ring-bg" cx="60" cy="60" r="54" />
+        {pct !== null ? (
+          <circle
+            className="orb-ring-fg"
+            cx="60"
+            cy="60"
+            r="54"
+            style={{ "--dash": pct } as CSSProperties}
+          />
+        ) : null}
+      </svg>
+      <div className="orb-body">
+        <span className="orb-value num">
+          {spec.polarity ? signed(spec.value) : num(spec.value)}
+          {spec.unit ? <em>{spec.unit}</em> : null}
+        </span>
+        <span className="orb-label">{spec.label}</span>
+      </div>
+      {pct !== null ? <span className="orb-pct num">p{pct}</span> : null}
+    </div>
+  );
+}
+
+function BandItem({
+  label,
+  value,
+  unit,
+  note,
+}: {
+  label: string;
+  value: string;
+  unit?: string;
+  note?: string | null;
+}) {
+  return (
+    <div>
+      <dt>{label}</dt>
+      <dd className="num">
+        {value}
+        {unit ? <em>{unit}</em> : null}
+      </dd>
+      {note ? <span className="num">{note}</span> : null}
+    </div>
+  );
+}
+
+/** "mejor que el 84 %" dicho en dos caracteres. Null cuando el grupo de
+ *  comparación es demasiado pequeño para que el percentil signifique algo. */
+function pctNote(player: Player, key: PercentileKey): string | null {
+  const ratio = percentileOf(player, key);
+  return ratio === null ? null : `p${Math.round(ratio * 100)}`;
+}
+
+/** El censo da "APELLIDO, NOMBRE": el nombre de pila va encima y pequeño, y el
+ *  apellido es el que ocupa la pantalla. Los que no cruzan con el censo solo
+ *  traen el nombre del mercado, ya abreviado ("M. Jaiteh"), y ahí la inicial
+ *  hace de nombre de pila. */
+function splitName(player: Player): { given: string; surname: string } {
+  const raw = player.name ?? player.marketName;
+  if (raw && raw.includes(",")) {
+    const [surnameRaw, givenRaw] = raw.split(",");
+    const given = givenRaw?.trim() ? prettyName(givenRaw.trim()) : "";
+    return { given, surname: prettyName(surnameRaw?.trim() ?? "") };
+  }
+  const pretty = displayName(player);
+  const parts = pretty.split(" ");
+  if (parts.length < 2) return { given: "", surname: pretty };
+  return { given: parts[0] ?? "", surname: parts.slice(1).join(" ") };
 }
 
 function Row({ label, value }: { label: string; value: string }) {
