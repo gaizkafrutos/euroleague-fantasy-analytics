@@ -26,6 +26,17 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Rendimiento del jugador
 # ---------------------------------------------------------------------------
+def _mean(frame: pd.DataFrame, column: str) -> float:
+    """Media de una columna del game log sobre los partidos jugados.
+
+    Devuelve 0.0 si la columna no existe: un game log antiguo no debe romper el
+    build, solo quedarse sin esa media.
+    """
+    if frame.empty or column not in frame:
+        return 0.0
+    return round(float(frame[column].mean()), 1)
+
+
 def player_performance(gamelog: pd.DataFrame, *, window: int = FORM_WINDOW) -> pd.DataFrame:
     """Agregados por jugador a partir del game log.
 
@@ -39,6 +50,7 @@ def player_performance(gamelog: pd.DataFrame, *, window: int = FORM_WINDOW) -> p
                 "minutes_avg", "minutes_recent", "minutes_trend",
                 "fp_avg", "fp_median", "fp_std", "fp_floor", "fp_ceiling",
                 "fp_per_min", "consistency", "form", "form_delta", "last_fp",
+                "pts_avg", "reb_avg", "ast_avg", "pir_avg", "plus_minus_avg",
             ]
         )
 
@@ -95,6 +107,13 @@ def player_performance(gamelog: pd.DataFrame, *, window: int = FORM_WINDOW) -> p
                 "form": round(form, 2),
                 "form_delta": round(form - fp_avg, 2) if n_active >= MIN_GAMES_FOR_TREND else 0.0,
                 "last_fp": round(float(fp.iloc[-1]), 2) if n_active else 0.0,
+                # Medias de caja. El game log ya las trae por partido desde el
+                # principio; lo único que faltaba era promediarlas.
+                "pts_avg": _mean(active, "points"),
+                "reb_avg": _mean(active, "rebounds"),
+                "ast_avg": _mean(active, "assists"),
+                "pir_avg": _mean(active, "valuation"),
+                "plus_minus_avg": _mean(active, "plus_minus"),
             }
         )
 
@@ -295,7 +314,7 @@ def schedule_difficulty(
 # ---------------------------------------------------------------------------
 # Proyección y valor
 # ---------------------------------------------------------------------------
-def project_fantasy_points(table: pd.DataFrame) -> pd.Series:
+def project_fantasy_points(table: pd.DataFrame, *, baseline: bool = False) -> pd.Series:
     """Proyección para la próxima jornada.
 
     Mezcla media de temporada y forma reciente, con el peso de la forma
@@ -309,11 +328,17 @@ def project_fantasy_points(table: pd.DataFrame) -> pd.Series:
     minutes_trend = pd.to_numeric(table.get("minutes_trend"), errors="coerce").fillna(0.0)
     fp_per_min = pd.to_numeric(table.get("fp_per_min"), errors="coerce").fillna(0.0)
 
-    form_weight = np.clip(games / 10.0, 0.0, 0.6)
+    # Entre temporadas, la "forma reciente" son los últimos partidos de la
+    # temporada ANTERIOR: mayo, otra plantilla, rotaciones cortas, eliminatorias
+    # decididas. Pesarlos al máximo mandaba a cero a jugadores de 11 créditos.
+    # Mientras la fuente sea la línea base, la proyección es la media.
+    form_weight = 0.0 if baseline else np.clip(games / 10.0, 0.0, 0.6)
     blended = fp_avg * (1 - form_weight) + form * form_weight
 
-    # Un cambio de rol se traduce en puntos vía su producción por minuto.
-    role_adjustment = (minutes_trend * fp_per_min).clip(-6, 6)
+    # Un cambio de rol se traduce en puntos vía su producción por minuto, pero
+    # acotado EN RELATIVO: restarle 6 puntos a quien proyecta 4 es borrarlo.
+    limit = (blended.abs() * 0.35).clip(upper=6.0)
+    role_adjustment = (minutes_trend * fp_per_min).clip(lower=-limit, upper=limit)
     projection = blended + role_adjustment
 
     # Sin historial propio, el mercado es la mejor estimación disponible.

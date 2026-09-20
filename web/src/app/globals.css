@@ -144,7 +144,7 @@ html {
   scroll-behavior: smooth;
   /* Los enlaces de ancla tienen que parar por debajo de la cabecera pegajosa,
      no detrás de ella. */
-  scroll-padding-top: calc(var(--header-height) + 14px);
+  scroll-padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 14px);
 }
 
 body {
@@ -324,6 +324,9 @@ p {
   position: sticky;
   top: 0;
   z-index: 40;
+  /* La isla dinámica del iPhone se comía la cabecera: el inset de arriba
+     nunca se había puesto, solo el de abajo (barra de navegación móvil). */
+  padding-top: env(safe-area-inset-top, 0px);
   background: color-mix(in srgb, var(--plane) 97%, transparent);
   backdrop-filter: saturate(150%) blur(16px);
   border-bottom: 1px solid var(--hairline);

@@ -266,6 +266,8 @@ def build_player_table(
     prices: pd.DataFrame,
     reference: dict[str, Any],
     images: dict[str, str] | None = None,
+    *,
+    baseline: bool = False,
 ) -> pd.DataFrame:
     """Une mercado, identidad, precio histórico y rendimiento en una sola tabla."""
     table = market.merge(crosswalk, on="fantaking_id", how="left", suffixes=("", "_cw"))
@@ -333,7 +335,7 @@ def build_player_table(
     )
     table["is_coach"] = table["person_type"].eq("C") | table["position_group"].isna()
 
-    table["projected_fp"] = project_fantasy_points(table)
+    table["projected_fp"] = project_fantasy_points(table, baseline=baseline)
     table["price_pressure"] = price_pressure(table)
     table = value_metrics(table)
     table["bargain_score"] = bargain_score(table)
@@ -409,6 +411,11 @@ def player_records(
                     "lastFp": row.get("last_fp"),
                     "startedRate": row.get("started_rate"),
                     "dnpRate": row.get("dnp_rate"),
+                    "ptsAvg": row.get("pts_avg"),
+                    "rebAvg": row.get("reb_avg"),
+                    "astAvg": row.get("ast_avg"),
+                    "pirAvg": row.get("pir_avg"),
+                    "plusMinusAvg": row.get("plus_minus_avg"),
                 },
                 "projectedFp": row.get("projected_fp"),
                 "valuePerCredit": row.get("value_per_credit"),
@@ -484,7 +491,15 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     prices = price_history(load_snapshots()) if has_prices else pd.DataFrame()
 
     images = headshot_index(SEASON_CODE, PRIOR_SEASON_CODE)
-    table = build_player_table(market, crosswalk, performance, prices, reference, images)
+    table = build_player_table(
+        market,
+        crosswalk,
+        performance,
+        prices,
+        reference,
+        images,
+        baseline=bool(gamelog_meta.get("isBaseline")),
+    )
 
     games = reference.get("games", [])
     round_now = current_round(games)

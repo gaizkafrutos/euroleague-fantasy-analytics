@@ -45,6 +45,12 @@ export interface Performance {
   lastFp: number | null;
   startedRate: number | null;
   dnpRate: number | null;
+  /** Medias de caja. Opcionales: un players.json anterior al parche no las trae. */
+  ptsAvg?: number | null;
+  rebAvg?: number | null;
+  astAvg?: number | null;
+  pirAvg?: number | null;
+  plusMinusAvg?: number | null;
 }
 
 export interface MarketStats {
