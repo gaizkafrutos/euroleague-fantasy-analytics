@@ -21,6 +21,10 @@ next-env.d.ts
 !.env.example
 *token*.txt
 
+# Capturas y ficheros que la app de escritorio deja al entregarlos en el chat.
+# Son material de revisión, no del proyecto.
+Claude outputs/
+
 # Sistema
 .DS_Store
 Thumbs.db
