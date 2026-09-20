@@ -25,6 +25,7 @@ OVERRIDES_DIR = DATA_DIR / "overrides"
 WEB_DATA_DIR = REPO_ROOT / "web" / "src" / "data"
 
 PLAYER_OVERRIDES_PATH = OVERRIDES_DIR / "player_overrides.csv"
+CLUB_COLORS_PATH = OVERRIDES_DIR / "club_colors.csv"
 UNMATCHED_REPORT_PATH = PROCESSED_DIR / "unmatched_players.csv"
 CROSSWALK_PATH = PROCESSED_DIR / "crosswalk.csv"
 

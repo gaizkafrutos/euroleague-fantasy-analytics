@@ -1,0 +1,32 @@
+# Colores de club, calculados una vez y fijados aquí.
+# halo:       color del fondo del retrato en la ficha (se usa a baja opacidad).
+# stat_dark:  aros de estadistica en tema oscuro.
+# stat_light: los mismos aros en tema claro.
+# source:     tono del que salen los dos anteriores, llevado a OKLCH L 0,78 y 0,50.
+#             "neutro" = el club es blanco o negro y el aro usa la tinta, que gira
+#             con el tema (blanca sobre fondo oscuro, negra sobre claro).
+# fijado:     si=lo decidio Gaizka el 20/9/2026 porque la extraccion del escudo
+#             fallaba; no=extraido del escudo.
+# Los veinte pasan contraste 4,5:1 en los dos temas.
+# Las filas que empiezan por # se ignoran.
+code,halo,stat_dark,stat_light,source,fijado
+ASV,#202020,#f2f4f8,#0c0f16,neutro,si
+BAR,#e0b000,#58c4ff,#006b98,#00a0e0,si
+BAS,#002040,#ff958e,#bb001f,#c00020,si
+BES,#e00010,#ff9689,#bc000b,#e00010,no
+DUB,#705030,#f2f4f8,#0c0f16,neutro,si
+HTA,#d01020,#ff968c,#bc0018,#d01020,no
+IST,#002070,#58c4ff,#006b98,#00a0e0,no
+MAD,#f0b010,#eaab00,#805c00,#f0b010,no
+MIL,#a01020,#ff958f,#bb0022,#a01020,no
+MUN,#e00030,#ff968c,#bc0019,#e00020,no
+OLY,#d00020,#ff958d,#bc001c,#d00020,no
+PAM,#e06020,#ff996e,#a53e00,#e06020,no
+PAN,#f08010,#00d895,#007650,#006040,no
+PAR,#e00010,#ff9689,#bc000b,#e00010,no
+PRS,#f00000,#ff9687,#bc0000,#f00000,no
+RED,#e00010,#f2f4f8,#0c0f16,neutro,si
+TEL,#203070,#d5b600,#746300,#f0d030,no
+ULK,#807040,#cabb00,#6e6500,#f0e030,no
+VIR,#202020,#f2f4f8,#0c0f16,neutro,si
+ZAL,#008030,#00dc58,#00782d,#008030,no

@@ -112,6 +112,34 @@ export interface PlayerDetail {
 
 export type DetailsIndex = Record<string, PlayerDetail>;
 
+/** Índices reconstruidos desde los boxscores. `null` cuando el club no tiene
+ *  histórico — un recién llegado no es un equipo con ceros. */
+export interface TeamBox {
+  games: number | null;
+  wins: number | null;
+  losses: number | null;
+  ppg: number | null;
+  papg: number | null;
+  offRating: number | null;
+  defRating: number | null;
+  netRating: number | null;
+  pace: number | null;
+  efg: number | null;
+  tovRate: number | null;
+  orbRate: number | null;
+  ftRate: number | null;
+  astPerGame: number | null;
+  threeRate: number | null;
+}
+
+/** Colores derivados del escudo, fijados en data/overrides/club_colors.csv.
+ *  `halo` pinta el fondo del retrato; `stat*` los aros de estadística. */
+export interface ClubColors {
+  halo: string | null;
+  statDark: string | null;
+  statLight: string | null;
+}
+
 export interface Team {
   code: string;
   name: string | null;
@@ -126,6 +154,8 @@ export interface Team {
   ratingSource: string | null;
   difficulty: number | null;
   fixtures: Fixture[];
+  box?: TeamBox | null;
+  colors?: ClubColors | null;
 }
 
 export interface LineupPlayer {
@@ -143,8 +173,18 @@ export interface Lineup {
   method?: string;
   budget?: number;
   totalPrice?: number;
+  /** Suma llana de los diez. NO es lo que se puntúa. */
   totalProjection?: number;
+  /** Lo que de verdad puntuaría: capitán ×2, banquillo ×0,5, entrenador. */
+  scoredProjection?: number;
   captain?: string | null;
+  /** Claves de los cinco del quinteto; el capitán sale de aquí. */
+  starters?: string[];
+  /** El sexto hombre, que también puntúa al 100 %. */
+  sixth?: string | null;
+  /** Los cuatro que puntúan a la mitad. */
+  bench?: string[];
+  coach?: LineupPlayer | null;
   players?: LineupPlayer[];
 }
 

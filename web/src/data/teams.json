@@ -33,8 +33,44 @@
     "home": false,
     "date": "2026-10-01T18:00:00Z",
     "opponent_rating": 1.08
+   },
+   {
+    "round": 4,
+    "opponent": "OLY",
+    "home": false,
+    "date": "2026-10-09T18:15:00Z",
+    "opponent_rating": 8.05
+   },
+   {
+    "round": 5,
+    "opponent": "MUN",
+    "home": true,
+    "date": "2026-10-14T17:30:00Z",
+    "opponent_rating": -2.89
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 12.0,
+   "losses": 26.0,
+   "ppg": 80.1,
+   "papg": 84.3,
+   "offRating": 110.7,
+   "defRating": 116.7,
+   "netRating": -6.0,
+   "pace": 72.4,
+   "efg": 53.9,
+   "tovRate": 17.4,
+   "orbRate": 28.2,
+   "ftRate": 29.2,
+   "astPerGame": 17.5,
+   "threeRate": 42.1
+  },
+  "colors": {
+   "halo": "#002070",
+   "statDark": "#58c4ff",
+   "statLight": "#006b98"
+  }
  },
  {
   "code": "MIL",
@@ -70,8 +106,44 @@
     "home": false,
     "date": "2026-10-02T18:30:00Z",
     "opponent_rating": -4.74
+   },
+   {
+    "round": 4,
+    "opponent": "TEL",
+    "home": false,
+    "date": "2026-10-08T18:00:00Z",
+    "opponent_rating": -2.53
+   },
+   {
+    "round": 5,
+    "opponent": "MAD",
+    "home": true,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": 5.09
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 17.0,
+   "losses": 21.0,
+   "ppg": 86.1,
+   "papg": 87.2,
+   "offRating": 118.8,
+   "defRating": 119.3,
+   "netRating": -0.5,
+   "pace": 72.4,
+   "efg": 56.5,
+   "tovRate": 16.0,
+   "orbRate": 30.2,
+   "ftRate": 31.3,
+   "astPerGame": 18.9,
+   "threeRate": 42.2
+  },
+  "colors": {
+   "halo": "#a01020",
+   "statDark": "#ff958f",
+   "statLight": "#bb0022"
+  }
  },
  {
   "code": "BES",
@@ -107,8 +179,28 @@
     "home": true,
     "date": "2026-10-02T17:00:00Z",
     "opponent_rating": 0.83
+   },
+   {
+    "round": 4,
+    "opponent": "BAS",
+    "home": false,
+    "date": "2026-10-09T18:30:00Z",
+    "opponent_rating": -4.74
+   },
+   {
+    "round": 5,
+    "opponent": "HTA",
+    "home": false,
+    "date": "2026-10-14T16:00:00Z",
+    "opponent_rating": 1.9
    }
-  ]
+  ],
+  "box": null,
+  "colors": {
+   "halo": "#e00010",
+   "statDark": "#ff9689",
+   "statLight": "#bc000b"
+  }
  },
  {
   "code": "RED",
@@ -144,8 +236,44 @@
     "home": true,
     "date": "2026-10-01T18:00:00Z",
     "opponent_rating": -4.24
+   },
+   {
+    "round": 4,
+    "opponent": "DUB",
+    "home": false,
+    "date": "2026-10-08T16:00:00Z",
+    "opponent_rating": 0.13
+   },
+   {
+    "round": 5,
+    "opponent": "ASV",
+    "home": false,
+    "date": "2026-10-13T18:00:00Z",
+    "opponent_rating": -7.29
    }
-  ]
+  ],
+  "box": {
+   "games": 39.0,
+   "wins": 21.0,
+   "losses": 18.0,
+   "ppg": 87.2,
+   "papg": 86.1,
+   "offRating": 115.6,
+   "defRating": 114.5,
+   "netRating": 1.1,
+   "pace": 75.4,
+   "efg": 54.5,
+   "tovRate": 18.5,
+   "orbRate": 37.5,
+   "ftRate": 32.4,
+   "astPerGame": 20.0,
+   "threeRate": 39.3
+  },
+  "colors": {
+   "halo": "#e00010",
+   "statDark": "#f2f4f8",
+   "statLight": "#0c0f16"
+  }
  },
  {
   "code": "DUB",
@@ -181,8 +309,44 @@
     "home": false,
     "date": "2026-10-02T17:45:00Z",
     "opponent_rating": 1.37
+   },
+   {
+    "round": 4,
+    "opponent": "RED",
+    "home": true,
+    "date": "2026-10-08T16:00:00Z",
+    "opponent_rating": 1.08
+   },
+   {
+    "round": 5,
+    "opponent": "BAS",
+    "home": false,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": -4.74
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 19.0,
+   "losses": 19.0,
+   "ppg": 88.1,
+   "papg": 88.0,
+   "offRating": 118.6,
+   "defRating": 118.4,
+   "netRating": 0.1,
+   "pace": 74.3,
+   "efg": 54.1,
+   "tovRate": 14.4,
+   "orbRate": 30.6,
+   "ftRate": 36.8,
+   "astPerGame": 18.9,
+   "threeRate": 37.0
+  },
+  "colors": {
+   "halo": "#705030",
+   "statDark": "#f2f4f8",
+   "statLight": "#0c0f16"
+  }
  },
  {
   "code": "BAR",
@@ -218,8 +382,44 @@
     "home": false,
     "date": "2026-10-02T17:00:00Z",
     "opponent_rating": 0.0
+   },
+   {
+    "round": 4,
+    "opponent": "ZAL",
+    "home": true,
+    "date": "2026-10-09T18:30:00Z",
+    "opponent_rating": 3.81
+   },
+   {
+    "round": 5,
+    "opponent": "TEL",
+    "home": true,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": -2.53
    }
-  ]
+  ],
+  "box": {
+   "games": 40.0,
+   "wins": 22.0,
+   "losses": 18.0,
+   "ppg": 84.3,
+   "papg": 83.5,
+   "offRating": 116.4,
+   "defRating": 115.4,
+   "netRating": 1.1,
+   "pace": 72.4,
+   "efg": 55.4,
+   "tovRate": 16.6,
+   "orbRate": 32.8,
+   "ftRate": 26.5,
+   "astPerGame": 18.0,
+   "threeRate": 40.3
+  },
+  "colors": {
+   "halo": "#e0b000",
+   "statDark": "#58c4ff",
+   "statLight": "#006b98"
+  }
  },
  {
   "code": "MUN",
@@ -255,8 +455,44 @@
     "home": true,
     "date": "2026-10-02T18:00:00Z",
     "opponent_rating": -4.95
+   },
+   {
+    "round": 4,
+    "opponent": "VIR",
+    "home": true,
+    "date": "2026-10-08T18:00:00Z",
+    "opponent_rating": -4.61
+   },
+   {
+    "round": 5,
+    "opponent": "IST",
+    "home": false,
+    "date": "2026-10-14T17:30:00Z",
+    "opponent_rating": -4.24
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 17.0,
+   "losses": 21.0,
+   "ppg": 80.8,
+   "papg": 83.7,
+   "offRating": 110.9,
+   "defRating": 114.6,
+   "netRating": -3.7,
+   "pace": 72.9,
+   "efg": 54.1,
+   "tovRate": 17.8,
+   "orbRate": 30.0,
+   "ftRate": 24.3,
+   "astPerGame": 18.6,
+   "threeRate": 42.7
+  },
+  "colors": {
+   "halo": "#e00030",
+   "statDark": "#ff968c",
+   "statLight": "#bc0019"
+  }
  },
  {
   "code": "ULK",
@@ -292,8 +528,44 @@
     "home": true,
     "date": "2026-10-02T17:45:00Z",
     "opponent_rating": 0.13
+   },
+   {
+    "round": 4,
+    "opponent": "PAN",
+    "home": false,
+    "date": "2026-10-08T18:15:00Z",
+    "opponent_rating": 1.66
+   },
+   {
+    "round": 5,
+    "opponent": "ZAL",
+    "home": true,
+    "date": "2026-10-13T17:45:00Z",
+    "opponent_rating": 3.81
    }
-  ]
+  ],
+  "box": {
+   "games": 43.0,
+   "wins": 27.0,
+   "losses": 16.0,
+   "ppg": 81.9,
+   "papg": 80.5,
+   "offRating": 113.3,
+   "defRating": 110.8,
+   "netRating": 2.6,
+   "pace": 72.3,
+   "efg": 54.2,
+   "tovRate": 18.6,
+   "orbRate": 33.4,
+   "ftRate": 29.8,
+   "astPerGame": 16.1,
+   "threeRate": 41.8
+  },
+  "colors": {
+   "halo": "#807040",
+   "statDark": "#cabb00",
+   "statLight": "#6e6500"
+  }
  },
  {
   "code": "HTA",
@@ -329,8 +601,44 @@
     "home": true,
     "date": "2026-10-01T16:00:00Z",
     "opponent_rating": 5.09
+   },
+   {
+    "round": 4,
+    "opponent": "PAM",
+    "home": false,
+    "date": "2026-10-08T18:30:00Z",
+    "opponent_rating": 4.09
+   },
+   {
+    "round": 5,
+    "opponent": "BES",
+    "home": true,
+    "date": "2026-10-14T16:00:00Z",
+    "opponent_rating": 0.0
    }
-  ]
+  ],
+  "box": {
+   "games": 42.0,
+   "wins": 24.0,
+   "losses": 18.0,
+   "ppg": 87.3,
+   "papg": 85.4,
+   "offRating": 117.2,
+   "defRating": 114.5,
+   "netRating": 2.7,
+   "pace": 74.5,
+   "efg": 57.6,
+   "tovRate": 16.2,
+   "orbRate": 27.7,
+   "ftRate": 28.5,
+   "astPerGame": 17.3,
+   "threeRate": 38.4
+  },
+  "colors": {
+   "halo": "#d01020",
+   "statDark": "#ff968c",
+   "statLight": "#bc0018"
+  }
  },
  {
   "code": "BAS",
@@ -366,8 +674,44 @@
     "home": true,
     "date": "2026-10-02T18:30:00Z",
     "opponent_rating": -1.16
+   },
+   {
+    "round": 4,
+    "opponent": "BES",
+    "home": true,
+    "date": "2026-10-09T18:30:00Z",
+    "opponent_rating": 0.0
+   },
+   {
+    "round": 5,
+    "opponent": "DUB",
+    "home": true,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": 0.13
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 13.0,
+   "losses": 25.0,
+   "ppg": 88.3,
+   "papg": 93.1,
+   "offRating": 115.4,
+   "defRating": 121.2,
+   "netRating": -5.9,
+   "pace": 76.6,
+   "efg": 55.1,
+   "tovRate": 17.1,
+   "orbRate": 29.7,
+   "ftRate": 32.7,
+   "astPerGame": 19.0,
+   "threeRate": 43.6
+  },
+  "colors": {
+   "halo": "#002040",
+   "statDark": "#ff958e",
+   "statLight": "#bb001f"
+  }
  },
  {
   "code": "ASV",
@@ -403,8 +747,44 @@
     "home": true,
     "date": "2026-10-02T18:00:00Z",
     "opponent_rating": 4.09
+   },
+   {
+    "round": 4,
+    "opponent": "PRS",
+    "home": false,
+    "date": "2026-10-07T18:45:00Z",
+    "opponent_rating": -0.89
+   },
+   {
+    "round": 5,
+    "opponent": "RED",
+    "home": true,
+    "date": "2026-10-13T18:00:00Z",
+    "opponent_rating": 1.08
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 8.0,
+   "losses": 30.0,
+   "ppg": 79.3,
+   "papg": 86.6,
+   "offRating": 107.2,
+   "defRating": 117.8,
+   "netRating": -10.6,
+   "pace": 74.0,
+   "efg": 50.7,
+   "tovRate": 17.6,
+   "orbRate": 31.1,
+   "ftRate": 28.9,
+   "astPerGame": 17.6,
+   "threeRate": 43.3
+  },
+  "colors": {
+   "halo": "#202020",
+   "statDark": "#f2f4f8",
+   "statLight": "#0c0f16"
+  }
  },
  {
   "code": "TEL",
@@ -440,8 +820,44 @@
     "home": false,
     "date": "2026-10-02T18:15:00Z",
     "opponent_rating": 1.66
+   },
+   {
+    "round": 4,
+    "opponent": "MIL",
+    "home": true,
+    "date": "2026-10-08T18:00:00Z",
+    "opponent_rating": -1.16
+   },
+   {
+    "round": 5,
+    "opponent": "BAR",
+    "home": false,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": 0.83
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 18.0,
+   "losses": 20.0,
+   "ppg": 90.1,
+   "papg": 92.7,
+   "offRating": 117.5,
+   "defRating": 120.9,
+   "netRating": -3.4,
+   "pace": 76.7,
+   "efg": 53.4,
+   "tovRate": 16.0,
+   "orbRate": 34.5,
+   "ftRate": 33.4,
+   "astPerGame": 19.9,
+   "threeRate": 42.3
+  },
+  "colors": {
+   "halo": "#203070",
+   "statDark": "#d5b600",
+   "statLight": "#746300"
+  }
  },
  {
   "code": "OLY",
@@ -477,8 +893,44 @@
     "home": false,
     "date": "2026-10-01T18:30:00Z",
     "opponent_rating": -4.61
+   },
+   {
+    "round": 4,
+    "opponent": "IST",
+    "home": true,
+    "date": "2026-10-09T18:15:00Z",
+    "opponent_rating": -4.24
+   },
+   {
+    "round": 5,
+    "opponent": "PAM",
+    "home": false,
+    "date": "2026-10-13T19:00:00Z",
+    "opponent_rating": 4.09
    }
-  ]
+  ],
+  "box": {
+   "games": 43.0,
+   "wins": 31.0,
+   "losses": 12.0,
+   "ppg": 90.5,
+   "papg": 82.4,
+   "offRating": 122.2,
+   "defRating": 111.5,
+   "netRating": 10.7,
+   "pace": 74.1,
+   "efg": 57.1,
+   "tovRate": 16.7,
+   "orbRate": 35.3,
+   "ftRate": 36.8,
+   "astPerGame": 21.4,
+   "threeRate": 43.9
+  },
+  "colors": {
+   "halo": "#d00020",
+   "statDark": "#ff958d",
+   "statLight": "#bc001c"
+  }
  },
  {
   "code": "PAN",
@@ -514,8 +966,44 @@
     "home": true,
     "date": "2026-10-02T18:15:00Z",
     "opponent_rating": -2.53
+   },
+   {
+    "round": 4,
+    "opponent": "ULK",
+    "home": true,
+    "date": "2026-10-08T18:15:00Z",
+    "opponent_rating": 1.37
+   },
+   {
+    "round": 5,
+    "opponent": "PAR",
+    "home": false,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": -4.95
    }
-  ]
+  ],
+  "box": {
+   "games": 44.0,
+   "wins": 25.0,
+   "losses": 19.0,
+   "ppg": 86.7,
+   "papg": 85.0,
+   "offRating": 118.2,
+   "defRating": 115.7,
+   "netRating": 2.4,
+   "pace": 73.3,
+   "efg": 55.0,
+   "tovRate": 14.8,
+   "orbRate": 31.6,
+   "ftRate": 28.7,
+   "astPerGame": 18.6,
+   "threeRate": 37.4
+  },
+  "colors": {
+   "halo": "#f08010",
+   "statDark": "#00d895",
+   "statLight": "#007650"
+  }
  },
  {
   "code": "PRS",
@@ -551,8 +1039,44 @@
     "home": true,
     "date": "2026-10-01T18:45:00Z",
     "opponent_rating": 3.81
+   },
+   {
+    "round": 4,
+    "opponent": "ASV",
+    "home": true,
+    "date": "2026-10-07T18:45:00Z",
+    "opponent_rating": -7.29
+   },
+   {
+    "round": 5,
+    "opponent": "VIR",
+    "home": true,
+    "date": "2026-10-14T18:45:00Z",
+    "opponent_rating": -4.61
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 15.0,
+   "losses": 23.0,
+   "ppg": 90.1,
+   "papg": 90.9,
+   "offRating": 114.8,
+   "defRating": 116.2,
+   "netRating": -1.5,
+   "pace": 78.5,
+   "efg": 53.8,
+   "tovRate": 17.6,
+   "orbRate": 34.3,
+   "ftRate": 30.3,
+   "astPerGame": 17.5,
+   "threeRate": 47.7
+  },
+  "colors": {
+   "halo": "#f00000",
+   "statDark": "#ff9687",
+   "statLight": "#bc0000"
+  }
  },
  {
   "code": "PAR",
@@ -588,8 +1112,44 @@
     "home": false,
     "date": "2026-10-02T18:00:00Z",
     "opponent_rating": -2.89
+   },
+   {
+    "round": 4,
+    "opponent": "MAD",
+    "home": false,
+    "date": "2026-10-08T18:45:00Z",
+    "opponent_rating": 5.09
+   },
+   {
+    "round": 5,
+    "opponent": "PAN",
+    "home": true,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": 1.66
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 16.0,
+   "losses": 22.0,
+   "ppg": 81.6,
+   "papg": 86.6,
+   "offRating": 110.4,
+   "defRating": 116.9,
+   "netRating": -6.5,
+   "pace": 73.9,
+   "efg": 53.0,
+   "tovRate": 16.9,
+   "orbRate": 29.4,
+   "ftRate": 25.4,
+   "astPerGame": 17.5,
+   "threeRate": 38.4
+  },
+  "colors": {
+   "halo": "#e00010",
+   "statDark": "#ff9689",
+   "statLight": "#bc000b"
+  }
  },
  {
   "code": "MAD",
@@ -625,8 +1185,44 @@
     "home": false,
     "date": "2026-10-01T16:00:00Z",
     "opponent_rating": 1.9
+   },
+   {
+    "round": 4,
+    "opponent": "PAR",
+    "home": true,
+    "date": "2026-10-08T18:45:00Z",
+    "opponent_rating": -4.95
+   },
+   {
+    "round": 5,
+    "opponent": "MIL",
+    "home": false,
+    "date": "2026-10-13T18:30:00Z",
+    "opponent_rating": -1.16
    }
-  ]
+  ],
+  "box": {
+   "games": 44.0,
+   "wins": 28.0,
+   "losses": 16.0,
+   "ppg": 88.1,
+   "papg": 83.0,
+   "offRating": 120.1,
+   "defRating": 113.4,
+   "netRating": 6.7,
+   "pace": 73.3,
+   "efg": 56.2,
+   "tovRate": 16.8,
+   "orbRate": 35.0,
+   "ftRate": 32.7,
+   "astPerGame": 19.2,
+   "threeRate": 41.7
+  },
+  "colors": {
+   "halo": "#f0b010",
+   "statDark": "#eaab00",
+   "statLight": "#805c00"
+  }
  },
  {
   "code": "PAM",
@@ -662,8 +1258,44 @@
     "home": false,
     "date": "2026-10-02T18:00:00Z",
     "opponent_rating": -7.29
+   },
+   {
+    "round": 4,
+    "opponent": "HTA",
+    "home": true,
+    "date": "2026-10-08T18:30:00Z",
+    "opponent_rating": 1.9
+   },
+   {
+    "round": 5,
+    "opponent": "OLY",
+    "home": true,
+    "date": "2026-10-13T19:00:00Z",
+    "opponent_rating": 8.05
    }
-  ]
+  ],
+  "box": {
+   "games": 44.0,
+   "wins": 28.0,
+   "losses": 16.0,
+   "ppg": 90.4,
+   "papg": 86.3,
+   "offRating": 118.5,
+   "defRating": 113.4,
+   "netRating": 5.1,
+   "pace": 76.3,
+   "efg": 56.0,
+   "tovRate": 16.3,
+   "orbRate": 35.0,
+   "ftRate": 28.1,
+   "astPerGame": 21.0,
+   "threeRate": 46.5
+  },
+  "colors": {
+   "halo": "#e06020",
+   "statDark": "#ff996e",
+   "statLight": "#a53e00"
+  }
  },
  {
   "code": "VIR",
@@ -699,8 +1331,44 @@
     "home": true,
     "date": "2026-10-01T18:30:00Z",
     "opponent_rating": 8.05
+   },
+   {
+    "round": 4,
+    "opponent": "MUN",
+    "home": false,
+    "date": "2026-10-08T18:00:00Z",
+    "opponent_rating": -2.89
+   },
+   {
+    "round": 5,
+    "opponent": "PRS",
+    "home": false,
+    "date": "2026-10-14T18:45:00Z",
+    "opponent_rating": -0.89
    }
-  ]
+  ],
+  "box": {
+   "games": 38.0,
+   "wins": 14.0,
+   "losses": 24.0,
+   "ppg": 81.8,
+   "papg": 86.4,
+   "offRating": 111.6,
+   "defRating": 117.7,
+   "netRating": -6.1,
+   "pace": 73.4,
+   "efg": 54.4,
+   "tovRate": 19.0,
+   "orbRate": 31.3,
+   "ftRate": 29.3,
+   "astPerGame": 19.3,
+   "threeRate": 41.5
+  },
+  "colors": {
+   "halo": "#202020",
+   "statDark": "#f2f4f8",
+   "statLight": "#0c0f16"
+  }
  },
  {
   "code": "ZAL",
@@ -736,7 +1404,43 @@
     "home": false,
     "date": "2026-10-01T18:45:00Z",
     "opponent_rating": -0.89
+   },
+   {
+    "round": 4,
+    "opponent": "BAR",
+    "home": false,
+    "date": "2026-10-09T18:30:00Z",
+    "opponent_rating": 0.83
+   },
+   {
+    "round": 5,
+    "opponent": "ULK",
+    "home": false,
+    "date": "2026-10-13T17:45:00Z",
+    "opponent_rating": 1.37
    }
-  ]
+  ],
+  "box": {
+   "games": 42.0,
+   "wins": 24.0,
+   "losses": 18.0,
+   "ppg": 87.0,
+   "papg": 83.2,
+   "offRating": 119.4,
+   "defRating": 114.5,
+   "netRating": 4.9,
+   "pace": 72.9,
+   "efg": 56.1,
+   "tovRate": 15.8,
+   "orbRate": 33.8,
+   "ftRate": 31.7,
+   "astPerGame": 19.4,
+   "threeRate": 38.7
+  },
+  "colors": {
+   "halo": "#008030",
+   "statDark": "#00dc58",
+   "statLight": "#00782d"
+  }
  }
 ]

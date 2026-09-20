@@ -259,11 +259,17 @@ def schedule_difficulty(
     *,
     from_round: int,
     horizon: int = 3,
+    publish: int = 5,
 ) -> pd.DataFrame:
     """Dificultad media de los próximos rivales, por club.
 
     Escala 0-100 donde 100 = calendario más duro de la liga. Se pondera algo el
     factor cancha: jugar fuera pesa más.
+
+    Dos números que antes eran el mismo: `horizon` son los partidos con los que
+    se CALCULA el índice, y `publish` cuántos se PUBLICAN en `fixtures`. La
+    ficha de equipo enseña cinco; el índice sigue mirando tres, que es lo que
+    estaba validado.
     """
     if strength.empty:
         return pd.DataFrame(columns=["club_code", "difficulty", "fixtures"])
@@ -281,7 +287,7 @@ def schedule_difficulty(
             continue
         for club, rival, home in ((local, road, True), (road, local, False)):
             bucket = upcoming.setdefault(club, [])
-            if len(bucket) < horizon:
+            if len(bucket) < max(horizon, publish):
                 bucket.append(
                     {
                         "round": int(round_number),
@@ -297,7 +303,7 @@ def schedule_difficulty(
         if not fixtures:
             continue
         raw = np.mean(
-            [f["opponent_rating"] + (0.0 if f["home"] else 2.5) for f in fixtures]
+            [f["opponent_rating"] + (0.0 if f["home"] else 2.5) for f in fixtures[:horizon]]
         )
         rows.append({"club_code": club, "raw_difficulty": float(raw), "fixtures": fixtures})
 
@@ -309,6 +315,103 @@ def schedule_difficulty(
     span = high - low
     frame["difficulty"] = ((frame["raw_difficulty"] - low) / span * 100).round(0) if span else 50.0
     return frame[["club_code", "difficulty", "fixtures", "raw_difficulty"]]
+
+
+TEAM_STAT_COLUMNS = [
+    "club_code", "box_games", "wins", "losses", "ppg", "papg",
+    "off_rating", "def_rating", "net_rating", "pace",
+    "efg", "tov_rate", "orb_rate", "ft_rate", "ast_pg", "three_rate",
+]
+
+
+def team_box_stats(
+    boxscores: dict[int, dict[str, Any]], games: list[dict[str, Any]]
+) -> pd.DataFrame:
+    """Índices por equipo reconstruidos desde los boxscores oficiales.
+
+    `teams.json` solo traía ataque, defensa y un balance. La ficha de club pide
+    más: los cuatro factores (tiro efectivo, pérdidas por posesión, rebote
+    ofensivo y tiros libres por tiro), el ritmo y los puntos por 100 posesiones.
+    Todo sale del bloque `total` de cada boxscore, así que no hace falta
+    ninguna fuente nueva.
+
+    Posesiones, fórmula estándar: FGA - OR + TOV + 0,44*FTA.
+
+    Un club sin partidos NO aparece en la tabla: la web tiene que poder decir
+    "sin histórico" en vez de pintar ceros. Le pasa a un recién llegado como
+    Besiktas, que no jugó la temporada anterior.
+    """
+    if not boxscores or not games:
+        return pd.DataFrame(columns=TEAM_STAT_COLUMNS)
+
+    index = {int(g["gameCode"]): g for g in games if g.get("gameCode") is not None}
+    acc: dict[str, dict[str, float]] = {}
+    played: dict[str, int] = {}
+    won: dict[str, int] = {}
+
+    own_fields = {
+        "points": "pf", "fieldGoalsAttemptedTotal": "fga", "fieldGoalsMadeTotal": "fgm",
+        "fieldGoalsAttempted3": "fg3a", "fieldGoalsMade3": "fg3m",
+        "freeThrowsAttempted": "fta", "offensiveRebounds": "orb",
+        "defensiveRebounds": "drb", "turnovers": "tov", "assistances": "ast",
+    }
+    rival_fields = {
+        "points": "pa", "fieldGoalsAttemptedTotal": "opp_fga",
+        "offensiveRebounds": "opp_orb", "defensiveRebounds": "opp_drb",
+        "turnovers": "opp_tov", "freeThrowsAttempted": "opp_fta",
+    }
+
+    for code, payload in boxscores.items():
+        game = index.get(int(code))
+        if not game:
+            continue
+        for side, rival_side in (("local", "road"), ("road", "local")):
+            club = ((game.get(side) or {}).get("club") or {}).get("code")
+            own = (payload.get(side) or {}).get("total") or {}
+            rival = (payload.get(rival_side) or {}).get("total") or {}
+            if not club or not own or not rival:
+                continue
+            bucket = acc.setdefault(club, {})
+            played[club] = played.get(club, 0) + 1
+            if float(own.get("points", 0)) > float(rival.get("points", 0)):
+                won[club] = won.get(club, 0) + 1
+            for source, target in own_fields.items():
+                bucket[target] = bucket.get(target, 0.0) + float(own.get(source, 0) or 0)
+            for source, target in rival_fields.items():
+                bucket[target] = bucket.get(target, 0.0) + float(rival.get(source, 0) or 0)
+
+    rows = []
+    for club, s in acc.items():
+        n = played[club]
+        possessions = s["fga"] - s["orb"] + s["tov"] + 0.44 * s["fta"]
+        rival_possessions = s["opp_fga"] - s["opp_orb"] + s["opp_tov"] + 0.44 * s["opp_fta"]
+        if n <= 0 or possessions <= 0 or rival_possessions <= 0 or s["fga"] <= 0:
+            continue
+        off = 100 * s["pf"] / possessions
+        deff = 100 * s["pa"] / rival_possessions
+        boards = s["orb"] + s["opp_drb"]
+        rows.append(
+            {
+                "club_code": club,
+                "box_games": n,
+                "wins": won.get(club, 0),
+                "losses": n - won.get(club, 0),
+                "ppg": round(s["pf"] / n, 1),
+                "papg": round(s["pa"] / n, 1),
+                "off_rating": round(off, 1),
+                "def_rating": round(deff, 1),
+                "net_rating": round(off - deff, 1),
+                "pace": round(possessions / n, 1),
+                "efg": round(100 * (s["fgm"] + 0.5 * s["fg3m"]) / s["fga"], 1),
+                "tov_rate": round(100 * s["tov"] / possessions, 1),
+                "orb_rate": round(100 * s["orb"] / boards, 1) if boards > 0 else None,
+                "ft_rate": round(100 * s["fta"] / s["fga"], 1),
+                "ast_pg": round(s["ast"] / n, 1),
+                "three_rate": round(100 * s["fg3a"] / s["fga"], 1),
+            }
+        )
+
+    return pd.DataFrame(rows, columns=TEAM_STAT_COLUMNS)
 
 
 # ---------------------------------------------------------------------------

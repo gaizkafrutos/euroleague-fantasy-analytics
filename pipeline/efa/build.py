@@ -13,6 +13,7 @@ mantener ni base de datos que se duerma: el commit del pipeline es el deploy.
 """
 from __future__ import annotations
 
+import csv
 import json
 import logging
 import math
@@ -24,6 +25,7 @@ import pandas as pd
 
 from efa.config import (
     CROSSWALK_PATH,
+    CLUB_COLORS_PATH,
     PLAYER_OVERRIDES_PATH,
     PRIOR_SEASON_CODE,
     ROSTER_BUDGET,
@@ -46,6 +48,7 @@ from efa.metrics import (
     project_fantasy_points,
     recent_series,
     schedule_difficulty,
+    team_box_stats,
     team_strength,
     value_metrics,
 )
@@ -545,7 +548,20 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         "warnings": _warnings(has_prices, gamelog_meta, matched, len(records)),
     }
 
-    teams = _team_records(reference.get("clubs", []), strength, difficulty)
+    # Índices de equipo desde los boxscores de la misma temporada que sirve de
+    # referencia para los jugadores, para que la ficha de club y la de jugador
+    # no cuenten cosas distintas.
+    box_season = gamelog_meta.get("source") or SEASON_CODE
+    box_games = games if box_season == SEASON_CODE else prior_reference.get("games", [])
+    team_box = team_box_stats(load_boxscores(box_season), box_games)
+
+    teams = _team_records(
+        reference.get("clubs", []),
+        strength,
+        difficulty,
+        team_box,
+        load_club_colors(),
+    )
 
     write_json("players.json", records)
     write_json("details.json", player_details(table, series, difficulty))
@@ -675,17 +691,73 @@ def _build_optimal_lineup(records: list[dict[str, Any]], *, budget: float) -> di
     return payload
 
 
+BOX_FIELDS = {
+    "box_games": "games",
+    "wins": "wins",
+    "losses": "losses",
+    "ppg": "ppg",
+    "papg": "papg",
+    "off_rating": "offRating",
+    "def_rating": "defRating",
+    "net_rating": "netRating",
+    "pace": "pace",
+    "efg": "efg",
+    "tov_rate": "tovRate",
+    "orb_rate": "orbRate",
+    "ft_rate": "ftRate",
+    "ast_pg": "astPerGame",
+    "three_rate": "threeRate",
+}
+
+
+def load_club_colors() -> dict[str, dict[str, str]]:
+    """Colores de club fijados a mano, con el mismo formato que los overrides
+    de jugador: las líneas que empiezan por # se ignoran.
+
+    No se extraen del escudo en cada build a propósito. Serían veinte descargas
+    de imagen y una dependencia de tratamiento de imagen dentro del Action, para
+    un dato que solo cambia cuando un club rediseña su escudo. Se calculó una
+    vez y vive en el repo.
+    """
+    if not CLUB_COLORS_PATH.exists():
+        return {}
+    colors: dict[str, dict[str, str]] = {}
+    with CLUB_COLORS_PATH.open(encoding="utf-8") as handle:
+        rows = csv.DictReader(line for line in handle if not line.lstrip().startswith("#"))
+        for row in rows:
+            code = (row.get("code") or "").strip()
+            if not code:
+                continue
+            colors[code] = {
+                "halo": (row.get("halo") or "").strip() or None,
+                "statDark": (row.get("stat_dark") or "").strip() or None,
+                "statLight": (row.get("stat_light") or "").strip() or None,
+            }
+    return colors
+
+
 def _team_records(
-    clubs: list[dict[str, Any]], strength: pd.DataFrame, difficulty: pd.DataFrame
+    clubs: list[dict[str, Any]],
+    strength: pd.DataFrame,
+    difficulty: pd.DataFrame,
+    box: pd.DataFrame | None = None,
+    colors: dict[str, dict[str, str]] | None = None,
 ) -> list[dict[str, Any]]:
     strength_index = strength.set_index("club_code").to_dict(orient="index") if not strength.empty else {}
     difficulty_index = difficulty.set_index("club_code").to_dict(orient="index") if not difficulty.empty else {}
+    box_index = (
+        box.set_index("club_code").to_dict(orient="index")
+        if box is not None and not box.empty
+        else {}
+    )
+    colors = colors or {}
 
     out = []
     for club in clubs:
         code = club["code"]
         stats = strength_index.get(code, {})
         schedule = difficulty_index.get(code, {})
+        box_row = box_index.get(code)
         out.append(
             {
                 "code": code,
@@ -701,6 +773,14 @@ def _team_records(
                 "ratingSource": stats.get("source"),
                 "difficulty": schedule.get("difficulty"),
                 "fixtures": schedule.get("fixtures", []),
+                # Nulo, no ceros: un club recién llegado no tiene histórico y la
+                # web tiene que poder decirlo.
+                "box": (
+                    {target: _usable_number(box_row.get(source)) for source, target in BOX_FIELDS.items()}
+                    if box_row
+                    else None
+                ),
+                "colors": colors.get(code),
             }
         )
     return out
