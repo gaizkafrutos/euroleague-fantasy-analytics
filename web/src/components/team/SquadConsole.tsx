@@ -32,6 +32,7 @@ import {
   buildSquad,
   checkSquad,
   extractRosterIds,
+  formationOf,
   positionWord,
   suggestSwaps,
 } from "@/lib/squad";
@@ -391,6 +392,16 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
       {squad.length || coach ? (
         <>
           {/* ----------------------------------------------------- la pista */}
+          <div className="bench-head court-head">
+            <h2>Quinteto</h2>
+            {roles.starters.length === STARTERS ? (
+              <span className="bench-tag num">{formationOf(roles.starters)}</span>
+            ) : null}
+            <p>
+              Bases, aleros y pívots en pista. El reglamento solo admite 2-2-1, 1-2-2, 2-1-2,
+              1-3-1 y 3-1-1: siempre al menos uno de cada puesto.
+            </p>
+          </div>
           <section className="court" aria-label="Quinteto">
             <svg
               className="court-lines"

@@ -38,6 +38,14 @@ POSITION_QUOTA = {"G": ROSTER_GUARDS, "F": ROSTER_FORWARDS, "C": ROSTER_CENTERS}
 STARTERS = 5
 FULL_SCORING_SLOTS = STARTERS + 1
 
+#: Formaciones permitidas del quinteto (bases-aleros-pívots), según el
+#: reglamento, página "Initial team": 2-2-1, 1-2-2, 2-1-2, 1-3-1 y 3-1-1.
+#: Con cuatro bases, cuatro aleros y dos pívots en plantilla, esas cinco son
+#: exactamente todas las que tienen al menos uno de cada puesto. La regla se
+#: aplica así —mínimo uno de cada— y la lista queda como documentación.
+ALLOWED_FORMATIONS = {(2, 2, 1), (1, 2, 2), (2, 1, 2), (1, 3, 1), (3, 1, 1)}
+MIN_STARTERS_PER_POSITION = 1
+
 
 def normalize_position(raw: Any) -> str | None:
     """Reduce cualquier etiqueta de posición a G / F / C."""
@@ -80,19 +88,18 @@ class Lineup:
 
     @property
     def starters(self) -> list[Candidate]:
-        """Los cinco del quinteto: los cinco mayores proyectados."""
-        return _by_projection(self.players)[:STARTERS]
+        """Los cinco del quinteto, con al menos uno de cada puesto."""
+        return assign_roles(self.players)[0]
 
     @property
     def sixth(self) -> Candidate | None:
         """El sexto hombre, que también puntúa al 100 %."""
-        ordered = _by_projection(self.players)
-        return ordered[STARTERS] if len(ordered) > STARTERS else None
+        return assign_roles(self.players)[1]
 
     @property
     def bench(self) -> list[Candidate]:
         """Los cuatro que puntúan a la mitad."""
-        return _by_projection(self.players)[FULL_SCORING_SLOTS:]
+        return assign_roles(self.players)[2]
 
     @property
     def scored_projection(self) -> float:
@@ -102,9 +109,9 @@ class Lineup:
         compatibilidad, pero no es lo que se juega: cuatro de esos diez puntúan
         a la mitad y uno dobla.
         """
-        ordered = _by_projection(self.players)
-        full = sum(c.projection for c in ordered[:FULL_SCORING_SLOTS])
-        half = BENCH_MULTIPLIER * sum(c.projection for c in ordered[FULL_SCORING_SLOTS:])
+        starters, sixth, bench = assign_roles(self.players)
+        full = sum(c.projection for c in starters) + (sixth.projection if sixth else 0.0)
+        half = BENCH_MULTIPLIER * sum(c.projection for c in bench)
         captain_bonus = (
             (CAPTAIN_MULTIPLIER - 1) * self.captain.projection if self.captain else 0.0
         )
@@ -140,6 +147,53 @@ class Lineup:
 def _by_projection(players: Sequence[Candidate]) -> list[Candidate]:
     """De mayor a menor proyección. Quién va al quinteto sale de aquí."""
     return sorted(players, key=lambda c: -c.projection)
+
+
+def assign_roles(
+    players: Sequence[Candidate],
+) -> tuple[list[Candidate], Candidate | None, list[Candidate]]:
+    """El mejor reparto posible de una plantilla fija: (quinteto, sexto, banquillo).
+
+    El quinteto y el sexto puntúan igual (100 %), así que lo que importa es
+    QUÉ seis puntúan enteros, y la única regla que los condiciona es la de la
+    formación: en el quinteto tiene que haber al menos un jugador de cada
+    puesto. El óptimo es:
+
+    1. Si entre los seis mejores falta algún puesto, el mejor de ese puesto
+       entra obligado (cambiarlo por cualquier otro de su puesto solo resta).
+    2. El resto de huecos, para los de mayor proyección.
+    3. El sexto hombre es el peor de esos seis cuya salida no deje al quinteto
+       sin un puesto; el capitán, el mejor, que siempre queda en el quinteto.
+
+    Da lo mismo que una búsqueda exhaustiva (hay un test que lo comprueba) y
+    es lo que usa también `squad.ts` en la web, para que las dos cuenten igual.
+    """
+    ranked = _by_projection(players)
+    needed = [p for p in POSITION_QUOTA if any(c.position == p for c in ranked)]
+    top = ranked[:FULL_SCORING_SLOTS]
+    mandatory = [
+        next(c for c in ranked if c.position == p)
+        for p in needed
+        if not any(c.position == p for c in top)
+    ]
+    rest = [c for c in ranked if c not in mandatory]
+    full = _by_projection(mandatory + rest[: max(FULL_SCORING_SLOTS - len(mandatory), 0)])
+
+    sixth: Candidate | None = None
+    if len(full) > STARTERS:
+        for candidate in reversed(full[1:]):
+            remaining = [c for c in full if c is not candidate]
+            if all(any(c.position == p for c in remaining) for p in needed):
+                sixth = candidate
+                break
+    starters = [c for c in full if c is not sixth]
+    bench = [c for c in ranked if c not in full]
+    return starters, sixth, bench
+
+
+def formation(starters: Sequence[Candidate]) -> tuple[int, int, int]:
+    """(bases, aleros, pívots) de un quinteto."""
+    return tuple(sum(1 for c in starters if c.position == p) for p in "GFC")  # type: ignore[return-value]
 
 
 def _pick_captain(players: Sequence[Candidate]) -> Candidate | None:
@@ -212,6 +266,11 @@ def _optimize_ilp(
     Con z ≤ y ≤ x, el coeficiente `0,5·x + 0,5·y + z` vale 0,5 para el
     banquillo, 1 para el quinteto y el sexto, y 2 para el capitán. Es
     exactamente lo que dice el reglamento, y sigue siendo lineal.
+
+    Y una cuarta, s = está en el quinteto (cinco, dentro del grupo del 100 %,
+    con el capitán dentro), para imponer la formación: al menos un jugador de
+    cada puesto en el quinteto. No cambia la puntuación —quinteto y sexto
+    puntúan igual— pero sin ella el óptimo podía no ser alineable.
     """
     import pulp
 
@@ -219,6 +278,7 @@ def _optimize_ilp(
     variables = {c.key: pulp.LpVariable(f"x_{i}", cat="Binary") for i, c in enumerate(pool)}
     scoring = {c.key: pulp.LpVariable(f"y_{i}", cat="Binary") for i, c in enumerate(pool)}
     captain = {c.key: pulp.LpVariable(f"z_{i}", cat="Binary") for i, c in enumerate(pool)}
+    starter = {c.key: pulp.LpVariable(f"s_{i}", cat="Binary") for i, c in enumerate(pool)}
     by_key = {c.key: c for c in pool}
 
     coach_vars = {c.key: pulp.LpVariable(f"e_{i}", cat="Binary") for i, c in enumerate(coaches)}
@@ -236,9 +296,19 @@ def _optimize_ilp(
 
     problem += pulp.lpSum(scoring.values()) == min(FULL_SCORING_SLOTS, len(pool))
     problem += pulp.lpSum(captain.values()) == 1
+    problem += pulp.lpSum(starter.values()) == min(STARTERS, len(pool))
     for k in variables:
         problem += scoring[k] <= variables[k]
-        problem += captain[k] <= scoring[k]
+        problem += starter[k] <= scoring[k]
+        problem += captain[k] <= starter[k]
+
+    # Formación: al menos uno de cada puesto en el quinteto.
+    for position in POSITION_QUOTA:
+        if any(c.position == position for c in pool):
+            problem += (
+                pulp.lpSum(v for k, v in starter.items() if by_key[k].position == position)
+                >= MIN_STARTERS_PER_POSITION
+            )
 
     # El entrenador es obligatorio, pero solo si hay de dónde elegirlo.
     if coach_vars:

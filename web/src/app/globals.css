@@ -4391,6 +4391,12 @@ a.eq-grp-name:hover {
   color: var(--ink-muted);
 }
 
+/* La cabecera del quinteto va pegada a la pista: el hueco del grid de la
+   consola más su propio margen la separaban demasiado. */
+.court-head {
+  margin-bottom: -8px;
+}
+
 .bench-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

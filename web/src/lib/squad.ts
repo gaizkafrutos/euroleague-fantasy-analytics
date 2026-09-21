@@ -21,6 +21,10 @@ export const STARTERS = 5;
 /** Quinteto + sexto hombre: los que puntúan enteros. */
 export const FULL_SCORERS = STARTERS + 1;
 export const MAX_PER_CLUB = 6;
+/** Formaciones del quinteto que admite el reglamento (bases-aleros-pívots):
+ *  2-2-1, 1-2-2, 2-1-2, 1-3-1 y 3-1-1. Con 4-4-2 en plantilla son justo las
+ *  que tienen al menos uno de cada puesto, que es como se aplica. */
+export const ALLOWED_FORMATIONS = ["2-2-1", "1-2-2", "2-1-2", "1-3-1", "3-1-1"] as const;
 export const DEFAULT_BUDGET = 100;
 
 /* ------------------------------------------------------------------ roles */
@@ -34,26 +38,61 @@ export interface Roles {
   captain: Player | null;
 }
 
-/** El mejor reparto posible para diez jugadores dados.
+/** El mejor reparto posible para una plantilla dada.
  *
- *  Con la plantilla fija, maximizar 2·capitán + quinteto + sexto + ½·banquillo
- *  se resuelve ordenando: los seis de mayor proyección puntúan enteros (pasar a
- *  uno del banquillo al grupo del 100 % gana la mitad de su proyección, así que
- *  conviene subir siempre a los mejores), y el capitán es el mejor de todos,
- *  que ya está en el quinteto. No hace falta programación entera para esto.
+ *  Quinteto y sexto hombre puntúan igual (100 %), así que lo que importa es
+ *  QUÉ seis puntúan enteros. La única regla que los condiciona es la
+ *  formación: en el quinteto tiene que haber al menos uno de cada puesto.
  *
- *  El reglamento no publica restricciones de formación en el quinteto, así que
- *  no se imponen. Si el juego las tiene, este es el sitio donde añadirlas.
+ *  1. Si entre los seis mejores falta algún puesto, el mejor de ese puesto
+ *     entra obligado.
+ *  2. El resto de huecos, para los de mayor proyección.
+ *  3. El sexto es el peor de esos seis cuya salida no deje al quinteto sin un
+ *     puesto; el capitán, el mejor, que siempre queda en el quinteto.
+ *
+ *  Es el mismo algoritmo que `assign_roles()` en optimizer.py, y allí un test
+ *  lo compara con una búsqueda exhaustiva sobre 300 plantillas aleatorias.
  */
 export function assignRoles(players: Player[]): Roles {
   const ranked = [...players].sort((a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0));
-  const starters = ranked.slice(0, STARTERS);
+  const positions = ["G", "F", "C"] as const;
+  const needed = positions.filter((p) => ranked.some((player) => player.position === p));
+  const top = ranked.slice(0, FULL_SCORERS);
+
+  const mandatory = needed
+    .filter((p) => !top.some((player) => player.position === p))
+    .map((p) => ranked.find((player) => player.position === p))
+    .filter((player): player is Player => Boolean(player));
+  const rest = ranked.filter((player) => !mandatory.includes(player));
+  const full = [...mandatory, ...rest.slice(0, Math.max(FULL_SCORERS - mandatory.length, 0))].sort(
+    (a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0),
+  );
+
+  let sixth: Player | null = null;
+  if (full.length > STARTERS) {
+    for (const candidate of [...full.slice(1)].reverse()) {
+      const remaining = full.filter((player) => player !== candidate);
+      if (needed.every((p) => remaining.some((player) => player.position === p))) {
+        sixth = candidate;
+        break;
+      }
+    }
+  }
+
+  const starters = full.filter((player) => player !== sixth);
   return {
     starters,
-    sixth: ranked[STARTERS] ?? null,
-    bench: ranked.slice(FULL_SCORERS),
+    sixth,
+    bench: ranked.filter((player) => !full.includes(player)),
     captain: starters[0] ?? null,
   };
+}
+
+/** "3-1-1": bases, aleros y pívots del quinteto. */
+export function formationOf(starters: Player[]): string {
+  return (["G", "F", "C"] as const)
+    .map((p) => starters.filter((player) => player.position === p).length)
+    .join("-");
 }
 
 /** Lo que puntúa la plantilla con el baremo real, entrenador incluido. */
