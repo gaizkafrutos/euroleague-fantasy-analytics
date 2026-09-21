@@ -18,18 +18,19 @@ export default function Header({ round, totalRounds }: Props) {
   return (
     <header className="masthead">
       <div className="shell masthead-inner">
-        <Link href="/" className="wordmark" aria-label="Euroanalysis, inicio">
+        <Link href="/" className="wordmark" aria-label="HoopIQ, inicio">
           <span className="wordmark-mark" aria-hidden>
-            {/* Tres barras ascendentes: análisis y progresión. Un símbolo
-                dibujado se lee como marca; un círculo con CSS, no. */}
-            <svg viewBox="0 0 20 20" fill="none">
-              <rect x="2" y="11" width="3.6" height="7" rx="1.2" fill="currentColor" opacity="0.62" />
-              <rect x="8.2" y="6.5" width="3.6" height="11.5" rx="1.2" fill="currentColor" opacity="0.82" />
-              <rect x="14.4" y="2" width="3.6" height="16" rx="1.2" fill="currentColor" />
-            </svg>
+            {/* El símbolo es el del logotipo original. Dos versiones: trazo
+                blanco para fondo oscuro y trazo tinta para el tema claro. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="mark-on-dark" src="/brand/hoopiq-mark-128.png" alt="" width={32} height={32} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="mark-on-light" src="/brand/hoopiq-mark-light-128.png" alt="" width={32} height={32} />
           </span>
           <span className="wordmark-text">
-            <span className="wordmark-name">Euroanalysis</span>
+            <span className="wordmark-name">
+              Hoop<span className="wordmark-iq">IQ</span>
+            </span>
             <span className="wordmark-sub">Fantasy Challenge</span>
           </span>
         </Link>

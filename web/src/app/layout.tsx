@@ -19,29 +19,29 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Euroanalysis — análisis del EuroLeague Fantasy Challenge",
-    template: "%s · Euroanalysis",
+    default: "HoopIQ — análisis del EuroLeague Fantasy Challenge",
+    template: "%s · HoopIQ",
   },
   description:
     "Cruce de los precios del EuroLeague Fantasy Challenge con las estadísticas oficiales de la EuroLiga: valor por crédito, tendencias de precio, consistencia y cambios de rol.",
-  applicationName: "Euroanalysis",
+  applicationName: "HoopIQ",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "Euroanalysis",
+    title: "HoopIQ",
     statusBarStyle: "black-translucent",
   },
   openGraph: {
-    title: "Euroanalysis",
+    title: "HoopIQ",
     description:
       "Chollos, subidas de precio y cambios de rol en el EuroLeague Fantasy Challenge, con datos reales.",
     type: "website",
     locale: "es_ES",
-    siteName: "Euroanalysis",
+    siteName: "HoopIQ",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Euroanalysis",
+    title: "HoopIQ",
     description:
       "Chollos, subidas de precio y cambios de rol en el EuroLeague Fantasy Challenge, con datos reales.",
   },

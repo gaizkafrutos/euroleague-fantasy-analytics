@@ -4,8 +4,8 @@ import type { MetadataRoute } from "next";
  *  app y no un marcador del navegador. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Euroanalysis — EuroLeague Fantasy Challenge",
-    short_name: "Euroanalysis",
+    name: "HoopIQ — EuroLeague Fantasy Challenge",
+    short_name: "HoopIQ",
     description:
       "Precios del EuroLeague Fantasy Challenge cruzados con las estadísticas oficiales de la EuroLiga.",
     lang: "es",

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sistema de diseño — Euroanalysis
+   Sistema de diseño — HoopIQ
 
    Principio rector: contención. La versión anterior tenía degradado en los
    titulares, en el borde de cada tarjeta y en cada control activo; cuando todo
@@ -35,9 +35,9 @@
   --accent-ink: #07080c;
   --accent-soft: rgba(79, 213, 255, 0.12);
   --accent-line: rgba(79, 213, 255, 0.4);
-  /* Sin degradado: el logotipo es un plano de acento. En esta dirección no
-     hay degradados en ningún sitio, que es lo que hundió la primera versión. */
-  --mark: var(--accent);
+  /* Azul de marca, sacado del logotipo: solo para el «IQ» del nombre.
+     Es distinto del acento a propósito: la marca no es un botón. */
+  --brand: #12a0fc;
 
   /* Las señales de fantasy tienen color propio: ni del sitio ni del club. */
   --fantasy: #9d7bff;
@@ -90,6 +90,7 @@
   --ring: rgba(12, 15, 22, 0.1);
 
   --accent: #0e7490;
+  --brand: #0873cc;
   --accent-ink: #ffffff;
   --accent-soft: rgba(14, 116, 144, 0.09);
   --accent-line: rgba(14, 116, 144, 0.36);
@@ -125,6 +126,7 @@
     --rule: rgba(12, 15, 22, 0.16);
     --ring: rgba(12, 15, 22, 0.1);
     --accent: #0e7490;
+  --brand: #0873cc;
     --accent-ink: #ffffff;
     --accent-soft: rgba(14, 116, 144, 0.09);
     --accent-line: rgba(14, 116, 144, 0.36);
@@ -360,20 +362,47 @@ p {
 .wordmark-mark {
   width: 32px;
   height: 32px;
-  border-radius: 9px;
-  background: var(--mark);
-  /* Las barras del símbolo heredan este color: tinta sobre el acento. */
-  color: var(--accent-ink);
   display: grid;
   place-items: center;
   flex: none;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
-.wordmark-mark svg {
-  width: 17px;
-  height: 17px;
+.wordmark-mark img {
+  width: 32px;
+  height: 32px;
   display: block;
+}
+
+/* Qué versión del símbolo se ve: sigue exactamente la lógica del tema. */
+.wordmark-mark .mark-on-light {
+  display: none;
+}
+
+:root[data-theme="light"] .wordmark-mark .mark-on-dark {
+  display: none;
+}
+
+:root[data-theme="light"] .wordmark-mark .mark-on-light {
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .wordmark-mark .mark-on-dark {
+    display: none;
+  }
+
+  :root:not([data-theme="dark"]) .wordmark-mark .mark-on-light {
+    display: block;
+  }
+}
+
+/* La portada es siempre oscura, elija lo que elija el tema. */
+:root:has(.portada) .wordmark-mark .mark-on-dark {
+  display: block;
+}
+
+:root:has(.portada) .wordmark-mark .mark-on-light {
+  display: none;
 }
 
 .wordmark-text {
@@ -387,6 +416,10 @@ p {
   font-weight: 600;
   font-size: 1.04rem;
   letter-spacing: -0.024em;
+}
+
+.wordmark-iq {
+  color: var(--brand);
 }
 
 .wordmark-sub {
@@ -2944,6 +2977,7 @@ table.data th.num {
   --accent-ink: #07080c;
   --accent-soft: rgba(79, 213, 255, 0.12);
   --accent-line: rgba(79, 213, 255, 0.4);
+  --brand: #12a0fc;
   --fantasy: #9d7bff;
   --credit: #e3b04b;
   --series-1: #4287ea;

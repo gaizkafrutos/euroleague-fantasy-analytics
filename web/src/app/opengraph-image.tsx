@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 import { meta, pricedPlayers, rosterPlayers } from "@/lib/data";
 
@@ -8,9 +10,14 @@ import { meta, pricedPlayers, rosterPlayers } from "@/lib/data";
  *  en el build con los números reales del último snapshot, así que la tarjeta
  *  envejece con el proyecto en vez de quedarse anclada a un PNG de hace meses.
  */
-export const alt = "Euroanalysis — análisis del EuroLeague Fantasy Challenge";
+export const alt = "HoopIQ — análisis del EuroLeague Fantasy Challenge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+/** El símbolo del logotipo, leído del disco en el build y embebido. */
+const markSrc = `data:image/png;base64,${readFileSync(
+  join(process.cwd(), "public/brand/hoopiq-mark.png"),
+).toString("base64")}`;
 
 export default function OpengraphImage() {
   const universe = meta.hasPrices ? pricedPlayers : rosterPlayers;
@@ -59,25 +66,12 @@ export default function OpengraphImage() {
         />
 
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 66,
-              height: 66,
-              borderRadius: 18,
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "center",
-              gap: 5,
-              paddingBottom: 17,
-              background: "linear-gradient(140deg, #ff8a3d 0%, #ff5a4e 48%, #8b46f0 100%)",
-            }}
-          >
-            <div style={{ width: 10, height: 17, borderRadius: 3, background: "rgba(255,255,255,0.65)" }} />
-            <div style={{ width: 10, height: 27, borderRadius: 3, background: "rgba(255,255,255,0.84)" }} />
-            <div style={{ width: 10, height: 37, borderRadius: 3, background: "#fff" }} />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={markSrc} width={70} height={70} alt="" />
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ fontSize: 34, fontWeight: 700, letterSpacing: -0.8 }}>Euroanalysis</div>
+            <div style={{ display: "flex", fontSize: 34, fontWeight: 700, letterSpacing: -0.8 }}>
+              Hoop<span style={{ color: "#12a0fc" }}>IQ</span>
+            </div>
             <div style={{ fontSize: 17, letterSpacing: 4, color: "#9aa3b2" }}>FANTASY CHALLENGE</div>
           </div>
         </div>
