@@ -2908,6 +2908,469 @@ table.data th.num {
 }
 
 /* --------------------------------------------------------------------------
+   Portada
+
+   DECISIÓN: esta pantalla es siempre oscura, aunque el resto del sitio tenga
+   los dos temas. La foto del balón está hecha sobre negro y en claro cantaría.
+   Por eso se vuelven a declarar los tokens oscuros mientras la portada está en
+   pantalla — cabecera y pie incluidos, que si no quedaría una franja blanca
+   sobre un plano negro. Va después del bloque de tema claro a propósito: misma
+   especificidad, gana el orden. El conmutador de tema se oculta en esta ruta
+   desde `Header.tsx`, porque un botón que no hace nada visible es peor que no
+   tenerlo.
+
+   Sin recuadros, sin títulos, todo en blanco. Cada frase aparece de la nada al
+   entrar en la franja central y se va al salir, subiendo o bajando.
+   `position: sticky` + `IntersectionObserver`. Cero dependencias.
+   -------------------------------------------------------------------------- */
+:root:has(.portada) {
+  color-scheme: dark;
+  --plane: #07080c;
+  --surface: #101319;
+  --surface-2: #171b23;
+  --surface-3: #212734;
+  --surface-hover: #1a1f29;
+  --ink: #f2f4f8;
+  --ink-2: #9aa3b2;
+  --ink-muted: #767f8f;
+  --hairline: rgba(255, 255, 255, 0.07);
+  --rule: rgba(255, 255, 255, 0.14);
+  --ring: rgba(255, 255, 255, 0.1);
+  --accent: #4fd5ff;
+  --accent-ink: #07080c;
+  --accent-soft: rgba(79, 213, 255, 0.12);
+  --accent-line: rgba(79, 213, 255, 0.4);
+  --fantasy: #9d7bff;
+  --credit: #e3b04b;
+  --series-1: #4287ea;
+  --series-2: #e85f2c;
+  --series-3: #14a877;
+  --good: #3ddc84;
+  --critical: #ff6b6b;
+  --grid: rgba(255, 255, 255, 0.06);
+  --axis: rgba(255, 255, 255, 0.2);
+}
+
+/* El balón llega hasta arriba: la cabecera flota encima en vez de cortarlo. */
+:root:has(.portada) .masthead {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+}
+
+:root:has(.portada) .footer {
+  border-top: 0;
+  margin-top: 0;
+}
+
+.portada {
+  --ink-soft: rgba(242, 244, 248, 0.62);
+  --ball: #e0491f;
+  position: relative;
+}
+
+.portada .story {
+  position: relative;
+}
+
+/* ------------------------------------------------------------- el balón */
+.portada .ball {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  z-index: 0;
+  overflow: hidden;
+  /* Se saca del flujo tirando del margen: el texto pasa por delante en vez
+     de empezar una pantalla más abajo. */
+  margin-bottom: -100svh;
+}
+
+.portada .ball img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 92% 38%;
+  transform: scale(var(--s, 1)) translate3d(0, var(--ty, 0px), 0);
+  transition: transform 1.1s cubic-bezier(0.22, 0.7, 0.3, 1);
+  will-change: transform;
+}
+
+/* El negro de la foto no es exactamente el del plano: se funde por los bordes
+   para que no se vea el corte, y de paso deja legible el texto encima. */
+.portada .ball::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      var(--plane) 0%,
+      rgba(7, 8, 12, 0.92) 34%,
+      rgba(7, 8, 12, 0.35) 62%,
+      transparent 88%
+    ),
+    linear-gradient(0deg, var(--plane) 0%, transparent 26%),
+    linear-gradient(180deg, var(--plane) 0%, transparent 16%);
+}
+
+.portada .ball-glow {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  width: 64vmin;
+  aspect-ratio: 1;
+  transform: translateY(-50%) scale(var(--g, 1));
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--ball) 24%, transparent) 0%,
+    transparent 62%
+  );
+  transition: transform 1.3s cubic-bezier(0.22, 0.7, 0.3, 1);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (min-width: 900px) {
+  /* Apaisada y entera: la foto se encuadró así, con el balón dentro. */
+  .portada .ball img {
+    object-fit: contain;
+    object-position: 100% 50%;
+  }
+
+  .portada .ball::after {
+    background:
+      linear-gradient(
+        90deg,
+        var(--plane) 0%,
+        rgba(7, 8, 12, 0.86) 28%,
+        rgba(7, 8, 12, 0.15) 54%,
+        transparent 72%
+      ),
+      linear-gradient(0deg, var(--plane) 0%, transparent 22%);
+  }
+}
+
+/* -------------------------------------------------- los tiempos del relato */
+.portada .beats {
+  position: relative;
+  z-index: 2;
+  padding-inline: 24px;
+}
+
+.portada .beat {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.portada .beat-inner {
+  max-width: 24ch;
+}
+
+.portada .beat.is-lede .beat-inner {
+  max-width: 28ch;
+}
+
+/* El estado oculto solo existe si el script ha arrancado: sin JS se lee todo. */
+.portada[data-anim="on"] .beat-inner {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(7px);
+  transition:
+    opacity 0.62s ease,
+    transform 0.62s cubic-bezier(0.22, 0.7, 0.3, 1),
+    filter 0.62s ease;
+}
+
+.portada[data-anim="on"] .beat.is-on .beat-inner {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.portada .beat p {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 108, "wght" 620;
+  font-size: clamp(1.7rem, 5.2vw, 2.7rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.portada .beat p + p {
+  margin-top: 0.7em;
+}
+
+.portada .beat .q {
+  font-variation-settings: "wdth" 88, "wght" 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.portada .beat p.small {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(0.98rem, 2.3vw, 1.1rem);
+  line-height: 1.6;
+  letter-spacing: 0;
+  margin-top: 1.1em;
+}
+
+/* ------------------------------------------------------------ el arranque */
+.portada .beat.is-hero .beat-inner {
+  max-width: 15ch;
+}
+
+.portada .beat.is-hero h1 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 114, "wght" 800;
+  font-size: clamp(2.3rem, 6.4vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.portada .beat.is-hero .sub {
+  margin: 20px 0 0;
+  max-width: 34ch;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(0.98rem, 2.2vw, 1.08rem);
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.portada-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.portada .btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.93rem;
+}
+
+.portada .btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.portada .btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.portada .btn-ghost {
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.portada .btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+.portada .hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 36px;
+  font-family: var(--font);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.portada .hint span {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(var(--ink), transparent);
+}
+
+/* --------------------------------------------------------------- progreso */
+.portada-pips {
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 3;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 1100px) {
+  .portada-pips {
+    display: flex;
+  }
+}
+
+.portada-pips i {
+  display: block;
+  width: 2px;
+  height: 20px;
+  border-radius: 1px;
+  background: var(--rule);
+  transition:
+    background 0.3s ease,
+    height 0.3s ease;
+}
+
+.portada-pips i.on {
+  background: var(--ink);
+  height: 32px;
+}
+
+@media (min-width: 900px) {
+  .portada .beats {
+    padding-left: 64px;
+  }
+
+  .portada .beat-inner {
+    max-width: 26ch;
+  }
+
+  .portada .beat.is-lede .beat-inner {
+    max-width: 30ch;
+  }
+
+  .portada .beat.is-hero .beat-inner {
+    max-width: 16ch;
+  }
+}
+
+@media (min-width: 1300px) {
+  .portada .beats {
+    padding-left: max(64px, calc((100vw - var(--max-width)) / 2));
+  }
+}
+
+/* ----------------------------------------------------------------- cierre */
+.portada .outro {
+  position: relative;
+  z-index: 2;
+  padding-block: clamp(48px, 9vw, 86px) 64px;
+}
+
+.portada .outro-lead {
+  margin: 0 0 30px;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 108, "wght" 620;
+  font-size: clamp(1.4rem, 3.6vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  max-width: 20ch;
+}
+
+.portada .outro-links {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  max-width: 640px;
+}
+
+.portada .outro-links a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 2px;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+  transition: padding 0.18s ease;
+}
+
+.portada .outro-links a:hover {
+  padding-left: 8px;
+}
+
+.portada .outro-links .t {
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 104, "wght" 650;
+  font-size: 1.05rem;
+}
+
+.portada .outro-links .d {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  text-align: right;
+}
+
+.portada .outro-links .arrow {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.portada .outro-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.portada .outro-strip .sep {
+  opacity: 0.5;
+}
+
+.portada .outro-strip a {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portada .ball img,
+  .portada .ball-glow {
+    transform: none;
+  }
+
+  .portada[data-anim="on"] .beat-inner {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .portada .beat {
+    min-height: 0;
+    padding-block: 30px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mercado — reparto de roles del equipo óptimo
+   -------------------------------------------------------------------------- */
+.badge-half {
+  color: var(--ink-muted);
+}
+
+/* La fila del entrenador no lleva a ninguna parte: no hay ficha de entrenador,
+   así que es un <span> con la forma del enlace pero sin el comportamiento. */
+.lineup-list .lineup-static {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+/* --------------------------------------------------------------------------
    Visibilidad por ancho
 
    En vez de una tabla con scroll lateral, cada ancho tiene su propia forma:

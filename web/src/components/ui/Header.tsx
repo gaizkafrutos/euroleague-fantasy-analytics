@@ -55,7 +55,9 @@ export default function Header({ round, totalRounds }: Props) {
             Jornada <b>{round}</b>
             <span className="muted">/ {totalRounds}</span>
           </span>
-          <ThemeToggle />
+          {/* La portada es siempre oscura, así que ahí el conmutador no haría
+              nada visible. Un botón que no responde es peor que no tenerlo. */}
+          {pathname === "/" ? null : <ThemeToggle />}
         </div>
       </div>
     </header>

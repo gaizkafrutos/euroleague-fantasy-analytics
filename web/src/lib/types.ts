@@ -162,7 +162,8 @@ export interface Team {
 
 export interface LineupPlayer {
   key: string;
-  name: string;
+  /** Null en los entrenadores: no cruzan con el censo oficial. */
+  name: string | null;
   position: Position;
   club: string;
   price: number;

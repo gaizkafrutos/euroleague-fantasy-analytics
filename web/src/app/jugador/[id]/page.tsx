@@ -114,7 +114,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         ) : null}
 
         <div className="shell ficha-inner">
-          <Link href="/" className="crumb">
+          <Link href="/mercado" className="crumb">
             <span aria-hidden>←</span> Mercado
           </Link>
 

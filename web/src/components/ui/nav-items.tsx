@@ -10,7 +10,7 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { href: "/", label: "Mercado", short: "Mercado", icon: "market" },
+  { href: "/mercado", label: "Mercado", short: "Mercado", icon: "market" },
   { href: "/mi-equipo", label: "Mi equipo", short: "Mi equipo", icon: "squad" },
   { href: "/equipos", label: "Equipos", short: "Equipos", icon: "teams" },
   { href: "/metodologia", label: "Metodología", short: "Método", icon: "method" },
@@ -57,8 +57,13 @@ export function NavIcon({ name }: { name: NavItem["icon"] }) {
   );
 }
 
-/** ¿Este enlace corresponde a la ruta actual? */
+/** ¿Este enlace corresponde a la ruta actual?
+ *
+ *  Las fichas de jugador cuelgan del mercado: se llega a ellas desde ahí y no
+ *  tienen entrada propia en la navegación. Antes colgaban de `/`, que era el
+ *  mercado; ahora `/` es la portada y no aparece en la barra. */
 export function isCurrent(href: string, pathname: string): boolean {
-  if (href === "/") return pathname === "/" || pathname.startsWith("/jugador");
+  if (href === "/mercado") return pathname.startsWith("/mercado") || pathname.startsWith("/jugador");
+  if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
