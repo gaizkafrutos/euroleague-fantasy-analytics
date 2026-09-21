@@ -2643,9 +2643,13 @@ table.data th.num {
   display: grid;
   place-items: center;
   aspect-ratio: 3 / 4;
+  max-width: 200px;
+  margin-inline: auto;
   border-radius: var(--radius);
-  background: color-mix(in srgb, var(--club) 26%, var(--surface));
-  border: 1px solid var(--hairline);
+  /* Discontinuo y sin relleno, como el hueco del entrenador en la cancha:
+     tiene que leerse como "no hay foto", no como una foto que no carga. */
+  background: transparent;
+  border: 1px dashed var(--rule);
   font-family: var(--font-title);
   font-variation-settings: "wdth" 110, "wght" 800;
   font-size: clamp(3rem, 14vw, 6rem);
@@ -3368,6 +3372,1186 @@ table.data th.num {
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
   background: var(--surface);
+}
+
+/* --------------------------------------------------------------------------
+   Equipos — clasificación y ficha de club
+
+   Prefijo `eq-` en todo: `.row`, `.section` y `.eyebrow` ya existen en el
+   sistema con otro significado, y aquí no se pisa nada.
+   -------------------------------------------------------------------------- */
+.eq-head h1 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 112, "wght" 800;
+  font-size: clamp(1.9rem, 6.5vw, 3.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  max-width: 20ch;
+}
+
+.eq-head .lede {
+  margin-top: 14px;
+  max-width: 62ch;
+}
+
+.eq-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 10px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.eq-eyebrow i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ------------------------------------------------------------ clasificación */
+.eq-standings {
+  margin-top: 26px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.eq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eq-row {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 26px minmax(0, 1fr) 56px 62px;
+  gap: 10px;
+  padding: 11px 14px;
+  color: var(--ink);
+  background: var(--surface);
+  border-top: 1px solid var(--hairline);
+}
+
+a.eq-row:hover {
+  background: var(--surface-2);
+}
+
+a.eq-row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.eq-thead {
+  border-top: 0;
+  background: var(--surface-2);
+  color: var(--ink-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eq-row .num {
+  text-align: right;
+}
+
+.eq-pos {
+  color: var(--ink-muted);
+  font-size: 0.84rem;
+}
+
+.eq-club-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.eq-club-text {
+  min-width: 0;
+}
+
+.eq-crest {
+  flex: none;
+  object-fit: contain;
+}
+
+.eq-crest-empty {
+  display: inline-block;
+  flex: none;
+  border-radius: 50%;
+  background: var(--surface-3);
+}
+
+.eq-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.eq-next-inline {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 3px;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+
+.eq-net {
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 85, "wght" 600;
+}
+
+.eq-net.is-pos {
+  color: var(--good);
+}
+
+.eq-net.is-neg {
+  color: var(--critical);
+}
+
+.eq-nodata {
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+}
+
+.eq-wide {
+  display: none;
+}
+
+.eq-next {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.eq-next b {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--ink-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.eq-next i {
+  font-style: normal;
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+}
+
+@media (min-width: 761px) {
+  .eq-row {
+    grid-template-columns: 30px minmax(0, 1fr) 64px 66px 66px 66px 60px 160px;
+  }
+
+  .eq-wide {
+    display: block;
+  }
+
+  .eq-next-inline {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------ ficha de club */
+.eq-club {
+  --stat: var(--stat-dark, var(--accent));
+  padding-block: 18px 8px;
+}
+
+:root[data-theme="light"] .eq-club {
+  --stat: var(--stat-light, var(--accent));
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .eq-club {
+    --stat: var(--stat-light, var(--accent));
+  }
+}
+
+.eq-hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: 14px;
+  padding: 30px 16px 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.eq-hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40%;
+  width: min(640px, 130%);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--stat) 24%, transparent) 0%,
+    color-mix(in srgb, var(--club) 40%, transparent) 36%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+:root[data-theme="light"] .eq-hero::before {
+  opacity: 0.3;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .eq-hero::before {
+    opacity: 0.3;
+  }
+}
+
+.eq-hero > * {
+  position: relative;
+}
+
+.eq-hero-crest {
+  display: block;
+  width: clamp(64px, 16vw, 84px);
+  height: auto;
+  margin: 0 auto 14px;
+}
+
+.eq-hero h1 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 112, "wght" 800;
+  font-size: clamp(1.7rem, 6vw, 2.9rem);
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.eq-hero-sub {
+  margin: 10px 0 0;
+  color: var(--ink-2);
+  font-size: 0.86rem;
+}
+
+.eq-pills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.eq-pill {
+  border: 1px solid var(--hairline);
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 0.8rem;
+  color: var(--ink-2);
+}
+
+.eq-pill b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.eq-section {
+  margin-top: 34px;
+}
+
+.eq-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.eq-section-head h2 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 104, "wght" 700;
+  font-size: 1.08rem;
+}
+
+.eq-section-head p {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.eq-foot-note {
+  margin: 10px 0 0;
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  max-width: 70ch;
+}
+
+/* Cuatro factores: número, barra de percentil en el color del club. */
+.eq-factors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.eq-factor {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 14px 15px 13px;
+}
+
+.eq-factor dt {
+  margin: 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.eq-factor dd {
+  margin: 5px 0 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 85, "wght" 700;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.eq-factor dd em {
+  font-style: normal;
+  font-size: 0.46em;
+  color: var(--ink-muted);
+  margin-left: 2px;
+}
+
+.eq-track {
+  position: relative;
+  margin-top: 10px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.eq-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--p) * 1%);
+  background: var(--stat);
+  border-radius: 2px;
+}
+
+.eq-cap {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.66rem;
+  color: var(--ink-muted);
+}
+
+.eq-rows {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.eq-rows > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 15px;
+  background: var(--surface);
+}
+
+.eq-rows dt {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-2);
+}
+
+.eq-rows dd {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 85, "wght" 600;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.eq-rows dd small {
+  margin-left: 6px;
+  font-family: var(--font);
+  font-size: 0.72em;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+/* Próximos cinco: el borde superior dice lo duro que es el rival. */
+.eq-fixtures {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+}
+
+.eq-fx {
+  display: grid;
+  gap: 7px;
+  padding: 12px 13px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-top: 2px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.eq-fx.is-hard {
+  border-top-color: var(--critical);
+}
+
+.eq-fx.is-easy {
+  border-top-color: var(--good);
+}
+
+.eq-fx-round {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.eq-fx-rival {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.eq-fx-rival b {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.eq-fx-rival:hover b {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.eq-fx-date {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+
+/* Plantilla por posición, con el color de serie de cada una en el borde. */
+.eq-squad {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+  /* Sin esto, la columna de aleros se estira hasta la altura de la de bases
+     y deja una caja medio vacía. */
+  align-items: start;
+}
+
+.eq-grp {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.eq-grp h3 {
+  margin: 0;
+  padding: 11px 15px;
+  border-bottom: 1px solid var(--hairline);
+  border-left: 3px solid var(--pos-color, var(--ink-muted));
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.eq-grp ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eq-grp li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 9px 15px;
+  border-top: 1px solid var(--hairline);
+}
+
+.eq-grp li:first-child {
+  border-top: 0;
+}
+
+.eq-grp-name {
+  font-size: 0.86rem;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.eq-grp-name:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.eq-grp-price {
+  font-size: 0.78rem;
+  color: var(--credit);
+}
+
+.eq-grp-proj {
+  min-width: 44px;
+  text-align: right;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 85, "wght" 600;
+  font-size: 0.95rem;
+}
+
+.eq-grp-proj.is-none {
+  font-family: var(--font);
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+@media (min-width: 761px) {
+  .eq-factors {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .eq-squad {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mi equipo — la cancha
+
+   Aquí conviven once jugadores de clubes distintos, así que el color de las
+   placas codifica PUESTO (las tres series ya validadas), no club.
+
+   La rampa de aportación es ordinal y de un solo tono: monótona en luz, del
+   capitán (lo que más aporta por cabeza) al banquillo. Se validó en la
+   maqueta, en claro y en oscuro. El entrenador no forma parte de esa escala
+   —es otra cosa, no "menos"— y va en neutro.
+   -------------------------------------------------------------------------- */
+.cancha {
+  --tier-1: #b7ecff;
+  --tier-2: #7ddcff;
+  --tier-3: #35b8e8;
+  --tier-4: #1a7fa8;
+  display: grid;
+  /* minmax(0, …) y no 1fr a secas: una pista 1fr crece hasta el ancho mínimo
+     de su hijo más ancho, y un <select> mide lo que su opción más larga. En un
+     móvil de 390 px la página se iba a 435 y hacía scroll lateral. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+}
+
+.cancha-pickers .select {
+  width: 100%;
+  min-width: 0;
+}
+
+:root[data-theme="light"] .cancha {
+  --tier-1: #7ddcff;
+  --tier-2: #35b8e8;
+  --tier-3: #1a7fa8;
+  --tier-4: #0b5570;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .cancha {
+    --tier-1: #7ddcff;
+    --tier-2: #35b8e8;
+    --tier-3: #1a7fa8;
+    --tier-4: #0b5570;
+  }
+}
+
+.cancha-head {
+  margin-bottom: 24px;
+}
+
+.cancha-head h1 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 112, "wght" 800;
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  max-width: 18ch;
+}
+
+.cancha-head .lede {
+  margin-top: 14px;
+  max-width: 64ch;
+}
+
+/* ------------------------------------------------------------------ cifras */
+.cancha-figures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin: 0;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.cancha-figures > div {
+  background: var(--surface);
+  padding: 14px 16px;
+}
+
+.cancha-figures dt {
+  margin: 0;
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.cancha-figures dd {
+  margin: 6px 0 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 88, "wght" 700;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.cancha-figures dd em {
+  font-style: normal;
+  font-size: 0.5em;
+  color: var(--ink-muted);
+  margin-left: 3px;
+}
+
+.cancha-figures .is-credit dd {
+  color: var(--credit);
+}
+
+.cancha-figures small {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+
+.cancha-problems {
+  display: block;
+  margin: 0;
+  padding-left: 32px;
+}
+
+.cancha-pickers {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.cancha-empty {
+  margin: 0;
+  padding: 28px 0;
+}
+
+/* ------------------------------------------------------------------- pista */
+.court {
+  position: relative;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(120% 80% at 50% 0%, var(--accent-soft) 0%, transparent 62%),
+    var(--surface);
+  padding: clamp(18px, 5vw, 22px) clamp(14px, 4vw, 18px) clamp(22px, 6vw, 26px);
+  overflow: hidden;
+}
+
+.court-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.court-lines * {
+  stroke: var(--rule);
+  fill: none;
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+.court-grid {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 6vw, 26px) clamp(18px, 6vw, 48px);
+}
+
+.court-grid .slot-mid {
+  grid-column: 1 / -1;
+}
+
+/* --------------------------------------------------------------- jugadores */
+.tok {
+  position: relative;
+  width: 100%;
+  max-width: 152px;
+  text-align: center;
+}
+
+.tok-shot {
+  position: relative;
+  margin: 0 auto;
+  width: clamp(72px, 21vw, 98px);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: end center;
+}
+
+.tok-shot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  translate: -50% 0;
+  width: 86%;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.55), transparent);
+}
+
+:root[data-theme="light"] .tok-shot::after {
+  background: radial-gradient(closest-side, rgba(12, 15, 22, 0.28), transparent);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .tok-shot::after {
+    background: radial-gradient(closest-side, rgba(12, 15, 22, 0.28), transparent);
+  }
+}
+
+.tok-shot img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 100%;
+}
+
+.tok.is-bench .tok-shot {
+  width: clamp(58px, 16vw, 84px);
+  filter: saturate(0.72);
+  opacity: 0.82;
+}
+
+/* El entrenador no tiene retrato en el feed: va el escudo, en un marco
+   discontinuo para que no se lea como una foto que no ha cargado. */
+.tok.is-coach .tok-shot,
+.tok.is-empty .tok-shot {
+  width: clamp(58px, 16vw, 84px);
+  aspect-ratio: 3 / 4;
+  place-items: center;
+  border: 1px dashed var(--rule);
+  border-radius: 12px;
+}
+
+.tok.is-coach .tok-shot::after,
+.tok.is-empty .tok-shot::after {
+  display: none;
+}
+
+.tok .tok-shot-crest {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.tok.is-empty {
+  opacity: 0.6;
+}
+
+.tok-plate {
+  margin-top: 8px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+  border-top: 2px solid var(--pos-color, var(--rule));
+  padding: 8px 9px 9px;
+}
+
+.tok.pos-E {
+  --pos-color: var(--ink-muted);
+}
+
+.tok.is-empty .tok-plate {
+  border-style: dashed;
+  border-top-width: 1px;
+  background: transparent;
+}
+
+.tok-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tok-name a,
+.tok-name span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tok-name a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tok-crest {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  object-fit: contain;
+  opacity: 0.92;
+}
+
+.tok-sub {
+  margin-top: 2px;
+  font-size: 0.63rem;
+  color: var(--ink-muted);
+}
+
+.tok-figs {
+  margin-top: 6px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tok-proj {
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 85, "wght" 700;
+  font-size: 1.12rem;
+  line-height: 1;
+}
+
+.tok-price {
+  font-size: 0.7rem;
+  color: var(--credit);
+}
+
+.tok.is-bench .tok-proj {
+  color: var(--ink-2);
+  font-size: 0.98rem;
+}
+
+.tok-half {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.62rem;
+  color: var(--ink-muted);
+}
+
+.cap-badge {
+  position: absolute;
+  right: 4px;
+  top: -6px;
+  z-index: 3;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+/* Quitar: siempre visible en táctil, donde no hay hover que lo revele. */
+.tok-remove {
+  position: absolute;
+  left: 4px;
+  top: -6px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  background: var(--surface-2);
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.tok-remove svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tok-remove:hover {
+  color: var(--ink);
+  border-color: var(--rule);
+}
+
+.tok-remove:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .tok-remove {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .tok:hover .tok-remove,
+  .tok-remove:focus-visible {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------------------ bancos */
+.bench-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.bench-head h2 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 104, "wght" 700;
+  font-size: 1.02rem;
+}
+
+.bench-tag {
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--ink-2);
+}
+
+.bench-tag.is-half {
+  border-color: var(--accent-line);
+  color: var(--accent);
+}
+
+.bench-head p {
+  margin: 0;
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+}
+
+.bench-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 14px;
+  justify-items: center;
+}
+
+.bench-grid.is-single {
+  grid-template-columns: minmax(0, 200px);
+  justify-items: start;
+}
+
+/* -------------------------------------------------------------- aportación */
+.cancha-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.cancha-section-head h2 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 104, "wght" 700;
+  font-size: 1.15rem;
+}
+
+.cancha-section-head p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.cancha-panel {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+}
+
+.cancha-stack {
+  display: flex;
+  gap: 2px;
+  height: 34px;
+}
+
+.cancha-stack > span {
+  border-radius: 3px;
+  min-width: 2px;
+}
+
+.cancha .s1 {
+  background: var(--tier-1);
+}
+
+.cancha .s2 {
+  background: var(--tier-2);
+}
+
+.cancha .s3 {
+  background: var(--tier-3);
+}
+
+.cancha .s4 {
+  background: var(--tier-4);
+}
+
+.cancha .s5 {
+  background: var(--ink-muted);
+}
+
+.cancha-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+}
+
+.cancha-legend div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-2);
+}
+
+.cancha-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  translate: 0 1px;
+  flex: none;
+}
+
+.cancha-legend b {
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 85, "wght" 700;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.cancha-legend small {
+  color: var(--ink-muted);
+}
+
+.cancha-callout {
+  margin: 18px 0 0;
+  border-left: 3px solid var(--fantasy);
+  background: color-mix(in srgb, var(--fantasy) 12%, transparent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 18px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 72ch;
+}
+
+.cancha-callout strong {
+  font-weight: 600;
+}
+
+.cancha-diagnosis {
+  margin-top: 8px;
+}
+
+@media (min-width: 560px) {
+  .bench-grid:not(.is-single) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .cancha-figures {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cancha-pickers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .court-grid .tok {
+    animation: cancha-rise 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+  }
+
+  .court-grid .tok:nth-child(2) {
+    animation-delay: 0.05s;
+  }
+
+  .court-grid .tok:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+
+  @keyframes cancha-rise {
+    from {
+      opacity: 0.001;
+      transform: translateY(8px);
+    }
+  }
 }
 
 /* --------------------------------------------------------------------------

@@ -127,6 +127,10 @@ function rank(values: number[], value: number): number | null {
 /** Percentil del jugador en esa métrica, dentro de su posición. */
 export function percentileOf(player: Player, key: PercentileKey): number | null {
   if (!player.position) return null;
+  // Quien no ha jugado está fuera del grupo de referencia, así que tampoco se
+  // le puede situar dentro: su proyección es un cero por falta de datos, y
+  // salía "p1" como si fuera el peor pívot de la liga.
+  if ((player.perf.gamesPlayed ?? 0) <= 0) return null;
   const pool = pools.get(player.position);
   const value = metric(player, key);
   if (!pool || value === null) return null;

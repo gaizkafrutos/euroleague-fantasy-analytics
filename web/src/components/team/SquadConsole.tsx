@@ -1,23 +1,34 @@
 "use client";
 
-/** Consola de equipo.
+/** Consola de equipo, sobre la cancha.
  *
  *  Dos modos, uno solo de código:
  *   - conectado: si el despliegue tiene token, precarga el roster real.
- *   - manual: cualquiera puede armar los 11 y recibir el mismo análisis.
+ *   - manual: cualquiera puede armar los once y recibir el mismo análisis.
  *
  *  Esto último no es un adorno: una página que solo funciona para el dueño del
  *  token es inútil para quien abre el enlace desde fuera.
+ *
+ *  Antes la plantilla era una tabla de diez filas iguales. Pero en el juego no
+ *  son iguales: cinco al quinteto, uno de sexto hombre, cuatro al banquillo a
+ *  la mitad y un entrenador. La cancha dibuja eso, y cada cifra que se enseña
+ *  es la que de verdad puntúa en su sitio.
+ *
+ *  Los colores de las placas codifican PUESTO, no club: con once clubes en
+ *  pantalla, los colores de club colapsan (siete comparten casi el mismo rojo).
  */
+import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { Delta, PlayerCell, prettyName } from "@/components/ui/primitives";
-import { credits, num, percent, positionLabel, signed } from "@/lib/format";
+import { Delta, PlayerCell } from "@/components/ui/primitives";
+import { credits, displayName, num, positionLabel, signed } from "@/lib/format";
 import {
   DEFAULT_BUDGET,
   MAX_PER_CLUB,
   QUOTA,
   SQUAD_SIZE,
+  STARTERS,
   buildSquad,
   checkSquad,
   extractRosterIds,
@@ -28,10 +39,18 @@ import type { Player } from "@/lib/types";
 
 const STORAGE_KEY = "efa-squad";
 
+export interface NextMatch {
+  opponent: string;
+  home: boolean;
+}
+
 interface Props {
   market: Player[];
-  /** Proyección del once óptimo, para medir cuánto se deja sobre la mesa. */
-  optimalProjection?: number | null;
+  coaches: Player[];
+  /** El óptimo exacto del pipeline para 100 créditos, si lo hay. */
+  optimal?: { playerIds: number[]; coachId: number | null; scored: number | null } | null;
+  /** Próximo rival de cada club, para la línea bajo el nombre. */
+  nextByClub: Record<string, NextMatch>;
 }
 
 type RosterState =
@@ -41,24 +60,36 @@ type RosterState =
   | { status: "error"; message: string }
   | { status: "ready"; count: number };
 
-export default function SquadConsole({ market, optimalProjection }: Props) {
+interface Stored {
+  ids: number[];
+  coach: number | null;
+}
+
+export default function SquadConsole({ market, coaches, optimal, nextByClub }: Props) {
   const [ids, setIds] = useState<number[]>([]);
+  const [coachId, setCoachId] = useState<number | null>(null);
   const [budget, setBudget] = useState(DEFAULT_BUDGET);
   const [roster, setRoster] = useState<RosterState>({ status: "idle" });
   const [picker, setPicker] = useState("");
+  const [restored, setRestored] = useState(false);
 
-  const byId = useMemo(() => new Map(market.map((player) => [player.id, player])), [market]);
-  const known = useMemo(() => new Set(market.map((player) => player.id)), [market]);
+  const byId = useMemo(
+    () => new Map([...market, ...coaches].map((player) => [player.id, player])),
+    [market, coaches],
+  );
+  const known = useMemo(() => new Set(byId.keys()), [byId]);
 
   const squad = useMemo(
     () => ids.map((id) => byId.get(id)).filter((player): player is Player => Boolean(player)),
     [ids, byId],
   );
+  const coach = coachId !== null ? (byId.get(coachId) ?? null) : null;
 
-  const check = useMemo(() => checkSquad(squad, budget), [squad, budget]);
+  const check = useMemo(() => checkSquad(squad, budget, coach), [squad, budget, coach]);
+  const { roles } = check;
   const swaps = useMemo(
-    () => (squad.length ? suggestSwaps(squad, market, budget) : []),
-    [squad, market, budget],
+    () => (squad.length ? suggestSwaps(squad, market, budget, coach) : []),
+    [squad, market, budget, coach],
   );
 
   const weakest = useMemo(
@@ -74,33 +105,41 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
     [squad],
   );
 
-  const captain = useMemo(
-    () =>
-      squad.reduce<Player | null>(
-        (best, player) =>
-          !best || (player.projectedFp ?? 0) > (best.projectedFp ?? 0) ? player : best,
-        null,
-      ),
-    [squad],
-  );
+  const topClub = useMemo(() => {
+    const entries = Object.entries(check.clubCounts).sort((a, b) => b[1] - a[1]);
+    return entries[0] ?? null;
+  }, [check.clubCounts]);
 
   /* ------------------------------------------------------------ persistencia */
   useEffect(() => {
     try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored) setIds(JSON.parse(stored) as number[]);
+      const raw = window.localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw) as Stored | number[];
+        // Versión anterior: un array de diez ids, sin entrenador.
+        if (Array.isArray(parsed)) setIds(parsed);
+        else {
+          setIds(parsed.ids ?? []);
+          setCoachId(parsed.coach ?? null);
+        }
+      }
     } catch {
-      /* almacenamiento bloqueado: se sigue sin recordar la plantilla */
+      /* almacenamiento bloqueado o corrupto: se empieza de cero */
     }
+    setRestored(true);
   }, []);
 
   useEffect(() => {
+    // Sin esta guarda, el primer render (vacío) machacaría lo guardado antes
+    // de que se llegue a leer.
+    if (!restored) return;
     try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+      const value: Stored = { ids, coach: coachId };
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
     } catch {
       /* idem */
     }
-  }, [ids]);
+  }, [ids, coachId, restored]);
 
   /* ---------------------------------------------------------------- acciones */
   const loadRoster = useCallback(async () => {
@@ -126,31 +165,57 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
         });
         return;
       }
-      setIds(found.slice(0, SQUAD_SIZE));
+      const foundPlayers = found.filter((id) => !byId.get(id)?.isCoach);
+      const foundCoach = found.find((id) => byId.get(id)?.isCoach) ?? null;
+      setIds(foundPlayers.slice(0, SQUAD_SIZE));
+      setCoachId(foundCoach);
       setRoster({ status: "ready", count: found.length });
     } catch (error) {
       setRoster({ status: "error", message: (error as Error).message });
     }
-  }, [known]);
+  }, [known, byId]);
 
   function add(id: number) {
-    if (!id || ids.includes(id) || ids.length >= SQUAD_SIZE) return;
-    setIds((previous) => [...previous, id]);
+    const player = byId.get(id);
+    if (!player) return;
+    if (player.isCoach) {
+      setCoachId(id);
+    } else {
+      if (ids.includes(id) || ids.length >= SQUAD_SIZE) return;
+      setIds((previous) => [...previous, id]);
+    }
     setPicker("");
   }
 
   function remove(id: number) {
-    setIds((previous) => previous.filter((value) => value !== id));
+    if (id === coachId) setCoachId(null);
+    else setIds((previous) => previous.filter((value) => value !== id));
   }
 
   function autofill() {
-    setIds(buildSquad(market, budget).map((player) => player.id));
+    // Con 100 créditos se carga el óptimo exacto que resolvió el pipeline por
+    // programación entera: el mismo que enseña el mercado. Con otro
+    // presupuesto, la aproximación voraz de squad.ts.
+    if (optimal && budget === DEFAULT_BUDGET && optimal.playerIds.length === SQUAD_SIZE) {
+      setIds(optimal.playerIds);
+      setCoachId(optimal.coachId);
+      return;
+    }
+    const built = buildSquad(market, budget, coaches);
+    setIds(built.players.map((player) => player.id));
+    setCoachId(built.coach?.id ?? null);
+  }
+
+  function clear() {
+    setIds([]);
+    setCoachId(null);
   }
 
   const candidates = useMemo(() => {
     const needed = (Object.keys(QUOTA) as Array<keyof typeof QUOTA>).filter(
       (position) => (check.counts[position] ?? 0) < QUOTA[position],
     );
+    if (ids.length >= SQUAD_SIZE) return [];
     return market
       .filter((player) => !ids.includes(player.id))
       .filter((player) => !needed.length || needed.includes(player.position as keyof typeof QUOTA))
@@ -158,8 +223,27 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
       .slice(0, 200);
   }, [market, ids, check.counts]);
 
+  const coachOptions = useMemo(
+    () =>
+      [...coaches]
+        .filter((candidate) => candidate.id !== coachId)
+        .sort((a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0)),
+    [coaches, coachId],
+  );
+
+  const full = squad.length >= SQUAD_SIZE && coach !== null;
+  const optimalScored = optimal?.scored ?? null;
+
+  // El quinteto se coloca por puesto, no por proyección: los pívots junto al
+  // aro, luego aleros, los bases al perímetro. El del medio ocupa las dos
+  // columnas. El capitán lleva su marca esté donde esté.
+  const courtOrder = { C: 0, F: 1, G: 2 } as Record<string, number>;
+  const starters = [...roles.starters].sort(
+    (a, b) => (courtOrder[a.position ?? ""] ?? 3) - (courtOrder[b.position ?? ""] ?? 3),
+  );
+
   return (
-    <div className="stack" style={{ "--gap": "24px" } as React.CSSProperties}>
+    <div className="cancha">
       {/* ------------------------------------------------------- controles */}
       <div className="squad-controls">
         <button type="button" className="chip" onClick={loadRoster}>
@@ -168,7 +252,7 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
         <button type="button" className="chip" onClick={autofill}>
           Rellenar con el óptimo
         </button>
-        <button type="button" className="chip" onClick={() => setIds([])}>
+        <button type="button" className="chip" onClick={clear}>
           Vaciar
         </button>
         <label className="control squad-budget">
@@ -202,178 +286,220 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
         </div>
       ) : null}
 
-      {/* --------------------------------------------------------- resumen */}
-      <div className="grid grid-4">
-        <div className="tile">
-          <div className="tile-label">Plantilla</div>
-          <div className="tile-value num">
-            {squad.length}
-            <span className="muted" style={{ fontSize: "0.5em" }}>
-              /{SQUAD_SIZE}
-            </span>
-          </div>
-          <div className="tile-sub">
-            {(Object.keys(QUOTA) as Array<keyof typeof QUOTA>)
-              .map((position) => `${check.counts[position] ?? 0}/${QUOTA[position]} ${positionWord(position)}`)
-              .join(" · ")}
-          </div>
-        </div>
-        <div className="tile">
-          <div className="tile-label">Gastado</div>
-          <div className="tile-value credit">{credits(check.spent)}</div>
-          <div className="tile-sub">
+      {/* ---------------------------------------------------------- cifras */}
+      <dl className="cancha-figures">
+        <div className="is-credit">
+          <dt>Gastado</dt>
+          <dd className="num">
+            {num(check.spent)}
+            <em>/{num(budget, 0)}</em>
+          </dd>
+          <small className="num">
             {check.free >= 0 ? `${credits(check.free)} libres` : `${credits(-check.free)} de más`}
-          </div>
+          </small>
         </div>
-        <div className="tile">
-          <div className="tile-label">Proyección</div>
-          <div className="tile-value num">{num(check.projection)}</div>
-          <div className="tile-sub">
-            {captain ? `Capitán sugerido: ${prettyName(captain.name)}` : "—"}
-          </div>
+        <div>
+          <dt>Proyección real</dt>
+          <dd className="num">{num(check.scored)}</dd>
+          <small>con capitán ×2 y banquillo ×0,5</small>
         </div>
-        {/* La cifra que de verdad se quiere saber aquí: cuánto se deja sobre la
-            mesa respecto a la mejor plantilla posible con el mismo dinero. */}
-        <div className="tile">
-          <div className="tile-label">Frente al óptimo</div>
-          {typeof optimalProjection === "number" && squad.length ? (
+        <div>
+          {full && typeof optimalScored === "number" ? (
             <>
-              <div
-                className={`tile-value num ${
-                  check.projection >= optimalProjection - 0.05 ? "delta-up" : "delta-down"
-                }`}
+              <dt>Frente al óptimo</dt>
+              <dd
+                className={`num ${check.scored >= optimalScored - 0.05 ? "delta-up" : "delta-down"}`}
               >
-                {signed(check.projection - optimalProjection)}
-              </div>
-              <div className="tile-sub">
-                puntos respecto a los {num(optimalProjection)} del once óptimo
-              </div>
+                {signed(check.scored - optimalScored)}
+              </dd>
+              <small className="num">respecto a los {num(optimalScored)} del óptimo</small>
             </>
           ) : (
             <>
-              <div className="tile-value" style={{ fontSize: "1.15rem" }}>
-                {check.valid ? "Válida" : squad.length < SQUAD_SIZE ? "Incompleta" : "Con problemas"}
-              </div>
-              <div className="tile-sub">Máx. {MAX_PER_CLUB} por club</div>
+              <dt>Plantilla</dt>
+              <dd className="num">
+                {squad.length + (coach ? 1 : 0)}
+                <em>/11</em>
+              </dd>
+              <small>
+                {(Object.keys(QUOTA) as Array<keyof typeof QUOTA>)
+                  .map(
+                    (position) =>
+                      `${check.counts[position] ?? 0}/${QUOTA[position]} ${positionWord(position)}`,
+                  )
+                  .join(" · ")}
+                {coach ? "" : " · sin entrenador"}
+              </small>
             </>
           )}
         </div>
-      </div>
+        <div>
+          <dt>Del mismo club</dt>
+          <dd className="num">
+            {topClub ? topClub[1] : 0}
+            <em>máx. {MAX_PER_CLUB}</em>
+          </dd>
+          <small>{topClub ? topClub[0] : "—"}</small>
+        </div>
+      </dl>
 
       {check.problems.length ? (
-        <ul className="notice" style={{ display: "block", margin: 0 }}>
+        <ul className="notice cancha-problems">
           {check.problems.map((problem) => (
-            <li key={problem} style={{ marginLeft: 16 }}>
-              {problem}
-            </li>
+            <li key={problem}>{problem}</li>
           ))}
         </ul>
       ) : null}
 
-      {/* ------------------------------------------------------- plantilla */}
-      <div className="card">
-        <div className="card-head">
-          <div className="card-title">Tu plantilla</div>
-          <label className="control" style={{ minWidth: 260 }}>
-            <span className="sr-only">Añadir jugador</span>
-            <select
-              className="select"
-              value={picker}
-              onChange={(event) => add(Number(event.target.value))}
-              disabled={ids.length >= SQUAD_SIZE}
-            >
-              <option value="">
-                {ids.length >= SQUAD_SIZE ? "Plantilla completa" : "Añadir jugador…"}
+      {/* ---------------------------------------------------------- fichar */}
+      <div className="cancha-pickers">
+        <label className="control">
+          <span className="control-label">Añadir jugador</span>
+          <select
+            className="select"
+            value={picker}
+            onChange={(event) => add(Number(event.target.value))}
+            disabled={ids.length >= SQUAD_SIZE}
+          >
+            <option value="">
+              {ids.length >= SQUAD_SIZE ? "Diez jugadores: completo" : "Elige…"}
+            </option>
+            {candidates.map((player) => (
+              <option key={player.id} value={player.id}>
+                {displayName(player)} · {player.position} · {player.clubShort} ·{" "}
+                {credits(player.price)}
               </option>
-              {candidates.map((player) => (
-                <option key={player.id} value={player.id}>
-                  {prettyName(player.name)} · {player.position} · {player.clubShort} ·{" "}
-                  {credits(player.price)}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-
-        {squad.length ? (
-          <>
-            <div className="table-wrap only-wide" style={{ border: 0 }}>
-              <table className="data">
-                <thead>
-                  <tr>
-                    <th>Jugador</th>
-                    <th className="num">Precio</th>
-                    <th className="num">Proyección</th>
-                    <th className="num">Pts/cr</th>
-                    <th className="num">Fiabilidad</th>
-                    <th className="num">Calendario</th>
-                    <th />
-                  </tr>
-                </thead>
-                <tbody>
-                  {squad.map((player) => (
-                    <tr key={player.id}>
-                      <td>
-                        <PlayerCell player={player} />
-                      </td>
-                      <td className="num credit">{credits(player.price)}</td>
-                      <td className="num">{num(player.projectedFp)}</td>
-                      <td className="num">
-                        {num(player.valueProjected ?? player.valuePerCredit, 2)}
-                      </td>
-                      <td className="num">{percent(player.perf.consistency)}</td>
-                      <td className="num">{num(player.schedule.difficulty, 0)}</td>
-                      <td>
-                        <button
-                          type="button"
-                          className="chip"
-                          onClick={() => remove(player.id)}
-                          aria-label={`Quitar a ${prettyName(player.name)}`}
-                        >
-                          Quitar
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* En el móvil, una fila por jugador con el botón de quitar a un
-                toque: la tabla de siete columnas ahí no se puede usar. */}
-            <ul className="squad-list only-narrow">
-              {squad.map((player) => (
-                <li key={player.id}>
-                  <PlayerCell player={player} />
-                  <span className="squad-figures">
-                    <b className="num">{num(player.projectedFp)}</b>
-                    <i className="credit num">{credits(player.price)}</i>
-                  </span>
-                  <button
-                    type="button"
-                    className="icon-button"
-                    onClick={() => remove(player.id)}
-                    aria-label={`Quitar a ${prettyName(player.name)}`}
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-                      <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" />
-                    </svg>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          <p className="muted" style={{ margin: 0 }}>
-            Añade jugadores desde el selector, carga tu equipo real o deja que lo rellene el
-            optimizador.
-          </p>
-        )}
+            ))}
+          </select>
+        </label>
+        <label className="control">
+          <span className="control-label">
+            {coach ? "Cambiar entrenador" : "Elegir entrenador"}
+          </span>
+          <select className="select" value="" onChange={(event) => add(Number(event.target.value))}>
+            <option value="">Elige…</option>
+            {coachOptions.map((candidate) => (
+              <option key={candidate.id} value={candidate.id}>
+                {displayName(candidate)} · {candidate.clubShort} · {credits(candidate.price)} ·{" "}
+                {num(candidate.projectedFp)} pts
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
+
+      {squad.length || coach ? (
+        <>
+          {/* ----------------------------------------------------- la pista */}
+          <section className="court" aria-label="Quinteto">
+            <svg
+              className="court-lines"
+              viewBox="0 0 400 300"
+              preserveAspectRatio="none"
+              aria-hidden
+            >
+              <rect x="0.5" y="0.5" width="399" height="299" rx="6" />
+              <rect x="150" y="0" width="100" height="86" />
+              <circle cx="200" cy="86" r="30" />
+              <path d="M40 0 L40 44 A170 170 0 0 0 360 44 L360 0" />
+              <line x1="178" y1="10" x2="222" y2="10" />
+            </svg>
+            <div className="court-grid">
+              {Array.from({ length: STARTERS }, (_, index) => {
+                const player = starters[index];
+                const mid = index === 2 ? " slot-mid" : "";
+                return player ? (
+                  <Token
+                    key={player.id}
+                    player={player}
+                    role={player.id === roles.captain?.id ? "captain" : "starter"}
+                    next={nextByClub[player.club ?? ""]}
+                    onRemove={remove}
+                    className={mid}
+                  />
+                ) : (
+                  <EmptySlot key={`vacio-${index}`} label="Quinteto" className={mid} />
+                );
+              })}
+            </div>
+          </section>
+
+          <section className="bench-row">
+            <div className="bench-head">
+              <h2>Sexto hombre</h2>
+              <span className="bench-tag">100 % de sus puntos</span>
+              <p>Puntúa igual que un titular; solo el capitán tiene que salir del quinteto.</p>
+            </div>
+            <div className="bench-grid is-single">
+              {roles.sixth ? (
+                <Token
+                  player={roles.sixth}
+                  role="sixth"
+                  next={nextByClub[roles.sixth.club ?? ""]}
+                  onRemove={remove}
+                />
+              ) : (
+                <EmptySlot label="Sexto hombre" />
+              )}
+            </div>
+          </section>
+
+          <section className="bench-row">
+            <div className="bench-head">
+              <h2>Banquillo</h2>
+              <span className="bench-tag is-half">50 % de sus puntos</span>
+              <p>Aquí no se gasta: cada crédito rinde la mitad.</p>
+            </div>
+            <div className="bench-grid">
+              {Array.from({ length: SQUAD_SIZE - STARTERS - 1 }, (_, index) => {
+                const player = roles.bench[index];
+                return player ? (
+                  <Token
+                    key={player.id}
+                    player={player}
+                    role="bench"
+                    next={nextByClub[player.club ?? ""]}
+                    onRemove={remove}
+                  />
+                ) : (
+                  <EmptySlot key={`banco-${index}`} label="Banquillo" />
+                );
+              })}
+            </div>
+          </section>
+
+          <section className="bench-row">
+            <div className="bench-head">
+              <h2>Entrenador</h2>
+              <span className="bench-tag">100 % de sus puntos</span>
+              <p>Obligatorio. Puntúa por el resultado de su equipo, y puede restar.</p>
+            </div>
+            <div className="bench-grid is-single">
+              {coach ? (
+                <Token
+                  player={coach}
+                  role="coach"
+                  next={nextByClub[coach.club ?? ""]}
+                  onRemove={remove}
+                />
+              ) : (
+                <EmptySlot label="Entrenador" />
+              )}
+            </div>
+          </section>
+
+          {full ? <Contribution check={check} coach={coach} /> : null}
+        </>
+      ) : (
+        <p className="muted cancha-empty">
+          Añade jugadores desde el selector, carga tu equipo real o deja que lo rellene el
+          optimizador.
+        </p>
+      )}
 
       {/* ----------------------------------------------------- diagnóstico */}
       {squad.length ? (
-        <div className="grid grid-2">
+        <div className="grid grid-2 cancha-diagnosis">
           <div className="card">
             <div className="card-head">
               <div>
@@ -414,7 +540,8 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
                 <div className="card-title">Fichajes que caben</div>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
                   Mejor recambio por puesto dentro de tus {credits(Math.max(check.free, 0))} libres
-                  más lo que recuperas al vender.
+                  más lo que recuperas al vender. La ganancia es la real: si el fichaje acaba en el
+                  banquillo, suma la mitad.
                 </p>
               </div>
             </div>
@@ -424,13 +551,13 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
                   <li key={`${swap.out.id}-${swap.in.id}`}>
                     <div className="swap-move">
                       <span className="swap-out">
-                        <span className="muted">Sale</span> {prettyName(swap.out.name)}
+                        <span className="muted">Sale</span> {displayName(swap.out)}
                       </span>
                       <span className="swap-arrow" aria-hidden>
                         →
                       </span>
                       <span className="swap-in">
-                        <span className="muted">Entra</span> {prettyName(swap.in.name)}
+                        <span className="muted">Entra</span> {displayName(swap.in)}
                         <i className="muted num">
                           {swap.in.clubShort} · {positionLabel(swap.in.position)} ·{" "}
                           {credits(swap.in.price)}
@@ -458,5 +585,208 @@ export default function SquadConsole({ market, optimalProjection }: Props) {
         </div>
       ) : null}
     </div>
+  );
+}
+
+/* ------------------------------------------------------------------ piezas */
+
+type TokenRole = "captain" | "starter" | "sixth" | "bench" | "coach";
+
+function Token({
+  player,
+  role,
+  next,
+  onRemove,
+  className = "",
+}: {
+  player: Player;
+  role: TokenRole;
+  next?: NextMatch;
+  onRemove: (id: number) => void;
+  className?: string;
+}) {
+  const name = displayName(player);
+  const surname = name.includes(" ") ? name.slice(name.indexOf(" ") + 1) : name;
+  const projection = player.projectedFp ?? null;
+  const shown =
+    projection === null
+      ? null
+      : role === "captain"
+        ? projection * 2
+        : role === "bench"
+          ? projection / 2
+          : projection;
+  const isCoach = role === "coach";
+  const sub = [
+    isCoach ? "Entrenador" : positionLabel(player.position),
+    next ? `${next.home ? "vs" : "@"} ${next.opponent}` : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  return (
+    <div
+      className={`tok pos-${isCoach ? "E" : (player.position ?? "X")}${
+        role === "bench" ? " is-bench" : ""
+      }${isCoach ? " is-coach" : ""}${className}`}
+    >
+      {role === "captain" ? <span className="cap-badge">Capitán ×2</span> : null}
+      <button
+        type="button"
+        className="tok-remove"
+        onClick={() => onRemove(player.id)}
+        aria-label={`Quitar a ${name}`}
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M7 7l10 10M17 7 7 17" strokeLinecap="round" />
+        </svg>
+      </button>
+
+      <div className="tok-shot">
+        {player.image ? (
+          <Image src={player.image} alt="" width={750} height={1000} sizes="100px" />
+        ) : player.clubCrest ? (
+          <Image className="tok-shot-crest" src={player.clubCrest} alt="" width={42} height={42} />
+        ) : null}
+      </div>
+
+      <div className="tok-plate">
+        <div className="tok-name">
+          {player.clubCrest ? (
+            <Image className="tok-crest" src={player.clubCrest} alt="" width={15} height={15} />
+          ) : null}
+          {isCoach ? (
+            <span title={name}>{surname}</span>
+          ) : (
+            <Link href={`/jugador/${player.id}`} title={name}>
+              {surname}
+            </Link>
+          )}
+        </div>
+        <div className="tok-sub">{sub}</div>
+        <div className="tok-figs">
+          <span className="tok-proj num">{num(shown)}</span>
+          <span className="tok-price num">{credits(player.price)}</span>
+        </div>
+        {projection !== null && role === "captain" ? (
+          <span className="tok-half num">{num(projection)} × 2</span>
+        ) : null}
+        {projection !== null && role === "bench" ? (
+          <span className="tok-half num">{num(projection)} × 0,5</span>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function EmptySlot({ label, className = "" }: { label: string; className?: string }) {
+  return (
+    <div className={`tok is-empty${className}`}>
+      <div className="tok-shot" aria-hidden />
+      <div className="tok-plate">
+        <div className="tok-name">
+          <span>Hueco libre</span>
+        </div>
+        <div className="tok-sub">{label}</div>
+      </div>
+    </div>
+  );
+}
+
+/** De dónde sale la proyección real: una barra de parte-todo, cinco tramos.
+ *  La rampa es ordinal (del capitán, que más aporta por jugador, al banquillo)
+ *  y va en un solo tono; el entrenador, que es otra cosa, va en neutro. */
+function Contribution({
+  check,
+  coach,
+}: {
+  check: ReturnType<typeof checkSquad>;
+  coach: Player | null;
+}) {
+  const { roles } = check;
+  const p = (player: Player | null | undefined) => player?.projectedFp ?? 0;
+  const captainPts = p(roles.captain) * 2;
+  const restPts = roles.starters
+    .filter((player) => player.id !== roles.captain?.id)
+    .reduce((sum, player) => sum + p(player), 0);
+  const sixthPts = p(roles.sixth);
+  const benchRaw = roles.bench.reduce((sum, player) => sum + p(player), 0);
+  const benchPts = benchRaw / 2;
+  const coachPts = p(coach);
+  const benchCredits = roles.bench.reduce((sum, player) => sum + (player.price ?? 0), 0);
+
+  const segments = [
+    {
+      key: "s1",
+      label: "Capitán ×2",
+      value: captainPts,
+      note: roles.captain ? displayName(roles.captain) : "",
+    },
+    {
+      key: "s2",
+      label: "Resto del quinteto",
+      value: restPts,
+      note: `${Math.max(roles.starters.length - 1, 0)} jugadores`,
+    },
+    {
+      key: "s3",
+      label: "Sexto hombre",
+      value: sixthPts,
+      note: roles.sixth ? displayName(roles.sixth) : "",
+    },
+    { key: "s4", label: "Banquillo ×0,5", value: benchPts, note: `de ${num(benchRaw)} brutos` },
+    { key: "s5", label: "Entrenador", value: coachPts, note: coach ? displayName(coach) : "" },
+  ];
+  // Una barra apilada no sabe pintar negativos: un entrenador que proyecta
+  // restar sale de la barra y se dice en la leyenda.
+  const drawn = segments.filter((segment) => segment.value > 0);
+  const summary = segments.map((segment) => `${segment.label} ${num(segment.value)}`).join("; ");
+
+  return (
+    <section className="cancha-section">
+      <div className="cancha-section-head">
+        <h2>De dónde salen los {num(check.scored)}</h2>
+        <p>Proporciones reales sobre el total proyectado.</p>
+      </div>
+      <div className="cancha-panel">
+        <div className="cancha-stack" role="img" aria-label={summary}>
+          {drawn.map((segment) => (
+            <span key={segment.key} className={segment.key} style={{ flex: segment.value }} />
+          ))}
+        </div>
+        <div className="cancha-legend">
+          {segments.map((segment) => (
+            <div key={segment.key}>
+              <i className={segment.key} aria-hidden />
+              {segment.label} <b className="num">{num(segment.value)}</b>
+              {segment.note ? <small>{segment.note}</small> : null}
+            </div>
+          ))}
+        </div>
+        <p className="cancha-callout">
+          El banquillo se lleva <strong>{num(benchCredits)} créditos</strong> y devuelve{" "}
+          <strong>{num(benchPts)} puntos</strong>, porque puntúa a la mitad.
+          {benchCredits > 0 ? (
+            <>
+              {" "}
+              Cada crédito ahí rinde {num(benchPts / benchCredits, 2)}; en los seis que puntúan
+              enteros,{" "}
+              {num(
+                (captainPts + restPts + sixthPts) /
+                  Math.max(
+                    [...roles.starters, roles.sixth].reduce(
+                      (sum, player) => sum + (player?.price ?? 0),
+                      0,
+                    ),
+                    1,
+                  ),
+                2,
+              )}
+              .
+            </>
+          ) : null}
+        </p>
+      </div>
+    </section>
   );
 }

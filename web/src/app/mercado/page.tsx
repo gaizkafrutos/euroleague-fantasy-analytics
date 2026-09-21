@@ -11,8 +11,8 @@ import Link from "next/link";
 import MarketExplorer from "@/components/market/MarketExplorer";
 import { PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
-import { getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
-import { credits, num, percent } from "@/lib/format";
+import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
+import { credits, displayName, num, percent } from "@/lib/format";
 import type { Player } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -118,9 +118,9 @@ export default function MercadoPage() {
             <div>
               <h2>El equipo óptimo con {credits(lineup.budget)}</h2>
               <p className="card-note" style={{ margin: "8px 0 0", maxWidth: "62ch" }}>
-                La mejor combinación posible respetando las reglas del juego — 4 bases,
-                4 aleros, 2 pívots, un entrenador, máximo 6 del mismo club. Resuelto por
-                programación entera, así que es el óptimo, no una aproximación.
+                La mejor combinación posible respetando las reglas del juego — 4 bases, 4 aleros, 2
+                pívots, un entrenador, máximo 6 del mismo club. Resuelto por programación entera,
+                así que es el óptimo, no una aproximación.
               </p>
             </div>
             <div className="section-figure">
@@ -137,10 +137,10 @@ export default function MercadoPage() {
               doble y el banquillo la mitad. Se dicen las dos cifras. */}
           {typeof lineup.scoredProjection === "number" ? (
             <p className="card-note" style={{ margin: "0 0 18px", maxWidth: "66ch" }}>
-              Suma llana de los once: {num(lineup.totalProjection)} puntos. Con el capitán al
-              doble, el quinteto y el sexto hombre al 100 % y el banquillo a la mitad, lo que
-              de verdad puntúa son {num(lineup.scoredProjection)}. El presupuesto se concentra
-              en los seis que puntúan enteros.
+              Suma llana de los once: {num(lineup.totalProjection)} puntos. Con el capitán al doble,
+              el quinteto y el sexto hombre al 100 % y el banquillo a la mitad, lo que de verdad
+              puntúa son {num(lineup.scoredProjection)}. El presupuesto se concentra en los seis que
+              puntúan enteros.
             </p>
           ) : null}
 
@@ -178,7 +178,7 @@ export default function MercadoPage() {
                 ))}
                 {lineup.coach ? (
                   <tr>
-                    <td>{coachLabel(lineup.coach.name, lineup.coach.club)}</td>
+                    <td>{coachLabel(lineup.coach)}</td>
                     <td>
                       <span className="badge">Entrenador</span>
                     </td>
@@ -219,7 +219,7 @@ export default function MercadoPage() {
                 <span className="lineup-static">
                   <span className="lineup-pos">E</span>
                   <span className="lineup-name">
-                    {coachLabel(lineup.coach.name, lineup.coach.club)}
+                    {coachLabel(lineup.coach)}
                     <span className="badge">Entrenador</span>
                     <i className="muted">{lineup.coach.club}</i>
                   </span>
@@ -277,11 +277,14 @@ function RoleBadge({ role, captain }: { role: Role; captain: boolean }) {
   return null;
 }
 
-/** Los entrenadores no cruzan con el censo oficial, así que casi nunca traen
- *  nombre. El club identifica igual de bien y no inventa nada. */
-function coachLabel(name: string | null, club: string): string {
-  if (name) return prettyName(name);
-  const team = getTeam(club);
+/** Los entrenadores no cruzan con el censo oficial, así que el lineup los
+ *  trae sin nombre. La ficha del mercado sí tiene el suyo ("X. Albert"); si
+ *  ni eso, el club identifica igual de bien y no inventa nada. */
+function coachLabel(coach: { key: string; name: string | null; club: string }): string {
+  if (coach.name) return prettyName(coach.name);
+  const player = getPlayer(Number(coach.key));
+  if (player?.marketName) return displayName(player);
+  const team = getTeam(coach.club);
   return team?.name ? `Entrenador del ${team.name}` : "Entrenador";
 }
 

@@ -60,6 +60,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   const groupSize = poolSize(player.position);
   const perf = player.perf;
   const { given, surname } = splitName(player);
+  // Sin partidos en la referencia, la proyección es un cero por falta de
+  // datos, no una predicción. Se enseña como ausencia.
+  const hasGames = (perf.gamesPlayed ?? 0) > 0;
 
   // El color del club entra solo aquí, y entra dos veces: el halo con el tono
   // del escudo, y los aros con ese mismo tono llevado a una luminosidad fija
@@ -185,14 +188,14 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             <dl className="ficha-band-grid">
               <BandItem
                 label="Proyección"
-                value={num(player.projectedFp)}
-                unit="pts"
+                value={hasGames ? num(player.projectedFp) : "—"}
+                unit={hasGames ? "pts" : undefined}
                 note={pctNote(player, "projectedFp")}
               />
               <BandItem
                 label="Por crédito"
-                value={num(player.valueProjected ?? player.valuePerCredit, 2)}
-                unit="pts/cr"
+                value={hasGames ? num(player.valueProjected ?? player.valuePerCredit, 2) : "—"}
+                unit={hasGames ? "pts/cr" : undefined}
                 note={pctNote(player, "valueProjected")}
               />
               <BandItem
@@ -203,7 +206,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               <BandItem
                 label="Forma"
                 value={num(perf.form)}
-                unit="pts"
+                unit={hasGames ? "pts" : undefined}
                 note={
                   typeof perf.formDelta === "number"
                     ? `${signed(perf.formDelta)} vs su media`
@@ -213,7 +216,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             </dl>
           </div>
 
-          {groupSize ? (
+          {groupSize && hasGames ? (
             <p className="ficha-note">
               Los percentiles comparan con los {groupSize}{" "}
               {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()} del mercado

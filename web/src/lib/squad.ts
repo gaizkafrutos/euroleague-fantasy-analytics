@@ -3,28 +3,94 @@
  *  Duplica a propósito parte de la lógica del optimizador Python: aquí el
  *  objetivo es que mover un deslizador de presupuesto responda al instante,
  *  no calcular el óptimo demostrable. El pipeline manda; esto acompaña.
+ *
+ *  El baremo es el del reglamento oficial (Classic Mode): diez jugadores y un
+ *  entrenador. Quinteto, sexto hombre y entrenador puntúan al 100 %; los cuatro
+ *  del banquillo, al 50 %; el capitán sale del quinteto y dobla. Antes este
+ *  módulo validaba diez plazas y sumaba los diez al 100 %, que no es el juego
+ *  que se juega.
  */
 import type { Player } from "./types";
 
 export const QUOTA = { G: 4, F: 4, C: 2 } as const;
+/** Jugadores. El entrenador va aparte: no tiene puesto ni cuenta en las cuotas. */
 export const SQUAD_SIZE = QUOTA.G + QUOTA.F + QUOTA.C;
+/** Plazas totales: los diez más el entrenador. */
+export const ROSTER_SIZE = SQUAD_SIZE + 1;
+export const STARTERS = 5;
+/** Quinteto + sexto hombre: los que puntúan enteros. */
+export const FULL_SCORERS = STARTERS + 1;
 export const MAX_PER_CLUB = 6;
 export const DEFAULT_BUDGET = 100;
 
+/* ------------------------------------------------------------------ roles */
+
+export interface Roles {
+  /** Hasta cinco, de mayor a menor proyección. El primero es el capitán. */
+  starters: Player[];
+  sixth: Player | null;
+  /** Los que puntúan a la mitad. */
+  bench: Player[];
+  captain: Player | null;
+}
+
+/** El mejor reparto posible para diez jugadores dados.
+ *
+ *  Con la plantilla fija, maximizar 2·capitán + quinteto + sexto + ½·banquillo
+ *  se resuelve ordenando: los seis de mayor proyección puntúan enteros (pasar a
+ *  uno del banquillo al grupo del 100 % gana la mitad de su proyección, así que
+ *  conviene subir siempre a los mejores), y el capitán es el mejor de todos,
+ *  que ya está en el quinteto. No hace falta programación entera para esto.
+ *
+ *  El reglamento no publica restricciones de formación en el quinteto, así que
+ *  no se imponen. Si el juego las tiene, este es el sitio donde añadirlas.
+ */
+export function assignRoles(players: Player[]): Roles {
+  const ranked = [...players].sort((a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0));
+  const starters = ranked.slice(0, STARTERS);
+  return {
+    starters,
+    sixth: ranked[STARTERS] ?? null,
+    bench: ranked.slice(FULL_SCORERS),
+    captain: starters[0] ?? null,
+  };
+}
+
+/** Lo que puntúa la plantilla con el baremo real, entrenador incluido. */
+export function scoredProjection(roles: Roles, coach: Player | null): number {
+  const p = (player: Player | null | undefined) => player?.projectedFp ?? 0;
+  const full = roles.starters.reduce((sum, player) => sum + p(player), 0) + p(roles.sixth);
+  const half = roles.bench.reduce((sum, player) => sum + p(player), 0) * 0.5;
+  // El capitán ya está sumado una vez dentro del quinteto: se añade otra.
+  return full + half + p(roles.captain) + p(coach);
+}
+
+/* ------------------------------------------------------------- validación */
+
 export interface SquadCheck {
   valid: boolean;
+  /** Diez jugadores y un entrenador, sin mirar si cumple las reglas. */
+  complete: boolean;
   spent: number;
   free: number;
   problems: string[];
   counts: Record<string, number>;
   clubCounts: Record<string, number>;
+  /** Suma llana de los jugadores al 100 %. No es lo que se puntúa. */
   projection: number;
+  /** Con el baremo real: capitán ×2, banquillo ×0,5, entrenador al 100 %. */
+  scored: number;
+  roles: Roles;
 }
 
-export function checkSquad(squad: Player[], budget = DEFAULT_BUDGET): SquadCheck {
+export function checkSquad(
+  squad: Player[],
+  budget = DEFAULT_BUDGET,
+  coach: Player | null = null,
+): SquadCheck {
   const counts: Record<string, number> = { G: 0, F: 0, C: 0 };
   const clubCounts: Record<string, number> = {};
-  let spent = 0;
+  let spent = coach?.price ?? 0;
   let projection = 0;
 
   for (const player of squad) {
@@ -33,6 +99,9 @@ export function checkSquad(squad: Player[], budget = DEFAULT_BUDGET): SquadCheck
     spent += player.price ?? 0;
     projection += player.projectedFp ?? 0;
   }
+  // El entrenador NO cuenta para el máximo de seis por club: el reglamento
+  // habla de jugadores, y el optimizador del pipeline tampoco lo cuenta. Si el
+  // juego resultara contarlo, hay que cambiarlo aquí y en optimizer.py a la vez.
 
   const problems: string[] = [];
   for (const [position, quota] of Object.entries(QUOTA)) {
@@ -41,79 +110,127 @@ export function checkSquad(squad: Player[], budget = DEFAULT_BUDGET): SquadCheck
     if (have < quota && squad.length >= SQUAD_SIZE)
       problems.push(`Faltan ${quota - have} en ${positionWord(position)}.`);
   }
+  if (!coach && squad.length >= SQUAD_SIZE)
+    problems.push("Falta el entrenador: es obligatorio y puntúa al 100 %.");
   for (const [club, count] of Object.entries(clubCounts)) {
-    if (count > MAX_PER_CLUB) problems.push(`${count} jugadores de ${club}: el máximo es ${MAX_PER_CLUB}.`);
+    if (count > MAX_PER_CLUB)
+      problems.push(`${count} de ${club} en la plantilla: el máximo es ${MAX_PER_CLUB}.`);
   }
-  if (spent > budget) problems.push(`Te pasas ${(spent - budget).toFixed(1)} créditos del presupuesto.`);
+  if (spent > budget)
+    problems.push(`Te pasas ${(spent - budget).toFixed(1)} créditos del presupuesto.`);
+
+  const roles = assignRoles(squad);
+  const complete = squad.length === SQUAD_SIZE && coach !== null;
 
   return {
-    valid: problems.length === 0 && squad.length === SQUAD_SIZE,
+    valid: problems.length === 0 && complete,
+    complete,
     spent: Number(spent.toFixed(2)),
     free: Number((budget - spent).toFixed(2)),
     problems,
     counts,
     clubCounts,
     projection: Number(projection.toFixed(2)),
+    scored: Number(scoredProjection(roles, coach).toFixed(2)),
+    roles,
   };
 }
+
+/* ---------------------------------------------------------------- fichajes */
 
 export interface Swap {
   out: Player;
   in: Player;
+  /** Ganancia con el baremo real, no en proyección bruta: fichar a un
+   *  jugador que acaba en el banquillo solo suma la mitad. */
   gain: number;
   costDelta: number;
 }
 
-/** Para cada jugador de la plantilla, el mejor recambio asequible de su puesto. */
+/** Para cada jugador de la plantilla, el recambio asequible de su puesto que
+ *  más sube la puntuación real, recolocando roles después del cambio. */
 export function suggestSwaps(
   squad: Player[],
   market: Player[],
   budget = DEFAULT_BUDGET,
+  coach: Player | null = null,
   limit = 5,
 ): Swap[] {
   const owned = new Set(squad.map((player) => player.id));
-  const check = checkSquad(squad, budget);
+  const check = checkSquad(squad, budget, coach);
+  const base = check.scored;
 
   const suggestions: Swap[] = [];
   for (const player of squad) {
     const ceiling = (player.price ?? 0) + check.free;
     let best: Player | null = null;
+    let bestGain = 0;
 
     for (const candidate of market) {
       if (owned.has(candidate.id)) continue;
       if (candidate.position !== player.position) continue;
       if ((candidate.price ?? Infinity) > ceiling) continue;
+      // Poda barata: si no proyecta más, no puede subir la puntuación.
       if ((candidate.projectedFp ?? 0) <= (player.projectedFp ?? 0)) continue;
 
       const clubCount =
-        (check.clubCounts[candidate.club ?? ""] ?? 0) -
-        (candidate.club === player.club ? 1 : 0);
+        (check.clubCounts[candidate.club ?? ""] ?? 0) - (candidate.club === player.club ? 1 : 0);
       if (clubCount >= MAX_PER_CLUB) continue;
 
-      if (!best || (candidate.projectedFp ?? 0) > (best.projectedFp ?? 0)) best = candidate;
+      const next = squad.map((member) => (member.id === player.id ? candidate : member));
+      const gain = scoredProjection(assignRoles(next), coach) - base;
+      if (gain > bestGain) {
+        best = candidate;
+        bestGain = gain;
+      }
     }
 
     if (best) {
       suggestions.push({
         out: player,
         in: best,
-        gain: Number(((best.projectedFp ?? 0) - (player.projectedFp ?? 0)).toFixed(2)),
+        gain: Number(bestGain.toFixed(2)),
         costDelta: Number(((best.price ?? 0) - (player.price ?? 0)).toFixed(2)),
       });
     }
   }
 
-  return suggestions.sort((a, b) => b.gain - a.gain).slice(0, limit);
+  // Un mismo fichaje puede ser el mejor recambio de varios puestos. Se deja
+  // solo la versión que más gana: cinco tarjetas con el mismo nombre en
+  // "Entra" no son cinco ideas, son una.
+  const seen = new Set<number>();
+  return suggestions
+    .sort((a, b) => b.gain - a.gain)
+    .filter((swap) => (seen.has(swap.in.id) ? false : (seen.add(swap.in.id), true)))
+    .slice(0, limit);
 }
 
-/** Voraz con reserva de presupuesto: la misma idea que el fallback del pipeline. */
-export function buildSquad(market: Player[], budget = DEFAULT_BUDGET): Player[] {
+/* ------------------------------------------------------ relleno automático */
+
+export interface BuiltSquad {
+  players: Player[];
+  coach: Player | null;
+}
+
+/** Voraz con reserva de presupuesto: la misma idea que el fallback del pipeline.
+ *
+ *  Se aparta primero lo que cuesta el entrenador más barato, se llenan los
+ *  diez puestos y con lo que sobra se elige el mejor entrenador que quepa.
+ *  Solo se usa cuando el presupuesto no es el de 100: para 100 créditos la
+ *  consola carga el óptimo exacto que resolvió el pipeline.
+ */
+export function buildSquad(
+  market: Player[],
+  budget = DEFAULT_BUDGET,
+  coaches: Player[] = [],
+): BuiltSquad {
+  const coachPool = coaches.filter((coach) => (coach.price ?? 0) > 0);
+  const coachFloor = coachPool.length ? Math.min(...coachPool.map((coach) => coach.price ?? 0)) : 0;
+  const playerBudget = budget - coachFloor;
+
   const pool = market
     .filter((player) => player.position && (player.price ?? 0) > 0 && player.projectedFp != null)
-    .sort(
-      (a, b) =>
-        (b.projectedFp ?? 0) / (b.price ?? 1) - (a.projectedFp ?? 0) / (a.price ?? 1),
-    );
+    .sort((a, b) => (b.projectedFp ?? 0) / (b.price ?? 1) - (a.projectedFp ?? 0) / (a.price ?? 1));
 
   const cheapest: Record<string, number[]> = { G: [], F: [], C: [] };
   for (const position of Object.keys(QUOTA)) {
@@ -123,7 +240,7 @@ export function buildSquad(market: Player[], budget = DEFAULT_BUDGET): Player[] 
       .sort((a, b) => a - b);
   }
 
-  const squad: Player[] = [];
+  const players: Player[] = [];
   const counts: Record<string, number> = { G: 0, F: 0, C: 0 };
   const clubCounts: Record<string, number> = {};
   let spent = 0;
@@ -134,34 +251,43 @@ export function buildSquad(market: Player[], budget = DEFAULT_BUDGET): Player[] 
       let missing = quota - (counts[position] ?? 0);
       if (position === skip) missing -= 1;
       if (missing <= 0) continue;
-      total += cheapest[position].slice(0, missing).reduce((sum, price) => sum + price, 0);
+      total += (cheapest[position] ?? []).slice(0, missing).reduce((sum, price) => sum + price, 0);
     }
     return total;
   };
 
   for (const player of pool) {
     const position = player.position as keyof typeof QUOTA;
-    if (squad.length >= SQUAD_SIZE) break;
+    if (players.length >= SQUAD_SIZE) break;
     if ((counts[position] ?? 0) >= QUOTA[position]) continue;
     if ((clubCounts[player.club ?? ""] ?? 0) >= MAX_PER_CLUB) continue;
     const price = player.price ?? 0;
-    if (spent + price + reserveAfter(position) > budget) continue;
+    if (spent + price + reserveAfter(position) > playerBudget) continue;
 
-    squad.push(player);
+    players.push(player);
     counts[position] = (counts[position] ?? 0) + 1;
     clubCounts[player.club ?? ""] = (clubCounts[player.club ?? ""] ?? 0) + 1;
     spent += price;
   }
 
-  return squad;
+  const left = budget - spent;
+  const coach =
+    coachPool
+      .filter((candidate) => (candidate.price ?? 0) <= left + 1e-9)
+      .sort((a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0))[0] ?? null;
+
+  return { players, coach };
 }
+
+/* ------------------------------------------------------------ roster real */
 
 /** Extrae ids de jugador de la respuesta del roster de Fantaking.
  *
  *  La forma exacta del payload no está documentada, así que en vez de asumir
  *  una estructura se recorre el JSON entero y se quedan los `id` numéricos que
  *  existen en nuestro mercado. Si Fantaking reorganiza la respuesta, esto
- *  sigue funcionando.
+ *  sigue funcionando. `known` debe incluir a los entrenadores: también son
+ *  fichas del mercado.
  */
 export function extractRosterIds(payload: unknown, known: Set<number>): number[] {
   const found = new Set<number>();
