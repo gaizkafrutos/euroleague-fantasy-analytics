@@ -4,7 +4,7 @@
  *  formateado, club, posición y la cadena normalizada con la que se compara.
  *  Son unos 12 KB para 300 jugadores; las fotos se quedan fuera por eso.
  */
-import { normalize, prettyName } from "./format";
+import { displayName, normalize } from "./format";
 import { pricedPlayers, rosterPlayers } from "./data";
 
 export interface SearchEntry {
@@ -20,14 +20,18 @@ const source = pricedPlayers.length ? pricedPlayers : rosterPlayers;
 
 export const searchIndex: SearchEntry[] = source
   .map((player) => {
-    const name = prettyName(player.name);
+    // `displayName` y no `prettyName(player.name)`: los que no cruzan con el
+    // censo tienen `name` a null, salían como "—" arriba del todo y no se
+    // encontraban por su apellido. Se indexa también el nombre del mercado
+    // ("M. Jaiteh"), que es como aparecen en el juego.
+    const name = displayName(player);
     const club = player.clubShort ?? player.club ?? "";
     return {
       id: player.id,
       name,
       club,
       position: player.position,
-      haystack: normalize(`${name} ${club}`),
+      haystack: normalize(`${name} ${player.marketName ?? ""} ${club}`),
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name, "es"));
