@@ -8469,10 +8469,10 @@
   "referee3": null,
   "referee4": null,
   "venue": {
-   "name": "ALEKSANDAR NIKOLIC HALL",
-   "code": "AUF4",
-   "capacity": 8000,
-   "address": "Carlija Caplina 39, Belgrade 11000, Serbia",
+   "name": "BELGRADE ARENA",
+   "code": "ATM8",
+   "capacity": 21000,
+   "address": "Bulevar Arsenija Carnojevica 58, 11070 Belgrade - Serbia",
    "images": {
     "medium": null
    },
@@ -35047,107 +35047,6 @@
   "winner": null
  },
  {
-  "id": "4d7ec43e-3db1-455e-ab72-2bf633dfd512",
-  "identifier": "E2026_32",
-  "gameCode": 32,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 4,
-  "roundAlias": "Round 4",
-  "roundName": "Round 4",
-  "played": false,
-  "date": "2026-10-08T20:00:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 2,
-  "localDate": "2026-10-08T20:00:00",
-  "utcDate": "2026-10-08T18:00:00Z",
-  "local": {
-   "club": {
-    "code": "TEL",
-    "name": "Maccabi Rapyd Tel Aviv",
-    "abbreviatedName": "Maccabi",
-    "editorialName": "Maccabi",
-    "tvCode": "MTA",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "MIL",
-    "name": "Armani Olimpia Milan",
-    "abbreviatedName": "Milan",
-    "editorialName": "Milan",
-    "tvCode": "MIL",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "ALEKSANDAR NIKOLIC HALL",
-   "code": "AUF4",
-   "capacity": 8000,
-   "address": "Carlija Caplina 39, Belgrade 11000, Serbia",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
   "id": "9e510885-6fb0-4891-b5a3-fc9072b9fa41",
   "identifier": "E2026_37",
   "gameCode": 37,
@@ -35238,6 +35137,107 @@
    "code": "ACA4",
    "capacity": 13221,
    "address": "Al Wasl - سٹی واک - Dubai - United Arab Emirates",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
+  "id": "4d7ec43e-3db1-455e-ab72-2bf633dfd512",
+  "identifier": "E2026_32",
+  "gameCode": 32,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 4,
+  "roundAlias": "Round 4",
+  "roundName": "Round 4",
+  "played": false,
+  "date": "2026-10-08T18:00:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 2,
+  "localDate": "2026-10-08T18:00:00",
+  "utcDate": "2026-10-08T16:00:00Z",
+  "local": {
+   "club": {
+    "code": "TEL",
+    "name": "Maccabi Rapyd Tel Aviv",
+    "abbreviatedName": "Maccabi",
+    "editorialName": "Maccabi",
+    "tvCode": "MTA",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "MIL",
+    "name": "Armani Olimpia Milan",
+    "abbreviatedName": "Milan",
+    "editorialName": "Milan",
+    "tvCode": "MIL",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "ALEKSANDAR NIKOLIC HALL",
+   "code": "AUF4",
+   "capacity": 8000,
+   "address": "Carlija Caplina 39, Belgrade 11000, Serbia",
    "images": {
     "medium": null
    },
