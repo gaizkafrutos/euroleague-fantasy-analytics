@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "013028",
+   "name": "BAIOCCHI, MATTEO",
+   "alias": "BAIOCCHI, MATTEO",
+   "aliasRaw": "BAIOCCHI, MATTEO",
+   "passportName": "MATTEO",
+   "passportSurname": "BAIOCCHI",
+   "jerseyName": "BAIOCCHI",
+   "abbreviatedName": null,
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 196,
+   "weight": 90,
+   "birthDate": "2007-08-02T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-23T09:29:30.874",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "13",
+  "dorsalRaw": "13",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "VIRTUS BOLOGNA",
+  "externalId": 56969,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus Bologna",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "013289",
    "name": "SANTOS, MARCIO",
    "alias": "SANTOS, MARCIO",
@@ -1122,8 +1182,8 @@
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 56877,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f6863e93-e184-46e1-bae5-00166020bd7f.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f6863e93-e184-46e1-bae5-00166020bd7f.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f6863e93-e184-46e1-bae5-00166020bd7f.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/f6863e93-e184-46e1-bae5-00166020bd7f.png"
   },
   "club": {
    "code": "IST",
@@ -1185,8 +1245,8 @@
   "lastTeam": "REYER VENEZIA",
   "externalId": 56876,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d63c99d-41a5-4a50-91d4-98f14d97fe0d.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d63c99d-41a5-4a50-91d4-98f14d97fe0d.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d63c99d-41a5-4a50-91d4-98f14d97fe0d.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d63c99d-41a5-4a50-91d4-98f14d97fe0d.png"
   },
   "club": {
    "code": "VIR",
@@ -1248,8 +1308,8 @@
   "lastTeam": "DENVER NUGGETS",
   "externalId": 56875,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ac66bdfd-0af2-486a-a35a-a54ff8cff2d2.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ac66bdfd-0af2-486a-a35a-a54ff8cff2d2.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ac66bdfd-0af2-486a-a35a-a54ff8cff2d2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/ac66bdfd-0af2-486a-a35a-a54ff8cff2d2.png"
   },
   "club": {
    "code": "ZAL",
@@ -1623,8 +1683,8 @@
   "lastTeam": "HAPOEL TEL AVIV",
   "externalId": 56869,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/2ed6fb94-2e87-467d-89f6-67500e3e76b8.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/2ed6fb94-2e87-467d-89f6-67500e3e76b8.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/2ed6fb94-2e87-467d-89f6-67500e3e76b8.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/2ed6fb94-2e87-467d-89f6-67500e3e76b8.png"
   },
   "club": {
    "code": "TEL",
@@ -1686,8 +1746,8 @@
   "lastTeam": "AS MONACO BASKET",
   "externalId": 56804,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/286b3dbb-72aa-4f86-aa59-d254a86448c5.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/286b3dbb-72aa-4f86-aa59-d254a86448c5.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/286b3dbb-72aa-4f86-aa59-d254a86448c5.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/286b3dbb-72aa-4f86-aa59-d254a86448c5.png"
   },
   "club": {
    "code": "IST",
@@ -1749,8 +1809,8 @@
   "lastTeam": "AS MONACO BASKET",
   "externalId": 56803,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d299652d-429d-4226-89d6-8286c61c0533.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d299652d-429d-4226-89d6-8286c61c0533.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d299652d-429d-4226-89d6-8286c61c0533.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d299652d-429d-4226-89d6-8286c61c0533.png"
   },
   "club": {
    "code": "IST",
@@ -1812,8 +1872,8 @@
   "lastTeam": "DETROIT PISTONS",
   "externalId": 56802,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/afdb2e3e-694e-44f2-a8d9-d97aa89dd86e.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/afdb2e3e-694e-44f2-a8d9-d97aa89dd86e.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/afdb2e3e-694e-44f2-a8d9-d97aa89dd86e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/afdb2e3e-694e-44f2-a8d9-d97aa89dd86e.png"
   },
   "club": {
    "code": "IST",
@@ -1875,8 +1935,8 @@
   "lastTeam": "PROMITHEAS PATRA",
   "externalId": 56801,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/6ba557e8-0f34-4739-b5b3-2faacce3ce58.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/6ba557e8-0f34-4739-b5b3-2faacce3ce58.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/6ba557e8-0f34-4739-b5b3-2faacce3ce58.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOO0/6ba557e8-0f34-4739-b5b3-2faacce3ce58.png"
   },
   "club": {
    "code": "OLY",
@@ -2484,8 +2544,8 @@
   "lastTeam": "LONG ISLAND NETS",
   "externalId": 56757,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/6ac06b8d-b588-4bcd-8bbe-8b06198c7ff5.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/6ac06b8d-b588-4bcd-8bbe-8b06198c7ff5.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/6ac06b8d-b588-4bcd-8bbe-8b06198c7ff5.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/6ac06b8d-b588-4bcd-8bbe-8b06198c7ff5.png"
   },
   "club": {
    "code": "PRS",
@@ -2547,8 +2607,8 @@
   "lastTeam": "AS MONACO",
   "externalId": 56756,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf600197-dfa3-4655-8141-f7b285190c36.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf600197-dfa3-4655-8141-f7b285190c36.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf600197-dfa3-4655-8141-f7b285190c36.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf600197-dfa3-4655-8141-f7b285190c36.png"
   },
   "club": {
    "code": "BAR",
@@ -2862,8 +2922,8 @@
   "lastTeam": "PALLACANESTRO VARESE",
   "externalId": 56751,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8361d06b-f258-4f93-8c46-f64ef63f0c4f.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8361d06b-f258-4f93-8c46-f64ef63f0c4f.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8361d06b-f258-4f93-8c46-f64ef63f0c4f.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8361d06b-f258-4f93-8c46-f64ef63f0c4f.png"
   },
   "club": {
    "code": "BAR",
@@ -2925,8 +2985,8 @@
   "lastTeam": "BASQUET MANRESA",
   "externalId": 56750,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/39b2de60-fa01-4038-bf51-da9381d0d9e1.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/39b2de60-fa01-4038-bf51-da9381d0d9e1.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/39b2de60-fa01-4038-bf51-da9381d0d9e1.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/39b2de60-fa01-4038-bf51-da9381d0d9e1.png"
   },
   "club": {
    "code": "BAR",
@@ -2988,8 +3048,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 56749,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d326f31e-8ffc-40bb-8d8f-ad41f16d794e.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d326f31e-8ffc-40bb-8d8f-ad41f16d794e.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d326f31e-8ffc-40bb-8d8f-ad41f16d794e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d326f31e-8ffc-40bb-8d8f-ad41f16d794e.png"
   },
   "club": {
    "code": "BAR",
@@ -3051,8 +3111,8 @@
   "lastTeam": "SAN ANTONIO SPURS",
   "externalId": 56748,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8113804-254a-4e2c-a6b8-08cc6f2d4393.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8113804-254a-4e2c-a6b8-08cc6f2d4393.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8113804-254a-4e2c-a6b8-08cc6f2d4393.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8113804-254a-4e2c-a6b8-08cc6f2d4393.png"
   },
   "club": {
    "code": "BAR",
@@ -3114,8 +3174,8 @@
   "lastTeam": "PHILADELPHIA 76ERS",
   "externalId": 56747,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df36712f-78ef-48d7-b1b8-a28fab2554ba.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df36712f-78ef-48d7-b1b8-a28fab2554ba.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df36712f-78ef-48d7-b1b8-a28fab2554ba.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/df36712f-78ef-48d7-b1b8-a28fab2554ba.png"
   },
   "club": {
    "code": "BAR",
@@ -3420,8 +3480,8 @@
   "lastTeam": "GIGANTES DE CAROLINA",
   "externalId": 56716,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d95bb7c0-778e-4971-8c37-0b346e9017ec.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d95bb7c0-778e-4971-8c37-0b346e9017ec.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d95bb7c0-778e-4971-8c37-0b346e9017ec.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d95bb7c0-778e-4971-8c37-0b346e9017ec.png"
   },
   "club": {
    "code": "BES",
@@ -3543,8 +3603,8 @@
   "lastTeam": "BAHCESEHIR",
   "externalId": 56707,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f7929b1a-55b7-4f21-b311-028de2616dfb.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f7929b1a-55b7-4f21-b311-028de2616dfb.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f7929b1a-55b7-4f21-b311-028de2616dfb.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f7929b1a-55b7-4f21-b311-028de2616dfb.png"
   },
   "club": {
    "code": "BES",
@@ -3858,8 +3918,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 56695,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/e3fda869-382f-4c71-9ffd-ed32ee5c5485.png"
   },
   "club": {
    "code": "OLY",
@@ -3921,8 +3981,8 @@
   "lastTeam": "--",
   "externalId": 56677,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7f1ce27-dd93-4e42-870e-005f5cb1bcb0.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7f1ce27-dd93-4e42-870e-005f5cb1bcb0.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7f1ce27-dd93-4e42-870e-005f5cb1bcb0.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7f1ce27-dd93-4e42-870e-005f5cb1bcb0.png"
   },
   "club": {
    "code": "OLY",
@@ -3984,8 +4044,8 @@
   "lastTeam": "VALENCIA",
   "externalId": 56676,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/2d90adc8-c13b-4da8-9b68-e07b39953bf2.png"
   },
   "club": {
    "code": "OLY",
@@ -4047,8 +4107,8 @@
   "lastTeam": "VAQUEROS DE BAYAMON",
   "externalId": 56528,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/decefec7-7f25-40ea-bc54-574ea17bcbe0.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/decefec7-7f25-40ea-bc54-574ea17bcbe0.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/decefec7-7f25-40ea-bc54-574ea17bcbe0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/decefec7-7f25-40ea-bc54-574ea17bcbe0.png"
   },
   "club": {
    "code": "MAD",
@@ -4173,8 +4233,8 @@
   "lastTeam": "FENERBAHCE TARFIN ISTANBUL",
   "externalId": 56526,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a7423af2-00f2-48ef-96fa-d3c6d4538905.png"
   },
   "club": {
    "code": "MAD",
@@ -4427,8 +4487,8 @@
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 56522,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/4e1678a4-08c3-426c-b02c-ff8fa990f9c0.png"
   },
   "club": {
    "code": "ULK",
@@ -4553,8 +4613,8 @@
   "lastTeam": "OLYMPIACOS BC",
   "externalId": 56520,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/821535cc-04f7-4f35-9724-2024d5f3c831.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/821535cc-04f7-4f35-9724-2024d5f3c831.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/821535cc-04f7-4f35-9724-2024d5f3c831.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/821535cc-04f7-4f35-9724-2024d5f3c831.png"
   },
   "club": {
    "code": "DUB",
@@ -4679,8 +4739,8 @@
   "lastTeam": "ASVEL",
   "externalId": 56518,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c454d847-af62-4eb6-b7e3-b118b86efbb2.png"
   },
   "club": {
    "code": "OLY",
@@ -4742,8 +4802,8 @@
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 56517,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/019ea32f-ff90-43cc-b453-9ff2f68012b3.png"
   },
   "club": {
    "code": "OLY",
@@ -5423,8 +5483,8 @@
   "lastTeam": "ZENIT ST. PETERSBURG",
   "externalId": 56363,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8414f77-acc5-4101-bec2-522b8eca7002.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8414f77-acc5-4101-bec2-522b8eca7002.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8414f77-acc5-4101-bec2-522b8eca7002.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b8414f77-acc5-4101-bec2-522b8eca7002.png"
   },
   "club": {
    "code": "VIR",
@@ -5486,8 +5546,8 @@
   "lastTeam": "OLYMPIACOS PIRAEUS",
   "externalId": 56356,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/d325f7f1-d6d8-4766-be1a-451470515697.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/d325f7f1-d6d8-4766-be1a-451470515697.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/d325f7f1-d6d8-4766-be1a-451470515697.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/d325f7f1-d6d8-4766-be1a-451470515697.png"
   },
   "club": {
    "code": "PAN",
@@ -5612,8 +5672,8 @@
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 56354,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/e5467e2c-9009-4189-8e8b-35d8347f5b54.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/e5467e2c-9009-4189-8e8b-35d8347f5b54.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/e5467e2c-9009-4189-8e8b-35d8347f5b54.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/e5467e2c-9009-4189-8e8b-35d8347f5b54.png"
   },
   "club": {
    "code": "PAN",
@@ -5798,8 +5858,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 56329,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/d516e9df-87e6-4730-a813-816cb330ddaa.png"
   },
   "club": {
    "code": "BAS",
@@ -5861,8 +5921,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 56328,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/c6c7853f-9cf1-43b3-b749-dd3b1b1a5484.png"
   },
   "club": {
    "code": "BAS",
@@ -6050,8 +6110,8 @@
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 55862,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/44fceb26-24ea-4de5-b66b-724b5e569867.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/44fceb26-24ea-4de5-b66b-724b5e569867.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/44fceb26-24ea-4de5-b66b-724b5e569867.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/44fceb26-24ea-4de5-b66b-724b5e569867.png"
   },
   "club": {
    "code": "VIR",
@@ -6302,8 +6362,8 @@
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 55858,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/18dc2e86-95e0-4c68-a949-f6897d477f8b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/18dc2e86-95e0-4c68-a949-f6897d477f8b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/18dc2e86-95e0-4c68-a949-f6897d477f8b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/18dc2e86-95e0-4c68-a949-f6897d477f8b.png"
   },
   "club": {
    "code": "PAR",
@@ -6365,8 +6425,8 @@
   "lastTeam": "MANISA BBSK",
   "externalId": 55857,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/619dbb6e-f8f0-4347-a4ee-eb27a43aa5d2.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/619dbb6e-f8f0-4347-a4ee-eb27a43aa5d2.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/619dbb6e-f8f0-4347-a4ee-eb27a43aa5d2.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/619dbb6e-f8f0-4347-a4ee-eb27a43aa5d2.png"
   },
   "club": {
    "code": "PRS",
@@ -6428,8 +6488,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 55856,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a9317da-cdf8-40cb-8098-e6d083d631ac.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a9317da-cdf8-40cb-8098-e6d083d631ac.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a9317da-cdf8-40cb-8098-e6d083d631ac.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a9317da-cdf8-40cb-8098-e6d083d631ac.png"
   },
   "club": {
    "code": "PRS",
@@ -6491,8 +6551,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 55855,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/63c6b216-3410-4c21-8ad0-a8277380c6b1.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/63c6b216-3410-4c21-8ad0-a8277380c6b1.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/63c6b216-3410-4c21-8ad0-a8277380c6b1.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/63c6b216-3410-4c21-8ad0-a8277380c6b1.png"
   },
   "club": {
    "code": "PRS",
@@ -6743,8 +6803,8 @@
   "lastTeam": "CEDEVITA",
   "externalId": 55843,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3227ae52-09cc-4723-a410-4cc76c99a30b.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3227ae52-09cc-4723-a410-4cc76c99a30b.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3227ae52-09cc-4723-a410-4cc76c99a30b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/3227ae52-09cc-4723-a410-4cc76c99a30b.png"
   },
   "club": {
    "code": "BAS",
@@ -6869,8 +6929,8 @@
   "lastTeam": "HAPOEL TEL AVIV",
   "externalId": 55836,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c65eadb-a044-456e-ba03-db9c4790c25d.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c65eadb-a044-456e-ba03-db9c4790c25d.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c65eadb-a044-456e-ba03-db9c4790c25d.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c65eadb-a044-456e-ba03-db9c4790c25d.png"
   },
   "club": {
    "code": "RED",
@@ -6994,8 +7054,8 @@
   "lastTeam": "BESIKTAS ISTANBUL",
   "externalId": 55833,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/17184188-fa8a-44d6-b2d7-ec3267572455.png"
   },
   "club": {
    "code": "BES",
@@ -7057,8 +7117,8 @@
   "lastTeam": "BESIKTAS ISTANBUL",
   "externalId": 55831,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fadd0a7-fdbd-4e56-9a1c-75ba0c800f3c.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fadd0a7-fdbd-4e56-9a1c-75ba0c800f3c.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fadd0a7-fdbd-4e56-9a1c-75ba0c800f3c.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fadd0a7-fdbd-4e56-9a1c-75ba0c800f3c.png"
   },
   "club": {
    "code": "BES",
@@ -7183,8 +7243,8 @@
   "lastTeam": "FENERBAHCE BEKO",
   "externalId": 55829,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/a66ef548-089c-4cb2-8645-e397472f11be.png"
   },
   "club": {
    "code": "BES",
@@ -7498,8 +7558,8 @@
   "lastTeam": "INDIANA PACERS",
   "externalId": 55813,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b7bc8ef7-ab26-4867-93e7-843ba2207c2f.png"
   },
   "club": {
    "code": "MIL",
@@ -7687,8 +7747,8 @@
   "lastTeam": "LEONESSA BRESCIA",
   "externalId": 55809,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fd162c7-1372-4d9e-ad83-f8f0f77816b4.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fd162c7-1372-4d9e-ad83-f8f0f77816b4.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fd162c7-1372-4d9e-ad83-f8f0f77816b4.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6fd162c7-1372-4d9e-ad83-f8f0f77816b4.png"
   },
   "club": {
    "code": "MIL",
@@ -7813,8 +7873,8 @@
   "lastTeam": "CASADEMONT ZARAGOZA",
   "externalId": 55786,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9bdd2088-7719-4be5-a88d-99d2dc6aaed2.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9bdd2088-7719-4be5-a88d-99d2dc6aaed2.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9bdd2088-7719-4be5-a88d-99d2dc6aaed2.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9bdd2088-7719-4be5-a88d-99d2dc6aaed2.png"
   },
   "club": {
    "code": "IST",
@@ -7876,8 +7936,8 @@
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 55744,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/90d5376e-f240-4e2f-93d5-3fca317e5301.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/90d5376e-f240-4e2f-93d5-3fca317e5301.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/90d5376e-f240-4e2f-93d5-3fca317e5301.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/90d5376e-f240-4e2f-93d5-3fca317e5301.png"
   },
   "club": {
    "code": "PAN",
@@ -7939,8 +7999,8 @@
   "lastTeam": "PARTIZAN BELGRADE",
   "externalId": 55743,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a8c7109-5192-4ff2-aa92-51bbaf656f60.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a8c7109-5192-4ff2-aa92-51bbaf656f60.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a8c7109-5192-4ff2-aa92-51bbaf656f60.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7a8c7109-5192-4ff2-aa92-51bbaf656f60.png"
   },
   "club": {
    "code": "PAN",
@@ -8002,8 +8062,8 @@
   "lastTeam": "CHICAGO BULLS",
   "externalId": 55742,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cff617e-e2d9-4588-af8b-8d1360a1e307.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cff617e-e2d9-4588-af8b-8d1360a1e307.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cff617e-e2d9-4588-af8b-8d1360a1e307.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/8cff617e-e2d9-4588-af8b-8d1360a1e307.png"
   },
   "club": {
    "code": "PAN",
@@ -8191,8 +8251,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 55722,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fff78d8f-32e7-48f7-a9c8-f56e536b4c85.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fff78d8f-32e7-48f7-a9c8-f56e536b4c85.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fff78d8f-32e7-48f7-a9c8-f56e536b4c85.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/fff78d8f-32e7-48f7-a9c8-f56e536b4c85.png"
   },
   "club": {
    "code": "PAR",
@@ -8317,8 +8377,8 @@
   "lastTeam": "AS MONACO",
   "externalId": 55720,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd451e5-94a5-46fd-9b80-cb636427977a.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd451e5-94a5-46fd-9b80-cb636427977a.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd451e5-94a5-46fd-9b80-cb636427977a.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0cd451e5-94a5-46fd-9b80-cb636427977a.png"
   },
   "club": {
    "code": "PAR",
@@ -8506,8 +8566,8 @@
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 55717,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bf908c41-803f-45dd-82bb-3e7503bdd6ee.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bf908c41-803f-45dd-82bb-3e7503bdd6ee.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bf908c41-803f-45dd-82bb-3e7503bdd6ee.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bf908c41-803f-45dd-82bb-3e7503bdd6ee.png"
   },
   "club": {
    "code": "PAR",
@@ -8569,8 +8629,8 @@
   "lastTeam": "NBA",
   "externalId": 55716,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2fadad36-f7fa-4856-92c2-60493c034f06.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2fadad36-f7fa-4856-92c2-60493c034f06.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2fadad36-f7fa-4856-92c2-60493c034f06.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2fadad36-f7fa-4856-92c2-60493c034f06.png"
   },
   "club": {
    "code": "PAR",
@@ -8695,8 +8755,8 @@
   "lastTeam": "TURK TELEKOM SPOR KULUBU",
   "externalId": 55714,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/48a32899-b6b5-4dae-b435-52397b480cf3.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/48a32899-b6b5-4dae-b435-52397b480cf3.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/48a32899-b6b5-4dae-b435-52397b480cf3.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/48a32899-b6b5-4dae-b435-52397b480cf3.png"
   },
   "club": {
    "code": "PAR",
@@ -8884,8 +8944,8 @@
   "lastTeam": "CHARLOTTE HORNETS",
   "externalId": 55711,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5b4a8076-00f0-482b-9ae1-9a4a8118507a.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5b4a8076-00f0-482b-9ae1-9a4a8118507a.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5b4a8076-00f0-482b-9ae1-9a4a8118507a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5b4a8076-00f0-482b-9ae1-9a4a8118507a.png"
   },
   "club": {
    "code": "PAM",
@@ -9136,8 +9196,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 55707,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/8a3e5dbd-9539-4d4e-96f9-dc0c78f20665.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/8a3e5dbd-9539-4d4e-96f9-dc0c78f20665.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/8a3e5dbd-9539-4d4e-96f9-dc0c78f20665.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/8a3e5dbd-9539-4d4e-96f9-dc0c78f20665.png"
   },
   "club": {
    "code": "PAM",
@@ -9199,8 +9259,8 @@
   "lastTeam": "PANATHINAIKOS BC",
   "externalId": 55706,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/9fa5bf1b-8cb1-4875-8ac7-42ec4173ec8b.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/9fa5bf1b-8cb1-4875-8ac7-42ec4173ec8b.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/9fa5bf1b-8cb1-4875-8ac7-42ec4173ec8b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/9fa5bf1b-8cb1-4875-8ac7-42ec4173ec8b.png"
   },
   "club": {
    "code": "PAM",
@@ -9451,8 +9511,8 @@
   "lastTeam": "JL BOURG",
   "externalId": 55702,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b44a739e-fa05-4702-ac81-474770eccf49.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b44a739e-fa05-4702-ac81-474770eccf49.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b44a739e-fa05-4702-ac81-474770eccf49.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/b44a739e-fa05-4702-ac81-474770eccf49.png"
   },
   "club": {
    "code": "VIR",
@@ -9514,8 +9574,8 @@
   "lastTeam": "WURZBURG BASKET",
   "externalId": 55701,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3c9492d7-56e9-4a4e-9d49-8d6c7c20b2c7.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3c9492d7-56e9-4a4e-9d49-8d6c7c20b2c7.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3c9492d7-56e9-4a4e-9d49-8d6c7c20b2c7.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3c9492d7-56e9-4a4e-9d49-8d6c7c20b2c7.png"
   },
   "club": {
    "code": "VIR",
@@ -9705,8 +9765,8 @@
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 55698,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bbb31a52-7c6a-4536-9039-9899b5c0f4f8.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bbb31a52-7c6a-4536-9039-9899b5c0f4f8.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bbb31a52-7c6a-4536-9039-9899b5c0f4f8.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/bbb31a52-7c6a-4536-9039-9899b5c0f4f8.png"
   },
   "club": {
    "code": "ZAL",
@@ -9768,8 +9828,8 @@
   "lastTeam": "DALLAS MAVERICKS",
   "externalId": 55697,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a454d11a-9a18-4a6c-979b-b5bbe6cd0f40.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a454d11a-9a18-4a6c-979b-b5bbe6cd0f40.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a454d11a-9a18-4a6c-979b-b5bbe6cd0f40.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/a454d11a-9a18-4a6c-979b-b5bbe6cd0f40.png"
   },
   "club": {
    "code": "ZAL",
@@ -9894,8 +9954,8 @@
   "lastTeam": "VALLEY SUNS",
   "externalId": 55695,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b1eb5eea-4457-4ba1-a5c0-4b3c68ce4f48.png"
   },
   "club": {
    "code": "BAS",
@@ -10146,8 +10206,8 @@
   "lastTeam": "BC RYTAS",
   "externalId": 55691,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bcfd60fd-93d3-4905-8de0-b4b4fe61e3d7.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bcfd60fd-93d3-4905-8de0-b4b4fe61e3d7.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bcfd60fd-93d3-4905-8de0-b4b4fe61e3d7.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/bcfd60fd-93d3-4905-8de0-b4b4fe61e3d7.png"
   },
   "club": {
    "code": "ULK",
@@ -10335,8 +10395,8 @@
   "lastTeam": "VALENCIA BASKET",
   "externalId": 55688,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/527a3b93-eaa7-42ab-9590-3252f456053b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/527a3b93-eaa7-42ab-9590-3252f456053b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/527a3b93-eaa7-42ab-9590-3252f456053b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/527a3b93-eaa7-42ab-9590-3252f456053b.png"
   },
   "club": {
    "code": "ULK",
@@ -10398,8 +10458,8 @@
   "lastTeam": "KOSNER BASKONIA VITORIA-GASTEIZ",
   "externalId": 55687,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/09ca03e5-06f4-4d5d-acad-20fe31330c78.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/09ca03e5-06f4-4d5d-acad-20fe31330c78.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/09ca03e5-06f4-4d5d-acad-20fe31330c78.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/09ca03e5-06f4-4d5d-acad-20fe31330c78.png"
   },
   "club": {
    "code": "ULK",
@@ -10461,8 +10521,8 @@
   "lastTeam": "ZENIT BC",
   "externalId": 55686,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/f5f7d6b8-b550-4be0-84aa-8fb064a9039b.png"
   },
   "club": {
    "code": "ULK",
@@ -10893,8 +10953,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 55679,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/735bad25-9548-4914-ab3b-81729ee9d61c.png"
   },
   "club": {
    "code": "MUN",
@@ -11397,8 +11457,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 55660,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d36c176-682d-40c2-84f2-db9583dc94cc.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d36c176-682d-40c2-84f2-db9583dc94cc.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d36c176-682d-40c2-84f2-db9583dc94cc.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9d36c176-682d-40c2-84f2-db9583dc94cc.png"
   },
   "club": {
    "code": "RED",
@@ -11835,8 +11895,8 @@
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 55640,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f1f593da-33f7-4d2f-a4f7-7b8ec129e4ad.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f1f593da-33f7-4d2f-a4f7-7b8ec129e4ad.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f1f593da-33f7-4d2f-a4f7-7b8ec129e4ad.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f1f593da-33f7-4d2f-a4f7-7b8ec129e4ad.png"
   },
   "club": {
    "code": "MIL",
@@ -11898,8 +11958,8 @@
   "lastTeam": "VALENCIA BASKET",
   "externalId": 55639,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/cd27e6f7-5e0b-45ac-a3e9-6f2c60adb886.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/cd27e6f7-5e0b-45ac-a3e9-6f2c60adb886.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/cd27e6f7-5e0b-45ac-a3e9-6f2c60adb886.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/cd27e6f7-5e0b-45ac-a3e9-6f2c60adb886.png"
   },
   "club": {
    "code": "MIL",
@@ -12089,8 +12149,8 @@
   "lastTeam": "HAPOEL SHLOMO TEL AVIV",
   "externalId": 55636,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf5b29e9-6800-41cf-91d0-caf5ef30e20f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf5b29e9-6800-41cf-91d0-caf5ef30e20f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf5b29e9-6800-41cf-91d0-caf5ef30e20f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/cf5b29e9-6800-41cf-91d0-caf5ef30e20f.png"
   },
   "club": {
    "code": "IST",
@@ -12215,8 +12275,8 @@
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 55634,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/e404b8ed-9a3b-480e-8b3f-ce49905188b5.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/e404b8ed-9a3b-480e-8b3f-ce49905188b5.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/e404b8ed-9a3b-480e-8b3f-ce49905188b5.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/e404b8ed-9a3b-480e-8b3f-ce49905188b5.png"
   },
   "club": {
    "code": "IST",
@@ -12278,8 +12338,8 @@
   "lastTeam": "U18 ANADOLU EFES ISTANBUL",
   "externalId": 55633,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d548b157-4579-4f9f-9816-e875f24b1ebd.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d548b157-4579-4f9f-9816-e875f24b1ebd.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d548b157-4579-4f9f-9816-e875f24b1ebd.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d548b157-4579-4f9f-9816-e875f24b1ebd.png"
   },
   "club": {
    "code": "IST",
@@ -12404,8 +12464,8 @@
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54940,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5d1b2a2a-4d68-4723-8389-d86a4d6f8b6b.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5d1b2a2a-4d68-4723-8389-d86a4d6f8b6b.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5d1b2a2a-4d68-4723-8389-d86a4d6f8b6b.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/5d1b2a2a-4d68-4723-8389-d86a4d6f8b6b.png"
   },
   "club": {
    "code": "ZAL",
@@ -12467,8 +12527,8 @@
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54939,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f38f343-3a06-40e9-a3f6-999fae1df4cb.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f38f343-3a06-40e9-a3f6-999fae1df4cb.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f38f343-3a06-40e9-a3f6-999fae1df4cb.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/0f38f343-3a06-40e9-a3f6-999fae1df4cb.png"
   },
   "club": {
    "code": "ZAL",
@@ -12530,8 +12590,8 @@
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54938,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/30189b7a-3050-4119-9fbb-165978cd8f71.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/30189b7a-3050-4119-9fbb-165978cd8f71.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/30189b7a-3050-4119-9fbb-165978cd8f71.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/30189b7a-3050-4119-9fbb-165978cd8f71.png"
   },
   "club": {
    "code": "ZAL",
@@ -12719,8 +12779,8 @@
   "lastTeam": "ZALGIRIS KAUNAS",
   "externalId": 54934,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/767fb622-9a2b-4fae-ad01-39b3c64f046b.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/767fb622-9a2b-4fae-ad01-39b3c64f046b.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/767fb622-9a2b-4fae-ad01-39b3c64f046b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/767fb622-9a2b-4fae-ad01-39b3c64f046b.png"
   },
   "club": {
    "code": "ZAL",
@@ -12845,8 +12905,8 @@
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 54930,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/622f5afe-0cda-41b3-8e86-f73efd580d9a.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/622f5afe-0cda-41b3-8e86-f73efd580d9a.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/622f5afe-0cda-41b3-8e86-f73efd580d9a.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/622f5afe-0cda-41b3-8e86-f73efd580d9a.png"
   },
   "club": {
    "code": "VIR",
@@ -12908,8 +12968,8 @@
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 54929,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c8a51e8-7003-4d2f-909f-208cb763fd00.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c8a51e8-7003-4d2f-909f-208cb763fd00.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c8a51e8-7003-4d2f-909f-208cb763fd00.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2c8a51e8-7003-4d2f-909f-208cb763fd00.png"
   },
   "club": {
    "code": "VIR",
@@ -12971,8 +13031,8 @@
   "lastTeam": "VIRTUS BOLOGNA",
   "externalId": 54927,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3351b25e-52eb-478a-ad83-0e1a659b6337.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3351b25e-52eb-478a-ad83-0e1a659b6337.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3351b25e-52eb-478a-ad83-0e1a659b6337.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/3351b25e-52eb-478a-ad83-0e1a659b6337.png"
   },
   "club": {
    "code": "VIR",
@@ -13034,8 +13094,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 54923,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/f261acd1-82c0-46d6-a434-3e5618079360.png"
   },
   "club": {
    "code": "PAM",
@@ -13097,8 +13157,8 @@
   "lastTeam": "VALENCIA BASKET CLUB",
   "externalId": 54921,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/abd62f56-26d6-4f58-aa4e-54d9c2606c55.png"
   },
   "club": {
    "code": "PAM",
@@ -13349,8 +13409,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54911,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b397c09-49ba-4da7-9bb3-547d1b868d7e.png"
   },
   "club": {
    "code": "MAD",
@@ -13601,8 +13661,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54905,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d76135f4-7f2f-44fa-b824-cf21392822be.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d76135f4-7f2f-44fa-b824-cf21392822be.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d76135f4-7f2f-44fa-b824-cf21392822be.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/d76135f4-7f2f-44fa-b824-cf21392822be.png"
   },
   "club": {
    "code": "MAD",
@@ -13664,8 +13724,8 @@
   "lastTeam": "REAL MADRID",
   "externalId": 54904,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5cdd7ecf-8ed5-4649-aba3-ffdbc58ccb7e.png"
   },
   "club": {
    "code": "MAD",
@@ -13853,8 +13913,8 @@
   "lastTeam": "PARTIZAN MOZZART BET",
   "externalId": 54899,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d7f73eb-ff44-4a2a-8e85-7d535077120e.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d7f73eb-ff44-4a2a-8e85-7d535077120e.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d7f73eb-ff44-4a2a-8e85-7d535077120e.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/2d7f73eb-ff44-4a2a-8e85-7d535077120e.png"
   },
   "club": {
    "code": "PAR",
@@ -14039,8 +14099,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54888,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/86b88bde-0eb8-434c-97c5-1c343473963d.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/86b88bde-0eb8-434c-97c5-1c343473963d.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/86b88bde-0eb8-434c-97c5-1c343473963d.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/86b88bde-0eb8-434c-97c5-1c343473963d.png"
   },
   "club": {
    "code": "PRS",
@@ -14165,8 +14225,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54886,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/33d6b1bb-2e42-42de-98e3-c02c475d36d1.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/33d6b1bb-2e42-42de-98e3-c02c475d36d1.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/33d6b1bb-2e42-42de-98e3-c02c475d36d1.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/33d6b1bb-2e42-42de-98e3-c02c475d36d1.png"
   },
   "club": {
    "code": "PRS",
@@ -14288,8 +14348,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54884,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7934ce9d-4a65-4f45-bc46-e22eb56660bc.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7934ce9d-4a65-4f45-bc46-e22eb56660bc.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7934ce9d-4a65-4f45-bc46-e22eb56660bc.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/7934ce9d-4a65-4f45-bc46-e22eb56660bc.png"
   },
   "club": {
    "code": "PRS",
@@ -14411,8 +14471,8 @@
   "lastTeam": "PARIS BASKETBALL",
   "externalId": 54881,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c4dc8064-fc52-451a-b27c-0aa9ec164948.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c4dc8064-fc52-451a-b27c-0aa9ec164948.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c4dc8064-fc52-451a-b27c-0aa9ec164948.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c4dc8064-fc52-451a-b27c-0aa9ec164948.png"
   },
   "club": {
    "code": "PRS",
@@ -14537,8 +14597,8 @@
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 54877,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c1a76676-300c-4059-9a26-bc18e0b35c9f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c1a76676-300c-4059-9a26-bc18e0b35c9f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c1a76676-300c-4059-9a26-bc18e0b35c9f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/c1a76676-300c-4059-9a26-bc18e0b35c9f.png"
   },
   "club": {
    "code": "PAN",
@@ -14726,8 +14786,8 @@
   "lastTeam": "PANATHINAIKOS BSA",
   "externalId": 54874,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/4cc9a8ca-6edf-4914-a69e-78e845899b7c.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/4cc9a8ca-6edf-4914-a69e-78e845899b7c.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/4cc9a8ca-6edf-4914-a69e-78e845899b7c.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS1/4cc9a8ca-6edf-4914-a69e-78e845899b7c.png"
   },
   "club": {
    "code": "PAN",
@@ -14980,8 +15040,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54866,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/9ac987d0-0116-44c0-8a42-6d4cbe18ed01.png"
   },
   "club": {
    "code": "OLY",
@@ -15106,8 +15166,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54863,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/52eb1824-f9f5-4265-bb98-b2d7fa918c4f.png"
   },
   "club": {
    "code": "OLY",
@@ -15169,8 +15229,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54862,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/330baf1d-0d04-4b6f-8362-6eaf34724d32.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/330baf1d-0d04-4b6f-8362-6eaf34724d32.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/330baf1d-0d04-4b6f-8362-6eaf34724d32.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/330baf1d-0d04-4b6f-8362-6eaf34724d32.png"
   },
   "club": {
    "code": "OLY",
@@ -15232,8 +15292,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54861,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c91b4e96-3343-4333-bf46-498697194c2f.png"
   },
   "club": {
    "code": "OLY",
@@ -15358,8 +15418,8 @@
   "lastTeam": "OLYMPIACOS",
   "externalId": 54859,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cdb64620-0a73-4980-8325-da950d4aeaed.png"
   },
   "club": {
    "code": "OLY",
@@ -15967,8 +16027,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54837,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/42d1c992-b912-4c98-be0e-eb95d712b204.png"
   },
   "club": {
    "code": "BAS",
@@ -16093,8 +16153,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54833,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/6d9e7b46-0476-4952-bef8-584efabcd9da.png"
   },
   "club": {
    "code": "BAS",
@@ -16156,8 +16216,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54832,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/2c60a5d5-e755-43f1-8783-8810ad15d63a.png"
   },
   "club": {
    "code": "BAS",
@@ -16219,8 +16279,8 @@
   "lastTeam": "SASKI BASKONIA",
   "externalId": 54828,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/50d10547-ade7-4abb-af2a-35ef3ceb0b01.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/50d10547-ade7-4abb-af2a-35ef3ceb0b01.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/50d10547-ade7-4abb-af2a-35ef3ceb0b01.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/50d10547-ade7-4abb-af2a-35ef3ceb0b01.png"
   },
   "club": {
    "code": "BAS",
@@ -16888,8 +16948,8 @@
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54811,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/feec6c35-12e0-40b5-b67e-4950139c43e6.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/feec6c35-12e0-40b5-b67e-4950139c43e6.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/feec6c35-12e0-40b5-b67e-4950139c43e6.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/feec6c35-12e0-40b5-b67e-4950139c43e6.png"
   },
   "club": {
    "code": "ULK",
@@ -16951,8 +17011,8 @@
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54809,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/ff796aeb-4ff5-432b-a4c2-78ded0dded1a.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/ff796aeb-4ff5-432b-a4c2-78ded0dded1a.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/ff796aeb-4ff5-432b-a4c2-78ded0dded1a.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/ff796aeb-4ff5-432b-a4c2-78ded0dded1a.png"
   },
   "club": {
    "code": "ULK",
@@ -17014,8 +17074,8 @@
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54807,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/442032c1-9577-4b21-abe6-dc14c2f21b05.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/442032c1-9577-4b21-abe6-dc14c2f21b05.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/442032c1-9577-4b21-abe6-dc14c2f21b05.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/442032c1-9577-4b21-abe6-dc14c2f21b05.png"
   },
   "club": {
    "code": "ULK",
@@ -17077,8 +17137,8 @@
   "lastTeam": "FENERBAHCE ISTANBUL",
   "externalId": 54805,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7d88a3f-13f2-4e71-a0ff-75a4cf3e0885.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7d88a3f-13f2-4e71-a0ff-75a4cf3e0885.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7d88a3f-13f2-4e71-a0ff-75a4cf3e0885.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/c7d88a3f-13f2-4e71-a0ff-75a4cf3e0885.png"
   },
   "club": {
    "code": "ULK",
@@ -17140,8 +17200,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 54804,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5fa39900-dd95-4c21-bc85-03cee538cb61.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5fa39900-dd95-4c21-bc85-03cee538cb61.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5fa39900-dd95-4c21-bc85-03cee538cb61.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5fa39900-dd95-4c21-bc85-03cee538cb61.png"
   },
   "club": {
    "code": "MUN",
@@ -17392,8 +17452,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 54797,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/28518dcb-f41d-4ea7-b76c-8217072ca3d2.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/28518dcb-f41d-4ea7-b76c-8217072ca3d2.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/28518dcb-f41d-4ea7-b76c-8217072ca3d2.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/28518dcb-f41d-4ea7-b76c-8217072ca3d2.png"
   },
   "club": {
    "code": "MUN",
@@ -17518,8 +17578,8 @@
   "lastTeam": "FC BAYERN MUNICH",
   "externalId": 54794,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/5c62c23d-0581-4667-a77b-52af033153bc.png"
   },
   "club": {
    "code": "MUN",
@@ -17581,8 +17641,8 @@
   "lastTeam": "FC BARCELONA",
   "externalId": 54792,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9a56a310-cebf-4640-ab91-5c7690d16c51.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9a56a310-cebf-4640-ab91-5c7690d16c51.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9a56a310-cebf-4640-ab91-5c7690d16c51.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/9a56a310-cebf-4640-ab91-5c7690d16c51.png"
   },
   "club": {
    "code": "BAR",
@@ -17770,8 +17830,8 @@
   "lastTeam": "FC BARCELONA",
   "externalId": 54786,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/675c5bac-7d19-44f6-944d-3c7373e09f3d.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/675c5bac-7d19-44f6-944d-3c7373e09f3d.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/675c5bac-7d19-44f6-944d-3c7373e09f3d.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/675c5bac-7d19-44f6-944d-3c7373e09f3d.png"
   },
   "club": {
    "code": "BAR",
@@ -17833,8 +17893,8 @@
   "lastTeam": "",
   "externalId": 54785,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/5b0bd75f-af22-4996-84a9-d0d648f79bf3.png"
   },
   "club": {
    "code": "DUB",
@@ -17896,8 +17956,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54784,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/646836ea-3fdd-498b-ab6c-ccbea13061b0.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/646836ea-3fdd-498b-ab6c-ccbea13061b0.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/646836ea-3fdd-498b-ab6c-ccbea13061b0.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/646836ea-3fdd-498b-ab6c-ccbea13061b0.png"
   },
   "club": {
    "code": "DUB",
@@ -17959,8 +18019,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54783,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0bbbab43-98f1-4296-a58b-20f841bb5133.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0bbbab43-98f1-4296-a58b-20f841bb5133.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0bbbab43-98f1-4296-a58b-20f841bb5133.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/0bbbab43-98f1-4296-a58b-20f841bb5133.png"
   },
   "club": {
    "code": "DUB",
@@ -18022,8 +18082,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54782,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/23d74c36-1398-44c2-bde6-1a14ba013993.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/23d74c36-1398-44c2-bde6-1a14ba013993.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/23d74c36-1398-44c2-bde6-1a14ba013993.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/23d74c36-1398-44c2-bde6-1a14ba013993.png"
   },
   "club": {
    "code": "DUB",
@@ -18148,8 +18208,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54780,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/549694d6-9e5b-4c11-b9fc-a06f8207a271.png"
   },
   "club": {
    "code": "DUB",
@@ -18211,8 +18271,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54779,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a8eba30d-2ec0-4169-9b31-a393345480c5.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a8eba30d-2ec0-4169-9b31-a393345480c5.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a8eba30d-2ec0-4169-9b31-a393345480c5.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/a8eba30d-2ec0-4169-9b31-a393345480c5.png"
   },
   "club": {
    "code": "DUB",
@@ -18397,8 +18457,8 @@
   "lastTeam": "DUBAI BASKETBALL",
   "externalId": 54776,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/7fb63419-56e1-48f8-ab5b-e5a6a3042215.png"
   },
   "club": {
    "code": "DUB",
@@ -18460,8 +18520,8 @@
   "lastTeam": "",
   "externalId": 54775,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cb63dd32-23db-47ea-94c6-6b7fb0520fab.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cb63dd32-23db-47ea-94c6-6b7fb0520fab.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cb63dd32-23db-47ea-94c6-6b7fb0520fab.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cb63dd32-23db-47ea-94c6-6b7fb0520fab.png"
   },
   "club": {
    "code": "DUB",
@@ -18523,8 +18583,8 @@
   "lastTeam": "CRVENA ZVEZDA",
   "externalId": 54774,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/08270e7f-2a17-43ae-a234-5b83ebc80a63.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/08270e7f-2a17-43ae-a234-5b83ebc80a63.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/08270e7f-2a17-43ae-a234-5b83ebc80a63.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/08270e7f-2a17-43ae-a234-5b83ebc80a63.png"
   },
   "club": {
    "code": "RED",
@@ -19027,8 +19087,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 54759,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/afc60d0e-cb89-47a5-969c-95d4c14d883b.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/afc60d0e-cb89-47a5-969c-95d4c14d883b.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/afc60d0e-cb89-47a5-969c-95d4c14d883b.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/afc60d0e-cb89-47a5-969c-95d4c14d883b.png"
   },
   "club": {
    "code": "MIL",
@@ -19153,8 +19213,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 54757,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/b9b0b819-b255-41fb-aa35-f450eb2503cb.png"
   },
   "club": {
    "code": "MIL",
@@ -19216,8 +19276,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 54756,
   "images": {
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png",
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png"
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png",
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/407d3664-5298-4677-bba8-fd4b8fee4928.png"
   },
   "club": {
    "code": "MIL",
@@ -19279,8 +19339,8 @@
   "lastTeam": "EA7 EMPORIO ARMANI MILAN",
   "externalId": 54755,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/bac6b071-e029-470a-b5fa-4cb66d11eef7.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/bac6b071-e029-470a-b5fa-4cb66d11eef7.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/bac6b071-e029-470a-b5fa-4cb66d11eef7.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONy/bac6b071-e029-470a-b5fa-4cb66d11eef7.png"
   },
   "club": {
    "code": "MIL",
@@ -19342,8 +19402,8 @@
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 54752,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/da191ebd-a494-4852-bdc6-d9d2ef8acb20.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/da191ebd-a494-4852-bdc6-d9d2ef8acb20.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/da191ebd-a494-4852-bdc6-d9d2ef8acb20.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/da191ebd-a494-4852-bdc6-d9d2ef8acb20.png"
   },
   "club": {
    "code": "IST",
@@ -19531,8 +19591,8 @@
   "lastTeam": "ANADOLU EFES ISTANBUL",
   "externalId": 54748,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92da8264-e1f6-434c-9923-a86d51b3affd.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92da8264-e1f6-434c-9923-a86d51b3affd.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92da8264-e1f6-434c-9923-a86d51b3affd.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/92da8264-e1f6-434c-9923-a86d51b3affd.png"
   },
   "club": {
    "code": "IST",
@@ -19594,8 +19654,8 @@
   "lastTeam": "",
   "externalId": 54745,
   "images": {
-   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/faf1dbe4-c23a-4b7a-8175-72d536d41d52.png",
-   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/faf1dbe4-c23a-4b7a-8175-72d536d41d52.png"
+   "action": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/faf1dbe4-c23a-4b7a-8175-72d536d41d52.png",
+   "headshot": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/faf1dbe4-c23a-4b7a-8175-72d536d41d52.png"
   },
   "club": {
    "code": "IST",
