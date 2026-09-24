@@ -20693,7 +20693,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -23521,7 +23521,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -24531,7 +24531,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -25541,7 +25541,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -27965,7 +27965,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -28571,7 +28571,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -29581,7 +29581,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -31500,7 +31500,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -34631,7 +34631,7 @@
    "name": "SUNEL ARENA",
    "code": "AVT1",
    "capacity": 8300,
-   "address": "",
+   "address": "Konstantinoupoleos 59, Ano Liosia, 13342 Athens, Greece",
    "images": {
     "medium": null
    },
@@ -37451,9 +37451,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJCL",
+   "name": "LOTTERMOSER, ROBERT",
+   "alias": "LOTTERMOSER, R.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "images": {
+    "verticalSmall": "8845rp7o4ifpg9kf"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJLQ",
+   "name": "ALIAGA, JORDI",
+   "alias": "ALIAGA, J.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "ayrigtbycwi5iitj"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMN",
+   "name": "BISSUEL, THOMAS",
+   "alias": "BISSUEL, T.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "BELGRADE ARENA",
@@ -37552,9 +37588,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OAEF",
+   "name": "GARCIA, JUAN CARLOS",
+   "alias": "GARCIA GONZALEZ, J.C.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "883ghgjot7u5suil"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OACY",
+   "name": "JOVCIC, MILIVOJE",
+   "alias": "JOVCIC, M.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "images": {
+    "verticalSmall": "8844kualjiu9jr5p"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "013174",
+   "name": "CALIC, STEFAN",
+   "alias": "CALIC, S.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ULKER SPORTS AND EVENT HALL",
@@ -37653,9 +37725,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJLL",
+   "name": "DIFALLAH, MEHDI",
+   "alias": "DIFALLAH, M.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": "87ytu4ivn6qtsqni"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJFQ",
+   "name": "FOUFIS, IOANNIS",
+   "alias": "FOUFIS, I.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "images": {
+    "verticalSmall": "87yuyhwl9wgoi74r"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMF",
+   "name": "KARDUM, LUKA",
+   "alias": "KARDUM, L.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": "awgpghekyaxank3l"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
