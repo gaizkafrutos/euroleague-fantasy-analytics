@@ -1,111 +1,111 @@
 {
- "method": "ilp",
- "totalPrice": 99.9,
- "totalProjection": 154.35,
- "scoredProjection": 171.61,
- "captain": "4252",
+ "method": "greedy",
+ "totalPrice": 98.6,
+ "totalProjection": 237.4,
+ "scoredProjection": 248.5,
+ "captain": "7201",
  "starters": [
-  "4252",
-  "3887",
-  "3843",
-  "7221",
-  "3808"
+  "7201",
+  "3857",
+  "3874",
+  "11516",
+  "4247"
  ],
- "sixth": "3905",
+ "sixth": "3946",
  "bench": [
-  "11531",
-  "3835",
-  "7223",
-  "3976"
+  "11521",
+  "3883",
+  "3836",
+  "4061"
  ],
  "coach": {
-  "key": "4255",
-  "name": null,
+  "key": "3974",
+  "name": "GAVEL, ANTON",
   "position": "E",
-  "club": "PAM",
-  "price": 7.0,
-  "projection": 7.39
+  "club": "MUN",
+  "price": 5.0,
+  "projection": 10.0
  },
  "players": [
   {
-   "key": "4252",
-   "name": "MONTERO, JEAN",
+   "key": "3874",
+   "name": "DORSEY, TYLER",
    "position": "G",
    "club": "OLY",
-   "price": 12.8,
-   "projection": 25.17
+   "price": 12.6,
+   "projection": 31.9
   },
   {
-   "key": "3887",
-   "name": "FRANCISCO, SYLVAIN",
+   "key": "4247",
+   "name": "JONES, CHRIS",
    "position": "G",
+   "club": "RED",
+   "price": 12.1,
+   "projection": 25.0
+  },
+  {
+   "key": "3946",
+   "name": "OBST, ANDREAS",
+   "position": "G",
+   "club": "MUN",
+   "price": 10.2,
+   "projection": 20.9
+  },
+  {
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
+   "position": "G",
+   "club": "ASV",
+   "price": 4.8,
+   "projection": 18.7
+  },
+  {
+   "key": "7201",
+   "name": "BACON, DWAYNE",
+   "position": "F",
+   "club": "DUB",
+   "price": 12.7,
+   "projection": 34.1
+  },
+  {
+   "key": "11516",
+   "name": "CROWDER, JAE",
+   "position": "F",
+   "club": "ASV",
+   "price": 9.5,
+   "projection": 27.5
+  },
+  {
+   "key": "3836",
+   "name": "MITOGLOU, KONSTANTINOS",
+   "position": "F",
    "club": "PAN",
-   "price": 14.8,
-   "projection": 24.91
+   "price": 5.5,
+   "projection": 15.4
   },
   {
-   "key": "3808",
-   "name": "MILLER-MCINTYRE, CODI",
-   "position": "G",
-   "club": "OLY",
-   "price": 11.0,
-   "projection": 17.46
-  },
-  {
-   "key": "3905",
-   "name": "LUNDBERG, IFFE",
-   "position": "G",
-   "club": "TEL",
-   "price": 8.3,
-   "projection": 16.66
-  },
-  {
-   "key": "7221",
-   "name": "TUBELIS, AZUOLAS",
+   "key": "4061",
+   "name": "MANTZOUKAS, ELEFTHERIOS",
    "position": "F",
-   "club": "ZAL",
-   "price": 11.1,
-   "projection": 17.77
+   "club": "PAN",
+   "price": 4.5,
+   "projection": 13.2
   },
   {
-   "key": "11531",
-   "name": "DE COLO, NANDO",
-   "position": "F",
-   "club": "PRS",
-   "price": 5.7,
-   "projection": 10.52
-  },
-  {
-   "key": "7223",
-   "name": "FRISCH, CLEMENT",
-   "position": "F",
-   "club": "BAS",
-   "price": 5.1,
-   "projection": 6.8
-  },
-  {
-   "key": "3976",
-   "name": "LAKIC, ARIJAN",
-   "position": "F",
-   "club": "PAR",
-   "price": 4.0,
-   "projection": 3.92
-  },
-  {
-   "key": "3843",
-   "name": "WRIGHT, MOSES",
+   "key": "3857",
+   "name": "OTURU, DAN",
    "position": "C",
-   "club": "MIL",
-   "price": 14.0,
-   "projection": 21.78
+   "club": "HTA",
+   "price": 14.2,
+   "projection": 32.0
   },
   {
-   "key": "3835",
-   "name": "GARUBA, USMAN",
+   "key": "3883",
+   "name": "VOIGTMANN, JOHANNES",
    "position": "C",
-   "club": "MAD",
-   "price": 6.1,
-   "projection": 9.36
+   "club": "MUN",
+   "price": 7.5,
+   "projection": 18.7
   }
  ],
  "available": true,

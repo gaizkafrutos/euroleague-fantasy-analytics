@@ -5,66 +5,66 @@
   "short": "Efes",
   "country": "TUR",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png",
-  "offense": 80.1,
-  "defense": 84.3,
-  "netRating": -4.24,
-  "winRate": 0.316,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 94.0,
+  "offense": 82.0,
+  "defense": 89.0,
+  "netRating": -7.0,
+  "winRate": 0.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 45.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "BAR",
     "home": false,
     "date": "2026-09-24T18:30:00Z",
-    "opponent_rating": 0.83
+    "opponent_rating": 7.0
    },
    {
     "round": 2,
     "opponent": "MAD",
     "home": true,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": 5.09
+    "opponent_rating": -1.0
    },
    {
     "round": 3,
     "opponent": "RED",
     "home": false,
     "date": "2026-10-01T18:00:00Z",
-    "opponent_rating": 1.08
+    "opponent_rating": -6.0
    },
    {
     "round": 4,
     "opponent": "OLY",
     "home": false,
     "date": "2026-10-09T18:15:00Z",
-    "opponent_rating": 8.05
+    "opponent_rating": 17.0
    },
    {
     "round": 5,
     "opponent": "MUN",
     "home": true,
     "date": "2026-10-14T17:30:00Z",
-    "opponent_rating": -2.89
+    "opponent_rating": 2.0
    }
   ],
   "box": {
-   "games": 38.0,
-   "wins": 12.0,
-   "losses": 26.0,
-   "ppg": 80.1,
-   "papg": 84.3,
-   "offRating": 110.7,
-   "defRating": 116.7,
-   "netRating": -6.0,
-   "pace": 72.4,
-   "efg": 53.9,
-   "tovRate": 17.4,
-   "orbRate": 28.2,
-   "ftRate": 29.2,
-   "astPerGame": 17.5,
-   "threeRate": 42.1
+   "games": 1.0,
+   "wins": 0.0,
+   "losses": 1.0,
+   "ppg": 82.0,
+   "papg": 89.0,
+   "offRating": 109.3,
+   "defRating": 121.7,
+   "netRating": -12.3,
+   "pace": 75.0,
+   "efg": 49.2,
+   "tovRate": 16.0,
+   "orbRate": 29.0,
+   "ftRate": 41.0,
+   "astPerGame": 16.0,
+   "threeRate": 32.8
   },
   "colors": {
    "halo": "#002070",
@@ -78,67 +78,51 @@
   "short": "Milan",
   "country": "ITA",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png",
-  "offense": 86.1,
-  "defense": 87.2,
-  "netRating": -1.16,
-  "winRate": 0.447,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 6.0,
+  "offense": null,
+  "defense": null,
+  "netRating": null,
+  "winRate": null,
+  "games": null,
+  "ratingSource": null,
+  "difficulty": 13.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "PAR",
     "home": false,
     "date": "2026-09-25T18:45:00Z",
-    "opponent_rating": -4.95
+    "opponent_rating": 0.0
    },
    {
     "round": 2,
     "opponent": "VIR",
     "home": true,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": -4.61
+    "opponent_rating": 0.0
    },
    {
     "round": 3,
     "opponent": "BAS",
     "home": false,
     "date": "2026-10-02T18:30:00Z",
-    "opponent_rating": -4.74
+    "opponent_rating": -17.0
    },
    {
     "round": 4,
     "opponent": "TEL",
     "home": false,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": -2.53
+    "opponent_rating": -10.0
    },
    {
     "round": 5,
     "opponent": "MAD",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 5.09
+    "opponent_rating": -1.0
    }
   ],
-  "box": {
-   "games": 38.0,
-   "wins": 17.0,
-   "losses": 21.0,
-   "ppg": 86.1,
-   "papg": 87.2,
-   "offRating": 118.8,
-   "defRating": 119.3,
-   "netRating": -0.5,
-   "pace": 72.4,
-   "efg": 56.5,
-   "tovRate": 16.0,
-   "orbRate": 30.2,
-   "ftRate": 31.3,
-   "astPerGame": 18.9,
-   "threeRate": 42.2
-  },
+  "box": null,
   "colors": {
    "halo": "#a01020",
    "statDark": "#ff958f",
@@ -157,42 +141,42 @@
   "winRate": null,
   "games": null,
   "ratingSource": null,
-  "difficulty": 64.0,
+  "difficulty": 35.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "PAM",
     "home": true,
     "date": "2026-09-25T17:00:00Z",
-    "opponent_rating": 4.09
+    "opponent_rating": 0.0
    },
    {
     "round": 2,
     "opponent": "TEL",
     "home": false,
     "date": "2026-09-30T18:05:00Z",
-    "opponent_rating": -2.53
+    "opponent_rating": -10.0
    },
    {
     "round": 3,
     "opponent": "BAR",
     "home": true,
     "date": "2026-10-02T17:00:00Z",
-    "opponent_rating": 0.83
+    "opponent_rating": 7.0
    },
    {
     "round": 4,
     "opponent": "BAS",
     "home": false,
     "date": "2026-10-09T18:30:00Z",
-    "opponent_rating": -4.74
+    "opponent_rating": -17.0
    },
    {
     "round": 5,
     "opponent": "HTA",
     "home": false,
     "date": "2026-10-14T16:00:00Z",
-    "opponent_rating": 1.9
+    "opponent_rating": -2.0
    }
   ],
   "box": null,
@@ -208,66 +192,66 @@
   "short": "Crvena",
   "country": "SRB",
   "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png",
-  "offense": 87.2,
-  "defense": 86.1,
-  "netRating": 1.08,
-  "winRate": 0.538,
-  "games": 39,
-  "ratingSource": "temporada anterior",
-  "difficulty": 50.0,
+  "offense": 77.0,
+  "defense": 83.0,
+  "netRating": -6.0,
+  "winRate": 0.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 30.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "ZAL",
     "home": true,
     "date": "2026-09-24T18:00:00Z",
-    "opponent_rating": 3.81
+    "opponent_rating": 6.0
    },
    {
     "round": 2,
     "opponent": "HTA",
     "home": true,
     "date": "2026-09-29T18:00:00Z",
-    "opponent_rating": 1.9
+    "opponent_rating": -2.0
    },
    {
     "round": 3,
     "opponent": "IST",
     "home": true,
     "date": "2026-10-01T18:00:00Z",
-    "opponent_rating": -4.24
+    "opponent_rating": -7.0
    },
    {
     "round": 4,
     "opponent": "DUB",
     "home": false,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": 0.13
+    "opponent_rating": 1.0
    },
    {
     "round": 5,
     "opponent": "ASV",
     "home": false,
     "date": "2026-10-13T18:00:00Z",
-    "opponent_rating": -7.29
+    "opponent_rating": 10.0
    }
   ],
   "box": {
-   "games": 39.0,
-   "wins": 21.0,
-   "losses": 18.0,
-   "ppg": 87.2,
-   "papg": 86.1,
-   "offRating": 115.6,
-   "defRating": 114.5,
-   "netRating": 1.1,
-   "pace": 75.4,
-   "efg": 54.5,
-   "tovRate": 18.5,
-   "orbRate": 37.5,
-   "ftRate": 32.4,
-   "astPerGame": 20.0,
-   "threeRate": 39.3
+   "games": 1.0,
+   "wins": 0.0,
+   "losses": 1.0,
+   "ppg": 77.0,
+   "papg": 83.0,
+   "offRating": 95.8,
+   "defRating": 106.6,
+   "netRating": -10.8,
+   "pace": 80.4,
+   "efg": 43.8,
+   "tovRate": 17.4,
+   "orbRate": 31.2,
+   "ftRate": 26.0,
+   "astPerGame": 21.0,
+   "threeRate": 39.7
   },
   "colors": {
    "halo": "#e00010",
@@ -281,66 +265,66 @@
   "short": "Dubai",
   "country": "UAE",
   "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png",
-  "offense": 88.1,
-  "defense": 88.0,
-  "netRating": 0.13,
-  "winRate": 0.5,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 85.0,
+  "offense": 78.0,
+  "defense": 77.0,
+  "netRating": 1.0,
+  "winRate": 1.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 52.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "MAD",
     "home": true,
     "date": "2026-09-24T16:00:00Z",
-    "opponent_rating": 5.09
+    "opponent_rating": -1.0
    },
    {
     "round": 2,
     "opponent": "BAR",
     "home": true,
     "date": "2026-09-29T16:00:00Z",
-    "opponent_rating": 0.83
+    "opponent_rating": 7.0
    },
    {
     "round": 3,
     "opponent": "ULK",
     "home": false,
     "date": "2026-10-02T17:45:00Z",
-    "opponent_rating": 1.37
+    "opponent_rating": 0.0
    },
    {
     "round": 4,
     "opponent": "RED",
     "home": true,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": 1.08
+    "opponent_rating": -6.0
    },
    {
     "round": 5,
     "opponent": "BAS",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -4.74
+    "opponent_rating": -17.0
    }
   ],
   "box": {
-   "games": 38.0,
-   "wins": 19.0,
-   "losses": 19.0,
-   "ppg": 88.1,
-   "papg": 88.0,
-   "offRating": 118.6,
-   "defRating": 118.4,
-   "netRating": 0.1,
-   "pace": 74.3,
-   "efg": 54.1,
-   "tovRate": 14.4,
-   "orbRate": 30.6,
-   "ftRate": 36.8,
-   "astPerGame": 18.9,
-   "threeRate": 37.0
+   "games": 1.0,
+   "wins": 1.0,
+   "losses": 0.0,
+   "ppg": 78.0,
+   "papg": 77.0,
+   "offRating": 107.0,
+   "defRating": 107.2,
+   "netRating": -0.2,
+   "pace": 72.9,
+   "efg": 47.1,
+   "tovRate": 20.6,
+   "orbRate": 46.2,
+   "ftRate": 26.5,
+   "astPerGame": 17.0,
+   "threeRate": 41.2
   },
   "colors": {
    "halo": "#705030",
@@ -354,27 +338,27 @@
   "short": "Barca",
   "country": "ESP",
   "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png",
-  "offense": 84.3,
-  "defense": 83.4,
-  "netRating": 0.83,
-  "winRate": 0.55,
-  "games": 40,
-  "ratingSource": "temporada anterior",
-  "difficulty": 48.0,
+  "offense": 89.0,
+  "defense": 82.0,
+  "netRating": 7.0,
+  "winRate": 1.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 34.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "IST",
     "home": true,
     "date": "2026-09-24T18:30:00Z",
-    "opponent_rating": -4.24
+    "opponent_rating": -7.0
    },
    {
     "round": 2,
     "opponent": "DUB",
     "home": false,
     "date": "2026-09-29T16:00:00Z",
-    "opponent_rating": 0.13
+    "opponent_rating": 1.0
    },
    {
     "round": 3,
@@ -388,32 +372,32 @@
     "opponent": "ZAL",
     "home": true,
     "date": "2026-10-09T18:30:00Z",
-    "opponent_rating": 3.81
+    "opponent_rating": 6.0
    },
    {
     "round": 5,
     "opponent": "TEL",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -2.53
+    "opponent_rating": -10.0
    }
   ],
   "box": {
-   "games": 40.0,
-   "wins": 22.0,
-   "losses": 18.0,
-   "ppg": 84.3,
-   "papg": 83.5,
-   "offRating": 116.4,
-   "defRating": 115.4,
-   "netRating": 1.1,
-   "pace": 72.4,
-   "efg": 55.4,
-   "tovRate": 16.6,
-   "orbRate": 32.8,
-   "ftRate": 26.5,
-   "astPerGame": 18.0,
-   "threeRate": 40.3
+   "games": 1.0,
+   "wins": 1.0,
+   "losses": 0.0,
+   "ppg": 89.0,
+   "papg": 82.0,
+   "offRating": 121.7,
+   "defRating": 109.3,
+   "netRating": 12.3,
+   "pace": 73.2,
+   "efg": 60.9,
+   "tovRate": 16.4,
+   "orbRate": 27.3,
+   "ftRate": 21.9,
+   "astPerGame": 14.0,
+   "threeRate": 45.3
   },
   "colors": {
    "halo": "#e0b000",
@@ -427,66 +411,66 @@
   "short": "Bayern",
   "country": "GER",
   "crest": "https://media-cdn.incrowdsports.com/817b0e58-d595-4b09-ab0b-1e7cc26249ff.png",
-  "offense": 80.8,
-  "defense": 83.7,
-  "netRating": -2.89,
-  "winRate": 0.447,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 58.0,
+  "offense": 86.0,
+  "defense": 84.0,
+  "netRating": 2.0,
+  "winRate": 1.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 42.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "HTA",
     "home": false,
     "date": "2026-09-24T16:00:00Z",
-    "opponent_rating": 1.9
+    "opponent_rating": -2.0
    },
    {
     "round": 2,
     "opponent": "ULK",
     "home": false,
     "date": "2026-09-29T17:45:00Z",
-    "opponent_rating": 1.37
+    "opponent_rating": 0.0
    },
    {
     "round": 3,
     "opponent": "PAR",
     "home": true,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": -4.95
+    "opponent_rating": 0.0
    },
    {
     "round": 4,
     "opponent": "VIR",
     "home": true,
     "date": "2026-10-08T18:00:00Z",
-    "opponent_rating": -4.61
+    "opponent_rating": 0.0
    },
    {
     "round": 5,
     "opponent": "IST",
     "home": false,
     "date": "2026-10-14T17:30:00Z",
-    "opponent_rating": -4.24
+    "opponent_rating": -7.0
    }
   ],
   "box": {
-   "games": 38.0,
-   "wins": 17.0,
-   "losses": 21.0,
-   "ppg": 80.8,
-   "papg": 83.7,
-   "offRating": 110.9,
-   "defRating": 114.6,
-   "netRating": -3.7,
-   "pace": 72.9,
-   "efg": 54.1,
-   "tovRate": 17.8,
-   "orbRate": 30.0,
-   "ftRate": 24.3,
-   "astPerGame": 18.6,
-   "threeRate": 42.7
+   "games": 1.0,
+   "wins": 1.0,
+   "losses": 0.0,
+   "ppg": 86.0,
+   "papg": 84.0,
+   "offRating": 115.7,
+   "defRating": 112.4,
+   "netRating": 3.2,
+   "pace": 74.4,
+   "efg": 54.8,
+   "tovRate": 16.1,
+   "orbRate": 27.3,
+   "ftRate": 30.2,
+   "astPerGame": 20.0,
+   "threeRate": 38.1
   },
   "colors": {
    "halo": "#e00030",
@@ -500,67 +484,51 @@
   "short": "Fenerbahce",
   "country": "TUR",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png",
-  "offense": 81.9,
-  "defense": 80.5,
-  "netRating": 1.37,
-  "winRate": 0.628,
-  "games": 43,
-  "ratingSource": "temporada anterior",
-  "difficulty": 14.0,
+  "offense": null,
+  "defense": null,
+  "netRating": null,
+  "winRate": null,
+  "games": null,
+  "ratingSource": null,
+  "difficulty": 42.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "VIR",
     "home": true,
     "date": "2026-09-25T17:45:00Z",
-    "opponent_rating": -4.61
+    "opponent_rating": 0.0
    },
    {
     "round": 2,
     "opponent": "MUN",
     "home": true,
     "date": "2026-09-29T17:45:00Z",
-    "opponent_rating": -2.89
+    "opponent_rating": 2.0
    },
    {
     "round": 3,
     "opponent": "DUB",
     "home": true,
     "date": "2026-10-02T17:45:00Z",
-    "opponent_rating": 0.13
+    "opponent_rating": 1.0
    },
    {
     "round": 4,
     "opponent": "PAN",
     "home": false,
     "date": "2026-10-08T18:15:00Z",
-    "opponent_rating": 1.66
+    "opponent_rating": 19.0
    },
    {
     "round": 5,
     "opponent": "ZAL",
     "home": true,
     "date": "2026-10-13T17:45:00Z",
-    "opponent_rating": 3.81
+    "opponent_rating": 6.0
    }
   ],
-  "box": {
-   "games": 43.0,
-   "wins": 27.0,
-   "losses": 16.0,
-   "ppg": 81.9,
-   "papg": 80.5,
-   "offRating": 113.3,
-   "defRating": 110.8,
-   "netRating": 2.6,
-   "pace": 72.3,
-   "efg": 54.2,
-   "tovRate": 18.6,
-   "orbRate": 33.4,
-   "ftRate": 29.8,
-   "astPerGame": 16.1,
-   "threeRate": 41.8
-  },
+  "box": null,
   "colors": {
    "halo": "#807040",
    "statDark": "#cabb00",
@@ -573,41 +541,41 @@
   "short": "Hapoel",
   "country": "ISR",
   "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png",
-  "offense": 87.3,
-  "defense": 85.4,
-  "netRating": 1.9,
-  "winRate": 0.571,
-  "games": 42,
-  "ratingSource": "temporada anterior",
-  "difficulty": 68.0,
+  "offense": 84.0,
+  "defense": 86.0,
+  "netRating": -2.0,
+  "winRate": 0.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 31.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "MUN",
     "home": true,
     "date": "2026-09-24T16:00:00Z",
-    "opponent_rating": -2.89
+    "opponent_rating": 2.0
    },
    {
     "round": 2,
     "opponent": "RED",
     "home": false,
     "date": "2026-09-29T18:00:00Z",
-    "opponent_rating": 1.08
+    "opponent_rating": -6.0
    },
    {
     "round": 3,
     "opponent": "MAD",
     "home": true,
     "date": "2026-10-01T16:00:00Z",
-    "opponent_rating": 5.09
+    "opponent_rating": -1.0
    },
    {
     "round": 4,
     "opponent": "PAM",
     "home": false,
     "date": "2026-10-08T18:30:00Z",
-    "opponent_rating": 4.09
+    "opponent_rating": 0.0
    },
    {
     "round": 5,
@@ -618,21 +586,21 @@
    }
   ],
   "box": {
-   "games": 42.0,
-   "wins": 24.0,
-   "losses": 18.0,
-   "ppg": 87.3,
-   "papg": 85.4,
-   "offRating": 117.2,
-   "defRating": 114.5,
-   "netRating": 2.7,
-   "pace": 74.5,
-   "efg": 57.6,
-   "tovRate": 16.2,
-   "orbRate": 27.7,
-   "ftRate": 28.5,
-   "astPerGame": 17.3,
-   "threeRate": 38.4
+   "games": 1.0,
+   "wins": 0.0,
+   "losses": 1.0,
+   "ppg": 84.0,
+   "papg": 86.0,
+   "offRating": 112.4,
+   "defRating": 115.7,
+   "netRating": -3.2,
+   "pace": 74.7,
+   "efg": 51.4,
+   "tovRate": 18.7,
+   "orbRate": 38.9,
+   "ftRate": 18.8,
+   "astPerGame": 13.0,
+   "threeRate": 37.7
   },
   "colors": {
    "halo": "#d01020",
@@ -646,34 +614,34 @@
   "short": "Baskonia",
   "country": "ESP",
   "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png",
-  "offense": 88.3,
-  "defense": 93.1,
-  "netRating": -4.74,
-  "winRate": 0.342,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 100.0,
+  "offense": 89.0,
+  "defense": 106.0,
+  "netRating": -17.0,
+  "winRate": 0.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 73.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "OLY",
     "home": true,
     "date": "2026-09-24T18:30:00Z",
-    "opponent_rating": 8.05
+    "opponent_rating": 17.0
    },
    {
     "round": 2,
     "opponent": "PAM",
     "home": false,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": 4.09
+    "opponent_rating": 0.0
    },
    {
     "round": 3,
     "opponent": "MIL",
     "home": true,
     "date": "2026-10-02T18:30:00Z",
-    "opponent_rating": -1.16
+    "opponent_rating": 0.0
    },
    {
     "round": 4,
@@ -687,25 +655,25 @@
     "opponent": "DUB",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 0.13
+    "opponent_rating": 1.0
    }
   ],
   "box": {
-   "games": 38.0,
-   "wins": 13.0,
-   "losses": 25.0,
-   "ppg": 88.3,
-   "papg": 93.1,
-   "offRating": 115.4,
-   "defRating": 121.2,
-   "netRating": -5.9,
-   "pace": 76.6,
-   "efg": 55.1,
-   "tovRate": 17.1,
-   "orbRate": 29.7,
-   "ftRate": 32.7,
-   "astPerGame": 19.0,
-   "threeRate": 43.6
+   "games": 1.0,
+   "wins": 0.0,
+   "losses": 1.0,
+   "ppg": 89.0,
+   "papg": 106.0,
+   "offRating": 110.4,
+   "defRating": 132.0,
+   "netRating": -21.6,
+   "pace": 80.6,
+   "efg": 47.5,
+   "tovRate": 13.6,
+   "orbRate": 35.4,
+   "ftRate": 18.8,
+   "astPerGame": 25.0,
+   "threeRate": 55.0
   },
   "colors": {
    "halo": "#002040",
@@ -719,66 +687,66 @@
   "short": "ASVEL",
   "country": "FRA",
   "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png",
-  "offense": 79.3,
-  "defense": 86.6,
-  "netRating": -7.29,
-  "winRate": 0.211,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 68.0,
+  "offense": 84.0,
+  "defense": 74.0,
+  "netRating": 10.0,
+  "winRate": 1.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 58.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "TEL",
     "home": true,
     "date": "2026-09-24T18:45:00Z",
-    "opponent_rating": -2.53
+    "opponent_rating": -10.0
    },
    {
     "round": 2,
     "opponent": "PAN",
     "home": false,
     "date": "2026-09-30T18:15:00Z",
-    "opponent_rating": 1.66
+    "opponent_rating": 19.0
    },
    {
     "round": 3,
     "opponent": "PAM",
     "home": true,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": 4.09
+    "opponent_rating": 0.0
    },
    {
     "round": 4,
     "opponent": "PRS",
     "home": false,
     "date": "2026-10-07T18:45:00Z",
-    "opponent_rating": -0.89
+    "opponent_rating": -19.0
    },
    {
     "round": 5,
     "opponent": "RED",
     "home": true,
     "date": "2026-10-13T18:00:00Z",
-    "opponent_rating": 1.08
+    "opponent_rating": -6.0
    }
   ],
   "box": {
-   "games": 38.0,
-   "wins": 8.0,
-   "losses": 30.0,
-   "ppg": 79.3,
-   "papg": 86.6,
-   "offRating": 107.2,
-   "defRating": 117.8,
-   "netRating": -10.6,
-   "pace": 74.0,
-   "efg": 50.7,
-   "tovRate": 17.6,
-   "orbRate": 31.1,
-   "ftRate": 28.9,
-   "astPerGame": 17.6,
-   "threeRate": 43.3
+   "games": 1.0,
+   "wins": 1.0,
+   "losses": 0.0,
+   "ppg": 84.0,
+   "papg": 74.0,
+   "offRating": 110.8,
+   "defRating": 93.0,
+   "netRating": 17.9,
+   "pace": 75.8,
+   "efg": 60.3,
+   "tovRate": 19.8,
+   "orbRate": 17.6,
+   "ftRate": 34.5,
+   "astPerGame": 20.0,
+   "threeRate": 58.6
   },
   "colors": {
    "halo": "#202020",
@@ -792,20 +760,20 @@
   "short": "Maccabi",
   "country": "ISR",
   "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png",
-  "offense": 90.1,
-  "defense": 92.7,
-  "netRating": -2.53,
-  "winRate": 0.474,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 42.0,
+  "offense": 74.0,
+  "defense": 84.0,
+  "netRating": -10.0,
+  "winRate": 0.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 100.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "ASV",
     "home": false,
     "date": "2026-09-24T18:45:00Z",
-    "opponent_rating": -7.29
+    "opponent_rating": 10.0
    },
    {
     "round": 2,
@@ -819,39 +787,39 @@
     "opponent": "PAN",
     "home": false,
     "date": "2026-10-02T18:15:00Z",
-    "opponent_rating": 1.66
+    "opponent_rating": 19.0
    },
    {
     "round": 4,
     "opponent": "MIL",
     "home": true,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": -1.16
+    "opponent_rating": 0.0
    },
    {
     "round": 5,
     "opponent": "BAR",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 0.83
+    "opponent_rating": 7.0
    }
   ],
   "box": {
-   "games": 38.0,
-   "wins": 18.0,
-   "losses": 20.0,
-   "ppg": 90.1,
-   "papg": 92.7,
-   "offRating": 117.5,
-   "defRating": 120.9,
-   "netRating": -3.4,
-   "pace": 76.7,
-   "efg": 53.4,
-   "tovRate": 16.0,
-   "orbRate": 34.5,
-   "ftRate": 33.4,
-   "astPerGame": 19.9,
-   "threeRate": 42.3
+   "games": 1.0,
+   "wins": 0.0,
+   "losses": 1.0,
+   "ppg": 74.0,
+   "papg": 84.0,
+   "offRating": 93.0,
+   "defRating": 110.8,
+   "netRating": -17.9,
+   "pace": 79.6,
+   "efg": 50.0,
+   "tovRate": 25.1,
+   "orbRate": 30.3,
+   "ftRate": 23.8,
+   "astPerGame": 19.0,
+   "threeRate": 46.0
   },
   "colors": {
    "halo": "#203070",
@@ -865,66 +833,66 @@
   "short": "Olympiacos",
   "country": "GRE",
   "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png",
-  "offense": 90.5,
-  "defense": 82.4,
-  "netRating": 8.05,
-  "winRate": 0.721,
-  "games": 43,
-  "ratingSource": "temporada anterior",
-  "difficulty": 52.0,
+  "offense": 106.0,
+  "defense": 89.0,
+  "netRating": 17.0,
+  "winRate": 1.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 29.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "BAS",
     "home": false,
     "date": "2026-09-24T18:30:00Z",
-    "opponent_rating": -4.74
+    "opponent_rating": -17.0
    },
    {
     "round": 2,
     "opponent": "ZAL",
     "home": false,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": 3.81
+    "opponent_rating": 6.0
    },
    {
     "round": 3,
     "opponent": "VIR",
     "home": false,
     "date": "2026-10-01T18:30:00Z",
-    "opponent_rating": -4.61
+    "opponent_rating": 0.0
    },
    {
     "round": 4,
     "opponent": "IST",
     "home": true,
     "date": "2026-10-09T18:15:00Z",
-    "opponent_rating": -4.24
+    "opponent_rating": -7.0
    },
    {
     "round": 5,
     "opponent": "PAM",
     "home": false,
     "date": "2026-10-13T19:00:00Z",
-    "opponent_rating": 4.09
+    "opponent_rating": 0.0
    }
   ],
   "box": {
-   "games": 43.0,
-   "wins": 31.0,
-   "losses": 12.0,
-   "ppg": 90.5,
-   "papg": 82.4,
-   "offRating": 122.2,
-   "defRating": 111.5,
-   "netRating": 10.7,
-   "pace": 74.1,
-   "efg": 57.1,
-   "tovRate": 16.7,
-   "orbRate": 35.3,
-   "ftRate": 36.8,
-   "astPerGame": 21.4,
-   "threeRate": 43.9
+   "games": 1.0,
+   "wins": 1.0,
+   "losses": 0.0,
+   "ppg": 106.0,
+   "papg": 89.0,
+   "offRating": 132.0,
+   "defRating": 110.4,
+   "netRating": 21.6,
+   "pace": 80.3,
+   "efg": 62.5,
+   "tovRate": 18.7,
+   "orbRate": 39.3,
+   "ftRate": 43.8,
+   "astPerGame": 20.0,
+   "threeRate": 34.4
   },
   "colors": {
    "halo": "#d00020",
@@ -938,12 +906,12 @@
   "short": "Panathinaikos",
   "country": "GRE",
   "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png",
-  "offense": 86.7,
-  "defense": 85.0,
-  "netRating": 1.66,
-  "winRate": 0.568,
-  "games": 44,
-  "ratingSource": "temporada anterior",
+  "offense": 91.0,
+  "defense": 72.0,
+  "netRating": 19.0,
+  "winRate": 1.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
   "difficulty": 0.0,
   "fixtures": [
    {
@@ -951,53 +919,53 @@
     "opponent": "PRS",
     "home": true,
     "date": "2026-09-24T18:15:00Z",
-    "opponent_rating": -0.89
+    "opponent_rating": -19.0
    },
    {
     "round": 2,
     "opponent": "ASV",
     "home": true,
     "date": "2026-09-30T18:15:00Z",
-    "opponent_rating": -7.29
+    "opponent_rating": 10.0
    },
    {
     "round": 3,
     "opponent": "TEL",
     "home": true,
     "date": "2026-10-02T18:15:00Z",
-    "opponent_rating": -2.53
+    "opponent_rating": -10.0
    },
    {
     "round": 4,
     "opponent": "ULK",
     "home": true,
     "date": "2026-10-08T18:15:00Z",
-    "opponent_rating": 1.37
+    "opponent_rating": 0.0
    },
    {
     "round": 5,
     "opponent": "PAR",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -4.95
+    "opponent_rating": 0.0
    }
   ],
   "box": {
-   "games": 44.0,
-   "wins": 25.0,
-   "losses": 19.0,
-   "ppg": 86.7,
-   "papg": 85.0,
-   "offRating": 118.2,
-   "defRating": 115.7,
-   "netRating": 2.4,
-   "pace": 73.3,
-   "efg": 55.0,
-   "tovRate": 14.8,
-   "orbRate": 31.6,
-   "ftRate": 28.7,
-   "astPerGame": 18.6,
-   "threeRate": 37.4
+   "games": 1.0,
+   "wins": 1.0,
+   "losses": 0.0,
+   "ppg": 91.0,
+   "papg": 72.0,
+   "offRating": 117.1,
+   "defRating": 91.6,
+   "netRating": 25.5,
+   "pace": 77.7,
+   "efg": 53.0,
+   "tovRate": 21.9,
+   "orbRate": 42.9,
+   "ftRate": 33.3,
+   "astPerGame": 16.0,
+   "threeRate": 43.9
   },
   "colors": {
    "halo": "#f08010",
@@ -1011,66 +979,66 @@
   "short": "Paris",
   "country": "FRA",
   "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png",
-  "offense": 90.1,
-  "defense": 90.9,
-  "netRating": -0.89,
-  "winRate": 0.395,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 57.0,
+  "offense": 72.0,
+  "defense": 91.0,
+  "netRating": -19.0,
+  "winRate": 0.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 88.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "PAN",
     "home": false,
     "date": "2026-09-24T18:15:00Z",
-    "opponent_rating": 1.66
+    "opponent_rating": 19.0
    },
    {
     "round": 2,
     "opponent": "PAR",
     "home": true,
     "date": "2026-09-29T18:45:00Z",
-    "opponent_rating": -4.95
+    "opponent_rating": 0.0
    },
    {
     "round": 3,
     "opponent": "ZAL",
     "home": true,
     "date": "2026-10-01T18:45:00Z",
-    "opponent_rating": 3.81
+    "opponent_rating": 6.0
    },
    {
     "round": 4,
     "opponent": "ASV",
     "home": true,
     "date": "2026-10-07T18:45:00Z",
-    "opponent_rating": -7.29
+    "opponent_rating": 10.0
    },
    {
     "round": 5,
     "opponent": "VIR",
     "home": true,
     "date": "2026-10-14T18:45:00Z",
-    "opponent_rating": -4.61
+    "opponent_rating": 0.0
    }
   ],
   "box": {
-   "games": 38.0,
-   "wins": 15.0,
-   "losses": 23.0,
-   "ppg": 90.1,
-   "papg": 90.9,
-   "offRating": 114.8,
-   "defRating": 116.2,
-   "netRating": -1.5,
-   "pace": 78.5,
-   "efg": 53.8,
-   "tovRate": 17.6,
-   "orbRate": 34.3,
-   "ftRate": 30.3,
-   "astPerGame": 17.5,
-   "threeRate": 47.7
+   "games": 1.0,
+   "wins": 0.0,
+   "losses": 1.0,
+   "ppg": 72.0,
+   "papg": 91.0,
+   "offRating": 91.6,
+   "defRating": 117.1,
+   "netRating": -25.5,
+   "pace": 78.6,
+   "efg": 47.7,
+   "tovRate": 21.6,
+   "orbRate": 26.8,
+   "ftRate": 22.7,
+   "astPerGame": 19.0,
+   "threeRate": 59.1
   },
   "colors": {
    "halo": "#f00000",
@@ -1084,67 +1052,51 @@
   "short": "Partizan",
   "country": "SRB",
   "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png",
-  "offense": 81.6,
-  "defense": 86.6,
-  "netRating": -4.95,
-  "winRate": 0.421,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 45.0,
+  "offense": null,
+  "defense": null,
+  "netRating": null,
+  "winRate": null,
+  "games": null,
+  "ratingSource": null,
+  "difficulty": 13.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "MIL",
     "home": true,
     "date": "2026-09-25T18:45:00Z",
-    "opponent_rating": -1.16
+    "opponent_rating": 0.0
    },
    {
     "round": 2,
     "opponent": "PRS",
     "home": false,
     "date": "2026-09-29T18:45:00Z",
-    "opponent_rating": -0.89
+    "opponent_rating": -19.0
    },
    {
     "round": 3,
     "opponent": "MUN",
     "home": false,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": -2.89
+    "opponent_rating": 2.0
    },
    {
     "round": 4,
     "opponent": "MAD",
     "home": false,
     "date": "2026-10-08T18:45:00Z",
-    "opponent_rating": 5.09
+    "opponent_rating": -1.0
    },
    {
     "round": 5,
     "opponent": "PAN",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 1.66
+    "opponent_rating": 19.0
    }
   ],
-  "box": {
-   "games": 38.0,
-   "wins": 16.0,
-   "losses": 22.0,
-   "ppg": 81.6,
-   "papg": 86.6,
-   "offRating": 110.4,
-   "defRating": 116.9,
-   "netRating": -6.5,
-   "pace": 73.9,
-   "efg": 53.0,
-   "tovRate": 16.9,
-   "orbRate": 29.4,
-   "ftRate": 25.4,
-   "astPerGame": 17.5,
-   "threeRate": 38.4
-  },
+  "box": null,
   "colors": {
    "halo": "#e00010",
    "statDark": "#ff9689",
@@ -1157,66 +1109,66 @@
   "short": "Real",
   "country": "ESP",
   "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png",
-  "offense": 88.1,
-  "defense": 83.0,
-  "netRating": 5.09,
-  "winRate": 0.636,
-  "games": 44,
-  "ratingSource": "temporada anterior",
-  "difficulty": 66.0,
+  "offense": 77.0,
+  "defense": 78.0,
+  "netRating": -1.0,
+  "winRate": 0.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 35.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "DUB",
     "home": false,
     "date": "2026-09-24T16:00:00Z",
-    "opponent_rating": 0.13
+    "opponent_rating": 1.0
    },
    {
     "round": 2,
     "opponent": "IST",
     "home": false,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": -4.24
+    "opponent_rating": -7.0
    },
    {
     "round": 3,
     "opponent": "HTA",
     "home": false,
     "date": "2026-10-01T16:00:00Z",
-    "opponent_rating": 1.9
+    "opponent_rating": -2.0
    },
    {
     "round": 4,
     "opponent": "PAR",
     "home": true,
     "date": "2026-10-08T18:45:00Z",
-    "opponent_rating": -4.95
+    "opponent_rating": 0.0
    },
    {
     "round": 5,
     "opponent": "MIL",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -1.16
+    "opponent_rating": 0.0
    }
   ],
   "box": {
-   "games": 44.0,
-   "wins": 28.0,
-   "losses": 16.0,
-   "ppg": 88.1,
-   "papg": 83.0,
-   "offRating": 120.1,
-   "defRating": 113.4,
-   "netRating": 6.7,
-   "pace": 73.3,
-   "efg": 56.2,
-   "tovRate": 16.8,
-   "orbRate": 35.0,
-   "ftRate": 32.7,
-   "astPerGame": 19.2,
-   "threeRate": 41.7
+   "games": 1.0,
+   "wins": 0.0,
+   "losses": 1.0,
+   "ppg": 77.0,
+   "papg": 78.0,
+   "offRating": 107.2,
+   "defRating": 107.0,
+   "netRating": 0.2,
+   "pace": 71.8,
+   "efg": 50.0,
+   "tovRate": 11.1,
+   "orbRate": 25.0,
+   "ftRate": 16.2,
+   "astPerGame": 13.0,
+   "threeRate": 26.5
   },
   "colors": {
    "halo": "#f0b010",
@@ -1230,13 +1182,13 @@
   "short": "Valencia",
   "country": "ESP",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png",
-  "offense": 90.4,
-  "defense": 86.3,
-  "netRating": 4.09,
-  "winRate": 0.636,
-  "games": 44,
-  "ratingSource": "temporada anterior",
-  "difficulty": 15.0,
+  "offense": null,
+  "defense": null,
+  "netRating": null,
+  "winRate": null,
+  "games": null,
+  "ratingSource": null,
+  "difficulty": 32.0,
   "fixtures": [
    {
     "round": 1,
@@ -1250,47 +1202,31 @@
     "opponent": "BAS",
     "home": true,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": -4.74
+    "opponent_rating": -17.0
    },
    {
     "round": 3,
     "opponent": "ASV",
     "home": false,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": -7.29
+    "opponent_rating": 10.0
    },
    {
     "round": 4,
     "opponent": "HTA",
     "home": true,
     "date": "2026-10-08T18:30:00Z",
-    "opponent_rating": 1.9
+    "opponent_rating": -2.0
    },
    {
     "round": 5,
     "opponent": "OLY",
     "home": true,
     "date": "2026-10-13T19:00:00Z",
-    "opponent_rating": 8.05
+    "opponent_rating": 17.0
    }
   ],
-  "box": {
-   "games": 44.0,
-   "wins": 28.0,
-   "losses": 16.0,
-   "ppg": 90.4,
-   "papg": 86.3,
-   "offRating": 118.5,
-   "defRating": 113.4,
-   "netRating": 5.1,
-   "pace": 76.3,
-   "efg": 56.0,
-   "tovRate": 16.3,
-   "orbRate": 35.0,
-   "ftRate": 28.1,
-   "astPerGame": 21.0,
-   "threeRate": 46.5
-  },
+  "box": null,
   "colors": {
    "halo": "#e06020",
    "statDark": "#ff996e",
@@ -1303,67 +1239,51 @@
   "short": "Virtus",
   "country": "ITA",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png",
-  "offense": 81.8,
-  "defense": 86.4,
-  "netRating": -4.61,
-  "winRate": 0.368,
-  "games": 38,
-  "ratingSource": "temporada anterior",
-  "difficulty": 99.0,
+  "offense": null,
+  "defense": null,
+  "netRating": null,
+  "winRate": null,
+  "games": null,
+  "ratingSource": null,
+  "difficulty": 77.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "ULK",
     "home": false,
     "date": "2026-09-25T17:45:00Z",
-    "opponent_rating": 1.37
+    "opponent_rating": 0.0
    },
    {
     "round": 2,
     "opponent": "MIL",
     "home": false,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": -1.16
+    "opponent_rating": 0.0
    },
    {
     "round": 3,
     "opponent": "OLY",
     "home": true,
     "date": "2026-10-01T18:30:00Z",
-    "opponent_rating": 8.05
+    "opponent_rating": 17.0
    },
    {
     "round": 4,
     "opponent": "MUN",
     "home": false,
     "date": "2026-10-08T18:00:00Z",
-    "opponent_rating": -2.89
+    "opponent_rating": 2.0
    },
    {
     "round": 5,
     "opponent": "PRS",
     "home": false,
     "date": "2026-10-14T18:45:00Z",
-    "opponent_rating": -0.89
+    "opponent_rating": -19.0
    }
   ],
-  "box": {
-   "games": 38.0,
-   "wins": 14.0,
-   "losses": 24.0,
-   "ppg": 81.8,
-   "papg": 86.4,
-   "offRating": 111.6,
-   "defRating": 117.7,
-   "netRating": -6.1,
-   "pace": 73.4,
-   "efg": 54.4,
-   "tovRate": 19.0,
-   "orbRate": 31.3,
-   "ftRate": 29.3,
-   "astPerGame": 19.3,
-   "threeRate": 41.5
-  },
+  "box": null,
   "colors": {
    "halo": "#202020",
    "statDark": "#f2f4f8",
@@ -1376,66 +1296,66 @@
   "short": "Zalgiris",
   "country": "LTU",
   "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png",
-  "offense": 87.0,
-  "defense": 83.2,
-  "netRating": 3.81,
-  "winRate": 0.571,
-  "games": 42,
-  "ratingSource": "temporada anterior",
-  "difficulty": 99.0,
+  "offense": 83.0,
+  "defense": 77.0,
+  "netRating": 6.0,
+  "winRate": 1.0,
+  "games": 1,
+  "ratingSource": "temporada en curso",
+  "difficulty": 30.0,
   "fixtures": [
    {
     "round": 1,
     "opponent": "RED",
     "home": false,
     "date": "2026-09-24T18:00:00Z",
-    "opponent_rating": 1.08
+    "opponent_rating": -6.0
    },
    {
     "round": 2,
     "opponent": "OLY",
     "home": true,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": 8.05
+    "opponent_rating": 17.0
    },
    {
     "round": 3,
     "opponent": "PRS",
     "home": false,
     "date": "2026-10-01T18:45:00Z",
-    "opponent_rating": -0.89
+    "opponent_rating": -19.0
    },
    {
     "round": 4,
     "opponent": "BAR",
     "home": false,
     "date": "2026-10-09T18:30:00Z",
-    "opponent_rating": 0.83
+    "opponent_rating": 7.0
    },
    {
     "round": 5,
     "opponent": "ULK",
     "home": false,
     "date": "2026-10-13T17:45:00Z",
-    "opponent_rating": 1.37
+    "opponent_rating": 0.0
    }
   ],
   "box": {
-   "games": 42.0,
-   "wins": 24.0,
-   "losses": 18.0,
-   "ppg": 87.0,
-   "papg": 83.2,
-   "offRating": 119.4,
-   "defRating": 114.5,
-   "netRating": 4.9,
-   "pace": 72.9,
-   "efg": 56.1,
-   "tovRate": 15.8,
-   "orbRate": 33.8,
-   "ftRate": 31.7,
-   "astPerGame": 19.4,
-   "threeRate": 38.7
+   "games": 1.0,
+   "wins": 1.0,
+   "losses": 0.0,
+   "ppg": 83.0,
+   "papg": 77.0,
+   "offRating": 106.6,
+   "defRating": 95.8,
+   "netRating": 10.8,
+   "pace": 77.9,
+   "efg": 50.8,
+   "tovRate": 20.5,
+   "orbRate": 35.1,
+   "ftRate": 42.9,
+   "astPerGame": 18.0,
+   "threeRate": 31.7
   },
   "colors": {
    "halo": "#008030",

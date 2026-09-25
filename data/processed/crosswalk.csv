@@ -68,17 +68,17 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3862,J. Rivero,VBC,PAM,011214,"RIVERO, JASIEL",initial-club,99.0
 3864,T. Luwawu-Cabarrot,RMB,MAD,012080,"LUWAWU-CABARROT, TIMOTHE",initial-club,99.0
 3867,K. Papanikolaou,OLY,OLY,001255,"PAPANIKOLAOU, KOSTAS",initial-club,99.0
-3868,Z. Obradovic,PAO,PAN,WBC,"OBRADOVIC, ZELJKO",prior-season,90.0
+3868,Z. Obradovic,PAO,PAN,WBC,"OBRADOVIC, ZELJKO",initial-club,99.0
 3869,M. Jantunen,RMB,MAD,012613,"JANTUNEN, MIKAEL",initial-club,99.0
 3870,T. Jones,OLY,OLY,011981,"JONES, TYRIQUE",initial-club,99.0
-3872,P. Martinez,RMB,MAD,CWX,"MARTINEZ, PEDRO",prior-season,90.0
+3872,P. Martinez,RMB,MAD,CWX,"MARTINEZ, PEDRO",initial-club,99.0
 3874,T. Dorsey,OLY,OLY,009849,"DORSEY, TYLER",initial-club,99.0
 3875,M. Guduric,MIL,MIL,004004,"GUDURIC, MARKO",initial-club,99.0
 3880,D. Willis,PAR,PAR,009664,"WILLIS, DEREK",initial-club,99.0
 3881,L. Bolmaro,MIL,MIL,008985,"BOLMARO, LEANDRO",initial-club,99.0
 3883,J. Voigtmann,BAY,MUN,007201,"VOIGTMANN, JOHANNES",initial-club,99.0
 3884,N. Sako,VBC,PAM,010545,"SAKO, NEAL",initial-club,99.0
-3885,G. Bartzokas,OLY,OLY,001869,"BARTZOKAS, GEORGIOS",prior-season,90.0
+3885,G. Bartzokas,OLY,OLY,001869,"BARTZOKAS, GEORGIOS",initial-club,99.0
 3886,D. Hackett,VIR,VIR,001844,"HACKETT, DANIEL",initial-club,99.0
 3887,S. Francisco,PAO,PAN,007975,"FRANCISCO, SYLVAIN",initial-club,99.0
 3888,S. Brown,ZAL,ZAL,012720,"BROWN, STERLING",initial-club,99.0
@@ -91,7 +91,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3904,J. Anderson,DUB,DUB,012795,"ANDERSON, JUSTIN",initial-club,99.0
 3905,I. Lundberg,MTA,TEL,010781,"LUNDBERG, IFFE",initial-club,99.0
 3907,J. Blossomgame,DUB,DUB,011231,"BLOSSOMGAME, JARON",initial-club,99.0
-3909,A. Sekulic,BAR,BAR,003516,"SEKULIC, ALEKSANDER",prior-season,90.0
+3909,A. Sekulic,BAR,BAR,003516,"SEKULIC, ALEKSANDER",initial-club,99.0
 3910,R. Sorkin,MTA,TEL,011219,"SORKIN, ROMAN",initial-club,99.0
 3911,K. Hayes,PAR,PAR,010390,"HAYES, KEVARRIUS",initial-club,99.0
 3914,N. Williams-Goss,ZAL,ZAL,007982,"WILLIAMS-GOSS, NIGEL",initial-club,99.0
@@ -99,7 +99,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3916,G. Procida,RMB,MAD,008384,"PROCIDA, GABRIELE",initial-club,99.0
 3917,K. Baldwin,BAY,MUN,012597,"BALDWIN, KAMAR",initial-club,99.0
 3918,M. Grigonis,ZAL,ZAL,002328,"GRIGONIS, MARIUS",initial-club,99.0
-3921,P. Laso,EFS,IST,BSS,"LASO, PABLO",prior-season,90.0
+3921,P. Laso,EFS,IST,BSS,"LASO, PABLO",initial-club,99.0
 3924,G. Poeta,MIL,MIL,002083,"POETA, GIUSEPPE",prior-season,90.0
 3925,D. Hall,MIL,MIL,011205,"HALL, DEVON",initial-club,99.0
 3926,F. Petrusev,DUB,DUB,011194,"PETRUSEV, FILIP",initial-club,99.0
@@ -108,7 +108,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3933,L. Cavaliere,PBB,PRS,013373,"CAVALIERE, LEOPOLD",initial-club,99.0
 3934,I. Bonga,PAO,PAN,006760,"BONGA, ISAAC",initial-club,99.0
 3936,N. Rogkavopoulos,PAO,PAN,011085,"ROGKAVOPOULOS, NIKOLAOS",initial-club,99.0
-3938,I. Navarro,CZV,RED,,,unmatched,52.6
+3938,I. Navarro,CZV,RED,000019,"NAVARRO, IBON",initial-club,99.0
 3940,N. Weiler-Babb,CZV,RED,010391,"WEILER-BABB, NICK",initial-club,99.0
 3942,M. Lo,ZAL,ZAL,007032,"LO, MAODO",initial-club,99.0
 3943,J. Penarroya,PAR,PAR,007973,"PENARROYA, JOAN",prior-season,90.0
@@ -116,10 +116,10 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3948,M. Ndiaye,OLY,OLY,012731,"NDIAYE, MBAYE",initial-club,99.0
 3950,O. Dobric,CZV,RED,004007,"DOBRIC, OGNJEN",initial-club,99.0
 3952,M. Jaiteh,DUB,DUB,,,unmatched,55.6
-3955,P. Galbiati,KBA,BAS,007886,"GALBIATI, PAOLO",prior-season,90.0
+3955,P. Galbiati,KBA,BAS,007886,"GALBIATI, PAOLO",initial-club,99.0
 3957,O. Da Silva,BAY,MUN,011244,"DA SILVA, OSCAR",initial-club,99.0
 3960,T. Blatt,HTA,HTA,011193,"BLATT, TAMIR",prior-season,90.0
-3961,O. Kattash,MTA,TEL,TFT,"KATTASH, ODED",prior-season,90.0
+3961,O. Kattash,MTA,TEL,TFT,"KATTASH, ODED",initial-club,99.0
 3962,M. Nakic,PAR,PAR,007632,"NAKIC, MARIO",initial-club,99.0
 3963,A. Pajola,PAR,PAR,006739,"PAJOLA, ALESSANDRO",initial-club,99.0
 3964,A. Mumbru,VIR,VIR,,,unmatched,58.8
@@ -127,7 +127,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3971,V. Marinkovic,PAR,PAR,004761,"MARINKOVIC, VANJA",initial-club,99.0
 3972,J. Hollatz,BAY,MUN,009513,"HOLLATZ, JUSTUS",initial-club,99.0
 3973,J. Parra,BAR,BAR,007464,"PARRA, JOEL",initial-club,99.0
-3974,A. Gavel,BAY,MUN,,,unmatched,52.6
+3974,A. Gavel,BAY,MUN,001252,"GAVEL, ANTON",initial-club,99.0
 3975,S. Herrera,PBB,PRS,012611,"HERRERA, SEBASTIAN",initial-club,99.0
 3976,A. Lakic,PAR,PAR,007736,"LAKIC, ARIJAN",initial-club,99.0
 3977,S. Llull,RMB,MAD,TGB,"LLULL, SERGIO",initial-club,99.0
@@ -141,18 +141,18 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 3991,A. Abalde,RMB,MAD,003733,"ABALDE, ALBERTO",initial-club,99.0
 3992,T. Tarpey,PBB,PRS,012515,"TARPEY, TERRY",initial-club,99.0
 3993,M. Strazel,EFS,IST,008099,"STRAZEL, MATTHEW",initial-club,99.0
-3995,M. Lefevre,PBB,PRS,,,unmatched,50.0
+3995,M. Lefevre,PBB,PRS,015170,"LEFEVRE, MAXIME",initial-club,99.0
 3997,S. Tonut,MIL,MIL,006509,"TONUT, STEFANO",initial-club,99.0
 3998,D. Giedraitis,ZAL,ZAL,007513,"GIEDRAITIS, DOVYDAS",initial-club,99.0
 4000,M. Mahmutoglu,FBT,ULK,002969,"MAHMUTOGLU, MELIH",initial-club,99.0
 4005,E. Jackson,ASV,ASV,000229,"JACKSON, EDWIN",initial-club,99.0
-4006,T. Masiulis,ZAL,ZAL,ACX,"MASIULIS, TOMAS",prior-season,90.0
+4006,T. Masiulis,ZAL,ZAL,ACX,"MASIULIS, TOMAS",initial-club,99.0
 4007,E. Yilmaz,EFS,IST,006372,"YILMAZ, ERKAN",initial-club,99.0
 4008,M. Birsen,BJK,BES,003091,"BIRSEN, METECAN",initial-club,99.0
 4009,O. Diop,MIL,MIL,013385,"DIOP, OUSMANE",initial-club,99.0
 4012,G. Ricci,MIL,MIL,001518,"RICCI, GIAMPAOLO",initial-club,99.0
 4013,D. Flaccadori,MIL,MIL,005670,"FLACCADORI, DIEGO",initial-club,99.0
-4014,T. Parker,ASV,ASV,000264,"PARKER, TJ",prior-season,90.0
+4014,T. Parker,ASV,ASV,003550,"PARKER, TONY",initial-club,99.0
 4016,N. Akele,MIL,MIL,011816,"AKELE, NICOLA",initial-club,99.0
 4019,P. Kalaitzakis,PAO,PAN,011209,"KALAITZAKIS, PANAGIOTIS",initial-club,99.0
 4026,B. Yildizli,EFS,IST,004093,"YILDIZLI, BURAKCAN",prior-season,90.0
@@ -173,7 +173,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4164,J. Motley,CZV,RED,011157,"MOTLEY, JOHNATHAN",initial-club,99.0
 4165,T. Ginat,HTA,HTA,010550,"GINAT, TOMER",initial-club,99.0
 4167,I. Wainright,HTA,HTA,013284,"WAINRIGHT, ISH",initial-club,99.0
-4172,D. Itoudis,HTA,HTA,CAG,"ITOUDIS, DIMITRIS",prior-season,90.0
+4172,D. Itoudis,HTA,HTA,CAG,"ITOUDIS, DIMITRIS",initial-club,99.0
 4174,G. Palatin,HTA,HTA,013283,"PALATIN, GUY",initial-club,99.0
 4175,O. Blayzer,HTA,HTA,009877,"BLAYZER, OZ",initial-club,99.0
 4180,D. Dotson,BJK,BES,013285,"DOTSON, DEVON",initial-club,99.0
@@ -231,7 +231,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 7231,B. Dessert,EFS,IST,010318,"DESSERT, BRICE",prior-season,90.0
 7232,B. Massa,ASV,ASV,012618,"MASSA, BODIAN",initial-club,99.0
 7234,Y. Sima,VBC,PAM,005596,"SIMA, YANKUBA",initial-club,99.0
-7235,X. Pascual,DUB,DUB,KOW,"PASCUAL, XAVI",prior-season,90.0
+7235,X. Pascual,DUB,DUB,KOW,"PASCUAL, XAVI",initial-club,99.0
 7237,N. Reuvers,VBC,PAM,012738,"REUVERS, NATHAN",initial-club,99.0
 7238,R. Kurucs,KBA,BAS,005713,"KURUCS, RODIONS",initial-club,99.0
 7241,G. Lavi,MTA,TEL,014120,"LAVI, GUR",initial-club,99.0

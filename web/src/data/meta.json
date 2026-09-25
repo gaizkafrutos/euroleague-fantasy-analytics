@@ -1,25 +1,23 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-24T12:33:25.989262+00:00",
+ "generatedAt": "2026-09-25T12:34:56.736617+00:00",
  "currentRound": 1,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 11,
- "lastPriceCapture": "2026-09-24T12:33:17.939368+00:00",
+ "priceSnapshots": 12,
+ "lastPriceCapture": "2026-09-25T12:34:50.825366+00:00",
  "performanceSource": {
-  "source": "E2025",
-  "isBaseline": true,
-  "games": 402
+  "source": "E2026",
+  "isBaseline": false,
+  "games": 7
  },
- "teamStrengthSource": "temporada anterior",
+ "teamStrengthSource": "temporada en curso",
  "players": 350,
- "matched": 337,
- "matchRate": 0.963,
+ "matched": 340,
+ "matchRate": 0.971,
  "budget": 100.0,
- "coachGames": 804,
- "warnings": [
-  "La temporada 2026-27 aún no tiene partidos jugados: el rendimiento mostrado es la línea base de la 2025-26."
- ]
+ "coachGames": 14,
+ "warnings": []
 }
