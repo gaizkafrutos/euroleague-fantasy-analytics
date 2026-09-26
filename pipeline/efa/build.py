@@ -23,8 +23,10 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from efa import matchmodel
 from efa.advanced_build import apply_advanced
 from efa.config import (
+    AVAILABILITY_PRIOR_GAMES,
     CLUB_COLORS_PATH,
     CROSSWALK_PATH,
     PLAYER_OVERRIDES_PATH,
@@ -55,6 +57,7 @@ from efa.metrics import (
     value_metrics,
 )
 from efa.optimizer import Candidate, normalize_position, optimize
+from efa.projection import production_projection
 
 log = logging.getLogger(__name__)
 
@@ -297,6 +300,7 @@ def build_player_table(
     baseline: bool = False,
     prior_performance: pd.DataFrame | None = None,
     club_games: dict[str, int] | None = None,
+    v2: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     """Une mercado, identidad, precio histórico y rendimiento en una sola tabla.
 
@@ -373,10 +377,34 @@ def build_player_table(
     table["is_coach"] = table["person_type"].eq("C") | table["position_group"].isna()
 
     table["projected_fp"] = project_fantasy_points(table, baseline=baseline)
+    if v2 is not None and not v2.empty and not baseline:
+        table = _apply_v2(table, v2)
     table["price_pressure"] = price_pressure(table)
     table = value_metrics(table)
     table["bargain_score"] = bargain_score(table)
     return table
+
+
+def _apply_v2(table: pd.DataFrame, v2: pd.DataFrame) -> pd.DataFrame:
+    """Proyección v2 (si juega) por la probabilidad de jugar según su historial.
+
+    Sin datos para el v2 (ni temporada ni año pasado ni precio), se queda la de
+    antes. La probabilidad de jugar por historial es la de siempre:
+    (jugados + 2) / (partidos del club + 2); las lesiones la sustituyen luego.
+    """
+    out = table.merge(v2, on="person_code", how="left")
+    out.index = table.index
+    games = pd.to_numeric(out.get("games_played"), errors="coerce").fillna(0.0)
+    club_games = pd.to_numeric(out.get("club_games"), errors="coerce").fillna(0.0).clip(lower=games)
+    share = ((games + AVAILABILITY_PRIOR_GAMES) / (club_games + AVAILABILITY_PRIOR_GAMES)).clip(upper=1.0)
+    cond = pd.to_numeric(out["v2_projection"], errors="coerce")
+    usable = cond.notna() & ~out["is_coach"].astype(bool)
+    out["projected_if_plays"] = cond.where(usable).round(2)
+    out["play_share"] = share.where(usable).round(3)
+    out["projected_fp"] = (cond * share).where(usable, out["projected_fp"]).clip(lower=0).round(2)
+    for column in ("v2_minutes", "v2_rate", "v2_opp", "v2_home"):
+        out[column] = out[column].where(usable)
+    return out
 
 
 def player_records(
@@ -455,6 +483,13 @@ def player_records(
                     "plusMinusAvg": row.get("plus_minus_avg"),
                 },
                 "projectedFp": row.get("projected_fp"),
+                "projectedIfPlays": row.get("projected_if_plays"),
+                "playProb": row.get("play_share"),
+                "expectedMinutes": row.get("v2_minutes"),
+                "matchup": {
+                    "opponentFactor": row.get("v2_opp"),
+                    "homeFactor": row.get("v2_home"),
+                },
                 "valuePerCredit": row.get("value_per_credit"),
                 "valueProjected": row.get("value_projected"),
                 "valueMarket": row.get("value_market"),
@@ -528,6 +563,23 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     prices = price_history(load_snapshots()) if has_prices else pd.DataFrame()
 
     images = headshot_index(SEASON_CODE, PRIOR_SEASON_CODE)
+    games = reference.get("games", [])
+    round_now = current_round(games)
+    prior_reference = load_reference(PRIOR_SEASON_CODE)
+    baseline = bool(gamelog_meta.get("isBaseline"))
+
+    # Proyección v2: minutos x producción por minuto x rival x cancha, con el
+    # año pasado como referencia. Solo con temporada en curso: en la línea
+    # base el "historial" ya es el año pasado.
+    v2 = None
+    if not baseline:
+        prior_log = build_gamelog(load_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", []))
+        pre = market.merge(crosswalk[["fantaking_id", "person_code", "club_code"]], on="fantaking_id", how="left")
+        v2 = production_projection(
+            pre, gamelog, prior_log, games, round_now,
+            _position_map(pre, [reference, prior_reference]),
+        )
+
     table = build_player_table(
         market,
         crosswalk,
@@ -538,11 +590,9 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         baseline=bool(gamelog_meta.get("isBaseline")),
         prior_performance=None if gamelog_meta.get("isBaseline") else prior_season_performance(),
         club_games=club_games_played(gamelog),
+        v2=v2,
     )
 
-    games = reference.get("games", [])
-    round_now = current_round(games)
-    prior_reference = load_reference(PRIOR_SEASON_CODE)
     prior_strength = team_strength(prior_reference.get("games", []))
     strength = team_strength(games, prior=prior_strength)
     difficulty = schedule_difficulty(games, strength, from_round=round_now, horizon=3)
@@ -552,6 +602,9 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     injuries_meta = _apply_availability(
         records, market, reference, next_round=round_now
     )
+    _apply_play_probability(records)
+    match = matchmodel.fit(games, prior_reference.get("games", []))
+    schedule_meta = _apply_schedule(records, games, round_now, match)
 
     coach_log = build_coach_gamelog(load_boxscores(SEASON_CODE), games)
     prior_coach_log = build_coach_gamelog(
@@ -562,6 +615,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         # partidos, la referencia es la anterior.
         coach_log, prior_coach_log = prior_coach_log, None
     _apply_coach_projections(records, coach_log, prior_coach_log)
+    _apply_coach_match(records, games, round_now, match)
 
     matched = int(table["person_code"].notna().sum())
     meta = {
@@ -583,6 +637,9 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         "matchRate": round(matched / len(records), 3) if records else 0.0,
         "budget": budget,
         "coachGames": int(len(coach_log)),
+        "matchModel": {"homeAdvantage": round(match.home, 2), "marginSd": round(match.sd, 2)},
+        "modelBacktest": _load_backtest(),
+        "schedule": schedule_meta,
         "injuries": injuries_meta,
         "warnings": _warnings(has_prices, gamelog_meta, matched, len(records)),
     }
@@ -729,6 +786,149 @@ def _apply_availability(
         summary.get("updatedAt"),
     )
     return summary
+
+
+#: Probabilidad de jugar según el parte. Sin histórico de partes no se puede
+#: calibrar: "duda" es literalmente al 50 %, y "probable" casi seguro.
+PLAY_PROB = {"out": 0.0, "doubt": 0.5, "probable": 0.9}
+
+
+def _position_map(pre: pd.DataFrame, references: list[dict[str, Any]]) -> dict[str, str]:
+    """person_code -> G/F/C: el del juego si está en el mercado; si no, el oficial."""
+    out: dict[str, str] = {}
+    for reference in references:
+        for entry in reference.get("players", []):
+            code = str((entry.get("person") or {}).get("code") or "")
+            pos = normalize_position(entry.get("positionName"))
+            if code and pos:
+                out.setdefault(code, pos)
+    for row in pre[["person_code", "position"]].dropna().itertuples(index=False):
+        pos = normalize_position(row.position)
+        if pos:
+            out[str(row.person_code)] = pos
+    return out
+
+
+def _apply_play_probability(records: list[dict[str, Any]]) -> None:
+    """Proyección = lo que rinde si juega × la probabilidad de que juegue.
+
+    Sin aviso, la probabilidad es la de su historial (ya aplicada en la tabla).
+    Con aviso del parte, manda el parte: una baja proyecta 0 y una duda la
+    mitad. Así el óptimo, la consola y el índice tratan igual a un titular
+    fijo y a uno que puede no jugar.
+    """
+    for record in records:
+        status = (record.get("availability") or {}).get("level")
+        if status not in PLAY_PROB or record.get("isCoach"):
+            continue
+        cond = record.get("projectedIfPlays")
+        if cond is None or (isinstance(cond, float) and math.isnan(cond)):
+            # Sin proyección v2 (no cruza con el censo): la que tenga es "si juega".
+            cond = record.get("projectedFp")
+            if cond is None or (isinstance(cond, float) and math.isnan(cond)):
+                continue
+            record["projectedIfPlays"] = cond
+        prob = PLAY_PROB[status]
+        if status == "probable":
+            prob = min(prob, record.get("playProb") or prob)
+        record["playProb"] = prob
+        record["projectedFp"] = round(float(cond) * prob, 2)
+
+
+def _apply_schedule(
+    records: list[dict[str, Any]],
+    games: list[dict[str, Any]],
+    round_now: int,
+    match: matchmodel.MatchModel,
+) -> dict[str, Any]:
+    """Para cada club, su partido de la jornada: turno, descanso, semana doble y
+    probabilidad de ganar. Se copia en `schedule` de cada jugador."""
+    def when(game: dict[str, Any]) -> pd.Timestamp | None:
+        stamp = pd.to_datetime(game.get("utcDate"), utc=True, errors="coerce")
+        return None if pd.isna(stamp) else stamp
+
+    in_round = [g for g in games if int(g.get("round") or 0) == round_now and when(g) is not None]
+    days = sorted({when(g).date() for g in in_round})
+    last_played: dict[str, pd.Timestamp] = {}
+    all_dates: dict[str, list[pd.Timestamp]] = {}
+    for game in games:
+        stamp = when(game)
+        if stamp is None:
+            continue
+        for side in ("local", "road"):
+            club = ((game.get(side) or {}).get("club") or {}).get("code")
+            if not club:
+                continue
+            all_dates.setdefault(club, []).append(stamp)
+            if game.get("played") and (club not in last_played or stamp > last_played[club]):
+                last_played[club] = stamp
+
+    clubs: dict[str, dict[str, Any]] = {}
+    for game in in_round:
+        stamp = when(game)
+        local = ((game.get("local") or {}).get("club") or {}).get("code")
+        road = ((game.get("road") or {}).get("club") or {}).get("code")
+        for club, rival, home in ((local, road, True), (road, local, False)):
+            if not club or not rival:
+                continue
+            week_start = (stamp - pd.Timedelta(days=stamp.weekday())).normalize()
+            in_week = [d for d in all_dates.get(club, []) if week_start <= d < week_start + pd.Timedelta(days=7)]
+            rest = (stamp - last_played[club]).days if club in last_played and last_played[club] < stamp else None
+            clubs[club] = {
+                "date": stamp.isoformat(),
+                "turn": days.index(stamp.date()) + 1,
+                "turns": len(days),
+                "opponent": rival,
+                "home": home,
+                "restDays": rest,
+                "doubleWeek": len(in_week) >= 2,
+                "winProb": round(match.win_prob(club, rival, home), 3),
+                "expectedMargin": round(match.margin(club, rival, home), 1),
+            }
+    for record in records:
+        info = clubs.get(str(record.get("club")))
+        if info:
+            record.setdefault("schedule", {}).update({"next": info})
+    return {"round": round_now, "turns": len(days), "doubleWeekClubs": sorted(c for c, i in clubs.items() if i["doubleWeek"])}
+
+
+def _apply_coach_match(
+    records: list[dict[str, Any]],
+    games: list[dict[str, Any]],
+    round_now: int,
+    match: matchmodel.MatchModel,
+) -> int:
+    """Entrenador: puntos esperados de su próximo partido con el modelo de partido.
+
+    Su puntuación solo depende del margen, así que el rival y el campo mandan.
+    En la 2025-26 esto se equivocaba 9,69 puntos de media frente a 10,68 de su
+    media histórica. Sin partido en la jornada se queda la media.
+    """
+    applied = 0
+    for record in records:
+        if not record.get("isCoach"):
+            continue
+        nxt = (record.get("schedule") or {}).get("next")
+        if not nxt:
+            continue
+        record["projectedFp"] = round(match.coach_points(str(record.get("club")), nxt["opponent"], nxt["home"]), 2)
+        record["playProb"] = 1.0
+        applied += 1
+    return applied
+
+
+def _load_backtest() -> dict[str, Any] | None:
+    """El último `efa backtest`, sin los cuantiles crudos (la web no los usa)."""
+    from efa.config import PROCESSED_DIR
+
+    path = PROCESSED_DIR / "projection_backtest.json"
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text(encoding="utf-8"))
+    for part in ("season", "current"):
+        if isinstance(data.get(part), dict):
+            data[part].pop("residualQuantiles", None)
+    return data
 
 
 def _apply_coach_projections(

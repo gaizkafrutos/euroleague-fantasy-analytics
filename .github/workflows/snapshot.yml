@@ -63,6 +63,12 @@ jobs:
                "Si es un 401, renueva FANTAKING_TOKEN en Settings > Secrets and variables > Actions." \
                "Instrucciones en docs/TOKEN.md."
 
+      # Error de la proyección y del modelo de entrenador, que publica la
+      # metodología. Si fallara, el build usa el último guardado.
+      - name: Backtest del modelo
+        run: python -m efa backtest
+        continue-on-error: true
+
       - name: Reconstruir los datos de la web
         run: python -m efa build
 

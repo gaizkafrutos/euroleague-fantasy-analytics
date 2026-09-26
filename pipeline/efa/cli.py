@@ -6,7 +6,8 @@
     python -m efa refresh             # ingest + snapshot + build, todo seguido
     python -m efa discover            # mapea endpoints de Fantaking
     python -m efa verify              # contrasta la fórmula con los datos reales
-    python -m efa injuries            # parte de lesiones de BasketNews
+    python -m efa injuries            # partes de lesiones (BasketNews, RotoWire, Sphere)
+    python -m efa backtest            # error de la proyección, publicado en la web
 """
 from __future__ import annotations
 
@@ -100,6 +101,17 @@ def cmd_verify(args: argparse.Namespace) -> int:
     report = run_verification()
     print(json.dumps(report, indent=2, ensure_ascii=False))
     return 0 if report.get("ok") else 1
+
+
+def cmd_backtest(args: argparse.Namespace) -> int:
+    from efa.config import PROCESSED_DIR
+    from efa.projection import run_backtests
+
+    result = run_backtests()
+    path = PROCESSED_DIR / "projection_backtest.json"
+    path.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(json.dumps({k: v for k, v in result.items() if k != "params"}, indent=1, ensure_ascii=False))
+    return 0
 
 
 def cmd_injuries(args: argparse.Namespace) -> int:
@@ -197,8 +209,11 @@ def build_parser() -> argparse.ArgumentParser:
     verify = sub.add_parser("verify", help="Contrasta la fórmula de puntuación con los datos reales")
     verify.set_defaults(func=cmd_verify)
 
-    injuries = sub.add_parser("injuries", help="Descarga el parte de lesiones (BasketNews)")
+    injuries = sub.add_parser("injuries", help="Descarga los partes de lesiones (tres fuentes)")
     injuries.set_defaults(func=cmd_injuries)
+
+    backtest = sub.add_parser("backtest", help="Error de la proyección y del modelo de entrenador")
+    backtest.set_defaults(func=cmd_backtest)
 
     demo = sub.add_parser("demo", help="Genera precios de demostración (sin token)")
     demo.add_argument("--season", default=PRIOR_SEASON_CODE, help="Temporada de la que derivar el rendimiento")
