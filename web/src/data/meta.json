@@ -1,7 +1,7 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-26T15:54:31.134812+00:00",
+ "generatedAt": "2026-09-26T16:21:35.645539+00:00",
  "currentRound": 2,
  "totalRounds": 38,
  "hasPrices": true,
@@ -24,7 +24,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-09-26T15:46:34.482625+00:00",
+  "generatedAt": "2026-09-26T16:20:58.611204+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -133,7 +133,7 @@
   "source": "BasketNews + RotoWire + Basketball Sphere",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-09-26T17:00:00",
-  "fetchedAt": "2026-09-26T15:29:32.668894+00:00",
+  "fetchedAt": "2026-09-26T16:20:53.158656+00:00",
   "rows": 192,
   "matched": 88,
   "unmatched": [
@@ -164,7 +164,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-09-26T15:29:32.145621+00:00",
+    "fetchedAt": "2026-09-26T16:20:52.554325+00:00",
     "rows": 37,
     "matched": 35,
     "flagged": 1
@@ -173,7 +173,7 @@
     "source": "Basketball Sphere",
     "url": "https://basketballsphere.com/en/injuries/euroleague/",
     "updatedAt": "2026-09-26T17:00:00",
-    "fetchedAt": "2026-09-26T15:29:32.668894+00:00",
+    "fetchedAt": "2026-09-26T16:20:53.158656+00:00",
     "rows": 71,
     "matched": 68,
     "flagged": 10
