@@ -318,6 +318,42 @@ def pending_prices(
     return changed
 
 
+#: Partidos a partir de los cuales la fiabilidad sale de su propia dispersión.
+RELIABILITY_MIN_GAMES = 3
+
+
+def _early_reliability(records: list[dict[str, Any]]) -> None:
+    """Fiabilidad estimada mientras no hay 3 partidos: 1 − σ/proyección, con la σ
+    encogida hacia el año pasado (la misma que usa la horquilla). Antes la tabla
+    enseñaba "—" en las 330 filas hasta la tercera jornada."""
+    for record in records:
+        perf = record.get("perf") or {}
+        outlook = record.get("outlook") or {}
+        proj = _num(record.get("projectedFp")) or 0.0
+        if (perf.get("gamesPlayed") or 0) >= RELIABILITY_MIN_GAMES or not outlook or proj <= 0:
+            continue
+        perf["consistency"] = round(max(0.0, min(1.0, 1 - outlook["sd"] / proj)), 3)
+        perf["consistencyEstimated"] = True
+
+
+def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
+    """Recalcula el índice de chollo con la probabilidad de subir ya calculada."""
+    from efa.metrics import bargain_score
+
+    frame = pd.DataFrame(
+        {
+            "value_projected": [_num(r.get("valueProjected")) for r in records],
+            "projected_fp": [_num(r.get("projectedFp")) for r in records],
+            "consistency": [_num((r.get("perf") or {}).get("consistency")) for r in records],
+            "minutes_share_trend": [_num((r.get("perf") or {}).get("minutesShareTrend")) for r in records],
+            "rise_prob": [_num((r.get("outlook") or {}).get("riseProb")) for r in records],
+        }
+    )
+    for record, score in zip(records, bargain_score(frame), strict=True):
+        if record.get("bargainScore") is not None:
+            record["bargainScore"] = float(score)
+
+
 # ---------------------------------------------------------------------------
 # Todo junto
 # ---------------------------------------------------------------------------
@@ -361,6 +397,11 @@ def apply_advanced(
     freshness = price_freshness(history if history is not None else market, reference.get("games", []))
     pending = pending_prices(records, market, log_now, reference.get("games", []), model, freshness)
     meta["priceFreshness"] = {**freshness, "pending": pending}
+    for record in records:
+        # Puntos por crédito al precio que se va a pagar de verdad.
+        pend, proj = _num(record.get("pricePending")), _num(record.get("projectedFp"))
+        if pend and proj is not None:
+            record["valueProjected"] = round(proj / pend, 3)
     if freshness.get("stale"):
         meta.setdefault("warnings", []).append(
             f"Precios capturados el {freshness['capturedAt'][:16].replace('T', ' ')} UTC: "
@@ -387,6 +428,8 @@ def apply_advanced(
             "ceiling": round(proj + 0.674 * sd, 1),
         }
     meta["priceModel"] = {**DEFAULT_PRICE_MODEL, **model}
+    _early_reliability(records)
+    _rebuild_bargain(records)
 
     # ------------------------------------------------------------ tiros
     shots_now = add_zones(shots_frame(SEASON_CODE))
