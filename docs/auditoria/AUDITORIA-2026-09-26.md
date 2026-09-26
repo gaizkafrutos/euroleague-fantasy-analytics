@@ -659,3 +659,17 @@ nuevo recorrido con Playwright y axe.
 **No abordado (cambios de más calado, §8):** el modelo completo de minutos × tasa × rival (§5.4), el modo
 "4 cambios" desde el equipo actual, el comparador de jugadores, la señal de semana doble, el payload de
 /mi-equipo y la altura de la cabecera en mobile (D10).
+
+### Verificación en producción (26-09, 12:40 UTC)
+
+Fusionado en `main` ([#1](https://github.com/gaizkafrutos/euroleague-fantasy-analytics/pull/1)) con el CI en verde y los datos regenerados por el workflow (`1cdcc5e`):
+
+- Óptimo resuelto por **ILP**: 100,0 cr y 146,9 puntos, con Xavier Albert de entrenador. Precios del 26-09 12:04, sin desfase.
+- Vezenkov a 17,6 cr. Portada con los dos botones de entrada, reglas en la metodología, y el botón de cargar equipo oculto porque Vercel no tiene token.
+- axe: **0 fallos en las 14 combinaciones** de página y viewport; ninguna imagen rota. CLS 0, salvo 0,015 en la primera carga de la portada, por el cambio de fuente (ya estaba antes).
+- La ejecución que lanzó el workflow no guardó snapshot: el mercado era idéntico al de las 12:04, así que el filtro de duplicados funciona.
+
+**Limitación que queda:** BasketNews sigue devolviendo 403 a los runners de GitHub, también con cabeceras de
+navegador (parece un bloqueo por IP de centro de datos). La ejecución lo avisa y reutiliza el último parte, que
+hoy coincide con el publicado (actualizado el 25-09 a las 20:45). Si deja de actualizarse, habrá que ejecutar
+`python -m efa injuries` en local o buscar otra fuente.
