@@ -454,5 +454,43 @@
    "loss_ot",
    "captured_at"
   ]
+ },
+ {
+  "file": "prices_20260926_115420_R01-cierre.parquet",
+  "csv": "prices_20260926_115420_R01-cierre.csv",
+  "captured_at": "2026-09-26T11:54:20.726766+00:00",
+  "label": "R01-cierre",
+  "matchday_id": null,
+  "players": 350,
+  "columns": [
+   "fantaking_id",
+   "name",
+   "team",
+   "position",
+   "rank",
+   "fpt",
+   "quotation",
+   "plus",
+   "pts",
+   "reb",
+   "ast",
+   "stl",
+   "tov",
+   "blk",
+   "blka",
+   "fd",
+   "pf",
+   "fg_missed",
+   "ft_missed",
+   "win_1-10",
+   "win_11-20",
+   "win_20",
+   "win_ot",
+   "loss_1-10",
+   "loss_11-20",
+   "loss_20",
+   "loss_ot",
+   "captured_at"
+  ]
  }
 ]
