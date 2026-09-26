@@ -51,7 +51,7 @@ def cmd_snapshot(args: argparse.Namespace) -> int:
     except FantakingAuthError as exc:
         print(f"\n{exc}\n", file=sys.stderr)
         return 2
-    print(f"OK: {path}")
+    print(f"OK: {path}" if path else "OK: mercado sin cambios, no se guarda snapshot")
     return 0
 
 

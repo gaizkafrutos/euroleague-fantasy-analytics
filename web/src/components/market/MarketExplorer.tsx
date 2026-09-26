@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 
 import Sparkline from "@/components/charts/Sparkline";
+import AddToSquad from "@/components/team/AddToSquad";
 import ValueScatter from "@/components/charts/ValueScatter";
 import { BarCell, Delta, PlayerCell, PositionBadge } from "@/components/ui/primitives";
 import { credits, displayName, num, percent } from "@/lib/format";
@@ -34,12 +35,12 @@ type SortKey =
   | "expectedChange"
   | "difficulty";
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 50;
 
 const COLUMNS: Array<{ key: SortKey; label: string; title: string }> = [
   // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
   // y la tabla ya usa ese patrón en Forma y en Minutos.
-  { key: "price", label: "Precio", title: "Precio actual y variación desde la captura anterior" },
+  { key: "price", label: "Precio", title: "Precio y variación en la última jornada" },
   {
     key: "expectedChange",
     label: "Revalor.",
@@ -108,6 +109,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [minGames, setMinGames] = useState(0);
   const [risingOnly, setRisingOnly] = useState(false);
+  const [minPrice, setMinPrice] = useState(0);
+  const [hideOut, setHideOut] = useState(false);
   const [sort, setSort] = useState<{ key: SortKey; desc: boolean }>({
     key: hasPrices ? "bargainScore" : "fpAvg",
     desc: true,
@@ -136,6 +139,9 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     const games = Number(params.get("min"));
     if (games > 0) setMinGames(games);
     if (params.get("alza") === "1") setRisingOnly(true);
+    const floor = Number(params.get("desde"));
+    if (floor > 0) setMinPrice(floor);
+    if (params.get("sinbajas") === "1") setHideOut(true);
     if (params.get("vista") === "grafico") setView("grafico");
     const key = params.get("orden") as SortKey | null;
     if (key && COLUMNS.some((column) => column.key === key)) {
@@ -155,6 +161,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     if (maxPrice !== null && maxPrice < priceCeiling) params.set("max", String(maxPrice));
     if (minGames) params.set("min", String(minGames));
     if (risingOnly) params.set("alza", "1");
+    if (minPrice) params.set("desde", String(minPrice));
+    if (hideOut) params.set("sinbajas", "1");
     if (view === "grafico") params.set("vista", "grafico");
     const isDefaultSort = sort.key === (hasPrices ? "bargainScore" : "fpAvg") && sort.desc;
     if (!isDefaultSort) {
@@ -164,7 +172,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     const search = params.toString();
     const url = `${window.location.pathname}${search ? `?${search}` : ""}`;
     window.history.replaceState(null, "", url);
-  }, [query, positions, team, maxPrice, minGames, risingOnly, view, sort, priceCeiling, hasPrices]);
+  }, [query, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly, view, sort, priceCeiling, hasPrices]);
 
   const filtered = useMemo(() => {
     const needle = deferredQuery.trim().toLowerCase();
@@ -178,9 +186,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       if (maxPrice !== null && (player.price ?? 0) > maxPrice) return false;
       if (minGames && (player.perf.gamesPlayed ?? 0) < minGames) return false;
       if (risingOnly && (player.perf.minutesShareTrend ?? 0) <= 0) return false;
+      if (minPrice && (player.price ?? 0) < minPrice) return false;
+      if (hideOut && (player.availability?.level === "out" || player.registered === false)) return false;
       return true;
     });
-  }, [players, deferredQuery, positions, team, maxPrice, minGames, risingOnly]);
+  }, [players, deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly]);
 
   const sorted = useMemo(() => {
     return [...filtered].sort((a, b) => {
@@ -228,13 +238,15 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     (team ? 1 : 0) +
     (maxPrice !== null && maxPrice < priceCeiling ? 1 : 0) +
     (minGames ? 1 : 0) +
+    (minPrice ? 1 : 0) +
+    (hideOut ? 1 : 0) +
     (risingOnly ? 1 : 0);
 
   // Cualquier cambio de filtro u orden reinicia la paginación: si no, el
   // usuario se queda mirando la fila 80 de una lista que ya es otra.
   useEffect(() => {
     setVisible(PAGE_SIZE);
-  }, [deferredQuery, positions, team, maxPrice, minGames, risingOnly, sort]);
+  }, [deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly, sort]);
 
   function togglePosition(position: string) {
     setPositions((previous) => {
@@ -255,6 +267,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     setTeam("");
     setMaxPrice(null);
     setMinGames(0);
+    setMinPrice(0);
+    setHideOut(false);
     setRisingOnly(false);
   }
 
@@ -365,6 +379,36 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </select>
         </label>
 
+        {hasPrices ? (
+          <label className="control">
+            <span className="control-label">Precio mínimo</span>
+            <select
+              className="select"
+              value={minPrice}
+              onChange={(event) => setMinPrice(Number(event.target.value))}
+            >
+              {[0, 5, 8, 10, 12, 15].map((value) => (
+                <option key={value} value={value}>
+                  {value === 0 ? "Sin mínimo" : `${value} cr o más`}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
+
+        <div className="control">
+          <span className="control-label">Disponibilidad</span>
+          <button
+            type="button"
+            className="chip"
+            aria-pressed={hideOut}
+            onClick={() => setHideOut((value) => !value)}
+            title="Quita a los que están de baja para la próxima jornada o sin inscribir"
+          >
+            Ocultar bajas
+          </button>
+        </div>
+
         <div className="control">
           <span className="control-label">Rotación</span>
           <button
@@ -425,7 +469,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       ) : (
         <>
           {/* -------------------------------------------------- escritorio */}
-          <div className="table-wrap only-wide">
+          <div className="table-wrap only-wide" tabIndex={0} role="region" aria-label="Tabla del mercado">
             <table className="data">
               <thead>
                 <tr>
@@ -467,12 +511,17 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     onClick={(event) => openPlayer(event, player.id)}
                   >
                     <td>
-                      <PlayerCell player={player} />
+                      {/* El botón va en la celda del nombre: una columna más no
+                          cabía a 1440 px. */}
+                      <span className="player-cell-row">
+                        <PlayerCell player={player} />
+                        <AddToSquad id={player.id} name={displayName(player)} compact />
+                      </span>
                     </td>
-                    <td className="num">
+                    <td className="num" title={priceTitle(player)}>
                       <span className="credit">{credits(player.price)}</span>{" "}
                       <span style={{ fontSize: "0.76em" }}>
-                        <Delta value={player.priceDeltaLast} digits={2} />
+                        <Delta value={player.priceDeltaLast} digits={1} quiet />
                       </span>
                     </td>
                     <td className="num">
@@ -500,13 +549,13 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     <td className="num" title={`Forma (últimos 5): ${num(player.perf.form)}`}>
                       {num(player.perf.fpAvg)}{" "}
                       <span className="muted" style={{ fontSize: "0.76em" }}>
-                        <Delta value={player.perf.formDelta} />
+                        <Delta value={player.perf.formDelta} quiet />
                       </span>
                     </td>
                     <td className="num">
                       {num(player.perf.minutesAvg)}{" "}
                       <span style={{ fontSize: "0.76em" }}>
-                        <Delta value={player.perf.minutesTrend} />
+                        <Delta value={player.perf.minutesTrend} quiet />
                       </span>
                     </td>
                     <td className="num">{reliable(player)}</td>
@@ -570,6 +619,10 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     </span>
                   </span>
                 </a>
+                {/* Fuera del enlace: un botón dentro de un <a> es HTML inválido. */}
+                <div className="player-card-actions">
+                  <AddToSquad id={player.id} name={displayName(player)} />
+                </div>
               </li>
             ))}
           </ul>
@@ -623,8 +676,21 @@ function Revalue({ player }: { player: Player }) {
   );
 }
 
-/** Con menos de tres partidos la fiabilidad es 0 % por definición, no por el
- *  jugador: se enseña como ausencia. */
+/** Con menos de tres partidos la fiabilidad propia no existe: el pipeline la
+ *  estima con la dispersión encogida hacia el año pasado, y se marca con "≈". */
 function reliable(player: Player): string {
+  if (player.perf.consistency === null || player.perf.consistency === undefined) return "—";
+  if (player.perf.consistencyEstimated) return `≈${percent(player.perf.consistency)}`;
   return (player.perf.gamesPlayed ?? 0) >= 3 ? percent(player.perf.consistency) : "—";
+}
+
+/** Con precios desfasados, el precio es el pendiente: el title dice cuál enseña
+ *  el juego ahora mismo. */
+function priceTitle(player: Player): string | undefined {
+  if (typeof player.priceGame === "number") {
+    return `Precio al cerrar la jornada (${
+      player.pricePendingSource === "modelo" ? "estimado" : "calculado por el juego"
+    }). Ahora mismo en el juego: ${credits(player.priceGame)}.`;
+  }
+  return player.priceDeltaLast ? "Variación en la última jornada" : undefined;
 }

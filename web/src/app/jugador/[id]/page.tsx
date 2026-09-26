@@ -10,6 +10,7 @@ import PriceOutlook from "@/components/advanced/PriceOutlook";
 import ShotChart from "@/components/advanced/ShotChart";
 import GameLogBars from "@/components/charts/GameLogBars";
 import PriceHistory from "@/components/charts/PriceHistory";
+import AddToSquad from "@/components/team/AddToSquad";
 import { PositionBadge, prettyName } from "@/components/ui/primitives";
 import { seasonLabel, sequentialClass } from "@/lib/advanced";
 import { getDetail, getPlayer, getTeam, meta, players } from "@/lib/data";
@@ -149,14 +150,21 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             {player.height ? <span className="badge">{player.height} cm</span> : null}
             {player.birthDate ? <span className="badge">{age(player.birthDate)} años</span> : null}
             {player.country ? <span className="badge">{player.country}</span> : null}
-            <span className="ficha-price num">
+            <span
+              className="ficha-price num"
+              title={
+                typeof player.priceGame === "number"
+                  ? `Precio al cerrar la jornada. Ahora mismo en el juego: ${credits(player.priceGame)}`
+                  : undefined
+              }
+            >
               {credits(player.price)}
               <small>
-                {player.priceDeltaTotal
-                  ? `${signed(player.priceDeltaTotal)} cr`
-                  : "sin variación"}
+                {priceSinceOpen(player)}
+                {typeof player.priceGame === "number" ? " · pendiente" : ""}
               </small>
             </span>
+            <AddToSquad id={player.id} isCoach={player.isCoach} name={displayName(player)} />
           </div>
 
           <div className={`ficha-orbit${hasOrbs ? "" : " is-bare"}`}>
@@ -209,8 +217,20 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               />
               <BandItem
                 label="Fiabilidad"
-                value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
-                note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
+                value={
+                  perf.consistencyEstimated
+                    ? `≈${percent(perf.consistency)}`
+                    : (perf.gamesPlayed ?? 0) >= 3
+                      ? percent(perf.consistency)
+                      : "—"
+                }
+                note={
+                  perf.consistencyEstimated
+                    ? "estimada"
+                    : (perf.gamesPlayed ?? 0) >= 3
+                      ? pctNote(player, "consistency")
+                      : "3+ partidos"
+                }
               />
               <BandItem
                 label="Forma"
@@ -563,7 +583,7 @@ function BandItem({
         {value}
         {unit ? <em>{unit}</em> : null}
       </dd>
-      {note ? <span className="num">{note}</span> : null}
+      {note ? <dd className="num dl-note">{note}</dd> : null}
     </div>
   );
 }
@@ -608,4 +628,12 @@ function age(birthDate: string): number {
   const monthDelta = now.getMonth() - born.getMonth();
   if (monthDelta < 0 || (monthDelta === 0 && now.getDate() < born.getDate())) years -= 1;
   return years;
+}
+
+/** Variación desde la primera captura de la temporada, al precio que se paga
+ *  (el pendiente, si el juego aún no ha revalorizado). */
+function priceSinceOpen(player: Player): string {
+  if (player.price === null || player.priceOpen === null) return "sin variación";
+  const change = Math.round((player.price - player.priceOpen) * 10) / 10;
+  return change ? `${signed(change)} cr desde el inicio` : "sin variación";
 }

@@ -154,3 +154,16 @@ def test_modelo_de_precio_sin_datos_usa_el_de_la_j1():
 def test_probabilidad_de_superar_el_umbral():
     assert prob_above(10, 10, 5) == pytest.approx(0.5)
     assert prob_above(0, 10, 5) > 0.97
+
+
+def test_fiabilidad_estimada_con_pocos_partidos():
+    from efa.advanced_build import _early_reliability
+
+    records = [
+        {"projectedFp": 20.0, "perf": {"gamesPlayed": 1, "consistency": 0.0}, "outlook": {"sd": 6.0}},
+        {"projectedFp": 20.0, "perf": {"gamesPlayed": 5, "consistency": 0.55}, "outlook": {"sd": 6.0}},
+    ]
+    _early_reliability(records)
+    assert records[0]["perf"]["consistency"] == 0.7
+    assert records[0]["perf"]["consistencyEstimated"] is True
+    assert records[1]["perf"]["consistency"] == 0.55

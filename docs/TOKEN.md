@@ -84,9 +84,10 @@ devuelve solo el resultado. El navegador nunca lo ve.
 
 No se sabe cuánto duran estos tokens. Cuando caduque lo notarás así:
 
-- El workflow de GitHub Actions avisa con `Token caducado` pero **no falla**:
-  sigue actualizando las estadísticas oficiales, solo se queda sin capturar
-  precios ese día.
+- El workflow de GitHub Actions sigue actualizando las estadísticas oficiales,
+  pero la ejecución **sale en rojo** ("Sin precios nuevos") y GitHub te avisa
+  por email. Antes solo dejaba un aviso amarillo que no veía nadie, y la web se
+  quedaba con precios viejos sin decirlo.
 - En local, `python -m efa snapshot` sale con un `401` y un mensaje explícito.
 - En la web, el módulo de equipo dice que el token ha caducado.
 

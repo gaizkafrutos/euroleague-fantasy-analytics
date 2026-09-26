@@ -1,12 +1,14 @@
 name: Captura de datos
 
-# Una ejecución diaria a las 07:00 UTC (09:00 en Madrid en horario de verano).
-# Las jornadas de EuroLiga son de martes a viernes, así que capturar cada
-# mañana garantiza tener el precio actualizado después de cada jornada sin
-# tener que adivinar el calendario.
+# Cuatro capturas al día, lejos del minuto 0 (el más saturado de Actions: el
+# cron de las 07:00 llegaba entre las 11:47 y las 13:38). El juego aplica la
+# revalorización al cerrar la jornada, de madrugada; con una sola captura a
+# mediodía la J1 se quedó 16 h con los precios de antes de jugarse. Las
+# capturas sin cambios no se guardan (ver `same_market`), así que el histórico
+# no se llena de puntos repetidos.
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "23 1,7,13,19 * * *"
   workflow_dispatch:
     inputs:
       label:
@@ -42,6 +44,7 @@ jobs:
       # BasketNews actualiza el parte a diario. Si la página cambia o no
       # responde, el build sigue con el último parte guardado.
       - name: Parte de lesiones
+        id: injuries
         run: python -m efa injuries
         continue-on-error: true
 
@@ -55,8 +58,8 @@ jobs:
       - name: Avisar si el token ha caducado
         if: steps.snapshot.outcome == 'failure'
         run: |
-          echo "::warning title=Token caducado::No se pudieron capturar los precios." \
-               "Renueva FANTAKING_TOKEN en Settings > Secrets and variables > Actions." \
+          echo "::error title=Sin precios nuevos::No se pudieron capturar los precios." \
+               "Si es un 401, renueva FANTAKING_TOKEN en Settings > Secrets and variables > Actions." \
                "Instrucciones en docs/TOKEN.md."
 
       - name: Reconstruir los datos de la web
@@ -73,6 +76,19 @@ jobs:
           if git diff --staged --quiet; then
             echo "Sin cambios que commitear."
           else
-            git commit -m "datos: snapshot $(date -u +'%Y-%m-%d')"
+            git commit -m "datos: snapshot $(date -u +'%Y-%m-%d %H:%M')"
+            # Con cuatro ejecuciones al día puede haber entrado otro push mientras
+            # tanto: se rebasa el commit de datos encima en vez de fallar.
+            git pull --rebase origin main
             git push
           fi
+
+      # Las estadísticas se commitean igual, pero la ejecución sale en rojo: un
+      # aviso amarillo no lo ve nadie y la web se quedaba con precios viejos.
+      - name: Fallar si no hubo precios nuevos
+        if: steps.snapshot.outcome == 'failure'
+        run: exit 1
+
+      - name: Avisar si el parte de lesiones no se actualizó
+        if: steps.injuries.outcome == 'failure'
+        run: echo "::warning title=Parte de lesiones::BasketNews no respondió; se usa el último parte guardado."

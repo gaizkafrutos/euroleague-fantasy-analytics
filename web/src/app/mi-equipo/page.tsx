@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import SquadConsole, { type NextMatch } from "@/components/team/SquadConsole";
 import { getTeam, lineup, meta, players, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
@@ -47,10 +48,17 @@ export default function TeamPage() {
         <p className="lede">
           Monta la plantilla y la consola la coloca: los seis que más proyectan puntúan enteros, el
           mejor lleva el brazalete y los cuatro últimos van al banquillo a la mitad. Luego señala a
-          quién le pagas de más y qué fichaje cabe.
+          quién le pagas de más y qué fichaje cabe.{" "}
+          <Link href="/metodologia#reglas">Las reglas, en 30 segundos</Link>.
         </p>
       </header>
-      <SquadConsole market={market} coaches={coaches} optimal={optimal} nextByClub={nextByClub} />
+      <SquadConsole
+        market={market}
+        coaches={coaches}
+        optimal={optimal}
+        nextByClub={nextByClub}
+        rosterConfigured={Boolean(process.env.FANTAKING_TOKEN && process.env.EFA_FANTASY_TEAM_ID)}
+      />
     </section>
   );
 }

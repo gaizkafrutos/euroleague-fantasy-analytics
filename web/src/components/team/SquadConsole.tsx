@@ -56,6 +56,9 @@ interface Props {
   optimal?: { playerIds: number[]; coachId: number | null; scored: number | null } | null;
   /** Próximo rival de cada club, para la línea bajo el nombre. */
   nextByClub: Record<string, NextMatch>;
+  /** Si el despliegue tiene token y equipo configurados. Sin ellos el botón de
+   *  cargar equipo solo servía para enseñar un aviso técnico a cada visitante. */
+  rosterConfigured?: boolean;
 }
 
 type RosterState =
@@ -70,7 +73,13 @@ interface Stored {
   coach: number | null;
 }
 
-export default function SquadConsole({ market, coaches, optimal, nextByClub }: Props) {
+export default function SquadConsole({
+  market,
+  coaches,
+  optimal,
+  nextByClub,
+  rosterConfigured = false,
+}: Props) {
   const [ids, setIds] = useState<number[]>([]);
   const [coachId, setCoachId] = useState<number | null>(null);
   const [budget, setBudget] = useState(DEFAULT_BUDGET);
@@ -245,9 +254,13 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
     <div className="cancha">
       {/* ------------------------------------------------------- controles */}
       <div className="squad-controls">
-        <button type="button" className="chip" onClick={loadRoster}>
-          {roster.status === "loading" ? "Cargando…" : "Cargar mi equipo real"}
-        </button>
+        {rosterConfigured ? (
+          // Es el equipo de la cuenta configurada en el despliegue (la del autor),
+          // no el de quien visita: el texto no puede prometer otra cosa.
+          <button type="button" className="chip" onClick={loadRoster}>
+            {roster.status === "loading" ? "Cargando…" : "Cargar el equipo del autor"}
+          </button>
+        ) : null}
         <button type="button" className="chip" onClick={autofill}>
           Rellenar con el óptimo
         </button>
@@ -293,14 +306,14 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
             {num(check.spent)}
             <em>/{num(budget, 0)}</em>
           </dd>
-          <small className="num">
+          <dd className="num dl-note">
             {check.free >= 0 ? `${credits(check.free)} libres` : `${credits(-check.free)} de más`}
-          </small>
+          </dd>
         </div>
         <div>
           <dt>Proyección real</dt>
           <dd className="num">{num(check.scored)}</dd>
-          <small>con capitán ×2 y banquillo ×0,5</small>
+          <dd className="dl-note">con capitán ×2 y banquillo ×0,5</dd>
         </div>
         <div>
           {full && typeof optimalScored === "number" ? (
@@ -311,7 +324,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
               >
                 {signed(check.scored - optimalScored)}
               </dd>
-              <small className="num">respecto a los {num(optimalScored)} del óptimo</small>
+              <dd className="num dl-note">respecto a los {num(optimalScored)} del óptimo</dd>
             </>
           ) : (
             <>
@@ -320,7 +333,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                 {squad.length + (coach ? 1 : 0)}
                 <em>/11</em>
               </dd>
-              <small>
+              <dd className="dl-note">
                 {(Object.keys(QUOTA) as Array<keyof typeof QUOTA>)
                   .map(
                     (position) =>
@@ -328,7 +341,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                   )
                   .join(" · ")}
                 {coach ? "" : " · sin entrenador"}
-              </small>
+              </dd>
             </>
           )}
         </div>
@@ -338,7 +351,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
             {topClub ? topClub[1] : 0}
             <em>máx. {MAX_PER_CLUB}</em>
           </dd>
-          <small>{topClub ? topClub[0] : "—"}</small>
+          <dd className="dl-note">{topClub ? topClub[0] : "—"}</dd>
         </div>
       </dl>
 
@@ -624,6 +637,10 @@ function Token({
 }) {
   const name = displayName(player);
   const surname = name.includes(" ") ? name.slice(name.indexOf(" ") + 1) : name;
+  // Si la foto no carga, el escudo; si tampoco, el hueco limpio. Antes se veía
+  // el icono de imagen rota del navegador en mitad de la cancha.
+  const [photoBroken, setPhotoBroken] = useState(false);
+  const [crestBroken, setCrestBroken] = useState(false);
   const projection = player.projectedFp === null ? null : effectiveProjection(player);
   const shown =
     projection === null
@@ -660,10 +677,24 @@ function Token({
       </button>
 
       <div className="tok-shot">
-        {player.image ? (
-          <Image src={player.image} alt="" width={750} height={1000} sizes="100px" />
-        ) : player.clubCrest ? (
-          <Image className="tok-shot-crest" src={player.clubCrest} alt="" width={42} height={42} />
+        {player.image && !photoBroken ? (
+          <Image
+            src={player.image}
+            alt=""
+            width={750}
+            height={1000}
+            sizes="100px"
+            onError={() => setPhotoBroken(true)}
+          />
+        ) : player.clubCrest && !crestBroken ? (
+          <Image
+            className="tok-shot-crest"
+            src={player.clubCrest}
+            alt=""
+            width={42}
+            height={42}
+            onError={() => setCrestBroken(true)}
+          />
         ) : null}
       </div>
 

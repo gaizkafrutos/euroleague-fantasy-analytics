@@ -12,7 +12,7 @@ import MarketExplorer from "@/components/market/MarketExplorer";
 import { PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
-import { credits, displayName, num, percent } from "@/lib/format";
+import { credits, dateTime, displayName, num, percent } from "@/lib/format";
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 
@@ -107,9 +107,14 @@ export default function MercadoPage() {
             {universe.length} jugadores, {percent(meta.matchRate)} identificados
           </span>
           <span className="status-sep">·</span>
-          <span className="num">
-            {meta.priceSnapshots} {meta.priceSnapshots === 1 ? "captura" : "capturas"} de precio
+          <span className="num" title={`${meta.priceSnapshots} capturas con cambios guardadas`}>
+            {meta.lastPriceCapture
+              ? `Precios del ${dateTime(meta.lastPriceCapture)}`
+              : "Sin precios todavía"}
+            {meta.priceFreshness?.stale ? " (pendientes de revalorizar)" : ""}
           </span>
+          <span className="status-sep">·</span>
+          <a href="#explorador">Ir al explorador ↓</a>
           <span className="status-sep">·</span>
           <Link href="/metodologia">Metodología</Link>
         </div>
@@ -131,7 +136,7 @@ export default function MercadoPage() {
         <div className="grid grid-3">
           <RankCard
             title="Mejores chollos"
-            note="Índice compuesto: valor por crédito, proyección, fiabilidad, rol y presión de precio."
+            note="Índice compuesto: valor por crédito, proyección, fiabilidad, rol y probabilidad de subir."
             players={topBargains}
             render={(player) => num(player.bargainScore, 0)}
           />
@@ -191,7 +196,7 @@ export default function MercadoPage() {
             </p>
           ) : null}
 
-          <div className="table-wrap only-wide">
+          <div className="table-wrap only-wide" tabIndex={0} role="region" aria-label="Equipo óptimo">
             <table className="data">
               <thead>
                 <tr>
@@ -292,7 +297,7 @@ export default function MercadoPage() {
           </p>
         </div>
         <MarketExplorer
-          players={universe}
+          players={universe.map(explorerRow)}
           teams={teams}
           details={details}
           hasPrices={meta.hasPrices}
@@ -370,4 +375,40 @@ function RankCard({
       )}
     </div>
   );
+}
+
+/** Lo que el explorador necesita de cada jugador. Pasarle el registro entero
+ *  serializaba unos 660 KB en el HTML de /mercado; esto lo deja en un tercio. */
+const EXPLORER_PERF = [
+  "games", "gamesPlayed", "minutesAvg", "minutesTrend", "minutesShareTrend",
+  "fpAvg", "form", "formDelta", "consistency", "consistencyEstimated",
+] as const;
+
+function explorerRow(player: Player): Player {
+  const perf = Object.fromEntries(EXPLORER_PERF.map((key) => [key, player.perf[key] ?? null]));
+  return {
+    id: player.id,
+    personCode: player.personCode,
+    name: player.name,
+    marketName: player.marketName,
+    club: player.club,
+    clubName: player.clubName,
+    clubShort: player.clubShort,
+    position: player.position,
+    isCoach: player.isCoach,
+    image: player.image,
+    price: player.price,
+    priceGame: player.priceGame,
+    pricePendingSource: player.pricePendingSource,
+    priceDeltaLast: player.priceDeltaLast,
+    projectedFp: player.projectedFp,
+    valuePerCredit: player.valuePerCredit,
+    valueProjected: player.valueProjected,
+    bargainScore: player.bargainScore,
+    schedule: player.schedule,
+    availability: player.availability,
+    registered: player.registered,
+    outlook: player.outlook,
+    perf,
+  } as unknown as Player;
 }

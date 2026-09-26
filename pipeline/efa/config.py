@@ -101,6 +101,17 @@ COACH_SCORING = {
 # Parámetros de análisis
 # --------------------------------------------------------------------------
 FORM_WINDOW = 5           # jornadas para la media de forma reciente
+#: Peso máximo de la forma (últimos 5) frente a la media en la proyección. Era
+#: 0,6; en el backtest de la 2025-26 (7.764 predicciones a un paso) la forma no
+#: mejora a la media simple y el 0,6 subía el error medio de 6,05 a 6,11.
+FORM_WEIGHT_MAX = 0.0
+#: Fracción del ajuste por tendencia de minutos que se aplica. A tope metía un
+#: sesgo de +0,22 y subía el error; al 30 % mejora a la media desde el 4.º partido.
+ROLE_ADJUSTMENT_SCALE = 0.3
+#: Encogimiento del rating de equipo hacia la temporada anterior: con n
+#: partidos pesa n / (n + k) lo de ahora. Tras la J1 el calendario salía del
+#: margen de un único partido.
+TEAM_PRIOR_GAMES = 6.0
 MIN_GAMES_FOR_TREND = 3   # partidos mínimos antes de fiarse de una tendencia
 ROLE_ALERT_MIN_DELTA = 4.0  # minutos de variación para lanzar alerta de rol
 

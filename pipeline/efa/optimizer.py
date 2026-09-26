@@ -37,6 +37,10 @@ POSITION_QUOTA = {"G": ROSTER_GUARDS, "F": ROSTER_FORWARDS, "C": ROSTER_CENTERS}
 #: quinteto y dobla. Está en el reglamento de Classic Mode.
 STARTERS = 5
 FULL_SCORING_SLOTS = STARTERS + 1
+#: Holgura en las comparaciones de presupuesto de la heurística. Los precios van
+#: en décimas y la resta en coma flotante se desvía: 100 − 95,4 dejaba 4,5999… y
+#: el entrenador de 4,6 no cabía (óptimo del 26-09, sin entrenador).
+BUDGET_EPS = 1e-6
 
 #: Formaciones permitidas del quinteto (bases-aleros-pívots), según el
 #: reglamento, página "Initial team": 2-2-1, 1-2-2, 2-1-2, 1-3-1 y 3-1-1.
@@ -403,7 +407,7 @@ def _optimize_greedy(
         if clubs.get(candidate.club_code, 0) >= max_per_club:
             continue
         reserve = min_cost_to_complete(positions, skip_position=candidate.position)
-        if spend + candidate.price + reserve > budget:
+        if spend + candidate.price + reserve > budget + BUDGET_EPS:
             continue
         chosen.append(candidate)
 
@@ -425,7 +429,7 @@ def _optimize_greedy(
                     continue
                 if candidate.position != current.position:
                     continue
-                if candidate.price > headroom:
+                if candidate.price > headroom + BUDGET_EPS:
                     continue
                 club_count = clubs.get(candidate.club_code, 0) - (
                     1 if candidate.club_code == current.club_code else 0
@@ -438,7 +442,7 @@ def _optimize_greedy(
                     break
 
     spent = sum(c.price for c in chosen)
-    affordable = [c for c in coaches if c.price <= budget + coach_floor - spent]
+    affordable = [c for c in coaches if c.price <= budget + coach_floor - spent + BUDGET_EPS]
     picked_coach = max(affordable, key=lambda c: (c.projection, -c.price), default=None)
     return _build_lineup(chosen, "greedy", coach=picked_coach)
 

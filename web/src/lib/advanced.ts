@@ -4,8 +4,13 @@
  *  Las escalas devuelven un ÍNDICE de clase, no un color: el color lo pone el
  *  CSS con los tokens validados (--div-* y --seq-*), que cambian con el tema.
  */
-import { meta } from "./data";
-import type { Player } from "./types";
+// `meta.json` directo y no `./data`: este módulo lo usan componentes de cliente,
+// y `./data` arrastra `players.json` entero al bundle del navegador.
+import metaJson from "@/data/meta.json";
+
+import type { Meta, Player } from "./types";
+
+const meta = metaJson as unknown as Meta;
 
 /* ------------------------------------------------------------- temporadas */
 
