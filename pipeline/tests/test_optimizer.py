@@ -299,3 +299,20 @@ def test_la_heuristica_no_pierde_al_entrenador_por_redondeo():
     assert lineup is not None
     assert lineup.coach is not None
     assert lineup.total_price == pytest.approx(100.0)
+
+
+def test_limite_de_cambios_desde_una_plantilla():
+    """Con `max_changes` solo se tocan esas plazas; sin límite, el óptimo libre."""
+    pool = make_pool()
+    cheap = [c for c in pool if c.key in {"G0", "G1", "G2", "G3", "F0", "F1", "F2", "F3", "C0", "C1"}]
+    current = [c.key for c in cheap]
+    free = optimize(pool, budget=100.0)
+    for k in (0, 1, 2, 4):
+        lineup = optimize(pool, budget=100.0, current=current, max_changes=k)
+        assert lineup is not None
+        kept = {p.key for p in lineup.players} & set(current)
+        assert len(current) - len(kept) <= k
+        assert lineup.scored_projection <= free.scored_projection + 1e-9
+    # Más cambios nunca puntúan menos.
+    scores = [optimize(pool, budget=100.0, current=current, max_changes=k).scored_projection for k in range(5)]
+    assert scores == sorted(scores)

@@ -213,6 +213,8 @@ def optimize(
     excluded: Sequence[str] = (),
     max_per_club: int = MAX_PLAYERS_PER_CLUB,
     coaches: Sequence[Candidate] = (),
+    current: Sequence[str] = (),
+    max_changes: int | None = None,
 ) -> Lineup | None:
     """Mejor plantilla posible de 10 jugadores dentro del presupuesto.
 
@@ -222,6 +224,10 @@ def optimize(
     con todo el presupuesto, que es como se comportaba antes.
 
     `locked` fuerza la inclusión de jugadores; `excluded` los descarta.
+    `current` + `max_changes`: la mejor plantilla a la que se llega desde
+    `current` (jugadores y entrenador) con como mucho ese número de cambios.
+    Solo con el solver exacto: es el patrón con el que se mide el planificador
+    de cambios de la web.
     """
     pool = [c for c in candidates if c.key not in set(excluded) and c.position in POSITION_QUOTA]
     if not pool:
@@ -229,7 +235,9 @@ def optimize(
     coach_pool = [c for c in coaches if c.key not in set(excluded) and c.price > 0]
 
     try:
-        return _optimize_ilp(pool, budget, set(locked), max_per_club, coach_pool)
+        return _optimize_ilp(
+            pool, budget, set(locked), max_per_club, coach_pool, keep=(set(current), max_changes)
+        )
     except ImportError:
         log.warning("PuLP no disponible: usando heurística voraz.")
         return _optimize_greedy(pool, budget, set(locked), max_per_club, coach_pool)
@@ -259,6 +267,7 @@ def _optimize_ilp(
     locked: set[str],
     max_per_club: int,
     coaches: Sequence[Candidate] = (),
+    keep: tuple[set[str], int | None] = (set(), None),
 ) -> Lineup | None:
     """Programación entera con el baremo real del juego.
 
@@ -333,6 +342,13 @@ def _optimize_ilp(
     for key in locked:
         if key in variables:
             problem += variables[key] == 1
+
+    current, max_changes = keep
+    if current and max_changes is not None:
+        kept = [variables[k] for k in current if k in variables] + [
+            coach_vars[k] for k in current if k in coach_vars
+        ]
+        problem += pulp.lpSum(kept) >= len(current) - max_changes
 
     problem.solve(_silent_solver(pulp))
     if pulp.LpStatus[problem.status] != "Optimal":

@@ -127,13 +127,23 @@ export interface Player {
   priceSnapshots: number | null;
   market: MarketStats;
   perf: Performance;
+  /** Puntos esperados la próxima jornada, ya multiplicados por la
+   *  probabilidad de jugar (una baja proyecta 0, una duda la mitad). */
   projectedFp: number | null;
+  /** Lo que haría si juega (modelo v2). Null en entrenadores. */
+  projectedIfPlays?: number | null;
+  /** Probabilidad de jugar: historial, o el parte si hay aviso. */
+  playProb?: number | null;
+  /** Minutos esperados si juega. */
+  expectedMinutes?: number | null;
+  /** Ajustes de contexto de la proyección: rival (1 = neutro) y campo. */
+  matchup?: { opponentFactor: number | null; homeFactor: number | null } | null;
   valuePerCredit: number | null;
   valueProjected: number | null;
   valueMarket: number | null;
   pricePressure: number | null;
   bargainScore: number | null;
-  schedule: { difficulty: number | null };
+  schedule: { difficulty: number | null; next?: NextGame | null };
   match: { method: string | null; confidence: number | null };
   /** Qué pasa con su precio si rinde lo proyectado. Null en entrenadores sin
    *  precio o en quien no tiene proyección. */
@@ -144,6 +154,22 @@ export interface Player {
   registered?: boolean;
 }
 
+/** El partido de su club en la jornada que viene. */
+export interface NextGame {
+  date: string;
+  /** Turno de la jornada (día): entre turnos se puede cambiar quinteto y capitán. */
+  turn: number;
+  turns: number;
+  opponent: string;
+  home: boolean;
+  /** Días desde su último partido. */
+  restDays: number | null;
+  /** Dos partidos en la misma semana (lunes a domingo). */
+  doubleWeek: boolean;
+  winProb: number;
+  expectedMargin: number;
+}
+
 export interface Outlook {
   /** Puntos fantasy con los que su precio no se mueve. */
   breakEven: number;
@@ -152,9 +178,11 @@ export interface Outlook {
   /** Probabilidad de superar el umbral, con una normal (proyección, sd). */
   riseProb: number;
   sd: number;
-  /** Percentiles 25 y 75 de su puntuación esperada. */
+  /** Percentiles 25 y 75 de su puntuación esperada (cuantiles empíricos). */
   floor: number;
   ceiling: number;
+  /** Percentil 90: el techo que importa para elegir capitán. */
+  p90?: number;
 }
 
 /** [intentos, anotados] por zona, en el orden de `meta.league.zoneKeys`. */
@@ -395,9 +423,34 @@ export interface Meta {
   coachGames: number;
   warnings: string[];
   priceFreshness?: PriceFreshness;
+  matchModel?: { homeAdvantage: number; marginSd: number };
+  schedule?: { round: number; turns: number; doubleWeekClubs: string[] };
+  modelBacktest?: ModelBacktest | null;
   injuries?: InjuriesMeta;
   priceModel?: PriceModel;
   league?: LeagueRef;
+}
+
+export interface BacktestScore {
+  mae: number;
+  rmse: number;
+  bias: number;
+}
+
+/** `efa backtest`: cada partido predicho solo con los anteriores. */
+export interface ModelBacktest {
+  generatedAt: string;
+  season?: {
+    code: string;
+    n: number;
+    v2: BacktestScore;
+    legacy?: BacktestScore;
+    mean?: BacktestScore;
+    byGames?: Record<string, { n: number; v2: number; legacy?: number; mean?: number }>;
+    zQuantiles?: Record<string, number>;
+  };
+  current?: { code: string; n: number; rounds?: number; v2: BacktestScore; prior_mean?: BacktestScore };
+  coach?: { code: string; n: number; model: number; mean: number | null };
 }
 
 /** ¿El último snapshot lleva ya la revalorización de la última jornada? */

@@ -21,6 +21,7 @@ y la web dice de dónde sale cada cifra.
 """
 from __future__ import annotations
 
+import json
 import logging
 import math
 from typing import Any
@@ -48,8 +49,24 @@ from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE
 from efa.gamelogs import build_gamelog
 from efa.ingest.official import load_boxscores, load_player_stats, load_reference
 from efa.ingest.playbyplay import load_pbp, shots_frame
+from efa.matchmodel import coach_outcomes, coach_prob_above, coach_quantile, coach_sd
 
 log = logging.getLogger(__name__)
+
+
+def _load_z_quantiles() -> dict[str, float]:
+    """Residuos del backtest en unidades de su RMSE (ver `efa backtest`)."""
+    from efa.config import PROCESSED_DIR
+
+    path = PROCESSED_DIR / "projection_backtest.json"
+    default = {"p10": -1.14, "p25": -0.68, "p50": -0.12, "p75": 0.56, "p90": 1.32}
+    try:
+        return {**default, **json.loads(path.read_text(encoding="utf-8"))["season"]["zQuantiles"]}
+    except (OSError, KeyError, ValueError):
+        return default
+
+
+Z_QUANTILES = _load_z_quantiles()
 
 #: Partidos de esta temporada a partir de los cuales ya no se mira la anterior.
 CURRENT_ENOUGH = 5
@@ -139,7 +156,7 @@ def _projection_sd(
     sd_prior, n_prior = stds(prior)
     out: dict[int, float] = {}
     for record in records:
-        proj = _num(record.get("projectedFp")) or 0.0
+        proj = _num(record.get("projectedIfPlays")) or _num(record.get("projectedFp")) or 0.0
         if record.get("isCoach"):
             out[int(record["id"])] = COACH_SD
             continue
@@ -357,6 +374,17 @@ def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
 # ---------------------------------------------------------------------------
 # Todo junto
 # ---------------------------------------------------------------------------
+def _coach_outcomes(record: dict[str, Any], meta: dict[str, Any]) -> list[tuple[float, float]] | None:
+    """Reparto de puntos del entrenador en su próximo partido, si lo hay."""
+    if not record.get("isCoach"):
+        return None
+    nxt = (record.get("schedule") or {}).get("next")
+    sd = (meta.get("matchModel") or {}).get("marginSd")
+    if not nxt or not sd or nxt.get("expectedMargin") is None:
+        return None
+    return coach_outcomes(float(nxt["expectedMargin"]), float(sd))
+
+
 def apply_advanced(
     *,
     records: list[dict[str, Any]],
@@ -397,11 +425,6 @@ def apply_advanced(
     freshness = price_freshness(history if history is not None else market, reference.get("games", []))
     pending = pending_prices(records, market, log_now, reference.get("games", []), model, freshness)
     meta["priceFreshness"] = {**freshness, "pending": pending}
-    for record in records:
-        # Puntos por crédito al precio que se va a pagar de verdad.
-        pend, proj = _num(record.get("pricePending")), _num(record.get("projectedFp"))
-        if pend and proj is not None:
-            record["valueProjected"] = round(proj / pend, 3)
     if freshness.get("stale"):
         meta.setdefault("warnings", []).append(
             f"Precios capturados el {freshness['capturedAt'][:16].replace('T', ' ')} UTC: "
@@ -409,6 +432,18 @@ def apply_advanced(
             f"Se usa el precio pendiente de {pending} jugadores hasta la próxima captura."
         )
     sds = _projection_sd(records, log_now, log_prior)
+    for record in records:
+        # Puede no jugar: la puntuación es una mezcla (0 con probabilidad 1-p, su
+        # normal con probabilidad p). Var = p·σ² + p(1-p)·μ², con μ lo que hace
+        # si juega. Sin esto, una duda salía con la horquilla de un fijo.
+        prob, cond, sd0 = record.get("playProb"), _num(record.get("projectedIfPlays")), sds.get(int(record["id"]))
+        if prob is not None and cond is not None and sd0 is not None and 0 <= prob < 1:
+            sds[int(record["id"])] = round(math.sqrt(prob * sd0**2 + prob * (1 - prob) * cond**2), 2)
+        # Puntos por crédito con la proyección final (disponibilidad incluida) y
+        # al precio que se paga.
+        pay, proj = _num(record.get("pricePending")) or _num(record.get("price")), _num(record.get("projectedFp"))
+        if pay and proj is not None:
+            record["valueProjected"] = round(proj / pay, 3)
     for record in records:
         # El umbral de la próxima jornada se mide contra el precio que tendrá, no
         # contra uno que el juego ya ha dejado atrás.
@@ -419,13 +454,30 @@ def apply_advanced(
             record["outlook"] = None
             continue
         threshold = break_even(model, price)
+        outcomes = _coach_outcomes(record, meta)
+        if outcomes is not None:
+            # El entrenador solo puede sacar seis cifras: su horquilla es la de
+            # esa distribución discreta, no la de una normal.
+            record["outlook"] = {
+                "breakEven": round(threshold, 1),
+                "expectedChange": round(max(-1.5, min(1.5, expected_change(model, proj, price))), 2),
+                "riseProb": round(coach_prob_above(outcomes, threshold), 3),
+                "sd": round(coach_sd(outcomes), 2),
+                "floor": coach_quantile(outcomes, 0.25),
+                "ceiling": coach_quantile(outcomes, 0.75),
+                "p90": coach_quantile(outcomes, 0.9),
+            }
+            continue
         record["outlook"] = {
             "breakEven": round(threshold, 1),
             "expectedChange": round(max(-1.5, min(1.5, expected_change(model, proj, price))), 2),
             "riseProb": round(prob_above(threshold, proj, sd), 3),
             "sd": sd,
-            "floor": round(proj - 0.674 * sd, 1),
-            "ceiling": round(proj + 0.674 * sd, 1),
+            # Cuantiles empíricos del backtest, no ±0,674σ: la puntuación tiene
+            # la cola de arriba más larga que la de abajo.
+            "floor": round(max(0.0, proj + Z_QUANTILES["p25"] * sd), 1),
+            "ceiling": round(proj + Z_QUANTILES["p75"] * sd, 1),
+            "p90": round(proj + Z_QUANTILES["p90"] * sd, 1),
         }
     meta["priceModel"] = {**DEFAULT_PRICE_MODEL, **model}
     _early_reliability(records)

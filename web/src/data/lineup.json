@@ -1,22 +1,22 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 122.74,
- "scoredProjection": 146.92,
- "captain": "3766",
+ "totalProjection": 127.34,
+ "scoredProjection": 154.46,
+ "captain": "3887",
  "starters": [
-  "3766",
+  "3887",
   "3791",
-  "3857",
-  "4252",
-  "8846"
+  "11487",
+  "7221",
+  "7226"
  ],
- "sixth": "3836",
+ "sixth": "3875",
  "bench": [
   "11521",
+  "4061",
   "4012",
-  "3988",
-  "3991"
+  "3984"
  ],
  "coach": {
   "key": "4255",
@@ -24,24 +24,32 @@
   "position": "E",
   "club": "PAM",
   "price": 7.1,
-  "projection": 7.82
+  "projection": 16.05
  },
  "players": [
+  {
+   "key": "3887",
+   "name": "FRANCISCO, SYLVAIN",
+   "position": "G",
+   "club": "PAN",
+   "price": 14.9,
+   "projection": 22.1
+  },
   {
    "key": "3791",
    "name": "JONES, CARLIK",
    "position": "G",
    "club": "PAR",
    "price": 14.5,
-   "projection": 21.12
+   "projection": 21.33
   },
   {
-   "key": "4252",
-   "name": "MONTERO, JEAN",
+   "key": "3875",
+   "name": "GUDURIC, MARKO",
    "position": "G",
-   "club": "OLY",
-   "price": 13.1,
-   "projection": 19.46
+   "club": "MIL",
+   "price": 9.8,
+   "projection": 13.81
   },
   {
    "key": "11521",
@@ -49,31 +57,31 @@
    "position": "G",
    "club": "ASV",
    "price": 5.3,
-   "projection": 6.52
+   "projection": 6.86
   },
   {
-   "key": "3988",
-   "name": "DIBARTOLOMEO, JOHN",
-   "position": "G",
-   "club": "TEL",
-   "price": 4.2,
-   "projection": 3.37
-  },
-  {
-   "key": "3766",
-   "name": "VEZENKOV, SASHA",
+   "key": "11487",
+   "name": "SARIC, DARIO",
    "position": "F",
-   "club": "OLY",
-   "price": 17.6,
-   "projection": 25.35
+   "club": "IST",
+   "price": 14.9,
+   "projection": 20.62
   },
   {
-   "key": "3836",
-   "name": "MITOGLOU, KONSTANTINOS",
+   "key": "7221",
+   "name": "TUBELIS, AZUOLAS",
+   "position": "F",
+   "club": "ZAL",
+   "price": 11.6,
+   "projection": 16.12
+  },
+  {
+   "key": "4061",
+   "name": "MANTZOUKAS, ELEFTHERIOS",
    "position": "F",
    "club": "PAN",
-   "price": 5.9,
-   "projection": 7.37
+   "price": 4.8,
+   "projection": 6.34
   },
   {
    "key": "4012",
@@ -81,31 +89,23 @@
    "position": "F",
    "club": "MIL",
    "price": 4.5,
-   "projection": 4.87
+   "projection": 4.59
   },
   {
-   "key": "3991",
-   "name": "ABALDE, ALBERTO",
-   "position": "F",
-   "club": "MAD",
-   "price": 4.3,
-   "projection": 3.22
-  },
-  {
-   "key": "3857",
-   "name": "OTURU, DAN",
+   "key": "7226",
+   "name": "DOKOSSI, ALLAN",
    "position": "C",
-   "club": "HTA",
-   "price": 14.9,
-   "projection": 20.08
+   "club": "PRS",
+   "price": 8.1,
+   "projection": 11.3
   },
   {
-   "key": "8846",
-   "name": "JEKIRI, TONYE",
+   "key": "3984",
+   "name": "SANLI, SERTAC",
    "position": "C",
-   "club": "PAR",
-   "price": 8.6,
-   "projection": 11.38
+   "club": "ULK",
+   "price": 4.5,
+   "projection": 4.27
   }
  ],
  "available": true,
