@@ -73,7 +73,8 @@ export interface MarketStats {
   priceChangeReported?: number | null;
 }
 
-/** Disponibilidad para la próxima jornada: parte de BasketNews + censo oficial.
+/** Disponibilidad para la próxima jornada: partes de lesiones (BasketNews,
+ *  RotoWire, Basketball Sphere) + censo oficial.
  *  `out` no juega (el optimizador no lo ficha), `doubt` en el aire,
  *  `probable` se espera que juegue. Null = sin noticias. */
 export type AvailabilityLevel = "out" | "doubt" | "probable";
@@ -441,6 +442,16 @@ export interface InjuriesMeta {
   nextRound?: number;
   unregistered?: number;
   flagged?: { out: number; doubt: number; probable: number };
+  /** Cada parte por separado, en orden de prioridad. */
+  sources?: Array<{
+    source: string;
+    url?: string | null;
+    updatedAt?: string | null;
+    fetchedAt?: string | null;
+    rows: number;
+    matched: number;
+    flagged: number;
+  }>;
 }
 
 export interface MatchRow {

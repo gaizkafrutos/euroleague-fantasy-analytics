@@ -324,9 +324,10 @@ export default function MethodologyPage() {
             que juegan después de la captura no se les estima el precio pendiente.
           </li>
           <li>
-            Las lesiones salen del parte diario de BasketNews. Una baja no cambia la
-            proyección (es lo que rinde cuando juega), pero el óptimo no la ficha y Mi equipo
-            la puntúa a 0; una «duda» no se descuenta.
+            Las lesiones combinan tres partes públicos: BasketNews (el más completo),
+            RotoWire y Basketball Sphere; si uno no responde, siguen los otros. Una baja no
+            cambia la proyección (es lo que rinde cuando juega), pero el óptimo no la ficha y
+            Mi equipo la puntúa a 0; una «duda» no se descuenta.
           </li>
           <li>
             La proyección no modela el rival concreto de cada jugador, solo la dificultad

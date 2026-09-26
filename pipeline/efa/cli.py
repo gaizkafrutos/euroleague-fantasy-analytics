@@ -103,14 +103,18 @@ def cmd_verify(args: argparse.Namespace) -> int:
 
 
 def cmd_injuries(args: argparse.Namespace) -> int:
-    from efa.ingest.injuries import fetch_report, save_report
+    from efa.ingest.injuries import fetch_all
 
-    report = fetch_report()
-    path = save_report(report)
-    print(
-        f"Parte de lesiones: {len(report['rows'])} filas, actualizado {report['updatedAt']} -> {path}"
-    )
-    return 0
+    results = fetch_all()
+    ok = 0
+    for key, result in results.items():
+        if isinstance(result, Exception):
+            print(f"  {key}: sin respuesta ({result})", file=sys.stderr)
+        else:
+            ok += 1
+            print(f"  {key}: {len(result['rows'])} filas, actualizado {result['updatedAt'] or '—'}")
+    # Solo es un fallo si no respondió ninguna: con una basta para el build.
+    return 0 if ok else 1
 
 
 def cmd_demo(args: argparse.Namespace) -> int:
@@ -140,12 +144,12 @@ def cmd_refresh(args: argparse.Namespace) -> int:
 
     ingest_all(args.season, None if args.no_prior else args.prior_season)
 
-    try:
-        from efa.ingest.injuries import fetch_report, save_report
+    from efa.ingest.injuries import fetch_all
 
-        save_report(fetch_report())
-    except Exception as exc:  # noqa: BLE001 - el parte es un extra, no bloquea
-        print(f"AVISO: no se pudo leer el parte de lesiones ({exc}).", file=sys.stderr)
+    # El parte es un extra: cada fuente que falle se avisa y no bloquea.
+    for key, result in fetch_all().items():
+        if isinstance(result, Exception):
+            print(f"AVISO: parte de lesiones de {key} no disponible ({result}).", file=sys.stderr)
 
     try:
         take_snapshot(label=args.label)
