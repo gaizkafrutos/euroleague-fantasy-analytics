@@ -33,6 +33,7 @@ import {
   QUOTA,
   SQUAD_SIZE,
   STARTERS,
+  MIN_GAIN_PER_TRADE,
   TRADES_PER_ROUND,
   buildSquad,
   checkSquad,
@@ -91,6 +92,11 @@ export default function SquadConsole({
   const [ids, setIds] = useState<number[]>([]);
   const [coachId, setCoachId] = useState<number | null>(null);
   const [budget, setBudget] = useState(DEFAULT_BUDGET);
+  // Lo que se está escribiendo en el campo, que puede estar a medias ("100,").
+  const [budgetText, setBudgetText] = useState(String(DEFAULT_BUDGET));
+  useEffect(() => {
+    setBudgetText((text) => (Number(text.replace(",", ".")) === budget ? text : String(budget)));
+  }, [budget]);
   const [roster, setRoster] = useState<RosterState>({ status: "idle" });
   const [restored, setRestored] = useState(false);
 
@@ -317,18 +323,42 @@ export default function SquadConsole({
         <button type="button" className="chip" onClick={clear}>
           Vaciar
         </button>
-        <label className="control squad-budget">
-          <span className="control-label">Presupuesto · {credits(budget)}</span>
-          <input
-            className="slider"
-            type="range"
-            min={80}
-            max={130}
-            step={0.1}
-            value={budget}
-            onChange={(event) => setBudget(Number(event.target.value))}
-          />
-        </label>
+        {/* Deslizador para tantear y campo para la cifra exacta: tras la J1 el
+            presupuesto de cada uno tiene decimales (100,7, por ejemplo), y
+            una décima puede decidir si un jugador cabe. */}
+        <div className="control squad-budget">
+          <span className="control-label" id="budget-label">
+            Presupuesto
+          </span>
+          <span className="budget-row">
+            <input
+              className="slider"
+              type="range"
+              min={80}
+              max={130}
+              step={0.1}
+              value={budget}
+              aria-labelledby="budget-label"
+              onChange={(event) => setBudget(roundBudget(Number(event.target.value)))}
+            />
+            <input
+              className="input num budget-input"
+              type="number"
+              inputMode="decimal"
+              min={50}
+              max={200}
+              step={0.1}
+              value={budgetText}
+              aria-label="Presupuesto en créditos"
+              onChange={(event) => {
+                setBudgetText(event.target.value);
+                const value = Number(event.target.value.replace(",", "."));
+                if (Number.isFinite(value) && value >= 50 && value <= 200) setBudget(roundBudget(value));
+              }}
+              onBlur={() => setBudgetText(String(budget))}
+            />
+          </span>
+        </div>
         {/* Pasada la J1 el presupuesto de cada uno ya no es 100: es lo que vale
             su plantilla hoy más lo que tiene en caja. El juego enseña la caja;
             con ella, la cuenta sale sola. */}
@@ -344,7 +374,7 @@ export default function SquadConsole({
               value={Number(Math.max(check.free, 0).toFixed(1))}
               onChange={(event) => {
                 const cash = Number(event.target.value);
-                if (Number.isFinite(cash) && cash >= 0) setBudget(Number((check.spent + cash).toFixed(1)));
+                if (Number.isFinite(cash) && cash >= 0) setBudget(roundBudget(check.spent + cash));
               }}
               title="Los créditos que te quedan en el juego. Tu presupuesto es lo que vale tu plantilla hoy más esto."
             />
@@ -677,7 +707,8 @@ export default function SquadConsole({
             ) : (
               <p className="muted" style={{ margin: 0 }}>
                 Con {tradeWin.unlimited ? "cambios ilimitados" : `${tradeLimit} ${tradeLimit === 1 ? "cambio" : "cambios"}`}{" "}
-                no hay nada que mejore tu plantilla dentro del presupuesto.
+                ningún cambio gana al menos {num(MIN_GAIN_PER_TRADE)} puntos dentro del presupuesto:
+                no merece la pena gastarlos.
               </p>
             )}
           </div>
@@ -1029,4 +1060,9 @@ function Contribution({
       </div>
     </section>
   );
+}
+
+/** Los créditos del juego van en décimas: 100,70000000001 es 100,7. */
+function roundBudget(value: number): number {
+  return Math.round(value * 10) / 10;
 }

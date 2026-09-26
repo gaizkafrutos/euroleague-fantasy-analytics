@@ -190,6 +190,8 @@ export default function MethodologyPage() {
 
       <ProjectionModel />
 
+      <OfficialData />
+
       <div className="grid grid-2" style={{ marginTop: 16 }}>
         <article className="card">
           <h2 className="card-title">Las métricas, una a una</h2>
@@ -492,6 +494,79 @@ function ProjectionModel() {
             Backtest del {dateTime(bt.generatedAt)}; se repite en cada captura.
           </p>
         ) : null}
+      </div>
+    </div>
+  );
+}
+
+/** Qué se usa de la Euroliga y qué no. Lo que no entra en la proyección no
+ *  entra porque en el backtest no mejora el error, o porque ya está dentro de
+ *  otra cifra (la puntuación fantasy ya es la valoración más el bonus). */
+function OfficialData() {
+  const rows: Array<[string, string, string]> = [
+    [
+      "Boxscore de cada partido",
+      "Puntos, rebotes, asistencias, robos, pérdidas, tapones puestos y recibidos, faltas recibidas y cometidas, tiros de campo y libres fallados (la puntuación fantasy, partido a partido); minutos, titular, más/menos y valoración; rebotes ofensivos y defensivos y tiros de 2 y de 3 (para los índices de equipo)",
+      "Intentos de «accuracy» y el segundo indicador de titular",
+    ],
+    [
+      "Estadísticas avanzadas por jugador",
+      "Tiro verdadero (TS%), tiro efectivo (eFG%), % de rebote ofensivo y defensivo, ratio de asistencias, pérdidas por posesión, tiros libres por tiro, dobles-dobles y titularidades (percentiles en la ficha)",
+      "% de rebote total, asistencias/pérdidas, posesiones, ratios de intentos de 2 y de 3, triples-dobles, victorias y derrotas, y todo el bloque de reparto de puntos (qué parte viene de libres, de 2 y de 3)",
+    ],
+    [
+      "Jugada a jugada",
+      "Quién está en pista cada segundo: on/off, quintetos, minutos por cuarto y en los finales apretados",
+      "—",
+    ],
+    [
+      "Tiros con coordenadas",
+      "Mapa de tiro en diez zonas frente a la media de la liga",
+      "—",
+    ],
+    [
+      "Calendario y resultados",
+      "Rival, campo, fecha y turno de cada partido; marcadores y prórrogas (puntos del entrenador y modelo de partido)",
+      "—",
+    ],
+    [
+      "Censo",
+      "Posición, altura, país, edad, dorsal, foto y club de jugadores y entrenadores",
+      "—",
+    ],
+  ];
+  return (
+    <div className="card" style={{ marginTop: 16 }} id="datos-oficiales">
+      <h2 className="card-title">Qué se usa de la Euroliga</h2>
+      <p className="card-note" style={{ maxWidth: "76ch" }}>
+        La <strong>proyección</strong> solo usa minutos, puntuación fantasy partido a partido, puesto,
+        lo que concede cada rival a ese puesto, el campo, el calendario y el parte de lesiones. La
+        puntuación fantasy es la valoración oficial (PIR) más el 10 % si gana su equipo, así que
+        «lo que concede el rival» ya es, en la práctica, la valoración que permite a cada puesto. Los
+        porcentajes avanzados describen al jugador en su ficha, pero no entran en la cifra: ya
+        están dentro de lo que puntúa por minuto.
+      </p>
+      <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Datos oficiales usados">
+        <table className="data">
+          <thead>
+            <tr>
+              <th>Fuente</th>
+              <th>Se usa</th>
+              <th>Se descarga pero no se usa</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([source, used, unused]) => (
+              <tr key={source}>
+                <td style={{ fontWeight: 600, whiteSpace: "nowrap" }}>{source}</td>
+                <td style={{ whiteSpace: "normal", minWidth: 260 }}>{used}</td>
+                <td style={{ whiteSpace: "normal", minWidth: 200 }} className="muted">
+                  {unused}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
