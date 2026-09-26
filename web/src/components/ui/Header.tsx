@@ -4,15 +4,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import type { SearchEntry } from "@/lib/search";
+
 import PlayerSearch from "./PlayerSearch";
 import { NAV_ITEMS, isCurrent } from "./nav-items";
 
 interface Props {
   round: number;
   totalRounds: number;
+  searchIndex: SearchEntry[];
 }
 
-export default function Header({ round, totalRounds }: Props) {
+export default function Header({ round, totalRounds, searchIndex }: Props) {
   const pathname = usePathname();
 
   return (
@@ -49,7 +52,7 @@ export default function Header({ round, totalRounds }: Props) {
           ))}
         </nav>
 
-        <PlayerSearch />
+        <PlayerSearch index={searchIndex} />
 
         <div className="masthead-tools">
           <span className="round-pill">

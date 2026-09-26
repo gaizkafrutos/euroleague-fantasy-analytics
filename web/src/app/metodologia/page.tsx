@@ -35,6 +35,37 @@ export default function MethodologyPage() {
         </p>
       </div>
 
+      {/* Primero las reglas: sin ellas no se entiende ni el óptimo ni la consola. */}
+      <div className="card" style={{ marginBottom: 16 }} id="reglas">
+        <h2 className="card-title">Las reglas en 30 segundos</h2>
+        <ul className="card-note" style={{ margin: "8px 0 0", maxWidth: "76ch", display: "grid", gap: 6 }}>
+          <li>
+            <strong>{num(meta.budget, 0)} créditos</strong> para diez jugadores y un entrenador:
+            4 bases, 4 aleros y 2 pívots. Como mucho 6 del mismo club.
+          </li>
+          <li>
+            El quinteto lleva al menos uno de cada puesto (2-2-1, 1-2-2, 2-1-2, 1-3-1 o 3-1-1).{" "}
+            <strong>Quinteto y sexto hombre puntúan al 100 %</strong>; los cuatro del banquillo, al
+            50 %. El entrenador puntúa por el marcador de su equipo.
+          </li>
+          <li>
+            El <strong>capitán</strong>, que sale del quinteto, <strong>puntúa doble</strong>. Cada
+            jugador suma un 10 % más si su equipo gana.
+          </li>
+          <li>
+            <strong>4 cambios por jornada.</strong> Los precios se revalorizan al cerrar cada
+            jornada, según lo que ha puntuado cada uno frente a lo que cuesta.
+          </li>
+        </ul>
+        <p className="card-note" style={{ marginTop: 10 }}>
+          Reglamento completo en{" "}
+          <a href="https://fantaking.gitbook.io/euroleague-fantasy-challenge-rules">
+            fantaking.gitbook.io
+          </a>
+          .
+        </p>
+      </div>
+
       <div className="grid grid-2">
         <article className="card">
           <h2 className="card-title">1. Estadísticas oficiales</h2>
@@ -60,8 +91,16 @@ export default function MethodologyPage() {
             de cada jugador.
           </p>
           <p className="card-note">
-            Un snapshot completo son cuatro peticiones. Se captura una vez por jornada, y el
-            histórico acumulado es lo que permite ver quién sube y quién baja.
+            Un snapshot completo son cuatro peticiones. Se captura cuatro veces al día y solo se
+            guarda si el mercado ha cambiado: el histórico acumulado es lo que permite ver quién
+            sube y quién baja.
+          </p>
+          <p className="card-note">
+            El juego calcula la variación de cada jugador en cuanto acaba su partido, pero no la
+            aplica al precio hasta que se cierra la jornada. Si la última captura es de antes, la
+            web lo avisa y enseña el <strong>precio pendiente</strong>: la variación que ya
+            publica el juego para quien ha jugado, y la del modelo de precio para quien jugó
+            después. Con los datos de la J1 acertaba 334 de 350 precios al décimo.
           </p>
         </article>
       </div>
@@ -74,7 +113,7 @@ export default function MethodologyPage() {
           separado — y sin eso no hay forma de medir varianza, forma reciente ni cambios de
           rol.
         </p>
-        <div className="table-wrap" style={{ marginTop: 12 }}>
+        <div className="table-wrap" style={{ marginTop: 12 }} tabIndex={0} role="region" aria-label="Baremo de puntuación">
           <table className="data">
             <thead>
               <tr>
@@ -146,16 +185,25 @@ export default function MethodologyPage() {
           <h2 className="card-title">Las métricas, una a una</h2>
           <dl className="card-note" style={{ display: "grid", gap: 10, margin: 0 }}>
             <Definition term="Proyección">
-              Mezcla de la media de temporada y la forma de los últimos 5 partidos, dando más
-              peso a la forma conforme se acumulan jornadas, más un ajuste por tendencia de
-              minutos traducida a puntos vía su producción por minuto. Con pocos partidos se
-              encoge hacia la media del año pasado: con n partidos pesa n/(n+5) lo de ahora. A
-              quien llega nuevo a la Euroliga, hacia lo que descuenta su precio.
+              Media fantasy de la temporada más un ajuste por tendencia de minutos, traducida a
+              puntos con su producción por minuto, aplicado al 30 % y acotado a un 35 % de la
+              proyección (6 puntos como mucho). Con pocos partidos se encoge hacia la media del
+              año pasado: con n partidos pesa n/(n+5) lo de ahora. A quien llega nuevo a la
+              Euroliga, hacia lo que descuenta su precio. Si su club ya ha jugado y él no, se
+              multiplica por (jugados + 2)/(partidos del club + 2).
+            </Definition>
+            <Definition term="Por qué no pesa la forma">
+              La forma de los últimos cinco se enseña, pero no entra en la proyección. En un
+              backtest sobre la 2025-26 (7.764 partidos predichos solo con los anteriores), la
+              media simple se equivocaba 6,05 puntos de media; darle a la forma hasta un 60 %
+              subía el error a 6,11, y el ajuste de minutos a tope, a 6,27. Al 30 %, el ajuste
+              de minutos sí mejora a la media desde el cuarto partido.
             </Definition>
             <Definition term="Umbral de revalorización">
               Los puntos con los que un precio no se mueve. Sale de ajustar la variación que
-              publica el propio juego contra puntos y precio: tras la J1 explica el 98,5 % de
-              las variaciones, y el umbral queda en torno a 1,15 veces el precio.
+              publica el propio juego contra puntos y precio
+              {meta.priceModel ? ` (explica el ${percent(meta.priceModel.r2)} de las variaciones)` : ""},
+              y queda entre 1,0 y 1,1 veces el precio: más alto cuanto más caro es el jugador.
             </Definition>
             <Definition term="Horquilla">
               Cada jugador puntúa según una normal con su proyección y su dispersión (también
@@ -182,13 +230,13 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Fiabilidad">
               Uno menos el coeficiente de variación, acotado entre 0 y 1. Un 70% es un
-              jugador que repite; un 30% es una lotería con la misma media.
+              jugador que repite; un 30% es una lotería con la misma media. Con menos de tres
+              partidos se estima con la dispersión encogida hacia el año pasado, y se marca
+              con «≈».
             </Definition>
-            <Definition term="Presión de precio">
-              Se ajusta una curva rendimiento-precio sobre todo el mercado y se mide el
-              residuo de cada jugador. Las reglas dicen que sube más quien rinde por encima
-              de su banda de precio: esto lo aproxima. No es la fórmula real de Fantaking,
-              que no es pública.
+            <Definition term="Probabilidad de subir">
+              La probabilidad de que puntúe por encima de su umbral de revalorización, con su
+              proyección y su dispersión.
             </Definition>
             <Definition term="Cuota de minutos">
               Porcentaje de los minutos de su equipo que juega. Señal de rol más limpia que
@@ -196,11 +244,12 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Calendario">
               Diferencial medio de los tres próximos rivales, con penalización por jugar
-              fuera, normalizado a 0-100.
+              fuera, normalizado a 0-100. El diferencial de cada club mezcla esta temporada con
+              la anterior: con n partidos pesa n/(n+6) lo de ahora.
             </Definition>
             <Definition term="Índice de chollo">
               40% valor por crédito, 25% proyección, 15% fiabilidad, 10% tendencia de rol,
-              10% presión de precio. Pesos a la vista y discutibles a propósito.
+              10% probabilidad de subir. Pesos a la vista y discutibles a propósito.
             </Definition>
           </dl>
         </article>
@@ -213,7 +262,7 @@ export default function MethodologyPage() {
             abreviados de por medio. El emparejamiento va en cascada, de más fiable a menos, y
             lo que no llega al umbral se deja sin cruzar en vez de inventarse.
           </p>
-          <div className="table-wrap" style={{ marginTop: 10 }}>
+          <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Métodos de cruce">
             <table className="data">
               <thead>
                 <tr>
@@ -270,20 +319,22 @@ export default function MethodologyPage() {
         <h2 className="card-title">Límites que conviene tener presentes</h2>
         <ul className="card-note" style={{ margin: 0, maxWidth: "72ch" }}>
           <li>
-            La fórmula de revalorización de precios no es pública. La presión de precio es un
-            proxy razonado, no una predicción exacta.
+            La fórmula de revalorización no es pública. El modelo de precio se ajusta cada día
+            a la variación que publica el juego, pero es una aproximación: a los entrenadores
+            que juegan después de la captura no se les estima el precio pendiente.
           </li>
           <li>
-            No hay datos de lesiones ni de convocatorias. Un jugador lesionado sigue
-            apareciendo con su media histórica hasta que acumula partidos sin jugar.
+            Las lesiones salen del parte diario de BasketNews. Una baja no cambia la
+            proyección (es lo que rinde cuando juega), pero el óptimo no la ficha y Mi equipo
+            la puntúa a 0; una «duda» no se descuenta.
           </li>
           <li>
             La proyección no modela el rival concreto de cada jugador, solo la dificultad
             agregada del calendario de su equipo.
           </li>
           <li>
-            El rating de equipo de las primeras jornadas es ruido: hasta que haya media
-            docena de partidos se usa la temporada anterior como referencia.
+            El rating de equipo de las primeras jornadas es poco fiable: por eso se encoge hacia
+            la temporada anterior, que manda hasta pasada media docena de partidos.
           </li>
         </ul>
       </div>

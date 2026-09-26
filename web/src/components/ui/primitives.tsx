@@ -1,6 +1,8 @@
 /** Piezas pequeñas que se repiten por toda la app. */
 import Link from "next/link";
 
+import Avatar from "./Avatar";
+
 import { deltaClass, displayName, initials, num, positionLabel, prettyName } from "@/lib/format";
 import type { Player } from "@/lib/types";
 
@@ -22,11 +24,16 @@ export function Delta({
   value,
   digits = 1,
   suffix = "",
+  quiet = false,
 }: {
   value: number | null | undefined;
   digits?: number;
   suffix?: string;
+  /** Sin nada que contar (nulo o cero), no pinta nada: "0,00" en cada una de
+   *  las 330 filas era ruido y además sugería que el precio no se había movido. */
+  quiet?: boolean;
 }) {
+  if (quiet && (value === null || value === undefined || Math.abs(value) < 0.001)) return null;
   if (value === null || value === undefined) return <span className="muted">—</span>;
   const arrow = Math.abs(value) < 0.001 ? "" : value > 0 ? "▲" : "▼";
   return (
@@ -78,14 +85,7 @@ export function AvailabilityTag({
 export function PlayerCell({ player, linked = true }: { player: Player; linked?: boolean }) {
   const inner = (
     <>
-      {player.image ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img className="avatar" src={player.image} alt="" loading="lazy" />
-      ) : (
-        <span className="avatar avatar-initials" aria-hidden>
-          {initials(player.name ?? player.marketName)}
-        </span>
-      )}
+      <Avatar src={player.image} name={player.name ?? player.marketName ?? "?"} />
       <span>
         <span className="player-name">{displayName(player)}</span>
         <br />

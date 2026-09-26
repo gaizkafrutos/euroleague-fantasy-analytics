@@ -83,7 +83,7 @@
 
   --ink: #0c0f16;
   --ink-2: #4d5665;
-  --ink-muted: #7b8493;
+  --ink-muted: #5f6878; /* 5,24:1 sobre --plane; #7b8493 se quedaba en 3,52 */
 
   --hairline: rgba(12, 15, 22, 0.09);
   --rule: rgba(12, 15, 22, 0.16);
@@ -103,7 +103,7 @@
   --series-3: #12a06f;
 
   --good: #00794a;
-  --critical: #d03b3b;
+  --critical: #b02e2e; /* 5,5:1 sobre su propio fondo al 10 %; #d03b3b daba 4,15 */
 
   --grid: rgba(12, 15, 22, 0.07);
   --axis: rgba(12, 15, 22, 0.2);
@@ -121,7 +121,7 @@
     --surface-hover: #f7f8fa;
     --ink: #0c0f16;
     --ink-2: #4d5665;
-    --ink-muted: #7b8493;
+    --ink-muted: #5f6878; /* 5,24:1 sobre --plane; #7b8493 se quedaba en 3,52 */
     --hairline: rgba(12, 15, 22, 0.09);
     --rule: rgba(12, 15, 22, 0.16);
     --ring: rgba(12, 15, 22, 0.1);
@@ -136,7 +136,7 @@
     --series-2: #eb6834;
     --series-3: #12a06f;
     --good: #00794a;
-    --critical: #d03b3b;
+    --critical: #b02e2e;
     --grid: rgba(12, 15, 22, 0.07);
     --axis: rgba(12, 15, 22, 0.2);
     --shadow: 0 1px 2px rgba(12, 15, 22, 0.04), 0 12px 32px -22px rgba(12, 15, 22, 0.28);
@@ -576,6 +576,11 @@ p {
 .search-input:focus {
   border-color: var(--accent);
   outline: none;
+}
+
+.search-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .search-results {
@@ -3291,6 +3296,51 @@ table.data th.num {
   margin-top: 24px;
 }
 
+.portada .hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+  animation: hero-in 0.9s var(--ease-out-expo) both;
+  animation-delay: 720ms;
+}
+
+.portada .hero-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: rgba(7, 8, 12, 0.35);
+  color: var(--ink);
+  font-weight: 560;
+  text-decoration: none;
+  transition:
+    border-color 0.16s ease,
+    background-color 0.16s ease,
+    transform 0.16s ease-out;
+}
+
+.portada .hero-cta.is-primary {
+  border-color: transparent;
+  background: var(--ink);
+  color: var(--plane);
+}
+
+.portada .hero-cta:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portada .hero-cta:hover {
+    border-color: var(--ink);
+  }
+  .portada .hero-cta.is-primary:hover {
+    background: var(--ink-2);
+  }
+}
+
 /* Pausa del vídeo: pequeña y a mano, sin pedir protagonismo. */
 .portada .clip-toggle {
   display: grid;
@@ -3482,6 +3532,7 @@ table.data th.num {
   .portada .stage,
   .portada .hl-w > span,
   .portada .beat.is-hero .sub,
+  .portada .hero-ctas,
   .portada .hero-foot {
     animation: none;
   }
@@ -5136,13 +5187,13 @@ a.eq-grp-name:hover {
   --div-m1: #6199d7;
   --div-0: #dee1e7;
   --div-p1: #e08365;
-  --div-p2: #d54d1d;
+  --div-p2: #c2451a; /* 5,05:1 con blanco; #d54d1d daba 4,28 */
   --div-ink-m2: #ffffff;
   --div-ink-p2: #ffffff;
 
   --seq-1: #b5a6e5;
   --seq-2: #9e89d9;
-  --seq-3: #886bcd;
+  --seq-3: #7657c2; /* 5,4:1 con blanco; #886bcd daba 4,17 */
   --seq-4: #734dc0;
   --seq-5: #5f28b2;
   --seq-ink-lo: #0c0f16;
@@ -5155,12 +5206,12 @@ a.eq-grp-name:hover {
     --div-m1: #6199d7;
     --div-0: #dee1e7;
     --div-p1: #e08365;
-    --div-p2: #d54d1d;
+    --div-p2: #c2451a;
     --div-ink-m2: #ffffff;
     --div-ink-p2: #ffffff;
     --seq-1: #b5a6e5;
     --seq-2: #9e89d9;
-    --seq-3: #886bcd;
+    --seq-3: #7657c2;
     --seq-4: #734dc0;
     --seq-5: #5f28b2;
     --seq-ink-lo: #0c0f16;
@@ -6098,7 +6149,8 @@ h2.card-title {
   display: block;
   font-style: normal;
   font-size: 0.6rem;
-  opacity: 0.8;
+  /* Sin opacidad: a 9,6 px el 80 % se quedaba en 3,3:1 sobre el morado. */
+  font-weight: 500;
 }
 
 .fxm-table td.fxm-empty {
@@ -6257,9 +6309,13 @@ h2.card-title {
   font-weight: 650;
 }
 
-.lineup-net.is-few b,
 .lineup-net.is-few .lineup-net-track {
   opacity: 0.5;
+}
+
+/* El número no se apaga con opacidad (3,5:1): se pasa a tinta secundaria. */
+.lineup-net.is-few b {
+  color: var(--ink-muted);
 }
 
 .lineups td small {
@@ -6463,4 +6519,159 @@ h2.card-title {
   .only-wide {
     display: none;
   }
+}
+
+/* ------------------------------------------------------------ auditoría 26-09 */
+
+/* Zonas táctiles: nombres de la plantilla, rivales y equipos de la matriz
+   medían 18-20 px de alto. WCAG 2.5.8 pide 24 como mínimo. */
+a.eq-grp-name,
+.eq-fx-rival,
+.fxm-team,
+.lineup-names a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+/* Precios desfasados: franja bajo la cabecera, en todas las páginas. */
+.price-notice {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+.portada ~ .price-notice,
+:root:has(.portada) .price-notice {
+  display: none;
+}
+
+/* Fichar desde el mercado y la ficha. */
+.add-squad {
+  display: inline-flex;
+  align-items: center;
+  min-width: 32px;
+  min-height: 32px;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.add-squad.is-compact {
+  padding: 0;
+  width: 32px;
+  border-radius: 999px;
+}
+
+.add-squad.is-in {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.add-squad:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.player-cards > li {
+  position: relative;
+}
+
+.player-card-actions {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+}
+
+.player-card-actions .add-squad {
+  min-height: 30px;
+  padding: 0 11px;
+  font-size: 0.78rem;
+}
+
+/* Hueco para el botón de fichar, que va fuera del enlace de la tarjeta: la
+   tarjeta crece por abajo y la barra del índice se acorta. */
+.player-cards .player-card {
+  padding-bottom: 50px;
+}
+
+.player-cards .player-card-bar {
+  position: absolute;
+  left: 14px;
+  right: 130px;
+  bottom: 17px;
+}
+
+.ficha-meta .add-squad {
+  min-height: 30px;
+}
+
+/* La tabla del explorador desbordaba a 1440: el ancho lo marcaban las
+   cabeceras (botón con 14 px de relleno y letras muy espaciadas), no los datos. */
+@media (min-width: 1024px) {
+  .only-wide table.data td:not(:first-child) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .only-wide table.data .th-sort {
+    padding-left: 7px;
+    padding-right: 7px;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Notas dentro de <dl>: antes eran <span>/<small> sueltos junto a dt y dd, que
+   el HTML no admite (axe "definition-list"). Ahora son <dd class="dl-note">. */
+dl dd.dl-note {
+  margin: 0;
+  font-family: var(--font);
+  font-variation-settings: normal;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  color: var(--ink-muted);
+}
+
+.ficha-band-grid dd.dl-note {
+  font-size: 0.68rem;
+  color: var(--fantasy);
+}
+
+.cancha-figures dd.dl-note,
+.cancha-figures .is-credit dd.dl-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-muted);
+}
+
+.eq-factor dd.eq-meter {
+  font-size: 0.66rem;
+}
+
+.table-wrap:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* La franja lila de la ficha: la tinta apagada no llegaba a 4,5 sobre el lila. */
+.ficha-band-grid dt,
+.ficha-band-grid dd em {
+  color: var(--ink-2);
+}
+
+.player-cell-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.lede a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

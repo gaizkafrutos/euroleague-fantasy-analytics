@@ -48,12 +48,12 @@ export default function CourtRole({ court }: { court: CourtDetail }) {
           <dd className="num">
             {num(court.clutchMinutes)} <small>min</small>
           </dd>
-          <span>últimos 5′ a ±5 puntos</span>
+          <dd className="dl-note">últimos 5′ a ±5 puntos</dd>
         </div>
         <div>
           <dt>Uso</dt>
           <dd className="num">{percent(court.usage)}</dd>
-          <span>posesiones que acaba él</span>
+          <dd className="dl-note">posesiones que acaba él</dd>
         </div>
       </dl>
 

@@ -40,6 +40,8 @@ export interface Performance {
   fpCeiling: number | null;
   fpPerMin: number | null;
   consistency: number | null;
+  /** La fiabilidad sale de la dispersión encogida (menos de 3 partidos), no de la suya. */
+  consistencyEstimated?: boolean;
   form: number | null;
   formDelta: number | null;
   lastFp: number | null;
@@ -110,7 +112,14 @@ export interface Player {
   height: number | null;
   country: string | null;
   birthDate: string | null;
+  /** Lo que se paga: el precio pendiente si el juego aún no ha aplicado la
+   *  revalorización de la jornada (ver `lib/data.ts`), si no el del juego. */
   price: number | null;
+  /** Precio que enseña ahora mismo el juego, solo si difiere del pendiente. */
+  priceGame?: number | null;
+  /** Cotización estimada al cerrar la jornada, con precios desfasados. */
+  pricePending?: number | null;
+  pricePendingSource?: "juego" | "modelo";
   priceOpen: number | null;
   priceDeltaLast: number | null;
   priceDeltaTotal: number | null;
@@ -384,9 +393,21 @@ export interface Meta {
   budget: number;
   coachGames: number;
   warnings: string[];
+  priceFreshness?: PriceFreshness;
   injuries?: InjuriesMeta;
   priceModel?: PriceModel;
   league?: LeagueRef;
+}
+
+/** ¿El último snapshot lleva ya la revalorización de la última jornada? */
+export interface PriceFreshness {
+  stale: boolean;
+  capturedAt: string | null;
+  lastGameAt: string | null;
+  round: number | null;
+  reason: string | null;
+  /** Jugadores con precio pendiente distinto del del juego. */
+  pending: number;
 }
 
 /** plus = a·puntos + b·precio + c, ajustado sobre el último snapshot. */

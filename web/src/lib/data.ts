@@ -12,7 +12,21 @@ import teamsJson from "@/data/teams.json";
 
 import type { DetailsIndex, Lineup, MatchRow, Meta, Player, PlayerDetail, Team } from "./types";
 
-export const players = playersJson as unknown as Player[];
+/** Con precios desfasados (el juego aún no ha aplicado la revalorización de la
+ *  jornada), `price` pasa a ser el precio pendiente: es el que se va a pagar, y
+ *  así el presupuesto, el óptimo y los puntos por crédito cuadran en toda la
+ *  web. El del juego se conserva en `priceGame`. */
+export const players = (playersJson as unknown as Player[]).map((player) =>
+  typeof player.pricePending === "number" && player.pricePending !== player.price
+    ? {
+        ...player,
+        price: player.pricePending,
+        priceGame: player.price,
+        priceDeltaLast:
+          player.price !== null ? Math.round((player.pricePending - player.price) * 100) / 100 : null,
+      }
+    : player,
+);
 export const teams = teamsJson as unknown as Team[];
 export const meta = metaJson as unknown as Meta;
 export const lineup = lineupJson as unknown as Lineup;
