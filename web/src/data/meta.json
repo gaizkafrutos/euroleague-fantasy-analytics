@@ -1,7 +1,7 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-26T12:37:09.977191+00:00",
+ "generatedAt": "2026-09-26T15:29:41.139625+00:00",
  "currentRound": 2,
  "totalRounds": 38,
  "hasPrices": true,
@@ -20,12 +20,12 @@
  "budget": 100.0,
  "coachGames": 20,
  "injuries": {
-  "source": "BasketNews",
+  "source": "BasketNews + RotoWire + Basketball Sphere",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-09-25T20:45:00",
-  "fetchedAt": "2026-09-26T10:34:57.082470+00:00",
-  "rows": 87,
-  "matched": 80,
+  "updatedAt": "2026-09-26T17:00:00",
+  "fetchedAt": "2026-09-26T15:29:32.668894+00:00",
+  "rows": 192,
+  "matched": 88,
   "unmatched": [
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
    "Ognjen Simjanovski (Crvena Zvezda Meridianbet Belgrade)",
@@ -33,14 +33,48 @@
    "Tomislav Vuckovic (Dubai Basketball)",
    "Yiftach Ziv (Hapoel IBI Tel Aviv)",
    "Enzo Shahrvin (Paris Basketball)",
-   "Jabari Parker (Partizan Mozzart Bet Belgrade)"
+   "Jabari Parker (Partizan Mozzart Bet Belgrade)",
+   "Gur Lavy (MTA)",
+   "Mady Sissoko (BJK)",
+   "Enzo Shahrvin (Paris)",
+   "Mady Sissoko (Besiktas)",
+   "Awudu Abass (Dubai)"
+  ],
+  "sources": [
+   {
+    "source": "BasketNews",
+    "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
+    "updatedAt": "2026-09-26T15:21:00",
+    "fetchedAt": "2026-09-26T15:24:40.856561+00:00",
+    "rows": 84,
+    "matched": 77,
+    "flagged": 77
+   },
+   {
+    "source": "RotoWire",
+    "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
+    "updatedAt": null,
+    "fetchedAt": "2026-09-26T15:29:32.145621+00:00",
+    "rows": 37,
+    "matched": 35,
+    "flagged": 1
+   },
+   {
+    "source": "Basketball Sphere",
+    "url": "https://basketballsphere.com/en/injuries/euroleague/",
+    "updatedAt": "2026-09-26T17:00:00",
+    "fetchedAt": "2026-09-26T15:29:32.668894+00:00",
+    "rows": 71,
+    "matched": 68,
+    "flagged": 10
+   }
   ],
   "nextRound": 2,
-  "unregistered": 3,
+  "unregistered": 2,
   "flagged": {
-   "out": 14,
-   "doubt": 64,
-   "probable": 2
+   "out": 15,
+   "doubt": 67,
+   "probable": 8
   }
  },
  "warnings": [],

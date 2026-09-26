@@ -78,7 +78,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "injury",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Cleared to play",
+   "reported": "Ready",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 18.1,
    "expectedChange": 0.11,
@@ -259,10 +267,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Didn't play in EuroLeague SuperCup (Undisclosed injury)",
-   "reported": "Out · Round 1",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 1 (Undisclosed injury)",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -798,7 +806,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "injury",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "",
+   "reported": "Ready · Round 125",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 12.9,
    "expectedChange": 0.06,
@@ -1340,7 +1356,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "roster",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster",
+   "reported": "Uncertain",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 8.7,
    "expectedChange": -0.13,
@@ -5072,10 +5096,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Undisclosed",
-   "reported": "Out · Round 1",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 1 (Undisclosed)",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -6064,7 +6088,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "injury",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Muscular injury",
+   "reported": "Ready · Round 125",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 7.9,
    "expectedChange": -0.1,
@@ -6866,12 +6898,12 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Duda",
-   "untilRound": null,
-   "detail": "Left Round 1 with leg injury",
-   "reported": "Uncertain · Round 2",
+   "label": "Baja en la J2",
+   "untilRound": 2,
+   "detail": "The club announced that Willis will be sidelined for several weeks with an ankle injury suffered in Round 1. His status will be reassessed in three to four weeks.",
+   "reported": "Out · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -7140,7 +7172,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "injury",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Groin injury",
+   "reported": "Ready · Round 125",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 9.6,
    "expectedChange": -0.07,
@@ -9832,7 +9872,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Hamstring",
+   "reported": "Game time",
+   "source": "RotoWire"
+  },
   "outlook": {
    "breakEven": 4.3,
    "expectedChange": -0.04,
@@ -11362,10 +11410,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
+   "label": "Improbable",
+   "untilRound": null,
    "detail": "Working back from Achilles surgery",
-   "reported": "Out · Round 1",
+   "reported": "Doubtful · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -13445,7 +13493,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "roster",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster",
+   "reported": "Uncertain",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.13,
@@ -15153,10 +15209,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Tear right thigh biceps (09.02). Out for 4 weeks",
-   "reported": "Out · Round 1",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -16727,7 +16783,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "roster",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster",
+   "reported": "Uncertain",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 5.5,
    "expectedChange": -0.11,
@@ -16816,7 +16880,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "injury",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "",
+   "reported": "Ready · Round 124",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 7.9,
    "expectedChange": 0.02,
@@ -18348,10 +18420,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Undisclosed",
-   "reported": "Out · Round 1",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 1 (Undisclosed)",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -19073,7 +19145,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "injury",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "",
+   "reported": "Ready",
+   "source": "Basketball Sphere"
+  },
   "outlook": {
    "breakEven": 14.9,
    "expectedChange": 0.13,
@@ -20791,11 +20871,11 @@
   "availability": {
    "level": "doubt",
    "kind": "roster",
-   "label": "Sin inscribir en la Euroliga",
+   "label": "Duda",
    "untilRound": null,
-   "detail": "Está en el mercado del Fantasy pero no en el censo oficial de la temporada.",
-   "reported": "",
-   "source": "censo oficial"
+   "detail": "Not included in 12-man roster",
+   "reported": "Uncertain",
+   "source": "Basketball Sphere"
   },
   "outlook": {
    "breakEven": 5.5,
@@ -20977,10 +21057,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Didn't travel with the team",
-   "reported": "Out · Round 1",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Didn't travel with the team in Round 1",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -25529,10 +25609,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Muscle issue",
-   "reported": "Out · Round 1",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 1 (Muscle issue)",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -29758,10 +29838,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Didn't travel with the team",
-   "reported": "Out · Round 1",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Didn't travel with the team in Round 1",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -30122,10 +30202,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Didn't travel with the team",
-   "reported": "Out · Round 1",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Didn't travel with the team in Round 1",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -31206,10 +31286,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J1; sin confirmar para la J2",
-   "untilRound": 1,
-   "detail": "Coach's decision",
-   "reported": "Out · Round 1",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 1 (Coach's decision)",
+   "reported": "Uncertain · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
@@ -31764,10 +31844,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Duda · decisión técnica",
+   "label": "Improbable · decisión técnica",
    "untilRound": null,
    "detail": "DNP in Round 1 (coach's decision)",
-   "reported": "Uncertain · Round 1",
+   "reported": "Doubtful · Round 2",
    "source": "BasketNews"
   },
   "outlook": {
