@@ -111,6 +111,84 @@ export function assignRoles(players: Player[]): Roles {
   };
 }
 
+/* ------------------------------------------------------- alineación a mano */
+
+/** La alineación que elige el usuario (ids). Los cuatro que no están en el
+ *  quinteto ni de sexto van al banquillo. */
+export interface ManualLineup {
+  starters: number[];
+  sixth: number | null;
+  captain: number | null;
+}
+
+/** El quinteto que admite el reglamento: cinco, con al menos un base, un alero
+ *  y un pívot (con 4-4-2 en plantilla, eso son justo 2-2-1, 1-2-2, 2-1-2,
+ *  1-3-1 y 3-1-1). */
+export function isValidQuintet(starters: Player[]): boolean {
+  if (starters.length !== STARTERS) return false;
+  return (["G", "F", "C"] as const).every((p) => starters.some((player) => player.position === p));
+}
+
+/** Los roles de una alineación elegida a mano, o null si ya no cuadra con la
+ *  plantilla (alguien ha salido) o el quinteto no es reglamentario. Un capitán
+ *  fuera del quinteto pasa al que más proyecta del quinteto. */
+export function manualRoles(players: Player[], manual: ManualLineup | null): Roles | null {
+  if (!manual || players.length !== SQUAD_SIZE) return null;
+  const byId = new Map(players.map((player) => [player.id, player]));
+  const starters = manual.starters.map((id) => byId.get(id));
+  if (starters.some((player) => !player) || new Set(manual.starters).size !== STARTERS) return null;
+  const quintet = starters as Player[];
+  if (!isValidQuintet(quintet)) return null;
+  const sixth = manual.sixth !== null ? (byId.get(manual.sixth) ?? null) : null;
+  if (!sixth || manual.starters.includes(sixth.id)) return null;
+  const bench = players
+    .filter((player) => !manual.starters.includes(player.id) && player.id !== sixth.id)
+    .sort((a, b) => effectiveProjection(b) - effectiveProjection(a));
+  const captain =
+    quintet.find((player) => player.id === manual.captain) ??
+    [...quintet].sort((a, b) => effectiveProjection(b) - effectiveProjection(a))[0] ??
+    null;
+  return { starters: quintet, sixth, bench, captain };
+}
+
+/** Los roles como alineación editable (para partir de la automática). */
+export function toManual(roles: Roles): ManualLineup {
+  return {
+    starters: roles.starters.map((player) => player.id),
+    sixth: roles.sixth?.id ?? null,
+    captain: roles.captain?.id ?? null,
+  };
+}
+
+/** Intercambia de sitio a dos jugadores (quinteto, sexto o banquillo). Devuelve
+ *  la alineación nueva o un motivo si el quinteto dejaría de ser válido. */
+export function swapInLineup(
+  players: Player[],
+  manual: ManualLineup,
+  a: number,
+  b: number,
+): { lineup: ManualLineup } | { error: string } {
+  const place = (id: number) =>
+    manual.starters.includes(id) ? "starter" : manual.sixth === id ? "sixth" : "bench";
+  const pa = place(a);
+  const pb = place(b);
+  if (pa === pb && pa !== "starter") return { lineup: manual };
+  if (pa === "starter" && pb === "starter") return { lineup: manual };
+  // Cada uno ocupa el sitio del otro: el quinteto cambia a quien estuviera en
+  // él, y el sexto pasa a ser el que llega.
+  const starters = manual.starters.map((id) => (id === a ? b : id === b ? a : id));
+  const sixth = pa === "sixth" ? b : pb === "sixth" ? a : manual.sixth;
+  const byId = new Map(players.map((player) => [player.id, player]));
+  const quintet = starters.map((id) => byId.get(id)).filter((p): p is Player => Boolean(p));
+  if (!isValidQuintet(quintet)) {
+    return {
+      error: `El quinteto quedaría ${formationOf(quintet)}: el reglamento pide al menos un base, un alero y un pívot en pista.`,
+    };
+  }
+  const captain = starters.includes(manual.captain ?? -1) ? manual.captain : null;
+  return { lineup: { starters, sixth, captain } };
+}
+
 /** "3-1-1": bases, aleros y pívots del quinteto. */
 export function formationOf(starters: Player[]): string {
   return (["G", "F", "C"] as const)

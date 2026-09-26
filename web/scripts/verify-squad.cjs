@@ -118,6 +118,36 @@ for (let t = 0; t < 30; t += 1) {
 }
 console.log(`✓ plan de cambios dentro de las reglas (el más lento, ${slowest} ms)`);
 
+// 4. Alineación a mano: cualquier intercambio da un quinteto reglamentario (o
+//    se rechaza con motivo) y nunca puntúa más que la automática, que es la
+//    mejor posible.
+let swapsChecked = 0;
+for (let t = 0; t < 40; t += 1) {
+  const squad = randomSquad();
+  const coach = coaches[t % coaches.length];
+  const auto = S.assignRoles(squad);
+  const best = S.scoredProjection(auto, coach);
+  const base = S.toManual(auto);
+  for (const a of squad) {
+    for (const b of squad) {
+      if (a.id === b.id) continue;
+      const result = S.swapInLineup(squad, base, a.id, b.id);
+      if ("error" in result) continue;
+      const roles = S.manualRoles(squad, result.lineup);
+      if (!roles) {
+        fail("un intercambio aceptado deja una alineación inválida");
+        continue;
+      }
+      swapsChecked += 1;
+      if (roles.starters.length + (roles.sixth ? 1 : 0) + roles.bench.length !== 10) fail("alineación sin 10 jugadores");
+      if (!S.isValidQuintet(roles.starters)) fail("quinteto no reglamentario");
+      if (!roles.starters.some((p) => p.id === roles.captain?.id)) fail("capitán fuera del quinteto");
+      if (S.scoredProjection(roles, coach) > best + 1e-6) fail("una alineación a mano supera a la automática");
+    }
+  }
+}
+console.log(`✓ alineación a mano: ${swapsChecked} intercambios válidos y ninguno mejora la automática`);
+
 if (failures) {
   console.error(`${failures} fallos`);
   process.exit(1);

@@ -40,12 +40,17 @@ import {
   effectiveProjection,
   extractRosterIds,
   formationOf,
+  manualRoles,
   planTrades,
   positionWord,
   rentInRole,
   roleMultiplier,
+  scoredProjection,
   suggestSwaps,
+  swapInLineup,
+  toManual,
   tradeWindow,
+  type ManualLineup,
   type TradePlan,
 } from "@/lib/squad";
 import type { Player } from "@/lib/types";
@@ -54,6 +59,8 @@ const STORAGE_KEY = "efa-squad";
 /** Aparte de la plantilla: `AddToSquad` reescribe `efa-squad` con solo
  *  `{ ids, coach }` y se llevaría el presupuesto por delante. */
 const BUDGET_KEY = "efa-budget";
+/** La alineación elegida a mano, si la hay. Sin ella, la consola coloca sola. */
+const LINEUP_KEY = "efa-lineup";
 
 interface Props {
   market: Player[];
@@ -113,7 +120,18 @@ export default function SquadConsole({
   const coach = coachId !== null ? (byId.get(coachId) ?? null) : null;
 
   const check = useMemo(() => checkSquad(squad, budget, coach), [squad, budget, coach]);
-  const { roles } = check;
+
+  /* ------------------------------------------------------ alineación a mano */
+  // Quinteto y sexto puntúan igual, así que la automática ya es la mejor; pero
+  // cada uno alinea como quiere (y en el juego se cambia entre turnos). Con
+  // una alineación a mano, TODAS las cifras de la cancha son las de esa.
+  const [manual, setManual] = useState<ManualLineup | null>(null);
+  const [editing, setEditing] = useState(false);
+  const [picked, setPicked] = useState<number | null>(null);
+  const [lineupError, setLineupError] = useState<string | null>(null);
+  const custom = useMemo(() => manualRoles(squad, manual), [squad, manual]);
+  const roles = custom ?? check.roles;
+  const scored = custom ? Number(scoredProjection(custom, coach).toFixed(2)) : check.scored;
   const swaps = useMemo(
     () => (squad.length ? suggestSwaps(squad, market, budget, coach, 5, coaches) : []),
     [squad, market, budget, coach, coaches],
@@ -200,6 +218,8 @@ export default function SquadConsole({
     try {
       const stored = Number(window.localStorage.getItem(BUDGET_KEY));
       if (stored >= 50 && stored <= 200) setBudget(stored);
+      const lineup = window.localStorage.getItem(LINEUP_KEY);
+      if (lineup) setManual(JSON.parse(lineup) as ManualLineup);
     } catch {
       /* idem */
     }
@@ -214,10 +234,38 @@ export default function SquadConsole({
       const value: Stored = { ids, coach: coachId };
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
       window.localStorage.setItem(BUDGET_KEY, String(budget));
+      if (manual) window.localStorage.setItem(LINEUP_KEY, JSON.stringify(manual));
+      else window.localStorage.removeItem(LINEUP_KEY);
     } catch {
       /* idem */
     }
-  }, [ids, coachId, budget, restored]);
+  }, [ids, coachId, budget, manual, restored]);
+
+  // Si la plantilla cambia y la alineación a mano deja de cuadrar (ha salido
+  // alguien de ella), se vuelve a la automática en vez de enseñar algo roto.
+  useEffect(() => {
+    if (restored && manual && squad.length === SQUAD_SIZE && !custom) setManual(null);
+  }, [restored, manual, squad.length, custom]);
+
+  function pick(id: number) {
+    setLineupError(null);
+    if (picked === null) {
+      setPicked(id);
+      return;
+    }
+    if (picked === id) {
+      setPicked(null);
+      return;
+    }
+    const result = swapInLineup(squad, manual ?? toManual(check.roles), picked, id);
+    if ("error" in result) setLineupError(result.error);
+    else setManual(result.lineup);
+    setPicked(null);
+  }
+
+  function makeCaptain(id: number) {
+    setManual({ ...(manual ?? toManual(roles)), captain: id });
+  }
 
   /* ---------------------------------------------------------------- acciones */
   const loadRoster = useCallback(async () => {
@@ -413,17 +461,21 @@ export default function SquadConsole({
         </div>
         <div>
           <dt>Proyección real</dt>
-          <dd className="num">{num(check.scored)}</dd>
-          <dd className="dl-note">con capitán ×2 y banquillo ×0,5</dd>
+          <dd className="num">{num(scored)}</dd>
+          <dd className="dl-note">
+            {custom && Math.abs(scored - check.scored) > 0.005
+              ? `tu alineación · la mejor da ${num(check.scored)}`
+              : "con capitán ×2 y banquillo ×0,5"}
+          </dd>
         </div>
         <div>
           {full && typeof optimalScored === "number" ? (
             <>
               <dt>Frente al óptimo</dt>
               <dd
-                className={`num ${check.scored >= optimalScored - 0.05 ? "delta-up" : "delta-down"}`}
+                className={`num ${scored >= optimalScored - 0.05 ? "delta-up" : "delta-down"}`}
               >
-                {signed(check.scored - optimalScored)}
+                {signed(scored - optimalScored)}
               </dd>
               <dd className="num dl-note">respecto a los {num(optimalScored)} del óptimo con {credits(budget)}</dd>
             </>
@@ -517,7 +569,51 @@ export default function SquadConsole({
               Bases, aleros y pívots en pista. El reglamento solo admite 2-2-1, 1-2-2, 2-1-2,
               1-3-1 y 3-1-1: siempre al menos uno de cada puesto.
             </p>
+            {squad.length === SQUAD_SIZE ? (
+              <div className="lineup-tools">
+                <button
+                  type="button"
+                  className="chip"
+                  aria-pressed={editing}
+                  onClick={() => {
+                    setEditing((value) => !value);
+                    setPicked(null);
+                    setLineupError(null);
+                  }}
+                >
+                  {editing ? "Listo" : "Colocar a mano"}
+                </button>
+                {custom ? (
+                  <button
+                    type="button"
+                    className="chip"
+                    onClick={() => {
+                      setManual(null);
+                      setPicked(null);
+                      setLineupError(null);
+                    }}
+                  >
+                    Volver a la automática
+                  </button>
+                ) : null}
+              </div>
+            ) : null}
           </div>
+          {editing ? (
+            <p className="lineup-help" role="status">
+              {picked !== null
+                ? "Ahora toca a quien ocupa el sitio al que quieres llevarlo."
+                : "Toca un jugador y luego otro para intercambiar sus sitios (quinteto, sexto o banquillo). La «C» de un titular lo hace capitán."}
+              {custom && Math.abs(scored - check.scored) > 0.005
+                ? ` Tu alineación da ${num(scored)}; la mejor, ${num(check.scored)} (${signed(scored - check.scored)}).`
+                : ""}
+            </p>
+          ) : null}
+          {lineupError ? (
+            <p className="lineup-error" role="alert">
+              {lineupError}
+            </p>
+          ) : null}
           <section className="court" aria-label="Quinteto">
             <svg
               className="court-lines"
@@ -542,6 +638,7 @@ export default function SquadConsole({
                     role={player.id === roles.captain?.id ? "captain" : "starter"}
                     onRemove={remove}
                     className={mid}
+                    edit={editing ? { picked: picked === player.id, onPick: pick, onCaptain: makeCaptain } : null}
                   />
                 ) : (
                   <EmptySlot key={`vacio-${index}`} label="Quinteto" className={mid} />
@@ -562,6 +659,7 @@ export default function SquadConsole({
                   player={roles.sixth}
                   role="sixth"
                   onRemove={remove}
+                  edit={editing ? { picked: picked === roles.sixth.id, onPick: pick } : null}
                 />
               ) : (
                 <EmptySlot label="Sexto hombre" />
@@ -584,6 +682,7 @@ export default function SquadConsole({
                     player={player}
                     role="bench"
                     onRemove={remove}
+                    edit={editing ? { picked: picked === player.id, onPick: pick } : null}
                   />
                 ) : (
                   <EmptySlot key={`banco-${index}`} label="Banquillo" />
@@ -611,7 +710,7 @@ export default function SquadConsole({
             </div>
           </section>
 
-          {full ? <Contribution check={check} coach={coach} /> : null}
+          {full ? <Contribution roles={roles} scored={scored} coach={coach} /> : null}
         </>
       ) : (
         <p className="muted cancha-empty">
@@ -822,16 +921,24 @@ export default function SquadConsole({
 
 type TokenRole = "captain" | "starter" | "sixth" | "bench" | "coach";
 
+interface TokenEdit {
+  picked: boolean;
+  onPick: (id: number) => void;
+  onCaptain?: (id: number) => void;
+}
+
 function Token({
   player,
   role,
   onRemove,
   className = "",
+  edit = null,
 }: {
   player: Player;
   role: TokenRole;
   onRemove: (id: number) => void;
   className?: string;
+  edit?: TokenEdit | null;
 }) {
   const next = player.schedule?.next ?? null;
   const turn = turnLabel(next);
@@ -863,19 +970,46 @@ function Token({
     <div
       className={`tok pos-${isCoach ? "E" : (player.position ?? "X")}${
         role === "bench" ? " is-bench" : ""
-      }${isCoach ? " is-coach" : ""}${player.availability?.level === "out" ? " is-out" : ""}${className}`}
+      }${isCoach ? " is-coach" : ""}${player.availability?.level === "out" ? " is-out" : ""}${
+        edit ? " is-editing" : ""
+      }${edit?.picked ? " is-picked" : ""}${className}`}
     >
       {role === "captain" ? <span className="cap-badge">Capitán ×2</span> : null}
-      <button
-        type="button"
-        className="tok-remove"
-        onClick={() => onRemove(player.id)}
-        aria-label={`Quitar a ${name}`}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-          <path d="M7 7l10 10M17 7 7 17" strokeLinecap="round" />
-        </svg>
-      </button>
+      {edit ? (
+        <>
+          {/* Toda la ficha es el botón: en el móvil, apuntar a algo pequeño
+              para mover a un jugador es una lotería. */}
+          <button
+            type="button"
+            className="tok-pick"
+            aria-pressed={edit.picked}
+            aria-label={edit.picked ? `${name} elegido: toca a otro para intercambiarlos` : `Mover a ${name}`}
+            onClick={() => edit.onPick(player.id)}
+          />
+          {edit.onCaptain && role === "starter" ? (
+            <button
+              type="button"
+              className="tok-cap"
+              aria-label={`Hacer capitán a ${name}`}
+              title="Hacer capitán"
+              onClick={() => edit.onCaptain?.(player.id)}
+            >
+              C
+            </button>
+          ) : null}
+        </>
+      ) : (
+        <button
+          type="button"
+          className="tok-remove"
+          onClick={() => onRemove(player.id)}
+          aria-label={`Quitar a ${name}`}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <path d="M7 7l10 10M17 7 7 17" strokeLinecap="round" />
+          </svg>
+        </button>
+      )}
 
       <div className="tok-shot">
         {player.image && !photoBroken ? (
@@ -968,13 +1102,14 @@ function EmptySlot({ label, className = "" }: { label: string; className?: strin
  *  La rampa es ordinal (del capitán, que más aporta por jugador, al banquillo)
  *  y va en un solo tono; el entrenador, que es otra cosa, va en neutro. */
 function Contribution({
-  check,
+  roles,
+  scored,
   coach,
 }: {
-  check: ReturnType<typeof checkSquad>;
+  roles: ReturnType<typeof checkSquad>["roles"];
+  scored: number;
   coach: Player | null;
 }) {
-  const { roles } = check;
   const p = effectiveProjection;
   const captainPts = p(roles.captain) * 2;
   const restPts = roles.starters
@@ -1016,7 +1151,7 @@ function Contribution({
   return (
     <section className="cancha-section">
       <div className="cancha-section-head">
-        <h2>De dónde salen los {num(check.scored)}</h2>
+        <h2>De dónde salen los {num(scored)}</h2>
         <p>Proporciones reales sobre el total proyectado.</p>
       </div>
       <div className="cancha-panel">
