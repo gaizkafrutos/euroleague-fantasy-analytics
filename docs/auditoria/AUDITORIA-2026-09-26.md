@@ -30,6 +30,10 @@ Código revisado: `main` en `d60416b` ("Capa avanzada, lesiones y buscador en Mi
   El juego ya había publicado la variación (`plus`) para 207 jugadores, pero la web no la muestra en ninguna parte.
 - **Tiene consecuencias.** El "equipo óptimo con 100 cr" (99,9 cr hoy) costaría **~104,0 cr** con los
   precios post-J1 estimados. Se recomienda a los usuarios una plantilla que no pueden fichar.
+  **Confirmado a las 11:54 UTC con una captura nueva:** 287 precios cambiados, los 207 del jueves en
+  exactamente su `plus`, y el óptimo anterior cuesta en realidad 104,1 cr (§6.6). Esa ejecución sacó a la
+  luz un segundo fallo, un óptimo publicado **sin entrenador** por PuLP 4.0 más un error de redondeo
+  (§6.7). El arreglo está en la rama.
 - **Proyección: la metodología publicada se corresponde en lo esencial con el código, pero se deja
   fuera tres mecanismos, y dos de sus piezas empeoran la predicción.** En un backtest paso a paso sobre la
   temporada 2025-26 (7.764 predicciones), la media simple de temporada (MAE 6,05) gana a la mezcla con
@@ -528,6 +532,49 @@ jueves, el diagnóstico queda confirmado. Si sale **0** con la jornada ya cerrad
 ser de fuente: la columna `quotation` del endpoint `stats/players/table` no reflejaría el precio vivo.
 En ese caso habría que contrastarlo con el precio de la app y probar otro endpoint con `efa discover`.
 
+### 6.6 Resultado: diagnóstico confirmado (26-09, 11:54 UTC)
+
+Se lanzó el workflow a mano (ejecución 12, `workflow_dispatch`, etiqueta `R01-cierre`) con el token
+recién renovado en GitHub. La captura funcionó y generó el snapshot `prices_20260926_115420_R01-cierre`
+(commit `6281a25` en `main`). Comparado con el del 25-09:
+
+| Comprobación | Resultado |
+|---|---|
+| Cotizaciones que han cambiado | **287 de 350** |
+| Jugadores del jueves con `plus` ≠ 0 el 25-09 | 207, y en **los 207** la variación de precio es **exactamente** ese `plus` |
+| Variación de precio = `plus` del 26-09, en todos los jugadores | **100 %** |
+| Estimación con el modelo para los del viernes | Carlik Jones +0,86 → real **+0,9** · Braxton Key +0,63 → **+0,6** · Rasheed Bello −0,64 → **−0,6** |
+| Coste real del óptimo anterior (99,9 cr) a los precios de hoy | **104,1 cr** (la estimación era 103,96) |
+| Producción tras redesplegar | Vezenkov **17,6 cr** (antes 17,0) |
+
+Queda confirmado que el juego aplica la revalorización al cerrar la jornada y que el fallo era
+nuestro, por la hora de captura. **Otro dato que importa para el arreglo (3) de §6.4:** después de
+aplicarse, `plus` **no se pone a cero**, sino que se queda como "variación de la última jornada".
+Por tanto, `quotation + plus` solo es válido mientras la cotización siga igual a la del snapshot anterior.
+
+### 6.7 Hallazgo nuevo en esa misma ejecución: óptimo sin entrenador
+
+El `lineup.json` que publicó la ejecución 12 trae **10 jugadores por 95,4 cr y ningún entrenador**
+(`method: "greedy"`). El log lo explica con dos fallos encadenados:
+
+1. `pulp>=2.8` no tiene techo, y el runner instaló **PuLP 4.0.0**, recién publicado, cuyo `LpVariable`
+   ya no acepta `cat`:
+   `El solver ILP falló (LpVariable.__init__() got an unexpected keyword argument 'cat'): usando heurística voraz.`
+2. La heurística de respaldo reserva el entrenador más barato (4,6 cr), pero después comprueba
+   `4.6 <= 100 − 4.6 + 4.6 − 95.4`, y en coma flotante el lado derecho da `4.599999999999994`. Así que
+   **no ficha a ningún entrenador**, cuando tenía justo el dinero.
+
+Arreglo en la rama `claude/focused-dirac-gx0bxu` (commit `cad8984`):
+- `pulp>=2.8,<4` en `pyproject.toml` y `requirements.txt`.
+- La constante `BUDGET_EPS = 1e-6` en las tres comparaciones de presupuesto de `_optimize_greedy`.
+- El test `test_la_heuristica_no_pierde_al_entrenador_por_redondeo`, que reproduce el caso real:
+  falla antes del arreglo y pasa después. Las 129 pruebas pasan y `ruff` no marca nada.
+
+Con los datos de hoy, el ILP da 100,0 cr, 146,9 puntos, con Xavier Albert de entrenador. **Para que la
+web lo refleje hay que fusionar la rama y volver a lanzar el workflow.** Además, la ejecución registró
+un 403 de BasketNews en el parte de lesiones; el paso tiene `continue-on-error`, así que se reutilizó
+el parte del 25-09.
+
 ---
 
 ## 7. Otros hallazgos del modelo y los datos
@@ -548,7 +595,8 @@ En ese caso habría que contrastarlo con el precio de la app y probar otro endpo
 ### Arreglos rápidos (menos de un día cada uno)
 | Prioridad | Acción | Área |
 |---|---|---|
-| **P0** | Lanzar ya el workflow (`workflow_dispatch`) para capturar los precios post-J1 y redesplegar | Bug §6 |
+| ~~P0~~ | ~~Lanzar ya el workflow para capturar los precios post-J1~~ **Hecho el 26-09 a las 11:54 UTC (§6.6)** | Bug §6 |
+| **P0** | Fusionar `cad8984` (PuLP <4 + holgura de redondeo) y volver a lanzar el workflow: ahora mismo el óptimo publicado no tiene entrenador (§6.7) | Bug §6.7 |
 | **P0** | Guarda de frescura en `build.py` + aviso en la web + fecha de los precios visible (§6.4-2) | Bug §6 |
 | **P0** | El run tiene que salir en rojo si falla el snapshot (§6.4-4) | Bug §6 |
 | P1 | Cron 4 veces al día fuera del minuto 0 + no guardar snapshots idénticos (§6.4-1) | Bug §6 |
