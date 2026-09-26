@@ -629,3 +629,33 @@ el parte del 25-09.
 - Backtest: `build_gamelog(load_boxscores("E2025"), load_reference("E2025")["games"])` y predicción a un paso
   por jugador (media, forma, EWMA, encogimiento y ajuste de minutos replicando `project_fantasy_points`).
 - Ejecuciones del workflow: GitHub Actions → "Captura de datos" (runs 4 a 11).
+
+---
+
+## 9. Estado tras los arreglos (26-09, tarde)
+
+Aplicado en la rama `claude/focused-dirac-gx0bxu`, validado con 137 tests, ruff, typecheck, build y un
+nuevo recorrido con Playwright y axe.
+
+| Hallazgo | Arreglo | Verificación |
+|---|---|---|
+| Precios desfasados sin aviso (§6) | `price_freshness` detecta la captura a mitad de jornada y la jornada cerrada sin revalorizar; `meta.priceFreshness` y un aviso en la web | Tests con el caso real de la J1 |
+| El óptimo no cabía (§6.2) | `pending_prices`: el precio pendiente sale del `plus` del juego o del modelo, con −0,1 para quien no juega y suelo de 4,0; lo usan el óptimo, los puntos por crédito, el umbral y el presupuesto de Mi equipo | Datos del 25-09: acierta **334/350** precios al décimo; el óptimo pasa de costar 104,1 a **100,1 cr** a precios reales (la décima que sobra es de un entrenador, sin modelo) |
+| Una captura al día a mediodía | Cron `23 1,7,13,19 * * *`, no se guardan snapshots idénticos, rebase antes del push | Test de `same_market` |
+| Run en verde con el token caducado | Paso final `exit 1` si falla la captura; aviso si BasketNews no responde | YAML validado |
+| BasketNews 403 desde Actions | Cabeceras de navegador y segundo intento | Pendiente de la próxima ejecución |
+| Óptimo sin entrenador (§6.7) | `pulp<4` + `BUDGET_EPS` en la heurística | Test de regresión |
+| Rating de equipo con 1 partido (M5) | Encogido hacia la temporada anterior (k=6) | Test |
+| Forma y ajuste de minutos (§5.3) | `FORM_WEIGHT_MAX=0`, `ROLE_ADJUSTMENT_SCALE=0.3` | Backtest 2025-26 |
+| Fiabilidad "—" en 330 filas | Estimada (≈) con la σ encogida mientras no hay 3 partidos | 340 jugadores con valor |
+| Presión de precio redundante | El índice usa la probabilidad de subir | — |
+| D1 contraste | Tinta secundaria, rojo, escala morada, naranja y franja de la ficha | axe: **0 fallos** en 13 de 14 combinaciones de página y viewport (antes 39–165 nodos por página) |
+| D2 bundle | El índice del buscador llega como prop; `lib/advanced` ya no importa `lib/data` | Ningún chunk contiene `players.json` (antes 702 KB en todas las páginas) |
+| D3 HTML de /mercado | Filas recortadas a lo que usa el explorador | 779 → 648 KB |
+| D4–D12 | Deltas en 0 ocultos, tabla sin desbordar (1280–1920 px), avatares de repuesto, `<dl>` válidos, tablas enfocables, zonas táctiles de 24 px, foco visible en el buscador | Recorrido Playwright |
+| UX | CTAs en la portada, "Fichar" en tabla, tarjetas y ficha, filtros "Ocultar bajas" y "Precio mínimo", 50 filas por página, "Ir al explorador", fecha de los precios, reglas en 30 segundos, "Cargar equipo" solo si está configurado | Probado el flujo mercado → ficha → Mi equipo |
+| Metodología desfasada | Captura, lesiones, umbral, proyección, calendario e índice reescritos | — |
+
+**No abordado (cambios de más calado, §8):** el modelo completo de minutos × tasa × rival (§5.4), el modo
+"4 cambios" desde el equipo actual, el comparador de jugadores, la señal de semana doble, el payload de
+/mi-equipo y la altura de la cabecera en mobile (D10).
