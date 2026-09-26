@@ -563,8 +563,6 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         coach_log, prior_coach_log = prior_coach_log, None
     _apply_coach_projections(records, coach_log, prior_coach_log)
 
-    lineup = _build_optimal_lineup(records, budget=budget)
-
     matched = int(table["person_code"].notna().sum())
     meta = {
         "season": SEASON_CODE,
@@ -614,7 +612,12 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         crosswalk=crosswalk,
         reference=reference,
         round_now=round_now,
+        history=load_snapshots() if has_prices else None,
     )
+
+    # Después de la capa avanzada: con precios desfasados, el óptimo se paga al
+    # precio pendiente, no a uno que el juego ya ha dejado atrás.
+    lineup = _build_optimal_lineup(records, budget=budget)
 
     write_json("players.json", records)
     write_json("details.json", details)
@@ -786,7 +789,7 @@ def _build_optimal_lineup(records: list[dict[str, Any]], *, budget: float) -> di
     candidates = []
     coaches = []
     for record in records:
-        price = _usable_number(record.get("price"))
+        price = _usable_number(record.get("pricePending")) or _usable_number(record.get("price"))
         projection = _usable_number(record.get("projectedFp"))
         if price is None or price <= 0:
             continue

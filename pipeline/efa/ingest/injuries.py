@@ -127,11 +127,26 @@ def parse_report(html: str) -> tuple[str | None, list[dict[str, str]]]:
 
 def fetch_report(url: str = INJURY_REPORT_URL, timeout: int = 30) -> dict[str, Any]:
     """Descarga y parsea el parte. Una sola petición."""
-    response = requests.get(
-        url,
-        timeout=timeout,
-        headers={"User-Agent": "euroleague-fantasy-analytics/1.0 (personal, non-commercial)"},
-    )
+    # Desde los runners de GitHub, BasketNews responde 403 a un User-Agent de
+    # script (26-09). Se piden las cabeceras de un navegador y, si aun así falla,
+    # un segundo intento con la identificación del proyecto.
+    attempts = [
+        {
+            "User-Agent": (
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/140.0 Safari/537.36"
+            ),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+        },
+        {"User-Agent": "euroleague-fantasy-analytics/1.0 (personal, non-commercial)"},
+    ]
+    response = None
+    for headers in attempts:
+        response = requests.get(url, timeout=timeout, headers=headers)
+        if response.ok:
+            break
+    assert response is not None
     response.raise_for_status()
     updated, rows = parse_report(response.text)
     if not rows:
