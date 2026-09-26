@@ -2060,7 +2060,7 @@ table.data th.num {
 
 .squad-budget {
   margin-left: auto;
-  flex: 0 1 220px;
+  flex: 0 1 300px;
 }
 
 .squad-list {
@@ -6966,4 +6966,20 @@ dl dd.dl-note {
   font-weight: 700;
   color: var(--ink);
   background: var(--accent-soft);
+}
+
+.budget-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.budget-row .slider {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.budget-input {
+  flex: 0 0 84px;
+  width: 84px;
 }

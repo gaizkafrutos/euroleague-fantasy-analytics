@@ -402,13 +402,18 @@ export function buildSquad(
   // la mitad. La búsqueda local lo corrige: cambios sueltos y por parejas
   // (bajar a uno para subir a otro) mientras alguno mejore la puntuación real.
   if (players.length === SQUAD_SIZE && coach) {
-    const improved = planTrades({ players, coach }, market, coachPool, budget, Infinity);
+    const improved = planTrades({ players, coach }, market, coachPool, budget, Infinity, 5, 0);
     return { players: improved.players, coach: improved.coach };
   }
   return { players, coach };
 }
 
 /* -------------------------------------------------------- plan de cambios */
+
+/** Lo mínimo que tiene que ganar un cambio para proponerlo. Los cambios son
+ *  un recurso (cuatro por jornada): gastar dos para ganar 0,02 puntos es
+ *  ruido, no un consejo. */
+export const MIN_GAIN_PER_TRADE = 0.5;
 
 /** Jornadas tras las que el juego abre una ventana de cambios ilimitados en la
  *  fase regular (tras la 6, 13, 18, 23, 28 y 34). En playoffs, siempre. */
@@ -545,6 +550,7 @@ export function planTrades(
   budget = DEFAULT_BUDGET,
   maxTrades: number = TRADES_PER_ROUND,
   beam = 5,
+  minGainPerTrade = MIN_GAIN_PER_TRADE,
 ): TradePlan {
   const pools: Record<string, Player[]> = { G: [], F: [], C: [], E: [] };
   for (const player of market) if (player.position && fichable(player)) pools[player.position]?.push(player);
@@ -765,6 +771,7 @@ export function planTrades(
   // cuestan dinero, cualquiera cabe, porque juntos caben. Las parejas van
   // juntas y con la venta barata delante.
   const steps: TradeStep[] = [];
+  const before_: Lineup[] = [];
   let current = origin;
   const pending = [...best.path];
   while (pending.length) {
@@ -773,7 +780,9 @@ export function planTrades(
     let pickGain = -Infinity;
     pending.forEach((move, index) => {
       const next = apply(current, move);
-      if (lineupSpent(next) > budget + BUDGET_EPS) return;
+      // Cada paso tiene que ser válido por sí solo: el juego no deja pasarse
+      // del presupuesto ni tener siete de un club ni un momento.
+      if (lineupSpent(next) > budget + BUDGET_EPS || !clubsOk(next)) return;
       const gain = lineupScore(next) - base;
       if (gain > pickGain) {
         pick = index;
@@ -788,9 +797,20 @@ export function planTrades(
         return { out, in: incoming, costDelta: Number(((incoming.price ?? 0) - (out.price ?? 0)).toFixed(2)) };
       })
       .sort((x, y) => x.costDelta - y.costDelta);
+    before_.push(current);
     current = apply(current, move);
     const scored = lineupScore(current);
     steps.push({ trades, gain: Number((scored - base).toFixed(2)), scored: Number(scored.toFixed(2)) });
+  }
+  // Los pasos que casi no ganan se quitan por el final: por el orden de arriba
+  // son los últimos, y quitarlos no deja a ninguno anterior sin dinero.
+  while (steps.length) {
+    const last = steps[steps.length - 1] as TradeStep;
+    const previous = before_[before_.length - 1] ?? origin;
+    if (last.gain >= minGainPerTrade * last.trades.length || !clubsOk(previous)) break;
+    steps.pop();
+    before_.pop();
+    current = previous;
   }
 
   return {
@@ -798,7 +818,7 @@ export function planTrades(
     steps,
     before: Number(before.toFixed(2)),
     after: Number(lineupScore(current).toFixed(2)),
-    used: best.path.reduce((sum, move) => sum + move.length, 0),
+    used: steps.reduce((sum, step) => sum + step.trades.length, 0),
     spent: Number(lineupSpent(current).toFixed(2)),
   };
 }
