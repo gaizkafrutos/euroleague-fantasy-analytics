@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import FixtureMatrix from "@/components/advanced/FixtureMatrix";
 import { getTeam, meta, teams } from "@/lib/data";
 import { num, signed } from "@/lib/format";
 import type { Team } from "@/lib/types";
@@ -122,6 +123,17 @@ export default function TeamsPage() {
         Reconstruidos desde los boxscores oficiales de {withHistory} clubes.{" "}
         <Link href="/metodologia">Cómo se calcula</Link>.
       </p>
+
+      <section className="eq-calendar" id="calendario">
+        <div className="eq-section-head">
+          <h2>Calendario fantasy</h2>
+          <p>
+            Las próximas cinco jornadas de cada club, pintadas por lo que concede cada rival. Arriba,
+            los calendarios más amables para fichar a sus jugadores.
+          </p>
+        </div>
+        <FixtureMatrix teams={teams} league={meta.league?.allowed ?? null} />
+      </section>
     </section>
   );
 }

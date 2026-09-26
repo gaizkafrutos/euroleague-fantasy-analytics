@@ -204,3 +204,20 @@ def test_el_censo_actual_gana_al_anterior():
     prior = [official("999", "LARKIN, SHANE", "IST")]
     result = real_matcher(prior=prior).match(7, "S. Larkin", "FBT")
     assert result.person_code == "102"
+
+
+def test_fuera_del_club_el_apellido_tiene_que_coincidir_entero():
+    """Falso positivo real (jornada 1): "N. Boungou-Colo" (París) se cruzaba con
+    "DE COLO, NANDO" del censo del año pasado porque compartían COLO y la N."""
+    prior = [official("300", "DE COLO, NANDO", "ASV")]
+    result = real_matcher(prior=prior).match(8, "N. Boungou-colo", "BJK")
+    assert result.person_code is None
+    assert result.method == "unmatched"
+
+
+def test_pasaporte_con_nombre_y_apellido_cruzados_se_corrige_con_override():
+    """Tyrese Martin (Barça): el censo trae passportSurname=TYRESE JEFFREY. No se
+    adivina: se fija en player_overrides.csv, que gana siempre."""
+    roster = REAL_ROSTER + [official("015138", "MARTIN, TYRESE", "BAR")]
+    matcher = PlayerMatcher(roster, build_club_alias_map(REAL_CLUBS), {11501: "015138"})
+    assert matcher.match(11501, "T. Martin", "BAR").person_code == "015138"

@@ -27,6 +27,27 @@ export const MAX_PER_CLUB = 6;
 export const ALLOWED_FORMATIONS = ["2-2-1", "1-2-2", "2-1-2", "1-3-1", "3-1-1"] as const;
 export const DEFAULT_BUDGET = 100;
 
+/* ---------------------------------------------------------- disponibilidad */
+
+/** De baja para la próxima jornada según el parte (o una corrección manual). */
+export function isOut(player: Player): boolean {
+  return player.availability?.level === "out";
+}
+
+/** Fichable esta jornada: ni de baja ni sin inscribir en la Euroliga. */
+export function isSignable(player: Player): boolean {
+  return !isOut(player) && player.registered !== false;
+}
+
+/** Lo que de verdad va a puntuar: un jugador de baja proyecta 0 aunque su
+ *  media sea 20. Todo el cálculo de la consola (roles, puntuación, fichajes)
+ *  pasa por aquí, así que tener a un lesionado en el quinteto se nota en la
+ *  cifra en vez de esconderse. */
+export function effectiveProjection(player: Player | null | undefined): number {
+  if (!player) return 0;
+  return isOut(player) ? 0 : (player.projectedFp ?? 0);
+}
+
 /* ------------------------------------------------------------------ roles */
 
 export interface Roles {
@@ -54,7 +75,7 @@ export interface Roles {
  *  lo compara con una búsqueda exhaustiva sobre 300 plantillas aleatorias.
  */
 export function assignRoles(players: Player[]): Roles {
-  const ranked = [...players].sort((a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0));
+  const ranked = [...players].sort((a, b) => effectiveProjection(b) - effectiveProjection(a));
   const positions = ["G", "F", "C"] as const;
   const needed = positions.filter((p) => ranked.some((player) => player.position === p));
   const top = ranked.slice(0, FULL_SCORERS);
@@ -65,7 +86,7 @@ export function assignRoles(players: Player[]): Roles {
     .filter((player): player is Player => Boolean(player));
   const rest = ranked.filter((player) => !mandatory.includes(player));
   const full = [...mandatory, ...rest.slice(0, Math.max(FULL_SCORERS - mandatory.length, 0))].sort(
-    (a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0),
+    (a, b) => effectiveProjection(b) - effectiveProjection(a),
   );
 
   let sixth: Player | null = null;
@@ -97,7 +118,7 @@ export function formationOf(starters: Player[]): string {
 
 /** Lo que puntúa la plantilla con el baremo real, entrenador incluido. */
 export function scoredProjection(roles: Roles, coach: Player | null): number {
-  const p = (player: Player | null | undefined) => player?.projectedFp ?? 0;
+  const p = effectiveProjection;
   const full = roles.starters.reduce((sum, player) => sum + p(player), 0) + p(roles.sixth);
   const half = roles.bench.reduce((sum, player) => sum + p(player), 0) * 0.5;
   // El capitán ya está sumado una vez dentro del quinteto: se añade otra.
@@ -120,6 +141,9 @@ export interface SquadCheck {
   /** Con el baremo real: capitán ×2, banquillo ×0,5, entrenador al 100 %. */
   scored: number;
   roles: Roles;
+  /** Jugadores de la plantilla con aviso de disponibilidad, de baja primero.
+   *  No invalidan la plantilla (el juego te deja tenerlos), pero se dicen. */
+  alerts: Player[];
 }
 
 export function checkSquad(
@@ -136,7 +160,7 @@ export function checkSquad(
     if (player.position) counts[player.position] = (counts[player.position] ?? 0) + 1;
     if (player.club) clubCounts[player.club] = (clubCounts[player.club] ?? 0) + 1;
     spent += player.price ?? 0;
-    projection += player.projectedFp ?? 0;
+    projection += effectiveProjection(player);
   }
   // El entrenador NO cuenta para el máximo de seis por club: el reglamento
   // habla de jugadores, y el optimizador del pipeline tampoco lo cuenta. Si el
@@ -160,6 +184,13 @@ export function checkSquad(
 
   const roles = assignRoles(squad);
   const complete = squad.length === SQUAD_SIZE && coach !== null;
+  const severity = { out: 0, doubt: 1, probable: 2 } as const;
+  const alerts = squad
+    .filter((player) => player.availability && player.availability.level !== "probable")
+    .sort(
+      (a, b) =>
+        severity[a.availability?.level ?? "probable"] - severity[b.availability?.level ?? "probable"],
+    );
 
   return {
     valid: problems.length === 0 && complete,
@@ -172,6 +203,7 @@ export function checkSquad(
     projection: Number(projection.toFixed(2)),
     scored: Number(scoredProjection(roles, coach).toFixed(2)),
     roles,
+    alerts,
   };
 }
 
@@ -184,6 +216,8 @@ export interface Swap {
    *  jugador que acaba en el banquillo solo suma la mitad. */
   gain: number;
   costDelta: number;
+  /** El que entra está en duda: el fichaje puede no puntuar. */
+  risky: boolean;
 }
 
 /** Para cada jugador de la plantilla, el recambio asequible de su puesto que
@@ -209,8 +243,11 @@ export function suggestSwaps(
       if (owned.has(candidate.id)) continue;
       if (candidate.position !== player.position) continue;
       if ((candidate.price ?? Infinity) > ceiling) continue;
-      // Poda barata: si no proyecta más, no puede subir la puntuación.
-      if ((candidate.projectedFp ?? 0) <= (player.projectedFp ?? 0)) continue;
+      // Nunca se recomienda fichar a alguien de baja o sin inscribir.
+      if (!isSignable(candidate)) continue;
+      // Poda barata: si no proyecta más, no puede subir la puntuación. Un
+      // jugador propio de baja proyecta 0, así que cualquier sano lo mejora.
+      if (effectiveProjection(candidate) <= effectiveProjection(player)) continue;
 
       const clubCount =
         (check.clubCounts[candidate.club ?? ""] ?? 0) - (candidate.club === player.club ? 1 : 0);
@@ -230,6 +267,7 @@ export function suggestSwaps(
         in: best,
         gain: Number(bestGain.toFixed(2)),
         costDelta: Number(((best.price ?? 0) - (player.price ?? 0)).toFixed(2)),
+        risky: best.availability?.level === "doubt",
       });
     }
   }
@@ -268,7 +306,10 @@ export function buildSquad(
   const playerBudget = budget - coachFloor;
 
   const pool = market
-    .filter((player) => player.position && (player.price ?? 0) > 0 && player.projectedFp != null)
+    .filter(
+      (player) =>
+        player.position && (player.price ?? 0) > 0 && player.projectedFp != null && isSignable(player),
+    )
     .sort((a, b) => (b.projectedFp ?? 0) / (b.price ?? 1) - (a.projectedFp ?? 0) / (a.price ?? 1));
 
   const cheapest: Record<string, number[]> = { G: [], F: [], C: [] };

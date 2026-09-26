@@ -20,6 +20,7 @@ from typing import Any
 from efa.clients import EuroleagueClient
 from efa.config import (
     DATA_DIR,
+    EUROLEAGUE_API_BASE,
     PRIOR_SEASON_CODE,
     SEASON_CODE,
     boxscores_path,
@@ -125,6 +126,64 @@ def ingest_boxscores(
         "cached": len(played) - len(pending),
         "failed": len(failed),
     }
+
+
+STATS_FILE = "stats_players.json"
+STATS_KINDS = ("traditional", "advanced", "misc", "scoring")
+
+
+def ingest_player_stats(season_code: str = SEASON_CODE) -> dict[str, int]:
+    """Estadísticas avanzadas OFICIALES por jugador (v3): TS%, eFG%, % de
+    rebote, ratio de asistencias y pérdidas, posesiones, dobles-dobles…
+
+    El endpoint es caprichoso con las mayúsculas de sus parámetros: según la
+    temporada y el tipo, uno de los dos juegos devuelve una lista vacía. Se
+    prueban los dos y se queda el que trae filas.
+    """
+    import requests
+
+    base = f"{EUROLEAGUE_API_BASE.replace('/v2', '/v3')}/competitions/E/statistics/players"
+    headers = {"Accept": "application/json", "User-Agent": "euroleague-fantasy-analytics/1.0"}
+    out: dict[str, list[dict[str, Any]]] = {}
+    for kind in STATS_KINDS:
+        best: list[dict[str, Any]] = []
+        # La CDN de delante cachea respuestas vacías al azar: tres intentos por
+        # combinación, con un parámetro que cambia para saltarse esa caché.
+        attempts = [("SeasonMode", "SeasonCode"), ("seasonMode", "seasonCode")] * 3
+        for attempt, (mode_key, code_key) in enumerate(attempts):
+            if best:
+                break
+            params = {mode_key: "Single", code_key: season_code, "statisticMode": "perGame",
+                      "limit": 1000, "_": f"{int(time.time())}{attempt}"}
+            try:
+                response = requests.get(f"{base}/{kind}", params=params, headers=headers, timeout=30)
+                rows = response.json().get("players", []) if response.ok else []
+            except (requests.RequestException, ValueError):
+                rows = []
+            if len(rows) > len(best):
+                best = rows
+            time.sleep(0.6)
+        # Del objeto `player` (foto, club, edad…) solo hace falta la llave.
+        out[kind] = [
+            {**{k: v for k, v in row.items() if k != "player"},
+             "player": {"code": (row.get("player") or {}).get("code"),
+                        "name": (row.get("player") or {}).get("name"),
+                        "team": ((row.get("player") or {}).get("team") or {}).get("code")}}
+            for row in best
+        ]
+    # La API a veces devuelve una lista vacía donde ayer había datos: no se
+    # pisa lo bueno con nada.
+    previous = load_player_stats(season_code)
+    for kind in STATS_KINDS:
+        if not out.get(kind) and previous.get(kind):
+            out[kind] = previous[kind]
+    if any(out.values()):
+        _write_json(season_dir(season_code) / STATS_FILE, out)
+    return {kind: len(rows) for kind, rows in out.items()}
+
+
+def load_player_stats(season_code: str = SEASON_CODE) -> dict[str, list[dict[str, Any]]]:
+    return _read_json(season_dir(season_code) / STATS_FILE, {})
 
 
 def save_boxscores(season_code: str, store: dict[int, dict[str, Any]]) -> Path:
@@ -251,13 +310,35 @@ def ingest_all(
     with_boxscores: bool = True,
 ) -> dict[str, Any]:
     """Ingesta completa: temporada actual y, opcionalmente, la anterior."""
+    from efa.ingest.playbyplay import ingest_playbyplay
+
     summary: dict[str, Any] = {season_code: ingest_reference(season_code)}
     if with_boxscores:
         summary[season_code]["boxscores"] = ingest_boxscores(season_code)
+        # Jugada a jugada, tiros y avanzadas oficiales: extras, no bloquean el
+        # resto si alguna API cae.
+        try:
+            summary[season_code]["playbyplay"] = ingest_playbyplay(season_code)
+        except Exception as exc:  # noqa: BLE001
+            log.warning("Jugada a jugada de %s no disponible: %s", season_code, exc)
+        try:
+            summary[season_code]["playerStats"] = ingest_player_stats(season_code)
+        except Exception as exc:  # noqa: BLE001
+            log.warning("Avanzadas oficiales de %s no disponibles: %s", season_code, exc)
 
     if prior_season_code and prior_season_code != season_code:
         summary[prior_season_code] = ingest_reference(prior_season_code)
         if with_boxscores:
             summary[prior_season_code]["boxscores"] = ingest_boxscores(prior_season_code)
+            try:
+                summary[prior_season_code]["playbyplay"] = ingest_playbyplay(prior_season_code)
+            except Exception as exc:  # noqa: BLE001
+                log.warning("Jugada a jugada de %s no disponible: %s", prior_season_code, exc)
+            # La temporada anterior ya no cambia: se descarga una vez.
+            if not load_player_stats(prior_season_code):
+                try:
+                    summary[prior_season_code]["playerStats"] = ingest_player_stats(prior_season_code)
+                except Exception as exc:  # noqa: BLE001
+                    log.warning("Avanzadas oficiales de %s no disponibles: %s", prior_season_code, exc)
 
     return summary

@@ -309,14 +309,23 @@ class PlayerMatcher:
         surname: frozenset[str],
         initials: frozenset[str],
         pool: list[OfficialPlayer],
+        *,
+        strict: bool = False,
     ) -> OfficialPlayer | None:
-        """Apellido + inicial del nombre: la llave que ambas fuentes producen exacta."""
+        """Apellido + inicial del nombre: la llave que ambas fuentes producen exacta.
+
+        Dentro de un club basta con que los apellidos compartan un token
+        (apellidos compuestos, partículas). Fuera del club —toda la liga o el
+        censo del año pasado— eso es demasiado laxo: "N. Boungou-Colo" (París)
+        acababa emparejado con "DE COLO, NANDO" porque comparten COLO y la N.
+        Con `strict` el apellido tiene que coincidir entero.
+        """
         if not surname:
             return None
         hits = [
             p
             for p in pool
-            if (p.surname == surname or (p.surname & surname))
+            if (p.surname == surname or (not strict and (p.surname & surname)))
             and (not initials or not p.given_initials or (initials & p.given_initials))
         ]
         return hits[0] if len(hits) == 1 else None
@@ -431,7 +440,9 @@ class PlayerMatcher:
                 return result(hit, "fuzzy-club", score)
 
         # 5. Sin restringir club: cubre fichajes que el censo aún no refleja.
-        if (hit := self._by_surname_initial(surname, given_initials, self.players)) is not None:
+        if (
+            hit := self._by_surname_initial(surname, given_initials, self.players, strict=True)
+        ) is not None:
             return result(hit, "initial-open", 93.0)
         if (hit := self._exact(tokens, self.players)) is not None:
             return result(hit, "exact-open", 92.0)
@@ -439,7 +450,9 @@ class PlayerMatcher:
         # 6. Censo de la temporada anterior, para cuando el actual va a medias.
         if self.prior_players:
             if (
-                hit := self._by_surname_initial(surname, given_initials, self.prior_players)
+                hit := self._by_surname_initial(
+                    surname, given_initials, self.prior_players, strict=True
+                )
             ) is not None:
                 return result(hit, "prior-season", 90.0)
 

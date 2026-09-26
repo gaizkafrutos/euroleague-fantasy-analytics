@@ -21,7 +21,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { Delta, PlayerCell } from "@/components/ui/primitives";
+import ScoreRange from "@/components/advanced/ScoreRange";
+import SquadSearch from "@/components/team/SquadSearch";
+import { sdOf, squadRange } from "@/lib/advanced";
+import { AvailabilityTag, Delta, PlayerCell } from "@/components/ui/primitives";
 import { credits, displayName, num, positionLabel, signed } from "@/lib/format";
 import {
   DEFAULT_BUDGET,
@@ -31,6 +34,7 @@ import {
   STARTERS,
   buildSquad,
   checkSquad,
+  effectiveProjection,
   extractRosterIds,
   formationOf,
   positionWord,
@@ -71,7 +75,6 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
   const [coachId, setCoachId] = useState<number | null>(null);
   const [budget, setBudget] = useState(DEFAULT_BUDGET);
   const [roster, setRoster] = useState<RosterState>({ status: "idle" });
-  const [picker, setPicker] = useState("");
   const [restored, setRestored] = useState(false);
 
   const byId = useMemo(
@@ -93,18 +96,34 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
     [squad, market, budget, coach],
   );
 
+  // Un jugador de baja rinde 0 por crédito esta jornada, aunque su media sea
+  // buena: va el primero de la lista.
   const weakest = useMemo(
     () =>
       [...squad]
-        .filter((player) => (player.perf.gamesPlayed ?? 0) > 0)
-        .sort(
-          (a, b) =>
-            (a.valueProjected ?? a.valuePerCredit ?? 0) -
-            (b.valueProjected ?? b.valuePerCredit ?? 0),
-        )
+        .filter((player) => (player.perf.gamesPlayed ?? 0) > 0 || player.availability?.level === "out")
+        .sort((a, b) => rentOf(a) - rentOf(b))
         .slice(0, 3),
     [squad],
   );
+
+  // Horquilla de la jornada: cada jugador con su multiplicador real.
+  const range = useMemo(() => {
+    if (!squad.length) return null;
+    const entries = [
+      ...roles.starters.map((player) => ({
+        player,
+        multiplier: player.id === roles.captain?.id ? 2 : 1,
+      })),
+      ...(roles.sixth ? [{ player: roles.sixth, multiplier: 1 }] : []),
+      ...roles.bench.map((player) => ({ player, multiplier: 0.5 })),
+      ...(coach ? [{ player: coach, multiplier: 1 }] : []),
+    ].map(({ player, multiplier }) => {
+      const mean = effectiveProjection(player);
+      return { multiplier, mean, sd: sdOf(player, mean) };
+    });
+    return squadRange(entries);
+  }, [squad.length, roles, coach]);
 
   const topClub = useMemo(() => {
     const entries = Object.entries(check.clubCounts).sort((a, b) => b[1] - a[1]);
@@ -185,7 +204,6 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
       if (ids.includes(id) || ids.length >= SQUAD_SIZE) return;
       setIds((previous) => [...previous, id]);
     }
-    setPicker("");
   }
 
   function remove(id: number) {
@@ -211,26 +229,6 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
     setIds([]);
     setCoachId(null);
   }
-
-  const candidates = useMemo(() => {
-    const needed = (Object.keys(QUOTA) as Array<keyof typeof QUOTA>).filter(
-      (position) => (check.counts[position] ?? 0) < QUOTA[position],
-    );
-    if (ids.length >= SQUAD_SIZE) return [];
-    return market
-      .filter((player) => !ids.includes(player.id))
-      .filter((player) => !needed.length || needed.includes(player.position as keyof typeof QUOTA))
-      .sort((a, b) => (b.bargainScore ?? 0) - (a.bargainScore ?? 0))
-      .slice(0, 200);
-  }, [market, ids, check.counts]);
-
-  const coachOptions = useMemo(
-    () =>
-      [...coaches]
-        .filter((candidate) => candidate.id !== coachId)
-        .sort((a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0)),
-    [coaches, coachId],
-  );
 
   const full = squad.length >= SQUAD_SIZE && coach !== null;
   const optimalScored = optimal?.scored ?? null;
@@ -344,6 +342,22 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
         </div>
       </dl>
 
+      {range && squad.length >= 5 ? (
+        <section className="cancha-range" aria-labelledby="horquilla">
+          <div className="cancha-section-head">
+            <h2 id="horquilla">Horquilla de la jornada</h2>
+            <p>
+              La proyección es una media; la jornada, una tirada. Cada jugador con su dispersión
+              y su multiplicador.
+            </p>
+          </div>
+          <ScoreRange
+            range={range}
+            optimal={budget === DEFAULT_BUDGET && full ? optimalScored : null}
+          />
+        </section>
+      ) : null}
+
       {check.problems.length ? (
         <ul className="notice cancha-problems">
           {check.problems.map((problem) => (
@@ -352,42 +366,30 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
         </ul>
       ) : null}
 
+      {check.alerts.length ? (
+        <ul className="notice cancha-alerts" aria-label="Avisos de disponibilidad">
+          {check.alerts.map((player) => (
+            <li key={player.id}>
+              <AvailabilityTag player={player} />
+              <b>{displayName(player)}</b>
+              <span>
+                {player.availability?.label}
+                {player.availability?.level === "out" ? ": esta jornada cuenta como 0." : "."}
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+
       {/* ---------------------------------------------------------- fichar */}
-      <div className="cancha-pickers">
-        <label className="control">
-          <span className="control-label">Añadir jugador</span>
-          <select
-            className="select"
-            value={picker}
-            onChange={(event) => add(Number(event.target.value))}
-            disabled={ids.length >= SQUAD_SIZE}
-          >
-            <option value="">
-              {ids.length >= SQUAD_SIZE ? "Diez jugadores: completo" : "Elige…"}
-            </option>
-            {candidates.map((player) => (
-              <option key={player.id} value={player.id}>
-                {displayName(player)} · {player.position} · {player.clubShort} ·{" "}
-                {credits(player.price)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="control">
-          <span className="control-label">
-            {coach ? "Cambiar entrenador" : "Elegir entrenador"}
-          </span>
-          <select className="select" value="" onChange={(event) => add(Number(event.target.value))}>
-            <option value="">Elige…</option>
-            {coachOptions.map((candidate) => (
-              <option key={candidate.id} value={candidate.id}>
-                {displayName(candidate)} · {candidate.clubShort} · {credits(candidate.price)} ·{" "}
-                {num(candidate.projectedFp)} pts
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+      <SquadSearch
+        market={market}
+        coaches={coaches}
+        ids={ids}
+        coach={coach}
+        check={check}
+        onAdd={add}
+      />
 
       {squad.length || coach ? (
         <>
@@ -503,7 +505,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
         </>
       ) : (
         <p className="muted cancha-empty">
-          Añade jugadores desde el selector, carga tu equipo real o deja que lo rellene el
+          Busca y ficha jugadores arriba, carga tu equipo real o deja que lo rellene el
           optimizador.
         </p>
       )}
@@ -529,7 +531,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                         lo convierte en un mal jugador, y pintarlo de alarma
                         dice algo que el dato no dice. El orden ya ordena. */}
                     <span className="rank-value">
-                      {num(player.valueProjected ?? player.valuePerCredit, 2)}
+                      {num(rentOf(player), 2)}
                       <span className="muted" style={{ fontSize: "0.7em", fontWeight: 500 }}>
                         {" "}
                         pts/cr
@@ -552,7 +554,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
                   Mejor recambio por puesto dentro de tus {credits(Math.max(check.free, 0))} libres
                   más lo que recuperas al vender. La ganancia es la real: si el fichaje acaba en el
-                  banquillo, suma la mitad.
+                  banquillo, suma la mitad. Nunca propone a nadie de baja o sin inscribir.
                 </p>
               </div>
             </div>
@@ -563,6 +565,9 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                     <div className="swap-move">
                       <span className="swap-out">
                         <span className="muted">Sale</span> {displayName(swap.out)}
+                        {swap.out.availability?.level === "out" ? (
+                          <AvailabilityTag player={swap.out} />
+                        ) : null}
                       </span>
                       <span className="swap-arrow" aria-hidden>
                         →
@@ -573,6 +578,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                           {swap.in.clubShort} · {positionLabel(swap.in.position)} ·{" "}
                           {credits(swap.in.price)}
                         </i>
+                        {swap.risky ? <AvailabilityTag player={swap.in} full /> : null}
                       </span>
                     </div>
                     {/* La ganancia es la razón por la que se lee esta tarjeta:
@@ -618,7 +624,7 @@ function Token({
 }) {
   const name = displayName(player);
   const surname = name.includes(" ") ? name.slice(name.indexOf(" ") + 1) : name;
-  const projection = player.projectedFp ?? null;
+  const projection = player.projectedFp === null ? null : effectiveProjection(player);
   const shown =
     projection === null
       ? null
@@ -639,7 +645,7 @@ function Token({
     <div
       className={`tok pos-${isCoach ? "E" : (player.position ?? "X")}${
         role === "bench" ? " is-bench" : ""
-      }${isCoach ? " is-coach" : ""}${className}`}
+      }${isCoach ? " is-coach" : ""}${player.availability?.level === "out" ? " is-out" : ""}${className}`}
     >
       {role === "captain" ? <span className="cap-badge">Capitán ×2</span> : null}
       <button
@@ -675,6 +681,11 @@ function Token({
           )}
         </div>
         <div className="tok-sub">{sub}</div>
+        {player.availability ? (
+          <div className="tok-avail">
+            <AvailabilityTag player={player} />
+          </div>
+        ) : null}
         <div className="tok-figs">
           <span className="tok-proj num">{num(shown)}</span>
           <span className="tok-price num">{credits(player.price)}</span>
@@ -715,7 +726,7 @@ function Contribution({
   coach: Player | null;
 }) {
   const { roles } = check;
-  const p = (player: Player | null | undefined) => player?.projectedFp ?? 0;
+  const p = effectiveProjection;
   const captainPts = p(roles.captain) * 2;
   const restPts = roles.starters
     .filter((player) => player.id !== roles.captain?.id)
@@ -800,4 +811,10 @@ function Contribution({
       </div>
     </section>
   );
+}
+
+/** Puntos por crédito que rinde esta jornada: 0 si está de baja. */
+function rentOf(player: Player): number {
+  if (player.availability?.level === "out") return 0;
+  return player.valueProjected ?? player.valuePerCredit ?? 0;
 }

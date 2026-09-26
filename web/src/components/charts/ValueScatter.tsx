@@ -11,7 +11,8 @@
 
 import { useMemo, useState } from "react";
 
-import { credits, num, positionLabel } from "@/lib/format";
+import { breakEvenAt } from "@/lib/advanced";
+import { credits, num, positionLabel, signed } from "@/lib/format";
 import type { Player } from "@/lib/types";
 import { CHART_MARGIN, extent, linearScale, ticks } from "./scales";
 
@@ -57,14 +58,17 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
     return { x, y, xDomain, yDomain };
   }, [points, height]);
 
-  /** Recta de referencia: el rendimiento medio que el mercado da por crédito. */
+  /** Recta de referencia: el umbral de revalorización. Es la que el juego usa
+   *  de verdad para mover precios (plus = a·puntos + b·precio + c), así que por
+   *  encima de ella un jugador sube si rinde lo que proyecta, y por debajo baja.
+   *  Sustituye a la "media del mercado", que no movía ningún precio. */
   const reference = useMemo(() => {
     if (points.length < 5) return null;
-    const totalPrice = points.reduce((sum, p) => sum + (p.price as number), 0);
-    const totalProjection = points.reduce((sum, p) => sum + (p.projectedFp as number), 0);
-    const slope = totalProjection / totalPrice;
     const [x0, x1] = geometry.xDomain;
-    return { slope, x0, x1 };
+    const y0 = breakEvenAt(x0);
+    const y1 = breakEvenAt(x1);
+    if (y0 === null || y1 === null) return null;
+    return { x0, x1, y0, y1 };
   }, [points, geometry]);
 
   /** Etiquetas directas de los mejores ratios, saltándose las que se pisarían.
@@ -143,24 +147,31 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
           y2={height - CHART_MARGIN.bottom}
         />
 
-        {/* Precio justo según el mercado */}
+        {/* Umbral de revalorización */}
         {reference ? (
           <>
             <line
               x1={x(reference.x0)}
               x2={x(reference.x1)}
-              y1={y(reference.slope * reference.x0)}
-              y2={y(reference.slope * reference.x1)}
-              stroke="var(--axis)"
+              y1={y(reference.y0)}
+              y2={y(reference.y1)}
+              stroke="var(--fantasy)"
               strokeWidth={1.5}
-              strokeDasharray="5 4"
+              opacity={0.8}
             />
             <text
               x={x(reference.x1) - 6}
-              y={y(reference.slope * reference.x1) - 8}
+              y={y(reference.y1) - 8}
               textAnchor="end"
+              fill="var(--ink-2)"
             >
-              precio justo del mercado
+              umbral de revalorización
+            </text>
+            <text x={x(reference.x0) + 6} y={CHART_MARGIN.top + 10} fill="var(--ink-muted)">
+              ↑ se revaloriza
+            </text>
+            <text x={x(reference.x1) - 6} y={height - CHART_MARGIN.bottom - 8} textAnchor="end" fill="var(--ink-muted)">
+              pierde valor ↓
             </text>
           </>
         ) : null}
@@ -228,6 +239,12 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
           <div className="num muted">
             {num(hover.player.valueProjected, 2)} pts por crédito
           </div>
+          {hover.player.outlook ? (
+            <div className="num muted">
+              umbral {num(hover.player.outlook.breakEven)} · precio{" "}
+              {signed(hover.player.outlook.expectedChange)} cr
+            </div>
+          ) : null}
         </div>
       ) : null}
 
@@ -238,7 +255,10 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
             {positionLabel(position)}
           </span>
         ))}
-        <span className="muted">Por encima de la línea: rinde más de lo que cuesta.</span>
+        <span className="muted">
+          <i className="legend-line" aria-hidden /> Umbral: por encima, sube de precio si rinde lo
+          proyectado.
+        </span>
       </div>
     </div>
   );

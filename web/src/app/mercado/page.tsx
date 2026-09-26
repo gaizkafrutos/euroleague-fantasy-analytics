@@ -13,6 +13,7 @@ import { PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
 import { credits, displayName, num, percent } from "@/lib/format";
+import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -24,22 +25,58 @@ export const metadata: Metadata = {
 
 export default function MercadoPage() {
   const universe = meta.hasPrices ? pricedPlayers : rosterPlayers;
-  const details = detailsJson as unknown as Record<string, { recent: Array<{ fp: number }> }>;
+  // Solo la serie de puntos de cada uno: details.json entero pesa más de un
+  // megabyte y viajaría serializado dentro de la página.
+  const details = Object.fromEntries(
+    Object.entries(detailsJson as unknown as Record<string, { recent: Array<{ fp: number }> }>).map(
+      ([id, detail]) => [id, { recent: detail.recent.map((game) => ({ fp: game.fp })) }],
+    ),
+  );
 
+  // Las señales se adaptan al punto de la temporada: con una jornada jugada no
+  // hay "últimas cinco", y exigirlas dejaba las tres listas vacías hasta
+  // octubre. Hasta la J5, el rol se mide contra la temporada anterior y la
+  // fiabilidad sale de la dispersión que ya usa la proyección.
+  const roundsPlayed = Math.max(meta.currentRound - 1, 0);
+  const early = roundsPlayed < 5;
+  const minGames = Math.min(5, Math.max(1, roundsPlayed));
+
+  // Un chollo de baja no es un chollo: no se recomienda a quien no va a jugar.
   const topBargains = [...universe]
-    .filter((player) => (player.perf.gamesPlayed ?? 0) >= 5)
+    .filter((player) => (player.perf.gamesPlayed ?? 0) >= minGames && isSignable(player))
     .sort((a, b) => (b.bargainScore ?? 0) - (a.bargainScore ?? 0))
     .slice(0, 5);
 
-  const risingRole = [...universe]
-    .filter((player) => (player.perf.gamesPlayed ?? 0) >= 5)
-    .sort((a, b) => (b.perf.minutesShareTrend ?? 0) - (a.perf.minutesShareTrend ?? 0))
-    .slice(0, 5);
+  const minutesGain = (player: Player) =>
+    (player.perf.minutesAvg ?? 0) - (player.perf.minutesPrior ?? player.perf.minutesAvg ?? 0);
+  const risingRole = early
+    ? [...universe]
+        .filter(
+          (player) =>
+            (player.perf.gamesPlayed ?? 0) >= 1 &&
+            typeof player.perf.minutesPrior === "number" &&
+            isSignable(player),
+        )
+        .sort((a, b) => minutesGain(b) - minutesGain(a))
+        .slice(0, 5)
+    : [...universe]
+        .filter((player) => (player.perf.gamesPlayed ?? 0) >= 5)
+        .sort((a, b) => (b.perf.minutesShareTrend ?? 0) - (a.perf.minutesShareTrend ?? 0))
+        .slice(0, 5);
 
-  const mostConsistent = [...universe]
-    .filter((player) => (player.perf.gamesPlayed ?? 0) >= 10 && (player.perf.fpAvg ?? 0) >= 10)
-    .sort((a, b) => (b.perf.consistency ?? 0) - (a.perf.consistency ?? 0))
-    .slice(0, 5);
+  const reliability = (player: Player) =>
+    player.outlook && (player.projectedFp ?? 0) > 0
+      ? Math.max(0, 1 - player.outlook.sd / (player.projectedFp ?? 1))
+      : 0;
+  const mostConsistent = early
+    ? [...universe]
+        .filter((player) => (player.projectedFp ?? 0) >= 10 && isSignable(player))
+        .sort((a, b) => reliability(b) - reliability(a))
+        .slice(0, 5)
+    : [...universe]
+        .filter((player) => (player.perf.gamesPlayed ?? 0) >= 10 && (player.perf.fpAvg ?? 0) >= 10)
+        .sort((a, b) => (b.perf.consistency ?? 0) - (a.perf.consistency ?? 0))
+        .slice(0, 5);
 
   const isBaseline = meta.performanceSource.isBaseline;
   const hasLineup = Boolean(lineup.available && lineup.players);
@@ -85,7 +122,9 @@ export default function MercadoPage() {
             <h2>Las tres señales de la semana</h2>
           </div>
           <p className="card-note" style={{ margin: 0 }}>
-            Requieren al menos cinco partidos jugados para entrar en el ranking.
+            {early
+              ? `Con ${roundsPlayed} ${roundsPlayed === 1 ? "jornada jugada" : "jornadas jugadas"}, el rol se compara con la temporada pasada y la fiabilidad sale de la dispersión que usa la proyección.`
+              : "Requieren al menos cinco partidos jugados para entrar en el ranking."}
           </p>
         </div>
 
@@ -98,15 +137,23 @@ export default function MercadoPage() {
           />
           <RankCard
             title="Rol al alza"
-            note="Mayor ganancia de peso en los minutos de su equipo en las últimas jornadas."
+            note={
+              early
+                ? "Más minutos por partido que el año pasado: rol nuevo, o ganado."
+                : "Mayor ganancia de peso en los minutos de su equipo en las últimas jornadas."
+            }
             players={risingRole}
-            render={(player) => `+${num((player.perf.minutesShareTrend ?? 0) * 100, 1)} pp`}
+            render={(player) =>
+              early
+                ? `${minutesGain(player) >= 0 ? "+" : "−"}${num(Math.abs(minutesGain(player)))} min`
+                : `+${num((player.perf.minutesShareTrend ?? 0) * 100, 1)} pp`
+            }
           />
           <RankCard
             title="Los más fiables"
             note="Menor dispersión en su puntuación. Lo que se busca en un titular indiscutible."
             players={mostConsistent}
-            render={(player) => percent(player.perf.consistency)}
+            render={(player) => percent(early ? reliability(player) : player.perf.consistency)}
           />
         </div>
       </section>

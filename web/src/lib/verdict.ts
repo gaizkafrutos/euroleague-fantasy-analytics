@@ -96,7 +96,8 @@ export function verdictFor(player: Player): Verdict {
   }
 
   /* ------------------------------------------------------------------- regularidad */
-  if (typeof consistency === "number") {
+  // Con uno o dos partidos la "fiabilidad" es 0 por definición: no se juzga.
+  if (typeof consistency === "number" && games >= 3) {
     if (consistency >= 0.72) {
       signals.push({
         direction: 1,

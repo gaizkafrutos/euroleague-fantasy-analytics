@@ -222,3 +222,46 @@ def test_indice_de_chollo_entre_cero_y_cien():
     scores = bargain_score(table)
     assert scores.between(0, 100).all()
     assert scores.iloc[2] > scores.iloc[0]
+
+
+def _row(**overrides):
+    base = {
+        "fp_avg": 30.0, "form": 30.0, "games_played": 1, "games": 1, "club_games": 1,
+        "fpt": 30.0, "minutes_trend": 0.0, "fp_per_min": 1.0, "quotation": 10.0,
+        "prior_fp_avg": 10.0, "prior_games": 30,
+    }
+    base.update(overrides)
+    return base
+
+
+def test_un_partido_no_decide_la_proyeccion():
+    """Tras la jornada 1 la proyección era el partido de la jornada 1."""
+    table = pd.DataFrame([_row()])
+    # 1 partido frente a una previa de 5: 1/6 del partido, 5/6 del año pasado.
+    assert project_fantasy_points(table).iloc[0] == pytest.approx(30 * 1 / 6 + 10 * 5 / 6, abs=0.3)
+
+
+def test_sin_jugar_aun_proyecta_su_media_del_ano_pasado():
+    """Los clubes que todavía no habían jugado proyectaban 0 en bloque."""
+    table = pd.DataFrame([_row(fp_avg=0.0, form=0.0, games_played=0, games=0, club_games=0, fpt=0.0)])
+    assert project_fantasy_points(table).iloc[0] == pytest.approx(10.0)
+
+
+def test_no_convocado_con_su_club_jugando_rebaja_sin_llegar_a_cero():
+    table = pd.DataFrame([_row(fp_avg=0.0, form=0.0, games_played=0, games=0, club_games=1, fpt=0.0)])
+    # (0 + 2) / (1 + 2) de la previa.
+    assert project_fantasy_points(table).iloc[0] == pytest.approx(10.0 * 2 / 3, abs=0.05)
+
+
+def test_recien_llegado_usa_la_previa_de_su_precio():
+    veteranos = [_row(quotation=q, prior_fp_avg=1.5 * q - 3, games_played=0, games=0, club_games=0,
+                      fp_avg=0.0, form=0.0, fpt=0.0) for q in range(4, 20) for _ in range(2)]
+    nuevo = _row(quotation=12.0, prior_fp_avg=None, prior_games=None, fp_avg=40.0, form=40.0, fpt=40.0)
+    table = pd.DataFrame(veteranos + [nuevo])
+    esperado = 40 * 1 / 6 + (1.5 * 12 - 3) * 5 / 6
+    assert project_fantasy_points(table).iloc[-1] == pytest.approx(esperado, abs=0.3)
+
+
+def test_en_linea_base_no_hay_encogimiento():
+    table = pd.DataFrame([_row(fp_avg=20.0, form=20.0, games_played=30, games=30, club_games=30)])
+    assert project_fantasy_points(table, baseline=True).iloc[0] == pytest.approx(20.0)

@@ -1,55 +1,55 @@
 {
- "method": "greedy",
- "totalPrice": 98.6,
- "totalProjection": 237.4,
- "scoredProjection": 248.5,
- "captain": "7201",
+ "method": "ilp",
+ "totalPrice": 99.9,
+ "totalProjection": 130.15,
+ "scoredProjection": 152.06,
+ "captain": "3766",
  "starters": [
-  "7201",
+  "3766",
+  "3791",
   "3857",
-  "3874",
-  "11516",
-  "4247"
+  "4252",
+  "8846"
  ],
- "sixth": "3946",
+ "sixth": "3824",
  "bench": [
-  "11521",
-  "3883",
   "3836",
+  "11521",
+  "4012",
   "4061"
  ],
  "coach": {
-  "key": "3974",
-  "name": "GAVEL, ANTON",
+  "key": "4255",
+  "name": "ALBERT, XAVIER",
   "position": "E",
-  "club": "MUN",
-  "price": 5.0,
-  "projection": 10.0
+  "club": "PAM",
+  "price": 7.0,
+  "projection": 7.82
  },
  "players": [
   {
-   "key": "3874",
-   "name": "DORSEY, TYLER",
+   "key": "3791",
+   "name": "JONES, CARLIK",
+   "position": "G",
+   "club": "PAR",
+   "price": 13.6,
+   "projection": 21.12
+  },
+  {
+   "key": "4252",
+   "name": "MONTERO, JEAN",
    "position": "G",
    "club": "OLY",
-   "price": 12.6,
-   "projection": 31.9
+   "price": 12.8,
+   "projection": 19.46
   },
   {
-   "key": "4247",
-   "name": "JONES, CHRIS",
+   "key": "3824",
+   "name": "VILDOZA, LUCA",
    "position": "G",
-   "club": "RED",
-   "price": 12.1,
-   "projection": 25.0
-  },
-  {
-   "key": "3946",
-   "name": "OBST, ANDREAS",
-   "position": "G",
-   "club": "MUN",
-   "price": 10.2,
-   "projection": 20.9
+   "club": "PAR",
+   "price": 7.7,
+   "projection": 10.24
   },
   {
    "key": "11521",
@@ -57,23 +57,15 @@
    "position": "G",
    "club": "ASV",
    "price": 4.8,
-   "projection": 18.7
+   "projection": 5.78
   },
   {
-   "key": "7201",
-   "name": "BACON, DWAYNE",
+   "key": "3766",
+   "name": "VEZENKOV, SASHA",
    "position": "F",
-   "club": "DUB",
-   "price": 12.7,
-   "projection": 34.1
-  },
-  {
-   "key": "11516",
-   "name": "CROWDER, JAE",
-   "position": "F",
-   "club": "ASV",
-   "price": 9.5,
-   "projection": 27.5
+   "club": "OLY",
+   "price": 17.0,
+   "projection": 25.35
   },
   {
    "key": "3836",
@@ -81,7 +73,15 @@
    "position": "F",
    "club": "PAN",
    "price": 5.5,
-   "projection": 15.4
+   "projection": 7.37
+  },
+  {
+   "key": "4012",
+   "name": "RICCI, GIAMPAOLO",
+   "position": "F",
+   "club": "MIL",
+   "price": 4.5,
+   "projection": 4.87
   },
   {
    "key": "4061",
@@ -89,7 +89,7 @@
    "position": "F",
    "club": "PAN",
    "price": 4.5,
-   "projection": 13.2
+   "projection": 4.5
   },
   {
    "key": "3857",
@@ -97,15 +97,15 @@
    "position": "C",
    "club": "HTA",
    "price": 14.2,
-   "projection": 32.0
+   "projection": 20.08
   },
   {
-   "key": "3883",
-   "name": "VOIGTMANN, JOHANNES",
+   "key": "8846",
+   "name": "JEKIRI, TONYE",
    "position": "C",
-   "club": "MUN",
-   "price": 7.5,
-   "projection": 18.7
+   "club": "PAR",
+   "price": 8.3,
+   "projection": 11.38
   }
  ],
  "available": true,

@@ -38,6 +38,36 @@ export function Delta({
   );
 }
 
+const AVAILABILITY_WORD: Record<string, string> = {
+  out: "Baja",
+  doubt: "Duda",
+  probable: "Probable",
+};
+
+/** Aviso de disponibilidad: punto + una palabra, y la frase entera en el
+ *  `title` y para lectores de pantalla. Una palabra cabe en una ficha de móvil;
+ *  "Baja hasta la J4 · Medial right meniscus tear" no. Con `full` se enseña la
+ *  frase (en la cancha y en el buscador hay sitio). */
+export function AvailabilityTag({
+  player,
+  full = false,
+}: {
+  player: Pick<Player, "availability">;
+  full?: boolean;
+}) {
+  const status = player.availability;
+  if (!status) return null;
+  const word = AVAILABILITY_WORD[status.level] ?? status.level;
+  const description = [status.label, status.detail].filter(Boolean).join(" · ");
+  return (
+    <span className={`avail avail-${status.level}`} title={description}>
+      <i aria-hidden />
+      <span aria-hidden={full ? undefined : true}>{full ? status.label : word}</span>
+      {full ? null : <span className="sr-only">{description}</span>}
+    </span>
+  );
+}
+
 /** Avatar + nombre + club.
  *
  *  `linked` existe porque en la lista de fichas del móvil la tarjeta ENTERA ya
@@ -61,6 +91,12 @@ export function PlayerCell({ player, linked = true }: { player: Player; linked?:
         <br />
         <span className="player-meta">
           {player.clubShort ?? player.club ?? "—"} · {positionLabel(player.position)}
+          {player.availability ? (
+            <>
+              {" "}
+              <AvailabilityTag player={player} />
+            </>
+          ) : null}
         </span>
       </span>
     </>

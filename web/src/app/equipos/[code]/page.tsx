@@ -13,6 +13,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 
+import { Lineups, QuarterMargins } from "@/components/advanced/TeamGame";
+import { sequentialClass } from "@/lib/advanced";
 import { getTeam, meta, players, teams } from "@/lib/data";
 import { credits, dateShort, displayName, num, signed } from "@/lib/format";
 import type { Player, TeamBox } from "@/lib/types";
@@ -35,6 +37,8 @@ export async function generateMetadata({
     description: `${name}: balance, cuatro factores, ataque y defensa, próximos rivales y plantilla del EuroLeague Fantasy Challenge.`,
   };
 }
+
+const POS_WORD = { G: "Bases", F: "Aleros", C: "Pívots" } as const;
 
 /** Los clubes con histórico: el grupo contra el que se calcula cada percentil. */
 const withBox: TeamBox[] = teams.map((team) => team.box).filter((box): box is TeamBox => !!box);
@@ -167,6 +171,73 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
             </p>
           </section>
         </>
+      ) : null}
+
+      {team.quarters && (team.quarters.current || team.quarters.prior) ? (
+        <section className="eq-section">
+          <div className="eq-section-head">
+            <h2>Por cuartos</h2>
+            <p>Diferencial medio en cada cuarto, desde los parciales oficiales.</p>
+          </div>
+          <QuarterMargins {...team.quarters} />
+        </section>
+      ) : null}
+
+      {team.lineups ? (
+        <section className="eq-section">
+          <div className="eq-section-head">
+            <h2>Quintetos</h2>
+            <p>
+              Los cinco que más minutos comparten esta temporada, y cómo le va al equipo con
+              ellos en pista por cada 100 posesiones.
+            </p>
+          </div>
+          <Lineups lineups={team.lineups} />
+        </section>
+      ) : null}
+
+      {team.allowed ? (
+        <section className="eq-section">
+          <div className="eq-section-head">
+            <h2>Lo que concede</h2>
+            <p>
+              Puntos fantasy por partido que sacan contra él los rivales de cada puesto. Más
+              violeta, más regala: buen rival para tus jugadores.
+            </p>
+          </div>
+          <ul className="allowed">
+            {(["G", "F", "C"] as const).map((pos) => {
+              const value = team.allowed?.[pos] ?? null;
+              const index = team.allowed?.index?.[pos] ?? null;
+              const league = meta.league?.allowed?.[pos] ?? null;
+              return (
+                <li key={pos}>
+                  <span className="allowed-label">{POS_WORD[pos]}</span>
+                  <span className="allowed-track" aria-hidden>
+                    <span
+                      className={`seq-${sequentialClass(index)}`}
+                      style={{ width: `${Math.min(((value ?? 0) / ((league ?? 1) * 1.6)) * 100, 100)}%` }}
+                    />
+                    {league ? (
+                      <i className="allowed-league" style={{ left: `${(1 / 1.6) * 100}%` }} />
+                    ) : null}
+                  </span>
+                  <span className="allowed-value num">
+                    {num(value)}
+                    <small>
+                      {index === null ? "" : ` ${index >= 1 ? "+" : "−"}${Math.abs(Math.round((index - 1) * 100))} %`}
+                    </small>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="eq-foot-note">
+            La muesca es la media de la liga ({num(meta.league?.allowed?.G)} a bases,{" "}
+            {num(meta.league?.allowed?.F)} a aleros, {num(meta.league?.allowed?.C)} a pívots).
+            Con pocas jornadas se encoge hacia el año pasado.
+          </p>
+        </section>
       ) : null}
 
       <section className="eq-section">
@@ -364,12 +435,12 @@ function pctOf(box: TeamBox, key: BoxKey, lowerIsBetter = false): number | null 
   return Math.round((lowerIsBetter ? 1 - rank : rank) * 100);
 }
 
-/** Un jugador sin partidos en la referencia llega con proyección 0,0: no es
- *  una predicción, es falta de datos. Los entrenadores van aparte porque su
- *  proyección sale del histórico de su banquillo, no de minutos jugados. */
+/** Desde el 26 sept la proyección se apoya en la temporada anterior (o en el
+ *  precio) mientras no hay partidos: un 0,0 solo queda para quien de verdad
+ *  no tiene nada detrás. */
 function hasProjection(player: Player): boolean {
   if (typeof player.projectedFp !== "number") return false;
-  return player.isCoach || (player.perf.gamesPlayed ?? 0) > 0;
+  return player.isCoach || player.projectedFp > 0;
 }
 
 /** Lo duro que es un rival, por su diferencial. */

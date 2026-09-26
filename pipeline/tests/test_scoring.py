@@ -128,3 +128,14 @@ def test_alineacion_aplica_capitan_y_banquillo():
 
 def test_alineacion_sin_capitan():
     assert lineup_score([10.0, 10.0], [], captain_index=None) == pytest.approx(20.0)
+
+
+def test_bonus_de_victoria_siempre_suma():
+    """Jornada 1, 24 sept 2026: base -1 con victoria da -0,9 en el juego, no -1,1."""
+    negativo = player_fantasy_points(make_stats(turnovers=1.0), team_won=True)
+    assert negativo.base == -1.0
+    assert negativo.total == pytest.approx(-0.9)
+    positivo = player_fantasy_points(make_stats(points=20.0), team_won=True)
+    assert positivo.total == pytest.approx(22.0)
+    sin_minutos = player_fantasy_points(make_stats(timePlayed=0.0), team_won=True)
+    assert sin_minutos.total == 0.0

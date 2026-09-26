@@ -3,10 +3,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 
+import CourtRole from "@/components/advanced/CourtRole";
+import FantasyMix from "@/components/advanced/FantasyMix";
+import PercentileStrip from "@/components/advanced/PercentileStrip";
+import PriceOutlook from "@/components/advanced/PriceOutlook";
+import ShotChart from "@/components/advanced/ShotChart";
 import GameLogBars from "@/components/charts/GameLogBars";
 import PriceHistory from "@/components/charts/PriceHistory";
 import { PositionBadge, prettyName } from "@/components/ui/primitives";
-import { getDetail, getPlayer, getTeam, players } from "@/lib/data";
+import { seasonLabel, sequentialClass } from "@/lib/advanced";
+import { getDetail, getPlayer, getTeam, meta, players } from "@/lib/data";
 import {
   POSITION_PLURAL,
   credits,
@@ -63,6 +69,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   // Sin partidos en la referencia, la proyección es un cero por falta de
   // datos, no una predicción. Se enseña como ausencia.
   const hasGames = (perf.gamesPlayed ?? 0) > 0;
+  // La proyección ya no depende de haber jugado esta temporada: se apoya en la
+  // anterior (o en el precio) hasta que haya partidos.
+  const hasProjection = typeof player.projectedFp === "number" && player.projectedFp > 0;
 
   // El color del club entra solo aquí, y entra dos veces: el halo con el tono
   // del escudo, y los aros con ese mismo tono llevado a una luminosidad fija
@@ -188,20 +197,20 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             <dl className="ficha-band-grid">
               <BandItem
                 label="Proyección"
-                value={hasGames ? num(player.projectedFp) : "—"}
-                unit={hasGames ? "pts" : undefined}
+                value={hasProjection ? num(player.projectedFp) : "—"}
+                unit={hasProjection ? "pts" : undefined}
                 note={pctNote(player, "projectedFp")}
               />
               <BandItem
                 label="Por crédito"
-                value={hasGames ? num(player.valueProjected ?? player.valuePerCredit, 2) : "—"}
-                unit={hasGames ? "pts/cr" : undefined}
+                value={hasProjection ? num(player.valueProjected ?? player.valuePerCredit, 2) : "—"}
+                unit={hasProjection ? "pts/cr" : undefined}
                 note={pctNote(player, "valueProjected")}
               />
               <BandItem
                 label="Fiabilidad"
-                value={percent(perf.consistency)}
-                note={pctNote(player, "consistency")}
+                value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
+                note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
               />
               <BandItem
                 label="Forma"
@@ -243,6 +252,29 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
+      {player.outlook && player.price && typeof player.projectedFp === "number" ? (
+        <section className="section shell">
+          <div className="card">
+            <div className="card-head">
+              <div>
+                <h2 className="card-title">¿Sube o baja de precio?</h2>
+                <p className="card-note" style={{ margin: "4px 0 0" }}>
+                  El juego revaloriza según lo que puntúa frente a lo que cuesta. Ajustado sobre{" "}
+                  {meta.priceModel?.n ?? "—"} jugadores del último mercado: explica el{" "}
+                  {percent(meta.priceModel?.r2 ?? null)} de las variaciones.
+                </p>
+              </div>
+            </div>
+            <PriceOutlook
+              outlook={player.outlook}
+              projection={player.projectedFp}
+              price={player.price}
+              out={player.availability?.level === "out"}
+            />
+          </div>
+        </section>
+      ) : null}
+
       <section className="section shell">
         <div className="grid grid-2">
           <div className="card">
@@ -276,6 +308,129 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
+      {detail.mix || detail.court ? (
+        <section className="section shell">
+          <div className="grid grid-2">
+            {detail.mix ? (
+              <div className="card">
+                <div className="card-head">
+                  <div>
+                    <h2 className="card-title">De dónde salen sus puntos</h2>
+                    <p className="card-note" style={{ margin: "4px 0 0" }}>
+                      Media por partido de cada acción del baremo · {seasonLabel(detail.mix.season)},{" "}
+                      {detail.mix.games} {detail.mix.games === 1 ? "partido" : "partidos"}.
+                    </p>
+                  </div>
+                </div>
+                <FantasyMix mix={detail.mix} />
+              </div>
+            ) : null}
+            {detail.court ? (
+              <div className="card">
+                <div className="card-head">
+                  <div>
+                    <h2 className="card-title">En pista</h2>
+                    <p className="card-note" style={{ margin: "4px 0 0" }}>
+                      Reconstruido cambio a cambio desde el jugada a jugada oficial.
+                    </p>
+                  </div>
+                </div>
+                <CourtRole court={detail.court} />
+              </div>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
+      {detail.shots && meta.league ? (
+        <section className="section shell">
+          <div className="card">
+            <div className="card-head">
+              <div>
+                <h2 className="card-title">Mapa de tiro</h2>
+                <p className="card-note" style={{ margin: "4px 0 0" }}>
+                  Cada tiro fallado le resta un punto fantasy: dónde tira importa tanto como
+                  cuánto.
+                </p>
+              </div>
+            </div>
+            <ShotChart
+              uid={String(player.id)}
+              shots={detail.shots}
+              league={meta.league.zones}
+              keys={meta.league.zoneKeys}
+              labels={meta.league.zoneLabels}
+            />
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section shell">
+        <div className="grid grid-2">
+          {detail.official ? (
+            <div className="card">
+              <div className="card-head">
+                <div>
+                  <h2 className="card-title">Eficiencia</h2>
+                  <p className="card-note" style={{ margin: "4px 0 0" }}>
+                    Avanzadas oficiales de la Euroliga, en percentil frente a su puesto.
+                  </p>
+                </div>
+              </div>
+              <PercentileStrip official={detail.official} />
+            </div>
+          ) : null}
+
+          <div className="card">
+            <div className="card-head">
+              <div>
+                <h2 className="card-title">Próximos partidos</h2>
+                <p className="card-note" style={{ margin: "4px 0 0" }}>
+                  Lo que concede cada rival a los{" "}
+                  {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()}, frente a
+                  la media de la liga.
+                </p>
+              </div>
+            </div>
+            {detail.fixtures.length ? (
+              <ul className="fixture-list">
+                {detail.fixtures.map((fixture) => {
+                  const rival = getTeam(fixture.opponent);
+                  const key = (player.position ?? "all") as "G" | "F" | "C" | "all";
+                  const index = rival?.allowed?.index?.[key] ?? null;
+                  return (
+                    <li key={`${fixture.round}-${fixture.opponent}`}>
+                      <span>
+                        <strong>J{fixture.round}</strong>{" "}
+                        <span className="muted">{fixture.home ? "vs" : "@"}</span>{" "}
+                        {rival?.short ?? fixture.opponent}
+                      </span>
+                      <span className="fixture-side">
+                        {index !== null ? (
+                          <span
+                            className={`fixture-allowed seq-${sequentialClass(index)}`}
+                            title={`Concede ${num(rival?.allowed?.[key] ?? null)} pts fantasy por partido a este puesto`}
+                          >
+                            {Math.round((index - 1) * 100) === 0
+                              ? "0 %"
+                              : `${index >= 1 ? "+" : "−"}${Math.abs(Math.round((index - 1) * 100))} %`}
+                          </span>
+                        ) : null}
+                        <span className="muted num">{dateShort(fixture.date)}</span>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="muted" style={{ margin: 0 }}>
+                Sin calendario disponible.
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
       <section className="section shell">
         <div className="grid grid-2">
           <div className="card">
@@ -302,38 +457,6 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             </dl>
           </div>
 
-          <div className="card">
-            <div className="card-head">
-              <div>
-                <div className="card-title">Próximos partidos</div>
-                <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Dificultad del calendario: {num(player.schedule.difficulty, 0)} sobre 100.
-                </p>
-              </div>
-            </div>
-            {detail.fixtures.length ? (
-              <ul className="fixture-list">
-                {detail.fixtures.map((fixture) => (
-                  <li key={`${fixture.round}-${fixture.opponent}`}>
-                    <span>
-                      <strong>J{fixture.round}</strong>{" "}
-                      <span className="muted">{fixture.home ? "vs" : "@"}</span>{" "}
-                      {getTeam(fixture.opponent)?.short ?? fixture.opponent}
-                    </span>
-                    <span className="muted num">{dateShort(fixture.date)}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="muted" style={{ margin: 0 }}>
-                Sin calendario disponible.
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="section shell">
         <div className="card">
           <div className="card-head">
             <div>
@@ -363,7 +486,10 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             </p>
           )}
         </div>
+        </div>
+      </section>
 
+      <section className="section shell">
         {/* La trazabilidad del cruce es una nota al pie, no una etiqueta de
             depuración junto al nombre del jugador. */}
         <p className="provenance">

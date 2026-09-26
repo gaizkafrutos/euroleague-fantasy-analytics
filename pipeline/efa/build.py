@@ -23,11 +23,13 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from efa.advanced_build import apply_advanced
 from efa.config import (
-    CROSSWALK_PATH,
     CLUB_COLORS_PATH,
+    CROSSWALK_PATH,
     PLAYER_OVERRIDES_PATH,
     PRIOR_SEASON_CODE,
+    PRIOR_WEIGHT_GAMES,
     ROSTER_BUDGET,
     SEASON_CODE,
     UNMATCHED_REPORT_PATH,
@@ -210,6 +212,28 @@ def headshot_index(*seasons: str) -> dict[str, str]:
     return index
 
 
+def prior_season_performance() -> pd.DataFrame:
+    """Media fantasy y partidos jugados del año pasado, por persona.
+
+    Es la previa hacia la que se encoge la proyección en las primeras jornadas.
+    """
+    boxscores = load_boxscores(PRIOR_SEASON_CODE)
+    if not boxscores:
+        return pd.DataFrame(columns=["person_code", "prior_fp_avg", "prior_games"])
+    reference = load_reference(PRIOR_SEASON_CODE)
+    perf = player_performance(build_gamelog(boxscores, reference.get("games", [])))
+    return perf[["person_code", "fp_avg", "games_played"]].rename(
+        columns={"fp_avg": "prior_fp_avg", "games_played": "prior_games"}
+    )
+
+
+def club_games_played(gamelog: pd.DataFrame) -> dict[str, int]:
+    """Partidos jugados por cada club en el game log."""
+    if gamelog.empty or "club_code" not in gamelog.columns:
+        return {}
+    return {str(k): int(v) for k, v in gamelog.groupby("club_code")["game_code"].nunique().items()}
+
+
 def resolve_gamelog(reference: dict[str, Any]) -> tuple[pd.DataFrame, dict[str, Any]]:
     """Game log de la temporada actual, o de la anterior si aún no hay partidos."""
     games = reference.get("games", [])
@@ -271,8 +295,14 @@ def build_player_table(
     images: dict[str, str] | None = None,
     *,
     baseline: bool = False,
+    prior_performance: pd.DataFrame | None = None,
+    club_games: dict[str, int] | None = None,
 ) -> pd.DataFrame:
-    """Une mercado, identidad, precio histórico y rendimiento en una sola tabla."""
+    """Une mercado, identidad, precio histórico y rendimiento en una sola tabla.
+
+    `prior_performance` (media y partidos del año pasado) solo se usa para
+    encoger la proyección mientras la temporada en curso tiene pocos partidos.
+    """
     table = market.merge(crosswalk, on="fantaking_id", how="left", suffixes=("", "_cw"))
 
     if not prices.empty:
@@ -290,6 +320,10 @@ def build_player_table(
 
     if not performance.empty:
         table = table.merge(performance, on="person_code", how="left")
+    if prior_performance is not None and not prior_performance.empty:
+        table = table.merge(prior_performance, on="person_code", how="left")
+    if club_games is not None:
+        table["club_games"] = table["club_code"].map(club_games).fillna(0)
 
     # Metadatos del jugador desde el censo oficial.
     people_index: dict[str, dict[str, Any]] = {}
@@ -502,6 +536,8 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         reference,
         images,
         baseline=bool(gamelog_meta.get("isBaseline")),
+        prior_performance=None if gamelog_meta.get("isBaseline") else prior_season_performance(),
+        club_games=club_games_played(gamelog),
     )
 
     games = reference.get("games", [])
@@ -513,15 +549,19 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
 
     clubs_index = {club["code"]: club for club in reference.get("clubs", [])}
     records = player_records(table, series, difficulty, clubs_index)
+    injuries_meta = _apply_availability(
+        records, market, reference, next_round=round_now
+    )
 
     coach_log = build_coach_gamelog(load_boxscores(SEASON_CODE), games)
+    prior_coach_log = build_coach_gamelog(
+        load_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", [])
+    )
     if coach_log.empty:
         # Igual que con los jugadores: si la temporada en curso no tiene
         # partidos, la referencia es la anterior.
-        coach_log = build_coach_gamelog(
-            load_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", [])
-        )
-    _apply_coach_projections(records, coach_log)
+        coach_log, prior_coach_log = prior_coach_log, None
+    _apply_coach_projections(records, coach_log, prior_coach_log)
 
     lineup = _build_optimal_lineup(records, budget=budget)
 
@@ -545,6 +585,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         "matchRate": round(matched / len(records), 3) if records else 0.0,
         "budget": budget,
         "coachGames": int(len(coach_log)),
+        "injuries": injuries_meta,
         "warnings": _warnings(has_prices, gamelog_meta, matched, len(records)),
     }
 
@@ -563,8 +604,20 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         load_club_colors(),
     )
 
+    details = player_details(table, series, difficulty)
+    apply_advanced(
+        records=records,
+        details=details,
+        teams=teams,
+        meta=meta,
+        market=market,
+        crosswalk=crosswalk,
+        reference=reference,
+        round_now=round_now,
+    )
+
     write_json("players.json", records)
-    write_json("details.json", player_details(table, series, difficulty))
+    write_json("details.json", details)
     write_json("teams.json", teams)
     write_json("lineup.json", lineup)
     write_json("meta.json", meta)
@@ -609,8 +662,76 @@ def _usable_number(value: Any) -> float | None:
     return None if math.isnan(number) or math.isinf(number) else number
 
 
+def _apply_availability(
+    records: list[dict[str, Any]],
+    market: pd.DataFrame,
+    reference: dict[str, Any],
+    *,
+    next_round: int,
+) -> dict[str, Any]:
+    """Disponibilidad de cada jugador para la próxima jornada.
+
+    Dos fuentes, en este orden de prioridad:
+      1. El parte de lesiones de BasketNews (más correcciones manuales).
+      2. El censo oficial: quien está en el mercado de Fantaking pero no
+         inscrito en la Euroliga esta temporada no puede jugar hasta que lo
+         inscriban. Fantaking los lista igual (Heidegger, Jaiteh, Bourdillon…).
+
+    La proyección NO se toca: sigue siendo lo que rinde cuando juega. Lo que
+    cambia es que el optimizador no ficha a quien está de baja y la web avisa.
+    """
+    from efa.ingest.injuries import availability_index
+
+    alias_map = build_club_alias_map(reference.get("clubs", []))
+    index, summary = availability_index(market, alias_map, next_round)
+    registered = {
+        str((entry.get("person") or {}).get("code"))
+        for entry in reference.get("players", [])
+        if entry.get("active", True)
+    }
+
+    unregistered = 0
+    for record in records:
+        if record.get("isCoach"):
+            record["availability"] = None
+            record["registered"] = True
+            continue
+        is_registered = record.get("personCode") in registered
+        record["registered"] = is_registered
+        status = index.get(int(record["id"]))
+        if status is None and not is_registered:
+            unregistered += 1
+            status = {
+                "level": "doubt",
+                "kind": "roster",
+                "label": "Sin inscribir en la Euroliga",
+                "untilRound": None,
+                "detail": "Está en el mercado del Fantasy pero no en el censo oficial de la temporada.",
+                "reported": "",
+                "source": "censo oficial",
+            }
+        record["availability"] = status
+
+    summary["nextRound"] = next_round
+    summary["unregistered"] = unregistered
+    summary["flagged"] = {
+        level: sum(1 for r in records if (r.get("availability") or {}).get("level") == level)
+        for level in ("out", "doubt", "probable")
+    }
+    log.info(
+        "Disponibilidad: %d bajas, %d dudas (%d sin inscribir) · parte %s",
+        summary["flagged"]["out"],
+        summary["flagged"]["doubt"],
+        unregistered,
+        summary.get("updatedAt"),
+    )
+    return summary
+
+
 def _apply_coach_projections(
-    records: list[dict[str, Any]], coach_log: pd.DataFrame
+    records: list[dict[str, Any]],
+    coach_log: pd.DataFrame,
+    prior_log: pd.DataFrame | None = None,
 ) -> int:
     """Proyección del entrenador: su media histórica de puntos fantasy.
 
@@ -627,15 +748,33 @@ def _apply_coach_projections(
     by_person = coach_log.groupby("person_code")["fantasy_points"].mean()
     by_club = coach_log.groupby("club_code")["fantasy_points"].mean()
 
+    # Con la temporada recién empezada, la media de uno o dos partidos es el
+    # resultado de uno o dos partidos (+20 o −10). Igual que con los jugadores,
+    # se encoge hacia el año pasado: el suyo si entrenó, si no el de su club.
+    has_prior = prior_log is not None and not prior_log.empty
+    prior_person = prior_log.groupby("person_code")["fantasy_points"].mean() if has_prior else None
+    prior_club = prior_log.groupby("club_code")["fantasy_points"].mean() if has_prior else None
+    games_person = coach_log.groupby("person_code")["fantasy_points"].size()
+    games_club = coach_log.groupby("club_code")["fantasy_points"].size()
+
     applied = 0
     for record in records:
         if not record.get("isCoach"):
             continue
-        value = by_person.get(str(record.get("personCode")))
+        person = str(record.get("personCode"))
+        club = str(record.get("club"))
+        value, games = by_person.get(person), games_person.get(person, 0)
         if value is None or pd.isna(value):
-            value = by_club.get(str(record.get("club")))
+            value, games = by_club.get(club), games_club.get(club, 0)
         if value is None or pd.isna(value):
             continue
+        if has_prior:
+            prior = prior_person.get(person)
+            if prior is None or pd.isna(prior):
+                prior = prior_club.get(club)
+            if prior is not None and not pd.isna(prior):
+                weight = games / (games + PRIOR_WEIGHT_GAMES)
+                value = weight * float(value) + (1 - weight) * float(prior)
         record["projectedFp"] = round(float(value), 2)
         applied += 1
 
@@ -667,6 +806,10 @@ def _build_optimal_lineup(records: list[dict[str, Any]], *, budget: float) -> di
             )
             continue
         if record["position"] not in {"G", "F", "C"} or projection is None:
+            continue
+        # Ni de baja ni sin inscribir: el óptimo tiene que poder alinearse.
+        availability = record.get("availability") or {}
+        if availability.get("level") == "out" or record.get("registered") is False:
             continue
         candidates.append(
             Candidate(

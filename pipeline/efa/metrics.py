@@ -18,7 +18,13 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from efa.config import FORM_WINDOW, MIN_GAMES_FOR_TREND
+from efa.config import (
+    AVAILABILITY_PRIOR_GAMES,
+    FORM_WINDOW,
+    MIN_GAMES_FOR_TREND,
+    PRIOR_MIN_GAMES,
+    PRIOR_WEIGHT_GAMES,
+)
 
 log = logging.getLogger(__name__)
 
@@ -423,6 +429,10 @@ def project_fantasy_points(table: pd.DataFrame, *, baseline: bool = False) -> pd
     Mezcla media de temporada y forma reciente, con el peso de la forma
     creciendo conforme hay más partidos, y un ajuste por tendencia de minutos.
     Sin partidos jugados cae de vuelta a la media que da el propio mercado.
+
+    Con la temporada en curso como fuente y `prior_fp_avg` en la tabla, se
+    encoge hacia la media del año pasado según los partidos jugados
+    (ver PRIOR_WEIGHT_GAMES).
     """
     fp_avg = pd.to_numeric(table.get("fp_avg"), errors="coerce").fillna(0.0)
     form = pd.to_numeric(table.get("form"), errors="coerce").fillna(0.0)
@@ -446,7 +456,55 @@ def project_fantasy_points(table: pd.DataFrame, *, baseline: bool = False) -> pd
 
     # Sin historial propio, el mercado es la mejor estimación disponible.
     projection = projection.where(games > 0, market_avg)
+
+    # Temporada en curso con pocos partidos: se encoge hacia la media del año
+    # pasado. Tras la jornada 1 la proyección era literalmente el partido de la
+    # jornada 1 (Fodzo Dada, 4,8 créditos, proyectaba 18,7 por un buen día), y
+    # los seis clubes que aún no habían jugado proyectaban 0 en bloque.
+    if not baseline and "prior_fp_avg" in table.columns:
+        prior_avg = pd.to_numeric(table["prior_fp_avg"], errors="coerce")
+        prior_games = pd.to_numeric(table.get("prior_games"), errors="coerce").fillna(0.0)
+        own_prior = prior_avg.notna() & (prior_games >= PRIOR_MIN_GAMES)
+        prior_avg = prior_avg.where(own_prior)
+
+        # Los recién llegados a la Euroliga no tienen año pasado. Para ellos la
+        # previa es la que marca su precio: entre los que sí lo tienen, la media
+        # del año pasado y el precio actual correlacionan a 0,92 (jornada 1).
+        implied = price_implied_fp(table, prior_avg)
+        if implied is not None:
+            prior_avg = prior_avg.fillna(implied)
+        has_prior = prior_avg.notna()
+        weight_now = games / (games + PRIOR_WEIGHT_GAMES)
+        shrunk = weight_now * projection.where(games > 0, 0.0) + (1 - weight_now) * prior_avg
+
+        # Si esta temporada su equipo ya jugó y él no, no es un cero seguro
+        # (puede ser una rotación), pero tampoco es la media de siempre. Se
+        # cuentan los partidos del CLUB: quien no entra en la convocatoria ni
+        # aparece en el boxscore, y sus partidos también cuentan como no jugados.
+        club_games = table["club_games"] if "club_games" in table.columns else table.get("games")
+        team_games = pd.to_numeric(club_games, errors="coerce").fillna(0.0).clip(lower=games)
+        played_share = (games + AVAILABILITY_PRIOR_GAMES) / (team_games + AVAILABILITY_PRIOR_GAMES)
+        shrunk = shrunk * played_share.clip(upper=1.0)
+
+        projection = projection.where(~has_prior, shrunk)
+
     return projection.clip(lower=0).round(2)
+
+
+def price_implied_fp(table: pd.DataFrame, prior_avg: pd.Series) -> pd.Series | None:
+    """Media fantasy que "descuenta" el precio: recta media del año pasado ~ precio.
+
+    Se ajusta con los propios jugadores que tienen historial, así que se
+    recalibra sola cada vez que se construye. Devuelve None si no hay con qué.
+    """
+    quotation = pd.to_numeric(table.get("quotation"), errors="coerce")
+    if quotation is None:
+        return None
+    fit = prior_avg.notna() & quotation.gt(0)
+    if int(fit.sum()) < 30:
+        return None
+    slope, intercept = np.polyfit(quotation[fit], prior_avg[fit], 1)
+    return (slope * quotation + intercept).where(quotation.gt(0)).clip(lower=0)
 
 
 def value_metrics(table: pd.DataFrame) -> pd.DataFrame:

@@ -1,0 +1,6 @@
+# Correcciones manuales del parte de lesiones. Ganan siempre al de BasketNews.
+# fantaking_id: el "id" del mercado de Fantaking (sale en la URL /jugador/<id>).
+# level: out | doubt | probable | ok  (ok = quitar cualquier aviso)
+# label: texto corto que enseña la web; vacío = "Corrección manual".
+# Las filas que empiezan por # se ignoran.
+fantaking_id,level,label

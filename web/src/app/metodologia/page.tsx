@@ -119,7 +119,7 @@ export default function MethodologyPage() {
                 <td>Falta recibida</td>
                 <td className="num">+1</td>
                 <td>Victoria del equipo</td>
-                <td className="num">+10%</td>
+                <td className="num">+10% del valor absoluto</td>
               </tr>
             </tbody>
           </table>
@@ -134,6 +134,11 @@ export default function MethodologyPage() {
           devuelve el propio mercado de Fantaking. Si la correlación cae, es que el baremo ha
           cambiado — y es mejor enterarse por ahí que por un fichaje.
         </p>
+        <p className="card-note">
+          Contrastado en la jornada 1: cuadran al decimal los 159 jugadores y los 14
+          entrenadores de los partidos del 24 de septiembre. El bonus de victoria suma siempre:
+          un −1 con victoria queda en −0,9, no en −1,1.
+        </p>
       </div>
 
       <div className="grid grid-2" style={{ marginTop: 16 }}>
@@ -143,7 +148,33 @@ export default function MethodologyPage() {
             <Definition term="Proyección">
               Mezcla de la media de temporada y la forma de los últimos 5 partidos, dando más
               peso a la forma conforme se acumulan jornadas, más un ajuste por tendencia de
-              minutos traducida a puntos vía su producción por minuto.
+              minutos traducida a puntos vía su producción por minuto. Con pocos partidos se
+              encoge hacia la media del año pasado: con n partidos pesa n/(n+5) lo de ahora. A
+              quien llega nuevo a la Euroliga, hacia lo que descuenta su precio.
+            </Definition>
+            <Definition term="Umbral de revalorización">
+              Los puntos con los que un precio no se mueve. Sale de ajustar la variación que
+              publica el propio juego contra puntos y precio: tras la J1 explica el 98,5 % de
+              las variaciones, y el umbral queda en torno a 1,15 veces el precio.
+            </Definition>
+            <Definition term="Horquilla">
+              Cada jugador puntúa según una normal con su proyección y su dispersión (también
+              encogida hacia el año pasado). Suelo y techo son los percentiles 25 y 75.
+            </Definition>
+            <Definition term="En pista, on/off y quintetos">
+              Se reconstruye quién está en pista cada segundo con los cambios del jugada a
+              jugada oficial. En la J1 los minutos cuadran con el boxscore a menos de 30
+              segundos en los 240 jugadores. Las posesiones se estiman como tiros + 0,44 ×
+              libres − rebotes ofensivos + pérdidas.
+            </Definition>
+            <Definition term="Mapa de tiro">
+              Coordenadas de cada tiro de campo (API oficial), repartidas en diez zonas con las
+              medidas FIBA y comparadas con la media de la liga en esa zona. Dos temporadas: el
+              tiro viaja con el jugador.
+            </Definition>
+            <Definition term="Lo que concede cada club">
+              Puntos fantasy por partido de los rivales de cada puesto, encogidos hacia el año
+              pasado como la proyección. Es lo que colorea el calendario fantasy.
             </Definition>
             <Definition term="Puntos por crédito">
               Proyección dividida entre precio. Es el ratio que decide casi todo: 18 puntos a

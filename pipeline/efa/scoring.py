@@ -14,7 +14,8 @@ Jugador — suma de acciones estadísticas:
                                    -1  tiro de campo fallado
                                    -1  tiro libre fallado
 
-    Bonus de victoria: +10% del score de la jornada si su equipo gana.
+    Bonus de victoria: +10% del valor absoluto del score si su equipo gana
+    (con base negativa también suma: -1 pasa a -0,9).
 
 Entrenador — solo depende del margen del resultado (ver COACH_SCORING).
 
@@ -88,9 +89,13 @@ def player_fantasy_points(stats: Mapping[str, Any], *, team_won: bool) -> Fantas
     minutes = seconds_to_minutes(_f(stats, "timePlayed"))
     played = minutes > 0
 
-    # El bonus es un +10% del score de la ronda. Si el score es negativo el
-    # "bonus" lo empeora; así es como está escrita la regla, y así se aplica.
-    win_bonus = base * WIN_BONUS_RATE if (team_won and played) else 0.0
+    # El bonus es un +10 % del score de la ronda, y SIEMPRE suma. Contrastado
+    # con la jornada 1 (24 sept 2026): con base -1 y victoria el juego da -0,9,
+    # no -1,1; con base -3, -2,7. Es decir, +10 % del valor absoluto. Antes se
+    # aplicaba con signo y los negativos de los que ganaban salían peor de lo
+    # que puntúan: 7 jugadores de 159 no cuadraban por eso, y con el arreglo
+    # cuadran los 159 al decimal.
+    win_bonus = abs(base) * WIN_BONUS_RATE if (team_won and played) else 0.0
 
     return FantasyLine(
         base=base,

@@ -1,8 +1,9 @@
 """Índices de equipo, calendario publicado y colores de club."""
 from __future__ import annotations
 
-from efa.metrics import schedule_difficulty, team_box_stats
 import pandas as pd
+
+from efa.metrics import schedule_difficulty, team_box_stats
 
 
 def make_games():
@@ -91,7 +92,7 @@ def test_los_colores_de_club_se_leen_del_csv():
     if not colors:            # el fichero es opcional
         return
     assert len(colors) == 20
-    for code, entry in colors.items():
+    for entry in colors.values():
         assert entry["halo"].startswith("#")
         assert entry["statDark"].startswith("#")
         assert entry["statLight"].startswith("#")

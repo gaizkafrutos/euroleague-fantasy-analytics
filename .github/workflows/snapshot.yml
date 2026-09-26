@@ -39,6 +39,12 @@ jobs:
       - name: Ingerir datos oficiales
         run: python -m efa ingest-official
 
+      # BasketNews actualiza el parte a diario. Si la página cambia o no
+      # responde, el build sigue con el último parte guardado.
+      - name: Parte de lesiones
+        run: python -m efa injuries
+        continue-on-error: true
+
       - name: Capturar precios del Fantasy
         id: snapshot
         env:

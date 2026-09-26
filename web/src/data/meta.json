@@ -1,8 +1,8 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-25T12:34:56.736617+00:00",
- "currentRound": 1,
+ "generatedAt": "2026-09-26T10:35:04.070339+00:00",
+ "currentRound": 2,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
@@ -11,13 +11,127 @@
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
-  "games": 7
+  "games": 10
  },
  "teamStrengthSource": "temporada en curso",
  "players": 350,
- "matched": 340,
- "matchRate": 0.971,
+ "matched": 343,
+ "matchRate": 0.98,
  "budget": 100.0,
- "coachGames": 14,
- "warnings": []
+ "coachGames": 20,
+ "injuries": {
+  "source": "BasketNews",
+  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
+  "updatedAt": "2026-09-25T20:45:00",
+  "fetchedAt": "2026-09-26T10:34:57.082470+00:00",
+  "rows": 87,
+  "matched": 80,
+  "unmatched": [
+   "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
+   "Ognjen Simjanovski (Crvena Zvezda Meridianbet Belgrade)",
+   "Awudu Abass (Dubai Basketball)",
+   "Tomislav Vuckovic (Dubai Basketball)",
+   "Yiftach Ziv (Hapoel IBI Tel Aviv)",
+   "Enzo Shahrvin (Paris Basketball)",
+   "Jabari Parker (Partizan Mozzart Bet Belgrade)"
+  ],
+  "nextRound": 2,
+  "unregistered": 3,
+  "flagged": {
+   "out": 14,
+   "doubt": 64,
+   "probable": 2
+  }
+ },
+ "warnings": [],
+ "priceModel": {
+  "a": 0.0401,
+  "b": -0.0458,
+  "c": 0.027,
+  "r2": 0.985,
+  "n": 160,
+  "source": "último snapshot"
+ },
+ "league": {
+  "zones": [
+   [
+    9122,
+    7055
+   ],
+   [
+    16557,
+    8063
+   ],
+   [
+    2243,
+    861
+   ],
+   [
+    909,
+    379
+   ],
+   [
+    2277,
+    898
+   ],
+   [
+    1224,
+    512
+   ],
+   [
+    7142,
+    2532
+   ],
+   [
+    4887,
+    1654
+   ],
+   [
+    7372,
+    2645
+   ],
+   [
+    1316,
+    527
+   ]
+  ],
+  "zoneKeys": [
+   "rim",
+   "paint",
+   "mid_l",
+   "mid_c",
+   "mid_r",
+   "c3_l",
+   "ab3_l",
+   "ab3_c",
+   "ab3_r",
+   "c3_r"
+  ],
+  "zoneLabels": [
+   "Aro",
+   "Pintura",
+   "Media izquierda",
+   "Media frontal",
+   "Media derecha",
+   "Esquina izquierda",
+   "Triple izquierda",
+   "Triple frontal",
+   "Triple derecha",
+   "Esquina derecha"
+  ],
+  "allowed": {
+   "G": 41.79,
+   "F": 35.49,
+   "C": 20.0,
+   "all": 97.28
+  },
+  "shotSeasons": [
+   "E2025",
+   "E2026"
+  ],
+  "seasonLabels": {
+   "E2026": "2026-27",
+   "E2025": "2025-26"
+  }
+ }
 }

@@ -31,6 +31,7 @@ type SortKey =
   | "minutesAvg"
   | "consistency"
   | "priceDeltaLast"
+  | "expectedChange"
   | "difficulty";
 
 const PAGE_SIZE = 20;
@@ -39,10 +40,14 @@ const COLUMNS: Array<{ key: SortKey; label: string; title: string }> = [
   // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
   // y la tabla ya usa ese patrón en Forma y en Minutos.
   { key: "price", label: "Precio", title: "Precio actual y variación desde la captura anterior" },
+  {
+    key: "expectedChange",
+    label: "Revalor.",
+    title: "Variación de precio esperada si puntúa lo proyectado (créditos)",
+  },
   { key: "projectedFp", label: "Proyección", title: "Puntos fantasy esperados la próxima jornada" },
   { key: "valueProjected", label: "Pts/cr", title: "Puntos proyectados por crédito" },
   { key: "fpAvg", label: "Media", title: "Media de puntos fantasy por partido jugado" },
-  { key: "form", label: "Forma", title: "Media de los últimos 5 partidos" },
   { key: "minutesAvg", label: "Min", title: "Minutos por partido y su tendencia" },
   { key: "consistency", label: "Fiabilidad", title: "1 = regular, 0 = lotería" },
   {
@@ -66,6 +71,8 @@ function metric(player: Player, key: SortKey): number | null {
       return player.price;
     case "priceDeltaLast":
       return player.priceDeltaLast;
+    case "expectedChange":
+      return player.outlook?.expectedChange ?? null;
     case "projectedFp":
       return player.projectedFp;
     case "valueProjected":
@@ -469,6 +476,9 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                       </span>
                     </td>
                     <td className="num">
+                      <Revalue player={player} />
+                    </td>
+                    <td className="num">
                       <BarCell
                         value={player.projectedFp}
                         fraction={share(player.projectedFp, "projectedFp")}
@@ -484,9 +494,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                         digits={2}
                       />
                     </td>
-                    <td className="num">{num(player.perf.fpAvg)}</td>
-                    <td className="num">
-                      {num(player.perf.form)}{" "}
+                    {/* Media y forma comparten celda: la forma es la media de los
+                        últimos cinco, y lo que importa de ella es cuánto se
+                        separa de la media. Una columna menos cabe a 1280 px. */}
+                    <td className="num" title={`Forma (últimos 5): ${num(player.perf.form)}`}>
+                      {num(player.perf.fpAvg)}{" "}
                       <span className="muted" style={{ fontSize: "0.76em" }}>
                         <Delta value={player.perf.formDelta} />
                       </span>
@@ -497,7 +509,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                         <Delta value={player.perf.minutesTrend} />
                       </span>
                     </td>
-                    <td className="num">{percent(player.perf.consistency)}</td>
+                    <td className="num">{reliable(player)}</td>
                     <td className="num">{num(player.schedule.difficulty, 0)}</td>
                     <td className="num">
                       <BarCell
@@ -539,11 +551,13 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                       <i>pts/cr</i>
                     </span>
                     <span>
-                      <b className="num">{num(player.perf.fpAvg)}</b>
-                      <i>media</i>
+                      <b className="num">
+                        <Revalue player={player} />
+                      </b>
+                      <i>revalor.</i>
                     </span>
                     <span>
-                      <b className="num">{percent(player.perf.consistency)}</b>
+                      <b className="num">{reliable(player)}</b>
                       <i>fiabilidad</i>
                     </span>
                   </span>
@@ -592,4 +606,25 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       ) : null}
     </div>
   );
+}
+
+/** Variación de precio esperada, con la probabilidad en el title. Verde/rojo
+ *  vía `deltaClass`, como el resto de variaciones de la tabla. */
+function Revalue({ player }: { player: Player }) {
+  const outlook = player.outlook;
+  if (!outlook || player.availability?.level === "out") return <span className="muted">—</span>;
+  const change = Math.round(outlook.expectedChange * 10) / 10;
+  return (
+    <span
+      title={`Umbral ${num(outlook.breakEven)} pts · ${percent(outlook.riseProb)} de probabilidad de subir`}
+    >
+      <Delta value={change} digits={1} />
+    </span>
+  );
+}
+
+/** Con menos de tres partidos la fiabilidad es 0 % por definición, no por el
+ *  jugador: se enseña como ausencia. */
+function reliable(player: Player): string {
+  return (player.perf.gamesPlayed ?? 0) >= 3 ? percent(player.perf.consistency) : "—";
 }

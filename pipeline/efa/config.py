@@ -18,6 +18,7 @@ DATA_DIR = REPO_ROOT / "data"
 RAW_PRICES_DIR = DATA_DIR / "raw" / "prices"
 RAW_OFFICIAL_DIR = DATA_DIR / "raw" / "official"
 RAW_ROSTER_DIR = DATA_DIR / "raw" / "roster"
+RAW_INJURIES_DIR = DATA_DIR / "raw" / "injuries"
 PROCESSED_DIR = DATA_DIR / "processed"
 OVERRIDES_DIR = DATA_DIR / "overrides"
 
@@ -26,6 +27,7 @@ WEB_DATA_DIR = REPO_ROOT / "web" / "src" / "data"
 
 PLAYER_OVERRIDES_PATH = OVERRIDES_DIR / "player_overrides.csv"
 CLUB_COLORS_PATH = OVERRIDES_DIR / "club_colors.csv"
+INJURY_OVERRIDES_PATH = OVERRIDES_DIR / "injury_overrides.csv"
 UNMATCHED_REPORT_PATH = PROCESSED_DIR / "unmatched_players.csv"
 CROSSWALK_PATH = PROCESSED_DIR / "crosswalk.csv"
 
@@ -61,6 +63,12 @@ FANTAKING_ORIGIN = "https://euroleaguefantasy.euroleaguebasketball.net"
 
 # API oficial de la EuroLeague (sin autenticación)
 EUROLEAGUE_API_BASE = "https://api-live.euroleague.net/v2"
+#: API "live" (la del marcador en directo): jugada a jugada y tiros con coordenadas.
+LIVE_API_BASE = "https://live.euroleague.net/api"
+
+# Parte de lesiones (BasketNews, actualizado a diario). Ninguna API del
+# proyecto trae lesiones ni convocatorias.
+INJURY_REPORT_URL = "https://basketnews.com/news-212393-euroleague-injury-report-updated.html"
 
 # --------------------------------------------------------------------------
 # Reglas del juego (fantaking.gitbook.io/euroleague-fantasy-challenge-rules)
@@ -96,6 +104,18 @@ FORM_WINDOW = 5           # jornadas para la media de forma reciente
 MIN_GAMES_FOR_TREND = 3   # partidos mínimos antes de fiarse de una tendencia
 ROLE_ALERT_MIN_DELTA = 4.0  # minutos de variación para lanzar alerta de rol
 
+#: Encogimiento hacia la temporada anterior. La proyección de un jugador con
+#: n partidos esta temporada pesa n / (n + PRIOR_WEIGHT_GAMES) lo de ahora y el
+#: resto su media del año pasado. Con 5: tras la jornada 1 manda el pasado
+#: (83 %), a la quinta van a medias, a la vigésima pesa lo de ahora un 80 %.
+#: Sin esto, un solo partido decidía toda la proyección.
+PRIOR_WEIGHT_GAMES = 5.0
+#: Partidos mínimos el año pasado para que su media cuente como referencia.
+PRIOR_MIN_GAMES = 5
+#: Previa de disponibilidad: quien no ha jugado ninguno de sus partidos de esta
+#: temporada no proyecta cero de golpe, sino (jugados + k) / (partidos + k).
+AVAILABILITY_PRIOR_GAMES = 2.0
+
 
 def ensure_dirs() -> None:
     """Crea todos los directorios de datos si no existen."""
@@ -104,6 +124,7 @@ def ensure_dirs() -> None:
         RAW_OFFICIAL_DIR,
         season_dir(SEASON_CODE),
         RAW_ROSTER_DIR,
+        RAW_INJURIES_DIR,
         PROCESSED_DIR,
         OVERRIDES_DIR,
         WEB_DATA_DIR,

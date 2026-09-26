@@ -6,6 +6,7 @@
     python -m efa refresh             # ingest + snapshot + build, todo seguido
     python -m efa discover            # mapea endpoints de Fantaking
     python -m efa verify              # contrasta la fórmula con los datos reales
+    python -m efa injuries            # parte de lesiones de BasketNews
 """
 from __future__ import annotations
 
@@ -101,6 +102,17 @@ def cmd_verify(args: argparse.Namespace) -> int:
     return 0 if report.get("ok") else 1
 
 
+def cmd_injuries(args: argparse.Namespace) -> int:
+    from efa.ingest.injuries import fetch_report, save_report
+
+    report = fetch_report()
+    path = save_report(report)
+    print(
+        f"Parte de lesiones: {len(report['rows'])} filas, actualizado {report['updatedAt']} -> {path}"
+    )
+    return 0
+
+
 def cmd_demo(args: argparse.Namespace) -> int:
     from efa import demo
 
@@ -127,6 +139,13 @@ def cmd_refresh(args: argparse.Namespace) -> int:
     from efa.ingest.prices import take_snapshot
 
     ingest_all(args.season, None if args.no_prior else args.prior_season)
+
+    try:
+        from efa.ingest.injuries import fetch_report, save_report
+
+        save_report(fetch_report())
+    except Exception as exc:  # noqa: BLE001 - el parte es un extra, no bloquea
+        print(f"AVISO: no se pudo leer el parte de lesiones ({exc}).", file=sys.stderr)
 
     try:
         take_snapshot(label=args.label)
@@ -173,6 +192,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     verify = sub.add_parser("verify", help="Contrasta la fórmula de puntuación con los datos reales")
     verify.set_defaults(func=cmd_verify)
+
+    injuries = sub.add_parser("injuries", help="Descarga el parte de lesiones (BasketNews)")
+    injuries.set_defaults(func=cmd_injuries)
 
     demo = sub.add_parser("demo", help="Genera precios de demostración (sin token)")
     demo.add_argument("--season", default=PRIOR_SEASON_CODE, help="Temporada de la que derivar el rendimiento")
