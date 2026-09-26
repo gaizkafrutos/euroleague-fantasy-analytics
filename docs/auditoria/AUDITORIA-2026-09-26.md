@@ -3,15 +3,19 @@
 Web: https://euroleague-fantasy-analytics.vercel.app, a la que se llega después de la Jornada 1 y antes de la Jornada 2.
 Código revisado: `main` en `d60416b` ("Capa avanzada, lesiones y buscador en Mi equipo", 26-09 10:35 UTC), que es el commit que despliega Vercel.
 
-> **Cómo se ha hecho y qué límites tiene.** La política de red del entorno de auditoría bloqueaba
-> `euroleague-fantasy-analytics.vercel.app` y `fantaking-api.dunkest.com` (CONNECT 403). Por eso la web se
-> compiló (`npm run build` + `next start`) desde el mismo commit que está en producción y se recorrió con
-> Playwright/Chromium a 1440×900 y en iPhone 13 (390×844 @3x), pasando axe-core (WCAG 2 A/AA) y midiendo CLS, LCP y peso.
-> Las fotos de jugadores y los escudos vienen de CDNs que también estaban bloqueados, así que en las
-> capturas salen como imagen rota. **Eso es cosa del entorno, no de la web.** Lo que sí es un
-> hallazgo es que no haya nada de repuesto cuando fallan (ver §2). Los precios reales que tiene ahora
-> mismo el juego no se han podido consultar, y el bug de créditos se ha diagnosticado con el histórico
-> versionado en `data/raw/prices/`, el calendario oficial y el historial de GitHub Actions.
+> **Cómo se ha hecho y qué límites tiene.** La web se recorrió dos veces con Playwright/Chromium a
+> 1440×900 y en iPhone 13 (390×844 @3x), pasando axe-core (WCAG 2 A/AA) y midiendo CLS, LCP y peso:
+> 1. **En local**, compilada (`npm run build` + `next start`) desde el mismo commit que está en producción.
+>    En ese momento la red del entorno bloqueaba el dominio de Vercel.
+> 2. **En producción** (https://euroleague-fantasy-analytics.vercel.app), a las 11:35 UTC del 26-09, una vez
+>    abierto el acceso. Los resultados coinciden: mismos fallos de axe con idénticos recuentos por página,
+>    CLS 0 (0,015 en la primera carga de la portada), y los mismos precios y textos. Producción sirve los
+>    datos generados el 26-09 a las 10:35, con 12 capturas de precio.
+>
+> Las capturas de este informe son de producción. Lo que **no** se ha podido consultar son los precios
+> que tiene ahora mismo el juego: `fantaking-api.dunkest.com` responde, pero exige token (401) y el
+> entorno no tiene `FANTAKING_TOKEN`. El bug de créditos se ha diagnosticado con el histórico versionado
+> en `data/raw/prices/`, el calendario oficial, el historial de GitHub Actions y la web en producción.
 
 ---
 
@@ -69,7 +73,7 @@ Código revisado: `main` en `d60416b` ("Capa avanzada, lesiones y buscador en Mi
 | D3 | **HTML muy pesado en /mercado (779 KB, 99 KB gz) y /mi-equipo (639 KB).** Se serializa en el payload RSC el array completo de jugadores y `details` para los componentes cliente. | `curl localhost:3000/mercado \| wc -c` | Media |
 | D4 | **Deltas en 0 en cada fila.** "13,6 cr **0,00**", "Media 36,3 **0,0**", "Min 26,9 **0,0**" aparecen en las 330 filas. Con una jornada (y con el bug de §6) es ruido visual que además da a entender que el precio "no se ha movido". | ![Tabla](img/03-mercado-tabla-precios-0.jpg) | Media |
 | D5 | **La tabla desborda a 1440 px:** 1186 px de tabla en un contenedor de 1150. La columna "Últimos" queda cortada y necesita scroll horizontal en un monitor normal. | `scrollWidth 1186 > clientWidth 1150` | Baja |
-| D6 | **Si falla la CDN, se ve la imagen rota.** Los avatares (`primitives.tsx:83`, `SquadSearch.tsx:347`) no tienen `onError` ni iniciales de repuesto. En la cancha de Mi equipo el hueco se nota mucho. | Capturas de este informe (CDN bloqueada). | Baja |
+| D6 | **Si falla la CDN, se ve la imagen rota.** Los avatares (`primitives.tsx:83`, `SquadSearch.tsx:347`) no tienen `onError` ni iniciales de repuesto. En la cancha de Mi equipo el hueco se nota mucho. En producción las CDNs cargan (0 imágenes rotas), así que es un riesgo, no un fallo actual. | Recorrido local con la CDN bloqueada. | Baja |
 | D7 | **Marcado `<dl>` inválido:** tiene como hijos directos `div > small` / `div > span` en la ficha (`.ficha-band-grid`, `.court-facts`), en Mi equipo y en la ficha de club (`.eq-factors`). | axe `definition-list` (serious) | Baja |
 | D8 | **En mobile las tablas de /metodologia hacen scroll pero no reciben foco.** La del baremo mide 514 px dentro de 324 px y `.table-wrap` no tiene `tabIndex=0`, así que con teclado no se puede desplazar. | axe `scrollable-region-focusable` | Baja |
 | D9 | **Zonas táctiles pequeñas:** los nombres de la plantilla en /equipos/[code] (52 enlaces de 20 px de alto, "Hall" 22×20), los códigos de rival en /equipos (18 px de alto) y "Cómo se calcula" (15 px). WCAG 2.5.8 pide 24×24 como mínimo y conviene llegar a 44. | Medición en iPhone 13 | Baja |
@@ -140,8 +144,9 @@ scroll, o tirar del menú.
   Ayudaría un ancla "Ir al explorador".
 
 ### Velocidad percibida
-- En local, LCP de 120 a 270 ms y CLS 0 (no es representativo de producción, pero indica que el render no
-  bloquea). Todo es estático (SSG) y no hay *spinners*.
+- En producción (desde un contenedor cloud, sin limitar la red): TTFB de 105 a 210 ms y LCP de 250 a
+  410 ms en las páginas internas. La portada tarda **1,2 s de LCP** en la primera carga, con CLS 0,015,
+  y 324 ms en la segunda. Todo es estático (SSG) y no hay *spinners*.
 - Lo que pesa: la portada transfiere 1,09 MB (vídeo webm de 381 KB o mp4 de 861 KB) y el resto de
   páginas entre 200 y 440 KB por D2 y D3.
 
@@ -381,6 +386,10 @@ snapshot nuevo**. En `web/src/data/meta.json`:
 En la ficha de Vezenkov aparece "17,0 cr · sin variación" y "Evolución del precio" es una línea plana
 de 12 puntos. Al mismo tiempo dice "Si rinde lo esperado, sube 0,3 cr" *para la J2*, pero no enseña el
 **+0,6** que el juego ya le había publicado por la J1.
+
+**Comprobado en producción (26-09, 11:35 UTC).** Las fichas en vivo enseñan exactamente los precios del
+snapshot del 25-09: Vezenkov 17,0 · Bacon 12,7 · Oturu 14,2 · Dorsey 12,6 · Motley 11,0 · Carlik Jones 13,6 ·
+Milutinov 15,3 cr. La web pública lleva, por tanto, los precios anteriores a la J1.
 
 ### 6.2 Lo que debería verse: estimación de precios post-J1
 
