@@ -69,6 +69,9 @@ LIVE_API_BASE = "https://live.euroleague.net/api"
 # Parte de lesiones (BasketNews, actualizado a diario). Ninguna API del
 # proyecto trae lesiones ni convocatorias.
 INJURY_REPORT_URL = "https://basketnews.com/news-212393-euroleague-injury-report-updated.html"
+#: Fuentes de respaldo: BasketNews rechaza a veces a los runners de GitHub.
+INJURY_SPHERE_URL = "https://basketballsphere.com/en/injuries/euroleague/"
+INJURY_ROTOWIRE_URL = "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL"
 
 # --------------------------------------------------------------------------
 # Reglas del juego (fantaking.gitbook.io/euroleague-fantasy-challenge-rules)

@@ -41,8 +41,9 @@ jobs:
       - name: Ingerir datos oficiales
         run: python -m efa ingest-official
 
-      # BasketNews actualiza el parte a diario. Si la página cambia o no
-      # responde, el build sigue con el último parte guardado.
+      # Tres partes de lesiones (BasketNews, RotoWire, Basketball Sphere). Cada
+      # uno se guarda por separado; el paso solo falla si no responde ninguno, y
+      # aun así el build sigue con los últimos partes guardados.
       - name: Parte de lesiones
         id: injuries
         run: python -m efa injuries
@@ -91,4 +92,4 @@ jobs:
 
       - name: Avisar si el parte de lesiones no se actualizó
         if: steps.injuries.outcome == 'failure'
-        run: echo "::warning title=Parte de lesiones::BasketNews no respondió; se usa el último parte guardado."
+        run: echo "::warning title=Parte de lesiones::Ninguna fuente de lesiones respondió; se usan los últimos partes guardados."

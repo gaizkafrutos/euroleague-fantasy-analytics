@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-09-26T10:34:57.082470+00:00",
- "updatedAt": "2026-09-25T20:45:00",
+ "fetchedAt": "2026-09-26T15:24:40.856561+00:00",
+ "updatedAt": "2026-09-26T15:21:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -40,17 +40,17 @@
    "team": "Armani Olimpia Milan",
    "position": "SG",
    "name": "Garrison Mathews",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Muscle issue"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "DNP in Round 1 (Muscle issue)"
   },
   {
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Yagiz Aksu",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Coach's decision"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "DNP in Round 1 (Coach's decision)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -224,8 +224,8 @@
    "team": "FC Barcelona",
    "position": "C",
    "name": "A. Kone",
-   "status": "Uncertain",
-   "round": "Round 1",
+   "status": "Doubtful",
+   "round": "Round 2",
    "comment": "DNP in Round 1 (coach's decision)"
   },
   {
@@ -248,17 +248,17 @@
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Marcus Bingham Jr.",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Undisclosed"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "DNP in Round 1 (Undisclosed)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "PG",
    "name": "Shane Larkin",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Didn't play in EuroLeague SuperCup (Undisclosed injury)"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "DNP in Round 1 (Undisclosed injury)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -544,16 +544,16 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "C",
    "name": "Joffrey Lauvergne",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Undisclosed"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "DNP in Round 1 (Undisclosed)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SG",
    "name": "Vanja Marinkovic",
-   "status": "Out",
-   "round": "Round 1",
+   "status": "Doubtful",
+   "round": "Round 2",
    "comment": "Working back from Achilles surgery"
   },
   {
@@ -568,9 +568,9 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PF",
    "name": "Derek Willis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 2",
-   "comment": "Left Round 1 with leg injury"
+   "comment": "The club announced that Willis will be sidelined for several weeks with an ankle injury suffered in Round 1. His status will be reassessed in three to four weeks."
   },
   {
    "team": "Real Madrid",
@@ -616,56 +616,32 @@
    "team": "Valencia Basket",
    "position": "PG",
    "name": "Gonzalo Corbalan",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Didn't travel with the team"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "Didn't travel with the team in Round 1"
   },
   {
    "team": "Valencia Basket",
    "position": "SG",
    "name": "Lucas Mari",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Didn't travel with the team"
-  },
-  {
-   "team": "Valencia Basket",
-   "position": "PF",
-   "name": "Nikola Mirotic",
-   "status": "Ready",
-   "round": "Round 1",
-   "comment": "Travels with the team to Istanbul"
-  },
-  {
-   "team": "Valencia Basket",
-   "position": "C",
-   "name": "Jasiel Rivero",
-   "status": "Ready",
-   "round": "Round 1",
-   "comment": "Travels with the team to Istanbul (minor muscular injury)"
-  },
-  {
-   "team": "Valencia Basket",
-   "position": "C",
-   "name": "Neal Sako",
-   "status": "Ready",
-   "round": "Round 1",
-   "comment": "Travels with the team to Istanbul (groin injury)"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "Didn't travel with the team in Round 1"
   },
   {
    "team": "Valencia Basket",
    "position": "C",
    "name": "Yankuba Sima",
-   "status": "Out",
-   "round": "Round 1",
-   "comment": "Didn't travel with the team"
+   "status": "Uncertain",
+   "round": "Round 2",
+   "comment": "Didn't travel with the team in Round 1"
   },
   {
    "team": "Virtus Bologna",
    "position": "C",
    "name": "Kevin Kokila",
-   "status": "Out",
-   "round": "Round 1",
+   "status": "Uncertain",
+   "round": "Round 2",
    "comment": "Tear right thigh biceps (09.02). Out for 4 weeks"
   },
   {
