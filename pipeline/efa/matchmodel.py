@@ -47,10 +47,37 @@ class MatchModel:
         return _phi(self.margin(club, rival, at_home) / self.sd)
 
     def coach_points(self, club: str, rival: str, at_home: bool) -> float:
-        mu = self.margin(club, rival, at_home)
-        return sum(
-            (_phi((hi - mu) / self.sd) - _phi((lo - mu) / self.sd)) * pts for lo, hi, pts in _WIN + _LOSS
-        )
+        return coach_mean(coach_outcomes(self.margin(club, rival, at_home), self.sd))
+
+
+def coach_outcomes(margin: float, sd: float) -> list[tuple[float, float]]:
+    """(puntos, probabilidad) del entrenador con un margen esperado y su dispersión."""
+    return [
+        (pts, _phi((hi - margin) / sd) - _phi((lo - margin) / sd)) for lo, hi, pts in _LOSS[::-1] + _WIN
+    ]
+
+
+def coach_mean(outcomes: list[tuple[float, float]]) -> float:
+    return sum(pts * prob for pts, prob in outcomes)
+
+
+def coach_sd(outcomes: list[tuple[float, float]]) -> float:
+    mean = coach_mean(outcomes)
+    return math.sqrt(sum(prob * (pts - mean) ** 2 for pts, prob in outcomes))
+
+
+def coach_quantile(outcomes: list[tuple[float, float]], q: float) -> float:
+    """Cuantil de una variable discreta: el primer resultado cuya acumulada llega a q."""
+    total = 0.0
+    for pts, prob in sorted(outcomes):
+        total += prob
+        if total >= q - 1e-12:
+            return pts
+    return max(pts for pts, _ in outcomes)
+
+
+def coach_prob_above(outcomes: list[tuple[float, float]], threshold: float) -> float:
+    return sum(prob for pts, prob in outcomes if pts > threshold)
 
 
 def _phi(z: float) -> float:

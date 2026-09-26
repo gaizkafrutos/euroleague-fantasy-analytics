@@ -55,8 +55,12 @@ export default function Header({ round, totalRounds, searchIndex }: Props) {
         <PlayerSearch index={searchIndex} />
 
         <div className="masthead-tools">
-          <span className="round-pill">
-            Jornada <b>{round}</b>
+          <span className="round-pill" aria-label={`Jornada ${round} de ${totalRounds}`}>
+            <span className="round-word">Jornada</span>
+            <span className="round-short" aria-hidden>
+              J
+            </span>
+            <b>{round}</b>
             <span className="muted">/ {totalRounds}</span>
           </span>
           {/* La portada es siempre oscura, así que ahí el conmutador no haría

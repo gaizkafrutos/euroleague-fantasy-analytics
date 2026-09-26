@@ -20,6 +20,7 @@ import AddToSquad from "@/components/team/AddToSquad";
 import ValueScatter from "@/components/charts/ValueScatter";
 import { BarCell, Delta, PlayerCell, PositionBadge } from "@/components/ui/primitives";
 import { credits, displayName, num, percent } from "@/lib/format";
+import { fixtureLabel, playRisk, projectionNote, turnLabel } from "@/lib/projection";
 import type { Player, Team } from "@/lib/types";
 
 type SortKey =
@@ -46,15 +47,19 @@ const COLUMNS: Array<{ key: SortKey; label: string; title: string }> = [
     label: "Revalor.",
     title: "Variación de precio esperada si puntúa lo proyectado (créditos)",
   },
-  { key: "projectedFp", label: "Proyección", title: "Puntos fantasy esperados la próxima jornada" },
+  {
+    key: "projectedFp",
+    label: "Proyección",
+    title: "Puntos fantasy esperados la próxima jornada, ya descontada la probabilidad de que no juegue",
+  },
   { key: "valueProjected", label: "Pts/cr", title: "Puntos proyectados por crédito" },
   { key: "fpAvg", label: "Media", title: "Media de puntos fantasy por partido jugado" },
-  { key: "minutesAvg", label: "Min", title: "Minutos por partido y su tendencia" },
+  { key: "minutesAvg", label: "Min", title: "Minutos por partido y su tendencia (los esperados, en el detalle)" },
   { key: "consistency", label: "Fiabilidad", title: "1 = regular, 0 = lotería" },
   {
     key: "difficulty",
     label: "Calendario",
-    title: "Dificultad de los 3 próximos rivales (100 = lo más duro)",
+    title: "Próximo rival y dificultad de los 3 próximos (100 = lo más duro)",
   },
   { key: "bargainScore", label: "Índice", title: "Índice compuesto de chollo" },
 ];
@@ -527,11 +532,14 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     <td className="num">
                       <Revalue player={player} />
                     </td>
-                    <td className="num">
-                      <BarCell
-                        value={player.projectedFp}
-                        fraction={share(player.projectedFp, "projectedFp")}
-                      />
+                    <td className="num" title={projectionNote(player)}>
+                      <span className="projection-cell">
+                        <BarCell
+                          value={player.projectedFp}
+                          fraction={share(player.projectedFp, "projectedFp")}
+                        />
+                        <PlayRisk player={player} />
+                      </span>
                     </td>
                     <td className="num">
                       <BarCell
@@ -546,20 +554,35 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     {/* Media y forma comparten celda: la forma es la media de los
                         últimos cinco, y lo que importa de ella es cuánto se
                         separa de la media. Una columna menos cabe a 1280 px. */}
-                    <td className="num" title={`Forma (últimos 5): ${num(player.perf.form)}`}>
+                    <td
+                      className="num"
+                      title={`Último partido: ${num(player.perf.lastFp)} · forma (últimos 5): ${num(player.perf.form)}`}
+                    >
                       {num(player.perf.fpAvg)}{" "}
                       <span className="muted" style={{ fontSize: "0.76em" }}>
                         <Delta value={player.perf.formDelta} quiet />
                       </span>
                     </td>
-                    <td className="num">
+                    <td
+                      className="num"
+                      title={
+                        typeof player.expectedMinutes === "number"
+                          ? `Esperados la próxima jornada: ${num(player.expectedMinutes)} min`
+                          : undefined
+                      }
+                    >
                       {num(player.perf.minutesAvg)}{" "}
                       <span style={{ fontSize: "0.76em" }}>
                         <Delta value={player.perf.minutesTrend} quiet />
                       </span>
                     </td>
                     <td className="num">{reliable(player)}</td>
-                    <td className="num">{num(player.schedule.difficulty, 0)}</td>
+                    <td className="num" title={nextTitle(player)}>
+                      <span className="muted" style={{ fontSize: "0.8em" }}>
+                        {player.schedule.next ? fixtureLabel(player.schedule.next) : ""}
+                      </span>{" "}
+                      {num(player.schedule.difficulty, 0)}
+                    </td>
                     <td className="num">
                       <BarCell
                         value={player.bargainScore}
@@ -591,7 +614,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                   <span className="player-card-stats">
                     <span>
                       <b className="num">{num(player.projectedFp)}</b>
-                      <i>proyección</i>
+                      <i>
+                        {playRisk(player) !== null
+                          ? `proy. · ${percent(playRisk(player))} juega`
+                          : `proy. ${player.schedule.next ? fixtureLabel(player.schedule.next) : ""}`}
+                      </i>
                     </span>
                     <span>
                       <b className="num">
@@ -659,6 +686,32 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       ) : null}
     </div>
   );
+}
+
+/** Aviso de que la proyección lleva descontada la probabilidad de no jugar. */
+function PlayRisk({ player }: { player: Player }) {
+  const risk = playRisk(player);
+  if (risk === null) return null;
+  return (
+    <span className={`play-risk${risk === 0 ? " is-out" : ""}`} aria-label={`${percent(risk)} de que juegue`}>
+      {percent(risk)}
+    </span>
+  );
+}
+
+function nextTitle(player: Player): string | undefined {
+  const next = player.schedule.next;
+  if (!next) return undefined;
+  const turn = turnLabel(next);
+  return [
+    `${fixtureLabel(next)} el ${new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", timeZone: "Europe/Madrid" }).format(new Date(next.date))}`,
+    turn ? `turno ${next.turn} de ${next.turns}` : null,
+    `${percent(next.winProb)} de ganar`,
+    next.restDays !== null ? `${next.restDays} días de descanso` : null,
+    next.doubleWeek ? "semana doble" : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
 }
 
 /** Variación de precio esperada, con la probabilidad en el title. Verde/rojo

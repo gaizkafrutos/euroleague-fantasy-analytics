@@ -49,6 +49,7 @@ from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE
 from efa.gamelogs import build_gamelog
 from efa.ingest.official import load_boxscores, load_player_stats, load_reference
 from efa.ingest.playbyplay import load_pbp, shots_frame
+from efa.matchmodel import coach_outcomes, coach_prob_above, coach_quantile, coach_sd
 
 log = logging.getLogger(__name__)
 
@@ -373,6 +374,17 @@ def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
 # ---------------------------------------------------------------------------
 # Todo junto
 # ---------------------------------------------------------------------------
+def _coach_outcomes(record: dict[str, Any], meta: dict[str, Any]) -> list[tuple[float, float]] | None:
+    """Reparto de puntos del entrenador en su próximo partido, si lo hay."""
+    if not record.get("isCoach"):
+        return None
+    nxt = (record.get("schedule") or {}).get("next")
+    sd = (meta.get("matchModel") or {}).get("marginSd")
+    if not nxt or not sd or nxt.get("expectedMargin") is None:
+        return None
+    return coach_outcomes(float(nxt["expectedMargin"]), float(sd))
+
+
 def apply_advanced(
     *,
     records: list[dict[str, Any]],
@@ -442,6 +454,20 @@ def apply_advanced(
             record["outlook"] = None
             continue
         threshold = break_even(model, price)
+        outcomes = _coach_outcomes(record, meta)
+        if outcomes is not None:
+            # El entrenador solo puede sacar seis cifras: su horquilla es la de
+            # esa distribución discreta, no la de una normal.
+            record["outlook"] = {
+                "breakEven": round(threshold, 1),
+                "expectedChange": round(max(-1.5, min(1.5, expected_change(model, proj, price))), 2),
+                "riseProb": round(coach_prob_above(outcomes, threshold), 3),
+                "sd": round(coach_sd(outcomes), 2),
+                "floor": coach_quantile(outcomes, 0.25),
+                "ceiling": coach_quantile(outcomes, 0.75),
+                "p90": coach_quantile(outcomes, 0.9),
+            }
+            continue
         record["outlook"] = {
             "breakEven": round(threshold, 1),
             "expectedChange": round(max(-1.5, min(1.5, expected_change(model, proj, price))), 2),

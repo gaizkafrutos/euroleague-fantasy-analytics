@@ -6675,3 +6675,295 @@ dl dd.dl-note {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* --------------------------------------------------------------------------
+   Proyección con probabilidad de jugar
+
+   La cifra ya está multiplicada por la probabilidad de jugar; la etiqueta dice
+   cuánto, para que una duda de 8 no se lea como un jugador de 8.
+   -------------------------------------------------------------------------- */
+.projection-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.play-risk {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0 5px;
+  border-radius: 999px;
+  color: var(--avail-doubt);
+  border: 1px solid color-mix(in srgb, var(--avail-doubt) 40%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+.play-risk.is-out {
+  color: var(--avail-out);
+  border-color: color-mix(in srgb, var(--avail-out) 40%, transparent);
+}
+
+.turn-tag {
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 0 4px;
+  border-radius: 4px;
+  color: var(--ink-muted);
+  border: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Mi equipo: caja y plan de cambios
+   -------------------------------------------------------------------------- */
+.squad-cash {
+  flex: 0 0 110px;
+}
+
+.squad-cash .input {
+  width: 100%;
+}
+
+.plan-limit {
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.plan-steps {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  counter-reset: plan;
+}
+
+.plan-steps > li {
+  counter-increment: plan;
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.plan-steps > li::before {
+  content: counter(plan);
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.plan-trade {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.plan-trade i {
+  font-style: normal;
+  font-size: 0.78rem;
+}
+
+.plan-steps small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.74rem;
+}
+
+.plan-gain {
+  display: grid;
+  justify-items: end;
+  font-size: 1rem;
+}
+
+.plan-gain i {
+  font-style: normal;
+  font-size: 0.72rem;
+}
+
+.plan-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.tok-proj .play-risk {
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.tok-sub .turn-tag {
+  margin-left: 5px;
+}
+
+@media (max-width: 640px) {
+  .squad-cash {
+    flex: 1 1 100%;
+  }
+
+  .plan-steps > li {
+    grid-template-columns: 22px 1fr;
+  }
+
+  .plan-gain {
+    grid-column: 2;
+    justify-items: start;
+    justify-content: start;
+    align-items: baseline;
+    grid-auto-flow: column;
+    gap: 8px;
+  }
+
+  .plan-limit button {
+    padding: 6px 10px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Cabecera compacta en el móvil (auditoría D10)
+
+   Antes eran dos filas (logo y buscador debajo): unos 170 px fijos que, con la
+   barra de abajo, se comían una cuarta parte de la pantalla. Ahora es una sola
+   fila de 52 px: símbolo, buscador, jornada y tema. La jornada, que en el
+   móvil desaparecía, vuelve abreviada ("J2/38").
+   -------------------------------------------------------------------------- */
+.round-short {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .masthead-inner {
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding-block: 8px;
+  }
+
+  .search {
+    order: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .round-pill {
+    display: inline-flex;
+    gap: 2px;
+    padding: 5px 8px;
+  }
+
+  .round-word {
+    display: none;
+  }
+
+  .round-short {
+    display: inline;
+  }
+
+  .masthead-tools {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wordmark-text {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Comparador
+   -------------------------------------------------------------------------- */
+.compare-picker {
+  position: relative;
+  max-width: 420px;
+}
+
+.compare-results {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 4px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.compare-results button {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  text-align: left;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+
+.compare-results button:hover,
+.compare-results button:focus-visible {
+  background: var(--surface-2);
+}
+
+.compare-table th[scope="row"] {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink-2);
+  white-space: nowrap;
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 1;
+}
+
+.compare-table thead th {
+  vertical-align: top;
+  min-width: 128px;
+}
+
+.compare-sub,
+.compare-avail {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.compare-avail {
+  color: var(--avail-doubt);
+}
+
+.compare-remove {
+  margin-top: 6px;
+  min-height: 28px;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+}
+
+.compare-group th {
+  text-align: left;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  background: var(--surface-2);
+}
+
+.compare-table td.is-best {
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--accent-soft);
+}

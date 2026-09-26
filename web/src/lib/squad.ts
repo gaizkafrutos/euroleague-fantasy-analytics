@@ -26,6 +26,8 @@ export const MAX_PER_CLUB = 6;
  *  que tienen al menos uno de cada puesto, que es como se aplica. */
 export const ALLOWED_FORMATIONS = ["2-2-1", "1-2-2", "2-1-2", "1-3-1", "3-1-1"] as const;
 export const DEFAULT_BUDGET = 100;
+/** Holgura para comparar sumas de precios con un decimal: 99,99999 cabe en 100. */
+export const BUDGET_EPS = 1e-6;
 
 /* ---------------------------------------------------------- disponibilidad */
 
@@ -125,6 +127,23 @@ export function scoredProjection(roles: Roles, coach: Player | null): number {
   return full + half + p(roles.captain) + p(coach);
 }
 
+/** Lo que multiplica sus puntos el sitio que ocupa: capitán 2, quinteto y
+ *  sexto 1, banquillo 0,5. */
+export function roleMultiplier(roles: Roles, player: Player): number {
+  if (roles.captain?.id === player.id) return 2;
+  if (roles.bench.some((member) => member.id === player.id)) return 0.5;
+  return 1;
+}
+
+/** Puntos que aporta por crédito en el sitio que ocupa. Un base de 15 puntos
+ *  y 15 créditos rinde 1 en el quinteto y 0,5 en el banquillo: lo que le paga
+ *  la plantilla no es su valor de mercado, es su valor en su sitio. */
+export function rentInRole(roles: Roles, player: Player): number {
+  const price = player.price ?? 0;
+  if (price <= 0) return 0;
+  return (roleMultiplier(roles, player) * effectiveProjection(player)) / price;
+}
+
 /* ------------------------------------------------------------- validación */
 
 export interface SquadCheck {
@@ -179,7 +198,7 @@ export function checkSquad(
     if (count > MAX_PER_CLUB)
       problems.push(`${count} de ${club} en la plantilla: el máximo es ${MAX_PER_CLUB}.`);
   }
-  if (spent > budget)
+  if (spent > budget + BUDGET_EPS)
     problems.push(`Te pasas ${(spent - budget).toFixed(1)} créditos del presupuesto.`);
 
   const roles = assignRoles(squad);
@@ -228,6 +247,7 @@ export function suggestSwaps(
   budget = DEFAULT_BUDGET,
   coach: Player | null = null,
   limit = 5,
+  coaches: Player[] = [],
 ): Swap[] {
   const owned = new Set(squad.map((player) => player.id));
   const check = checkSquad(squad, budget, coach);
@@ -242,7 +262,7 @@ export function suggestSwaps(
     for (const candidate of market) {
       if (owned.has(candidate.id)) continue;
       if (candidate.position !== player.position) continue;
-      if ((candidate.price ?? Infinity) > ceiling) continue;
+      if ((candidate.price ?? Infinity) > ceiling + BUDGET_EPS) continue;
       // Nunca se recomienda fichar a alguien de baja o sin inscribir.
       if (!isSignable(candidate)) continue;
       // Poda barata: si no proyecta más, no puede subir la puntuación. Un
@@ -268,6 +288,28 @@ export function suggestSwaps(
         gain: Number(bestGain.toFixed(2)),
         costDelta: Number(((best.price ?? 0) - (player.price ?? 0)).toFixed(2)),
         risky: best.availability?.level === "doubt",
+      });
+    }
+  }
+
+  // El entrenador también se cambia (y cuenta como uno de los cambios).
+  if (coach && coaches.length) {
+    const ceiling = (coach.price ?? 0) + check.free;
+    const best = coaches
+      .filter(
+        (candidate) =>
+          candidate.id !== coach.id &&
+          (candidate.price ?? Infinity) <= ceiling + BUDGET_EPS &&
+          effectiveProjection(candidate) > effectiveProjection(coach),
+      )
+      .sort((a, b) => effectiveProjection(b) - effectiveProjection(a))[0];
+    if (best) {
+      suggestions.push({
+        out: coach,
+        in: best,
+        gain: Number((effectiveProjection(best) - effectiveProjection(coach)).toFixed(2)),
+        costDelta: Number(((best.price ?? 0) - (coach.price ?? 0)).toFixed(2)),
+        risky: false,
       });
     }
   }
@@ -353,10 +395,412 @@ export function buildSquad(
   const left = budget - spent;
   const coach =
     coachPool
-      .filter((candidate) => (candidate.price ?? 0) <= left + 1e-9)
+      .filter((candidate) => (candidate.price ?? 0) <= left + BUDGET_EPS)
       .sort((a, b) => (b.projectedFp ?? 0) - (a.projectedFp ?? 0))[0] ?? null;
 
+  // El voraz ordena por puntos por crédito sin saber que el banquillo puntúa a
+  // la mitad. La búsqueda local lo corrige: cambios sueltos y por parejas
+  // (bajar a uno para subir a otro) mientras alguno mejore la puntuación real.
+  if (players.length === SQUAD_SIZE && coach) {
+    const improved = planTrades({ players, coach }, market, coachPool, budget, Infinity);
+    return { players: improved.players, coach: improved.coach };
+  }
   return { players, coach };
+}
+
+/* -------------------------------------------------------- plan de cambios */
+
+/** Jornadas tras las que el juego abre una ventana de cambios ilimitados en la
+ *  fase regular (tras la 6, 13, 18, 23, 28 y 34). En playoffs, siempre. */
+export const UNLIMITED_AFTER = [6, 13, 18, 23, 28, 34] as const;
+/** Cambios por jornada fuera de esas ventanas. El entrenador cuenta como uno. */
+export const TRADES_PER_ROUND = 4;
+
+export interface TradeWindow {
+  unlimited: boolean;
+  /** Jornada tras la que se abre la próxima ventana ilimitada. */
+  nextUnlimitedAfter: number | null;
+}
+
+/** `round` es la próxima jornada por jugar (la de `meta.currentRound`). */
+export function tradeWindow(round: number, regularRounds: number): TradeWindow {
+  const unlimited =
+    round <= 1 ||
+    (UNLIMITED_AFTER as readonly number[]).includes(round - 1) ||
+    (regularRounds > 0 && round > regularRounds);
+  const nextUnlimitedAfter = UNLIMITED_AFTER.find((after) => after + 1 > round) ?? null;
+  return { unlimited, nextUnlimitedAfter };
+}
+
+export interface Lineup {
+  players: Player[];
+  coach: Player | null;
+}
+
+export interface TradeStep {
+  /** Uno, o dos si solo tienen sentido juntos (vender barato para subir a otro). */
+  trades: Array<{ out: Player; in: Player; costDelta: number }>;
+  gain: number;
+  /** Puntuación real de la plantilla tras el paso. */
+  scored: number;
+}
+
+export interface TradePlan extends Lineup {
+  steps: TradeStep[];
+  before: number;
+  after: number;
+  used: number;
+  spent: number;
+}
+
+function lineupScore(lineup: Lineup): number {
+  return scoredProjection(assignRoles(lineup.players), lineup.coach);
+}
+
+function lineupSpent(lineup: Lineup): number {
+  return lineup.players.reduce((sum, player) => sum + (player.price ?? 0), 0) + (lineup.coach?.price ?? 0);
+}
+
+function fichable(player: Player): boolean {
+  return (player.price ?? 0) > 0 && player.projectedFp != null && isSignable(player);
+}
+
+/** Los que no están dominados: nadie más barato (o igual) proyecta más. Un
+ *  dominado nunca es el mejor fichaje, salvo por el tope de club. */
+function frontier(pool: Player[]): Player[] {
+  const sorted = [...pool].sort(
+    (a, b) => (a.price ?? 0) - (b.price ?? 0) || effectiveProjection(b) - effectiveProjection(a),
+  );
+  const out: Player[] = [];
+  let best = -Infinity;
+  for (const player of sorted) {
+    const value = effectiveProjection(player);
+    if (value > best + 1e-9) {
+      out.push(player);
+      best = value;
+    }
+  }
+  return out;
+}
+
+type Move = Array<{ slot: number; in: Player }>;
+
+interface Scored {
+  move: Move;
+  gain: number;
+}
+
+/** La puntuación real, en rápido. Con 4-4-2 en plantilla, el grupo del 100 %
+ *  son los seis que más proyectan (salvo que falte un puesto, caso raro que va
+ *  por `assignRoles`), y el capitán, el que más proyecta de todos:
+ *
+ *    0,5·Σ todos + 0,5·Σ los seis + máximo + entrenador
+ *
+ *  es lo mismo que `scoredProjection(assignRoles(...))` (lo comprueban los
+ *  tests contra fuerza bruta), sin crear objetos: el planificador lo evalúa
+ *  cientos de miles de veces. */
+function fastScore(lineup: Lineup): number {
+  const values = lineup.players.map(effectiveProjection);
+  const order = values.map((_, index) => index).sort((a, b) => (values[b] ?? 0) - (values[a] ?? 0));
+  const top = order.slice(0, FULL_SCORERS);
+  const covered = new Set(top.map((index) => lineup.players[index]?.position));
+  const present = new Set(lineup.players.map((player) => player.position));
+  for (const position of present) {
+    if (!covered.has(position)) return lineupScore(lineup);
+  }
+  let total = 0;
+  for (const value of values) total += value;
+  let full = 0;
+  for (const index of top) full += values[index] ?? 0;
+  const captain = order.length ? (values[order[0] ?? 0] ?? 0) : 0;
+  return 0.5 * total + 0.5 * full + captain + effectiveProjection(lineup.coach);
+}
+
+/** Inserta en una lista corta ordenada por ganancia, sin pasar de `size`. */
+function keepTop(list: Scored[], item: Scored, size: number): void {
+  if (list.length >= size && item.gain <= (list[list.length - 1]?.gain ?? -Infinity)) return;
+  let index = list.length;
+  while (index > 0 && (list[index - 1]?.gain ?? 0) < item.gain) index -= 1;
+  list.splice(index, 0, item);
+  if (list.length > size) list.pop();
+}
+
+/** Plan de cambios para la jornada: hasta `maxTrades` fichajes que más suben la
+ *  puntuación real (capitán ×2, banquillo ×0,5, entrenador incluido), sin salirse
+ *  del presupuesto ni del tope de seis por club.
+ *
+ *  Búsqueda en haz: de cada plantilla se prueban los mejores cambios sueltos y
+ *  las mejores parejas (bajar a uno para poder subir a otro), y en cada número
+ *  de cambios gastados se quedan las mejores plantillas. Mirar solo el mejor
+ *  cambio de cada paso se dejaba hasta 6 puntos frente al óptimo exacto: gastar
+ *  el dinero en el segundo mejor fichaje a veces deja sitio a un tercero.
+ *
+ *  Con cambios ilimitados (`Infinity`) se encadenan mejoras hasta que no queda
+ *  ninguna. Los tests lo miden contra el óptimo exacto por programación entera.
+ */
+export function planTrades(
+  start: Lineup,
+  market: Player[],
+  coaches: Player[],
+  budget = DEFAULT_BUDGET,
+  maxTrades: number = TRADES_PER_ROUND,
+  beam = 5,
+): TradePlan {
+  const pools: Record<string, Player[]> = { G: [], F: [], C: [], E: [] };
+  for (const player of market) if (player.position && fichable(player)) pools[player.position]?.push(player);
+  for (const coach of coaches) if (fichable(coach)) pools.E?.push(coach);
+
+  const origin: Lineup = { players: [...start.players], coach: start.coach };
+  const before = lineupScore(origin);
+
+  const slotOf = (lineup: Lineup, slot: number): Player | null =>
+    slot < lineup.players.length ? (lineup.players[slot] ?? null) : lineup.coach;
+  const posOf = (lineup: Lineup, slot: number): string =>
+    slot < lineup.players.length ? (lineup.players[slot]?.position ?? "") : "E";
+  const slotCount = (lineup: Lineup): number => lineup.players.length + (lineup.coach ? 1 : 0);
+  const apply = (lineup: Lineup, move: Move): Lineup => {
+    const players = [...lineup.players];
+    let coach = lineup.coach;
+    for (const { slot, in: incoming } of move) {
+      if (slot < players.length) players[slot] = incoming;
+      else coach = incoming;
+    }
+    return { players, coach };
+  };
+  const clubsOk = (lineup: Lineup): boolean => {
+    const clubs: Record<string, number> = {};
+    for (const player of lineup.players) {
+      const club = player.club ?? "";
+      clubs[club] = (clubs[club] ?? 0) + 1;
+      if (clubs[club] > MAX_PER_CLUB) return false;
+    }
+    return true;
+  };
+
+  /** Los `size` mejores cambios sueltos. */
+  const singles = (lineup: Lineup, size: number): Scored[] => {
+    const owned = new Set([...lineup.players.map((p) => p.id), lineup.coach?.id]);
+    const base = fastScore(lineup);
+    const spent = lineupSpent(lineup);
+    const out: Scored[] = [];
+    for (let slot = 0; slot < slotCount(lineup); slot += 1) {
+      const leaving = slotOf(lineup, slot);
+      if (!leaving) continue;
+      for (const candidate of pools[posOf(lineup, slot)] ?? []) {
+        if (owned.has(candidate.id)) continue;
+        // Con menos proyección no puede subir la puntuación (es monótona).
+        if (effectiveProjection(candidate) <= effectiveProjection(leaving)) continue;
+        if (spent - (leaving.price ?? 0) + (candidate.price ?? 0) > budget + BUDGET_EPS) continue;
+        const move: Move = [{ slot, in: candidate }];
+        const next = apply(lineup, move);
+        if (slot < lineup.players.length && !clubsOk(next)) continue;
+        const gain = fastScore(next) - base;
+        if (gain > 1e-6) keepTop(out, { move, gain }, size);
+      }
+    }
+    return out;
+  };
+
+  /** Las `size` mejores parejas, con fichajes solo de la frontera precio-puntos. */
+  const pairs = (lineup: Lineup, size: number): Scored[] => {
+    const owned = new Set([...lineup.players.map((p) => p.id), lineup.coach?.id]);
+    const base = fastScore(lineup);
+    const spent = lineupSpent(lineup);
+    const fronts: Record<string, Player[]> = {};
+    for (const [key, pool] of Object.entries(pools)) {
+      fronts[key] = frontier(pool.filter((player) => !owned.has(player.id)));
+    }
+    const out: Scored[] = [];
+    const slots = slotCount(lineup);
+    for (let a = 0; a < slots; a += 1) {
+      const outA = slotOf(lineup, a);
+      if (!outA) continue;
+      for (let b = a + 1; b < slots; b += 1) {
+        const outB = slotOf(lineup, b);
+        if (!outB) continue;
+        const room = budget + BUDGET_EPS - spent + (outA.price ?? 0) + (outB.price ?? 0);
+        for (const inA of fronts[posOf(lineup, a)] ?? []) {
+          const upA = effectiveProjection(inA) > effectiveProjection(outA);
+          const left = room - (inA.price ?? 0);
+          if (left < 0) break; // la frontera va de barato a caro
+          for (const inB of fronts[posOf(lineup, b)] ?? []) {
+            if ((inB.price ?? 0) > left) break;
+            if (inA.id === inB.id) continue;
+            if (!upA && effectiveProjection(inB) <= effectiveProjection(outB)) continue;
+            const move: Move = [
+              { slot: a, in: inA },
+              { slot: b, in: inB },
+            ];
+            const next = apply(lineup, move);
+            if (!clubsOk(next)) continue;
+            const gain = fastScore(next) - base;
+            if (gain > 1e-6) keepTop(out, { move, gain }, size);
+          }
+        }
+      }
+    }
+    return out;
+  };
+
+  interface State {
+    lineup: Lineup;
+    score: number;
+    path: Move[];
+  }
+  const key = (lineup: Lineup): string =>
+    [...lineup.players.map((p) => p.id)].sort((x, y) => x - y).join(",") + `|${lineup.coach?.id ?? ""}`;
+
+  let best: State = { lineup: origin, score: fastScore(origin), path: [] };
+
+  const changes = (lineup: Lineup): number => {
+    let count = lineup.coach?.id !== origin.coach?.id ? 1 : 0;
+    lineup.players.forEach((player, slot) => {
+      if (player.id !== origin.players[slot]?.id) count += 1;
+    });
+    return count;
+  };
+
+  /** Pulido: re-elegir (o deshacer) dos plazas a la vez sin pasar de los
+   *  cambios permitidos. El haz construye el plan fichaje a fichaje; esto
+   *  recoloca lo ya decidido, que es donde se le escapaban puntos. */
+  const polish = (state: State): State => {
+    let lineup = state.lineup;
+    let score = fastScore(lineup);
+    for (let round = 0; round < 12; round += 1) {
+      const owned = new Set([...lineup.players.map((p) => p.id), lineup.coach?.id]);
+      const fronts: Record<string, Player[]> = {};
+      for (const [pos, pool] of Object.entries(pools)) {
+        fronts[pos] = frontier(pool.filter((player) => !owned.has(player.id)));
+      }
+      const options = (slot: number): Player[] => {
+        const original = slotOf(origin, slot);
+        const list = [...(fronts[posOf(lineup, slot)] ?? [])];
+        if (original && !owned.has(original.id)) list.push(original);
+        return list;
+      };
+      const spent = lineupSpent(lineup);
+      let found: { lineup: Lineup; score: number } | null = null;
+      const slots = slotCount(lineup);
+      for (let a = 0; a < slots; a += 1) {
+        const outA = slotOf(lineup, a) as Player;
+        const listA = options(a);
+        for (let b = a; b < slots; b += 1) {
+          const outB = slotOf(lineup, b) as Player;
+          const listB = b === a ? [null] : [null, ...options(b)];
+          for (const inA of listA) {
+            for (const inB of listB) {
+              if (inB && inA.id === inB.id) continue;
+              const cost =
+                spent - (outA.price ?? 0) + (inA.price ?? 0) + (inB ? (inB.price ?? 0) - (outB.price ?? 0) : 0);
+              if (cost > budget + BUDGET_EPS) continue;
+              const move: Move = inB ? [{ slot: a, in: inA }, { slot: b, in: inB }] : [{ slot: a, in: inA }];
+              const next = apply(lineup, move);
+              if (changes(next) > maxTrades || !clubsOk(next)) continue;
+              const value = fastScore(next);
+              if (value > (found?.score ?? score) + 1e-6) found = { lineup: next, score: value };
+            }
+          }
+        }
+      }
+      if (!found) break;
+      lineup = found.lineup;
+      score = found.score;
+    }
+    if (lineup === state.lineup) return state;
+    // El camino se rehace desde el origen: un cambio por plaza distinta.
+    const path: Move[] = [];
+    lineup.players.forEach((player, slot) => {
+      if (player.id !== origin.players[slot]?.id) path.push([{ slot, in: player }]);
+    });
+    if (lineup.coach && lineup.coach.id !== origin.coach?.id) {
+      path.push([{ slot: origin.players.length, in: lineup.coach }]);
+    }
+    return { lineup, score, path };
+  };
+
+  if (Number.isFinite(maxTrades)) {
+    // Haz: layers[u] = mejores plantillas con u cambios gastados.
+    const layers: State[][] = Array.from({ length: maxTrades + 1 }, () => []);
+    layers[0] = [best];
+    for (let used = 0; used < maxTrades; used += 1) {
+      const layer = (layers[used] ?? []).sort((x, y) => y.score - x.score).slice(0, beam);
+      for (const state of layer) {
+        if (state.score > best.score + 1e-9) best = state;
+        const expansions: Array<{ scored: Scored; cost: number }> = singles(state.lineup, beam).map(
+          (scored) => ({ scored, cost: 1 }),
+        );
+        if (maxTrades - used >= 2) {
+          for (const scored of pairs(state.lineup, beam)) expansions.push({ scored, cost: 2 });
+        }
+        for (const { scored, cost } of expansions) {
+          const lineup = apply(state.lineup, scored.move);
+          layers[used + cost]?.push({ lineup, score: state.score + scored.gain, path: [...state.path, scored.move] });
+        }
+      }
+      // Sin duplicados: dos órdenes de los mismos cambios son la misma plantilla.
+      for (let next = used + 1; next <= maxTrades; next += 1) {
+        const seen = new Set<string>();
+        layers[next] = (layers[next] ?? []).filter((state) => {
+          const id = key(state.lineup);
+          if (seen.has(id)) return false;
+          seen.add(id);
+          return true;
+        });
+      }
+    }
+    for (const state of layers[maxTrades] ?? []) if (state.score > best.score + 1e-9) best = state;
+    best = polish(best);
+  } else {
+    // Ilimitados: mejor cambio (o pareja) cada vez, hasta que no quede mejora.
+    for (let guard = 0; guard < 40; guard += 1) {
+      const move = [...singles(best.lineup, 1), ...pairs(best.lineup, 1)].sort((x, y) => y.gain - x.gain)[0];
+      if (!move) break;
+      best = { lineup: apply(best.lineup, move.move), score: best.score + move.gain, path: [...best.path, move.move] };
+    }
+  }
+
+  // El camino, en el orden en que conviene hacerlo: primero el que más gana
+  // de los que caben con el dinero de ese momento (así, si al final solo haces
+  // uno, es el bueno). Siempre existe un orden así: si todos los que quedan
+  // cuestan dinero, cualquiera cabe, porque juntos caben. Las parejas van
+  // juntas y con la venta barata delante.
+  const steps: TradeStep[] = [];
+  let current = origin;
+  const pending = [...best.path];
+  while (pending.length) {
+    const base = lineupScore(current);
+    let pick = -1;
+    let pickGain = -Infinity;
+    pending.forEach((move, index) => {
+      const next = apply(current, move);
+      if (lineupSpent(next) > budget + BUDGET_EPS) return;
+      const gain = lineupScore(next) - base;
+      if (gain > pickGain) {
+        pick = index;
+        pickGain = gain;
+      }
+    });
+    if (pick < 0) pick = 0;
+    const move = pending.splice(pick, 1)[0] as Move;
+    const trades = move
+      .map(({ slot, in: incoming }) => {
+        const out = slotOf(current, slot) as Player;
+        return { out, in: incoming, costDelta: Number(((incoming.price ?? 0) - (out.price ?? 0)).toFixed(2)) };
+      })
+      .sort((x, y) => x.costDelta - y.costDelta);
+    current = apply(current, move);
+    const scored = lineupScore(current);
+    steps.push({ trades, gain: Number((scored - base).toFixed(2)), scored: Number(scored.toFixed(2)) });
+  }
+
+  return {
+    ...current,
+    steps,
+    before: Number(before.toFixed(2)),
+    after: Number(lineupScore(current).toFixed(2)),
+    used: best.path.reduce((sum, move) => sum + move.length, 0),
+    spent: Number(lineupSpent(current).toFixed(2)),
+  };
 }
 
 /* ------------------------------------------------------------ roster real */

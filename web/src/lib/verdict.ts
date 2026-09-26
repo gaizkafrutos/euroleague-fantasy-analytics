@@ -46,6 +46,26 @@ export function verdictFor(player: Player): Verdict {
   const consistency = player.perf.consistency;
   const formDelta = player.perf.formDelta;
 
+  /* ------------------------------------------------------------ disponibilidad */
+  // Lo primero que cambia una decisión: el mejor jugador del mundo no suma nada
+  // desde la grada. Las demás señales siguen, pero esta pesa más que todas.
+  const level = player.availability?.level;
+  if (level === "out") {
+    signals.push({
+      direction: -1,
+      weight: 1.5,
+      clause: "está de baja para la próxima jornada",
+      reason: player.availability?.label ?? "De baja",
+    });
+  } else if (level === "doubt") {
+    signals.push({
+      direction: -1,
+      weight: 0.7,
+      clause: "está en duda para la próxima jornada",
+      reason: `${player.availability?.label ?? "En duda"}: su proyección cuenta la mitad`,
+    });
+  }
+
   /* ------------------------------------------------- precio contra rendimiento */
   if (valuePct !== null) {
     if (valuePct >= 0.72) {

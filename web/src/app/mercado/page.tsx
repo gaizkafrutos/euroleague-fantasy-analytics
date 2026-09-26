@@ -116,6 +116,8 @@ export default function MercadoPage() {
           <span className="status-sep">·</span>
           <a href="#explorador">Ir al explorador ↓</a>
           <span className="status-sep">·</span>
+          <Link href="/comparar">Comparar jugadores</Link>
+          <span className="status-sep">·</span>
           <Link href="/metodologia">Metodología</Link>
         </div>
       </section>
@@ -381,7 +383,7 @@ function RankCard({
  *  serializaba unos 660 KB en el HTML de /mercado; esto lo deja en un tercio. */
 const EXPLORER_PERF = [
   "games", "gamesPlayed", "minutesAvg", "minutesTrend", "minutesShareTrend",
-  "fpAvg", "form", "formDelta", "consistency", "consistencyEstimated",
+  "fpAvg", "form", "formDelta", "lastFp", "consistency", "consistencyEstimated",
 ] as const;
 
 function explorerRow(player: Player): Player {
@@ -402,6 +404,9 @@ function explorerRow(player: Player): Player {
     pricePendingSource: player.pricePendingSource,
     priceDeltaLast: player.priceDeltaLast,
     projectedFp: player.projectedFp,
+    projectedIfPlays: player.projectedIfPlays,
+    playProb: player.playProb,
+    expectedMinutes: player.expectedMinutes,
     valuePerCredit: player.valuePerCredit,
     valueProjected: player.valueProjected,
     bargainScore: player.bargainScore,

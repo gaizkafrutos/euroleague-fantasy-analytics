@@ -72,3 +72,17 @@ def test_esperanza_del_entrenador_con_margen_nulo():
     expected = model.coach_points("A", "B", True)
     assert 0 < expected < 10
     assert math.isclose(model.win_prob("A", "B", True), 0.5)
+
+
+def test_reparto_del_entrenador():
+    from efa.matchmodel import coach_mean, coach_outcomes, coach_quantile, coach_sd
+
+    outcomes = coach_outcomes(0.0, 12.0)
+    assert abs(sum(p for _, p in outcomes) - 1.0) < 1e-9
+    # Margen esperado 0: gana y pierde por igual, pero ganar suma más que restar perder.
+    assert coach_mean(outcomes) > 0
+    favourite = coach_outcomes(15.0, 12.0)
+    assert coach_mean(favourite) > coach_mean(outcomes)
+    assert coach_quantile(favourite, 0.25) >= 10.0
+    assert coach_quantile(favourite, 0.9) == 25.0
+    assert 5 < coach_sd(outcomes) < 20
