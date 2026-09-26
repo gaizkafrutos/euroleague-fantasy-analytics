@@ -1,13 +1,13 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-26T10:35:04.070339+00:00",
+ "generatedAt": "2026-09-26T11:54:29.200645+00:00",
  "currentRound": 2,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 12,
- "lastPriceCapture": "2026-09-25T12:34:50.825366+00:00",
+ "priceSnapshots": 13,
+ "lastPriceCapture": "2026-09-26T11:54:20.726766+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -45,11 +45,11 @@
  },
  "warnings": [],
  "priceModel": {
-  "a": 0.0401,
-  "b": -0.0458,
-  "c": 0.027,
-  "r2": 0.985,
-  "n": 160,
+  "a": 0.042,
+  "b": -0.0486,
+  "c": 0.0325,
+  "r2": 0.982,
+  "n": 226,
   "source": "último snapshot"
  },
  "league": {
