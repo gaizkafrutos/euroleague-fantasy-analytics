@@ -1,24 +1,31 @@
 {
- "method": "greedy",
- "totalPrice": 95.4,
- "totalProjection": 123.48,
- "scoredProjection": 137.9,
+ "method": "ilp",
+ "totalPrice": 100.0,
+ "totalProjection": 122.74,
+ "scoredProjection": 146.92,
  "captain": "3766",
  "starters": [
   "3766",
   "3791",
-  "3887",
+  "3857",
   "4252",
-  "4009"
+  "8846"
  ],
- "sixth": "11516",
+ "sixth": "3836",
  "bench": [
-  "3905",
-  "4061",
+  "11521",
   "4012",
-  "12469"
+  "3988",
+  "3991"
  ],
- "coach": null,
+ "coach": {
+  "key": "4255",
+  "name": "ALBERT, XAVIER",
+  "position": "E",
+  "club": "PAM",
+  "price": 7.1,
+  "projection": 7.82
+ },
  "players": [
   {
    "key": "3791",
@@ -29,14 +36,6 @@
    "projection": 21.12
   },
   {
-   "key": "3887",
-   "name": "FRANCISCO, SYLVAIN",
-   "position": "G",
-   "club": "PAN",
-   "price": 14.9,
-   "projection": 20.33
-  },
-  {
    "key": "4252",
    "name": "MONTERO, JEAN",
    "position": "G",
@@ -45,12 +44,20 @@
    "projection": 19.46
   },
   {
-   "key": "3905",
-   "name": "LUNDBERG, IFFE",
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
+   "position": "G",
+   "club": "ASV",
+   "price": 5.3,
+   "projection": 6.52
+  },
+  {
+   "key": "3988",
+   "name": "DIBARTOLOMEO, JOHN",
    "position": "G",
    "club": "TEL",
-   "price": 7.8,
-   "projection": 10.53
+   "price": 4.2,
+   "projection": 3.37
   },
   {
    "key": "3766",
@@ -61,20 +68,12 @@
    "projection": 25.35
   },
   {
-   "key": "11516",
-   "name": "CROWDER, JAE",
-   "position": "F",
-   "club": "ASV",
-   "price": 10.2,
-   "projection": 13.88
-  },
-  {
-   "key": "4061",
-   "name": "MANTZOUKAS, ELEFTHERIOS",
+   "key": "3836",
+   "name": "MITOGLOU, KONSTANTINOS",
    "position": "F",
    "club": "PAN",
-   "price": 4.8,
-   "projection": 5.0
+   "price": 5.9,
+   "projection": 7.37
   },
   {
    "key": "4012",
@@ -85,20 +84,28 @@
    "projection": 4.87
   },
   {
-   "key": "4009",
-   "name": "DIOP, OUSMANE",
-   "position": "C",
-   "club": "MIL",
-   "price": 4.0,
-   "projection": 1.47
+   "key": "3991",
+   "name": "ABALDE, ALBERTO",
+   "position": "F",
+   "club": "MAD",
+   "price": 4.3,
+   "projection": 3.22
   },
   {
-   "key": "12469",
-   "name": "ALVES DE SOUZA, THIERRY HENRY",
+   "key": "3857",
+   "name": "OTURU, DAN",
    "position": "C",
-   "club": "BAS",
-   "price": 4.0,
-   "projection": 1.47
+   "club": "HTA",
+   "price": 14.9,
+   "projection": 20.08
+  },
+  {
+   "key": "8846",
+   "name": "JEKIRI, TONYE",
+   "position": "C",
+   "club": "PAR",
+   "price": 8.6,
+   "projection": 11.38
   }
  ],
  "available": true,

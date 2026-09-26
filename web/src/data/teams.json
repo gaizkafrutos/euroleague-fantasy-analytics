@@ -5,48 +5,48 @@
   "short": "Efes",
   "country": "TUR",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png",
-  "offense": 82.0,
-  "defense": 89.0,
-  "netRating": -7.0,
-  "winRate": 0.0,
+  "offense": 80.4,
+  "defense": 85.0,
+  "netRating": -4.6,
+  "winRate": 0.271,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 73.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 100.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "MAD",
     "home": true,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": -1.0
+    "opponent_rating": 4.23
    },
    {
     "round": 3,
     "opponent": "RED",
     "home": false,
     "date": "2026-10-01T18:00:00Z",
-    "opponent_rating": -6.0
+    "opponent_rating": 0.09
    },
    {
     "round": 4,
     "opponent": "OLY",
     "home": false,
     "date": "2026-10-09T18:15:00Z",
-    "opponent_rating": 17.0
+    "opponent_rating": 9.37
    },
    {
     "round": 5,
     "opponent": "MUN",
     "home": true,
     "date": "2026-10-14T17:30:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": -2.2
    },
    {
     "round": 6,
     "opponent": "ZAL",
     "home": false,
     "date": "2026-10-16T17:00:00Z",
-    "opponent_rating": 6.0
+    "opponent_rating": 4.11
    }
   ],
   "box": {
@@ -335,12 +335,12 @@
   "short": "Milan",
   "country": "ITA",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png",
-  "offense": 76.0,
-  "defense": 92.0,
-  "netRating": -16.0,
-  "winRate": 0.0,
+  "offense": 84.7,
+  "defense": 87.9,
+  "netRating": -3.23,
+  "winRate": 0.383,
   "games": 1,
-  "ratingSource": "temporada en curso",
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
   "difficulty": 0.0,
   "fixtures": [
    {
@@ -348,35 +348,35 @@
     "opponent": "VIR",
     "home": true,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -5.37
    },
    {
     "round": 3,
     "opponent": "BAS",
     "home": false,
     "date": "2026-10-02T18:30:00Z",
-    "opponent_rating": -17.0
+    "opponent_rating": -6.54
    },
    {
     "round": 4,
     "opponent": "TEL",
     "home": false,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -3.66
    },
    {
     "round": 5,
     "opponent": "MAD",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -1.0
+    "opponent_rating": 4.23
    },
    {
     "round": 6,
     "opponent": "DUB",
     "home": true,
     "date": "2026-10-15T18:30:00Z",
-    "opponent_rating": 1.0
+    "opponent_rating": 0.23
    }
   ],
   "box": {
@@ -670,43 +670,43 @@
   "netRating": -2.0,
   "winRate": 0.0,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 27.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 24.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "TEL",
     "home": false,
     "date": "2026-09-30T18:05:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -3.66
    },
    {
     "round": 3,
     "opponent": "BAR",
     "home": true,
     "date": "2026-10-02T17:00:00Z",
-    "opponent_rating": 7.0
+    "opponent_rating": 1.77
    },
    {
     "round": 4,
     "opponent": "BAS",
     "home": false,
     "date": "2026-10-09T18:30:00Z",
-    "opponent_rating": -17.0
+    "opponent_rating": -6.54
    },
    {
     "round": 5,
     "opponent": "HTA",
     "home": false,
     "date": "2026-10-14T16:00:00Z",
-    "opponent_rating": -2.0
+    "opponent_rating": 1.34
    },
    {
     "round": 6,
     "opponent": "MUN",
     "home": true,
     "date": "2026-10-16T17:00:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": -2.2
    }
   ],
   "box": {
@@ -980,48 +980,48 @@
   "short": "Crvena",
   "country": "SRB",
   "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png",
-  "offense": 77.0,
-  "defense": 83.0,
-  "netRating": -6.0,
-  "winRate": 0.0,
+  "offense": 85.7,
+  "defense": 85.7,
+  "netRating": 0.09,
+  "winRate": 0.461,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 41.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 34.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "HTA",
     "home": true,
     "date": "2026-09-29T18:00:00Z",
-    "opponent_rating": -2.0
+    "opponent_rating": 1.34
    },
    {
     "round": 3,
     "opponent": "IST",
     "home": true,
     "date": "2026-10-01T18:00:00Z",
-    "opponent_rating": -7.0
+    "opponent_rating": -4.6
    },
    {
     "round": 4,
     "opponent": "DUB",
     "home": false,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": 1.0
+    "opponent_rating": 0.23
    },
    {
     "round": 5,
     "opponent": "ASV",
     "home": false,
     "date": "2026-10-13T18:00:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": -4.83
    },
    {
     "round": 6,
     "opponent": "PRS",
     "home": true,
     "date": "2026-10-16T18:00:00Z",
-    "opponent_rating": -19.0
+    "opponent_rating": -3.4
    }
   ],
   "box": {
@@ -1310,48 +1310,48 @@
   "short": "Dubai",
   "country": "UAE",
   "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png",
-  "offense": 78.0,
-  "defense": 77.0,
-  "netRating": 1.0,
-  "winRate": 1.0,
+  "offense": 86.7,
+  "defense": 86.4,
+  "netRating": 0.23,
+  "winRate": 0.571,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 71.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 60.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "BAR",
     "home": true,
     "date": "2026-09-29T16:00:00Z",
-    "opponent_rating": 7.0
+    "opponent_rating": 1.77
    },
    {
     "round": 3,
     "opponent": "ULK",
     "home": false,
     "date": "2026-10-02T17:45:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": 2.63
    },
    {
     "round": 4,
     "opponent": "RED",
     "home": true,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": -6.0
+    "opponent_rating": 0.09
    },
    {
     "round": 5,
     "opponent": "BAS",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -17.0
+    "opponent_rating": -6.54
    },
    {
     "round": 6,
     "opponent": "MIL",
     "home": false,
     "date": "2026-10-15T18:30:00Z",
-    "opponent_rating": -16.0
+    "opponent_rating": -3.23
    }
   ],
   "box": {
@@ -1640,20 +1640,20 @@
   "short": "Barca",
   "country": "ESP",
   "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png",
-  "offense": 89.0,
-  "defense": 82.0,
-  "netRating": 7.0,
-  "winRate": 1.0,
+  "offense": 85.0,
+  "defense": 83.2,
+  "netRating": 1.77,
+  "winRate": 0.614,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 66.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 61.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "DUB",
     "home": false,
     "date": "2026-09-29T16:00:00Z",
-    "opponent_rating": 1.0
+    "opponent_rating": 0.23
    },
    {
     "round": 3,
@@ -1667,21 +1667,21 @@
     "opponent": "ZAL",
     "home": true,
     "date": "2026-10-09T18:30:00Z",
-    "opponent_rating": 6.0
+    "opponent_rating": 4.11
    },
    {
     "round": 5,
     "opponent": "TEL",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -3.66
    },
    {
     "round": 6,
     "opponent": "OLY",
     "home": true,
     "date": "2026-10-16T18:30:00Z",
-    "opponent_rating": 17.0
+    "opponent_rating": 9.37
    }
   ],
   "box": {
@@ -1912,41 +1912,41 @@
   "short": "Bayern",
   "country": "GER",
   "crest": "https://media-cdn.incrowdsports.com/817b0e58-d595-4b09-ab0b-1e7cc26249ff.png",
-  "offense": 86.0,
-  "defense": 84.0,
-  "netRating": 2.0,
-  "winRate": 1.0,
+  "offense": 81.5,
+  "defense": 83.7,
+  "netRating": -2.2,
+  "winRate": 0.526,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 79.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 28.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "ULK",
     "home": false,
     "date": "2026-09-29T17:45:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": 2.63
    },
    {
     "round": 3,
     "opponent": "PAR",
     "home": true,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": 16.0
+    "opponent_rating": -2.0
    },
    {
     "round": 4,
     "opponent": "VIR",
     "home": true,
     "date": "2026-10-08T18:00:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -5.37
    },
    {
     "round": 5,
     "opponent": "IST",
     "home": false,
     "date": "2026-10-14T17:30:00Z",
-    "opponent_rating": -7.0
+    "opponent_rating": -4.6
    },
    {
     "round": 6,
@@ -2242,48 +2242,48 @@
   "short": "Fenerbahce",
   "country": "TUR",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png",
-  "offense": 78.0,
-  "defense": 68.0,
-  "netRating": 10.0,
-  "winRate": 1.0,
+  "offense": 81.3,
+  "defense": 78.7,
+  "netRating": 2.63,
+  "winRate": 0.681,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 88.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 52.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "MUN",
     "home": true,
     "date": "2026-09-29T17:45:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": -2.2
    },
    {
     "round": 3,
     "opponent": "DUB",
     "home": true,
     "date": "2026-10-02T17:45:00Z",
-    "opponent_rating": 1.0
+    "opponent_rating": 0.23
    },
    {
     "round": 4,
     "opponent": "PAN",
     "home": false,
     "date": "2026-10-08T18:15:00Z",
-    "opponent_rating": 19.0
+    "opponent_rating": 4.17
    },
    {
     "round": 5,
     "opponent": "ZAL",
     "home": true,
     "date": "2026-10-13T17:45:00Z",
-    "opponent_rating": 6.0
+    "opponent_rating": 4.11
    },
    {
     "round": 6,
     "opponent": "PAR",
     "home": true,
     "date": "2026-10-15T17:45:00Z",
-    "opponent_rating": 16.0
+    "opponent_rating": -2.0
    }
   ],
   "box": {
@@ -2572,34 +2572,34 @@
   "short": "Hapoel",
   "country": "ISR",
   "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png",
-  "offense": 84.0,
-  "defense": 86.0,
-  "netRating": -2.0,
-  "winRate": 0.0,
+  "offense": 86.8,
+  "defense": 85.5,
+  "netRating": 1.34,
+  "winRate": 0.489,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 50.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 81.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "RED",
     "home": false,
     "date": "2026-09-29T18:00:00Z",
-    "opponent_rating": -6.0
+    "opponent_rating": 0.09
    },
    {
     "round": 3,
     "opponent": "MAD",
     "home": true,
     "date": "2026-10-01T16:00:00Z",
-    "opponent_rating": -1.0
+    "opponent_rating": 4.23
    },
    {
     "round": 4,
     "opponent": "PAM",
     "home": false,
     "date": "2026-10-08T18:30:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 3.8
    },
    {
     "round": 5,
@@ -2613,7 +2613,7 @@
     "opponent": "PAN",
     "home": false,
     "date": "2026-10-16T18:15:00Z",
-    "opponent_rating": 19.0
+    "opponent_rating": 4.17
    }
   ],
   "box": {
@@ -2902,27 +2902,27 @@
   "short": "Baskonia",
   "country": "ESP",
   "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png",
-  "offense": 89.0,
-  "defense": 106.0,
-  "netRating": -17.0,
-  "winRate": 0.0,
+  "offense": 88.4,
+  "defense": 94.9,
+  "netRating": -6.54,
+  "winRate": 0.293,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 29.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 40.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "PAM",
     "home": false,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 3.8
    },
    {
     "round": 3,
     "opponent": "MIL",
     "home": true,
     "date": "2026-10-02T18:30:00Z",
-    "opponent_rating": -16.0
+    "opponent_rating": -3.23
    },
    {
     "round": 4,
@@ -2936,14 +2936,14 @@
     "opponent": "DUB",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 1.0
+    "opponent_rating": 0.23
    },
    {
     "round": 6,
     "opponent": "VIR",
     "home": false,
     "date": "2026-10-16T18:30:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -5.37
    }
   ],
   "box": {
@@ -3232,48 +3232,48 @@
   "short": "ASVEL",
   "country": "FRA",
   "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png",
-  "offense": 84.0,
-  "defense": 74.0,
-  "netRating": 10.0,
-  "winRate": 1.0,
+  "offense": 80.0,
+  "defense": 84.8,
+  "netRating": -4.83,
+  "winRate": 0.324,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 61.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 69.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "PAN",
     "home": false,
     "date": "2026-09-30T18:15:00Z",
-    "opponent_rating": 19.0
+    "opponent_rating": 4.17
    },
    {
     "round": 3,
     "opponent": "PAM",
     "home": true,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 3.8
    },
    {
     "round": 4,
     "opponent": "PRS",
     "home": false,
     "date": "2026-10-07T18:45:00Z",
-    "opponent_rating": -19.0
+    "opponent_rating": -3.4
    },
    {
     "round": 5,
     "opponent": "RED",
     "home": true,
     "date": "2026-10-13T18:00:00Z",
-    "opponent_rating": -6.0
+    "opponent_rating": 0.09
    },
    {
     "round": 6,
     "opponent": "MAD",
     "home": false,
     "date": "2026-10-15T19:00:00Z",
-    "opponent_rating": -1.0
+    "opponent_rating": 4.23
    }
   ],
   "box": {
@@ -3562,13 +3562,13 @@
   "short": "Maccabi",
   "country": "ISR",
   "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png",
-  "offense": 74.0,
-  "defense": 84.0,
-  "netRating": -10.0,
-  "winRate": 0.0,
+  "offense": 87.8,
+  "defense": 91.5,
+  "netRating": -3.66,
+  "winRate": 0.406,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 55.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 41.0,
   "fixtures": [
    {
     "round": 2,
@@ -3582,28 +3582,28 @@
     "opponent": "PAN",
     "home": false,
     "date": "2026-10-02T18:15:00Z",
-    "opponent_rating": 19.0
+    "opponent_rating": 4.17
    },
    {
     "round": 4,
     "opponent": "MIL",
     "home": true,
     "date": "2026-10-08T16:00:00Z",
-    "opponent_rating": -16.0
+    "opponent_rating": -3.23
    },
    {
     "round": 5,
     "opponent": "BAR",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 7.0
+    "opponent_rating": 1.77
    },
    {
     "round": 6,
     "opponent": "PAM",
     "home": false,
     "date": "2026-10-15T18:30:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 3.8
    }
   ],
   "box": {
@@ -3892,48 +3892,48 @@
   "short": "Olympiacos",
   "country": "GRE",
   "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png",
-  "offense": 106.0,
-  "defense": 89.0,
-  "netRating": 17.0,
-  "winRate": 1.0,
+  "offense": 92.7,
+  "defense": 83.3,
+  "netRating": 9.37,
+  "winRate": 0.761,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 41.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 33.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "ZAL",
     "home": false,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": 6.0
+    "opponent_rating": 4.11
    },
    {
     "round": 3,
     "opponent": "VIR",
     "home": false,
     "date": "2026-10-01T18:30:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -5.37
    },
    {
     "round": 4,
     "opponent": "IST",
     "home": true,
     "date": "2026-10-09T18:15:00Z",
-    "opponent_rating": -7.0
+    "opponent_rating": -4.6
    },
    {
     "round": 5,
     "opponent": "PAM",
     "home": false,
     "date": "2026-10-13T19:00:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 3.8
    },
    {
     "round": 6,
     "opponent": "BAR",
     "home": false,
     "date": "2026-10-16T18:30:00Z",
-    "opponent_rating": 7.0
+    "opponent_rating": 1.77
    }
   ],
   "box": {
@@ -4222,48 +4222,48 @@
   "short": "Panathinaikos",
   "country": "GRE",
   "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png",
-  "offense": 91.0,
-  "defense": 72.0,
-  "netRating": 19.0,
-  "winRate": 1.0,
+  "offense": 87.3,
+  "defense": 83.1,
+  "netRating": 4.17,
+  "winRate": 0.63,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 66.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 16.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "ASV",
     "home": true,
     "date": "2026-09-30T18:15:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": -4.83
    },
    {
     "round": 3,
     "opponent": "TEL",
     "home": true,
     "date": "2026-10-02T18:15:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -3.66
    },
    {
     "round": 4,
     "opponent": "ULK",
     "home": true,
     "date": "2026-10-08T18:15:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": 2.63
    },
    {
     "round": 5,
     "opponent": "PAR",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 16.0
+    "opponent_rating": -2.0
    },
    {
     "round": 6,
     "opponent": "HTA",
     "home": true,
     "date": "2026-10-16T18:15:00Z",
-    "opponent_rating": -2.0
+    "opponent_rating": 1.34
    }
   ],
   "box": {
@@ -4494,48 +4494,48 @@
   "short": "Paris",
   "country": "FRA",
   "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png",
-  "offense": 72.0,
-  "defense": 91.0,
-  "netRating": -19.0,
-  "winRate": 0.0,
+  "offense": 87.5,
+  "defense": 90.9,
+  "netRating": -3.4,
+  "winRate": 0.339,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 100.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 27.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "PAR",
     "home": true,
     "date": "2026-09-29T18:45:00Z",
-    "opponent_rating": 16.0
+    "opponent_rating": -2.0
    },
    {
     "round": 3,
     "opponent": "ZAL",
     "home": true,
     "date": "2026-10-01T18:45:00Z",
-    "opponent_rating": 6.0
+    "opponent_rating": 4.11
    },
    {
     "round": 4,
     "opponent": "ASV",
     "home": true,
     "date": "2026-10-07T18:45:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": -4.83
    },
    {
     "round": 5,
     "opponent": "VIR",
     "home": true,
     "date": "2026-10-14T18:45:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -5.37
    },
    {
     "round": 6,
     "opponent": "RED",
     "home": false,
     "date": "2026-10-16T18:00:00Z",
-    "opponent_rating": -6.0
+    "opponent_rating": 0.09
    }
   ],
   "box": {
@@ -4824,48 +4824,48 @@
   "short": "Partizan",
   "country": "SRB",
   "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png",
-  "offense": 92.0,
-  "defense": 76.0,
-  "netRating": 16.0,
-  "winRate": 1.0,
+  "offense": 83.1,
+  "defense": 85.1,
+  "netRating": -2.0,
+  "winRate": 0.504,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 34.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 57.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "PRS",
     "home": false,
     "date": "2026-09-29T18:45:00Z",
-    "opponent_rating": -19.0
+    "opponent_rating": -3.4
    },
    {
     "round": 3,
     "opponent": "MUN",
     "home": false,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": -2.2
    },
    {
     "round": 4,
     "opponent": "MAD",
     "home": false,
     "date": "2026-10-08T18:45:00Z",
-    "opponent_rating": -1.0
+    "opponent_rating": 4.23
    },
    {
     "round": 5,
     "opponent": "PAN",
     "home": true,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": 19.0
+    "opponent_rating": 4.17
    },
    {
     "round": 6,
     "opponent": "ULK",
     "home": false,
     "date": "2026-10-15T17:45:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": 2.63
    }
   ],
   "box": {
@@ -5154,48 +5154,48 @@
   "short": "Real",
   "country": "ESP",
   "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png",
-  "offense": 77.0,
-  "defense": 78.0,
-  "netRating": -1.0,
-  "winRate": 0.0,
+  "offense": 86.5,
+  "defense": 82.3,
+  "netRating": 4.23,
+  "winRate": 0.545,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 69.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 35.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "IST",
     "home": false,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": -7.0
+    "opponent_rating": -4.6
    },
    {
     "round": 3,
     "opponent": "HTA",
     "home": false,
     "date": "2026-10-01T16:00:00Z",
-    "opponent_rating": -2.0
+    "opponent_rating": 1.34
    },
    {
     "round": 4,
     "opponent": "PAR",
     "home": true,
     "date": "2026-10-08T18:45:00Z",
-    "opponent_rating": 16.0
+    "opponent_rating": -2.0
    },
    {
     "round": 5,
     "opponent": "MIL",
     "home": false,
     "date": "2026-10-13T18:30:00Z",
-    "opponent_rating": -16.0
+    "opponent_rating": -3.23
    },
    {
     "round": 6,
     "opponent": "ASV",
     "home": true,
     "date": "2026-10-15T19:00:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": -4.83
    }
   ],
   "box": {
@@ -5484,48 +5484,48 @@
   "short": "Valencia",
   "country": "ESP",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png",
-  "offense": 96.0,
-  "defense": 94.0,
-  "netRating": 2.0,
-  "winRate": 1.0,
+  "offense": 91.2,
+  "defense": 87.4,
+  "netRating": 3.8,
+  "winRate": 0.688,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 40.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 10.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "BAS",
     "home": true,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": -17.0
+    "opponent_rating": -6.54
    },
    {
     "round": 3,
     "opponent": "ASV",
     "home": false,
     "date": "2026-10-02T18:00:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": -4.83
    },
    {
     "round": 4,
     "opponent": "HTA",
     "home": true,
     "date": "2026-10-08T18:30:00Z",
-    "opponent_rating": -2.0
+    "opponent_rating": 1.34
    },
    {
     "round": 5,
     "opponent": "OLY",
     "home": true,
     "date": "2026-10-13T19:00:00Z",
-    "opponent_rating": 17.0
+    "opponent_rating": 9.37
    },
    {
     "round": 6,
     "opponent": "TEL",
     "home": true,
     "date": "2026-10-15T18:30:00Z",
-    "opponent_rating": -10.0
+    "opponent_rating": -3.66
    }
   ],
   "box": {
@@ -5814,48 +5814,48 @@
   "short": "Virtus",
   "country": "ITA",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png",
-  "offense": 68.0,
-  "defense": 78.0,
-  "netRating": -10.0,
-  "winRate": 0.0,
+  "offense": 79.8,
+  "defense": 85.2,
+  "netRating": -5.37,
+  "winRate": 0.315,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 62.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 67.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "MIL",
     "home": false,
     "date": "2026-09-29T18:30:00Z",
-    "opponent_rating": -16.0
+    "opponent_rating": -3.23
    },
    {
     "round": 3,
     "opponent": "OLY",
     "home": true,
     "date": "2026-10-01T18:30:00Z",
-    "opponent_rating": 17.0
+    "opponent_rating": 9.37
    },
    {
     "round": 4,
     "opponent": "MUN",
     "home": false,
     "date": "2026-10-08T18:00:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": -2.2
    },
    {
     "round": 5,
     "opponent": "PRS",
     "home": false,
     "date": "2026-10-14T18:45:00Z",
-    "opponent_rating": -19.0
+    "opponent_rating": -3.4
    },
    {
     "round": 6,
     "opponent": "BAS",
     "home": true,
     "date": "2026-10-16T18:30:00Z",
-    "opponent_rating": -17.0
+    "opponent_rating": -6.54
    }
   ],
   "box": {
@@ -6144,48 +6144,48 @@
   "short": "Zalgiris",
   "country": "LTU",
   "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png",
-  "offense": 83.0,
-  "defense": 77.0,
-  "netRating": 6.0,
-  "winRate": 1.0,
+  "offense": 86.4,
+  "defense": 82.3,
+  "netRating": 4.11,
+  "winRate": 0.632,
   "games": 1,
-  "ratingSource": "temporada en curso",
-  "difficulty": 66.0,
+  "ratingSource": "temporada en curso, encogida hacia la anterior",
+  "difficulty": 80.0,
   "fixtures": [
    {
     "round": 2,
     "opponent": "OLY",
     "home": true,
     "date": "2026-09-29T17:00:00Z",
-    "opponent_rating": 17.0
+    "opponent_rating": 9.37
    },
    {
     "round": 3,
     "opponent": "PRS",
     "home": false,
     "date": "2026-10-01T18:45:00Z",
-    "opponent_rating": -19.0
+    "opponent_rating": -3.4
    },
    {
     "round": 4,
     "opponent": "BAR",
     "home": false,
     "date": "2026-10-09T18:30:00Z",
-    "opponent_rating": 7.0
+    "opponent_rating": 1.77
    },
    {
     "round": 5,
     "opponent": "ULK",
     "home": false,
     "date": "2026-10-13T17:45:00Z",
-    "opponent_rating": 10.0
+    "opponent_rating": 2.63
    },
    {
     "round": 6,
     "opponent": "IST",
     "home": true,
     "date": "2026-10-16T17:00:00Z",
-    "opponent_rating": -7.0
+    "opponent_rating": -4.6
    }
   ],
   "box": {
