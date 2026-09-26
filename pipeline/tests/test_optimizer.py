@@ -277,3 +277,25 @@ def test_el_ilp_y_el_reparto_cuentan_igual():
     assert lineup is not None
     starters, sixth, bench = lineup.starters, lineup.sixth, lineup.bench
     assert lineup.scored_projection == pytest.approx(_puntuacion(starters, sixth, bench))
+
+
+def test_la_heuristica_no_pierde_al_entrenador_por_redondeo():
+    """El óptimo del 26-09 salió sin entrenador: 95,4 + 4,6 no "cabía" en 100
+    porque en coma flotante sobraban 4,5999999… créditos."""
+    from efa.optimizer import _optimize_greedy
+
+    prices = {
+        "G": [14.5, 14.9, 13.1, 7.8],
+        "F": [17.6, 10.2, 4.8, 4.5],
+        "C": [4.0, 4.0],
+    }
+    pool = [
+        Candidate(f"{pos}{i}", f"{pos} {i}", pos, f"C{i}{pos}", price, 10.0)
+        for pos, values in prices.items()
+        for i, price in enumerate(values)
+    ]
+    coaches = [Candidate("E1", "Justo", "E", "BAR", 4.6, 1.0)]
+    lineup = _optimize_greedy(pool, 100.0, set(), 6, coaches)
+    assert lineup is not None
+    assert lineup.coach is not None
+    assert lineup.total_price == pytest.approx(100.0)

@@ -15,7 +15,7 @@ dependencies = [
     "pyarrow>=14.0",
     "numpy>=1.26",
     "rapidfuzz>=3.5",
-    "pulp>=2.8",
+    "pulp>=2.8,<4",  # 4.0 cambió la firma de LpVariable (sin `cat`)
 ]
 
 [project.optional-dependencies]
