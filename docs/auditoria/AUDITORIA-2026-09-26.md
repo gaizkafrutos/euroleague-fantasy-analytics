@@ -673,3 +673,41 @@ Fusionado en `main` ([#1](https://github.com/gaizkafrutos/euroleague-fantasy-ana
 navegador (parece un bloqueo por IP de centro de datos). La ejecución lo avisa y reutiliza el último parte, que
 hoy coincide con el publicado (actualizado el 25-09 a las 20:45). Si deja de actualizarse, habrá que ejecutar
 `python -m efa injuries` en local o buscar otra fuente.
+
+---
+
+## 10. Segunda ronda: lo que faltaba (26-09, noche)
+
+Todo lo que §9 dejaba como «no abordado», hecho y medido:
+
+| Pendiente | Qué se ha hecho | Medida |
+|---|---|---|
+| Modelo de proyección (§5.4) | `efa/projection.py`: minutos esperados (EWM, vida media 3, encogidos al año pasado) × puntos por minuto (colchón de 100 min hacia el año pasado, el precio o el puesto) × rival (a medio peso, encogido con 8 partidos) × campo × probabilidad de jugar | Backtest 2025-26, 7.924 partidos: **5,95** de error medio frente a 6,07 del modelo anterior y 6,10 de la media; con 1-3 partidos previos, **5,83** frente a 6,49. Se repite en cada captura y se publica en /metodologia |
+| Probabilidad de jugar | Historial (jugados + 2)/(partidos del club + 2), o el parte: baja 0, duda 50 %, probable 90 %. La proyección es el valor esperado; «si juega» va aparte | Una duda ya no cuenta al 100 % en el óptimo ni en Mi equipo |
+| Entrenador | Modelo de partido: fuerza por club encogida (k=6), 3,47 de ventaja de campo, σ 12,2. Puntos esperados, probabilidad de ganar y horquilla **exacta** (reparto discreto de ±5…25) | 720 partidos: **9,82** de error frente a 10,76 de su media |
+| Horquilla | Cuantiles empíricos del backtest (p25 −0,68σ, p75 +0,57σ, p90 +1,32σ) y dispersión de mezcla si puede no jugar | — |
+| Comparador | `/comparar?ids=…`, hasta 4, con el mejor de cada fila marcado; botón en la ficha y enlace en el mercado | axe 0 fallos |
+| Semana doble, descanso, turno | `schedule.next` por jugador: rival, fecha, turno (T1/T2), días de descanso, semana doble, % de ganar | En la cancha, el mercado, la ficha y el comparador |
+| Modo «4 cambios» | Plan de cambios en Mi equipo (ver abajo) | — |
+| Payload de /mi-equipo (D3) | Filas recortadas a los campos que usa la consola | 694 → **376 KB** |
+| Cabecera móvil (D10) | Una sola fila: símbolo, buscador, «J2/38» y tema | 170 → **60 px** |
+| «Medias según el propio Fantasy» | Sustituida por «Cómo sale su proyección»: minutos, ritmo, rival, campo, si juega, probabilidad, horquilla y p90 | — |
+
+### Revisión de Mi equipo, cálculo a cálculo
+
+| Cálculo | Estado antes | Comprobación / arreglo |
+|---|---|---|
+| Roles (quinteto, sexto, banquillo, capitán) | Correcto | Nuevo script `npm run verify:squad` en el CI: igual a la fuerza bruta en 300 plantillas aleatorias (todas las formaciones, sextos y capitanes) |
+| Puntuación real | Correcta, pero una duda sumaba al 100 % | Ahora usa el valor esperado del pipeline (duda al 50 %) |
+| Relleno con otro presupuesto | Voraz por pts/cr, sin saber que el banquillo puntúa a la mitad | Voraz + búsqueda local (cambios sueltos y por parejas): **igual que el ILP a 90, 100, 105, 110 y 120 cr**, a 0,14 y 0,21 pts a 85 y 95 |
+| «Frente al óptimo» | Siempre contra el óptimo a 100 cr, aunque el presupuesto fuera otro | Contra el óptimo con tu presupuesto |
+| Presupuesto | Deslizador de 100 por defecto; pasada la J1 nadie tiene 100 | Campo «En caja»: presupuesto = valor de la plantilla + caja. Se recuerda entre visitas |
+| «Lo que menos te renta» | Puntos por crédito de mercado, sin mirar el sitio | Puntos por crédito **en su sitio** (capitán ×2, banquillo ×0,5) |
+| Fichajes que caben | Solo jugadores | También el entrenador |
+| Plan de cambios | No existía | Hasta 4 cambios (el entrenador cuenta) o ilimitados en ventana. Búsqueda en haz + pulido; contra un ILP con límite de cambios (`optimize(..., current=, max_changes=)`): **igual en 26 de 30** plantillas, 0,14 pts por debajo de media y 1,26 como mucho. Nunca rompe presupuesto, 4-4-2 ni seis por club; los pasos se ordenan para que cada uno quepa con la caja de ese momento |
+| Horquilla de la plantilla | Entrenador con σ fija de 11 | σ exacta del modelo de partido; sigue suponiendo independencia entre jugadores (dicho en la página) |
+| Turnos | No se enseñaban | Etiqueta T1/T2 en cada ficha de la cancha |
+
+**Límites que quedan, dichos en /metodologia:** las probabilidades del parte son fijas (el parte no da
+más), la horquilla trata a los compañeros de equipo como independientes y el capitán se elige por
+proyección, sin calcular el valor de esperar al primer turno.
