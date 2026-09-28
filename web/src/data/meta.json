@@ -1,22 +1,22 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-28T15:42:09.784528+00:00",
+ "generatedAt": "2026-09-28T23:53:13.563237+00:00",
  "currentRound": 2,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 14,
- "lastPriceCapture": "2026-09-26T12:04:04.332344+00:00",
+ "priceSnapshots": 15,
+ "lastPriceCapture": "2026-09-28T23:52:32.993050+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
   "games": 10
  },
  "teamStrengthSource": "temporada en curso, encogida hacia la anterior",
- "players": 350,
- "matched": 344,
- "matchRate": 0.983,
+ "players": 353,
+ "matched": 346,
+ "matchRate": 0.98,
  "budget": 100.0,
  "coachGames": 20,
  "matchModel": {
@@ -24,7 +24,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-09-28T15:41:33.986072+00:00",
+  "generatedAt": "2026-09-28T23:52:37.561924+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -132,14 +132,13 @@
  "injuries": {
   "source": "RotoWire + Basketball Sphere",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
-  "updatedAt": "2026-09-28T17:12:00",
-  "fetchedAt": "2026-09-28T15:41:28.967730+00:00",
+  "updatedAt": "2026-09-28T17:42:00",
+  "fetchedAt": "2026-09-28T23:52:32.487538+00:00",
   "rows": 107,
-  "matched": 68,
+  "matched": 69,
   "unmatched": [
    "Gur Lavy (MTA)",
    "Mady Sissoko (BJK)",
-   "Bryant Dunston (Olympiacos)",
    "Enzo Shahrvin (Paris)",
    "Mady Sissoko (Besiktas)",
    "Awudu Abass (Dubai)"
@@ -149,7 +148,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-09-28T15:41:28.452215+00:00",
+    "fetchedAt": "2026-09-28T23:52:31.941727+00:00",
     "rows": 37,
     "matched": 35,
     "flagged": 35
@@ -157,25 +156,25 @@
    {
     "source": "Basketball Sphere",
     "url": "https://basketballsphere.com/en/injuries/euroleague/",
-    "updatedAt": "2026-09-28T17:12:00",
-    "fetchedAt": "2026-09-28T15:41:28.967730+00:00",
+    "updatedAt": "2026-09-28T17:42:00",
+    "fetchedAt": "2026-09-28T23:52:32.487538+00:00",
     "rows": 70,
-    "matched": 66,
-    "flagged": 33
+    "matched": 67,
+    "flagged": 34
    }
   ],
   "nextRound": 2,
-  "unregistered": 9,
+  "unregistered": 8,
   "flagged": {
    "out": 21,
-   "doubt": 52,
-   "probable": 4
+   "doubt": 53,
+   "probable": 3
   }
  },
  "warnings": [],
  "priceFreshness": {
   "stale": false,
-  "capturedAt": "2026-09-26T12:04:04.332344+00:00",
+  "capturedAt": "2026-09-28T23:52:32.993050+00:00",
   "lastGameAt": "2026-09-25T18:45:00+00:00",
   "round": 1,
   "reason": null,

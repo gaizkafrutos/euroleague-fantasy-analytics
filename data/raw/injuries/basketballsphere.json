@@ -1,9 +1,17 @@
 {
  "source": "Basketball Sphere",
  "url": "https://basketballsphere.com/en/injuries/euroleague/",
- "fetchedAt": "2026-09-28T15:41:28.967730+00:00",
- "updatedAt": "2026-09-28T17:12:00",
+ "fetchedAt": "2026-09-28T23:52:32.487538+00:00",
+ "updatedAt": "2026-09-28T17:42:00",
  "rows": [
+  {
+   "team": "Valencia",
+   "position": "",
+   "name": "Dylan Osetkowski",
+   "status": "Questionable",
+   "round": "",
+   "comment": "Illness"
+  },
   {
    "team": "Zalgiris",
    "position": "",
@@ -555,14 +563,6 @@
    "status": "Uncertain",
    "round": "",
    "comment": "Undisclosed"
-  },
-  {
-   "team": "Crvena Zvezda",
-   "position": "",
-   "name": "Semi Ojeleye",
-   "status": "Ready",
-   "round": "Round 124",
-   "comment": ""
   }
  ]
 }

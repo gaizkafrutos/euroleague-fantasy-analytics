@@ -1,6 +1,246 @@
 [
  {
   "person": {
+   "code": "005793",
+   "name": "SY, BANDJA",
+   "alias": "SY, BANDJA",
+   "aliasRaw": "SY, BANDJA",
+   "passportName": "BANDJA",
+   "passportSurname": "SY",
+   "jerseyName": "SY",
+   "abbreviatedName": "Sy, B.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 205,
+   "weight": 100,
+   "birthDate": "1990-07-30T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "BandjaSy",
+   "instagramAccount": "b.sy35",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-28T15:49:50.382",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "95",
+  "dorsalRaw": "95",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "PARIS BASKETBALL",
+  "externalId": 57036,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "003048",
+   "name": "DUNSTON, BRYANT",
+   "alias": "Dunston",
+   "aliasRaw": "Dunston",
+   "passportName": "BRYANT KEVIN",
+   "passportSurname": "DUNSTON JR",
+   "jerseyName": "DUNSTON",
+   "abbreviatedName": "Dunston, B.",
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 203,
+   "weight": 114,
+   "birthDate": "1986-05-28T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "bdizzle42ny/",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-28T15:48:38.031",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "42",
+  "dorsalRaw": "42",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "OLIMPIA MILANO",
+  "externalId": 57035,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "005942",
+   "name": "DANGUBIC, NEMANJA",
+   "alias": "Dangubic",
+   "aliasRaw": "Dangubic",
+   "passportName": "NEMANJA",
+   "passportSurname": "DANGUBIC",
+   "jerseyName": "DANGUBIC",
+   "abbreviatedName": "Dangubic, N.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 204,
+   "weight": 99,
+   "birthDate": "1993-04-13T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "ndanga06",
+   "instagramAccount": "danga06",
+   "facebookAccount": "NemanjaDangubicBasketball",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-28T15:44:48.898",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "2",
+  "dorsalRaw": "2",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "DUBAI BASKETBALL",
+  "externalId": 57034,
+  "images": {},
+  "club": {
+   "code": "DUB",
+   "name": "Dubai Basketball",
+   "abbreviatedName": "Dubai",
+   "editorialName": "Dubai",
+   "tvCode": "DUB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "013422",
+   "name": "FENEMEN, RUZGAR",
+   "alias": "FENEMEN, R.",
+   "aliasRaw": "FENEMEN, R.",
+   "passportName": "RUZGAR",
+   "passportSurname": "FENEMEN",
+   "jerseyName": "RUZGAR",
+   "abbreviatedName": "",
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "height": 185,
+   "weight": 86,
+   "birthDate": "2008-04-03T00:00:00",
+   "birthCountry": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-28T15:43:31.311",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "16",
+  "dorsalRaw": "16",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "ANADOLU EFES ISTANBUL",
+  "externalId": 57033,
+  "images": {},
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "015244",
    "name": "SMITH JR, NICK",
    "alias": "SMITH JR, NICK",
