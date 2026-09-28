@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "015244",
+   "name": "SMITH JR, NICK",
+   "alias": "SMITH JR, NICK",
+   "aliasRaw": "SMITH JR, NICK",
+   "passportName": "NICHOLAS TERRELL",
+   "passportSurname": "SMITH JR",
+   "jerseyName": "SMITH JR.",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 189,
+   "weight": 84,
+   "birthDate": "2004-04-18T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-28T15:18:33.183",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "1",
+  "dorsalRaw": "1",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "SOUTH BAY LAKERS",
+  "externalId": 57031,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "012879",
    "name": "KONE, ABDU",
    "alias": "KONE, A.",
@@ -14652,8 +14712,8 @@
    "jerseyName": "HERRERA",
    "abbreviatedName": "",
    "country": {
-    "code": "GER",
-    "name": "Germany"
+    "code": "CHI",
+    "name": "Chile"
    },
    "height": 193,
    "weight": 92,

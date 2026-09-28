@@ -1,9 +1,65 @@
 {
  "source": "Basketball Sphere",
  "url": "https://basketballsphere.com/en/injuries/euroleague/",
- "fetchedAt": "2026-09-28T07:08:49.055053+00:00",
- "updatedAt": "2026-09-27T19:17:00",
+ "fetchedAt": "2026-09-28T15:41:28.967730+00:00",
+ "updatedAt": "2026-09-28T17:12:00",
  "rows": [
+  {
+   "team": "Zalgiris",
+   "position": "",
+   "name": "Saben Lee",
+   "status": "Questionable",
+   "round": "",
+   "comment": "Hamstring strain"
+  },
+  {
+   "team": "Real Madrid",
+   "position": "",
+   "name": "Mikael Jantunen",
+   "status": "Questionable",
+   "round": "",
+   "comment": "Minor undisclosed injury"
+  },
+  {
+   "team": "Olympiacos",
+   "position": "",
+   "name": "Bryant Dunston",
+   "status": "Questionable",
+   "round": "",
+   "comment": ""
+  },
+  {
+   "team": "Maccabi Tel Aviv",
+   "position": "",
+   "name": "T.J. Leaf",
+   "status": "Ready",
+   "round": "Round 229",
+   "comment": ""
+  },
+  {
+   "team": "Milano",
+   "position": "",
+   "name": "Garrison Mathews",
+   "status": "Questionable",
+   "round": "",
+   "comment": "Muscle issue"
+  },
+  {
+   "team": "Crvena Zvezda",
+   "position": "",
+   "name": "Chima Moneke",
+   "status": "Questionable",
+   "round": "",
+   "comment": ""
+  },
+  {
+   "team": "Olympiacos",
+   "position": "",
+   "name": "Nikola Milutinov",
+   "status": "Uncertain",
+   "round": "",
+   "comment": "Tendinitis injury"
+  },
   {
    "team": "Paris",
    "position": "",
@@ -61,20 +117,12 @@
    "comment": "Ankle injury"
   },
   {
-   "team": "Virtus",
-   "position": "",
-   "name": "Davide Casarin",
-   "status": "Uncertain",
-   "round": "",
-   "comment": "Not included in 12-man roster"
-  },
-  {
    "team": "Besiktas",
    "position": "",
    "name": "Furkan Korkmaz",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Fenerbahce",
@@ -93,68 +141,36 @@
    "comment": "Thigh muscle injury"
   },
   {
-   "team": "Valencia",
-   "position": "",
-   "name": "Nikola Mirotic",
-   "status": "Ready",
-   "round": "Round 125",
-   "comment": ""
-  },
-  {
-   "team": "Valencia",
-   "position": "",
-   "name": "Jasiel Rivero",
-   "status": "Ready",
-   "round": "Round 125",
-   "comment": "Muscular injury"
-  },
-  {
-   "team": "Valencia",
-   "position": "",
-   "name": "Neal Sako",
-   "status": "Ready",
-   "round": "Round 125",
-   "comment": "Groin injury"
-  },
-  {
    "team": "Maccabi Tel Aviv",
    "position": "",
    "name": "Gur Lavi",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (undisclosed)"
   },
   {
    "team": "Maccabi Tel Aviv",
    "position": "",
    "name": "Shane Hunter",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
-  },
-  {
-   "team": "Maccabi Tel Aviv",
-   "position": "",
-   "name": "T.J. Leaf",
-   "status": "Uncertain",
-   "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (undisclosed)"
   },
   {
    "team": "Hapoel Tel Aviv",
    "position": "",
    "name": "Guy Palatin",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Hapoel Tel Aviv",
    "position": "",
    "name": "Max Heidegger",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Dubai",
@@ -168,31 +184,31 @@
    "team": "Dubai",
    "position": "",
    "name": "Kenan Kamenjas",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Crvena Zvezda",
    "position": "",
    "name": "Vojin Medarevic",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Crvena Zvezda",
    "position": "",
    "name": "Dejan Davidovac",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Crvena Zvezda",
    "position": "",
    "name": "Patrick Baldwin Jr.",
-   "status": "Uncertain",
+   "status": "Questionable",
    "round": "",
    "comment": "Back pain"
   },
@@ -200,25 +216,25 @@
    "team": "Asvel",
    "position": "",
    "name": "Edwin Jackson",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Anadolu Efes",
    "position": "",
    "name": "Erkan Yilmaz",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Anadolu Efes",
    "position": "",
    "name": "David Mutaf",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Anadolu Efes",
@@ -226,23 +242,23 @@
    "name": "Brice Dessert",
    "status": "Uncertain",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Paris",
    "position": "",
    "name": "Enzo Shahrvin",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Undisclosed"
+   "comment": "DNP in Round 1 (undisclosed)"
   },
   {
    "team": "Paris",
    "position": "",
    "name": "Amath M'Baye",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Undisclosed"
+   "comment": "DNP in Round 1 (undisclosed)"
   },
   {
    "team": "Barcelona",
@@ -251,14 +267,6 @@
    "status": "Out",
    "round": "",
    "comment": "Calf injury"
-  },
-  {
-   "team": "Milano",
-   "position": "",
-   "name": "Garrison Mathews",
-   "status": "Uncertain",
-   "round": "",
-   "comment": "Muscle issue"
   },
   {
    "team": "Hapoel Tel Aviv",
@@ -272,17 +280,17 @@
    "team": "Zalgiris",
    "position": "",
    "name": "Deividas Sirvydis",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster, didn't travel with the team"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Zalgiris",
    "position": "",
    "name": "Kaodirichi Akobundu-Ehiogu",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster, didn't travel with the team"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Real Madrid",
@@ -297,7 +305,7 @@
    "position": "",
    "name": "Joffrey Lauvergne",
    "status": "Out",
-   "round": "Round 1-1",
+   "round": "Round 1-31",
    "comment": "Calf injury"
   },
   {
@@ -373,14 +381,6 @@
    "comment": "Medial right meniscus tear"
   },
   {
-   "team": "Dubai",
-   "position": "",
-   "name": "Dwayne Bacon",
-   "status": "Ready",
-   "round": "",
-   "comment": ""
-  },
-  {
    "team": "Anadolu Efes",
    "position": "",
    "name": "Georgios Papagiannis",
@@ -408,49 +408,49 @@
    "team": "Valencia",
    "position": "",
    "name": "Yankuba Sima",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Didn't travel with team"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Valencia",
    "position": "",
    "name": "Gonzalo Corbalan",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Didn't travel with team"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Real Madrid",
    "position": "",
    "name": "Nick Smith Jr.",
-   "status": "Out",
-   "round": "Round 1-1",
+   "status": "Doubtful",
+   "round": "",
    "comment": "Not registered for Round 1"
   },
   {
    "team": "Real Madrid",
    "position": "",
    "name": "Max Shulga",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Real Madrid",
    "position": "",
    "name": "Sergio Llull",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Real Madrid",
    "position": "",
    "name": "Chuma Okeke",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Partizan",
@@ -464,7 +464,7 @@
    "team": "Asvel",
    "position": "",
    "name": "TyTy Washington",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
    "comment": "Ankle Injury"
   },
@@ -480,9 +480,9 @@
    "team": "Hapoel Tel Aviv",
    "position": "",
    "name": "Khadeen Carrington",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Bayern",
@@ -520,17 +520,17 @@
    "team": "Dubai",
    "position": "",
    "name": "Klemen Prepelic",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Dubai",
    "position": "",
    "name": "Justin Anderson",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "",
-   "comment": "Not included in 12-man roster"
+   "comment": "DNP in Round 1 (coach's decision)"
   },
   {
    "team": "Dubai",
@@ -539,14 +539,6 @@
    "status": "Uncertain",
    "round": "",
    "comment": "Knee injury"
-  },
-  {
-   "team": "Anadolu Efes",
-   "position": "",
-   "name": "Mike James",
-   "status": "Ready",
-   "round": "",
-   "comment": "Cleared to play"
   },
   {
    "team": "Hapoel Tel Aviv",
@@ -571,22 +563,6 @@
    "status": "Ready",
    "round": "Round 124",
    "comment": ""
-  },
-  {
-   "team": "Panathinaikos",
-   "position": "",
-   "name": "Nikos Rogkavopoulos",
-   "status": "Ready",
-   "round": "Round 124",
-   "comment": ""
-  },
-  {
-   "team": "Zalgiris",
-   "position": "",
-   "name": "Saben Lee",
-   "status": "Questionable",
-   "round": "Round 1",
-   "comment": "Hamstring strain"
   }
  ]
 }
