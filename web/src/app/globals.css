@@ -1150,16 +1150,20 @@ table.data td.num,
   color: var(--ink-muted);
 }
 
+:root {
+  --control-h: 36px;
+}
+
 .input,
 .select {
   appearance: none;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
+  background: var(--bg-raised);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  padding: 8px 12px;
+  padding: 0 12px;
   font-size: 0.875rem;
   color: var(--ink);
-  min-height: 36px;
+  height: var(--control-h);
   transition: border-color 0.15s;
 }
 
@@ -1173,29 +1177,32 @@ table.data td.num,
 
 .input:hover,
 .select:hover {
-  border-color: var(--rule);
+  border-color: var(--ink-3);
 }
 
-.input:focus,
-.select:focus {
-  border-color: var(--accent);
-  outline: none;
+/* Foco visible de verdad: el borde de 1 px cambiando de color no basta. */
+.input:focus-visible,
+.select:focus-visible {
+  border-color: var(--focus);
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
 }
 
 .segmented {
   display: inline-flex;
+  height: var(--control-h);
   padding: 3px;
   gap: 2px;
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
+  background: var(--bg-sunken);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
 }
 
 .segmented button {
   border: 0;
   background: transparent;
-  padding: 6px 14px;
-  border-radius: 6px;
+  padding: 0 12px;
+  border-radius: 5px;
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--ink-2);
@@ -1211,11 +1218,14 @@ table.data td.num,
 }
 
 .chip {
-  border: 1px solid var(--hairline);
-  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  height: var(--control-h);
+  border: 1px solid var(--line-strong);
+  background: var(--bg-raised);
   border-radius: var(--radius-sm);
-  padding: 7px 13px;
-  font-size: 0.8125rem;
+  padding: 0 12px;
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   color: var(--ink-2);
@@ -1223,7 +1233,7 @@ table.data td.num,
 }
 
 .chip:hover {
-  border-color: var(--rule);
+  border-color: var(--ink-3);
   color: var(--ink);
 }
 
@@ -1276,12 +1286,17 @@ table.data td.num,
   border-color: var(--ink-muted);
 }
 
+/* El deslizador va dentro de una caja de control como las demás, para que
+   la fila de filtros comparta alto y línea de base. */
 .slider {
   width: 100%;
-  /* Misma altura que un select, para que las etiquetas de la fila de filtros
-     compartan línea de base en vez de bailar. */
-  min-height: 36px;
-  accent-color: var(--accent);
+  height: var(--control-h);
+  margin: 0;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+  accent-color: var(--brand);
 }
 
 /* --------------------------------------------------------------------------
@@ -1315,6 +1330,7 @@ table.data td {
   border-bottom: 1px solid var(--hairline);
 }
 
+/* Columna del jugador fija al desplazar en horizontal. */
 table.data th:first-child,
 table.data td:first-child {
   text-align: left;
@@ -1322,6 +1338,18 @@ table.data td:first-child {
   left: 0;
   background: var(--bg);
   z-index: 1;
+}
+
+/* En las tablas anchas, una línea la separa de lo que pasa por debajo. */
+table.data.is-scrollable th:first-child,
+table.data.is-scrollable td:first-child {
+  box-shadow: inset -1px 0 0 var(--line);
+}
+
+/* Texto en columna (rol, posición, club): a la izquierda. Solo las cifras
+   van a la derecha. */
+table.data .is-text {
+  text-align: left;
 }
 
 table.data thead th {
@@ -1340,12 +1368,15 @@ table.data thead th {
   color: var(--ink-muted);
   border-bottom: 1px solid var(--rule);
   user-select: none;
+}
+
+/* Las cabeceras que ordenan llevan el relleno en el botón, no en la celda. */
+table.data thead th:has(> .th-sort) {
   padding: 0;
 }
 
 table.data thead th:first-child {
   z-index: 3;
-  padding: 11px 12px;
 }
 
 /* Ordenar es una acción: tiene que ser un botón, no un <th> con onClick. */
@@ -1355,7 +1386,7 @@ table.data thead th:first-child {
   gap: 4px;
   width: 100%;
   justify-content: flex-end;
-  padding: 11px 14px;
+  padding: 11px 12px;
   border: 0;
   background: transparent;
   font: inherit;
@@ -1376,7 +1407,7 @@ table.data thead th:first-child {
 }
 
 table.data thead th[aria-sort] {
-  color: var(--accent);
+  color: var(--brand-ink);
 }
 
 table.data tbody tr:hover td {
@@ -1387,28 +1418,47 @@ table.data tbody tr.is-clickable {
   cursor: pointer;
 }
 
-/* Número con barra proporcional detrás. */
+/* Cifra con barra de magnitud al lado: barra fina desde cero, gris; en la
+   columna por la que se ordena, naranja. */
 .bar-cell {
-  position: relative;
   display: inline-flex;
-  justify-content: flex-end;
   align-items: center;
-  min-width: 80px;
-  padding: 3px 7px;
-  border-radius: 4px;
-  isolation: isolate;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.bar-cell-track {
+  width: 56px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-sunken);
+  overflow: hidden;
 }
 
 .bar-cell-fill {
-  position: absolute;
-  inset: 0 0 0 auto;
-  z-index: -1;
-  border-radius: 4px;
-  background: color-mix(in srgb, var(--accent) 17%, transparent);
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--ink-3);
+}
+
+.bar-cell.is-active .bar-cell-fill {
+  background: var(--brand);
 }
 
 .bar-cell-value {
-  position: relative;
+  min-width: 3.4ch;
+  text-align: right;
+}
+
+/* Variación que acompaña a una cifra: pequeña y pegada a ella. */
+.cell-delta {
+  margin-left: 6px;
+  font-size: 0.75rem;
+}
+
+.cell-delta:empty {
+  display: none;
 }
 
 table.data tbody tr:last-child td {
@@ -1983,11 +2033,18 @@ table.data th.num {
   margin-left: auto;
 }
 
-.filter-panel {
+.filter-panel,
+.column-picker {
   display: flex;
   align-items: flex-end;
-  gap: 16px;
+  gap: 16px 20px;
   flex-wrap: wrap;
+}
+
+.column-picker {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .filter-price {
@@ -2464,16 +2521,18 @@ table.data th.num {
   .select,
   .search-input {
     font-size: 16px;
-    min-height: 42px;
+    min-height: 44px;
   }
 
-  /* Objetivos táctiles de verdad. */
-  .chip,
-  .segmented button,
+  /* Objetivos táctiles de verdad: los controles crecen a 44 px. */
+  :root {
+    --control-h: 44px;
+  }
+
   .icon-button,
   .button-ghost,
   .button-primary {
-    min-height: 40px;
+    min-height: 44px;
   }
 
   .icon-button {
@@ -2496,15 +2555,17 @@ table.data th.num {
 
   /* El panel de filtros se pliega: nueve controles abiertos ocupan media
      pantalla antes de ver un solo jugador. */
+  /* En el móvil el panel se despliega: es lo único que se toca, así que es
+     lo único con caja. */
   .filter-panel {
     display: none;
     flex-direction: column;
     align-items: stretch;
     gap: 14px;
     padding: 16px;
-    border: 1px solid var(--hairline);
+    border: 1px solid var(--line-strong);
     border-radius: var(--radius);
-    background: var(--surface);
+    background: var(--bg-raised);
   }
 
   .filter-panel.is-open {
@@ -3735,6 +3796,39 @@ a.eq-row:focus-visible {
   font-variation-settings: "wdth" 90, "wght" 600;
 }
 
+.eq-net {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.eq-netbar {
+  position: relative;
+  width: 56px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-sunken);
+}
+
+.eq-netbar::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: var(--axis);
+}
+
+.eq-netbar i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: currentColor;
+  border-radius: 3px;
+}
+
 .eq-net.is-pos {
   color: var(--good);
 }
@@ -3778,7 +3872,7 @@ a.eq-row:focus-visible {
 
 @media (min-width: 761px) {
   .eq-row {
-    grid-template-columns: 30px minmax(0, 1fr) 64px 66px 66px 66px 60px 160px;
+    grid-template-columns: 30px minmax(0, 1fr) 64px 124px 66px 66px 60px 160px;
   }
 
   .eq-wide {

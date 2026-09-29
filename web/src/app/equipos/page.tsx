@@ -26,6 +26,8 @@ export const metadata: Metadata = {
 export default function TeamsPage() {
   const ranked = [...teams].sort(byNetRating);
   const withHistory = teams.filter((team) => team.box).length;
+  // Escala de la barra del diferencial: el mayor en valor absoluto llena media barra.
+  const maxNet = Math.max(1, ...teams.map((team) => Math.abs(team.box?.netRating ?? 0)));
   const isBaseline = meta.performanceSource.isBaseline;
 
   return (
@@ -84,6 +86,7 @@ export default function TeamsPage() {
                         {num(box.wins, 0)}-{num(box.losses, 0)}
                       </span>
                       <span className={`num eq-net ${toneOf(box.netRating)}`}>
+                        <NetBar value={box.netRating} max={maxNet} />
                         {signed(box.netRating)}
                       </span>
                       <span className="num eq-wide">{num(box.offRating)}</span>
@@ -133,6 +136,18 @@ export default function TeamsPage() {
         <FixtureMatrix teams={teams} league={meta.league?.allowed ?? null} />
       </section>
     </section>
+  );
+}
+
+/** Barra divergente del diferencial: desde el cero, a la derecha si es
+ *  positivo y a la izquierda si es negativo. Solo en escritorio. */
+function NetBar({ value, max }: { value: number | null | undefined; max: number }) {
+  if (typeof value !== "number") return null;
+  const half = Math.min(Math.abs(value) / max, 1) * 50;
+  return (
+    <span className="eq-netbar eq-wide" aria-hidden>
+      <i style={value >= 0 ? { left: "50%", width: `${half}%` } : { right: "50%", width: `${half}%` }} />
+    </span>
   );
 }
 

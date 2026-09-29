@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import MarketExplorer from "@/components/market/MarketExplorer";
-import { PlayerCell, prettyName } from "@/components/ui/primitives";
+import { BarCell, PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
 import { credits, displayName, num, percent } from "@/lib/format";
@@ -84,6 +84,7 @@ export default function MercadoPage() {
   // Quién puntúa al 100 % y quién a la mitad. Sin esto la tabla enseña diez
   // nombres y deja creer que suman todos igual, que es justo lo que no pasa.
   const starters = new Set(lineup.starters ?? []);
+  const maxProjection = Math.max(1, ...(lineup.players ?? []).map((player) => player.projection ?? 0));
   const bench = new Set(lineup.bench ?? []);
 
   return (
@@ -197,9 +198,9 @@ export default function MercadoPage() {
               <thead>
                 <tr>
                   <th>Jugador</th>
-                  <th>Rol</th>
-                  <th className="num">Pos</th>
-                  <th className="num">Club</th>
+                  <th className="is-text">Rol</th>
+                  <th className="is-text">Pos</th>
+                  <th className="is-text">Club</th>
                   <th className="num">Precio</th>
                   <th className="num">Proyección</th>
                 </tr>
@@ -212,27 +213,32 @@ export default function MercadoPage() {
                         {prettyName(player.name)}
                       </Link>
                     </td>
-                    <td>
+                    <td className="is-text">
                       <RoleBadge
                         role={roleOf(player.key, starters, bench, lineup.sixth)}
                         captain={lineup.captain === player.key}
                       />
                     </td>
-                    <td className="num">{player.position}</td>
-                    <td className="num">{player.club}</td>
-                    <td className="num credit">{credits(player.price)}</td>
-                    <td className="num">{num(player.projection)}</td>
+                    <td className="is-text">{player.position}</td>
+                    <td className="is-text">{player.club}</td>
+                    <td className="num">{credits(player.price)}</td>
+                    <td className="num">
+                      <BarCell
+                        value={player.projection}
+                        fraction={(player.projection ?? 0) / maxProjection}
+                      />
+                    </td>
                   </tr>
                 ))}
                 {lineup.coach ? (
                   <tr>
                     <td>{coachLabel(lineup.coach)}</td>
-                    <td>
+                    <td className="is-text">
                       <span className="badge">Entrenador</span>
                     </td>
-                    <td className="num">E</td>
-                    <td className="num">{lineup.coach.club}</td>
-                    <td className="num credit">{credits(lineup.coach.price)}</td>
+                    <td className="is-text">E</td>
+                    <td className="is-text">{lineup.coach.club}</td>
+                    <td className="num">{credits(lineup.coach.price)}</td>
                     <td className="num">{num(lineup.coach.projection)}</td>
                   </tr>
                 ) : null}

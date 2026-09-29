@@ -21,12 +21,17 @@ export function Delta({
   value,
   digits = 1,
   suffix = "",
+  hideZero = false,
 }: {
   value: number | null | undefined;
   digits?: number;
   suffix?: string;
+  /** Para variaciones que acompañan a otra cifra: si no hay cambio, no se
+   *  dice nada (un "0,0" en cada celda es ruido). */
+  hideZero?: boolean;
 }) {
-  if (value === null || value === undefined) return <span className="muted">—</span>;
+  if (value === null || value === undefined) return hideZero ? null : <span className="muted">—</span>;
+  if (hideZero && Math.abs(value) < 0.005) return null;
   const arrow = Math.abs(value) < 0.001 ? "" : value > 0 ? "▲" : "▼";
   return (
     <span className={deltaClass(value)}>
@@ -110,30 +115,32 @@ export function PlayerCell({ player, linked = true }: { player: Player; linked?:
   );
 }
 
-/** Número con una barra proporcional detrás.
+/** Número con una barra fina al lado que codifica su magnitud.
  *
  *  Veinte filas de cifras se leen una a una; con la barra, la columna entera se
  *  lee de un vistazo. Solo la llevan las columnas que de verdad se comparan: si
- *  la llevaran todas, la tabla sería un gráfico de barras ilegible. */
+ *  la llevaran todas, la tabla sería un gráfico de barras ilegible. La barra
+ *  arranca en cero (es magnitud) y va en gris; en la columna por la que se
+ *  ordena, en el color de marca. */
 export function BarCell({
   value,
   fraction,
   digits = 1,
   strong = false,
+  active = false,
 }: {
   value: number | null | undefined;
   fraction: number | null;
   digits?: number;
   strong?: boolean;
+  active?: boolean;
 }) {
   const width = fraction === null ? 0 : Math.max(0, Math.min(1, fraction));
   return (
-    <span className="bar-cell">
-      <span
-        className="bar-cell-fill"
-        style={{ width: `${width * 100}%` }}
-        aria-hidden
-      />
+    <span className={`bar-cell${active ? " is-active" : ""}`}>
+      <span className="bar-cell-track" aria-hidden>
+        <span className="bar-cell-fill" style={{ width: `${width * 100}%` }} />
+      </span>
       <span className="bar-cell-value">
         {strong ? <strong>{num(value, digits)}</strong> : num(value, digits)}
       </span>

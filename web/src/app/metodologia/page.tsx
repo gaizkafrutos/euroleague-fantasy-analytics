@@ -80,7 +80,7 @@ export default function MethodologyPage() {
               <tr>
                 <th>Acción</th>
                 <th className="num">Valor</th>
-                <th>Acción</th>
+                <th className="is-text">Acción</th>
                 <th className="num">Valor</th>
               </tr>
             </thead>
@@ -88,37 +88,37 @@ export default function MethodologyPage() {
               <tr>
                 <td>Punto anotado</td>
                 <td className="num">+1</td>
-                <td>Pérdida</td>
+                <td className="is-text">Pérdida</td>
                 <td className="num">−1</td>
               </tr>
               <tr>
                 <td>Rebote</td>
                 <td className="num">+1</td>
-                <td>Tapón recibido</td>
+                <td className="is-text">Tapón recibido</td>
                 <td className="num">−1</td>
               </tr>
               <tr>
                 <td>Asistencia</td>
                 <td className="num">+1</td>
-                <td>Falta cometida</td>
+                <td className="is-text">Falta cometida</td>
                 <td className="num">−1</td>
               </tr>
               <tr>
                 <td>Robo</td>
                 <td className="num">+1</td>
-                <td>Tiro de campo fallado</td>
+                <td className="is-text">Tiro de campo fallado</td>
                 <td className="num">−1</td>
               </tr>
               <tr>
                 <td>Tapón</td>
                 <td className="num">+1</td>
-                <td>Tiro libre fallado</td>
+                <td className="is-text">Tiro libre fallado</td>
                 <td className="num">−1</td>
               </tr>
               <tr>
                 <td>Falta recibida</td>
                 <td className="num">+1</td>
-                <td>Victoria del equipo</td>
+                <td className="is-text">Victoria del equipo</td>
                 <td className="num">+10% del valor absoluto</td>
               </tr>
             </tbody>

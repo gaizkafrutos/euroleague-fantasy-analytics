@@ -17,7 +17,7 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 
 import Sparkline from "@/components/charts/Sparkline";
 import ValueScatter from "@/components/charts/ValueScatter";
-import { BarCell, Delta, PlayerCell, PositionBadge } from "@/components/ui/primitives";
+import { BarCell, Delta, PlayerCell } from "@/components/ui/primitives";
 import { credits, displayName, num, percent } from "@/lib/format";
 import type { Player, Team } from "@/lib/types";
 
@@ -36,7 +36,10 @@ type SortKey =
 
 const PAGE_SIZE = 20;
 
-const COLUMNS: Array<{ key: SortKey; label: string; title: string }> = [
+/** Las columnas con `optional` no se ven por defecto: se añaden desde el botón
+ *  "Columnas". Con todas a la vez la tabla no cabía a 1440 px y la última
+ *  quedaba cortada. */
+const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: boolean }> = [
   // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
   // y la tabla ya usa ese patrón en Forma y en Minutos.
   { key: "price", label: "Precio", title: "Precio actual y variación desde la captura anterior" },
@@ -47,13 +50,24 @@ const COLUMNS: Array<{ key: SortKey; label: string; title: string }> = [
   },
   { key: "projectedFp", label: "Proyección", title: "Puntos fantasy esperados la próxima jornada" },
   { key: "valueProjected", label: "Pts/cr", title: "Puntos proyectados por crédito" },
-  { key: "fpAvg", label: "Media", title: "Media de puntos fantasy por partido jugado" },
-  { key: "minutesAvg", label: "Min", title: "Minutos por partido y su tendencia" },
-  { key: "consistency", label: "Fiabilidad", title: "1 = regular, 0 = lotería" },
+  {
+    key: "fpAvg",
+    label: "Media",
+    title: "Media de puntos fantasy por partido jugado",
+    optional: true,
+  },
+  {
+    key: "minutesAvg",
+    label: "Min",
+    title: "Minutos por partido y su tendencia",
+    optional: true,
+  },
+  { key: "consistency", label: "Fiabilidad", title: "1 = regular, 0 = lotería", optional: true },
   {
     key: "difficulty",
     label: "Calendario",
     title: "Dificultad de los 3 próximos rivales (100 = lo más duro)",
+    optional: true,
   },
   { key: "bargainScore", label: "Índice", title: "Índice compuesto de chollo" },
 ];
@@ -115,6 +129,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   const [view, setView] = useState<"tabla" | "grafico">("tabla");
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [extraColumns, setExtraColumns] = useState<Set<SortKey>>(new Set());
+  const [columnsOpen, setColumnsOpen] = useState(false);
 
   const deferredQuery = useDeferredValue(query);
   const hydrated = useRef(false);
@@ -137,6 +153,16 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     if (games > 0) setMinGames(games);
     if (params.get("alza") === "1") setRisingOnly(true);
     if (params.get("vista") === "grafico") setView("grafico");
+    const cols = params.get("cols");
+    if (cols) {
+      setExtraColumns(
+        new Set(
+          cols
+            .split(",")
+            .filter((key) => COLUMNS.some((column) => column.optional && column.key === key)) as SortKey[],
+        ),
+      );
+    }
     const key = params.get("orden") as SortKey | null;
     if (key && COLUMNS.some((column) => column.key === key)) {
       setSort({ key, desc: params.get("dir") !== "asc" });
@@ -156,6 +182,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     if (minGames) params.set("min", String(minGames));
     if (risingOnly) params.set("alza", "1");
     if (view === "grafico") params.set("vista", "grafico");
+    if (extraColumns.size) params.set("cols", [...extraColumns].join(","));
     const isDefaultSort = sort.key === (hasPrices ? "bargainScore" : "fpAvg") && sort.desc;
     if (!isDefaultSort) {
       params.set("orden", sort.key);
@@ -164,7 +191,19 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     const search = params.toString();
     const url = `${window.location.pathname}${search ? `?${search}` : ""}`;
     window.history.replaceState(null, "", url);
-  }, [query, positions, team, maxPrice, minGames, risingOnly, view, sort, priceCeiling, hasPrices]);
+  }, [
+    query,
+    positions,
+    team,
+    maxPrice,
+    minGames,
+    risingOnly,
+    view,
+    sort,
+    priceCeiling,
+    hasPrices,
+    extraColumns,
+  ]);
 
   const filtered = useMemo(() => {
     const needle = deferredQuery.trim().toLowerCase();
@@ -192,35 +231,39 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     });
   }, [filtered, sort]);
 
-  /** Rango de cada columna con barra, sobre lo que hay filtrado.
+  /** Máximo de cada columna con barra, sobre lo que hay filtrado.
    *
-   *  Se normaliza entre el mínimo y el máximo de lo filtrado, no entre 0 y el
-   *  máximo: las proyecciones van de 8 a 31 y los puntos por crédito de 0,7 a
-   *  1,6, así que midiendo desde cero todas las barras salen casi iguales y la
-   *  columna deja de comparar nada. Con un suelo del 6% para que la peor barra
-   *  siga siendo visible en vez de leerse como un cero. */
-  const ranges = useMemo(() => {
-    const result = {} as Record<SortKey, { min: number; span: number }>;
+   *  La barra codifica magnitud, así que arranca en cero: la mitad de la barra
+   *  es la mitad del máximo. (Antes se normalizaba entre mínimo y máximo, y una
+   *  proyección de 8 salía casi vacía frente a una de 31 que no es cuatro veces
+   *  más, sino menos de cuatro.) */
+  const maxima = useMemo(() => {
+    const result = {} as Record<SortKey, number>;
     for (const key of Object.keys(BARRED) as SortKey[]) {
-      let min = Infinity;
-      let max = -Infinity;
+      let max = 0;
       for (const player of filtered) {
         const value = metric(player, key);
-        if (typeof value !== "number" || !Number.isFinite(value)) continue;
-        if (value < min) min = value;
-        if (value > max) max = value;
+        if (typeof value === "number" && Number.isFinite(value) && value > max) max = value;
       }
-      result[key] = Number.isFinite(min)
-        ? { min, span: max - min || Math.abs(max) || 1 }
-        : { min: 0, span: 1 };
+      result[key] = max || 1;
     }
     return result;
   }, [filtered]);
 
   function share(value: number | null | undefined, key: SortKey): number | null {
     if (typeof value !== "number" || !Number.isFinite(value)) return null;
-    const { min, span } = ranges[key];
-    return 0.06 + 0.94 * Math.max(0, Math.min(1, (value - min) / span));
+    return Math.max(0, Math.min(1, value / maxima[key]));
+  }
+
+  const shownColumns = COLUMNS.filter((column) => !column.optional || extraColumns.has(column.key));
+
+  function toggleColumn(key: SortKey) {
+    setExtraColumns((previous) => {
+      const next = new Set(previous);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
   }
 
   const activeFilters =
@@ -267,6 +310,68 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   }
 
   const rows = sorted.slice(0, visible);
+  // La columna de tendencia necesita dos partidos: con uno solo sería una
+  // columna entera de guiones.
+  const hasTrend = rows.some((player) => (details[String(player.id)]?.recent.length ?? 0) >= 2);
+
+  /** Contenido de cada celda. Las variaciones que acompañan a una cifra
+   *  (precio, forma, minutos) solo aparecen si hay variación. */
+  function cell(player: Player, key: SortKey): React.ReactNode {
+    const bar = (value: number | null | undefined, digits = 1, strong = false) => (
+      <BarCell
+        value={value}
+        fraction={share(value, key)}
+        digits={digits}
+        strong={strong}
+        active={sort.key === key}
+      />
+    );
+    switch (key) {
+      case "price":
+        return (
+          <>
+            {credits(player.price)}
+            <span className="cell-delta">
+              <Delta value={player.priceDeltaLast} digits={2} hideZero />
+            </span>
+          </>
+        );
+      case "expectedChange":
+        return <Revalue player={player} />;
+      case "projectedFp":
+        return bar(player.projectedFp);
+      case "valueProjected":
+        return bar(player.valueProjected ?? player.valuePerCredit, 2);
+      // Media y forma comparten celda: la forma es la media de los últimos
+      // cinco, y lo que importa de ella es cuánto se separa de la media.
+      case "fpAvg":
+        return (
+          <>
+            {num(player.perf.fpAvg)}
+            <span className="cell-delta">
+              <Delta value={player.perf.formDelta} hideZero />
+            </span>
+          </>
+        );
+      case "minutesAvg":
+        return (
+          <>
+            {num(player.perf.minutesAvg)}
+            <span className="cell-delta">
+              <Delta value={player.perf.minutesTrend} hideZero />
+            </span>
+          </>
+        );
+      case "consistency":
+        return reliable(player);
+      case "difficulty":
+        return num(player.schedule.difficulty, 0);
+      case "bargainScore":
+        return bar(player.bargainScore, 0, true);
+      default:
+        return num(metric(player, key));
+    }
+  }
 
   return (
     <div className="stack" style={{ "--gap": "18px" } as React.CSSProperties}>
@@ -293,6 +398,19 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           {activeFilters ? <span className="chip-count">{activeFilters}</span> : null}
         </button>
 
+        {/* Las columnas a demanda solo existen en la tabla de escritorio. */}
+        {view === "tabla" ? (
+          <button
+            type="button"
+            className="chip filter-toggle only-wide"
+            aria-expanded={columnsOpen}
+            onClick={() => setColumnsOpen((open) => !open)}
+          >
+            Columnas
+            {extraColumns.size ? <span className="chip-count">{extraColumns.size}</span> : null}
+          </button>
+        ) : null}
+
         <div className="segmented filter-view">
           <button type="button" aria-pressed={view === "tabla"} onClick={() => setView("tabla")}>
             Tabla
@@ -302,6 +420,26 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </button>
         </div>
       </div>
+
+      {view === "tabla" && columnsOpen ? (
+        <div className="column-picker only-wide" role="group" aria-label="Columnas visibles">
+          <span className="control-label">Añadir columnas</span>
+          <div className="row" style={{ gap: 6 }}>
+            {COLUMNS.filter((column) => column.optional).map((column) => (
+              <button
+                key={column.key}
+                type="button"
+                className="chip"
+                aria-pressed={extraColumns.has(column.key)}
+                title={column.title}
+                onClick={() => toggleColumn(column.key)}
+              >
+                {column.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       <div className={`filter-panel${filtersOpen ? " is-open" : ""}`}>
         <div className="control">
@@ -426,11 +564,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
         <>
           {/* -------------------------------------------------- escritorio */}
           <div className="table-wrap only-wide">
-            <table className="data">
+            <table className="data is-scrollable">
               <thead>
                 <tr>
                   <th scope="col">Jugador</th>
-                  {COLUMNS.map((column) => (
+                  {shownColumns.map((column) => (
                     <th
                       key={column.key}
                       scope="col"
@@ -456,7 +594,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                       </button>
                     </th>
                   ))}
-                  <th scope="col">Últimos</th>
+                  {hasTrend ? <th scope="col">Últimos</th> : null}
                 </tr>
               </thead>
               <tbody>
@@ -469,62 +607,27 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     <td>
                       <PlayerCell player={player} />
                     </td>
-                    <td className="num">
-                      <span className="credit">{credits(player.price)}</span>{" "}
-                      <span style={{ fontSize: "0.76em" }}>
-                        <Delta value={player.priceDeltaLast} digits={2} />
-                      </span>
-                    </td>
-                    <td className="num">
-                      <Revalue player={player} />
-                    </td>
-                    <td className="num">
-                      <BarCell
-                        value={player.projectedFp}
-                        fraction={share(player.projectedFp, "projectedFp")}
-                      />
-                    </td>
-                    <td className="num">
-                      <BarCell
-                        value={player.valueProjected ?? player.valuePerCredit}
-                        fraction={share(
-                          player.valueProjected ?? player.valuePerCredit,
-                          "valueProjected",
-                        )}
-                        digits={2}
-                      />
-                    </td>
-                    {/* Media y forma comparten celda: la forma es la media de los
-                        últimos cinco, y lo que importa de ella es cuánto se
-                        separa de la media. Una columna menos cabe a 1280 px. */}
-                    <td className="num" title={`Forma (últimos 5): ${num(player.perf.form)}`}>
-                      {num(player.perf.fpAvg)}{" "}
-                      <span className="muted" style={{ fontSize: "0.76em" }}>
-                        <Delta value={player.perf.formDelta} />
-                      </span>
-                    </td>
-                    <td className="num">
-                      {num(player.perf.minutesAvg)}{" "}
-                      <span style={{ fontSize: "0.76em" }}>
-                        <Delta value={player.perf.minutesTrend} />
-                      </span>
-                    </td>
-                    <td className="num">{reliable(player)}</td>
-                    <td className="num">{num(player.schedule.difficulty, 0)}</td>
-                    <td className="num">
-                      <BarCell
-                        value={player.bargainScore}
-                        fraction={share(player.bargainScore, "bargainScore")}
-                        digits={0}
-                        strong
-                      />
-                    </td>
-                    <td>
-                      <Sparkline
-                        values={(details[String(player.id)]?.recent ?? []).map((game) => game.fp)}
-                        label={`Últimos partidos de ${displayName(player)}`}
-                      />
-                    </td>
+                    {shownColumns.map((column) => (
+                      <td
+                        key={column.key}
+                        className="num"
+                        title={
+                          column.key === "fpAvg"
+                            ? `Forma (últimos 5): ${num(player.perf.form)}`
+                            : undefined
+                        }
+                      >
+                        {cell(player, column.key)}
+                      </td>
+                    ))}
+                    {hasTrend ? (
+                      <td>
+                        <Sparkline
+                          values={(details[String(player.id)]?.recent ?? []).map((game) => game.fp)}
+                          label={`Últimos partidos de ${displayName(player)}`}
+                        />
+                      </td>
+                    ) : null}
                   </tr>
                 ))}
               </tbody>
@@ -591,17 +694,6 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
               Mostrar {Math.min(PAGE_SIZE, sorted.length - visible)} más
             </button>
           ) : null}
-        </div>
-      ) : null}
-
-      {/* En la nube el propio gráfico ya lleva su leyenda: repetirla es ruido. */}
-      {view === "tabla" ? (
-        <div className="chart-legend">
-          {(["G", "F", "C"] as const).map((position) => (
-            <span key={position}>
-              <PositionBadge position={position} />
-            </span>
-          ))}
         </div>
       ) : null}
     </div>

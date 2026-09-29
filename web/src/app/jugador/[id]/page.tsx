@@ -217,7 +217,8 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 value={num(perf.form)}
                 unit={hasGames ? "pts" : undefined}
                 note={
-                  typeof perf.formDelta === "number"
+                  // Sin cambio no hay nada que decir: "0,0 vs su media" es ruido.
+                  typeof perf.formDelta === "number" && Math.abs(perf.formDelta) >= 0.05
                     ? `${signed(perf.formDelta)} vs su media`
                     : null
                 }
@@ -440,7 +441,11 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             <dl className="fact-list">
               <Row
                 label="Minutos últimos 5"
-                value={`${num(perf.minutesRecent)} (${signed(perf.minutesTrend)})`}
+                value={
+                  typeof perf.minutesTrend === "number" && Math.abs(perf.minutesTrend) >= 0.05
+                    ? `${num(perf.minutesRecent)} (${signed(perf.minutesTrend)})`
+                    : num(perf.minutesRecent)
+                }
               />
               <Row
                 label="Cuota de minutos del equipo"
