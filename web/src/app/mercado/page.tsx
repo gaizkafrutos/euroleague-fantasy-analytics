@@ -89,13 +89,14 @@ export default function MercadoPage() {
   return (
     <>
       <section className="shell hero">
-        <span className="eyebrow">{meta.seasonLabel}</span>
         <h1>Mercado</h1>
         <p className="lede">
           Quién rinde más de lo que cuesta, quién va a subir y quién está perdiendo sitio.
         </p>
 
         <div className="status-strip">
+          <span>{meta.seasonLabel}</span>
+          <span className="status-sep">·</span>
           <span className={`status-dot${isBaseline ? "" : " is-live"}`} aria-hidden />
           <span>
             {isBaseline
@@ -128,7 +129,7 @@ export default function MercadoPage() {
           </p>
         </div>
 
-        <div className="grid grid-3">
+        <div className="grid grid-3 signals">
           <RankCard
             title="Mejores chollos"
             note="Índice compuesto: valor por crédito, proyección, fiabilidad, rol y presión de precio."

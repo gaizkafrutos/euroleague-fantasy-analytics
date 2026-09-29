@@ -435,15 +435,17 @@ p {
   max-width: 54ch;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
+/* Contexto de la página (temporada, jornada…): va debajo de la entradilla,
+   en caja normal. Antes era un epígrafe en versalitas encima del titular. */
+.eyebrow,
+.eq-eyebrow {
+  display: block;
+  margin: 14px 0 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-3);
 }
 
 .muted {
@@ -474,12 +476,9 @@ p {
   margin-top: var(--gap, 16px);
 }
 
+/* Las secciones se separan con aire, no con reglas ni cajas. */
 .section {
-  padding-block: 40px;
-}
-
-.section + .section {
-  border-top: 1px solid var(--hairline);
+  padding-block: clamp(36px, 5vw, 56px);
 }
 
 .row {
@@ -497,16 +496,15 @@ p {
   flex-wrap: wrap;
 }
 
-/* Encabezado de sección: título a la izquierda, apunte a la derecha, regla. */
+/* Encabezado de sección: título a la izquierda, apunte a la derecha. Sin
+   regla: la pone el bloque de debajo, una sola vez. */
 .section-head {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  padding-bottom: 16px;
-  margin-bottom: 22px;
-  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 24px;
 }
 
 /* --------------------------------------------------------------------------
@@ -649,11 +647,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 5px 11px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: var(--surface);
-  font-size: 0.74rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--ink-2);
   white-space: nowrap;
@@ -887,17 +881,11 @@ p {
 .status-strip {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 4px 10px;
   flex-wrap: wrap;
-  margin-top: 26px;
-  padding: 10px 14px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: var(--surface);
-  font-size: 0.8rem;
-  color: var(--ink-2);
-  width: fit-content;
-  max-width: 100%;
+  margin-top: 18px;
+  font-size: 0.875rem;
+  color: var(--ink-3);
 }
 
 .status-dot {
@@ -927,11 +915,8 @@ p {
    Tarjetas
    -------------------------------------------------------------------------- */
 .card {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  padding: 22px;
-  box-shadow: var(--shadow);
+  padding-top: 16px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .card-head {
@@ -958,7 +943,7 @@ p {
 
 .grid {
   display: grid;
-  gap: 14px;
+  gap: 44px 56px;
 }
 
 .grid-2 {
@@ -971,16 +956,14 @@ p {
 
 .grid-4 {
   grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+  gap: 18px 24px;
 }
 
 /* --------------------------------------------------------------------------
    Stat tiles
    -------------------------------------------------------------------------- */
 .tile {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  padding: 18px 20px 20px;
+  padding: 0;
 }
 
 .tile-label {
@@ -1014,14 +997,19 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 9px;
-  border-radius: 6px;
-  border: 1px solid var(--hairline);
-  background: var(--surface-2);
-  font-size: 0.71rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--ink-2);
   white-space: nowrap;
+}
+
+/* La cabecera de la ficha de jugador se queda como estaba. */
+.ficha-meta .badge {
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--bg-sunken);
+  font-size: 0.75rem;
 }
 
 .badge-dot {
@@ -1032,9 +1020,7 @@ p {
 }
 
 .badge-accent {
-  border-color: var(--accent-line);
-  background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--brand-ink);
   font-weight: 600;
 }
 
@@ -1222,9 +1208,7 @@ p {
    -------------------------------------------------------------------------- */
 .table-wrap {
   overflow-x: auto;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
+  border-top: 1px solid var(--line-strong);
 }
 
 .table-wrap::-webkit-scrollbar {
@@ -1255,7 +1239,7 @@ table.data td:first-child {
   text-align: left;
   position: sticky;
   left: 0;
-  background: var(--surface);
+  background: var(--bg);
   z-index: 1;
 }
 
@@ -1267,7 +1251,7 @@ table.data thead th {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: var(--surface);
+  background: var(--bg);
   font-size: 0.665rem;
   font-weight: 600;
   letter-spacing: 0.11em;
@@ -1538,11 +1522,10 @@ table.data th.num {
   display: flex;
   gap: 11px;
   align-items: flex-start;
-  padding: 13px 15px;
+  padding: 12px 14px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--hairline);
-  background: var(--surface);
-  font-size: 0.84rem;
+  background: var(--bg-sunken);
+  font-size: 0.875rem;
   line-height: 1.5;
   color: var(--ink-2);
 }
@@ -1622,6 +1605,11 @@ table.data th.num {
   text-align: right;
 }
 
+/* La cifra que resume la sección, en grande. */
+.section-figure .tile-value {
+  font-size: clamp(2.6rem, 2rem + 2vw, 3.75rem);
+}
+
 .rank-list li.is-lead {
   padding-block: 6px 10px;
 }
@@ -1629,6 +1617,21 @@ table.data th.num {
 .rank-list li.is-lead .rank-value {
   font-size: 1.16rem;
   color: var(--ink);
+}
+
+@media (min-width: 980px) {
+  .signals {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .signals > .card:first-child .rank-value {
+    font-size: 1.2rem;
+  }
+
+  .signals > .card:first-child .is-lead .rank-value {
+    font-size: 2rem;
+    color: var(--brand-ink);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1701,50 +1704,34 @@ table.data th.num {
 /* --------------------------------------------------------------------------
    Veredicto
    -------------------------------------------------------------------------- */
-.verdict {
-  margin-top: 26px;
-  padding: 18px 20px 18px 22px;
-  border: 1px solid var(--hairline);
-  border-left: 3px solid var(--ink-muted);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.verdict.is-good {
-  border-left-color: var(--good);
-}
-
-.verdict.is-warn {
-  border-left-color: var(--warning);
-}
-
 .verdict-headline {
   margin: 0;
   font-family: var(--font-title);
-  font-size: clamp(1.06rem, 0.95rem + 0.6vw, 1.32rem);
+  font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2.1rem);
   font-weight: 600;
-  letter-spacing: -0.024em;
-  line-height: 1.32;
-  max-width: 44ch;
+  line-height: 1.2;
+  max-width: 30ch;
+  text-wrap: balance;
 }
 
 .verdict-reasons {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
   list-style: none;
-  margin: 13px 0 0;
+  margin: 14px 0 0;
   padding: 0;
 }
 
 .verdict-reasons li {
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-  font-size: 0.755rem;
+  font-size: 0.95rem;
   color: var(--ink-2);
   font-variant-numeric: tabular-nums;
+}
+
+.verdict-reasons li + li::before {
+  content: "·";
+  margin-inline: 10px;
+  color: var(--ink-3);
 }
 
 /* --------------------------------------------------------------------------
@@ -1971,17 +1958,15 @@ table.data th.num {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 8px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .player-card {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 10px 12px;
-  padding: 13px 14px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -2002,8 +1987,6 @@ table.data th.num {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  padding-top: 11px;
-  border-top: 1px solid var(--hairline);
 }
 
 .player-card-stats > span {
@@ -2065,23 +2048,15 @@ table.data th.num {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .lineup-pos {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-  font-size: 0.72rem;
+  width: 18px;
+  font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--ink-2);
+  color: var(--ink-3);
 }
 
 .lineup-name {
@@ -2124,17 +2099,15 @@ table.data th.num {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 8px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .team-card {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 11px 12px;
-  padding: 13px 14px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .team-card-rating {
@@ -2165,8 +2138,6 @@ table.data th.num {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  padding-top: 11px;
-  border-top: 1px solid var(--hairline);
 }
 
 .team-card-stats > span {
@@ -2348,7 +2319,7 @@ table.data th.num {
   }
 
   .section {
-    padding-block: 28px;
+    padding-block: 36px;
   }
 
   .hero {
@@ -2375,14 +2346,12 @@ table.data th.num {
   }
 
   .status-strip {
-    border-radius: var(--radius);
-    width: auto;
-    font-size: 0.76rem;
+    font-size: 0.8125rem;
     line-height: 1.45;
   }
 
   .card {
-    padding: 17px 16px;
+    padding-top: 14px;
   }
 
   /* Título y control en columnas se comen el ancho el uno al otro: en 390 px,
@@ -2520,14 +2489,7 @@ table.data th.num {
     margin-top: 0;
   }
 
-  .verdict {
-    margin-top: 20px;
-    padding: 15px 16px 15px 17px;
-  }
 
-  .tile {
-    padding: 14px 15px 16px;
-  }
 
   .tile-value {
     font-size: 1.6rem;
@@ -2905,10 +2867,11 @@ table.data th.num {
 /* -------------------------------------------------------- banda de fantasy */
 .ficha-band {
   margin-top: 22px;
+  position: relative;
+  z-index: 1;
   border-top: 2px solid var(--brand);
-  background: var(--bg-sunken);
-  border-radius: 0 0 var(--radius) var(--radius);
-  padding: 14px 16px 16px;
+  background: var(--bg);
+  padding: 14px 0 16px;
 }
 
 .ficha-band-label {
@@ -2963,7 +2926,11 @@ table.data th.num {
 }
 
 .ficha-note {
-  margin: 14px 0 0;
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  margin: 0;
+  padding-top: 14px;
   font-size: 0.78rem;
   line-height: 1.55;
   color: var(--ink-muted);
@@ -3573,10 +3540,8 @@ table.data th.num {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 /* --------------------------------------------------------------------------
@@ -3601,31 +3566,12 @@ table.data th.num {
   max-width: 62ch;
 }
 
-.eq-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin: 0 0 10px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
 
-.eq-eyebrow i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-}
 
 /* ------------------------------------------------------------ clasificación */
 .eq-standings {
-  margin-top: 26px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  overflow: hidden;
+  margin-top: 32px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .eq-list {
@@ -3639,9 +3585,8 @@ table.data th.num {
   align-items: center;
   grid-template-columns: 26px minmax(0, 1fr) 56px 62px;
   gap: 10px;
-  padding: 11px 14px;
+  padding: 11px 8px;
   color: var(--ink);
-  background: var(--surface);
   border-top: 1px solid var(--hairline);
 }
 
@@ -3656,7 +3601,6 @@ a.eq-row:focus-visible {
 
 .eq-thead {
   border-top: 0;
-  background: var(--surface-2);
   color: var(--ink-muted);
   font-size: 0.62rem;
   letter-spacing: 0.12em;
@@ -3778,13 +3722,11 @@ a.eq-row:focus-visible {
 }
 
 .eq-hero {
-  position: relative;
-  overflow: hidden;
-  margin-top: 14px;
-  padding: 30px 16px 26px;
-  border-radius: var(--radius);
-  border: 1px solid var(--hairline);
-  text-align: center;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: clamp(16px, 3vw, 28px);
+  align-items: center;
+  margin-top: 18px;
 }
 
 .eq-hero > * {
@@ -3792,17 +3734,17 @@ a.eq-row:focus-visible {
 }
 
 .eq-hero-crest {
+  grid-row: 1 / span 3;
   display: block;
-  width: clamp(64px, 16vw, 84px);
+  width: clamp(56px, 12vw, 96px);
   height: auto;
-  margin: 0 auto 14px;
 }
 
 .eq-hero h1 {
   margin: 0;
   font-family: var(--font-title);
   font-variation-settings: "wdth" 112, "wght" 800;
-  font-size: clamp(1.7rem, 6vw, 2.9rem);
+  font-size: clamp(1.9rem, 6vw, 3.4rem);
   line-height: 1;
   text-wrap: balance;
 }
@@ -3815,18 +3757,13 @@ a.eq-row:focus-visible {
 
 .eq-pills {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  gap: 4px 22px;
   flex-wrap: wrap;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .eq-pill {
-  border: 1px solid var(--hairline);
-  background: var(--surface-2);
-  border-radius: 999px;
-  padding: 5px 13px;
-  font-size: 0.8rem;
+  font-size: 0.9375rem;
   color: var(--ink-2);
 }
 
@@ -3836,7 +3773,7 @@ a.eq-row:focus-visible {
 }
 
 .eq-section {
-  margin-top: 34px;
+  margin-top: clamp(44px, 6vw, 64px);
 }
 
 .eq-section-head {
@@ -3873,15 +3810,13 @@ a.eq-row:focus-visible {
 .eq-factors {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 24px 32px;
   margin: 0;
 }
 
 .eq-factor {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  padding: 14px 15px 13px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .eq-factor dt {
@@ -3933,12 +3868,8 @@ a.eq-row:focus-visible {
 
 .eq-rows {
   display: grid;
-  gap: 1px;
   margin: 0;
-  background: var(--hairline);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  overflow: hidden;
+  border-top: 1px solid var(--line-strong);
 }
 
 .eq-rows > div {
@@ -3946,8 +3877,8 @@ a.eq-row:focus-visible {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  padding: 11px 15px;
-  background: var(--surface);
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .eq-rows dt {
@@ -3978,18 +3909,15 @@ a.eq-row:focus-visible {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 20px 24px;
   grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
 }
 
 .eq-fx {
   display: grid;
   gap: 7px;
-  padding: 12px 13px;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
+  padding-top: 10px;
   border-top: 2px solid var(--rule);
-  border-radius: var(--radius);
 }
 
 .eq-fx.is-hard {
@@ -4032,25 +3960,17 @@ a.eq-row:focus-visible {
 /* Plantilla por posición, con el color de serie de cada una en el borde. */
 .eq-squad {
   display: grid;
-  gap: 14px;
+  gap: 32px 48px;
   grid-template-columns: 1fr;
   /* Sin esto, la columna de aleros se estira hasta la altura de la de bases
      y deja una caja medio vacía. */
   align-items: start;
 }
 
-.eq-grp {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
 .eq-grp h3 {
   margin: 0;
-  padding: 11px 15px;
-  border-bottom: 1px solid var(--hairline);
-  border-left: 3px solid var(--pos-color, var(--ink-muted));
+  padding: 0 0 9px;
+  border-bottom: 1px solid var(--line-strong);
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -4069,7 +3989,7 @@ a.eq-row:focus-visible {
   grid-template-columns: minmax(0, 1fr) auto auto;
   gap: 12px;
   align-items: baseline;
-  padding: 9px 15px;
+  padding: 9px 0;
   border-top: 1px solid var(--hairline);
 }
 
@@ -4170,20 +4090,18 @@ a.eq-grp-name:hover {
 }
 
 /* ------------------------------------------------------------------ cifras */
+/* Las cuatro cifras matizan a la horquilla: más pequeñas, sin caja. */
 .cancha-figures {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
+  gap: 18px 24px;
   margin: 0;
-  background: var(--hairline);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  overflow: hidden;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
 }
 
 .cancha-figures > div {
-  background: var(--surface);
-  padding: 14px 16px;
+  min-width: 0;
 }
 
 .cancha-figures dt {
@@ -4198,7 +4116,7 @@ a.eq-grp-name:hover {
   margin: 6px 0 0;
   font-family: var(--font-title);
   font-variation-settings: "wdth" 88, "wght" 700;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   line-height: 1;
 }
 
@@ -4238,11 +4156,9 @@ a.eq-grp-name:hover {
 }
 
 /* ------------------------------------------------------------------- pista */
+/* La pista la dibujan sus propias líneas: sin caja alrededor. */
 .court {
   position: relative;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
   padding: clamp(18px, 5vw, 22px) clamp(14px, 4vw, 18px) clamp(22px, 6vw, 26px);
   overflow: hidden;
 }
@@ -4314,6 +4230,9 @@ a.eq-grp-name:hover {
   width: clamp(58px, 16vw, 84px);
   aspect-ratio: 3 / 4;
   place-items: center;
+}
+
+.tok.is-empty .tok-shot {
   border: 1px dashed var(--rule);
   border-radius: 12px;
 }
@@ -4329,13 +4248,12 @@ a.eq-grp-name:hover {
   opacity: 0.6;
 }
 
+/* El fondo tapa las líneas de la pista bajo el texto; sin borde. */
 .tok-plate {
-  margin-top: 8px;
-  border-radius: 10px;
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-  border-top: 2px solid var(--pos-color, var(--rule));
-  padding: 8px 9px 9px;
+  margin-top: 6px;
+  border-radius: 8px;
+  background: var(--bg);
+  padding: 6px 8px 8px;
 }
 
 .tok.pos-E {
@@ -4343,8 +4261,6 @@ a.eq-grp-name:hover {
 }
 
 .tok.is-empty .tok-plate {
-  border-style: dashed;
-  border-top-width: 1px;
   background: transparent;
 }
 
@@ -4494,18 +4410,13 @@ a.eq-grp-name:hover {
 }
 
 .bench-tag {
-  font-size: 0.64rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  padding: 3px 9px;
-  color: var(--ink-2);
+  font-size: 0.875rem;
+  color: var(--ink-3);
 }
 
 .bench-tag.is-half {
-  border-color: var(--accent-line);
-  color: var(--accent);
+  color: var(--brand-ink);
+  font-weight: 600;
 }
 
 .bench-head p {
@@ -4556,10 +4467,8 @@ a.eq-grp-name:hover {
 }
 
 .cancha-panel {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  padding: 18px 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .cancha-stack {
@@ -4628,14 +4537,10 @@ a.eq-grp-name:hover {
 }
 
 .cancha-callout {
-  margin: 18px 0 0;
-  border-left: 3px solid var(--brand);
-  background: var(--bg-sunken);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  padding: 16px 18px;
-  font-size: 0.95rem;
+  margin: 22px 0 0;
+  font-size: 1.05rem;
   line-height: 1.6;
-  max-width: 72ch;
+  max-width: 64ch;
 }
 
 .cancha-callout strong {
@@ -4789,10 +4694,8 @@ a.eq-grp-name:hover {
 .fichar {
   display: grid;
   gap: 10px;
-  padding: 14px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
+  padding-top: 16px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .fichar-head {
@@ -5047,10 +4950,6 @@ a.eq-grp-name:hover {
 }
 
 @media (min-width: 761px) {
-  .fichar {
-    padding: 16px 18px;
-  }
-
   .fichar-list {
     max-height: 460px;
     overflow-y: auto;
@@ -5096,7 +4995,7 @@ a.eq-grp-name:hover {
 
 /* Encabezado de tarjeta como h2 real (antes eran div): mismo aspecto. */
 h2.card-title {
-  margin: 0;
+  margin: 0 0 6px;
 }
 
 /* --------------------------------------------------------------------------
@@ -6229,11 +6128,12 @@ h2.card-title {
    -------------------------------------------------------------------------- */
 .cancha-range {
   display: grid;
-  gap: 14px;
-  padding: 16px 18px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
+  gap: 10px;
+  padding-block: 8px 4px;
+}
+
+.cancha-range h2 {
+  font-size: clamp(1.5rem, 1.15rem + 1.4vw, 2.2rem);
 }
 
 .srange {
@@ -6243,8 +6143,8 @@ h2.card-title {
 
 .srange-track {
   position: relative;
-  height: 18px;
-  margin-top: 26px;
+  height: 30px;
+  margin-top: 34px;
   border-radius: 999px;
   background: var(--surface-3);
 }
@@ -6268,9 +6168,9 @@ h2.card-title {
 .srange-dot {
   position: absolute;
   top: 50%;
-  width: 14px;
-  height: 14px;
-  margin: -7px 0 0 -7px;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
   border-radius: 50%;
   background: var(--ink);
   box-shadow: 0 0 0 3px var(--surface);
@@ -6299,9 +6199,10 @@ h2.card-title {
 
 .srange-axis {
   position: relative;
-  height: 18px;
-  font-size: 0.74rem;
-  color: var(--ink-muted);
+  height: 52px;
+  margin-top: 6px;
+  font-size: 1.125rem;
+  color: var(--ink-2);
 }
 
 .srange-axis span {
@@ -6311,13 +6212,22 @@ h2.card-title {
 
 .srange-axis .is-mean {
   color: var(--ink);
+  font-family: var(--font-title);
+  font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 .srange-read {
   margin: 0;
-  font-size: 0.86rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
   color: var(--ink-2);
+  max-width: 60ch;
+}
+
+.srange-read b {
+  color: var(--ink);
 }
 
 .legend-line {

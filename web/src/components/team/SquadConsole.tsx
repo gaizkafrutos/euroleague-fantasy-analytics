@@ -285,6 +285,25 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
         </div>
       ) : null}
 
+      {/* ------------------------------------------------------- horquilla
+          Lo primero tras los controles: es la lectura que manda. Las cuatro
+          cifras de debajo la matizan. */}
+      {range && squad.length >= 5 ? (
+        <section className="cancha-range" aria-labelledby="horquilla">
+          <div className="cancha-section-head">
+            <h2 id="horquilla">Horquilla de la jornada</h2>
+            <p>
+              La proyección es una media; la jornada, una tirada. Cada jugador con su dispersión
+              y su multiplicador.
+            </p>
+          </div>
+          <ScoreRange
+            range={range}
+            optimal={budget === DEFAULT_BUDGET && full ? optimalScored : null}
+          />
+        </section>
+      ) : null}
+
       {/* ---------------------------------------------------------- cifras */}
       <dl className="cancha-figures">
         <div className="is-credit">
@@ -306,8 +325,15 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
           {full && typeof optimalScored === "number" ? (
             <>
               <dt>Frente al óptimo</dt>
+              {/* A la par del óptimo no es una subida: sin color. */}
               <dd
-                className={`num ${check.scored >= optimalScored - 0.05 ? "delta-up" : "delta-down"}`}
+                className={`num ${
+                  Math.abs(check.scored - optimalScored) < 0.05
+                    ? ""
+                    : check.scored > optimalScored
+                      ? "delta-up"
+                      : "delta-down"
+                }`}
               >
                 {signed(check.scored - optimalScored)}
               </dd>
@@ -341,22 +367,6 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
           <small>{topClub ? topClub[0] : "—"}</small>
         </div>
       </dl>
-
-      {range && squad.length >= 5 ? (
-        <section className="cancha-range" aria-labelledby="horquilla">
-          <div className="cancha-section-head">
-            <h2 id="horquilla">Horquilla de la jornada</h2>
-            <p>
-              La proyección es una media; la jornada, una tirada. Cada jugador con su dispersión
-              y su multiplicador.
-            </p>
-          </div>
-          <ScoreRange
-            range={range}
-            optimal={budget === DEFAULT_BUDGET && full ? optimalScored : null}
-          />
-        </section>
-      ) : null}
 
       {check.problems.length ? (
         <ul className="notice cancha-problems">

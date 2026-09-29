@@ -31,15 +31,13 @@ export default function TeamsPage() {
   return (
     <section className="section shell">
       <header className="eq-head">
-        <p className="eq-eyebrow">
-          <i aria-hidden /> {teams.length} clubes
-        </p>
         <h1>Quién gana, quién anota y a quién le toca.</h1>
         <p className="lede">
           {isBaseline
             ? "Ordenados por diferencial de eficiencia de la 2025-26, que es lo que hay hasta que se juegue la jornada 1. Cuando empiece, este orden pasa a ser el de esta temporada."
             : "Ordenados por diferencial de eficiencia de esta temporada: puntos a favor menos puntos en contra por cada 100 posesiones."}
         </p>
+        <p className="eq-eyebrow">{teams.length} clubes</p>
       </header>
 
       <div className="eq-standings">

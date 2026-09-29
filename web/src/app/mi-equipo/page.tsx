@@ -40,15 +40,13 @@ export default function TeamPage() {
   return (
     <section className="section shell">
       <header className="cancha-head">
-        <p className="eq-eyebrow">
-          <i aria-hidden /> Jornada {meta.currentRound}
-        </p>
         <h1>Tu once, y lo que de verdad va a puntuar.</h1>
         <p className="lede">
           Monta la plantilla y la consola la coloca: los seis que más proyectan puntúan enteros, el
           mejor lleva el brazalete y los cuatro últimos van al banquillo a la mitad. Luego señala a
           quién le pagas de más y qué fichaje cabe.
         </p>
+        <p className="eq-eyebrow">Jornada {meta.currentRound}</p>
       </header>
       <SquadConsole market={market} coaches={coaches} optimal={optimal} nextByClub={nextByClub} />
     </section>
