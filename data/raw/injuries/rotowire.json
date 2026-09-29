@@ -1,24 +1,16 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-09-29T14:11:17.992031+00:00",
+ "fetchedAt": "2026-09-29T23:04:33.453684+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "CZV",
    "position": "F",
    "name": "Patrick Baldwin",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Back"
-  },
-  {
-   "team": "FBT",
-   "position": "C",
-   "name": "Marcus Bingham",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "HTA",
@@ -61,14 +53,6 @@
    "comment": "Thigh"
   },
   {
-   "team": "OLY",
-   "position": "C",
-   "name": "Bryant Dunston",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
    "team": "HTA",
    "position": "G",
    "name": "Tyler Ennis",
@@ -104,7 +88,7 @@
    "team": "HTA",
    "position": "F",
    "name": "Tomer Ginat",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -120,7 +104,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Juancho Hernangomez",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Groin"
   },
@@ -141,6 +125,14 @@
    "comment": "Wrist"
   },
   {
+   "team": "OLY",
+   "position": "G",
+   "name": "Cory Joseph",
+   "status": "Out",
+   "round": "",
+   "comment": "Back"
+  },
+  {
    "team": "VIR",
    "position": "C",
    "name": "Kevin Kokila",
@@ -152,7 +144,7 @@
    "team": "FBT",
    "position": "G",
    "name": "Shane Larkin",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -176,7 +168,7 @@
    "team": "ZAL",
    "position": "G",
    "name": "Saben Lee",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Hamstring"
   },
@@ -197,28 +189,12 @@
    "comment": "Achilles"
   },
   {
-   "team": "MIL",
-   "position": "G",
-   "name": "Garrison Mathews",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
-  },
-  {
    "team": "OLY",
    "position": "C",
    "name": "Nikola Milutinov",
    "status": "Out",
    "round": "",
    "comment": "Leg"
-  },
-  {
-   "team": "CZV",
-   "position": "F",
-   "name": "Chima Moneke",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "DUB",
@@ -253,14 +229,6 @@
    "comment": "Knee"
   },
   {
-   "team": "VBC",
-   "position": "F",
-   "name": "Dylan Osetkowski",
-   "status": "Game time",
-   "round": "",
-   "comment": "Illness"
-  },
-  {
    "team": "EFS",
    "position": "C",
    "name": "Georgios Papagiannis",
@@ -272,7 +240,15 @@
    "team": "OLY",
    "position": "G",
    "name": "George Papas",
-   "status": "Game time",
+   "status": "Out",
+   "round": "",
+   "comment": "Not Injury Related"
+  },
+  {
+   "team": "KBA",
+   "position": "C",
+   "name": "Marcio Santos",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -293,20 +269,12 @@
    "comment": "Knee"
   },
   {
-   "team": "RMB",
+   "team": "HTA",
    "position": "F",
-   "name": "Nick Smith Jr",
-   "status": "Game time",
+   "name": "Jacob Toppin",
+   "status": "Out",
    "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
-   "team": "PAR",
-   "position": "F",
-   "name": "Bandja Sy",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
+   "comment": "Leg"
   },
   {
    "team": "ASV",
