@@ -5,8 +5,8 @@
  *  dos jugadores de 15 puntos pueden ser uno que anota 22 y falla 9 tiros, y
  *  otro que vive del rebote y las faltas recibidas (que es más estable).
  *
- *  El signo lo dice la dirección; el color solo refuerza: violeta (la capa de
- *  fantasy) para lo que suma, gris para lo que resta.
+ *  El signo lo dice la dirección; el color solo refuerza: naranja (el color
+ *  de marca) para lo que suma, gris para lo que resta.
  */
 import { num, signed } from "@/lib/format";
 import type { MixDetail, MixKey } from "@/lib/types";

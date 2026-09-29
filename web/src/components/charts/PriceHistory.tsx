@@ -10,7 +10,7 @@ import { useState } from "react";
 
 import { credits, dateShort, signed } from "@/lib/format";
 import type { PricePoint } from "@/lib/types";
-import { CHART_MARGIN, extent, linePath, linearScale, ticks } from "./scales";
+import { CHART_MARGIN, extent, linePath, linearScale, tickLabel, tickStep, ticks } from "./scales";
 
 interface Props {
   points: PricePoint[];
@@ -45,7 +45,26 @@ export default function PriceHistory({ points, height = 220 }: Props) {
   }
 
   const values = points.map((point) => point.q);
+
+  /* Con dos capturas, o con el precio quieto, una línea no cuenta nada que no
+     diga mejor la cifra: se enseña la cifra. */
+  const first = values[0];
+  const last = values[values.length - 1];
+  const flat = Math.max(...values) - Math.min(...values) < 0.05;
+  if (points.length < 3 || flat) {
+    return (
+      <div className="single-reading">
+        <div className="single-reading-value num">{credits(last)}</div>
+        <div className="muted num">
+          {flat ? "sin variación" : `${signed(last - first)} cr`} · {points.length} capturas de
+          precio, del {dateShort(points[0].t)} al {dateShort(points[points.length - 1].t)}
+        </div>
+      </div>
+    );
+  }
+
   const yDomain = extent(values, 0.12);
+  const yStep = tickStep(yDomain, 4);
   const x = linearScale([0, points.length - 1], [CHART_MARGIN.left, width - CHART_MARGIN.right]);
   const y = linearScale(yDomain, [height - CHART_MARGIN.bottom, CHART_MARGIN.top]);
 
@@ -72,7 +91,7 @@ export default function PriceHistory({ points, height = 220 }: Props) {
               y2={y(tick)}
             />
             <text x={CHART_MARGIN.left - 8} y={y(tick)} textAnchor="end" dominantBaseline="middle">
-              {tick.toFixed(1)}
+              {tickLabel(tick, yStep)}
             </text>
           </g>
         ))}
@@ -102,6 +121,15 @@ export default function PriceHistory({ points, height = 220 }: Props) {
             onMouseEnter={() => setActive(index)}
           />
         ))}
+
+        <text
+          x={x(points.length - 1)}
+          y={y(current) - 12}
+          textAnchor="end"
+          className="bar-label"
+        >
+          {credits(current)}
+        </text>
 
         {active !== null ? (
           <line

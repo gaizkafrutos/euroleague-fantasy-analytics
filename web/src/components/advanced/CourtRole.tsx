@@ -20,8 +20,6 @@ export default function CourtRole({ court }: { court: CourtDetail }) {
   const overtime = court.periodMinutes[4] ?? 0;
   const top = Math.max(...periods, 10);
   const { onNet, offNet, diff } = court.onOff;
-  const reach = Math.max(20, Math.abs(onNet ?? 0), Math.abs(offNet ?? 0)) * 1.15;
-  const at = (value: number) => `${50 + (value / reach) * 50}%`;
   const fewPoss = court.onOff.onPoss < 60;
 
   return (
@@ -65,28 +63,16 @@ export default function CourtRole({ court }: { court: CourtDetail }) {
               {signed(diff)} con él
             </b>
           </div>
-          <div className="onoff-line" aria-hidden>
-            <span className="onoff-zero" style={{ left: "50%" }} />
-            <span
-              className="onoff-link"
-              style={{
-                left: at(Math.min(onNet, offNet)),
-                width: `${(Math.abs(onNet - offNet) / reach) * 50}%`,
-              }}
-            />
-            <span className="onoff-dot is-off" style={{ left: at(offNet) }}>
-              <i className="num">{signed(offNet)}</i>
-              <em>sin él</em>
-            </span>
-            <span className="onoff-dot is-on" style={{ left: at(onNet) }}>
-              <i className="num">{signed(onNet)}</i>
-              <em>con él</em>
-            </span>
-          </div>
-          <p className="sr-only">
-            Con él en pista su equipo hace {signed(onNet)} por cada 100 posesiones; sin él,{" "}
-            {signed(offNet)}.
-          </p>
+          <dl className="onoff-figures">
+            <div>
+              <dt>con él</dt>
+              <dd className="num">{signed(onNet)}</dd>
+            </div>
+            <div>
+              <dt>sin él</dt>
+              <dd className="num">{signed(offNet)}</dd>
+            </div>
+          </dl>
         </div>
       ) : null}
 

@@ -6,7 +6,7 @@
  *  Es la vista que usan los jugadores del Fantasy de la Premier para planificar
  *  fichajes a varias jornadas vista, adaptada: aquí el color no es "dificultad"
  *  genérica sino puntos fantasy concedidos, que es lo que se cobra. Secuencial
- *  en un solo tono (el violeta de las señales de fantasy): más intenso = el
+ *  en un solo tono (la rampa naranja de marca): más intenso = el
  *  rival regala más a ese puesto.
  *
  *  Las filas se ordenan por la media de las cinco: arriba, los calendarios más

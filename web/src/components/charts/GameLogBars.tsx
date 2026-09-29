@@ -12,7 +12,7 @@ import { useState } from "react";
 
 import { num } from "@/lib/format";
 import type { GameLine } from "@/lib/types";
-import { CHART_MARGIN, linearScale, ticks } from "./scales";
+import { CHART_MARGIN, linearScale, tickLabel, tickStep, ticks } from "./scales";
 
 interface Props {
   games: GameLine[];
@@ -29,6 +29,24 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
     return <p className="muted" style={{ margin: 0 }}>Sin partidos registrados todavía.</p>;
   }
 
+  /* Con uno o dos partidos no hay serie que dibujar: una barra suelta sobre un
+     eje de 0 a 30 parece un error. Se enseñan las cifras. */
+  if (games.length < 3) {
+    return (
+      <ul className="game-figures">
+        {games.map((game, index) => (
+          <li key={`${game.round}-${index}`}>
+            <span className="single-reading-value num">{num(game.fp)}</span>
+            <span className="muted num">
+              pts · J{game.round ?? "—"} · {game.home ? "vs" : "@"} {game.opponent ?? "—"} ·{" "}
+              {num(game.minutes)} min
+            </span>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   const values = games.map((game) => game.fp);
   const max = Math.max(...values, average ?? 0, 1);
   const min = Math.min(...values, 0);
@@ -37,6 +55,7 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
   const slot = (width - CHART_MARGIN.left - CHART_MARGIN.right) / games.length;
   const barWidth = Math.max(Math.min(slot - 4, 26), 6);
   const zero = y(0);
+  const best = Math.max(...values);
 
   return (
     <div className="chart-frame">
@@ -57,7 +76,7 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
               y2={y(tick)}
             />
             <text x={CHART_MARGIN.left - 8} y={y(tick)} textAnchor="end" dominantBaseline="middle">
-              {num(tick, 0)}
+              {tickLabel(tick, tickStep([min, max * 1.08], 4))}
             </text>
           </g>
         ))}
@@ -107,6 +126,16 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
                 fill={game.played ? (isActive ? "var(--brand-ink)" : "var(--brand)") : "var(--line)"}
                 onMouseEnter={() => setActive(index)}
               />
+              {index === games.length - 1 || game.fp === best ? (
+                <text
+                  x={centre}
+                  y={top - 6}
+                  textAnchor="middle"
+                  className="bar-label"
+                >
+                  {num(game.fp)}
+                </text>
+              ) : null}
               {games.length <= 16 ? (
                 <text x={centre} y={height - CHART_MARGIN.bottom + 15} textAnchor="middle">
                   {game.round ?? "—"}

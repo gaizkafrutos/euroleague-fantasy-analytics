@@ -85,7 +85,7 @@ interface Verdict {
   ok: boolean;
   /** Por qué no, o qué conviene saber aunque se pueda. */
   note: string | null;
-  /** La nota es un aviso (ámbar), no un bloqueo. */
+  /** La nota es un aviso (en tinta secundaria), no un bloqueo. */
   warn: boolean;
 }
 

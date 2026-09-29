@@ -2,7 +2,7 @@
  *
  *  Una fila por métrica, todas sobre la misma escala 0–100: el círculo cae en
  *  su percentil dentro de su puesto y lleva el número dentro. El color dice
- *  lo mismo que la posición (frío = por debajo, gris = en la media, cálido =
+ *  lo mismo que la posición (pizarra = por debajo, gris = en la media, naranja =
  *  por encima), así que nunca es el único canal. En las métricas donde menos
  *  es mejor (pérdidas) el percentil ya viene dado la vuelta.
  *
@@ -22,9 +22,9 @@ export default function PercentileStrip({ official }: { official: OfficialDetail
       <div className="pstrip-scale" aria-hidden>
         <span />
         <span className="pstrip-scale-mid">
-          <span>Peor</span>
-          <span>Media</span>
-          <span>Mejor</span>
+          <span>0 · peor</span>
+          <span>50 · media</span>
+          <span>mejor · 100</span>
         </span>
         <span />
       </div>
@@ -40,7 +40,9 @@ export default function PercentileStrip({ official }: { official: OfficialDetail
                 {!metric.higherIsBetter ? <small> · menos es mejor</small> : null}
               </span>
               <span className="pstrip-track" aria-hidden>
+                <span className="pstrip-tick" style={{ left: "25%" }} />
                 <span className="pstrip-mid" />
+                <span className="pstrip-tick" style={{ left: "75%" }} />
                 {rounded !== null ? (
                   <span
                     className={`pstrip-dot div-${cls}`}

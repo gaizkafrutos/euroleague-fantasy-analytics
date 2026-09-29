@@ -16,7 +16,10 @@ import { useMemo, useState } from "react";
 import { breakEvenAt } from "@/lib/advanced";
 import { credits, num, positionLabel, signed } from "@/lib/format";
 import type { Player } from "@/lib/types";
-import { CHART_MARGIN, extent, linearScale, ticks } from "./scales";
+import { CHART_MARGIN, extent, linearScale, tickLabel, tickStep, ticks } from "./scales";
+
+/* Más margen abajo: la etiqueta del eje X va bajo las cifras, no encima. */
+const MARGIN = { ...CHART_MARGIN, bottom: 46 };
 
 type Position = "G" | "F" | "C";
 
@@ -52,8 +55,8 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
   const geometry = useMemo(() => {
     const xDomain = extent(points.map((p) => p.price as number));
     const yDomain = extent(points.map((p) => p.projectedFp as number));
-    const x = linearScale(xDomain, [CHART_MARGIN.left, width - CHART_MARGIN.right]);
-    const y = linearScale(yDomain, [height - CHART_MARGIN.bottom, CHART_MARGIN.top]);
+    const x = linearScale(xDomain, [MARGIN.left, width - MARGIN.right]);
+    const y = linearScale(yDomain, [height - MARGIN.bottom, MARGIN.top]);
     return { x, y, xDomain, yDomain };
   }, [points, height]);
 
@@ -85,7 +88,8 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
       const text = shortName(player);
       const x = geometry.x(player.price as number) + 9;
       const y = geometry.y(player.projectedFp as number) - 7;
-      const box = { x, y: y - 11, w: text.length * 6.6, h: 14 };
+      // Caja aproximada de la etiqueta a 11 unidades de cuerpo, con un margen.
+      const box = { x: x - 2, y: y - 12, w: text.length * 7.4 + 4, h: 16 };
 
       const collides = placed.some(
         (other) =>
@@ -121,39 +125,39 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
   return (
     <div className="chart-frame">
       <svg
-        className="chart"
+        className="chart is-wide"
         viewBox={`0 0 ${width} ${height}`}
         role="img"
         aria-label="Dispersión de precio contra puntos fantasy proyectados, por posición"
         onMouseLeave={() => setHover(null)}
       >
         {/* Rejilla */}
-        {ticks(geometry.yDomain, 5).map((tick) => (
+        {ticks(geometry.yDomain, 4).map((tick) => (
           <g key={`y-${tick}`}>
             <line
               className="grid-line"
-              x1={CHART_MARGIN.left}
-              x2={width - CHART_MARGIN.right}
+              x1={MARGIN.left}
+              x2={width - MARGIN.right}
               y1={y(tick)}
               y2={y(tick)}
             />
-            <text x={CHART_MARGIN.left - 8} y={y(tick)} textAnchor="end" dominantBaseline="middle">
-              {num(tick, 0)}
+            <text x={MARGIN.left - 8} y={y(tick)} textAnchor="end" dominantBaseline="middle">
+              {tickLabel(tick, tickStep(geometry.yDomain, 4))}
             </text>
           </g>
         ))}
         {ticks(geometry.xDomain, 6).map((tick) => (
-          <text key={`x-${tick}`} x={x(tick)} y={height - CHART_MARGIN.bottom + 16} textAnchor="middle">
-            {num(tick, 0)}
+          <text key={`x-${tick}`} x={x(tick)} y={height - MARGIN.bottom + 20} textAnchor="middle">
+            {tickLabel(tick, tickStep(geometry.xDomain, 6))}
           </text>
         ))}
 
         <line
           className="axis-line"
-          x1={CHART_MARGIN.left}
-          x2={width - CHART_MARGIN.right}
-          y1={height - CHART_MARGIN.bottom}
-          y2={height - CHART_MARGIN.bottom}
+          x1={MARGIN.left}
+          x2={width - MARGIN.right}
+          y1={height - MARGIN.bottom}
+          y2={height - MARGIN.bottom}
         />
 
         {/* Umbral de revalorización */}
@@ -168,18 +172,10 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
               strokeWidth={1.5}
               strokeDasharray="6 4"
             />
-            <text
-              x={x(reference.x1) - 6}
-              y={y(reference.y1) - 8}
-              textAnchor="end"
-              fill="var(--ink-2)"
-            >
-              umbral de revalorización
-            </text>
-            <text x={x(reference.x0) + 6} y={CHART_MARGIN.top + 10} fill="var(--ink-muted)">
+            <text x={x(reference.x0) + 6} y={MARGIN.top + 10} fill="var(--ink-muted)">
               ↑ se revaloriza
             </text>
-            <text x={x(reference.x1) - 6} y={height - CHART_MARGIN.bottom - 8} textAnchor="end" fill="var(--ink-muted)">
+            <text x={x(reference.x1) - 6} y={height - MARGIN.bottom - 8} textAnchor="end" fill="var(--ink-muted)">
               pierde valor ↓
             </text>
           </>
@@ -227,7 +223,7 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
 
         <text
           x={width - CHART_MARGIN.right}
-          y={height - 4}
+          y={height - 2}
           textAnchor="end"
           fill="var(--ink-muted)"
         >

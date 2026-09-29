@@ -202,7 +202,7 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
             <h2>Lo que concede</h2>
             <p>
               Puntos fantasy por partido que sacan contra él los rivales de cada puesto. Más
-              violeta, más regala: buen rival para tus jugadores.
+              naranja, más regala: buen rival para tus jugadores.
             </p>
           </div>
           <ul className="allowed">

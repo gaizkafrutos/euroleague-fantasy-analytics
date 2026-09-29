@@ -35,15 +35,22 @@ export function extent(values: number[], padRatio = 0.06): [number, number] {
   return [min - pad, max + pad];
 }
 
+/** Paso "redondo" (1, 2 o 5 por potencia de diez) para unas `count` marcas. */
+export function tickStep(domain: [number, number], count = 5): number {
+  const span = domain[1] - domain[0];
+  if (span <= 0) return 1;
+  const rawStep = span / count;
+  const magnitude = 10 ** Math.floor(Math.log10(rawStep));
+  const normalized = rawStep / magnitude;
+  return (normalized >= 7.5 ? 10 : normalized >= 3.5 ? 5 : normalized >= 1.5 ? 2 : 1) * magnitude;
+}
+
 /** Ticks "redondos" dentro de un dominio. */
 export function ticks(domain: [number, number], count = 5): number[] {
   const [min, max] = domain;
   const span = max - min;
   if (span <= 0) return [min];
-  const rawStep = span / count;
-  const magnitude = 10 ** Math.floor(Math.log10(rawStep));
-  const normalized = rawStep / magnitude;
-  const step = (normalized >= 7.5 ? 10 : normalized >= 3.5 ? 5 : normalized >= 1.5 ? 2 : 1) * magnitude;
+  const step = tickStep(domain, count);
   const start = Math.ceil(min / step) * step;
 
   const out: number[] = [];
@@ -51,6 +58,17 @@ export function ticks(domain: [number, number], count = 5): number[] {
     out.push(Number(value.toFixed(10)));
   }
   return out;
+}
+
+/** Etiqueta de una marca del eje, con los decimales que pide su paso y en
+ *  formato español. Con un paso de 0,02 salen dos decimales: redondear todas a
+ *  uno daba ejes como "14,9 · 14,9 · 14,9". */
+export function tickLabel(value: number, step: number): string {
+  const decimals = Math.max(0, Math.min(3, Math.ceil(-Math.log10(step) - 1e-9)));
+  return new Intl.NumberFormat("es-ES", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  }).format(value);
 }
 
 /** Path de una polilínea. */

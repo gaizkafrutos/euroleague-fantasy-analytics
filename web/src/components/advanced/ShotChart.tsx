@@ -2,7 +2,7 @@
  *
  *  Media pista FIBA a escala (1 unidad = 1 cm, aro en el origen) con diez
  *  zonas. Cada zona se pinta según su acierto frente a la media de la liga en
- *  esa misma zona: frío si tira peor, gris si está en la media, cálido si
+ *  esa misma zona: pizarra si tira peor, gris si está en la media, naranja si
  *  mejor. Encima, los tiros de esta temporada: relleno anotado, hueco fallado.
  *
  *  Las zonas se recortan con máscaras sobre la geometría real de la pista
@@ -50,11 +50,11 @@ const LABEL_AT: Record<string, [number, number]> = {
   mid_l: [-430, 170],
   mid_c: [0, 540],
   mid_r: [430, 170],
-  c3_l: [-744, -95],
+  c3_l: [-722, -70],
   ab3_l: [-610, 590],
   ab3_c: [0, 800],
   ab3_r: [610, 590],
-  c3_r: [744, -95],
+  c3_r: [722, -70],
 };
 
 const MIN_ATTEMPTS = 8;
