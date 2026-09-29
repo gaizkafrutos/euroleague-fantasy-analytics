@@ -44,7 +44,7 @@ export default function Sparkline({ values, width = 78, height = 22, label }: Pr
       <path
         d={linePath(points)}
         fill="none"
-        stroke={rising ? "var(--series-3)" : "var(--ink-muted)"}
+        stroke={rising ? "var(--pos)" : "var(--ink-3)"}
         strokeWidth={1.6}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -53,7 +53,7 @@ export default function Sparkline({ values, width = 78, height = 22, label }: Pr
         cx={last[0]}
         cy={last[1]}
         r={2.6}
-        fill={rising ? "var(--series-3)" : "var(--ink-muted)"}
+        fill={rising ? "var(--pos)" : "var(--ink-3)"}
         stroke="var(--surface)"
         strokeWidth={1.4}
       />

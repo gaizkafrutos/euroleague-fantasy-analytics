@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
+import { BRAND_RASTER as C, MARK_ON_DARK } from "@/lib/brand";
 import { meta, pricedPlayers, rosterPlayers } from "@/lib/data";
 
 /** La tarjeta que sale cuando se pega el enlace en LinkedIn o en WhatsApp.
@@ -16,7 +17,7 @@ export const contentType = "image/png";
 
 /** El símbolo del logotipo, leído del disco en el build y embebido. */
 const markSrc = `data:image/png;base64,${readFileSync(
-  join(process.cwd(), "public/brand/hoopiq-mark.png"),
+  join(process.cwd(), MARK_ON_DARK),
 ).toString("base64")}`;
 
 export default function OpengraphImage() {
@@ -38,41 +39,19 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 76px",
-          background: "#0a0c11",
-          color: "#f2f4f8",
+          background: C.bg,
+          color: C.ink,
           fontFamily: "sans-serif",
         }}
       >
-        {/* Halo, el mismo gesto que tiene la web detrás de la cabecera */}
-        <div
-          style={{
-            position: "absolute",
-            top: -260,
-            left: -120,
-            width: 900,
-            height: 620,
-            background: "radial-gradient(closest-side, rgba(255,106,43,0.30), rgba(255,106,43,0))",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: -300,
-            right: -160,
-            width: 900,
-            height: 660,
-            background: "radial-gradient(closest-side, rgba(139,70,240,0.30), rgba(139,70,240,0))",
-          }}
-        />
-
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={markSrc} width={70} height={70} alt="" />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", fontSize: 34, fontWeight: 700, letterSpacing: -0.8 }}>
-              Hoop<span style={{ color: "#12a0fc" }}>IQ</span>
+              Hoop<span style={{ color: C.brand }}>IQ</span>
             </div>
-            <div style={{ fontSize: 17, letterSpacing: 4, color: "#9aa3b2" }}>FANTASY CHALLENGE</div>
+            <div style={{ fontSize: 17, letterSpacing: 4, color: C.ink2 }}>FANTASY CHALLENGE</div>
           </div>
         </div>
 
@@ -83,7 +62,7 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 74, fontWeight: 700, letterSpacing: -2.6, lineHeight: 1.05, marginTop: -30 }}>
             de que se juegue.
           </div>
-          <div style={{ fontSize: 27, color: "#9aa3b2", maxWidth: 820, lineHeight: 1.4 }}>
+          <div style={{ fontSize: 27, color: C.ink2, maxWidth: 820, lineHeight: 1.4 }}>
             Precios del Fantasy cruzados con las estadísticas oficiales de la EuroLiga.
           </div>
         </div>
@@ -91,7 +70,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", gap: 56, alignItems: "flex-end" }}>
           {facts.map(([label, value]) => (
             <div key={label} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              <div style={{ fontSize: 16, letterSpacing: 3, color: "#697384" }}>
+              <div style={{ fontSize: 16, letterSpacing: 3, color: C.ink3 }}>
                 {label.toUpperCase()}
               </div>
               <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1.2 }}>{value}</div>
@@ -102,7 +81,7 @@ export default function OpengraphImage() {
               marginLeft: "auto",
               display: "flex",
               fontSize: 20,
-              color: "#697384",
+              color: C.ink3,
             }}
           >
             {meta.seasonLabel}

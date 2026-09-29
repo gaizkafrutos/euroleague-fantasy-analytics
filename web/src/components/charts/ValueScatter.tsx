@@ -4,9 +4,11 @@
  *
  *  Es el gráfico central del explorador: la diagonal es "lo que el mercado
  *  cobra por rendimiento", y lo que está por encima de ella rinde más de lo que
- *  cuesta. Tres series (base / alero / pívot), que es justo el límite que la
- *  paleta valida para nubes de puntos donde todos los pares coinciden en
- *  pantalla.
+ *  cuesta.
+ *
+ *  La posición no lleva color propio: todo el mercado va en gris y la que se
+ *  elige en la leyenda se resalta en el color de marca (énfasis, no tres
+ *  series). Así el naranja sigue siendo el único color del sitio.
  */
 
 import { useMemo, useState } from "react";
@@ -16,11 +18,7 @@ import { credits, num, positionLabel, signed } from "@/lib/format";
 import type { Player } from "@/lib/types";
 import { CHART_MARGIN, extent, linearScale, ticks } from "./scales";
 
-const SERIES: Record<string, string> = {
-  G: "var(--series-1)",
-  F: "var(--series-2)",
-  C: "var(--series-3)",
-};
+type Position = "G" | "F" | "C";
 
 interface Props {
   players: Player[];
@@ -37,6 +35,7 @@ interface Hover {
 
 export default function ValueScatter({ players, height = 380, labelCount = 6 }: Props) {
   const [hover, setHover] = useState<Hover | null>(null);
+  const [highlight, setHighlight] = useState<Position | null>(null);
   const width = 900;
 
   const points = useMemo(
@@ -103,6 +102,16 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
     return chosen;
   }, [points, labelCount, geometry]);
 
+  const ordered = useMemo(
+    () =>
+      highlight === null
+        ? points
+        : [...points].sort(
+            (a, b) => Number(a.position === highlight) - Number(b.position === highlight),
+          ),
+    [points, highlight],
+  );
+
   if (!points.length) {
     return <p className="muted">Sin datos suficientes para dibujar el mercado.</p>;
   }
@@ -155,9 +164,9 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
               x2={x(reference.x1)}
               y1={y(reference.y0)}
               y2={y(reference.y1)}
-              stroke="var(--fantasy)"
+              stroke="var(--ink-2)"
               strokeWidth={1.5}
-              opacity={0.8}
+              strokeDasharray="6 4"
             />
             <text
               x={x(reference.x1) - 6}
@@ -176,11 +185,12 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
           </>
         ) : null}
 
-        {/* Marcas */}
-        {points.map((player) => {
+        {/* Marcas: las resaltadas se pintan al final, por encima del resto. */}
+        {ordered.map((player) => {
           const cx = x(player.price as number);
           const cy = y(player.projectedFp as number);
           const active = hover?.player.id === player.id;
+          const lit = highlight !== null && player.position === highlight;
           return (
             <circle
               key={player.id}
@@ -188,7 +198,8 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
               cx={cx}
               cy={cy}
               r={active ? 7 : 5}
-              fill={SERIES[player.position ?? "G"]}
+              fill={lit ? "var(--brand)" : "var(--ink-3)"}
+              fillOpacity={lit || highlight === null ? 1 : 0.35}
               onMouseEnter={() => setHover({ player, x: cx, y: cy })}
               onFocus={() => setHover({ player, x: cx, y: cy })}
               tabIndex={-1}
@@ -249,12 +260,18 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
       ) : null}
 
       <div className="chart-legend" style={{ marginTop: 10 }}>
-        {(["G", "F", "C"] as const).map((position) => (
-          <span key={position}>
-            <i className="legend-swatch" style={{ background: SERIES[position] }} />
-            {positionLabel(position)}
-          </span>
-        ))}
+        <span className="segmented" role="group" aria-label="Resaltar una posición">
+          {([null, "G", "F", "C"] as const).map((position) => (
+            <button
+              key={position ?? "all"}
+              type="button"
+              aria-pressed={highlight === position}
+              onClick={() => setHighlight(position)}
+            >
+              {position ? positionLabel(position) : "Todas"}
+            </button>
+          ))}
+        </span>
         <span className="muted">
           <i className="legend-line" aria-hidden /> Umbral: por encima, sube de precio si rinde lo
           proyectado.

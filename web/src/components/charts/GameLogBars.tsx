@@ -104,7 +104,7 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
                 width={barWidth}
                 height={Math.max(barHeight, 1.5)}
                 rx={3}
-                fill={game.played ? (isActive ? "var(--accent)" : "var(--series-1)") : "var(--surface-3)"}
+                fill={game.played ? (isActive ? "var(--brand-ink)" : "var(--brand)") : "var(--line)"}
                 onMouseEnter={() => setActive(index)}
               />
               {games.length <= 16 ? (

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 import PlayerSearch from "./PlayerSearch";
 import { NAV_ITEMS, isCurrent } from "./nav-items";
@@ -19,13 +18,11 @@ export default function Header({ round, totalRounds }: Props) {
     <header className="masthead">
       <div className="shell masthead-inner">
         <Link href="/" className="wordmark" aria-label="HoopIQ, inicio">
+          {/* El símbolo del logotipo original, partido en dos máscaras (aro y
+              barras) que el CSS pinta con tokens: sigue a la paleta y al tema. */}
           <span className="wordmark-mark" aria-hidden>
-            {/* El símbolo es el del logotipo original. Dos versiones: trazo
-                blanco para fondo oscuro y trazo tinta para el tema claro. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="mark-on-dark" src="/brand/hoopiq-mark-128.png" alt="" width={32} height={32} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="mark-on-light" src="/brand/hoopiq-mark-light-128.png" alt="" width={32} height={32} />
+            <i className="mark-ring" />
+            <i className="mark-bars" />
           </span>
           <span className="wordmark-text">
             <span className="wordmark-name">
@@ -56,61 +53,8 @@ export default function Header({ round, totalRounds }: Props) {
             Jornada <b>{round}</b>
             <span className="muted">/ {totalRounds}</span>
           </span>
-          {/* La portada es siempre oscura, así que ahí el conmutador no haría
-              nada visible. Un botón que no responde es peor que no tenerlo. */}
-          {pathname === "/" ? null : <ThemeToggle />}
         </div>
       </div>
     </header>
-  );
-}
-
-function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem("efa-theme");
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored);
-      document.documentElement.dataset.theme = stored;
-    }
-  }, []);
-
-  function toggle() {
-    const next =
-      theme === "dark"
-        ? "light"
-        : theme === "light"
-          ? "dark"
-          : window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "light"
-            : "dark";
-    setTheme(next);
-    document.documentElement.dataset.theme = next;
-    try {
-      window.localStorage.setItem("efa-theme", next);
-    } catch {
-      /* modo privado: el tema simplemente no se recuerda */
-    }
-  }
-
-  return (
-    <button
-      type="button"
-      className="icon-button"
-      onClick={toggle}
-      aria-label="Cambiar entre tema claro y oscuro"
-      title="Cambiar tema"
-    >
-      {/* Un icono en vez de una palabra: ocupa menos y no compite con la
-          navegación por atención. */}
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-        <path
-          d="M12 3v1.5M12 19.5V21M4.2 4.2l1.1 1.1M18.7 18.7l1.1 1.1M3 12h1.5M19.5 12H21M4.2 19.8l1.1-1.1M18.7 5.3l1.1-1.1"
-          strokeLinecap="round"
-        />
-        <circle cx="12" cy="12" r="3.9" />
-      </svg>
-    </button>
   );
 }

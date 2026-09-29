@@ -12,7 +12,6 @@ export function PositionBadge({ position }: { position: string | null }) {
   if (!position) return <span className="muted">—</span>;
   return (
     <span className={`badge pos-${position}`}>
-      <i className="badge-dot" style={{ background: "var(--pos-color)" }} />
       {positionLabel(position)}
     </span>
   );

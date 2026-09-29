@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
+import DevPalettePicker from "@/components/ui/DevPalettePicker";
 import Header from "@/components/ui/Header";
 import MobileNav from "@/components/ui/MobileNav";
 import { meta } from "@/lib/data";
 import { body, display } from "@/lib/fonts";
+import { DEV_PALETTE_KEY, DEV_THEME_KEY } from "@/lib/palettes";
 
 import "./globals.css";
 
@@ -53,18 +55,21 @@ export const viewport: Viewport = {
   // El contenido llega hasta los bordes del móvil; los huecos del notch y de la
   // barra de gestos se compensan luego con env(safe-area-inset-*).
   viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#07080c" },
-    { media: "(prefers-color-scheme: light)", color: "#f6f7f9" },
-  ],
+  // El fondo del tema claro, que es el único que ve producción.
+  themeColor: "#faf9f7",
 };
 
-/** Fija el tema antes del primer pintado, para que no haya un destello de
- *  blanco al cargar con el tema oscuro guardado. */
-const THEME_BOOTSTRAP = `
+/** El selector de paletas es solo de desarrollo: en producción manda el tema
+ *  claro con la paleta por defecto, sin nada que leer. */
+const IS_DEV = process.env.NODE_ENV === "development";
+
+/** En desarrollo, aplica paleta y tema guardados antes del primer pintado,
+ *  para que no haya un destello de la paleta por defecto al recargar. */
+const DEV_BOOTSTRAP = `
 try {
-  var stored = localStorage.getItem('efa-theme');
-  if (stored === 'light' || stored === 'dark') document.documentElement.dataset.theme = stored;
+  var p = localStorage.getItem('${DEV_PALETTE_KEY}');
+  if (p && p !== 'parquet') document.documentElement.dataset.palette = p;
+  if (localStorage.getItem('${DEV_THEME_KEY}') === 'dark') document.documentElement.dataset.theme = 'dark';
 } catch (e) {}
 `;
 
@@ -83,11 +88,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Con `next/script` en beforeInteractive, Next lo inyecta en el HTML
             inicial. Un <script> suelto dentro del árbol de React avisa por
             consola de que no se ejecuta al renderizar en cliente. */}
-        <Script
-          id="tema-antes-del-primer-pintado"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }}
-        />
+        {IS_DEV ? (
+          <Script
+            id="paleta-antes-del-primer-pintado"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{ __html: DEV_BOOTSTRAP }}
+          />
+        ) : null}
         <a className="skip-link" href="#contenido">
           Saltar al contenido
         </a>
@@ -107,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
         <MobileNav />
+        {IS_DEV ? <DevPalettePicker /> : null}
       </body>
     </html>
   );

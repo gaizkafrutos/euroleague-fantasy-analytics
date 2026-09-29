@@ -88,7 +88,7 @@ export default function PriceHistory({ points, height = 220 }: Props) {
           strokeDasharray="4 4"
         />
 
-        <path className="series-line" d={path} stroke="var(--series-1)" />
+        <path className="series-line" d={path} stroke="var(--brand)" />
 
         {points.map((point, index) => (
           <circle
@@ -96,7 +96,7 @@ export default function PriceHistory({ points, height = 220 }: Props) {
             cx={x(index)}
             cy={y(point.q)}
             r={active === index ? 6 : 4}
-            fill="var(--series-1)"
+            fill="var(--brand)"
             stroke="var(--surface)"
             strokeWidth={2}
             onMouseEnter={() => setActive(index)}
