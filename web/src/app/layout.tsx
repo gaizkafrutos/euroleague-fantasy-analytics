@@ -1,12 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 
-import DevPalettePicker from "@/components/ui/DevPalettePicker";
 import Header from "@/components/ui/Header";
 import MobileNav from "@/components/ui/MobileNav";
 import { meta } from "@/lib/data";
 import { body, display } from "@/lib/fonts";
-import { DEV_PALETTE_KEY } from "@/lib/palettes";
 
 import "./globals.css";
 
@@ -55,22 +52,9 @@ export const viewport: Viewport = {
   // El contenido llega hasta los bordes del móvil; los huecos del notch y de la
   // barra de gestos se compensan luego con env(safe-area-inset-*).
   viewportFit: "cover",
-  // El fondo del tema claro, que es el único que ve producción.
+  // El fondo de la paleta (Parquet). No hay tema oscuro.
   themeColor: "#faf9f7",
 };
-
-/** El selector de paletas es solo de desarrollo: en producción manda el tema
- *  claro con la paleta por defecto, sin nada que leer. */
-const IS_DEV = process.env.NODE_ENV === "development";
-
-/** En desarrollo, aplica la paleta guardada antes del primer pintado,
- *  para que no haya un destello de la paleta por defecto al recargar. */
-const DEV_BOOTSTRAP = `
-try {
-  var p = localStorage.getItem('${DEV_PALETTE_KEY}');
-  if (p && p !== 'parquet') document.documentElement.dataset.palette = p;
-} catch (e) {}
-`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // `data-scroll-behavior`: el CSS pone `scroll-behavior: smooth` en <html>, y
@@ -84,16 +68,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body>
-        {/* Con `next/script` en beforeInteractive, Next lo inyecta en el HTML
-            inicial. Un <script> suelto dentro del árbol de React avisa por
-            consola de que no se ejecuta al renderizar en cliente. */}
-        {IS_DEV ? (
-          <Script
-            id="paleta-antes-del-primer-pintado"
-            strategy="beforeInteractive"
-            dangerouslySetInnerHTML={{ __html: DEV_BOOTSTRAP }}
-          />
-        ) : null}
         <a className="skip-link" href="#contenido">
           Saltar al contenido
         </a>
@@ -113,7 +87,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
         <MobileNav />
-        {IS_DEV ? <DevPalettePicker /> : null}
       </body>
     </html>
   );
