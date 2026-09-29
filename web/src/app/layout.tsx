@@ -6,7 +6,7 @@ import Header from "@/components/ui/Header";
 import MobileNav from "@/components/ui/MobileNav";
 import { meta } from "@/lib/data";
 import { body, display } from "@/lib/fonts";
-import { DEV_PALETTE_KEY, DEV_THEME_KEY } from "@/lib/palettes";
+import { DEV_PALETTE_KEY } from "@/lib/palettes";
 
 import "./globals.css";
 
@@ -63,13 +63,12 @@ export const viewport: Viewport = {
  *  claro con la paleta por defecto, sin nada que leer. */
 const IS_DEV = process.env.NODE_ENV === "development";
 
-/** En desarrollo, aplica paleta y tema guardados antes del primer pintado,
+/** En desarrollo, aplica la paleta guardada antes del primer pintado,
  *  para que no haya un destello de la paleta por defecto al recargar. */
 const DEV_BOOTSTRAP = `
 try {
   var p = localStorage.getItem('${DEV_PALETTE_KEY}');
   if (p && p !== 'parquet') document.documentElement.dataset.palette = p;
-  if (localStorage.getItem('${DEV_THEME_KEY}') === 'dark') document.documentElement.dataset.theme = 'dark';
 } catch (e) {}
 `;
 

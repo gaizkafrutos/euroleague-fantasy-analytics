@@ -11,4 +11,3 @@ export const PALETTES = [
 export type PaletteId = (typeof PALETTES)[number]["id"];
 
 export const DEV_PALETTE_KEY = "hoopiq-dev-palette";
-export const DEV_THEME_KEY = "hoopiq-dev-theme";

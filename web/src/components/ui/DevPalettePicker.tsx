@@ -1,43 +1,32 @@
 "use client";
 
-/** Selector temporal de paleta y tema, solo en desarrollo.
+/** Selector temporal de paleta, solo en desarrollo.
  *
  *  Sirve para comparar las paletas candidatas en vivo sobre las mismas
- *  pantallas. Escribe `data-palette` y `data-theme` en <html> (el CSS hace el
- *  resto) y lo recuerda en localStorage. Cuando se elija paleta y tema, este
- *  componente y los bloques que sobren en globals.css se borran.
+ *  pantallas. Escribe `data-palette` en <html> (el CSS hace el resto) y lo
+ *  recuerda en localStorage. Cuando se elija paleta, este componente y los
+ *  bloques que sobren en globals.css se borran.
  */
 import { useEffect, useState } from "react";
 
-import { DEV_PALETTE_KEY, DEV_THEME_KEY, PALETTES, type PaletteId } from "@/lib/palettes";
-
-type Theme = "light" | "dark";
+import { DEV_PALETTE_KEY, PALETTES, type PaletteId } from "@/lib/palettes";
 
 export default function DevPalettePicker() {
   const [palette, setPalette] = useState<PaletteId>(PALETTES[0].id);
-  const [theme, setTheme] = useState<Theme>("light");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const root = document.documentElement;
-    const storedPalette = root.dataset.palette as PaletteId | undefined;
-    if (storedPalette && PALETTES.some((item) => item.id === storedPalette)) {
-      setPalette(storedPalette);
-    }
-    if (root.dataset.theme === "dark") setTheme("dark");
+    const stored = document.documentElement.dataset.palette as PaletteId | undefined;
+    if (stored && PALETTES.some((item) => item.id === stored)) setPalette(stored);
   }, []);
 
-  function apply(nextPalette: PaletteId, nextTheme: Theme) {
+  function apply(next: PaletteId) {
     const root = document.documentElement;
-    setPalette(nextPalette);
-    setTheme(nextTheme);
-    if (nextPalette === PALETTES[0].id) delete root.dataset.palette;
-    else root.dataset.palette = nextPalette;
-    if (nextTheme === "dark") root.dataset.theme = "dark";
-    else delete root.dataset.theme;
+    setPalette(next);
+    if (next === PALETTES[0].id) delete root.dataset.palette;
+    else root.dataset.palette = next;
     try {
-      window.localStorage.setItem(DEV_PALETTE_KEY, nextPalette);
-      window.localStorage.setItem(DEV_THEME_KEY, nextTheme);
+      window.localStorage.setItem(DEV_PALETTE_KEY, next);
     } catch {
       /* modo privado: no se recuerda, pero se aplica */
     }
@@ -46,7 +35,7 @@ export default function DevPalettePicker() {
   const current = PALETTES.find((item) => item.id === palette) ?? PALETTES[0];
 
   return (
-    <div className="devpal" data-open={open || undefined}>
+    <div className="devpal">
       <button
         type="button"
         className="devpal-toggle"
@@ -54,10 +43,10 @@ export default function DevPalettePicker() {
         onClick={() => setOpen((value) => !value)}
       >
         <span className="devpal-swatch" aria-hidden />
-        {current.label} · {theme === "dark" ? "oscuro" : "claro"}
+        {current.label}
       </button>
       {open ? (
-        <div className="devpal-panel" role="group" aria-label="Paleta y tema (solo desarrollo)">
+        <div className="devpal-panel" role="group" aria-label="Paleta (solo desarrollo)">
           <p className="devpal-title">Paleta · solo desarrollo</p>
           <ul className="devpal-list">
             {PALETTES.map((item) => (
@@ -65,7 +54,7 @@ export default function DevPalettePicker() {
                 <button
                   type="button"
                   aria-pressed={item.id === palette}
-                  onClick={() => apply(item.id, theme)}
+                  onClick={() => apply(item.id)}
                 >
                   <b>{item.label}</b>
                   <span>{item.hint}</span>
@@ -73,18 +62,6 @@ export default function DevPalettePicker() {
               </li>
             ))}
           </ul>
-          <div className="segmented" role="group" aria-label="Tema">
-            {(["light", "dark"] as const).map((value) => (
-              <button
-                key={value}
-                type="button"
-                aria-pressed={theme === value}
-                onClick={() => apply(palette, value)}
-              >
-                {value === "light" ? "Claro" : "Oscuro"}
-              </button>
-            ))}
-          </div>
         </div>
       ) : null}
     </div>
