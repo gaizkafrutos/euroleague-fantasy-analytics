@@ -36441,9 +36441,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJFC",
+   "name": "JAVOR, DAMIR",
+   "alias": "JAVOR, D.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "883i7yokjhfy7pih"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OACY",
+   "name": "JOVCIC, MILIVOJE",
+   "alias": "JOVCIC, M.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "images": {
+    "verticalSmall": "8844kualjiu9jr5p"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJLQ",
+   "name": "ALIAGA, JORDI",
+   "alias": "ALIAGA, J.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "ayrigtbycwi5iitj"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "TELEKOM CENTER ATHENS",
@@ -36542,9 +36578,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJGG",
+   "name": "CORTES, CARLOS",
+   "alias": "CORTES, C.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "87ytqfifoj5rk4lk"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "QJLU",
+   "name": "UDYANSKYY, EDUARD",
+   "alias": "UDYANSKYY, E.",
+   "country": {
+    "code": "GBR",
+    "name": "United Kingdom"
+   },
+   "images": {
+    "verticalSmall": "94qqejbv9sckawws"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "KAU4",
+   "name": "TIGANIS, IOANNIS",
+   "alias": "TIGANIS, I.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ALEKSANDAR NIKOLIC HALL",
