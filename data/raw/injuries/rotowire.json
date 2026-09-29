@@ -1,24 +1,16 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-09-28T23:52:31.941727+00:00",
+ "fetchedAt": "2026-09-29T07:06:07.236937+00:00",
  "updatedAt": null,
  "rows": [
-  {
-   "team": "BAY",
-   "position": "G",
-   "name": "Kamar Baldwin",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
-  },
   {
    "team": "CZV",
    "position": "F",
    "name": "Patrick Baldwin",
    "status": "Game time",
    "round": "",
-   "comment": ""
+   "comment": "Back"
   },
   {
    "team": "FBT",
@@ -69,6 +61,14 @@
    "comment": "Thigh"
   },
   {
+   "team": "OLY",
+   "position": "C",
+   "name": "Bryant Dunston",
+   "status": "Game time",
+   "round": "",
+   "comment": "Not Injury Related"
+  },
+  {
    "team": "HTA",
    "position": "G",
    "name": "Tyler Ennis",
@@ -101,20 +101,12 @@
    "comment": "Leg"
   },
   {
-   "team": "BAY",
-   "position": "F",
-   "name": "Niels Giffey",
-   "status": "Game time",
-   "round": "",
-   "comment": "Illness"
-  },
-  {
    "team": "HTA",
    "position": "F",
    "name": "Tomer Ginat",
    "status": "Game time",
    "round": "",
-   "comment": ""
+   "comment": "Knee"
   },
   {
    "team": "PAO",
@@ -125,6 +117,14 @@
    "comment": "Hand"
   },
   {
+   "team": "PAO",
+   "position": "F",
+   "name": "Juancho Hernangomez",
+   "status": "Game time",
+   "round": "",
+   "comment": "Groin"
+  },
+  {
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
@@ -133,12 +133,20 @@
    "comment": "Achilles"
   },
   {
+   "team": "BJK",
+   "position": "F",
+   "name": "DaQuan Jeffries",
+   "status": "Out",
+   "round": "",
+   "comment": "Wrist"
+  },
+  {
    "team": "VIR",
    "position": "C",
    "name": "Kevin Kokila",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
-   "comment": ""
+   "comment": "Thigh"
   },
   {
    "team": "FBT",
@@ -152,7 +160,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Joffrey Lauvergne",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Calf"
   },
@@ -197,6 +205,22 @@
    "comment": ""
   },
   {
+   "team": "OLY",
+   "position": "C",
+   "name": "Nikola Milutinov",
+   "status": "Out",
+   "round": "",
+   "comment": "Leg"
+  },
+  {
+   "team": "CZV",
+   "position": "F",
+   "name": "Chima Moneke",
+   "status": "Game time",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "DUB",
    "position": "G",
    "name": "Dzanan Musa",
@@ -221,20 +245,20 @@
    "comment": "Knee"
   },
   {
-   "team": "PBB",
-   "position": "G",
-   "name": "Frank Ntilikina",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
-  },
-  {
    "team": "PAO",
    "position": "G",
    "name": "Kendrick Nunn",
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "VBC",
+   "position": "F",
+   "name": "Dylan Osetkowski",
+   "status": "Game time",
+   "round": "",
+   "comment": "Illness"
   },
   {
    "team": "EFS",
@@ -245,12 +269,12 @@
    "comment": "Knee"
   },
   {
-   "team": "PAO",
-   "position": "F",
-   "name": "Nikos Rogkavopoulos",
+   "team": "OLY",
+   "position": "G",
+   "name": "George Papas",
    "status": "Game time",
    "round": "",
-   "comment": "Hamstring"
+   "comment": "Not Injury Related"
   },
   {
    "team": "BJK",
@@ -270,16 +294,16 @@
   },
   {
    "team": "RMB",
-   "position": "G",
+   "position": "F",
    "name": "Nick Smith Jr",
    "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
   {
-   "team": "BAY",
-   "position": "G",
-   "name": "Duane Washington",
+   "team": "PAR",
+   "position": "F",
+   "name": "Bandja Sy",
    "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
@@ -299,6 +323,14 @@
    "status": "Out",
    "round": "",
    "comment": "Hamstring"
+  },
+  {
+   "team": "PAR",
+   "position": "C",
+   "name": "Derek Willis",
+   "status": "Out",
+   "round": "",
+   "comment": "Ankle"
   }
  ]
 }

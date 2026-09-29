@@ -1,7 +1,7 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-28T23:53:13.563237+00:00",
+ "generatedAt": "2026-09-29T07:06:49.270917+00:00",
  "currentRound": 2,
  "totalRounds": 38,
  "hasPrices": true,
@@ -24,7 +24,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-09-28T23:52:37.561924+00:00",
+  "generatedAt": "2026-09-29T07:06:13.026829+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -133,9 +133,9 @@
   "source": "RotoWire + Basketball Sphere",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": "2026-09-28T17:42:00",
-  "fetchedAt": "2026-09-28T23:52:32.487538+00:00",
-  "rows": 107,
-  "matched": 69,
+  "fetchedAt": "2026-09-29T07:06:07.842760+00:00",
+  "rows": 111,
+  "matched": 70,
   "unmatched": [
    "Gur Lavy (MTA)",
    "Mady Sissoko (BJK)",
@@ -148,27 +148,27 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-09-28T23:52:31.941727+00:00",
-    "rows": 37,
-    "matched": 35,
-    "flagged": 35
+    "fetchedAt": "2026-09-29T07:06:07.236937+00:00",
+    "rows": 41,
+    "matched": 39,
+    "flagged": 39
    },
    {
     "source": "Basketball Sphere",
     "url": "https://basketballsphere.com/en/injuries/euroleague/",
     "updatedAt": "2026-09-28T17:42:00",
-    "fetchedAt": "2026-09-28T23:52:32.487538+00:00",
+    "fetchedAt": "2026-09-29T07:06:07.842760+00:00",
     "rows": 70,
     "matched": 67,
-    "flagged": 34
+    "flagged": 31
    }
   ],
   "nextRound": 2,
-  "unregistered": 8,
+  "unregistered": 7,
   "flagged": {
-   "out": 21,
-   "doubt": 53,
-   "probable": 3
+   "out": 25,
+   "doubt": 45,
+   "probable": 7
   }
  },
  "warnings": [],

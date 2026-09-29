@@ -292,7 +292,7 @@
   "valueProjected": 0.602,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 39.7,
+  "bargainScore": 39.6,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -516,7 +516,7 @@
   "valueProjected": 0.938,
   "valueMarket": 0.35,
   "pricePressure": -1.99,
-  "bargainScore": 68.6,
+  "bargainScore": 68.5,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -624,7 +624,7 @@
   "valueProjected": 0.609,
   "valueMarket": 0.658,
   "pricePressure": -1.61,
-  "bargainScore": 42.8,
+  "bargainScore": 42.5,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -647,11 +647,11 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Al 50 %",
+   "label": "Duda",
    "untilRound": null,
    "detail": "",
-   "reported": "Questionable",
-   "source": "Basketball Sphere"
+   "reported": "Game time",
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 16.8,
@@ -1064,7 +1064,7 @@
   "valueProjected": 1.005,
   "valueMarket": 0.248,
   "pricePressure": -1.85,
-  "bargainScore": 71.4,
+  "bargainScore": 71.3,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -1172,7 +1172,7 @@
   "valueProjected": 1.204,
   "valueMarket": 1.232,
   "pricePressure": 0.29,
-  "bargainScore": 81.5,
+  "bargainScore": 81.4,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -1280,7 +1280,7 @@
   "valueProjected": 0.728,
   "valueMarket": 0.843,
   "pricePressure": 0.17,
-  "bargainScore": 42.6,
+  "bargainScore": 42.5,
   "schedule": {
    "difficulty": 24.0,
    "next": {
@@ -1495,7 +1495,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -1611,7 +1611,7 @@
   "valueProjected": 0.476,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 27.6,
+  "bargainScore": 28.0,
   "schedule": {
    "difficulty": 24.0,
    "next": {
@@ -1712,22 +1712,21 @@
    "astAvg": 0.0,
    "pirAvg": 3.0,
    "plusMinusAvg": -4.0,
-   "minutesPrior": 21.5,
-   "consistencyEstimated": true
+   "minutesPrior": 21.5
   },
-  "projectedFp": 7.55,
+  "projectedFp": 0.0,
   "projectedIfPlays": 15.1,
-  "playProb": 0.5,
+  "playProb": 0.0,
   "expectedMinutes": 17.4,
   "matchup": {
    "opponentFactor": 1.004,
    "homeFactor": 0.94
   },
   "valuePerCredit": 0.223,
-  "valueProjected": 0.51,
+  "valueProjected": 0.0,
   "valueMarket": 0.223,
   "pricePressure": -2.46,
-  "bargainScore": 34.2,
+  "bargainScore": 12.2,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -1748,22 +1747,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Duda",
-   "untilRound": null,
-   "detail": "Tendinitis injury",
-   "reported": "Uncertain",
-   "source": "Basketball Sphere"
+   "label": "Baja en la J2",
+   "untilRound": 2,
+   "detail": "Leg",
+   "reported": "Out",
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 16.4,
-   "expectedChange": -0.37,
-   "riseProb": 0.166,
-   "sd": 9.08,
-   "floor": 1.4,
-   "ceiling": 12.7,
-   "p90": 19.6
+   "expectedChange": -0.69,
+   "riseProb": 0.0,
+   "sd": 0.0,
+   "floor": 0.0,
+   "ceiling": 0.0,
+   "p90": 0.0
   }
  },
  {
@@ -1842,7 +1841,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -1957,7 +1956,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -2072,7 +2071,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -2296,7 +2295,7 @@
   "valueProjected": 0.88,
   "valueMarket": -0.521,
   "pricePressure": -1.96,
-  "bargainScore": 54.0,
+  "bargainScore": 53.9,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -2620,7 +2619,7 @@
   "valueProjected": 0.836,
   "valueMarket": 1.457,
   "pricePressure": 0.26,
-  "bargainScore": 62.1,
+  "bargainScore": 62.0,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -2727,7 +2726,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -2843,7 +2842,7 @@
   "valueProjected": 1.024,
   "valueMarket": 0.985,
   "pricePressure": -0.33,
-  "bargainScore": 72.8,
+  "bargainScore": 72.7,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -3167,7 +3166,7 @@
   "valueProjected": 0.996,
   "valueMarket": 1.333,
   "pricePressure": 0.71,
-  "bargainScore": 68.8,
+  "bargainScore": 68.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -3274,7 +3273,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -3378,19 +3377,19 @@
    "minutesPrior": 21.9,
    "consistencyEstimated": true
   },
-  "projectedFp": 5.05,
+  "projectedFp": 6.74,
   "projectedIfPlays": 10.1,
-  "playProb": 0.5,
+  "playProb": 0.667,
   "expectedMinutes": 21.9,
   "matchup": {
    "opponentFactor": 0.942,
    "homeFactor": 0.94
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.505,
+  "valueProjected": 0.674,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 31.1,
+  "bargainScore": 41.4,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -3411,22 +3410,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "probable",
    "kind": "injury",
-   "label": "Duda",
+   "label": "Se espera que juegue",
    "untilRound": null,
-   "detail": "Not Injury Related",
-   "reported": "Game time",
-   "source": "RotoWire"
+   "detail": "",
+   "reported": "Ready · Round 229",
+   "source": "Basketball Sphere"
   },
   "outlook": {
    "breakEven": 10.8,
-   "expectedChange": -0.24,
-   "riseProb": 0.246,
-   "sd": 8.38,
-   "floor": 0.0,
-   "ceiling": 9.8,
-   "p90": 16.1
+   "expectedChange": -0.17,
+   "riseProb": 0.327,
+   "sd": 9.07,
+   "floor": 0.6,
+   "ceiling": 11.9,
+   "p90": 18.7
   }
  },
  {
@@ -3506,7 +3505,7 @@
   "valueProjected": 1.07,
   "valueMarket": 0.992,
   "pricePressure": -0.11,
-  "bargainScore": 73.2,
+  "bargainScore": 73.1,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -3722,7 +3721,7 @@
   "valueProjected": 0.72,
   "valueMarket": 0.093,
   "pricePressure": -1.36,
-  "bargainScore": 48.6,
+  "bargainScore": 48.4,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -3938,7 +3937,7 @@
   "valueProjected": 1.373,
   "valueMarket": 0.74,
   "pricePressure": -0.23,
-  "bargainScore": 85.9,
+  "bargainScore": 85.8,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -4046,7 +4045,7 @@
   "valueProjected": 0.752,
   "valueMarket": 0.964,
   "pricePressure": 0.32,
-  "bargainScore": 44.7,
+  "bargainScore": 44.5,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -4154,7 +4153,7 @@
   "valueProjected": 0.612,
   "valueMarket": 0.0,
   "pricePressure": -0.77,
-  "bargainScore": 36.5,
+  "bargainScore": 36.4,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -4478,7 +4477,7 @@
   "valueProjected": 0.761,
   "valueMarket": 0.539,
   "pricePressure": -0.51,
-  "bargainScore": 52.1,
+  "bargainScore": 51.9,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -4586,7 +4585,7 @@
   "valueProjected": 1.235,
   "valueMarket": 1.269,
   "pricePressure": 0.7,
-  "bargainScore": 77.3,
+  "bargainScore": 77.2,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -4694,7 +4693,7 @@
   "valueProjected": 0.598,
   "valueMarket": 1.243,
   "pricePressure": 0.45,
-  "bargainScore": 37.5,
+  "bargainScore": 37.4,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -4717,11 +4716,11 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Improbable",
+   "label": "Duda",
    "untilRound": null,
-   "detail": "Right adductor muscle spasm",
-   "reported": "Doubtful",
-   "source": "Basketball Sphere"
+   "detail": "Groin",
+   "reported": "Game time",
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 12.5,
@@ -4798,19 +4797,19 @@
    "minutesPrior": 16.4,
    "consistencyEstimated": true
   },
-  "projectedFp": 1.57,
+  "projectedFp": 2.09,
   "projectedIfPlays": 3.14,
-  "playProb": 0.5,
+  "playProb": 0.667,
   "expectedMinutes": 16.4,
   "matchup": {
    "opponentFactor": 0.993,
    "homeFactor": 1.06
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.204,
+  "valueProjected": 0.271,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 16.5,
+  "bargainScore": 19.2,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -4831,22 +4830,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "probable",
    "kind": "injury",
-   "label": "Duda",
+   "label": "Se espera que juegue",
    "untilRound": null,
    "detail": "",
-   "reported": "Game time",
-   "source": "RotoWire"
+   "reported": "Ready · Round 229",
+   "source": "Basketball Sphere"
   },
   "outlook": {
    "breakEven": 8.1,
-   "expectedChange": -0.28,
-   "riseProb": 0.064,
-   "sd": 4.32,
+   "expectedChange": -0.25,
+   "riseProb": 0.107,
+   "sd": 4.88,
    "floor": 0.0,
-   "ceiling": 4.0,
-   "p90": 7.3
+   "ceiling": 4.9,
+   "p90": 8.6
   }
  },
  {
@@ -4925,7 +4924,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -5041,7 +5040,7 @@
   "valueProjected": 0.408,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 21.9,
+  "bargainScore": 22.1,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -5265,7 +5264,7 @@
   "valueProjected": 1.168,
   "valueMarket": 0.755,
   "pricePressure": -0.17,
-  "bargainScore": 77.0,
+  "bargainScore": 76.9,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -5373,7 +5372,7 @@
   "valueProjected": 1.194,
   "valueMarket": 0.486,
   "pricePressure": -1.73,
-  "bargainScore": 83.7,
+  "bargainScore": 83.6,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -5480,7 +5479,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -5704,7 +5703,7 @@
   "valueProjected": 1.056,
   "valueMarket": 1.111,
   "pricePressure": 0.51,
-  "bargainScore": 66.2,
+  "bargainScore": 66.1,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -5812,7 +5811,7 @@
   "valueProjected": 0.899,
   "valueMarket": 0.0,
   "pricePressure": -1.1,
-  "bargainScore": 54.2,
+  "bargainScore": 54.1,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -6110,7 +6109,7 @@
    "fpFloor": null,
    "fpCeiling": null,
    "fpPerMin": null,
-   "consistency": 0.0,
+   "consistency": null,
    "form": null,
    "formDelta": null,
    "lastFp": null,
@@ -6121,22 +6120,21 @@
    "astAvg": null,
    "pirAvg": null,
    "plusMinusAvg": null,
-   "minutesPrior": null,
-   "consistencyEstimated": true
+   "minutesPrior": null
   },
-  "projectedFp": 4.58,
+  "projectedFp": 0.0,
   "projectedIfPlays": 9.17,
-  "playProb": 0.5,
+  "playProb": 0.0,
   "expectedMinutes": 19.2,
   "matchup": {
    "opponentFactor": 1.071,
    "homeFactor": 0.94
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.509,
+  "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 29.5,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -6157,22 +6155,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Duda",
-   "untilRound": null,
+   "label": "Baja en la J2",
+   "untilRound": 2,
    "detail": "Calf",
-   "reported": "Game time",
+   "reported": "Out",
    "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 9.6,
-   "expectedChange": -0.21,
-   "riseProb": 0.183,
-   "sd": 5.61,
-   "floor": 0.8,
-   "ceiling": 7.8,
-   "p90": 12.0
+   "expectedChange": -0.4,
+   "riseProb": 0.0,
+   "sd": 0.0,
+   "floor": 0.0,
+   "ceiling": 0.0,
+   "p90": 0.0
   }
  },
  {
@@ -6468,7 +6466,7 @@
   "valueProjected": 1.162,
   "valueMarket": 1.27,
   "pricePressure": 0.65,
-  "bargainScore": 68.8,
+  "bargainScore": 68.9,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -6576,7 +6574,7 @@
   "valueProjected": 1.091,
   "valueMarket": 1.203,
   "pricePressure": 0.59,
-  "bargainScore": 66.2,
+  "bargainScore": 66.3,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -6684,7 +6682,7 @@
   "valueProjected": 1.108,
   "valueMarket": 1.125,
   "pricePressure": 0.5,
-  "bargainScore": 72.2,
+  "bargainScore": 72.1,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -6791,7 +6789,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -7231,7 +7229,7 @@
   "valueProjected": 0.994,
   "valueMarket": -0.231,
   "pricePressure": -1.08,
-  "bargainScore": 62.2,
+  "bargainScore": 62.1,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -7339,7 +7337,7 @@
   "valueProjected": 1.055,
   "valueMarket": 1.467,
   "pricePressure": 0.93,
-  "bargainScore": 65.7,
+  "bargainScore": 65.6,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -7771,7 +7769,7 @@
   "valueProjected": 0.492,
   "valueMarket": 1.639,
   "pricePressure": 0.98,
-  "bargainScore": 28.1,
+  "bargainScore": 28.2,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -8103,7 +8101,7 @@
   "valueProjected": 1.211,
   "valueMarket": 2.398,
   "pricePressure": 2.51,
-  "bargainScore": 83.0,
+  "bargainScore": 82.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -8318,7 +8316,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.688,
   "pricePressure": -0.0,
-  "bargainScore": 11.8,
+  "bargainScore": 12.2,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -8343,9 +8341,9 @@
    "kind": "injury",
    "label": "Baja en la J2",
    "untilRound": 2,
-   "detail": "Ankle injury",
+   "detail": "Ankle",
    "reported": "Out",
-   "source": "Basketball Sphere"
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 8.5,
@@ -8650,7 +8648,7 @@
   "valueProjected": 0.851,
   "valueMarket": 1.589,
   "pricePressure": 1.13,
-  "bargainScore": 54.8,
+  "bargainScore": 54.7,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -8758,7 +8756,7 @@
   "valueProjected": 0.455,
   "valueMarket": 1.942,
   "pricePressure": null,
-  "bargainScore": 28.7,
+  "bargainScore": 28.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -8866,7 +8864,7 @@
   "valueProjected": 0.907,
   "valueMarket": 0.217,
   "pricePressure": -0.25,
-  "bargainScore": 48.6,
+  "bargainScore": 48.8,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -9082,7 +9080,7 @@
   "valueProjected": 1.092,
   "valueMarket": 1.142,
   "pricePressure": 0.39,
-  "bargainScore": 73.0,
+  "bargainScore": 72.9,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -9298,7 +9296,7 @@
   "valueProjected": 0.562,
   "valueMarket": 0.0,
   "pricePressure": -0.4,
-  "bargainScore": 27.9,
+  "bargainScore": 28.1,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -9730,7 +9728,7 @@
   "valueProjected": 1.169,
   "valueMarket": 0.85,
   "pricePressure": -1.2,
-  "bargainScore": 81.9,
+  "bargainScore": 81.8,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -10062,7 +10060,7 @@
   "valueProjected": 0.962,
   "valueMarket": 0.363,
   "pricePressure": -0.57,
-  "bargainScore": 62.5,
+  "bargainScore": 62.4,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -10170,7 +10168,7 @@
   "valueProjected": 0.165,
   "valueMarket": 1.235,
   "pricePressure": null,
-  "bargainScore": 20.8,
+  "bargainScore": 21.5,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -10278,7 +10276,7 @@
   "valueProjected": 1.216,
   "valueMarket": 1.185,
   "pricePressure": 0.01,
-  "bargainScore": 83.7,
+  "bargainScore": 83.6,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -10493,7 +10491,7 @@
   "valueProjected": 0.0,
   "valueMarket": 1.556,
   "pricePressure": 1.08,
-  "bargainScore": 11.8,
+  "bargainScore": 12.2,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -10717,7 +10715,7 @@
   "valueProjected": 0.71,
   "valueMarket": 0.25,
   "pricePressure": -0.22,
-  "bargainScore": 40.9,
+  "bargainScore": 40.8,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -10813,19 +10811,19 @@
    "minutesPrior": 16.3,
    "consistencyEstimated": true
   },
-  "projectedFp": 2.62,
+  "projectedFp": 3.49,
   "projectedIfPlays": 5.23,
-  "playProb": 0.5,
+  "playProb": 0.667,
   "expectedMinutes": 16.3,
   "matchup": {
    "opponentFactor": 0.942,
    "homeFactor": 0.94
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.374,
+  "valueProjected": 0.499,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 22.2,
+  "bargainScore": 29.0,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -10846,22 +10844,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "probable",
    "kind": "injury",
-   "label": "Duda",
+   "label": "Se espera que juegue",
    "untilRound": null,
    "detail": "",
-   "reported": "Game time",
-   "source": "RotoWire"
+   "reported": "Ready · Round 229",
+   "source": "Basketball Sphere"
   },
   "outlook": {
    "breakEven": 7.3,
-   "expectedChange": -0.2,
-   "riseProb": 0.195,
-   "sd": 5.47,
+   "expectedChange": -0.16,
+   "riseProb": 0.264,
+   "sd": 6.08,
    "floor": 0.0,
-   "ceiling": 5.7,
-   "p90": 9.9
+   "ceiling": 6.9,
+   "p90": 11.5
   }
  },
  {
@@ -10941,7 +10939,7 @@
   "valueProjected": 0.122,
   "valueMarket": 0.0,
   "pricePressure": -0.54,
-  "bargainScore": 14.6,
+  "bargainScore": 15.5,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -11048,7 +11046,7 @@
   "valueProjected": -0.264,
   "valueMarket": -0.694,
   "pricePressure": null,
-  "bargainScore": 17.6,
+  "bargainScore": 17.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -11156,7 +11154,7 @@
   "valueProjected": 1.286,
   "valueMarket": -1.515,
   "pricePressure": null,
-  "bargainScore": 72.2,
+  "bargainScore": 72.1,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -11588,7 +11586,7 @@
   "valueProjected": 0.702,
   "valueMarket": 1.758,
   "pricePressure": 1.37,
-  "bargainScore": 45.1,
+  "bargainScore": 44.9,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -11696,7 +11694,7 @@
   "valueProjected": 1.121,
   "valueMarket": 1.042,
   "pricePressure": 0.34,
-  "bargainScore": 64.8,
+  "bargainScore": 64.7,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -11900,19 +11898,19 @@
    "minutesPrior": 12.3,
    "consistencyEstimated": true
   },
-  "projectedFp": 2.65,
+  "projectedFp": 3.54,
   "projectedIfPlays": 5.31,
-  "playProb": 0.5,
+  "playProb": 0.667,
   "expectedMinutes": 12.3,
   "matchup": {
    "opponentFactor": 1.005,
    "homeFactor": 1.06
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.602,
+  "valueProjected": 0.805,
   "valueMarket": 0.0,
   "pricePressure": -0.39,
-  "bargainScore": 33.4,
+  "bargainScore": 43.7,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -11932,23 +11930,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "doubt",
-   "kind": "injury",
-   "label": "Duda",
-   "untilRound": null,
-   "detail": "Hamstring",
-   "reported": "Game time",
-   "source": "RotoWire"
-  },
+  "availability": null,
   "outlook": {
    "breakEven": 4.3,
-   "expectedChange": -0.07,
-   "riseProb": 0.387,
-   "sd": 5.79,
+   "expectedChange": -0.03,
+   "riseProb": 0.452,
+   "sd": 6.45,
    "floor": 0.0,
-   "ceiling": 5.9,
-   "p90": 10.3
+   "ceiling": 7.2,
+   "p90": 12.1
   }
  },
  {
@@ -12028,7 +12018,7 @@
   "valueProjected": 0.804,
   "valueMarket": -0.746,
   "pricePressure": null,
-  "bargainScore": 48.5,
+  "bargainScore": 48.4,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -12244,7 +12234,7 @@
   "valueProjected": 0.975,
   "valueMarket": 0.62,
   "pricePressure": -0.02,
-  "bargainScore": 55.5,
+  "bargainScore": 55.6,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -12352,7 +12342,7 @@
   "valueProjected": 0.071,
   "valueMarket": 2.941,
   "pricePressure": null,
-  "bargainScore": 19.1,
+  "bargainScore": 19.8,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -12568,7 +12558,7 @@
   "valueProjected": 0.424,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 22.1,
+  "bargainScore": 22.6,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -12591,11 +12581,11 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Al 50 %",
+   "label": "Duda",
    "untilRound": null,
-   "detail": "",
-   "reported": "Questionable",
-   "source": "Basketball Sphere"
+   "detail": "Not Injury Related",
+   "reported": "Game time",
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 5.6,
@@ -12684,7 +12674,7 @@
   "valueProjected": 1.011,
   "valueMarket": 0.301,
   "pricePressure": -0.38,
-  "bargainScore": 57.6,
+  "bargainScore": 57.7,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -12792,7 +12782,7 @@
   "valueProjected": 0.806,
   "valueMarket": -0.213,
   "pricePressure": -0.57,
-  "bargainScore": 44.0,
+  "bargainScore": 44.1,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -12899,7 +12889,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -13014,7 +13004,7 @@
   "valueProjected": -2.037,
   "valueMarket": -2.174,
   "pricePressure": null,
-  "bargainScore": 13.7,
+  "bargainScore": 13.8,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -13229,7 +13219,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -13872,19 +13862,19 @@
    "minutesPrior": null,
    "consistencyEstimated": true
   },
-  "projectedFp": 2.81,
+  "projectedFp": 2.1,
   "projectedIfPlays": 4.21,
-  "playProb": 0.667,
+  "playProb": 0.5,
   "expectedMinutes": 13.9,
   "matchup": {
    "opponentFactor": 1.05,
    "homeFactor": 0.94
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.573,
+  "valueProjected": 0.429,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 30.2,
+  "bargainScore": 21.6,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -13904,15 +13894,23 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Not Injury Related",
+   "reported": "Game time",
+   "source": "RotoWire"
+  },
   "outlook": {
    "breakEven": 4.9,
-   "expectedChange": -0.09,
-   "riseProb": 0.254,
-   "sd": 3.15,
-   "floor": 0.7,
-   "ceiling": 4.6,
-   "p90": 7.0
+   "expectedChange": -0.12,
+   "riseProb": 0.175,
+   "sd": 2.99,
+   "floor": 0.1,
+   "ceiling": 3.8,
+   "p90": 6.1
   }
  },
  {
@@ -13991,7 +13989,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -14107,7 +14105,7 @@
   "valueProjected": 0.694,
   "valueMarket": -0.188,
   "pricePressure": -0.56,
-  "bargainScore": 38.2,
+  "bargainScore": 38.1,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -14215,7 +14213,7 @@
   "valueProjected": 0.921,
   "valueMarket": 0.0,
   "pricePressure": -0.63,
-  "bargainScore": 52.0,
+  "bargainScore": 51.9,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -14538,7 +14536,7 @@
   "valueProjected": 0.825,
   "valueMarket": 0.825,
   "pricePressure": 0.13,
-  "bargainScore": 43.8,
+  "bargainScore": 43.9,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -14646,7 +14644,7 @@
   "valueProjected": 0.223,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 16.3,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -14762,7 +14760,7 @@
   "valueProjected": 1.134,
   "valueMarket": 1.855,
   "pricePressure": 1.45,
-  "bargainScore": 76.4,
+  "bargainScore": 76.3,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -14978,7 +14976,7 @@
   "valueProjected": 0.453,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 22.0,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -15094,7 +15092,7 @@
   "valueProjected": 0.944,
   "valueMarket": 0.978,
   "pricePressure": 0.27,
-  "bargainScore": 57.9,
+  "bargainScore": 58.0,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -15298,19 +15296,19 @@
    "minutesPrior": 13.2,
    "consistencyEstimated": true
   },
-  "projectedFp": 1.71,
+  "projectedFp": 2.27,
   "projectedIfPlays": 3.41,
-  "playProb": 0.5,
+  "playProb": 0.667,
   "expectedMinutes": 13.2,
   "matchup": {
    "opponentFactor": 0.944,
    "homeFactor": 0.94
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.398,
+  "valueProjected": 0.528,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 20.5,
+  "bargainScore": 27.4,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -15331,22 +15329,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "probable",
    "kind": "injury",
-   "label": "Duda",
+   "label": "Se espera que juegue",
    "untilRound": null,
-   "detail": "Illness",
-   "reported": "Game time",
-   "source": "RotoWire"
+   "detail": "",
+   "reported": "Ready · Round 229",
+   "source": "Basketball Sphere"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.25,
-   "sd": 3.69,
+   "expectedChange": -0.08,
+   "riseProb": 0.319,
+   "sd": 4.11,
    "floor": 0.0,
-   "ceiling": 3.8,
-   "p90": 6.6
+   "ceiling": 4.6,
+   "p90": 7.7
   }
  },
  {
@@ -15426,7 +15424,7 @@
   "valueProjected": 0.838,
   "valueMarket": -0.714,
   "pricePressure": -0.84,
-  "bargainScore": 45.2,
+  "bargainScore": 45.3,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -15642,7 +15640,7 @@
   "valueProjected": 0.68,
   "valueMarket": 0.725,
   "pricePressure": 0.11,
-  "bargainScore": 42.8,
+  "bargainScore": 42.6,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -15966,7 +15964,7 @@
   "valueProjected": 0.671,
   "valueMarket": 0.0,
   "pricePressure": -0.38,
-  "bargainScore": 35.7,
+  "bargainScore": 35.6,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -16074,7 +16072,7 @@
   "valueProjected": 0.333,
   "valueMarket": 0.0,
   "pricePressure": -0.39,
-  "bargainScore": 18.5,
+  "bargainScore": 19.1,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -16182,7 +16180,7 @@
   "valueProjected": 0.662,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 35.0,
+  "bargainScore": 34.9,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -16290,7 +16288,7 @@
   "valueProjected": 0.44,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 23.0,
+  "bargainScore": 23.3,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -16406,7 +16404,7 @@
   "valueProjected": 0.236,
   "valueMarket": 1.316,
   "pricePressure": null,
-  "bargainScore": 22.7,
+  "bargainScore": 23.1,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -16514,7 +16512,7 @@
   "valueProjected": 0.202,
   "valueMarket": 0.0,
   "pricePressure": -0.39,
-  "bargainScore": 15.7,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -16630,7 +16628,7 @@
   "valueProjected": 0.346,
   "valueMarket": 0.0,
   "pricePressure": -0.47,
-  "bargainScore": 19.5,
+  "bargainScore": 19.9,
   "schedule": {
    "difficulty": 24.0,
    "next": {
@@ -16846,7 +16844,7 @@
   "valueProjected": 1.02,
   "valueMarket": 1.333,
   "pricePressure": 0.52,
-  "bargainScore": 54.0,
+  "bargainScore": 54.1,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -16954,7 +16952,7 @@
   "valueProjected": 0.723,
   "valueMarket": -0.25,
   "pricePressure": -0.52,
-  "bargainScore": 38.0,
+  "bargainScore": 37.9,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -17061,7 +17059,7 @@
   "valueProjected": -1.267,
   "valueMarket": 1.639,
   "pricePressure": null,
-  "bargainScore": 14.1,
+  "bargainScore": 14.2,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -17277,7 +17275,7 @@
   "valueProjected": 0.568,
   "valueMarket": 0.55,
   "pricePressure": -0.04,
-  "bargainScore": 27.9,
+  "bargainScore": 28.2,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -17385,7 +17383,7 @@
   "valueProjected": 0.475,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 23.3,
+  "bargainScore": 23.6,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -17609,7 +17607,7 @@
   "valueProjected": 0.525,
   "valueMarket": 0.164,
   "pricePressure": -0.4,
-  "bargainScore": 29.9,
+  "bargainScore": 29.8,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -17933,7 +17931,7 @@
   "valueProjected": 0.377,
   "valueMarket": -0.877,
   "pricePressure": null,
-  "bargainScore": 25.3,
+  "bargainScore": 25.8,
   "schedule": {
    "difficulty": 24.0,
    "next": {
@@ -18041,7 +18039,7 @@
   "valueProjected": 0.789,
   "valueMarket": 1.333,
   "pricePressure": 0.52,
-  "bargainScore": 47.1,
+  "bargainScore": 47.2,
   "schedule": {
    "difficulty": 24.0,
    "next": {
@@ -18149,7 +18147,7 @@
   "valueProjected": 0.583,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 34.4,
+  "bargainScore": 34.3,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -18265,7 +18263,7 @@
   "valueProjected": 1.142,
   "valueMarket": 0.744,
   "pricePressure": -0.84,
-  "bargainScore": 77.8,
+  "bargainScore": 77.7,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -18373,7 +18371,7 @@
   "valueProjected": 1.068,
   "valueMarket": 1.253,
   "pricePressure": 0.69,
-  "bargainScore": 71.8,
+  "bargainScore": 71.7,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -18481,7 +18479,7 @@
   "valueProjected": 0.783,
   "valueMarket": -0.241,
   "pricePressure": -1.21,
-  "bargainScore": 52.8,
+  "bargainScore": 52.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -18563,7 +18561,7 @@
    "fpFloor": null,
    "fpCeiling": null,
    "fpPerMin": null,
-   "consistency": 0.0,
+   "consistency": null,
    "form": null,
    "formDelta": null,
    "lastFp": null,
@@ -18574,22 +18572,21 @@
    "astAvg": null,
    "pirAvg": null,
    "plusMinusAvg": null,
-   "minutesPrior": null,
-   "consistencyEstimated": true
+   "minutesPrior": null
   },
-  "projectedFp": 4.13,
+  "projectedFp": 0.0,
   "projectedIfPlays": 8.27,
-  "playProb": 0.5,
+  "playProb": 0.0,
   "expectedMinutes": 19.0,
   "matchup": {
    "opponentFactor": 0.997,
    "homeFactor": 0.94
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.469,
+  "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 27.3,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -18610,22 +18607,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Duda",
-   "untilRound": null,
-   "detail": "",
-   "reported": "Game time",
+   "label": "Baja en la J2",
+   "untilRound": 2,
+   "detail": "Thigh",
+   "reported": "Out",
    "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 9.4,
-   "expectedChange": -0.22,
-   "riseProb": 0.148,
-   "sd": 5.06,
-   "floor": 0.7,
-   "ceiling": 7.0,
-   "p90": 10.8
+   "expectedChange": -0.4,
+   "riseProb": 0.0,
+   "sd": 0.0,
+   "floor": 0.0,
+   "ceiling": 0.0,
+   "p90": 0.0
   }
  },
  {
@@ -18705,7 +18702,7 @@
   "valueProjected": 0.363,
   "valueMarket": -0.269,
   "pricePressure": -0.9,
-  "bargainScore": 20.5,
+  "bargainScore": 21.3,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -18813,7 +18810,7 @@
   "valueProjected": 0.815,
   "valueMarket": -0.508,
   "pricePressure": -0.98,
-  "bargainScore": 45.1,
+  "bargainScore": 45.2,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -18921,7 +18918,7 @@
   "valueProjected": 0.442,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 24.8,
+  "bargainScore": 25.2,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -19037,7 +19034,7 @@
   "valueProjected": 0.621,
   "valueMarket": -1.3,
   "pricePressure": -3.28,
-  "bargainScore": 38.5,
+  "bargainScore": 38.2,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -19145,7 +19142,7 @@
   "valueProjected": 0.361,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 18.1,
+  "bargainScore": 18.7,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -19170,7 +19167,7 @@
    "kind": "injury",
    "label": "Duda",
    "untilRound": null,
-   "detail": "",
+   "detail": "Knee",
    "reported": "Game time",
    "source": "RotoWire"
   },
@@ -19369,7 +19366,7 @@
   "valueProjected": 0.134,
   "valueMarket": -0.61,
   "pricePressure": null,
-  "bargainScore": 20.2,
+  "bargainScore": 20.9,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -19477,7 +19474,7 @@
   "valueProjected": 0.445,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 20.5,
+  "bargainScore": 20.9,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -19593,7 +19590,7 @@
   "valueProjected": 0.455,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 21.8,
+  "bargainScore": 22.1,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -20032,7 +20029,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -20148,7 +20145,7 @@
   "valueProjected": 0.272,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 17.0,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -20371,7 +20368,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -20487,7 +20484,7 @@
   "valueProjected": 0.576,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 31.0,
+  "bargainScore": 30.9,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -20595,7 +20592,7 @@
   "valueProjected": 1.209,
   "valueMarket": 1.2,
   "pricePressure": 0.62,
-  "bargainScore": 77.0,
+  "bargainScore": 76.9,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -20703,7 +20700,7 @@
   "valueProjected": 1.17,
   "valueMarket": 1.984,
   "pricePressure": 1.72,
-  "bargainScore": 81.9,
+  "bargainScore": 81.8,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -20811,7 +20808,7 @@
   "valueProjected": 1.345,
   "valueMarket": 0.939,
   "pricePressure": 0.29,
-  "bargainScore": 83.0,
+  "bargainScore": 82.9,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -21135,7 +21132,7 @@
   "valueProjected": 1.059,
   "valueMarket": 0.698,
   "pricePressure": -0.05,
-  "bargainScore": 69.6,
+  "bargainScore": 69.5,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -21243,7 +21240,7 @@
   "valueProjected": 1.004,
   "valueMarket": 0.208,
   "pricePressure": -0.29,
-  "bargainScore": 58.1,
+  "bargainScore": 58.0,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -21783,7 +21780,7 @@
   "valueProjected": 0.679,
   "valueMarket": 0.238,
   "pricePressure": -0.23,
-  "bargainScore": 37.1,
+  "bargainScore": 37.0,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -21891,7 +21888,7 @@
   "valueProjected": 0.41,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 21.3,
+  "bargainScore": 21.6,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -22007,7 +22004,7 @@
   "valueProjected": 0.595,
   "valueMarket": 0.0,
   "pricePressure": -0.37,
-  "bargainScore": 30.8,
+  "bargainScore": 31.0,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -22115,7 +22112,7 @@
   "valueProjected": 0.509,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 31.0,
+  "bargainScore": 31.1,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -22339,7 +22336,7 @@
   "valueProjected": 0.384,
   "valueMarket": 0.0,
   "pricePressure": -0.43,
-  "bargainScore": 20.1,
+  "bargainScore": 20.5,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -22447,7 +22444,7 @@
   "valueProjected": 0.615,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 38.6,
+  "bargainScore": 38.3,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -22563,7 +22560,7 @@
   "valueProjected": 0.8,
   "valueMarket": 0.0,
   "pricePressure": -0.74,
-  "bargainScore": 45.6,
+  "bargainScore": 45.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -22671,7 +22668,7 @@
   "valueProjected": 0.873,
   "valueMarket": 0.3,
   "pricePressure": -0.84,
-  "bargainScore": 58.6,
+  "bargainScore": 58.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -22887,7 +22884,7 @@
   "valueProjected": 0.938,
   "valueMarket": 0.745,
   "pricePressure": -0.08,
-  "bargainScore": 61.5,
+  "bargainScore": 61.4,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -22995,7 +22992,7 @@
   "valueProjected": 0.875,
   "valueMarket": 0.513,
   "pricePressure": -0.88,
-  "bargainScore": 60.7,
+  "bargainScore": 60.6,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -23103,7 +23100,7 @@
   "valueProjected": 0.463,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 27.4,
+  "bargainScore": 27.9,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -23543,7 +23540,7 @@
   "valueProjected": 0.553,
   "valueMarket": 0.256,
   "pricePressure": -0.63,
-  "bargainScore": 31.3,
+  "bargainScore": 31.4,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -23651,7 +23648,7 @@
   "valueProjected": 0.905,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 60.5,
+  "bargainScore": 60.4,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -24091,7 +24088,7 @@
   "valueProjected": 0.473,
   "valueMarket": 0.286,
   "pricePressure": -0.45,
-  "bargainScore": 28.0,
+  "bargainScore": 28.3,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -24114,11 +24111,11 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Al 50 %",
+   "label": "Duda",
    "untilRound": null,
    "detail": "Illness",
-   "reported": "Questionable",
-   "source": "Basketball Sphere"
+   "reported": "Game time",
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 8.1,
@@ -24207,7 +24204,7 @@
   "valueProjected": 0.909,
   "valueMarket": 0.208,
   "pricePressure": -0.29,
-  "bargainScore": 50.0,
+  "bargainScore": 50.1,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -24315,7 +24312,7 @@
   "valueProjected": 0.368,
   "valueMarket": 0.455,
   "pricePressure": -0.16,
-  "bargainScore": 21.5,
+  "bargainScore": 22.2,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -24531,7 +24528,7 @@
   "valueProjected": 0.565,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 32.0,
+  "bargainScore": 32.1,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -24647,7 +24644,7 @@
   "valueProjected": 1.236,
   "valueMarket": 0.957,
   "pricePressure": 0.23,
-  "bargainScore": 80.3,
+  "bargainScore": 80.2,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -24863,7 +24860,7 @@
   "valueProjected": 0.686,
   "valueMarket": 0.0,
   "pricePressure": -0.43,
-  "bargainScore": 37.9,
+  "bargainScore": 37.8,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -24971,7 +24968,7 @@
   "valueProjected": 0.364,
   "valueMarket": 1.515,
   "pricePressure": 0.91,
-  "bargainScore": 21.0,
+  "bargainScore": 21.7,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -25187,7 +25184,7 @@
   "valueProjected": 0.423,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 22.4,
+  "bargainScore": 22.6,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -25411,7 +25408,7 @@
   "valueProjected": 0.502,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 27.6,
+  "bargainScore": 27.9,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -25635,7 +25632,7 @@
   "valueProjected": 0.478,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 26.3,
+  "bargainScore": 26.5,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -25751,7 +25748,7 @@
   "valueProjected": 0.637,
   "valueMarket": 1.235,
   "pricePressure": null,
-  "bargainScore": 43.0,
+  "bargainScore": 42.8,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -25859,7 +25856,7 @@
   "valueProjected": 1.166,
   "valueMarket": 0.33,
   "pricePressure": -0.79,
-  "bargainScore": 76.4,
+  "bargainScore": 76.3,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -26075,7 +26072,7 @@
   "valueProjected": 0.416,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 20.9,
+  "bargainScore": 21.2,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -26191,7 +26188,7 @@
   "valueProjected": 0.155,
   "valueMarket": 0.0,
   "pricePressure": -0.77,
-  "bargainScore": 15.3,
+  "bargainScore": 16.1,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -26299,7 +26296,7 @@
   "valueProjected": 0.5,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 24.2,
+  "bargainScore": 24.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -26459,7 +26456,7 @@
   "positionLabel": "Forward",
   "isCoach": false,
   "dorsal": "2",
-  "image": "https://media-cdn.cortextech.io/d79a6b0a-c9e6-45d7-b907-849e1ae9202f.png",
+  "image": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONx/cb63dd32-23db-47ea-94c6-6b7fb0520fab.png",
   "height": 204.0,
   "country": "SRB",
   "birthDate": "1993-04-13",
@@ -26523,7 +26520,7 @@
   "valueProjected": 0.11,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 14.3,
+  "bargainScore": 15.1,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -26747,7 +26744,7 @@
   "valueProjected": 0.438,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 20.7,
+  "bargainScore": 21.0,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -26863,7 +26860,7 @@
   "valueProjected": 0.573,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 29.0,
+  "bargainScore": 29.2,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -27079,7 +27076,7 @@
   "valueProjected": 0.673,
   "valueMarket": -0.759,
   "pricePressure": -1.74,
-  "bargainScore": 44.6,
+  "bargainScore": 44.4,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -27295,7 +27292,7 @@
   "valueProjected": 0.429,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 23.5,
+  "bargainScore": 23.8,
   "schedule": {
    "difficulty": 80.0,
    "next": {
@@ -27411,7 +27408,7 @@
   "valueProjected": 0.786,
   "valueMarket": 0.262,
   "pricePressure": -0.59,
-  "bargainScore": 53.1,
+  "bargainScore": 53.0,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -27519,7 +27516,7 @@
   "valueProjected": 0.211,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.9,
+  "bargainScore": 16.6,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -27541,12 +27538,12 @@
   "registered": false,
   "availability": {
    "level": "doubt",
-   "kind": "roster",
-   "label": "Sin inscribir en la Euroliga",
+   "kind": "injury",
+   "label": "Duda",
    "untilRound": null,
-   "detail": "Está en el mercado del Fantasy pero no en el censo oficial de la temporada.",
-   "reported": "",
-   "source": "censo oficial"
+   "detail": "Not Injury Related",
+   "reported": "Game time",
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 4.3,
@@ -27851,7 +27848,7 @@
   "valueProjected": 0.821,
   "valueMarket": 0.971,
   "pricePressure": 0.37,
-  "bargainScore": 52.2,
+  "bargainScore": 52.1,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -27959,7 +27956,7 @@
   "valueProjected": 1.066,
   "valueMarket": 0.638,
   "pricePressure": -0.23,
-  "bargainScore": 70.5,
+  "bargainScore": 70.4,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -28175,7 +28172,7 @@
   "valueProjected": 0.194,
   "valueMarket": 0.145,
   "pricePressure": -0.5,
-  "bargainScore": 15.9,
+  "bargainScore": 16.7,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -28283,7 +28280,7 @@
   "valueProjected": 1.065,
   "valueMarket": 0.77,
   "pricePressure": -0.12,
-  "bargainScore": 69.3,
+  "bargainScore": 69.2,
   "schedule": {
    "difficulty": 60.0,
    "next": {
@@ -28930,7 +28927,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -29370,7 +29367,7 @@
   "valueProjected": 0.758,
   "valueMarket": 0.326,
   "pricePressure": -0.64,
-  "bargainScore": 45.5,
+  "bargainScore": 45.4,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -29478,7 +29475,7 @@
   "valueProjected": 0.906,
   "valueMarket": 0.568,
   "pricePressure": -0.24,
-  "bargainScore": 54.0,
+  "bargainScore": 53.9,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -29586,7 +29583,7 @@
   "valueProjected": 0.627,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 33.0,
+  "bargainScore": 33.1,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -29630,7 +29627,7 @@
   "positionLabel": "Guard",
   "isCoach": false,
   "dorsal": "16",
-  "image": "https://media-cdn.cortextech.io/d508fd95-92a2-4090-82f2-5709a03857dc.png",
+  "image": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/14cb197c-84c8-4b63-83f8-8b26e7cc30ea.png",
   "height": 185.0,
   "country": "TUR",
   "birthDate": "2008-04-03",
@@ -29694,7 +29691,7 @@
   "valueProjected": 0.667,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 35.1,
+  "bargainScore": 35.0,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -30018,7 +30015,7 @@
   "valueProjected": 0.567,
   "valueMarket": 0.0,
   "pricePressure": -0.77,
-  "bargainScore": 31.8,
+  "bargainScore": 31.9,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -30126,7 +30123,7 @@
   "valueProjected": 1.341,
   "valueMarket": 1.791,
   "pricePressure": 1.39,
-  "bargainScore": 83.0,
+  "bargainScore": 82.9,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -30342,7 +30339,7 @@
   "valueProjected": 0.565,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 27.5,
+  "bargainScore": 27.7,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -30558,7 +30555,7 @@
   "valueProjected": 0.568,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 28.4,
+  "bargainScore": 28.6,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -30666,7 +30663,7 @@
   "valueProjected": 0.643,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 34.7,
+  "bargainScore": 34.5,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -30774,7 +30771,7 @@
   "valueProjected": 0.715,
   "valueMarket": 1.2,
   "pricePressure": 0.54,
-  "bargainScore": 43.4,
+  "bargainScore": 43.2,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -30882,7 +30879,7 @@
   "valueProjected": 1.383,
   "valueMarket": 1.745,
   "pricePressure": 0.96,
-  "bargainScore": 91.7,
+  "bargainScore": 91.6,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -30990,7 +30987,7 @@
   "valueProjected": 0.789,
   "valueMarket": 0.357,
   "pricePressure": -0.46,
-  "bargainScore": 54.4,
+  "bargainScore": 54.3,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -31098,7 +31095,7 @@
   "valueProjected": 0.861,
   "valueMarket": 0.0,
   "pricePressure": -1.01,
-  "bargainScore": 58.8,
+  "bargainScore": 58.7,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -31206,7 +31203,7 @@
   "valueProjected": 0.538,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 31.1,
+  "bargainScore": 31.2,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -31538,7 +31535,7 @@
   "valueProjected": 0.575,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 35.1,
+  "bargainScore": 35.0,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -31563,7 +31560,7 @@
    "kind": "injury",
    "label": "Duda",
    "untilRound": null,
-   "detail": "",
+   "detail": "Back",
    "reported": "Game time",
    "source": "RotoWire"
   },
@@ -31653,7 +31650,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -31877,7 +31874,7 @@
   "valueProjected": 0.182,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.3,
+  "bargainScore": 16.1,
   "schedule": {
    "difficulty": 34.0,
    "next": {
@@ -32100,7 +32097,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -32324,7 +32321,7 @@
   "valueProjected": 0.742,
   "valueMarket": -0.217,
   "pricePressure": -1.18,
-  "bargainScore": 49.8,
+  "bargainScore": 49.7,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -32756,7 +32753,7 @@
   "valueProjected": 0.763,
   "valueMarket": 0.0,
   "pricePressure": -1.27,
-  "bargainScore": 50.6,
+  "bargainScore": 50.5,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -32864,7 +32861,7 @@
   "valueProjected": 0.919,
   "valueMarket": 0.71,
   "pricePressure": 0.11,
-  "bargainScore": 58.5,
+  "bargainScore": 58.4,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -32971,7 +32968,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -33195,7 +33192,7 @@
   "valueProjected": 0.76,
   "valueMarket": 0.26,
   "pricePressure": -0.48,
-  "bargainScore": 49.1,
+  "bargainScore": 49.0,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -33303,7 +33300,7 @@
   "valueProjected": 0.239,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 16.4,
+  "bargainScore": 17.1,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -33635,7 +33632,7 @@
   "valueProjected": 0.876,
   "valueMarket": 1.071,
   "pricePressure": 0.45,
-  "bargainScore": 59.6,
+  "bargainScore": 59.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -34067,7 +34064,7 @@
   "valueProjected": 0.497,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 28.9,
+  "bargainScore": 29.1,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -34182,7 +34179,7 @@
   "valueProjected": 0.0,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 15.8,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -34514,7 +34511,7 @@
   "valueProjected": 1.296,
   "valueMarket": 3.528,
   "pricePressure": 2.39,
-  "bargainScore": 77.6,
+  "bargainScore": 77.7,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -34622,7 +34619,7 @@
   "valueProjected": 0.823,
   "valueMarket": -0.294,
   "pricePressure": -1.81,
-  "bargainScore": 57.1,
+  "bargainScore": 57.0,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -34730,7 +34727,7 @@
   "valueProjected": 0.276,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 17.3,
+  "bargainScore": 18.0,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -34846,7 +34843,7 @@
   "valueProjected": 0.549,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 26.7,
+  "bargainScore": 27.0,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -34954,7 +34951,7 @@
   "valueProjected": 0.573,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 34.9,
+  "bargainScore": 35.0,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -35062,7 +35059,7 @@
   "valueProjected": 1.239,
   "valueMarket": 1.007,
   "pricePressure": -0.53,
-  "bargainScore": 87.5,
+  "bargainScore": 87.4,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -35386,7 +35383,7 @@
   "valueProjected": 0.954,
   "valueMarket": 0.316,
   "pricePressure": -0.71,
-  "bargainScore": 67.6,
+  "bargainScore": 67.5,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -35494,7 +35491,7 @@
   "valueProjected": 0.743,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 47.6,
+  "bargainScore": 47.5,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -35610,7 +35607,7 @@
   "valueProjected": 0.268,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 16.8,
+  "bargainScore": 17.5,
   "schedule": {
    "difficulty": 27.0,
    "next": {
@@ -35834,7 +35831,7 @@
   "valueProjected": 0.472,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 21.9,
+  "bargainScore": 22.2,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -36058,7 +36055,7 @@
   "valueProjected": 0.449,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 25.8,
+  "bargainScore": 26.3,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -36174,7 +36171,7 @@
   "valueProjected": 0.964,
   "valueMarket": 1.304,
   "pricePressure": 0.73,
-  "bargainScore": 68.8,
+  "bargainScore": 68.7,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -36398,7 +36395,7 @@
   "valueProjected": 0.738,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 46.7,
+  "bargainScore": 46.5,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -36614,7 +36611,7 @@
   "valueProjected": 0.88,
   "valueMarket": 0.25,
   "pricePressure": -0.22,
-  "bargainScore": 52.4,
+  "bargainScore": 52.6,
   "schedule": {
    "difficulty": 10.0,
    "next": {
@@ -36830,7 +36827,7 @@
   "valueProjected": 0.749,
   "valueMarket": -0.385,
   "pricePressure": -2.01,
-  "bargainScore": 52.3,
+  "bargainScore": 52.2,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -37154,7 +37151,7 @@
   "valueProjected": 0.866,
   "valueMarket": 0.312,
   "pricePressure": -0.74,
-  "bargainScore": 59.7,
+  "bargainScore": 59.6,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -37370,7 +37367,7 @@
   "valueProjected": 0.6,
   "valueMarket": 0.0,
   "pricePressure": -0.39,
-  "bargainScore": 31.2,
+  "bargainScore": 31.3,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -37586,7 +37583,7 @@
   "valueProjected": 0.805,
   "valueMarket": 0.595,
   "pricePressure": -0.06,
-  "bargainScore": 51.8,
+  "bargainScore": 51.7,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -37694,7 +37691,7 @@
   "valueProjected": 0.458,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 26.7,
+  "bargainScore": 27.2,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -37795,22 +37792,21 @@
    "astAvg": 1.0,
    "pirAvg": -3.0,
    "plusMinusAvg": 1.0,
-   "minutesPrior": null,
-   "consistencyEstimated": true
+   "minutesPrior": null
   },
-  "projectedFp": 2.44,
+  "projectedFp": 0.0,
   "projectedIfPlays": 4.88,
-  "playProb": 0.5,
+  "playProb": 0.0,
   "expectedMinutes": 13.5,
   "matchup": {
    "opponentFactor": 1.037,
    "homeFactor": 0.94
   },
   "valuePerCredit": -0.39,
-  "valueProjected": 0.317,
+  "valueProjected": 0.0,
   "valueMarket": -0.39,
   "pricePressure": -1.25,
-  "bargainScore": 19.8,
+  "bargainScore": 12.2,
   "schedule": {
    "difficulty": 24.0,
    "next": {
@@ -37831,22 +37827,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Duda",
-   "untilRound": null,
-   "detail": "Fractured a bone in his left wrist",
-   "reported": "Uncertain",
-   "source": "Basketball Sphere"
+   "label": "Baja en la J2",
+   "untilRound": 2,
+   "detail": "Wrist",
+   "reported": "Out",
+   "source": "RotoWire"
   },
   "outlook": {
    "breakEven": 8.1,
-   "expectedChange": -0.24,
-   "riseProb": 0.039,
-   "sd": 3.23,
-   "floor": 0.3,
-   "ceiling": 4.3,
-   "p90": 6.7
+   "expectedChange": -0.34,
+   "riseProb": 0.0,
+   "sd": 0.0,
+   "floor": 0.0,
+   "ceiling": 0.0,
+   "p90": 0.0
   }
  },
  {
@@ -38142,7 +38138,7 @@
   "valueProjected": 0.565,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 27.5,
+  "bargainScore": 27.7,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -38250,7 +38246,7 @@
   "valueProjected": 0.565,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 27.5,
+  "bargainScore": 27.7,
   "schedule": {
    "difficulty": 28.0,
    "next": {
@@ -38358,7 +38354,7 @@
   "valueProjected": 0.552,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 26.5,
+  "bargainScore": 26.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -38466,7 +38462,7 @@
   "valueProjected": 0.573,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 29.0,
+  "bargainScore": 29.2,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -38682,7 +38678,7 @@
   "valueProjected": 0.608,
   "valueMarket": 0.0,
   "pricePressure": null,
-  "bargainScore": 31.0,
+  "bargainScore": 31.1,
   "schedule": {
    "difficulty": 61.0,
    "next": {
