@@ -20,10 +20,13 @@ import pandas as pd
 
 from efa.config import (
     AVAILABILITY_PRIOR_GAMES,
+    FORM_WEIGHT_MAX,
     FORM_WINDOW,
     MIN_GAMES_FOR_TREND,
     PRIOR_MIN_GAMES,
     PRIOR_WEIGHT_GAMES,
+    ROLE_ADJUSTMENT_SCALE,
+    TEAM_PRIOR_GAMES,
 )
 
 log = logging.getLogger(__name__)
@@ -251,11 +254,27 @@ def team_strength(games: list[dict[str, Any]], *, prior: pd.DataFrame | None = N
         win_rate=("won", "mean"),
         games=("scored", "size"),
     ).reset_index()
+    source = "temporada en curso"
+
+    # Pocos partidos: se encoge hacia la temporada anterior. Un club sin año
+    # pasado (un recién llegado) se queda con lo suyo.
+    if prior is not None and not prior.empty:
+        base = prior.set_index("club_code")
+        weight = grouped["games"] / (grouped["games"] + TEAM_PRIOR_GAMES)
+        blended = False
+        for column in ("offense", "defense", "win_rate"):
+            before = grouped["club_code"].map(base[column]) if column in base else pd.Series(np.nan, index=grouped.index)
+            mixed = weight * grouped[column] + (1 - weight) * before
+            blended = blended or bool(before.notna().any())
+            grouped[column] = mixed.where(before.notna(), grouped[column])
+        if blended and float(weight.min()) < 0.9:
+            source = "temporada en curso, encogida hacia la anterior"
+
     grouped["net_rating"] = (grouped["offense"] - grouped["defense"]).round(2)
     grouped["offense"] = grouped["offense"].round(1)
     grouped["defense"] = grouped["defense"].round(1)
     grouped["win_rate"] = grouped["win_rate"].round(3)
-    grouped["source"] = "temporada en curso"
+    grouped["source"] = source
     return grouped
 
 
@@ -445,13 +464,13 @@ def project_fantasy_points(table: pd.DataFrame, *, baseline: bool = False) -> pd
     # temporada ANTERIOR: mayo, otra plantilla, rotaciones cortas, eliminatorias
     # decididas. Pesarlos al máximo mandaba a cero a jugadores de 11 créditos.
     # Mientras la fuente sea la línea base, la proyección es la media.
-    form_weight = 0.0 if baseline else np.clip(games / 10.0, 0.0, 0.6)
+    form_weight = 0.0 if baseline else np.clip(games / 10.0, 0.0, FORM_WEIGHT_MAX)
     blended = fp_avg * (1 - form_weight) + form * form_weight
 
     # Un cambio de rol se traduce en puntos vía su producción por minuto, pero
     # acotado EN RELATIVO: restarle 6 puntos a quien proyecta 4 es borrarlo.
     limit = (blended.abs() * 0.35).clip(upper=6.0)
-    role_adjustment = (minutes_trend * fp_per_min).clip(lower=-limit, upper=limit)
+    role_adjustment = (ROLE_ADJUSTMENT_SCALE * minutes_trend * fp_per_min).clip(lower=-limit, upper=limit)
     projection = blended + role_adjustment
 
     # Sin historial propio, el mercado es la mejor estimación disponible.
@@ -531,7 +550,12 @@ def value_metrics(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def bargain_score(table: pd.DataFrame) -> pd.Series:
-    """Índice compuesto de 'chollo': valor + consistencia + rol al alza.
+    """Índice compuesto de 'chollo': valor + consistencia + rol al alza + subida.
+
+    El último 10 % era la "presión de precio" (residuo de una curva
+    forma~precio). Desde que el modelo de precio se ajusta a la variación real
+    del juego, se usa su probabilidad de subir: responde a la misma pregunta, y
+    mejor. Sin esa columna (antes de la capa avanzada) cuenta como un 50.
 
     Deliberadamente simple y explicable: cada componente es un percentil, los
     pesos están a la vista y se pueden discutir. Un modelo opaco aquí no
@@ -550,6 +574,6 @@ def bargain_score(table: pd.DataFrame) -> pd.Series:
         + 0.25 * percentile("projected_fp")
         + 0.15 * percentile("consistency")
         + 0.10 * percentile("minutes_share_trend")
-        + 0.10 * percentile("price_pressure")
+        + 0.10 * percentile("rise_prob")
     )
     return score.round(1)

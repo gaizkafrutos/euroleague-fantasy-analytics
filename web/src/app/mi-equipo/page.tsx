@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
-import SquadConsole, { type NextMatch } from "@/components/team/SquadConsole";
-import { getTeam, lineup, meta, players, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
+import SquadConsole from "@/components/team/SquadConsole";
+import { lineup, meta, players, pricedPlayers, rosterPlayers } from "@/lib/data";
+import type { Player } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Mi equipo",
@@ -14,17 +16,6 @@ export default function TeamPage() {
   // Los entrenadores no están en `rosterPlayers` (no tienen puesto), pero son
   // una plaza obligatoria de la plantilla y se fichan igual.
   const coaches = players.filter((player) => player.isCoach && (player.price ?? 0) > 0);
-
-  const nextByClub: Record<string, NextMatch> = {};
-  for (const team of teams) {
-    const fixture = team.fixtures[0];
-    if (fixture) {
-      nextByClub[team.code] = {
-        opponent: getTeam(fixture.opponent)?.short ?? fixture.opponent,
-        home: fixture.home,
-      };
-    }
-  }
 
   // El óptimo del pipeline, en ids. Es el que se carga con "Rellenar con el
   // óptimo" a 100 créditos, y contra el que se mide la plantilla.
@@ -44,11 +35,47 @@ export default function TeamPage() {
         <p className="lede">
           Monta la plantilla y la consola la coloca: los seis que más proyectan puntúan enteros, el
           mejor lleva el brazalete y los cuatro últimos van al banquillo a la mitad. Luego señala a
-          quién le pagas de más y qué fichaje cabe.
+          quién le pagas de más y qué fichaje cabe.{" "}
+          <Link href="/metodologia#reglas">Las reglas, en 30 segundos</Link>.
         </p>
         <p className="eq-eyebrow">Jornada {meta.currentRound}</p>
       </header>
-      <SquadConsole market={market} coaches={coaches} optimal={optimal} nextByClub={nextByClub} />
+      <SquadConsole
+        market={market.map(squadRow)}
+        coaches={coaches.map(squadRow)}
+        optimal={optimal}
+        round={meta.currentRound}
+        regularRounds={meta.totalRounds}
+        rosterConfigured={Boolean(process.env.FANTAKING_TOKEN && process.env.EFA_FANTASY_TEAM_ID)}
+      />
     </section>
   );
+}
+
+/** Lo que la consola necesita de cada jugador. El registro entero (medias de
+ *  caja, estadísticas del mercado, emparejamiento…) viajaba serializado en el
+ *  HTML de la página: unos 690 KB para usar una docena de campos. */
+function squadRow(player: Player): Player {
+  return {
+    id: player.id,
+    name: player.name,
+    marketName: player.marketName,
+    club: player.club,
+    clubName: player.clubName,
+    clubShort: player.clubShort,
+    clubCrest: player.clubCrest,
+    position: player.position,
+    isCoach: player.isCoach,
+    image: player.image,
+    price: player.price,
+    projectedFp: player.projectedFp,
+    projectedIfPlays: player.projectedIfPlays,
+    playProb: player.playProb,
+    valueProjected: player.valueProjected,
+    availability: player.availability,
+    registered: player.registered,
+    outlook: player.outlook ? { sd: player.outlook.sd } : null,
+    schedule: { difficulty: null, next: player.schedule.next ?? null },
+    perf: { gamesPlayed: player.perf.gamesPlayed },
+  } as unknown as Player;
 }

@@ -16,9 +16,11 @@ import { useRouter } from "next/navigation";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 
 import Sparkline from "@/components/charts/Sparkline";
+import AddToSquad from "@/components/team/AddToSquad";
 import ValueScatter from "@/components/charts/ValueScatter";
 import { BarCell, Delta, PlayerCell } from "@/components/ui/primitives";
 import { credits, displayName, num, percent } from "@/lib/format";
+import { fixtureLabel, playRisk, projectionNote, turnLabel } from "@/lib/projection";
 import type { Player, Team } from "@/lib/types";
 
 type SortKey =
@@ -34,7 +36,7 @@ type SortKey =
   | "expectedChange"
   | "difficulty";
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 50;
 
 /** Las columnas con `optional` no se ven por defecto: se añaden desde el botón
  *  "Columnas". Con todas a la vez la tabla no cabía a 1440 px y la última
@@ -42,13 +44,17 @@ const PAGE_SIZE = 20;
 const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: boolean }> = [
   // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
   // y la tabla ya usa ese patrón en Forma y en Minutos.
-  { key: "price", label: "Precio", title: "Precio actual y variación desde la captura anterior" },
+  { key: "price", label: "Precio", title: "Precio y variación en la última jornada" },
   {
     key: "expectedChange",
     label: "Revalor.",
     title: "Variación de precio esperada si puntúa lo proyectado (créditos)",
   },
-  { key: "projectedFp", label: "Proyección", title: "Puntos fantasy esperados la próxima jornada" },
+  {
+    key: "projectedFp",
+    label: "Proyección",
+    title: "Puntos fantasy esperados la próxima jornada, ya descontada la probabilidad de que no juegue",
+  },
   { key: "valueProjected", label: "Pts/cr", title: "Puntos proyectados por crédito" },
   {
     key: "fpAvg",
@@ -59,14 +65,14 @@ const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: bo
   {
     key: "minutesAvg",
     label: "Min",
-    title: "Minutos por partido y su tendencia",
+    title: "Minutos por partido y su tendencia (los esperados, en el detalle)",
     optional: true,
   },
   { key: "consistency", label: "Fiabilidad", title: "1 = regular, 0 = lotería", optional: true },
   {
     key: "difficulty",
     label: "Calendario",
-    title: "Dificultad de los 3 próximos rivales (100 = lo más duro)",
+    title: "Próximo rival y dificultad de los 3 próximos (100 = lo más duro)",
     optional: true,
   },
   { key: "bargainScore", label: "Índice", title: "Índice compuesto de chollo" },
@@ -122,6 +128,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [minGames, setMinGames] = useState(0);
   const [risingOnly, setRisingOnly] = useState(false);
+  const [minPrice, setMinPrice] = useState(0);
+  const [hideOut, setHideOut] = useState(false);
   const [sort, setSort] = useState<{ key: SortKey; desc: boolean }>({
     key: hasPrices ? "bargainScore" : "fpAvg",
     desc: true,
@@ -152,6 +160,9 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     const games = Number(params.get("min"));
     if (games > 0) setMinGames(games);
     if (params.get("alza") === "1") setRisingOnly(true);
+    const floor = Number(params.get("desde"));
+    if (floor > 0) setMinPrice(floor);
+    if (params.get("sinbajas") === "1") setHideOut(true);
     if (params.get("vista") === "grafico") setView("grafico");
     const cols = params.get("cols");
     if (cols) {
@@ -181,6 +192,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     if (maxPrice !== null && maxPrice < priceCeiling) params.set("max", String(maxPrice));
     if (minGames) params.set("min", String(minGames));
     if (risingOnly) params.set("alza", "1");
+    if (minPrice) params.set("desde", String(minPrice));
+    if (hideOut) params.set("sinbajas", "1");
     if (view === "grafico") params.set("vista", "grafico");
     if (extraColumns.size) params.set("cols", [...extraColumns].join(","));
     const isDefaultSort = sort.key === (hasPrices ? "bargainScore" : "fpAvg") && sort.desc;
@@ -196,6 +209,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     positions,
     team,
     maxPrice,
+    minPrice,
+    hideOut,
     minGames,
     risingOnly,
     view,
@@ -217,9 +232,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       if (maxPrice !== null && (player.price ?? 0) > maxPrice) return false;
       if (minGames && (player.perf.gamesPlayed ?? 0) < minGames) return false;
       if (risingOnly && (player.perf.minutesShareTrend ?? 0) <= 0) return false;
+      if (minPrice && (player.price ?? 0) < minPrice) return false;
+      if (hideOut && (player.availability?.level === "out" || player.registered === false)) return false;
       return true;
     });
-  }, [players, deferredQuery, positions, team, maxPrice, minGames, risingOnly]);
+  }, [players, deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly]);
 
   const sorted = useMemo(() => {
     return [...filtered].sort((a, b) => {
@@ -271,13 +288,15 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     (team ? 1 : 0) +
     (maxPrice !== null && maxPrice < priceCeiling ? 1 : 0) +
     (minGames ? 1 : 0) +
+    (minPrice ? 1 : 0) +
+    (hideOut ? 1 : 0) +
     (risingOnly ? 1 : 0);
 
   // Cualquier cambio de filtro u orden reinicia la paginación: si no, el
   // usuario se queda mirando la fila 80 de una lista que ya es otra.
   useEffect(() => {
     setVisible(PAGE_SIZE);
-  }, [deferredQuery, positions, team, maxPrice, minGames, risingOnly, sort]);
+  }, [deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly, sort]);
 
   function togglePosition(position: string) {
     setPositions((previous) => {
@@ -298,6 +317,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     setTeam("");
     setMaxPrice(null);
     setMinGames(0);
+    setMinPrice(0);
+    setHideOut(false);
     setRisingOnly(false);
   }
 
@@ -313,6 +334,26 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   // La columna de tendencia necesita dos partidos: con uno solo sería una
   // columna entera de guiones.
   const hasTrend = rows.some((player) => (details[String(player.id)]?.recent.length ?? 0) >= 2);
+
+  /** Texto de ayuda de cada celda (lo que antes iba en el `title` de cada td). */
+  function cellTitle(player: Player, key: SortKey): string | undefined {
+    switch (key) {
+      case "price":
+        return priceTitle(player);
+      case "projectedFp":
+        return projectionNote(player);
+      case "fpAvg":
+        return `Último partido: ${num(player.perf.lastFp)} · forma (últimos 5): ${num(player.perf.form)}`;
+      case "minutesAvg":
+        return typeof player.expectedMinutes === "number"
+          ? `Esperados la próxima jornada: ${num(player.expectedMinutes)} min`
+          : undefined;
+      case "difficulty":
+        return nextTitle(player);
+      default:
+        return undefined;
+    }
+  }
 
   /** Contenido de cada celda. Las variaciones que acompañan a una cifra
    *  (precio, forma, minutos) solo aparecen si hay variación. */
@@ -332,14 +373,19 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           <>
             {credits(player.price)}
             <span className="cell-delta">
-              <Delta value={player.priceDeltaLast} digits={2} hideZero />
+              <Delta value={player.priceDeltaLast} digits={1} quiet />
             </span>
           </>
         );
       case "expectedChange":
         return <Revalue player={player} />;
       case "projectedFp":
-        return bar(player.projectedFp);
+        return (
+          <span className="projection-cell">
+            {bar(player.projectedFp)}
+            <PlayRisk player={player} />
+          </span>
+        );
       case "valueProjected":
         return bar(player.valueProjected ?? player.valuePerCredit, 2);
       // Media y forma comparten celda: la forma es la media de los últimos
@@ -349,7 +395,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           <>
             {num(player.perf.fpAvg)}
             <span className="cell-delta">
-              <Delta value={player.perf.formDelta} hideZero />
+              <Delta value={player.perf.formDelta} quiet />
             </span>
           </>
         );
@@ -358,14 +404,21 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           <>
             {num(player.perf.minutesAvg)}
             <span className="cell-delta">
-              <Delta value={player.perf.minutesTrend} hideZero />
+              <Delta value={player.perf.minutesTrend} quiet />
             </span>
           </>
         );
       case "consistency":
         return reliable(player);
       case "difficulty":
-        return num(player.schedule.difficulty, 0);
+        return (
+          <>
+            <span className="muted" style={{ fontSize: "0.8em" }}>
+              {player.schedule.next ? fixtureLabel(player.schedule.next) : ""}
+            </span>{" "}
+            {num(player.schedule.difficulty, 0)}
+          </>
+        );
       case "bargainScore":
         return bar(player.bargainScore, 0, true);
       default:
@@ -503,6 +556,36 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </select>
         </label>
 
+        {hasPrices ? (
+          <label className="control">
+            <span className="control-label">Precio mínimo</span>
+            <select
+              className="select"
+              value={minPrice}
+              onChange={(event) => setMinPrice(Number(event.target.value))}
+            >
+              {[0, 5, 8, 10, 12, 15].map((value) => (
+                <option key={value} value={value}>
+                  {value === 0 ? "Sin mínimo" : `${value} cr o más`}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
+
+        <div className="control">
+          <span className="control-label">Disponibilidad</span>
+          <button
+            type="button"
+            className="chip"
+            aria-pressed={hideOut}
+            onClick={() => setHideOut((value) => !value)}
+            title="Quita a los que están de baja para la próxima jornada o sin inscribir"
+          >
+            Ocultar bajas
+          </button>
+        </div>
+
         <div className="control">
           <span className="control-label">Rotación</span>
           <button
@@ -563,7 +646,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       ) : (
         <>
           {/* -------------------------------------------------- escritorio */}
-          <div className="table-wrap only-wide">
+          <div className="table-wrap only-wide" tabIndex={0} role="region" aria-label="Tabla del mercado">
             <table className="data is-scrollable">
               <thead>
                 <tr>
@@ -605,18 +688,15 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     onClick={(event) => openPlayer(event, player.id)}
                   >
                     <td>
-                      <PlayerCell player={player} />
+                      {/* El botón va en la celda del nombre: una columna más no
+                          cabía a 1440 px. */}
+                      <span className="player-cell-row">
+                        <PlayerCell player={player} />
+                        <AddToSquad id={player.id} name={displayName(player)} compact />
+                      </span>
                     </td>
                     {shownColumns.map((column) => (
-                      <td
-                        key={column.key}
-                        className="num"
-                        title={
-                          column.key === "fpAvg"
-                            ? `Forma (últimos 5): ${num(player.perf.form)}`
-                            : undefined
-                        }
-                      >
+                      <td key={column.key} className="num" title={cellTitle(player, column.key)}>
                         {cell(player, column.key)}
                       </td>
                     ))}
@@ -645,7 +725,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                   <span className="player-card-stats">
                     <span>
                       <b className="num">{num(player.projectedFp)}</b>
-                      <i>proyección</i>
+                      <i>
+                        {playRisk(player) !== null
+                          ? `proy. · ${percent(playRisk(player))} juega`
+                          : `proy. ${player.schedule.next ? fixtureLabel(player.schedule.next) : ""}`}
+                      </i>
                     </span>
                     <span>
                       <b className="num">
@@ -673,6 +757,10 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     </span>
                   </span>
                 </a>
+                {/* Fuera del enlace: un botón dentro de un <a> es HTML inválido. */}
+                <div className="player-card-actions">
+                  <AddToSquad id={player.id} name={displayName(player)} />
+                </div>
               </li>
             ))}
           </ul>
@@ -700,6 +788,32 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   );
 }
 
+/** Aviso de que la proyección lleva descontada la probabilidad de no jugar. */
+function PlayRisk({ player }: { player: Player }) {
+  const risk = playRisk(player);
+  if (risk === null) return null;
+  return (
+    <span className={`play-risk${risk === 0 ? " is-out" : ""}`} aria-label={`${percent(risk)} de que juegue`}>
+      {percent(risk)}
+    </span>
+  );
+}
+
+function nextTitle(player: Player): string | undefined {
+  const next = player.schedule.next;
+  if (!next) return undefined;
+  const turn = turnLabel(next);
+  return [
+    `${fixtureLabel(next)} el ${new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", timeZone: "Europe/Madrid" }).format(new Date(next.date))}`,
+    turn ? `turno ${next.turn} de ${next.turns}` : null,
+    `${percent(next.winProb)} de ganar`,
+    next.restDays !== null ? `${next.restDays} días de descanso` : null,
+    next.doubleWeek ? "semana doble" : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+}
+
 /** Variación de precio esperada, con la probabilidad en el title. Verde/rojo
  *  vía `deltaClass`, como el resto de variaciones de la tabla. */
 function Revalue({ player }: { player: Player }) {
@@ -715,8 +829,21 @@ function Revalue({ player }: { player: Player }) {
   );
 }
 
-/** Con menos de tres partidos la fiabilidad es 0 % por definición, no por el
- *  jugador: se enseña como ausencia. */
+/** Con menos de tres partidos la fiabilidad propia no existe: el pipeline la
+ *  estima con la dispersión encogida hacia el año pasado, y se marca con "≈". */
 function reliable(player: Player): string {
+  if (player.perf.consistency === null || player.perf.consistency === undefined) return "—";
+  if (player.perf.consistencyEstimated) return `≈${percent(player.perf.consistency)}`;
   return (player.perf.gamesPlayed ?? 0) >= 3 ? percent(player.perf.consistency) : "—";
+}
+
+/** Con precios desfasados, el precio es el pendiente: el title dice cuál enseña
+ *  el juego ahora mismo. */
+function priceTitle(player: Player): string | undefined {
+  if (typeof player.priceGame === "number") {
+    return `Precio al cerrar la jornada (${
+      player.pricePendingSource === "modelo" ? "estimado" : "calculado por el juego"
+    }). Ahora mismo en el juego: ${credits(player.priceGame)}.`;
+  }
+  return player.priceDeltaLast ? "Variación en la última jornada" : undefined;
 }

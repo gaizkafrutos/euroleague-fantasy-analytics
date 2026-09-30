@@ -3,15 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import type { SearchEntry } from "@/lib/search";
+
 import PlayerSearch from "./PlayerSearch";
 import { NAV_ITEMS, isCurrent } from "./nav-items";
 
 interface Props {
   round: number;
   totalRounds: number;
+  searchIndex: SearchEntry[];
 }
 
-export default function Header({ round, totalRounds }: Props) {
+export default function Header({ round, totalRounds, searchIndex }: Props) {
   const pathname = usePathname();
 
   return (
@@ -46,11 +49,15 @@ export default function Header({ round, totalRounds }: Props) {
           ))}
         </nav>
 
-        <PlayerSearch />
+        <PlayerSearch index={searchIndex} />
 
         <div className="masthead-tools">
-          <span className="round-pill">
-            Jornada <b>{round}</b>
+          <span className="round-pill" aria-label={`Jornada ${round} de ${totalRounds}`}>
+            <span className="round-word">Jornada</span>
+            <span className="round-short" aria-hidden>
+              J
+            </span>
+            <b>{round}</b>
             <span className="muted">/ {totalRounds}</span>
           </span>
         </div>

@@ -10,6 +10,7 @@ import PriceOutlook from "@/components/advanced/PriceOutlook";
 import ShotChart from "@/components/advanced/ShotChart";
 import GameLogBars from "@/components/charts/GameLogBars";
 import PriceHistory from "@/components/charts/PriceHistory";
+import AddToSquad from "@/components/team/AddToSquad";
 import { PositionBadge, prettyName } from "@/components/ui/primitives";
 import { seasonLabel, sequentialClass } from "@/lib/advanced";
 import { getDetail, getPlayer, getTeam, meta, players } from "@/lib/data";
@@ -23,6 +24,7 @@ import {
   signed,
 } from "@/lib/format";
 import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
+import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
 import { verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
 
@@ -71,7 +73,12 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   const hasGames = (perf.gamesPlayed ?? 0) > 0;
   // La proyección ya no depende de haber jugado esta temporada: se apoya en la
   // anterior (o en el precio) hasta que haya partidos.
-  const hasProjection = typeof player.projectedFp === "number" && player.projectedFp > 0;
+  // Un cero de baja sí es una predicción (no va a jugar): se enseña como 0.
+  const hasProjection =
+    typeof player.projectedFp === "number" &&
+    (player.projectedFp > 0 || player.availability?.level === "out");
+  const risk = playRisk(player);
+  const next = player.schedule.next ?? null;
 
   // El color del club entra solo aquí, y entra dos veces: el halo con el tono
   // del escudo, y los aros con ese mismo tono llevado a una luminosidad fija
@@ -94,24 +101,6 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
     { key: "plusMinusAvg", label: "Más / menos", value: perf.plusMinusAvg, polarity: true },
   ];
   const hasOrbs = [...left, ...right].some((spec) => usable(spec.value));
-
-  const marketRows: Array<[string, number | null | undefined]> = [
-    ["Puntos", player.market.points],
-    ["Rebotes", player.market.rebounds],
-    ["Asistencias", player.market.assists],
-    ["Robos", player.market.steals],
-    ["Pérdidas", player.market.turnovers],
-    ["Tapones", player.market.blocksFavour],
-    ["Tapones recibidos", player.market.blocksAgainst],
-    ["Faltas recibidas", player.market.foulsDrawn],
-    ["Faltas cometidas", player.market.foulsCommitted],
-    ["Tiros fallados", player.market.missedFg],
-    ["Tiros libres fallados", player.market.missedFt],
-  ];
-
-  // Antes de la jornada 1 el mercado devuelve 0.0 en todas las columnas salvo el
-  // precio. Mostrar la rejilla entera a cero parece un fallo del cálculo.
-  const hasMarketStats = marketRows.some(([, value]) => typeof value === "number" && value !== 0);
 
   return (
     <>
@@ -149,14 +138,24 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             {player.height ? <span className="badge">{player.height} cm</span> : null}
             {player.birthDate ? <span className="badge">{age(player.birthDate)} años</span> : null}
             {player.country ? <span className="badge">{player.country}</span> : null}
-            <span className="ficha-price num">
+            <span
+              className="ficha-price num"
+              title={
+                typeof player.priceGame === "number"
+                  ? `Precio al cerrar la jornada. Ahora mismo en el juego: ${credits(player.priceGame)}`
+                  : undefined
+              }
+            >
               {credits(player.price)}
               <small>
-                {player.priceDeltaTotal
-                  ? `${signed(player.priceDeltaTotal)} cr`
-                  : "sin variación"}
+                {priceSinceOpen(player)}
+                {typeof player.priceGame === "number" ? " · pendiente" : ""}
               </small>
             </span>
+            <AddToSquad id={player.id} isCoach={player.isCoach} name={displayName(player)} />
+            <Link className="button-ghost ficha-compare" href={`/comparar?ids=${player.id}`}>
+              Comparar
+            </Link>
           </div>
 
           <div className={`ficha-orbit${hasOrbs ? "" : " is-bare"}`}>
@@ -199,7 +198,13 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 label="Proyección"
                 value={hasProjection ? num(player.projectedFp) : "—"}
                 unit={hasProjection ? "pts" : undefined}
-                note={pctNote(player, "projectedFp")}
+                note={
+                  risk !== null && typeof player.projectedIfPlays === "number"
+                    ? risk === 0
+                      ? `de baja · si jugara ${num(player.projectedIfPlays)}`
+                      : `si juega ${num(player.projectedIfPlays)} · ${percent(risk)}`
+                    : pctNote(player, "projectedFp")
+                }
               />
               <BandItem
                 label="Por crédito"
@@ -209,17 +214,27 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               />
               <BandItem
                 label="Fiabilidad"
-                value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
-                note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
+                value={
+                  perf.consistencyEstimated
+                    ? `≈${percent(perf.consistency)}`
+                    : (perf.gamesPlayed ?? 0) >= 3
+                      ? percent(perf.consistency)
+                      : "—"
+                }
+                note={
+                  perf.consistencyEstimated
+                    ? "estimada"
+                    : (perf.gamesPlayed ?? 0) >= 3
+                      ? pctNote(player, "consistency")
+                      : "3+ partidos"
+                }
               />
               <BandItem
-                label="Forma"
-                value={num(perf.form)}
-                unit={hasGames ? "pts" : undefined}
+                label="Próximo partido"
+                value={next ? fixtureLabel(next) : "—"}
                 note={
-                  // Sin cambio no hay nada que decir: "0,0 vs su media" es ruido.
-                  typeof perf.formDelta === "number" && Math.abs(perf.formDelta) >= 0.05
-                    ? `${signed(perf.formDelta)} vs su media`
+                  next
+                    ? [turnLabel(next), `${percent(next.winProb)} gana`].filter(Boolean).join(" · ")
                     : null
                 }
               />
@@ -462,35 +477,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             </dl>
           </div>
 
-        <div className="card">
-          <div className="card-head">
-            <div>
-              <div className="card-title">Medias según el propio Fantasy</div>
-              <p className="card-note" style={{ margin: "4px 0 0" }}>
-                Lo que devuelve el mercado del juego. Sirve de contraste con lo calculado
-                aquí desde los boxscores.
-              </p>
-            </div>
-          </div>
-          {hasMarketStats ? (
-            <div className="grid grid-4">
-              {marketRows.map(([label, value]) => (
-                <div key={label}>
-                  <div className="tile-label">{label}</div>
-                  <div className="num" style={{ fontSize: "1.1rem", fontWeight: 600 }}>
-                    {num(value)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="muted" style={{ margin: 0 }}>
-              El mercado todavía no publica medias: devuelve ceros en todas las columnas
-              hasta que se juega la primera jornada. Una rejilla de ceros no dice nada, así
-              que se muestra esto en su lugar.
-            </p>
-          )}
-        </div>
+          <ProjectionBreakdown player={player} />
         </div>
       </section>
 
@@ -505,6 +492,75 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         </p>
       </section>
     </>
+  );
+}
+
+/** De dónde sale la cifra de la proyección, paso a paso: minutos por ritmo,
+ *  ajustado por rival y campo, y multiplicado por la probabilidad de jugar.
+ *  La tarjeta de medias del propio Fantasy que había aquí repetía los mismos
+ *  números de caja que ya están en los globos. */
+function ProjectionBreakdown({ player }: { player: Player }) {
+  const next = player.schedule.next ?? null;
+  const outlook = player.outlook ?? null;
+  if (player.isCoach) {
+    return (
+      <div className="card">
+        <div className="card-head">
+          <div>
+            <h2 className="card-title">Cómo sale su proyección</h2>
+            <p className="card-note" style={{ margin: "4px 0 0" }}>
+              El entrenador solo puntúa por el marcador: +10/+20/+25 al ganar por 1-10, 11-20 o
+              más, −5/−10/−20 al perder. Se proyecta con el margen esperado del partido.
+            </p>
+          </div>
+        </div>
+        <dl className="fact-list">
+          <Row label="Próximo partido" value={next ? fixtureLabel(next) : "—"} />
+          <Row label="Probabilidad de ganar" value={next ? percent(next.winProb) : "—"} />
+          <Row label="Margen esperado" value={next ? `${signed(next.expectedMargin)} pts` : "—"} />
+          <Row label="Puntos esperados" value={num(player.projectedFp)} />
+        </dl>
+      </div>
+    );
+  }
+  const ifPlays = player.projectedIfPlays ?? null;
+  const minutes = player.expectedMinutes ?? null;
+  const opp = player.matchup?.opponentFactor ?? null;
+  const home = player.matchup?.homeFactor ?? null;
+  const rate =
+    ifPlays !== null && minutes && opp && home ? ifPlays / (minutes * opp * home) : null;
+  const factor = (value: number | null) =>
+    value === null ? "—" : Math.round((value - 1) * 100) === 0 ? "neutro" : `${signed((value - 1) * 100, 0)} %`;
+  const source = player.availability?.level ? "según el parte" : "según su historial";
+  return (
+    <div className="card">
+      <div className="card-head">
+        <div>
+          <h2 className="card-title">Cómo sale su proyección</h2>
+          <p className="card-note" style={{ margin: "4px 0 0" }}>
+            Minutos esperados por puntos por minuto, ajustado por el rival y el campo, y
+            multiplicado por la probabilidad de que juegue.{" "}
+            <Link href="/metodologia#proyeccion">Detalles</Link>
+          </p>
+        </div>
+      </div>
+      <dl className="fact-list">
+        <Row label="Minutos esperados" value={minutes === null ? "—" : `${num(minutes)} min`} />
+        <Row label="Puntos por minuto" value={num(rate, 2)} />
+        <Row label={`Rival${next ? ` (${fixtureLabel(next)})` : ""}`} value={factor(opp)} />
+        <Row label={next ? (next.home ? "En casa" : "Fuera") : "Campo"} value={factor(home)} />
+        <Row label="Si juega" value={ifPlays === null ? "—" : `${num(ifPlays)} pts`} />
+        <Row label={`Probabilidad de jugar (${source})`} value={percent(player.playProb ?? null)} />
+        <Row label="Proyección (esperada)" value={`${num(player.projectedFp)} pts`} />
+        {outlook ? (
+          <Row
+            label="Horquilla p25–p75 · techo p90"
+            value={`${num(outlook.floor)}–${num(outlook.ceiling)} · ${num(outlook.p90 ?? null)}`}
+          />
+        ) : null}
+        <Row label="Último partido" value={`${num(player.perf.lastFp)} pts`} />
+      </dl>
+    </div>
   );
 }
 
@@ -568,7 +624,7 @@ function BandItem({
         {value}
         {unit ? <em>{unit}</em> : null}
       </dd>
-      {note ? <span className="num">{note}</span> : null}
+      {note ? <dd className="num dl-note">{note}</dd> : null}
     </div>
   );
 }
@@ -613,4 +669,12 @@ function age(birthDate: string): number {
   const monthDelta = now.getMonth() - born.getMonth();
   if (monthDelta < 0 || (monthDelta === 0 && now.getDate() < born.getDate())) years -= 1;
   return years;
+}
+
+/** Variación desde la primera captura de la temporada, al precio que se paga
+ *  (el pendiente, si el juego aún no ha revalorizado). */
+function priceSinceOpen(player: Player): string {
+  if (player.price === null || player.priceOpen === null) return "sin variación";
+  const change = Math.round((player.price - player.priceOpen) * 10) / 10;
+  return change ? `${signed(change)} cr desde el inicio` : "sin variación";
 }

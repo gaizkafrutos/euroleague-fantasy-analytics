@@ -10,9 +10,9 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { positionLabel } from "@/lib/format";
-import { searchPlayers, type SearchEntry } from "@/lib/search-index";
+import { searchPlayers, type SearchEntry } from "@/lib/search";
 
-export default function PlayerSearch() {
+export default function PlayerSearch({ index }: { index: SearchEntry[] }) {
   const router = useRouter();
   const boxRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -23,9 +23,9 @@ export default function PlayerSearch() {
   const [results, setResults] = useState<SearchEntry[]>([]);
 
   useEffect(() => {
-    setResults(searchPlayers(query));
+    setResults(searchPlayers(index, query));
     setActive(0);
-  }, [query]);
+  }, [index, query]);
 
   /* Clic fuera: cerrar. */
   useEffect(() => {

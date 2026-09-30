@@ -37,6 +37,10 @@ POSITION_QUOTA = {"G": ROSTER_GUARDS, "F": ROSTER_FORWARDS, "C": ROSTER_CENTERS}
 #: quinteto y dobla. Está en el reglamento de Classic Mode.
 STARTERS = 5
 FULL_SCORING_SLOTS = STARTERS + 1
+#: Holgura en las comparaciones de presupuesto de la heurística. Los precios van
+#: en décimas y la resta en coma flotante se desvía: 100 − 95,4 dejaba 4,5999… y
+#: el entrenador de 4,6 no cabía (óptimo del 26-09, sin entrenador).
+BUDGET_EPS = 1e-6
 
 #: Formaciones permitidas del quinteto (bases-aleros-pívots), según el
 #: reglamento, página "Initial team": 2-2-1, 1-2-2, 2-1-2, 1-3-1 y 3-1-1.
@@ -209,6 +213,8 @@ def optimize(
     excluded: Sequence[str] = (),
     max_per_club: int = MAX_PLAYERS_PER_CLUB,
     coaches: Sequence[Candidate] = (),
+    current: Sequence[str] = (),
+    max_changes: int | None = None,
 ) -> Lineup | None:
     """Mejor plantilla posible de 10 jugadores dentro del presupuesto.
 
@@ -218,6 +224,10 @@ def optimize(
     con todo el presupuesto, que es como se comportaba antes.
 
     `locked` fuerza la inclusión de jugadores; `excluded` los descarta.
+    `current` + `max_changes`: la mejor plantilla a la que se llega desde
+    `current` (jugadores y entrenador) con como mucho ese número de cambios.
+    Solo con el solver exacto: es el patrón con el que se mide el planificador
+    de cambios de la web.
     """
     pool = [c for c in candidates if c.key not in set(excluded) and c.position in POSITION_QUOTA]
     if not pool:
@@ -225,7 +235,9 @@ def optimize(
     coach_pool = [c for c in coaches if c.key not in set(excluded) and c.price > 0]
 
     try:
-        return _optimize_ilp(pool, budget, set(locked), max_per_club, coach_pool)
+        return _optimize_ilp(
+            pool, budget, set(locked), max_per_club, coach_pool, keep=(set(current), max_changes)
+        )
     except ImportError:
         log.warning("PuLP no disponible: usando heurística voraz.")
         return _optimize_greedy(pool, budget, set(locked), max_per_club, coach_pool)
@@ -255,6 +267,7 @@ def _optimize_ilp(
     locked: set[str],
     max_per_club: int,
     coaches: Sequence[Candidate] = (),
+    keep: tuple[set[str], int | None] = (set(), None),
 ) -> Lineup | None:
     """Programación entera con el baremo real del juego.
 
@@ -330,6 +343,13 @@ def _optimize_ilp(
         if key in variables:
             problem += variables[key] == 1
 
+    current, max_changes = keep
+    if current and max_changes is not None:
+        kept = [variables[k] for k in current if k in variables] + [
+            coach_vars[k] for k in current if k in coach_vars
+        ]
+        problem += pulp.lpSum(kept) >= len(current) - max_changes
+
     problem.solve(_silent_solver(pulp))
     if pulp.LpStatus[problem.status] != "Optimal":
         return None
@@ -403,7 +423,7 @@ def _optimize_greedy(
         if clubs.get(candidate.club_code, 0) >= max_per_club:
             continue
         reserve = min_cost_to_complete(positions, skip_position=candidate.position)
-        if spend + candidate.price + reserve > budget:
+        if spend + candidate.price + reserve > budget + BUDGET_EPS:
             continue
         chosen.append(candidate)
 
@@ -425,7 +445,7 @@ def _optimize_greedy(
                     continue
                 if candidate.position != current.position:
                     continue
-                if candidate.price > headroom:
+                if candidate.price > headroom + BUDGET_EPS:
                     continue
                 club_count = clubs.get(candidate.club_code, 0) - (
                     1 if candidate.club_code == current.club_code else 0
@@ -438,7 +458,7 @@ def _optimize_greedy(
                     break
 
     spent = sum(c.price for c in chosen)
-    affordable = [c for c in coaches if c.price <= budget + coach_floor - spent]
+    affordable = [c for c in coaches if c.price <= budget + coach_floor - spent + BUDGET_EPS]
     picked_coach = max(affordable, key=lambda c: (c.projection, -c.price), default=None)
     return _build_lineup(chosen, "greedy", coach=picked_coach)
 

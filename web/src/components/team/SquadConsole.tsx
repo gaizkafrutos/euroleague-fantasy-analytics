@@ -25,37 +25,55 @@ import ScoreRange from "@/components/advanced/ScoreRange";
 import SquadSearch from "@/components/team/SquadSearch";
 import { sdOf, squadRange } from "@/lib/advanced";
 import { AvailabilityTag, Delta, PlayerCell } from "@/components/ui/primitives";
-import { credits, displayName, num, positionLabel, signed } from "@/lib/format";
+import { credits, displayName, num, percent, positionLabel, signed } from "@/lib/format";
+import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
 import {
   DEFAULT_BUDGET,
   MAX_PER_CLUB,
   QUOTA,
   SQUAD_SIZE,
   STARTERS,
+  MIN_GAIN_PER_TRADE,
+  TRADES_PER_ROUND,
   buildSquad,
   checkSquad,
   effectiveProjection,
   extractRosterIds,
   formationOf,
+  manualRoles,
+  planTrades,
   positionWord,
+  rentInRole,
+  roleMultiplier,
+  scoredProjection,
   suggestSwaps,
+  swapInLineup,
+  toManual,
+  tradeWindow,
+  type ManualLineup,
+  type TradePlan,
 } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 
 const STORAGE_KEY = "efa-squad";
-
-export interface NextMatch {
-  opponent: string;
-  home: boolean;
-}
+/** Aparte de la plantilla: `AddToSquad` reescribe `efa-squad` con solo
+ *  `{ ids, coach }` y se llevaría el presupuesto por delante. */
+const BUDGET_KEY = "efa-budget";
+/** La alineación elegida a mano, si la hay. Sin ella, la consola coloca sola. */
+const LINEUP_KEY = "efa-lineup";
 
 interface Props {
   market: Player[];
   coaches: Player[];
   /** El óptimo exacto del pipeline para 100 créditos, si lo hay. */
   optimal?: { playerIds: number[]; coachId: number | null; scored: number | null } | null;
-  /** Próximo rival de cada club, para la línea bajo el nombre. */
-  nextByClub: Record<string, NextMatch>;
+  /** Próxima jornada por jugar y jornadas de la fase regular: deciden si hay
+   *  cuatro cambios o ventana ilimitada. */
+  round: number;
+  regularRounds: number;
+  /** Si el despliegue tiene token y equipo configurados. Sin ellos el botón de
+   *  cargar equipo solo servía para enseñar un aviso técnico a cada visitante. */
+  rosterConfigured?: boolean;
 }
 
 type RosterState =
@@ -70,10 +88,22 @@ interface Stored {
   coach: number | null;
 }
 
-export default function SquadConsole({ market, coaches, optimal, nextByClub }: Props) {
+export default function SquadConsole({
+  market,
+  coaches,
+  optimal,
+  round,
+  regularRounds,
+  rosterConfigured = false,
+}: Props) {
   const [ids, setIds] = useState<number[]>([]);
   const [coachId, setCoachId] = useState<number | null>(null);
   const [budget, setBudget] = useState(DEFAULT_BUDGET);
+  // Lo que se está escribiendo en el campo, que puede estar a medias ("100,").
+  const [budgetText, setBudgetText] = useState(String(DEFAULT_BUDGET));
+  useEffect(() => {
+    setBudgetText((text) => (Number(text.replace(",", ".")) === budget ? text : String(budget)));
+  }, [budget]);
   const [roster, setRoster] = useState<RosterState>({ status: "idle" });
   const [restored, setRestored] = useState(false);
 
@@ -90,22 +120,61 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
   const coach = coachId !== null ? (byId.get(coachId) ?? null) : null;
 
   const check = useMemo(() => checkSquad(squad, budget, coach), [squad, budget, coach]);
-  const { roles } = check;
+
+  /* ------------------------------------------------------ alineación a mano */
+  // Quinteto y sexto puntúan igual, así que la automática ya es la mejor; pero
+  // cada uno alinea como quiere (y en el juego se cambia entre turnos). Con
+  // una alineación a mano, TODAS las cifras de la cancha son las de esa.
+  const [manual, setManual] = useState<ManualLineup | null>(null);
+  const [editing, setEditing] = useState(false);
+  const [picked, setPicked] = useState<number | null>(null);
+  const [lineupError, setLineupError] = useState<string | null>(null);
+  const custom = useMemo(() => manualRoles(squad, manual), [squad, manual]);
+  const roles = custom ?? check.roles;
+  const scored = custom ? Number(scoredProjection(custom, coach).toFixed(2)) : check.scored;
   const swaps = useMemo(
-    () => (squad.length ? suggestSwaps(squad, market, budget, coach) : []),
-    [squad, market, budget, coach],
+    () => (squad.length ? suggestSwaps(squad, market, budget, coach, 5, coaches) : []),
+    [squad, market, budget, coach, coaches],
   );
 
-  // Un jugador de baja rinde 0 por crédito esta jornada, aunque su media sea
-  // buena: va el primero de la lista.
+  // Lo que aporta cada crédito en el sitio que ocupa: el capitán cuenta doble y
+  // el banquillo la mitad. Un jugador de baja rinde 0 y va el primero.
   const weakest = useMemo(
     () =>
       [...squad]
-        .filter((player) => (player.perf.gamesPlayed ?? 0) > 0 || player.availability?.level === "out")
-        .sort((a, b) => rentOf(a) - rentOf(b))
+        .filter((player) => (player.price ?? 0) > 0)
+        .sort((a, b) => rentInRole(roles, a) - rentInRole(roles, b))
         .slice(0, 3),
-    [squad],
+    [squad, roles],
   );
+
+  /* ------------------------------------------------------- plan de cambios */
+  const tradeWin = useMemo(() => tradeWindow(round, regularRounds), [round, regularRounds]);
+  const [tradeLimit, setTradeLimit] = useState<number>(TRADES_PER_ROUND);
+  const [plan, setPlan] = useState<TradePlan | null>(null);
+  const [planning, setPlanning] = useState(false);
+  const full = squad.length >= SQUAD_SIZE && coach !== null;
+  const limit = tradeWin.unlimited ? Infinity : tradeLimit;
+  useEffect(() => {
+    // El plan cuesta de 50 a 600 ms: se calcula después de pintar, y solo con
+    // la plantilla completa y dentro del presupuesto.
+    if (!full || check.free < -1e-6) {
+      setPlan(null);
+      return;
+    }
+    setPlanning(true);
+    const timer = setTimeout(() => {
+      setPlan(planTrades({ players: squad, coach }, market, coaches, budget, limit));
+      setPlanning(false);
+    }, 30);
+    return () => clearTimeout(timer);
+  }, [full, squad, coach, market, coaches, budget, limit, check.free]);
+
+  function applyPlan() {
+    if (!plan) return;
+    setIds(plan.players.map((player) => player.id));
+    setCoachId(plan.coach?.id ?? null);
+  }
 
   // Horquilla de la jornada: cada jugador con su multiplicador real.
   const range = useMemo(() => {
@@ -146,6 +215,14 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
     } catch {
       /* almacenamiento bloqueado o corrupto: se empieza de cero */
     }
+    try {
+      const stored = Number(window.localStorage.getItem(BUDGET_KEY));
+      if (stored >= 50 && stored <= 200) setBudget(stored);
+      const lineup = window.localStorage.getItem(LINEUP_KEY);
+      if (lineup) setManual(JSON.parse(lineup) as ManualLineup);
+    } catch {
+      /* idem */
+    }
     setRestored(true);
   }, []);
 
@@ -156,10 +233,39 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
     try {
       const value: Stored = { ids, coach: coachId };
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
+      window.localStorage.setItem(BUDGET_KEY, String(budget));
+      if (manual) window.localStorage.setItem(LINEUP_KEY, JSON.stringify(manual));
+      else window.localStorage.removeItem(LINEUP_KEY);
     } catch {
       /* idem */
     }
-  }, [ids, coachId, restored]);
+  }, [ids, coachId, budget, manual, restored]);
+
+  // Si la plantilla cambia y la alineación a mano deja de cuadrar (ha salido
+  // alguien de ella), se vuelve a la automática en vez de enseñar algo roto.
+  useEffect(() => {
+    if (restored && manual && squad.length === SQUAD_SIZE && !custom) setManual(null);
+  }, [restored, manual, squad.length, custom]);
+
+  function pick(id: number) {
+    setLineupError(null);
+    if (picked === null) {
+      setPicked(id);
+      return;
+    }
+    if (picked === id) {
+      setPicked(null);
+      return;
+    }
+    const result = swapInLineup(squad, manual ?? toManual(check.roles), picked, id);
+    if ("error" in result) setLineupError(result.error);
+    else setManual(result.lineup);
+    setPicked(null);
+  }
+
+  function makeCaptain(id: number) {
+    setManual({ ...(manual ?? toManual(roles)), captain: id });
+  }
 
   /* ---------------------------------------------------------------- acciones */
   const loadRoster = useCallback(async () => {
@@ -230,8 +336,15 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
     setCoachId(null);
   }
 
-  const full = squad.length >= SQUAD_SIZE && coach !== null;
-  const optimalScored = optimal?.scored ?? null;
+  // El óptimo con TU presupuesto: el del pipeline es a 100 créditos, y pasada
+  // la J1 casi nadie tiene 100. Con otro presupuesto se calcula aquí (voraz +
+  // búsqueda local, a menos de medio punto del exacto en las pruebas).
+  const optimalScored = useMemo(() => {
+    if (Math.abs(budget - DEFAULT_BUDGET) < 1e-9) return optimal?.scored ?? null;
+    if (!full) return null;
+    const built = buildSquad(market, budget, coaches);
+    return built.players.length === SQUAD_SIZE ? checkSquad(built.players, budget, built.coach).scored : null;
+  }, [budget, full, optimal, market, coaches]);
 
   // El quinteto se coloca por puesto, no por proyección: los pívots junto al
   // aro, luego aleros, los bases al perímetro. El del medio ocupa las dos
@@ -245,27 +358,76 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
     <div className="cancha">
       {/* ------------------------------------------------------- controles */}
       <div className="squad-controls">
-        <button type="button" className="chip" onClick={loadRoster}>
-          {roster.status === "loading" ? "Cargando…" : "Cargar mi equipo real"}
-        </button>
+        {rosterConfigured ? (
+          // Es el equipo de la cuenta configurada en el despliegue (la del autor),
+          // no el de quien visita: el texto no puede prometer otra cosa.
+          <button type="button" className="chip" onClick={loadRoster}>
+            {roster.status === "loading" ? "Cargando…" : "Cargar el equipo del autor"}
+          </button>
+        ) : null}
         <button type="button" className="chip" onClick={autofill}>
           Rellenar con el óptimo
         </button>
         <button type="button" className="chip" onClick={clear}>
           Vaciar
         </button>
-        <label className="control squad-budget">
-          <span className="control-label">Presupuesto · {credits(budget)}</span>
-          <input
-            className="slider"
-            type="range"
-            min={80}
-            max={130}
-            step={0.5}
-            value={budget}
-            onChange={(event) => setBudget(Number(event.target.value))}
-          />
-        </label>
+        {/* Deslizador para tantear y campo para la cifra exacta: tras la J1 el
+            presupuesto de cada uno tiene decimales (100,7, por ejemplo), y
+            una décima puede decidir si un jugador cabe. */}
+        <div className="control squad-budget">
+          <span className="control-label" id="budget-label">
+            Presupuesto
+          </span>
+          <span className="budget-row">
+            <input
+              className="slider"
+              type="range"
+              min={80}
+              max={130}
+              step={0.1}
+              value={budget}
+              aria-labelledby="budget-label"
+              onChange={(event) => setBudget(roundBudget(Number(event.target.value)))}
+            />
+            <input
+              className="input num budget-input"
+              type="number"
+              inputMode="decimal"
+              min={50}
+              max={200}
+              step={0.1}
+              value={budgetText}
+              aria-label="Presupuesto en créditos"
+              onChange={(event) => {
+                setBudgetText(event.target.value);
+                const value = Number(event.target.value.replace(",", "."));
+                if (Number.isFinite(value) && value >= 50 && value <= 200) setBudget(roundBudget(value));
+              }}
+              onBlur={() => setBudgetText(String(budget))}
+            />
+          </span>
+        </div>
+        {/* Pasada la J1 el presupuesto de cada uno ya no es 100: es lo que vale
+            su plantilla hoy más lo que tiene en caja. El juego enseña la caja;
+            con ella, la cuenta sale sola. */}
+        {squad.length ? (
+          <label className="control squad-cash">
+            <span className="control-label">En caja</span>
+            <input
+              className="input num"
+              type="number"
+              inputMode="decimal"
+              step={0.1}
+              min={0}
+              value={Number(Math.max(check.free, 0).toFixed(1))}
+              onChange={(event) => {
+                const cash = Number(event.target.value);
+                if (Number.isFinite(cash) && cash >= 0) setBudget(roundBudget(check.spent + cash));
+              }}
+              title="Los créditos que te quedan en el juego. Tu presupuesto es lo que vale tu plantilla hoy más esto."
+            />
+          </label>
+        ) : null}
       </div>
 
       {roster.status === "unconfigured" || roster.status === "error" ? (
@@ -299,7 +461,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
           </div>
           <ScoreRange
             range={range}
-            optimal={budget === DEFAULT_BUDGET && full ? optimalScored : null}
+            optimal={full ? optimalScored : null}
           />
         </section>
       ) : null}
@@ -310,16 +472,20 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
           <dt>Gastado</dt>
           <dd className="num">
             {num(check.spent)}
-            <em>/{num(budget, 0)}</em>
+            <em>/{num(budget, Number.isInteger(budget) ? 0 : 1)}</em>
           </dd>
-          <small className="num">
+          <dd className="num dl-note">
             {check.free >= 0 ? `${credits(check.free)} libres` : `${credits(-check.free)} de más`}
-          </small>
+          </dd>
         </div>
         <div>
           <dt>Proyección real</dt>
-          <dd className="num">{num(check.scored)}</dd>
-          <small>con capitán ×2 y banquillo ×0,5</small>
+          <dd className="num">{num(scored)}</dd>
+          <dd className="dl-note">
+            {custom && Math.abs(scored - check.scored) > 0.005
+              ? `tu alineación · la mejor da ${num(check.scored)}`
+              : "con capitán ×2 y banquillo ×0,5"}
+          </dd>
         </div>
         <div>
           {full && typeof optimalScored === "number" ? (
@@ -328,16 +494,16 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
               {/* A la par del óptimo no es una subida: sin color. */}
               <dd
                 className={`num ${
-                  Math.abs(check.scored - optimalScored) < 0.05
+                  Math.abs(scored - optimalScored) < 0.05
                     ? ""
-                    : check.scored > optimalScored
+                    : scored > optimalScored
                       ? "delta-up"
                       : "delta-down"
                 }`}
               >
-                {signed(check.scored - optimalScored)}
+                {signed(scored - optimalScored)}
               </dd>
-              <small className="num">respecto a los {num(optimalScored)} del óptimo</small>
+              <dd className="num dl-note">respecto a los {num(optimalScored)} del óptimo con {credits(budget)}</dd>
             </>
           ) : (
             <>
@@ -346,7 +512,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                 {squad.length + (coach ? 1 : 0)}
                 <em>/11</em>
               </dd>
-              <small>
+              <dd className="dl-note">
                 {(Object.keys(QUOTA) as Array<keyof typeof QUOTA>)
                   .map(
                     (position) =>
@@ -354,7 +520,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                   )
                   .join(" · ")}
                 {coach ? "" : " · sin entrenador"}
-              </small>
+              </dd>
             </>
           )}
         </div>
@@ -364,7 +530,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
             {topClub ? topClub[1] : 0}
             <em>máx. {MAX_PER_CLUB}</em>
           </dd>
-          <small>{topClub ? topClub[0] : "—"}</small>
+          <dd className="dl-note">{topClub ? topClub[0] : "—"}</dd>
         </div>
       </dl>
 
@@ -413,7 +579,51 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
               Bases, aleros y pívots en pista. El reglamento solo admite 2-2-1, 1-2-2, 2-1-2,
               1-3-1 y 3-1-1: siempre al menos uno de cada puesto.
             </p>
+            {squad.length === SQUAD_SIZE ? (
+              <div className="lineup-tools">
+                <button
+                  type="button"
+                  className="chip"
+                  aria-pressed={editing}
+                  onClick={() => {
+                    setEditing((value) => !value);
+                    setPicked(null);
+                    setLineupError(null);
+                  }}
+                >
+                  {editing ? "Listo" : "Colocar a mano"}
+                </button>
+                {custom ? (
+                  <button
+                    type="button"
+                    className="chip"
+                    onClick={() => {
+                      setManual(null);
+                      setPicked(null);
+                      setLineupError(null);
+                    }}
+                  >
+                    Volver a la automática
+                  </button>
+                ) : null}
+              </div>
+            ) : null}
           </div>
+          {editing ? (
+            <p className="lineup-help" role="status">
+              {picked !== null
+                ? "Ahora toca a quien ocupa el sitio al que quieres llevarlo."
+                : "Toca un jugador y luego otro para intercambiar sus sitios (quinteto, sexto o banquillo). La «C» de un titular lo hace capitán."}
+              {custom && Math.abs(scored - check.scored) > 0.005
+                ? ` Tu alineación da ${num(scored)}; la mejor, ${num(check.scored)} (${signed(scored - check.scored)}).`
+                : ""}
+            </p>
+          ) : null}
+          {lineupError ? (
+            <p className="lineup-error" role="alert">
+              {lineupError}
+            </p>
+          ) : null}
           <section className="court" aria-label="Quinteto">
             <svg
               className="court-lines"
@@ -436,9 +646,9 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                     key={player.id}
                     player={player}
                     role={player.id === roles.captain?.id ? "captain" : "starter"}
-                    next={nextByClub[player.club ?? ""]}
                     onRemove={remove}
                     className={mid}
+                    edit={editing ? { picked: picked === player.id, onPick: pick, onCaptain: makeCaptain } : null}
                   />
                 ) : (
                   <EmptySlot key={`vacio-${index}`} label="Quinteto" className={mid} />
@@ -458,8 +668,8 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                 <Token
                   player={roles.sixth}
                   role="sixth"
-                  next={nextByClub[roles.sixth.club ?? ""]}
                   onRemove={remove}
+                  edit={editing ? { picked: picked === roles.sixth.id, onPick: pick } : null}
                 />
               ) : (
                 <EmptySlot label="Sexto hombre" />
@@ -481,8 +691,8 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                     key={player.id}
                     player={player}
                     role="bench"
-                    next={nextByClub[player.club ?? ""]}
                     onRemove={remove}
+                    edit={editing ? { picked: picked === player.id, onPick: pick } : null}
                   />
                 ) : (
                   <EmptySlot key={`banco-${index}`} label="Banquillo" />
@@ -502,7 +712,6 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                 <Token
                   player={coach}
                   role="coach"
-                  next={nextByClub[coach.club ?? ""]}
                   onRemove={remove}
                 />
               ) : (
@@ -511,7 +720,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
             </div>
           </section>
 
-          {full ? <Contribution check={check} coach={coach} /> : null}
+          {full ? <Contribution roles={roles} scored={scored} coach={coach} /> : null}
         </>
       ) : (
         <p className="muted cancha-empty">
@@ -519,6 +728,101 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
           optimizador.
         </p>
       )}
+
+      {/* -------------------------------------------------- plan de cambios */}
+      {full ? (
+        <section className="cancha-section" aria-labelledby="plan-cambios">
+          <div className="cancha-section-head">
+            <h2 id="plan-cambios">Plan de cambios para la J{round}</h2>
+            <p>
+              {tradeWin.unlimited
+                ? "Ventana de cambios ilimitados: el plan lleva tu plantilla hasta lo mejor que cabe en tu presupuesto."
+                : `Hasta ${TRADES_PER_ROUND} cambios por jornada, y el entrenador cuenta como uno. ${
+                    tradeWin.nextUnlimitedAfter
+                      ? `La próxima ventana ilimitada se abre tras la J${tradeWin.nextUnlimitedAfter}.`
+                      : ""
+                  }`}
+            </p>
+          </div>
+          <div className="cancha-panel">
+            {tradeWin.unlimited ? null : (
+              <div className="segmented plan-limit" role="group" aria-label="Cambios que quieres hacer">
+                {[1, 2, 3, 4].map((value) => (
+                  <button
+                    key={value}
+                    type="button"
+                    aria-pressed={tradeLimit === value}
+                    onClick={() => setTradeLimit(value)}
+                  >
+                    {value} {value === 1 ? "cambio" : "cambios"}
+                  </button>
+                ))}
+              </div>
+            )}
+            {check.free < -1e-6 ? (
+              <p className="muted" style={{ margin: 0 }}>
+                Te pasas del presupuesto: ajústalo (o pon lo que tienes en caja) para planificar.
+              </p>
+            ) : planning && !plan ? (
+              <p className="muted" style={{ margin: 0 }}>
+                Calculando…
+              </p>
+            ) : plan && plan.steps.length ? (
+              <>
+                <ol className="plan-steps">
+                  {plan.steps.map((step, index) => (
+                    <li key={index}>
+                      <div>
+                        {step.trades.map((trade) => (
+                          <div key={`${trade.out.id}-${trade.in.id}`} className="plan-trade">
+                            <span className="muted">Sale</span> {displayName(trade.out)}{" "}
+                            <span aria-hidden>→</span> <span className="muted">entra</span>{" "}
+                            <b>{displayName(trade.in)}</b>
+                            <i className="muted num">
+                              {" "}
+                              {trade.in.isCoach ? "entrenador" : positionLabel(trade.in.position)} ·{" "}
+                              {credits(trade.in.price)} ({signed(trade.costDelta)} cr)
+                            </i>
+                          </div>
+                        ))}
+                        {step.trades.length > 1 ? (
+                          <small className="muted">Van juntos: uno libera el dinero del otro.</small>
+                        ) : null}
+                      </div>
+                      <span className="plan-gain num">
+                        <b className="delta-up">{signed(step.gain)}</b>
+                        <i className="muted">→ {num(step.scored)}</i>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="plan-summary">
+                  <span className="num">
+                    {num(plan.before)} → <b>{num(plan.after)}</b> pts ({signed(plan.after - plan.before)}) con{" "}
+                    {plan.used} {plan.used === 1 ? "cambio" : "cambios"} · te quedan{" "}
+                    {credits(budget - plan.spent)}
+                  </span>
+                  <button type="button" className="chip" onClick={applyPlan}>
+                    Aplicar el plan
+                  </button>
+                </div>
+                <p className="card-note" style={{ margin: 0 }}>
+                  Ordenados por lo que ganan y en un orden que siempre cabe en la caja. Cada cifra
+                  recoloca capitán, quinteto y banquillo tras el cambio. Búsqueda local contrastada
+                  con el óptimo exacto: igual en 26 de 30 plantillas de prueba, 0,1 puntos por
+                  debajo de media.
+                </p>
+              </>
+            ) : (
+              <p className="muted" style={{ margin: 0 }}>
+                Con {tradeWin.unlimited ? "cambios ilimitados" : `${tradeLimit} ${tradeLimit === 1 ? "cambio" : "cambios"}`}{" "}
+                ningún cambio gana al menos {num(MIN_GAIN_PER_TRADE)} puntos dentro del presupuesto:
+                no merece la pena gastarlos.
+              </p>
+            )}
+          </div>
+        </section>
+      ) : null}
 
       {/* ----------------------------------------------------- diagnóstico */}
       {squad.length ? (
@@ -528,7 +832,9 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
               <div>
                 <div className="card-title">Lo que menos te renta</div>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Peor relación entre lo que proyecta y lo que ocupa de tu presupuesto.
+                  Puntos que aporta cada crédito en el sitio que ocupa: el capitán cuenta doble y
+                  el banquillo la mitad. Un titular caro que proyecta poco sale aquí antes que un
+                  suplente barato.
                 </p>
               </div>
             </div>
@@ -541,10 +847,15 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
                         lo convierte en un mal jugador, y pintarlo de alarma
                         dice algo que el dato no dice. El orden ya ordena. */}
                     <span className="rank-value">
-                      {num(rentOf(player), 2)}
+                      {num(rentInRole(roles, player), 2)}
                       <span className="muted" style={{ fontSize: "0.7em", fontWeight: 500 }}>
                         {" "}
-                        pts/cr
+                        pts/cr{" "}
+                        {roleMultiplier(roles, player) === 0.5
+                          ? "· banquillo"
+                          : roleMultiplier(roles, player) === 2
+                            ? "· capitán"
+                            : ""}
                       </span>
                     </span>
                   </li>
@@ -552,7 +863,7 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
               </ol>
             ) : (
               <p className="muted" style={{ margin: 0 }}>
-                Sin partidos jugados todavía para valorar el rendimiento.
+                Sin precios para valorar el rendimiento.
               </p>
             )}
           </div>
@@ -562,9 +873,10 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
               <div>
                 <div className="card-title">Fichajes que caben</div>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Mejor recambio por puesto dentro de tus {credits(Math.max(check.free, 0))} libres
-                  más lo que recuperas al vender. La ganancia es la real: si el fichaje acaba en el
-                  banquillo, suma la mitad. Nunca propone a nadie de baja o sin inscribir.
+                  Mejor recambio por puesto (entrenador incluido) dentro de tus{" "}
+                  {credits(Math.max(check.free, 0))} libres más lo que recuperas al vender. La
+                  ganancia es la real: si el fichaje acaba en el banquillo, suma la mitad. Nunca
+                  propone a nadie de baja o sin inscribir.
                 </p>
               </div>
             </div>
@@ -619,21 +931,34 @@ export default function SquadConsole({ market, coaches, optimal, nextByClub }: P
 
 type TokenRole = "captain" | "starter" | "sixth" | "bench" | "coach";
 
+interface TokenEdit {
+  picked: boolean;
+  onPick: (id: number) => void;
+  onCaptain?: (id: number) => void;
+}
+
 function Token({
   player,
   role,
-  next,
   onRemove,
   className = "",
+  edit = null,
 }: {
   player: Player;
   role: TokenRole;
-  next?: NextMatch;
   onRemove: (id: number) => void;
   className?: string;
+  edit?: TokenEdit | null;
 }) {
+  const next = player.schedule?.next ?? null;
+  const turn = turnLabel(next);
+  const risk = playRisk(player);
   const name = displayName(player);
   const surname = name.includes(" ") ? name.slice(name.indexOf(" ") + 1) : name;
+  // Si la foto no carga, el escudo; si tampoco, el hueco limpio. Antes se veía
+  // el icono de imagen rota del navegador en mitad de la cancha.
+  const [photoBroken, setPhotoBroken] = useState(false);
+  const [crestBroken, setCrestBroken] = useState(false);
   const projection = player.projectedFp === null ? null : effectiveProjection(player);
   const shown =
     projection === null
@@ -646,7 +971,7 @@ function Token({
   const isCoach = role === "coach";
   const sub = [
     isCoach ? "Entrenador" : positionLabel(player.position),
-    next ? `${next.home ? "vs" : "@"} ${next.opponent}` : null,
+    next ? fixtureLabel(next) : null,
   ]
     .filter(Boolean)
     .join(" · ");
@@ -655,25 +980,66 @@ function Token({
     <div
       className={`tok pos-${isCoach ? "E" : (player.position ?? "X")}${
         role === "bench" ? " is-bench" : ""
-      }${isCoach ? " is-coach" : ""}${player.availability?.level === "out" ? " is-out" : ""}${className}`}
+      }${isCoach ? " is-coach" : ""}${player.availability?.level === "out" ? " is-out" : ""}${
+        edit ? " is-editing" : ""
+      }${edit?.picked ? " is-picked" : ""}${className}`}
     >
       {role === "captain" ? <span className="cap-badge">Capitán ×2</span> : null}
-      <button
-        type="button"
-        className="tok-remove"
-        onClick={() => onRemove(player.id)}
-        aria-label={`Quitar a ${name}`}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-          <path d="M7 7l10 10M17 7 7 17" strokeLinecap="round" />
-        </svg>
-      </button>
+      {edit ? (
+        <>
+          {/* Toda la ficha es el botón: en el móvil, apuntar a algo pequeño
+              para mover a un jugador es una lotería. */}
+          <button
+            type="button"
+            className="tok-pick"
+            aria-pressed={edit.picked}
+            aria-label={edit.picked ? `${name} elegido: toca a otro para intercambiarlos` : `Mover a ${name}`}
+            onClick={() => edit.onPick(player.id)}
+          />
+          {edit.onCaptain && role === "starter" ? (
+            <button
+              type="button"
+              className="tok-cap"
+              aria-label={`Hacer capitán a ${name}`}
+              title="Hacer capitán"
+              onClick={() => edit.onCaptain?.(player.id)}
+            >
+              C
+            </button>
+          ) : null}
+        </>
+      ) : (
+        <button
+          type="button"
+          className="tok-remove"
+          onClick={() => onRemove(player.id)}
+          aria-label={`Quitar a ${name}`}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <path d="M7 7l10 10M17 7 7 17" strokeLinecap="round" />
+          </svg>
+        </button>
+      )}
 
       <div className="tok-shot">
-        {player.image ? (
-          <Image src={player.image} alt="" width={750} height={1000} sizes="100px" />
-        ) : player.clubCrest ? (
-          <Image className="tok-shot-crest" src={player.clubCrest} alt="" width={42} height={42} />
+        {player.image && !photoBroken ? (
+          <Image
+            src={player.image}
+            alt=""
+            width={750}
+            height={1000}
+            sizes="100px"
+            onError={() => setPhotoBroken(true)}
+          />
+        ) : player.clubCrest && !crestBroken ? (
+          <Image
+            className="tok-shot-crest"
+            src={player.clubCrest}
+            alt=""
+            width={42}
+            height={42}
+            onError={() => setCrestBroken(true)}
+          />
         ) : null}
       </div>
 
@@ -690,14 +1056,31 @@ function Token({
             </Link>
           )}
         </div>
-        <div className="tok-sub">{sub}</div>
+        <div className="tok-sub">
+          {sub}
+          {turn ? (
+            <span className="turn-tag" title={`Juega en el turno ${next?.turn} de ${next?.turns}`}>
+              {turn}
+            </span>
+          ) : null}
+        </div>
         {player.availability ? (
           <div className="tok-avail">
             <AvailabilityTag player={player} />
           </div>
         ) : null}
         <div className="tok-figs">
-          <span className="tok-proj num">{num(shown)}</span>
+          <span
+            className="tok-proj num"
+            title={
+              risk !== null && typeof player.projectedIfPlays === "number"
+                ? `Si juega, ${num(player.projectedIfPlays)}; ${percent(risk)} de que juegue`
+                : undefined
+            }
+          >
+            {num(shown)}
+            {risk !== null ? <small className="play-risk">{percent(risk)}</small> : null}
+          </span>
           <span className="tok-price num">{credits(player.price)}</span>
         </div>
         {projection !== null && role === "captain" ? (
@@ -729,13 +1112,14 @@ function EmptySlot({ label, className = "" }: { label: string; className?: strin
  *  La rampa es ordinal (del capitán, que más aporta por jugador, al banquillo)
  *  y va en un solo tono; el entrenador, que es otra cosa, va en neutro. */
 function Contribution({
-  check,
+  roles,
+  scored,
   coach,
 }: {
-  check: ReturnType<typeof checkSquad>;
+  roles: ReturnType<typeof checkSquad>["roles"];
+  scored: number;
   coach: Player | null;
 }) {
-  const { roles } = check;
   const p = effectiveProjection;
   const captainPts = p(roles.captain) * 2;
   const restPts = roles.starters
@@ -777,7 +1161,7 @@ function Contribution({
   return (
     <section className="cancha-section">
       <div className="cancha-section-head">
-        <h2>De dónde salen los {num(check.scored)}</h2>
+        <h2>De dónde salen los {num(scored)}</h2>
         <p>Proporciones reales sobre el total proyectado.</p>
       </div>
       <div className="cancha-panel">
@@ -823,8 +1207,7 @@ function Contribution({
   );
 }
 
-/** Puntos por crédito que rinde esta jornada: 0 si está de baja. */
-function rentOf(player: Player): number {
-  if (player.availability?.level === "out") return 0;
-  return player.valueProjected ?? player.valuePerCredit ?? 0;
+/** Los créditos del juego van en décimas: 100,70000000001 es 100,7. */
+function roundBudget(value: number): number {
+  return Math.round(value * 10) / 10;
 }

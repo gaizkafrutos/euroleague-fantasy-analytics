@@ -55,8 +55,11 @@ def take_snapshot(
     *,
     matchday_id: int | None = None,
     label: str | None = None,
-) -> Path:
+) -> Path | None:
     """Captura el mercado completo y lo persiste.
+
+    Devuelve None si el mercado es idéntico al último snapshot (y no se ha
+    pedido una etiqueta, que fuerza a guardarlo).
 
     `label` permite etiquetar el snapshot con la jornada (ej. "R03"), lo que
     hace el histórico mucho más legible que una marca de tiempo suelta.
@@ -71,6 +74,13 @@ def take_snapshot(
 
     columns, players = client.fetch_market(matchday_id=matchday_id)
     frame = market_to_frame(columns, players, captured_at)
+
+    # Con cuatro capturas al día, la mayoría no traen nada nuevo. Guardarlas
+    # llenaría el histórico de puntos repetidos y haría creer que hay "12
+    # capturas" cuando el precio no se ha movido ni una vez.
+    if label is None and same_market(frame, latest_snapshot()):
+        log.info("Mercado idéntico al último snapshot: no se guarda uno nuevo.")
+        return None
 
     # Importación local para no crear un ciclo: `demo` ya depende de este módulo.
     from efa import demo
@@ -102,6 +112,27 @@ def take_snapshot(
 
     log.info("Snapshot guardado: %s (%d jugadores)", parquet_path.name, len(frame))
     return parquet_path
+
+
+#: Lo que tiene que cambiar para que merezca la pena guardar otra captura.
+MARKET_KEY_COLUMNS = ["fantaking_id", "quotation", "plus", "fpt"]
+
+
+def same_market(frame: pd.DataFrame, previous: pd.DataFrame) -> bool:
+    """¿Mismos jugadores con el mismo precio, variación y media?"""
+    if previous.empty:
+        return False
+    cols = [c for c in MARKET_KEY_COLUMNS if c in frame.columns and c in previous.columns]
+    if "quotation" not in cols:
+        return False
+
+    def norm(df: pd.DataFrame) -> pd.DataFrame:
+        out = df[cols].copy()
+        for column in cols[1:]:
+            out[column] = pd.to_numeric(out[column], errors="coerce").round(2)
+        return out.sort_values("fantaking_id").reset_index(drop=True)
+
+    return norm(frame).equals(norm(previous))
 
 
 def _update_index(entry: dict[str, Any]) -> None:

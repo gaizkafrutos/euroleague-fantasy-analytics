@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import pandas as pd
+import pytest
 
 from efa.metrics import schedule_difficulty, team_box_stats
 
@@ -96,3 +97,27 @@ def test_los_colores_de_club_se_leen_del_csv():
         assert entry["halo"].startswith("#")
         assert entry["statDark"].startswith("#")
         assert entry["statLight"].startswith("#")
+
+
+def test_rating_de_equipo_encogido_hacia_la_temporada_anterior():
+    """Tras la J1 el calendario salía del margen de un único partido."""
+    import pandas as pd
+
+    from efa.metrics import team_strength
+
+    games = [{
+        "played": True,
+        "local": {"club": {"code": "PAN"}, "score": 91},
+        "road": {"club": {"code": "NEW"}, "score": 72},
+    }]
+    prior = pd.DataFrame([
+        {"club_code": "PAN", "offense": 84.0, "defense": 80.0, "win_rate": 0.6, "net_rating": 4.0, "games": 34},
+    ])
+    raw = team_strength(games).set_index("club_code")
+    shrunk = team_strength(games, prior=prior).set_index("club_code")
+    assert raw.loc["PAN", "net_rating"] == 19.0
+    # 1 partido frente a k=6: pesa 1/7 lo de ahora.
+    assert shrunk.loc["PAN", "net_rating"] == pytest.approx((19 + 6 * 4) / 7, abs=0.05)
+    # Un recién llegado sin año pasado se queda con lo suyo.
+    assert shrunk.loc["NEW", "net_rating"] == raw.loc["NEW", "net_rating"]
+    assert "anterior" in shrunk["source"].iloc[0]

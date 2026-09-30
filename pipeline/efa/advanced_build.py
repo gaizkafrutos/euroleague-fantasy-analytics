@@ -21,6 +21,7 @@ y la web dice de dónde sale cada cifra.
 """
 from __future__ import annotations
 
+import json
 import logging
 import math
 from typing import Any
@@ -48,8 +49,24 @@ from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE
 from efa.gamelogs import build_gamelog
 from efa.ingest.official import load_boxscores, load_player_stats, load_reference
 from efa.ingest.playbyplay import load_pbp, shots_frame
+from efa.matchmodel import coach_outcomes, coach_prob_above, coach_quantile, coach_sd
 
 log = logging.getLogger(__name__)
+
+
+def _load_z_quantiles() -> dict[str, float]:
+    """Residuos del backtest en unidades de su RMSE (ver `efa backtest`)."""
+    from efa.config import PROCESSED_DIR
+
+    path = PROCESSED_DIR / "projection_backtest.json"
+    default = {"p10": -1.14, "p25": -0.68, "p50": -0.12, "p75": 0.56, "p90": 1.32}
+    try:
+        return {**default, **json.loads(path.read_text(encoding="utf-8"))["season"]["zQuantiles"]}
+    except (OSError, KeyError, ValueError):
+        return default
+
+
+Z_QUANTILES = _load_z_quantiles()
 
 #: Partidos de esta temporada a partir de los cuales ya no se mira la anterior.
 CURRENT_ENOUGH = 5
@@ -139,7 +156,7 @@ def _projection_sd(
     sd_prior, n_prior = stds(prior)
     out: dict[int, float] = {}
     for record in records:
-        proj = _num(record.get("projectedFp")) or 0.0
+        proj = _num(record.get("projectedIfPlays")) or _num(record.get("projectedFp")) or 0.0
         if record.get("isCoach"):
             out[int(record["id"])] = COACH_SD
             continue
@@ -182,8 +199,192 @@ def _price_frame(market: pd.DataFrame, crosswalk: pd.DataFrame, current: pd.Data
 
 
 # ---------------------------------------------------------------------------
+# Frescura de los precios y precio pendiente
+# ---------------------------------------------------------------------------
+#: Un partido dura unas dos horas: lo que empezó antes de captura − 2 h ya
+#: estaba reflejado en `plus` cuando se capturó.
+GAME_DURATION = pd.Timedelta(hours=2)
+#: Lo que el juego resta a quien no juega (J1: −0,1 en todos los casos vistos).
+DNP_PRICE_CHANGE = -0.1
+
+
+def _game_time(game: dict[str, Any]) -> pd.Timestamp | None:
+    stamp = pd.to_datetime(game.get("utcDate"), utc=True, errors="coerce")
+    return None if pd.isna(stamp) else stamp
+
+
+def _club(game: dict[str, Any], side: str) -> str | None:
+    return ((game.get(side) or {}).get("club") or {}).get("code")
+
+
+def price_freshness(
+    history: pd.DataFrame, games: list[dict[str, Any]]
+) -> dict[str, Any]:
+    """¿El último snapshot ya lleva la revalorización de la última jornada jugada?
+
+    El juego calcula la variación (`plus`) en cuanto acaba cada partido, pero no
+    la aplica a la cotización hasta que se cierra la jornada. Hay dos formas de
+    quedarse con precios viejos, y las dos pasaron con la J1:
+
+      1. capturar con la jornada a medias (partidos jugados después de la captura);
+      2. capturar con la jornada terminada pero antes de que el juego aplique los
+         precios: los que tienen `plus` ≠ 0 siguen con la cotización de antes de
+         la jornada.
+    """
+    empty = {"stale": False, "capturedAt": None, "lastGameAt": None, "round": None, "reason": None}
+    if history.empty or "quotation" not in history.columns:
+        return empty
+    captured = pd.to_datetime(history["captured_at"], utc=True).max()
+    played = [(g, _game_time(g)) for g in games if g.get("played") and _game_time(g) is not None]
+    out = {**empty, "capturedAt": captured.isoformat()}
+    if not played:
+        return out
+
+    last_round = max(int(g.get("round") or 0) for g, _ in played)
+    in_round = [t for g, t in played if int(g.get("round") or 0) == last_round]
+    out["round"] = last_round
+    out["lastGameAt"] = max(t for _, t in played).isoformat()
+
+    if any(t >= captured - GAME_DURATION for t in in_round):
+        return {**out, "stale": True, "reason": "captura con la jornada a medias"}
+
+    # Jornada terminada antes de capturar: ¿se aplicó ya la variación?
+    latest = history[history["captured_at"] == captured]
+    before = history[history["captured_at"] < min(in_round)]
+    if before.empty or "plus" not in latest.columns:
+        return out
+    base = before[before["captured_at"] == before["captured_at"].max()]
+    merged = latest.merge(base[["fantaking_id", "quotation"]], on="fantaking_id", suffixes=("", "_base"))
+    movers = merged[pd.to_numeric(merged["plus"], errors="coerce").fillna(0).ne(0)]
+    if len(movers) >= 20 and float((movers["quotation"] != movers["quotation_base"]).mean()) < 0.5:
+        return {**out, "stale": True, "reason": "el juego aún no ha aplicado la revalorización"}
+    return out
+
+
+def pending_prices(
+    records: list[dict[str, Any]],
+    market: pd.DataFrame,
+    log_now: pd.DataFrame,
+    games: list[dict[str, Any]],
+    model: dict[str, Any],
+    freshness: dict[str, Any],
+) -> int:
+    """Rellena `pricePending`: la cotización que tendrá cada uno al cerrar la jornada.
+
+    Quien ya había jugado al capturar lleva la variación del propio juego
+    (`plus`); quien jugó después, la del modelo de precio con su puntuación real;
+    quien no jugó, lo que el juego resta en ese caso. Devuelve cuántos cambian.
+    """
+    if not freshness.get("stale") or freshness.get("round") is None:
+        return 0
+    captured = pd.to_datetime(freshness["capturedAt"], utc=True)
+    last_round = int(freshness["round"])
+    club_game: dict[str, tuple[int, pd.Timestamp]] = {}
+    for game in games:
+        stamp = _game_time(game)
+        if int(game.get("round") or 0) != last_round or not game.get("played") or stamp is None:
+            continue
+        for side in ("local", "road"):
+            club = _club(game, side)
+            if club:
+                club_game[club] = (int(game["gameCode"]), stamp)
+
+    fp: dict[tuple[str, int], float] = {}
+    if not log_now.empty:
+        played = log_now[log_now["played"]]
+        fp = {
+            (str(person), int(code)): float(points)
+            for person, code, points in played[["person_code", "game_code", "fantasy_points"]].itertuples(index=False)
+        }
+    plus = (
+        dict(zip(market["fantaking_id"].astype(int), pd.to_numeric(market["plus"], errors="coerce"), strict=False))
+        if "plus" in market.columns
+        else {}
+    )
+
+    # El juego no baja de su precio mínimo (4,0 en la 2026-27): el modelo sí lo haría.
+    quotes = pd.to_numeric(market.get("quotation"), errors="coerce") if "quotation" in market.columns else None
+    floor = float(quotes.min()) if quotes is not None and quotes.notna().any() else 0.0
+
+    changed = 0
+    for record in records:
+        price = _num(record.get("price"))
+        game = club_game.get(str(record.get("club")))
+        if price is None or price <= 0 or game is None:
+            continue
+        code, stamp = game
+        if stamp < captured - GAME_DURATION:
+            delta, source = plus.get(int(record["id"])), "juego"
+            if delta is None or pd.isna(delta):
+                continue
+        elif record.get("isCoach"):
+            continue  # su variación depende del marcador y no hay modelo para ella
+        else:
+            points = fp.get((str(record.get("personCode")), code))
+            source = "modelo"
+            delta = (
+                DNP_PRICE_CHANGE
+                if points is None
+                else max(-1.5, min(1.5, expected_change(model, points, price)))
+            )
+        pending = round(max(floor, price + float(delta)), 1)
+        if pending != price:
+            record["pricePending"] = pending
+            record["pricePendingSource"] = source
+            changed += 1
+    return changed
+
+
+#: Partidos a partir de los cuales la fiabilidad sale de su propia dispersión.
+RELIABILITY_MIN_GAMES = 3
+
+
+def _early_reliability(records: list[dict[str, Any]]) -> None:
+    """Fiabilidad estimada mientras no hay 3 partidos: 1 − σ/proyección, con la σ
+    encogida hacia el año pasado (la misma que usa la horquilla). Antes la tabla
+    enseñaba "—" en las 330 filas hasta la tercera jornada."""
+    for record in records:
+        perf = record.get("perf") or {}
+        outlook = record.get("outlook") or {}
+        proj = _num(record.get("projectedFp")) or 0.0
+        if (perf.get("gamesPlayed") or 0) >= RELIABILITY_MIN_GAMES or not outlook or proj <= 0:
+            continue
+        perf["consistency"] = round(max(0.0, min(1.0, 1 - outlook["sd"] / proj)), 3)
+        perf["consistencyEstimated"] = True
+
+
+def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
+    """Recalcula el índice de chollo con la probabilidad de subir ya calculada."""
+    from efa.metrics import bargain_score
+
+    frame = pd.DataFrame(
+        {
+            "value_projected": [_num(r.get("valueProjected")) for r in records],
+            "projected_fp": [_num(r.get("projectedFp")) for r in records],
+            "consistency": [_num((r.get("perf") or {}).get("consistency")) for r in records],
+            "minutes_share_trend": [_num((r.get("perf") or {}).get("minutesShareTrend")) for r in records],
+            "rise_prob": [_num((r.get("outlook") or {}).get("riseProb")) for r in records],
+        }
+    )
+    for record, score in zip(records, bargain_score(frame), strict=True):
+        if record.get("bargainScore") is not None:
+            record["bargainScore"] = float(score)
+
+
+# ---------------------------------------------------------------------------
 # Todo junto
 # ---------------------------------------------------------------------------
+def _coach_outcomes(record: dict[str, Any], meta: dict[str, Any]) -> list[tuple[float, float]] | None:
+    """Reparto de puntos del entrenador en su próximo partido, si lo hay."""
+    if not record.get("isCoach"):
+        return None
+    nxt = (record.get("schedule") or {}).get("next")
+    sd = (meta.get("matchModel") or {}).get("marginSd")
+    if not nxt or not sd or nxt.get("expectedMargin") is None:
+        return None
+    return coach_outcomes(float(nxt["expectedMargin"]), float(sd))
+
+
 def apply_advanced(
     *,
     records: list[dict[str, Any]],
@@ -194,6 +395,7 @@ def apply_advanced(
     crosswalk: pd.DataFrame,
     reference: dict[str, Any],
     round_now: int,
+    history: pd.DataFrame | None = None,
 ) -> None:
     """Muta los cuatro objetos añadiendo la capa avanzada."""
     prior_reference = load_reference(PRIOR_SEASON_CODE)
@@ -220,24 +422,66 @@ def apply_advanced(
 
     # ------------------------------------------------------------ precio
     model = fit_price_model(_price_frame(market, crosswalk, log_now))
+    freshness = price_freshness(history if history is not None else market, reference.get("games", []))
+    pending = pending_prices(records, market, log_now, reference.get("games", []), model, freshness)
+    meta["priceFreshness"] = {**freshness, "pending": pending}
+    if freshness.get("stale"):
+        meta.setdefault("warnings", []).append(
+            f"Precios capturados el {freshness['capturedAt'][:16].replace('T', ' ')} UTC: "
+            f"{freshness['reason']} (J{freshness['round']}). "
+            f"Se usa el precio pendiente de {pending} jugadores hasta la próxima captura."
+        )
     sds = _projection_sd(records, log_now, log_prior)
     for record in records:
-        price = _num(record.get("price"))
+        # Puede no jugar: la puntuación es una mezcla (0 con probabilidad 1-p, su
+        # normal con probabilidad p). Var = p·σ² + p(1-p)·μ², con μ lo que hace
+        # si juega. Sin esto, una duda salía con la horquilla de un fijo.
+        prob, cond, sd0 = record.get("playProb"), _num(record.get("projectedIfPlays")), sds.get(int(record["id"]))
+        if prob is not None and cond is not None and sd0 is not None and 0 <= prob < 1:
+            sds[int(record["id"])] = round(math.sqrt(prob * sd0**2 + prob * (1 - prob) * cond**2), 2)
+        # Puntos por crédito con la proyección final (disponibilidad incluida) y
+        # al precio que se paga.
+        pay, proj = _num(record.get("pricePending")) or _num(record.get("price")), _num(record.get("projectedFp"))
+        if pay and proj is not None:
+            record["valueProjected"] = round(proj / pay, 3)
+    for record in records:
+        # El umbral de la próxima jornada se mide contra el precio que tendrá, no
+        # contra uno que el juego ya ha dejado atrás.
+        price = _num(record.get("pricePending")) or _num(record.get("price"))
         proj = _num(record.get("projectedFp"))
         sd = sds.get(int(record["id"]))
         if price is None or price <= 0 or proj is None or sd is None:
             record["outlook"] = None
             continue
         threshold = break_even(model, price)
+        outcomes = _coach_outcomes(record, meta)
+        if outcomes is not None:
+            # El entrenador solo puede sacar seis cifras: su horquilla es la de
+            # esa distribución discreta, no la de una normal.
+            record["outlook"] = {
+                "breakEven": round(threshold, 1),
+                "expectedChange": round(max(-1.5, min(1.5, expected_change(model, proj, price))), 2),
+                "riseProb": round(coach_prob_above(outcomes, threshold), 3),
+                "sd": round(coach_sd(outcomes), 2),
+                "floor": coach_quantile(outcomes, 0.25),
+                "ceiling": coach_quantile(outcomes, 0.75),
+                "p90": coach_quantile(outcomes, 0.9),
+            }
+            continue
         record["outlook"] = {
             "breakEven": round(threshold, 1),
             "expectedChange": round(max(-1.5, min(1.5, expected_change(model, proj, price))), 2),
             "riseProb": round(prob_above(threshold, proj, sd), 3),
             "sd": sd,
-            "floor": round(proj - 0.674 * sd, 1),
-            "ceiling": round(proj + 0.674 * sd, 1),
+            # Cuantiles empíricos del backtest, no ±0,674σ: la puntuación tiene
+            # la cola de arriba más larga que la de abajo.
+            "floor": round(max(0.0, proj + Z_QUANTILES["p25"] * sd), 1),
+            "ceiling": round(proj + Z_QUANTILES["p75"] * sd, 1),
+            "p90": round(proj + Z_QUANTILES["p90"] * sd, 1),
         }
     meta["priceModel"] = {**DEFAULT_PRICE_MODEL, **model}
+    _early_reliability(records)
+    _rebuild_bargain(records)
 
     # ------------------------------------------------------------ tiros
     shots_now = add_zones(shots_frame(SEASON_CODE))

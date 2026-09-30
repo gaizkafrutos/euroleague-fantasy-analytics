@@ -35,6 +35,45 @@ export default function MethodologyPage() {
         <span className="eyebrow">Cómo funciona</span>
       </div>
 
+      {/* Primero las reglas: sin ellas no se entiende ni el óptimo ni la consola. */}
+      <div className="card" style={{ marginBottom: 16 }} id="reglas">
+        <h2 className="card-title">Las reglas en 30 segundos</h2>
+        <ul className="card-note" style={{ margin: "8px 0 0", maxWidth: "76ch", display: "grid", gap: 6 }}>
+          <li>
+            <strong>{num(meta.budget, 0)} créditos</strong> para diez jugadores y un entrenador:
+            4 bases, 4 aleros y 2 pívots. Como mucho 6 del mismo club.
+          </li>
+          <li>
+            El quinteto lleva al menos uno de cada puesto (2-2-1, 1-2-2, 2-1-2, 1-3-1 o 3-1-1).{" "}
+            <strong>Quinteto y sexto hombre puntúan al 100 %</strong>; los cuatro del banquillo, al
+            50 %. El entrenador puntúa por el marcador de su equipo.
+          </li>
+          <li>
+            El <strong>capitán</strong>, que sale del quinteto, <strong>puntúa doble</strong>. Cada
+            jugador suma un 10 % más si su equipo gana.
+          </li>
+          <li>
+            <strong>4 cambios por jornada, y el entrenador cuenta como uno.</strong> Tras las
+            jornadas 6, 13, 18, 23, 28 y 34, y en playoffs, los cambios son ilimitados.
+          </li>
+          <li>
+            Cada jornada se juega en <strong>turnos</strong> (días): entre un turno y el siguiente
+            se puede mover gente entre pista y banquillo y cambiar de capitán.
+          </li>
+          <li>
+            Los precios se revalorizan al cerrar cada jornada, según lo que ha puntuado cada uno
+            frente a lo que cuesta.
+          </li>
+        </ul>
+        <p className="card-note" style={{ marginTop: 10 }}>
+          Reglamento completo en{" "}
+          <a href="https://fantaking.gitbook.io/euroleague-fantasy-challenge-rules">
+            fantaking.gitbook.io
+          </a>
+          .
+        </p>
+      </div>
+
       <div className="grid grid-2">
         <article className="card">
           <h2 className="card-title">1. Estadísticas oficiales</h2>
@@ -60,8 +99,16 @@ export default function MethodologyPage() {
             de cada jugador.
           </p>
           <p className="card-note">
-            Un snapshot completo son cuatro peticiones. Se captura una vez por jornada, y el
-            histórico acumulado es lo que permite ver quién sube y quién baja.
+            Un snapshot completo son cuatro peticiones. Se captura cuatro veces al día y solo se
+            guarda si el mercado ha cambiado: el histórico acumulado es lo que permite ver quién
+            sube y quién baja.
+          </p>
+          <p className="card-note">
+            El juego calcula la variación de cada jugador en cuanto acaba su partido, pero no la
+            aplica al precio hasta que se cierra la jornada. Si la última captura es de antes, la
+            web lo avisa y enseña el <strong>precio pendiente</strong>: la variación que ya
+            publica el juego para quien ha jugado, y la del modelo de precio para quien jugó
+            después. Con los datos de la J1 acertaba 334 de 350 precios al décimo.
           </p>
         </article>
       </div>
@@ -74,7 +121,7 @@ export default function MethodologyPage() {
           separado — y sin eso no hay forma de medir varianza, forma reciente ni cambios de
           rol.
         </p>
-        <div className="table-wrap" style={{ marginTop: 12 }}>
+        <div className="table-wrap" style={{ marginTop: 12 }} tabIndex={0} role="region" aria-label="Baremo de puntuación">
           <table className="data">
             <thead>
               <tr>
@@ -141,25 +188,31 @@ export default function MethodologyPage() {
         </p>
       </div>
 
+      <ProjectionModel />
+
+      <OfficialData />
+
       <div className="grid grid-2" style={{ marginTop: 16 }}>
         <article className="card">
           <h2 className="card-title">Las métricas, una a una</h2>
           <dl className="card-note" style={{ display: "grid", gap: 10, margin: 0 }}>
             <Definition term="Proyección">
-              Mezcla de la media de temporada y la forma de los últimos 5 partidos, dando más
-              peso a la forma conforme se acumulan jornadas, más un ajuste por tendencia de
-              minutos traducida a puntos vía su producción por minuto. Con pocos partidos se
-              encoge hacia la media del año pasado: con n partidos pesa n/(n+5) lo de ahora. A
-              quien llega nuevo a la Euroliga, hacia lo que descuenta su precio.
+              Minutos esperados × puntos por minuto × rival × campo × probabilidad de jugar. El
+              detalle y cuánto acierta, en{" "}
+              <a href="#proyeccion">el modelo de proyección</a>.
             </Definition>
             <Definition term="Umbral de revalorización">
               Los puntos con los que un precio no se mueve. Sale de ajustar la variación que
-              publica el propio juego contra puntos y precio: tras la J1 explica el 98,5 % de
-              las variaciones, y el umbral queda en torno a 1,15 veces el precio.
+              publica el propio juego contra puntos y precio
+              {meta.priceModel ? ` (explica el ${percent(meta.priceModel.r2)} de las variaciones)` : ""},
+              y queda entre 1,0 y 1,1 veces el precio: más alto cuanto más caro es el jugador.
             </Definition>
-            <Definition term="Horquilla">
-              Cada jugador puntúa según una normal con su proyección y su dispersión (también
-              encogida hacia el año pasado). Suelo y techo son los percentiles 25 y 75.
+            <Definition term="Horquilla y techo">
+              Suelo, techo y p90 salen de los errores reales del backtest, no de una normal: la
+              puntuación tiene la cola de arriba más larga que la de abajo (el percentil 75 queda
+              a +0,57 desviaciones y el 25 a −0,68). La dispersión se encoge hacia la del año
+              pasado y, si puede no jugar, suma el riesgo de quedarse en cero. La del entrenador
+              es exacta: solo puede sacar seis cifras. El p90 es el que importa para el capitán.
             </Definition>
             <Definition term="En pista, on/off y quintetos">
               Se reconstruye quién está en pista cada segundo con los cambios del jugada a
@@ -182,13 +235,13 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Fiabilidad">
               Uno menos el coeficiente de variación, acotado entre 0 y 1. Un 70% es un
-              jugador que repite; un 30% es una lotería con la misma media.
+              jugador que repite; un 30% es una lotería con la misma media. Con menos de tres
+              partidos se estima con la dispersión encogida hacia el año pasado, y se marca
+              con «≈».
             </Definition>
-            <Definition term="Presión de precio">
-              Se ajusta una curva rendimiento-precio sobre todo el mercado y se mide el
-              residuo de cada jugador. Las reglas dicen que sube más quien rinde por encima
-              de su banda de precio: esto lo aproxima. No es la fórmula real de Fantaking,
-              que no es pública.
+            <Definition term="Probabilidad de subir">
+              La probabilidad de que puntúe por encima de su umbral de revalorización, con su
+              proyección y su dispersión.
             </Definition>
             <Definition term="Cuota de minutos">
               Porcentaje de los minutos de su equipo que juega. Señal de rol más limpia que
@@ -196,11 +249,26 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Calendario">
               Diferencial medio de los tres próximos rivales, con penalización por jugar
-              fuera, normalizado a 0-100.
+              fuera, normalizado a 0-100. El diferencial de cada club mezcla esta temporada con
+              la anterior: con n partidos pesa n/(n+6) lo de ahora.
+            </Definition>
+            <Definition term="Plan de cambios (Mi equipo)">
+              Desde tu plantilla, los fichajes (hasta 4, entrenador incluido, o ilimitados en
+              ventana) que más suben la puntuación real, dentro de tu presupuesto (valor de tu
+              plantilla + caja) y del tope de club. Búsqueda en haz con cambios sueltos y por
+              parejas, contrastada con el óptimo exacto por programación entera: igual en 26 de
+              30 plantillas de prueba y 0,1 puntos por debajo de media. Los roles se recolocan
+              tras cada cambio y el reparto de roles se comprueba contra fuerza bruta en cada
+              integración.
+            </Definition>
+            <Definition term="Lo que menos te renta">
+              Puntos que aporta cada crédito en el sitio que ocupa: capitán ×2, quinteto y sexto
+              ×1, banquillo ×0,5. Lo que paga tu plantilla es su rendimiento en su sitio, no su
+              valor de mercado.
             </Definition>
             <Definition term="Índice de chollo">
               40% valor por crédito, 25% proyección, 15% fiabilidad, 10% tendencia de rol,
-              10% presión de precio. Pesos a la vista y discutibles a propósito.
+              10% probabilidad de subir. Pesos a la vista y discutibles a propósito.
             </Definition>
           </dl>
         </article>
@@ -213,7 +281,7 @@ export default function MethodologyPage() {
             abreviados de por medio. El emparejamiento va en cascada, de más fiable a menos, y
             lo que no llega al umbral se deja sin cruzar en vez de inventarse.
           </p>
-          <div className="table-wrap" style={{ marginTop: 10 }}>
+          <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Métodos de cruce">
             <table className="data">
               <thead>
                 <tr>
@@ -270,20 +338,28 @@ export default function MethodologyPage() {
         <h2 className="card-title">Límites que conviene tener presentes</h2>
         <ul className="card-note" style={{ margin: 0, maxWidth: "72ch" }}>
           <li>
-            La fórmula de revalorización de precios no es pública. La presión de precio es un
-            proxy razonado, no una predicción exacta.
+            La fórmula de revalorización no es pública. El modelo de precio se ajusta cada día
+            a la variación que publica el juego, pero es una aproximación: a los entrenadores
+            que juegan después de la captura no se les estima el precio pendiente.
           </li>
           <li>
-            No hay datos de lesiones ni de convocatorias. Un jugador lesionado sigue
-            apareciendo con su media histórica hasta que acumula partidos sin jugar.
+            Las lesiones combinan tres partes públicos: BasketNews (el más completo),
+            RotoWire y Basketball Sphere; si uno no responde, siguen los otros. Una baja
+            proyecta 0 y el óptimo no la ficha; una duda cuenta la mitad y un probable, el 90 %.
+            Son probabilidades fijas, no estimadas: el parte no dice más.
           </li>
           <li>
-            La proyección no modela el rival concreto de cada jugador, solo la dificultad
-            agregada del calendario de su equipo.
+            La horquilla de la plantilla suma a los jugadores como si fueran independientes. Los
+            de un mismo equipo se mueven juntos (si el equipo pierde de 30, fallan todos), así
+            que la real es algo más ancha.
           </li>
           <li>
-            El rating de equipo de las primeras jornadas es ruido: hasta que haya media
-            docena de partidos se usa la temporada anterior como referencia.
+            Los turnos permiten cambiar de capitán entre días. La consola elige el que más
+            proyecta; no calcula el valor de esperar a ver el primer turno.
+          </li>
+          <li>
+            El rating de equipo de las primeras jornadas es poco fiable: por eso se encoge hacia
+            la temporada anterior, que manda hasta pasada media docena de partidos.
           </li>
         </ul>
       </div>
@@ -295,6 +371,204 @@ export default function MethodologyPage() {
         {meta.performanceSource.isBaseline ? ` (${meta.performanceSource.source})` : ""}.
       </p>
     </section>
+  );
+}
+
+/** El modelo de proyección y su backtest, con las cifras del último
+ *  `efa backtest` (meta.modelBacktest), no copiadas a mano. */
+function ProjectionModel() {
+  const bt = meta.modelBacktest ?? null;
+  const season = bt?.season;
+  const current = bt?.current;
+  const coach = bt?.coach;
+  const match = meta.matchModel;
+  const buckets = season?.byGames ? Object.entries(season.byGames) : [];
+  return (
+    <div className="card" style={{ marginTop: 16 }} id="proyeccion">
+      <h2 className="card-title">El modelo de proyección</h2>
+      <div className="card-note" style={{ maxWidth: "76ch", display: "grid", gap: 8 }}>
+        <p style={{ margin: 0 }}>
+          <strong>Si juega:</strong> minutos esperados × puntos por minuto × rival × campo.
+        </p>
+        <ul style={{ margin: 0, display: "grid", gap: 4 }}>
+          <li>
+            <strong>Minutos:</strong> media con más peso a los últimos partidos (vida media de 3),
+            encogida hacia sus minutos del año pasado con un colchón de 2 partidos.
+          </li>
+          <li>
+            <strong>Puntos por minuto:</strong> su ritmo de la temporada encogido con un colchón de
+            100 minutos hacia el del año pasado; si llega nuevo, hacia el que descuenta su precio,
+            y si no, hacia el de su puesto.
+          </li>
+          <li>
+            <strong>Rival:</strong> lo que concede ese rival a su puesto frente a la media, a medio
+            peso y encogido con 8 partidos. <strong>Campo:</strong> lo que se puntúa de más en casa.
+          </li>
+          <li>
+            <strong>Probabilidad de jugar:</strong> si hay parte, 0 de baja, 50 % en duda y 90 %
+            probable; si no, la parte de partidos de su club que ha jugado, con colchón de 2. La
+            proyección que se enseña es lo que hace si juega por esa probabilidad; «si juega» va
+            aparte en la ficha, el mercado y el comparador.
+          </li>
+          <li>
+            <strong>Entrenador:</strong> solo puntúa por el marcador. Cada club tiene una fuerza
+            (margen medio ajustado por campo, encogido con 6 partidos hacia el año pasado), el
+            margen esperado es la diferencia más{" "}
+            {match ? `${num(match.homeAdvantage)} puntos de ventaja de campo` : "la ventaja de campo"}, y
+            el resultado se reparte como una normal
+            {match ? ` de ${num(match.marginSd)} puntos de dispersión` : ""}. De ahí la
+            probabilidad de ganar y sus puntos esperados.
+          </li>
+        </ul>
+        {season ? (
+          <p style={{ margin: 0 }}>
+            <strong>Cuánto acierta.</strong> Se predice cada partido de la temporada{" "}
+            {season.code.slice(1)}-{String(Number(season.code.slice(1)) + 1).slice(-2)} solo con los
+            anteriores ({num(season.n, 0)} partidos). Error medio:
+          </p>
+        ) : null}
+      </div>
+      {season ? (
+        <div className="table-wrap" style={{ marginTop: 10, maxWidth: 620 }} tabIndex={0} role="region" aria-label="Backtest de la proyección">
+          <table className="data">
+            <thead>
+              <tr>
+                <th>Partidos jugados antes</th>
+                <th className="num">n</th>
+                <th className="num">Este modelo</th>
+                <th className="num">El anterior</th>
+                <th className="num">Su media</th>
+              </tr>
+            </thead>
+            <tbody>
+              {buckets.map(([bucket, row]) => (
+                <tr key={bucket}>
+                  <td>{bucket.replace("-99", " o más").replace("-", " a ")}</td>
+                  <td className="num">{num(row.n, 0)}</td>
+                  <td className="num">
+                    <strong>{num(row.v2, 2)}</strong>
+                  </td>
+                  <td className="num">{num(row.legacy ?? null, 2)}</td>
+                  <td className="num">{num(row.mean ?? null, 2)}</td>
+                </tr>
+              ))}
+              <tr>
+                <td>
+                  <strong>Total</strong>
+                </td>
+                <td className="num">{num(season.n, 0)}</td>
+                <td className="num">
+                  <strong>{num(season.v2.mae, 2)}</strong>
+                </td>
+                <td className="num">{num(season.legacy?.mae ?? null, 2)}</td>
+                <td className="num">{num(season.mean?.mae ?? null, 2)}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      ) : null}
+      <div className="card-note" style={{ maxWidth: "76ch", marginTop: 10, display: "grid", gap: 6 }}>
+        {season ? (
+          <p style={{ margin: 0 }}>
+            Donde más gana es al principio, que es cuando la media propia no existe: con 1 a 3
+            partidos se equivoca bastante menos que la media y que el modelo anterior. La forma
+            de los últimos cinco no entra: en el backtest, darle peso empeoraba el error.
+          </p>
+        ) : null}
+        {current && current.n > 0 ? (
+          <p style={{ margin: 0 }}>
+            Esta temporada, {num(current.n, 0)} partidos predichos: {num(current.v2.mae, 2)} de error
+            medio
+            {current.prior_mean ? ` (la media del año pasado, ${num(current.prior_mean.mae, 2)})` : ""}.
+            Con tan pocas jornadas la cifra aún se mueve mucho.
+          </p>
+        ) : null}
+        {coach && coach.n > 0 ? (
+          <p style={{ margin: 0 }}>
+            Entrenadores ({num(coach.n, 0)} partidos): {num(coach.model, 2)} de error medio con el
+            modelo de partido frente a {num(coach.mean, 2)} con su media.
+          </p>
+        ) : null}
+        {bt ? (
+          <p style={{ margin: 0 }} className="muted">
+            Backtest del {dateTime(bt.generatedAt)}; se repite en cada captura.
+          </p>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+/** Qué se usa de la Euroliga y qué no. Lo que no entra en la proyección no
+ *  entra porque en el backtest no mejora el error, o porque ya está dentro de
+ *  otra cifra (la puntuación fantasy ya es la valoración más el bonus). */
+function OfficialData() {
+  const rows: Array<[string, string, string]> = [
+    [
+      "Boxscore de cada partido",
+      "Puntos, rebotes, asistencias, robos, pérdidas, tapones puestos y recibidos, faltas recibidas y cometidas, tiros de campo y libres fallados (la puntuación fantasy, partido a partido); minutos, titular, más/menos y valoración; rebotes ofensivos y defensivos y tiros de 2 y de 3 (para los índices de equipo)",
+      "Intentos de «accuracy» y el segundo indicador de titular",
+    ],
+    [
+      "Estadísticas avanzadas por jugador",
+      "Tiro verdadero (TS%), tiro efectivo (eFG%), % de rebote ofensivo y defensivo, ratio de asistencias, pérdidas por posesión, tiros libres por tiro, dobles-dobles y titularidades (percentiles en la ficha)",
+      "% de rebote total, asistencias/pérdidas, posesiones, ratios de intentos de 2 y de 3, triples-dobles, victorias y derrotas, y todo el bloque de reparto de puntos (qué parte viene de libres, de 2 y de 3)",
+    ],
+    [
+      "Jugada a jugada",
+      "Quién está en pista cada segundo: on/off, quintetos, minutos por cuarto y en los finales apretados",
+      "—",
+    ],
+    [
+      "Tiros con coordenadas",
+      "Mapa de tiro en diez zonas frente a la media de la liga",
+      "—",
+    ],
+    [
+      "Calendario y resultados",
+      "Rival, campo, fecha y turno de cada partido; marcadores y prórrogas (puntos del entrenador y modelo de partido)",
+      "—",
+    ],
+    [
+      "Censo",
+      "Posición, altura, país, edad, dorsal, foto y club de jugadores y entrenadores",
+      "—",
+    ],
+  ];
+  return (
+    <div className="card" style={{ marginTop: 16 }} id="datos-oficiales">
+      <h2 className="card-title">Qué se usa de la Euroliga</h2>
+      <p className="card-note" style={{ maxWidth: "76ch" }}>
+        La <strong>proyección</strong> solo usa minutos, puntuación fantasy partido a partido, puesto,
+        lo que concede cada rival a ese puesto, el campo, el calendario y el parte de lesiones. La
+        puntuación fantasy es la valoración oficial (PIR) más el 10 % si gana su equipo, así que
+        «lo que concede el rival» ya es, en la práctica, la valoración que permite a cada puesto. Los
+        porcentajes avanzados describen al jugador en su ficha, pero no entran en la cifra: ya
+        están dentro de lo que puntúa por minuto.
+      </p>
+      <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Datos oficiales usados">
+        <table className="data">
+          <thead>
+            <tr>
+              <th>Fuente</th>
+              <th>Se usa</th>
+              <th>Se descarga pero no se usa</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([source, used, unused]) => (
+              <tr key={source}>
+                <td style={{ fontWeight: 600, whiteSpace: "nowrap" }}>{source}</td>
+                <td style={{ whiteSpace: "normal", minWidth: 260 }}>{used}</td>
+                <td style={{ whiteSpace: "normal", minWidth: 200 }} className="muted">
+                  {unused}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 

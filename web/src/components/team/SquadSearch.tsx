@@ -17,6 +17,7 @@
  */
 import { useId, useMemo, useRef, useState } from "react";
 
+import Avatar from "@/components/ui/Avatar";
 import { AvailabilityTag } from "@/components/ui/primitives";
 import { credits, displayName, initials, normalize, num, positionLabel } from "@/lib/format";
 import {
@@ -343,8 +344,7 @@ export default function SquadSearch({ market, coaches, ids, coach, check, onAdd 
                 onMouseEnter={() => setActive(position)}
               >
                 {player.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img className="avatar" src={player.image} alt="" loading="lazy" />
+                  <Avatar src={player.image} name={player.name ?? player.marketName ?? "?"} />
                 ) : player.clubCrest ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img className="avatar avatar-crest" src={player.clubCrest} alt="" loading="lazy" />

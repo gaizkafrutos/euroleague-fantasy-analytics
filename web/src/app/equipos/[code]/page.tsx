@@ -326,13 +326,15 @@ function Factor({
       </dd>
       {pct !== null ? (
         <>
-          <div className="eq-track" aria-hidden>
-            <div className="eq-fill" style={{ "--p": pct } as CSSProperties} />
-          </div>
-          <span className="eq-cap num">
-            p{pct}
-            {note ? ` · ${note}` : ""}
-          </span>
+          <dd className="dl-note eq-meter">
+            <div className="eq-track" aria-hidden>
+              <div className="eq-fill" style={{ "--p": pct } as CSSProperties} />
+            </div>
+            <span className="eq-cap num">
+              p{pct}
+              {note ? ` · ${note}` : ""}
+            </span>
+          </dd>
         </>
       ) : note ? (
         <span className="eq-cap">{note}</span>

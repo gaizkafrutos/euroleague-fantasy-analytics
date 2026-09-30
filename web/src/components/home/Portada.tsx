@@ -251,10 +251,20 @@ export default function Portada({
                 ))}
               </h1>
               <p className="sub">
-                {seasonLabel} · EuroLeague Fantasy Challenge, con los números delante.
+                {seasonLabel} · Los precios del EuroLeague Fantasy Challenge cruzados con las
+                estadísticas oficiales: quién rinde más de lo que cuesta.
               </p>
-              {/* Solo queda la pausa: los botones de entrada y el "Baja" sobraban.
-                  El vídeo se mueve más de 5 s, así que la pausa no se quita. */}
+              {/* Dos entradas en la primera pantalla: sin ellas, quien llegaba
+                  nuevo tenía que adivinar que había que bajar seis pantallas. */}
+              <nav className="hero-ctas" aria-label="Empezar">
+                <Link href="/mercado" className="hero-cta is-primary">
+                  Ver el mercado
+                </Link>
+                <Link href="/mi-equipo" className="hero-cta">
+                  Montar mi equipo
+                </Link>
+              </nav>
+              {/* El vídeo se mueve más de 5 s, así que la pausa no se quita. */}
               <div className="hero-foot">
                 <button
                   type="button"

@@ -156,9 +156,12 @@ baremo del juego ha cambiado — y conviene enterarse por ahí y no por un ficha
 
 ## Automatización
 
-`.github/workflows/snapshot.yml` captura un snapshot cada mañana, regenera los
-datos y los commitea; Vercel redespliega con el push. Si el token ha caducado,
-avisa pero no rompe la cadena: las estadísticas oficiales se actualizan igual.
+`.github/workflows/snapshot.yml` captura el mercado cuatro veces al día (01:23,
+07:23, 13:23 y 19:23 UTC), regenera los datos y los commitea; Vercel redespliega
+con el push. Una captura idéntica a la anterior no se guarda. Si el juego aún no
+ha aplicado la revalorización de la última jornada, `efa build` lo detecta, avisa
+en la web y usa el precio pendiente. Si la captura falla (token caducado), las
+estadísticas oficiales se commitean igual pero la ejecución sale en rojo.
 
 `.github/workflows/ci.yml` corre tests, lint, comprobación de tipos, build de la
 web y un escaneo que falla si algo con forma de token entra en el repositorio.

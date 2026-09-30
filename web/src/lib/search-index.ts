@@ -1,20 +1,12 @@
-/** Índice de búsqueda para el buscador de la cabecera.
+/** Índice de búsqueda para el buscador de la cabecera. SOLO servidor.
  *
- *  Va en el bundle de todas las páginas, así que lleva lo mínimo: nombre ya
- *  formateado, club, posición y la cadena normalizada con la que se compara.
- *  Son unos 12 KB para 300 jugadores; las fotos se quedan fuera por eso.
+ *  Lo construye el layout y se lo pasa al buscador como prop, así que viaja en
+ *  el HTML de cada página con lo mínimo (nombre, club, posición y la cadena
+ *  normalizada), unos 30 KB, en vez de todo `players.json` en el JS.
  */
 import { displayName, normalize } from "./format";
+import type { SearchEntry } from "./search";
 import { pricedPlayers, rosterPlayers } from "./data";
-
-export interface SearchEntry {
-  id: number;
-  name: string;
-  club: string;
-  position: string | null;
-  /** Nombre + club sin acentos, en minúscula. */
-  haystack: string;
-}
 
 const source = pricedPlayers.length ? pricedPlayers : rosterPlayers;
 
@@ -36,24 +28,4 @@ export const searchIndex: SearchEntry[] = source
   })
   .sort((a, b) => a.name.localeCompare(b.name, "es"));
 
-/** Busca por prefijo de palabra primero y por contenido después.
- *
- *  Escribir "vez" tiene que dar Vezenkov antes que cualquier apellido que
- *  contenga esas letras por dentro. */
-export function searchPlayers(query: string, limit = 7): SearchEntry[] {
-  const needle = normalize(query);
-  if (needle.length < 2) return [];
-
-  const starts: SearchEntry[] = [];
-  const contains: SearchEntry[] = [];
-
-  for (const entry of searchIndex) {
-    const at = entry.haystack.indexOf(needle);
-    if (at === -1) continue;
-    const isWordStart = at === 0 || entry.haystack[at - 1] === " ";
-    (isWordStart ? starts : contains).push(entry);
-    if (starts.length >= limit) break;
-  }
-
-  return [...starts, ...contains].slice(0, limit);
-}
+export type { SearchEntry };

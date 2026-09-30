@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from "next";
 import Header from "@/components/ui/Header";
 import MobileNav from "@/components/ui/MobileNav";
 import { meta } from "@/lib/data";
+import { searchIndex } from "@/lib/search-index";
+import PriceNotice from "@/components/ui/PriceNotice";
 import { body, display } from "@/lib/fonts";
 
 import "./globals.css";
@@ -71,7 +73,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip-link" href="#contenido">
           Saltar al contenido
         </a>
-        <Header round={meta.currentRound} totalRounds={meta.totalRounds} />
+        <Header round={meta.currentRound} totalRounds={meta.totalRounds} searchIndex={searchIndex} />
+        <PriceNotice />
         <main id="contenido">{children}</main>
         <footer className="footer">
           <div className="shell">
@@ -81,7 +84,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               EuroLeague Fantasy Challenge.
             </p>
             <p style={{ margin: "8px 0 0" }} className="num">
-              Datos generados el {new Date(meta.generatedAt).toLocaleString("es-ES")} ·{" "}
+              Datos generados el {new Date(meta.generatedAt).toLocaleString("es-ES")}
+              {meta.lastPriceCapture
+                ? ` · precios capturados el ${new Date(meta.lastPriceCapture).toLocaleString("es-ES")}`
+                : ""}{" "}
+              ·{" "}
               <a href="/metodologia">Cómo se calcula todo</a>
             </p>
           </div>
