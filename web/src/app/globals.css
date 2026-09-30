@@ -129,7 +129,7 @@
   --shadow: none;
 
   /* Tipografía. Escala de 13 pasos; nada funcional por debajo de 12 px.
-     Texto corrido en Inter; titulares y cifras en Archivo, que tiene cifras
+     Texto corrido en Schibsted Grotesk; titulares y cifras en Archivo, que tiene cifras
      tabulares de verdad (mismo ancho para 1111 y 0000) y un eje de anchura
      para condensarlas en columnas estrechas. */
   --text-xs: 0.75rem;
@@ -268,10 +268,11 @@ p {
   color: var(--ink-muted);
 }
 
-/* Cifras dentro de texto: Inter con cifras tabulares. */
+/* Cifras dentro de texto: proporcionales. En Schibsted la coma tabular
+   ocupa el ancho de una cifra ("0 , 1"); las columnas, que sí necesitan
+   alinear, van en Archivo tabular (regla siguiente). */
 .num {
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
+  font-variant-numeric: lining-nums proportional-nums;
 }
 
 /* Cifras como dato: Archivo semicondensada, tabular, alineada a la derecha
@@ -335,7 +336,6 @@ table.data td.num,
 
 .credit {
   color: var(--credit);
-  font-variant-numeric: tabular-nums;
 }
 
 /* --------------------------------------------------------------------------
@@ -532,7 +532,6 @@ table.data td.num,
 .round-pill b {
   color: var(--ink);
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
 }
 
 .icon-button {
@@ -914,6 +913,7 @@ table.data td.num,
   font-variant-numeric: tabular-nums;
   font-weight: 500;
   font-size: 0.8125rem;
+  font-family: var(--font-num);
 }
 
 .delta-up {
@@ -1364,7 +1364,7 @@ table.data th.num {
 
 /* En unidades del viewBox (720–900 de ancho): 14 se ve a unos 11–12 px. */
 .chart text {
-  font-family: var(--font);
+  font-family: var(--font-num);
   font-size: 14px;
   font-variant-numeric: tabular-nums;
   fill: var(--ink-muted);
@@ -1664,7 +1664,6 @@ table.data th.num {
 .verdict-reasons li {
   font-size: 0.9375rem;
   color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
 }
 
 .verdict-reasons li + li::before {
@@ -1835,6 +1834,7 @@ table.data th.num {
   font-size: 0.75rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  font-family: var(--font-num);
 }
 
 .filter-view {
@@ -1983,7 +1983,6 @@ table.data th.num {
   text-transform: uppercase;
   color: var(--ink-muted);
   white-space: nowrap;
-  font-variant-numeric: tabular-nums;
 }
 
 .player-card-bar > span {
@@ -3258,7 +3257,7 @@ table.data th.num {
 
 .portada .beat.is-hero .sub {
   margin: 26px 0 0;
-  /* Hereda el "wght" 620 de las frases y a Inter también le afecta. */
+  /* Hereda el "wght" 620 de las frases y a la fuente de texto también le afecta. */
   font-variation-settings: normal;
   max-width: 34ch;
   font-family: var(--font);
@@ -5505,6 +5504,7 @@ h2.card-title {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   color: var(--ink);
+  font-family: var(--font-num);
 }
 
 .pstrip-dot.div--2 { --zone: var(--div-m2); color: var(--div-ink-m2); }
@@ -5623,7 +5623,7 @@ h2.card-title {
 }
 
 .zone-label {
-  font-family: var(--font);
+  font-family: var(--font-num);
   font-size: 58px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -5787,6 +5787,7 @@ h2.card-title {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   text-align: center;
+  font-family: var(--font-num);
 }
 
 /* --------------------------------------------------------------------------
