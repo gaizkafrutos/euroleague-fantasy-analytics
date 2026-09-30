@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-09-30T13:59:32.890010+00:00",
+ "fetchedAt": "2026-09-30T23:07:52.082561+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "CZV",
    "position": "F",
    "name": "Patrick Baldwin",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -35,6 +35,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "MTA",
+   "position": "G",
+   "name": "John DiBartolomeo",
+   "status": "Out",
+   "round": "",
+   "comment": "Personal"
   },
   {
    "team": "CZV",
@@ -88,7 +96,7 @@
    "team": "HTA",
    "position": "F",
    "name": "Tomer Ginat",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
   },
@@ -128,7 +136,7 @@
    "team": "OLY",
    "position": "G",
    "name": "Cory Joseph",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -144,7 +152,7 @@
    "team": "FBT",
    "position": "G",
    "name": "Shane Larkin",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -152,7 +160,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Joffrey Lauvergne",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Calf"
   },
@@ -168,7 +176,7 @@
    "team": "ZAL",
    "position": "G",
    "name": "Saben Lee",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Hamstring"
   },
@@ -240,7 +248,7 @@
    "team": "OLY",
    "position": "G",
    "name": "George Papas",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -248,7 +256,7 @@
    "team": "KBA",
    "position": "C",
    "name": "Marcio Santos",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -272,7 +280,7 @@
    "team": "HTA",
    "position": "F",
    "name": "Jacob Toppin",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Leg"
   },

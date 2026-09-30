@@ -1,21 +1,21 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 125.78,
- "scoredProjection": 156.08,
- "captain": "3791",
+ "totalPrice": 99.9,
+ "totalProjection": 126.07,
+ "scoredProjection": 151.5,
+ "captain": "3766",
  "starters": [
-  "3791",
+  "3766",
+  "3903",
   "3887",
-  "4233",
-  "3875",
-  "3801"
+  "8846",
+  "7424"
  ],
- "sixth": "8846",
+ "sixth": "4061",
  "bench": [
-  "4061",
-  "3933",
-  "11540",
+  "11521",
+  "3975",
+  "3936",
   "3950"
  ],
  "coach": {
@@ -24,64 +24,64 @@
   "position": "E",
   "club": "PAM",
   "price": 7.7,
-  "projection": 18.39
+  "projection": 12.12
  },
  "players": [
   {
-   "key": "3791",
-   "name": "JONES, CARLIK",
+   "key": "3903",
+   "name": "BRYANT, ELIJAH",
    "position": "G",
-   "club": "PAR",
-   "price": 15.9,
-   "projection": 22.24
+   "club": "HTA",
+   "price": 15.8,
+   "projection": 23.5
   },
   {
    "key": "3887",
    "name": "FRANCISCO, SYLVAIN",
    "position": "G",
    "club": "PAN",
-   "price": 14.9,
-   "projection": 22.05
+   "price": 15.4,
+   "projection": 22.64
   },
   {
-   "key": "3875",
-   "name": "GUDURIC, MARKO",
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
    "position": "G",
-   "club": "MIL",
-   "price": 10.1,
-   "projection": 14.12
+   "club": "ASV",
+   "price": 5.5,
+   "projection": 6.74
   },
   {
-   "key": "11540",
-   "name": "SAINT-SUPERY, MARIO",
+   "key": "3975",
+   "name": "HERRERA, SEBASTIAN",
    "position": "G",
-   "club": "PAM",
-   "price": 4.8,
-   "projection": 5.16
+   "club": "PRS",
+   "price": 5.3,
+   "projection": 6.21
   },
   {
-   "key": "3801",
-   "name": "MELLI, NICOLO",
+   "key": "3766",
+   "name": "VEZENKOV, SASHA",
    "position": "F",
-   "club": "ULK",
-   "price": 8.5,
-   "projection": 12.04
+   "club": "OLY",
+   "price": 18.6,
+   "projection": 24.76
   },
   {
    "key": "4061",
    "name": "MANTZOUKAS, ELEFTHERIOS",
    "position": "F",
    "club": "PAN",
-   "price": 4.8,
-   "projection": 6.36
+   "price": 5.7,
+   "projection": 8.95
   },
   {
-   "key": "3933",
-   "name": "CAVALIERE, LEOPOLD",
+   "key": "3936",
+   "name": "ROGKAVOPOULOS, NIKOLAOS",
    "position": "F",
-   "club": "PRS",
-   "price": 4.8,
-   "projection": 5.48
+   "club": "PAN",
+   "price": 4.9,
+   "projection": 6.15
   },
   {
    "key": "3950",
@@ -89,15 +89,7 @@
    "position": "F",
    "club": "RED",
    "price": 4.2,
-   "projection": 3.66
-  },
-  {
-   "key": "4233",
-   "name": "KABENGELE, MFIONDU",
-   "position": "C",
-   "club": "DUB",
-   "price": 14.8,
-   "projection": 21.09
+   "projection": 3.79
   },
   {
    "key": "8846",
@@ -105,7 +97,15 @@
    "position": "C",
    "club": "PAR",
    "price": 9.5,
-   "projection": 13.58
+   "projection": 13.15
+  },
+  {
+   "key": "7424",
+   "name": "DIARRA, ALIOU",
+   "position": "C",
+   "club": "VIR",
+   "price": 7.3,
+   "projection": 10.18
   }
  ],
  "available": true,

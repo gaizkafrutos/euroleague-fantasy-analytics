@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "013289",
+   "name": "SANTOS, MARCIO",
+   "alias": "SANTOS, MARCIO",
+   "aliasRaw": "SANTOS, MARCIO",
+   "passportName": "MARCIO HENRIQUE",
+   "passportSurname": "DA COSTA SANTOS",
+   "jerseyName": "Marcio",
+   "abbreviatedName": "",
+   "country": {
+    "code": "BRA",
+    "name": "Brazil"
+   },
+   "height": 204,
+   "weight": 120,
+   "birthDate": "2002-11-02T00:00:00",
+   "birthCountry": {
+    "code": "BRA",
+    "name": "Brazil"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-09-30T14:09:48.531",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "21",
+  "dorsalRaw": "21",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "MACCABI TEL AVIV",
+  "externalId": 57048,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "005793",
    "name": "SY, BANDJA",
    "alias": "SY, BANDJA",
@@ -266,9 +326,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
