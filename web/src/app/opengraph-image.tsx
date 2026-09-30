@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { BRAND_RASTER as C, MARK_ON_DARK } from "@/lib/brand";
+import { BRAND_RASTER as C } from "@/lib/brand";
 import { meta, pricedPlayers, rosterPlayers } from "@/lib/data";
 
 /** La tarjeta que sale cuando se pega el enlace en LinkedIn o en WhatsApp.
@@ -17,7 +17,7 @@ export const contentType = "image/png";
 
 /** El símbolo del logotipo, leído del disco en el build y embebido. */
 const markSrc = `data:image/png;base64,${readFileSync(
-  join(process.cwd(), MARK_ON_DARK),
+  join(process.cwd(), "public/brand/mark-on-dark.png"),
 ).toString("base64")}`;
 
 export default function OpengraphImage() {

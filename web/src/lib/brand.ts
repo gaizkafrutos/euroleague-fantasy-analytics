@@ -10,5 +10,7 @@ export const BRAND_RASTER = {
   brand: "#f47a2e",
 } as const;
 
-/** Símbolo compuesto en plano: aro en tinta, barras en el color de marca. */
-export const MARK_ON_DARK = "public/brand/mark-on-dark.png";
+/* El símbolo compuesto (aro en tinta, barras en marca) está en
+   public/brand/mark-on-dark.png. Se lee con una ruta literal en cada fichero:
+   con una constante, el empaquetador no sabe qué fichero es y acaba metiendo
+   el proyecto entero en el código del servidor. */
