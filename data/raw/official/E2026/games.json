@@ -30502,107 +30502,6 @@
   "winner": null
  },
  {
-  "id": "713de83f-4aa5-4f40-b94c-1a655c058d84",
-  "identifier": "E2026_79",
-  "gameCode": 79,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 8,
-  "roundAlias": "Round 8",
-  "roundName": "Round 8",
-  "played": false,
-  "date": "2026-10-28T19:30:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 2,
-  "localDate": "2026-10-28T20:30:00",
-  "utcDate": "2026-10-28T18:30:00Z",
-  "local": {
-   "club": {
-    "code": "BES",
-    "name": "Besiktas Istanbul",
-    "abbreviatedName": "Besiktas",
-    "editorialName": "Besiktas",
-    "tvCode": "BJK",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "OLY",
-    "name": "Olympiacos Piraeus",
-    "abbreviatedName": "Olympiacos",
-    "editorialName": "Olympiacos",
-    "tvCode": "OLY",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
-   "code": "AVG2",
-   "capacity": 10000,
-   "address": "Kazliçesme Mah. 10. Yil Caddesi No: 2/1 Zeytinburnu / Turkiye",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
   "id": "11e66a76-f371-42d7-a4f3-7313dae27dec",
   "identifier": "E2026_77",
   "gameCode": 77,
@@ -30693,6 +30592,107 @@
    "code": "AVN2",
    "capacity": 3800,
    "address": "2 Zahari Stoyanov Str, Botevgrad, 2140, Bulgaria",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
+  "id": "713de83f-4aa5-4f40-b94c-1a655c058d84",
+  "identifier": "E2026_79",
+  "gameCode": 79,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 8,
+  "roundAlias": "Round 8",
+  "roundName": "Round 8",
+  "played": false,
+  "date": "2026-10-28T18:30:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 3,
+  "localDate": "2026-10-28T20:30:00",
+  "utcDate": "2026-10-28T17:30:00Z",
+  "local": {
+   "club": {
+    "code": "BES",
+    "name": "Besiktas Istanbul",
+    "abbreviatedName": "Besiktas",
+    "editorialName": "Besiktas",
+    "tvCode": "BJK",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "OLY",
+    "name": "Olympiacos Piraeus",
+    "abbreviatedName": "Olympiacos",
+    "editorialName": "Olympiacos",
+    "tvCode": "OLY",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
+   "code": "AVG2",
+   "capacity": 10000,
+   "address": "Kazliçesme Mah. 10. Yil Caddesi No: 2/1 Zeytinburnu / Turkiye",
    "images": {
     "medium": null
    },

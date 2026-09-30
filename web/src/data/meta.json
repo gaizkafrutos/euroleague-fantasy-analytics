@@ -1,7 +1,7 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-30T06:57:02.755593+00:00",
+ "generatedAt": "2026-09-30T14:00:17.609683+00:00",
  "currentRound": 2,
  "totalRounds": 38,
  "hasPrices": true,
@@ -24,7 +24,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-09-30T06:56:26.470599+00:00",
+  "generatedAt": "2026-09-30T13:59:39.740318+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -139,11 +139,10 @@
   "source": "RotoWire + Basketball Sphere",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": "2026-09-28T17:42:00",
-  "fetchedAt": "2026-09-30T06:56:20.061792+00:00",
+  "fetchedAt": "2026-09-30T13:59:32.890010+00:00",
   "rows": 107,
   "matched": 71,
   "unmatched": [
-   "Gur Lavy (MTA)",
    "Marcio Santos (KBA)",
    "Mady Sissoko (BJK)",
    "Enzo Shahrvin (Paris)",
@@ -155,10 +154,10 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-09-30T06:56:20.061792+00:00",
+    "fetchedAt": "2026-09-30T13:59:32.890010+00:00",
     "rows": 37,
-    "matched": 34,
-    "flagged": 34
+    "matched": 35,
+    "flagged": 35
    },
    {
     "source": "Basketball Sphere",
@@ -167,14 +166,14 @@
     "fetchedAt": "2026-09-29T07:06:07.842760+00:00",
     "rows": 70,
     "matched": 67,
-    "flagged": 37
+    "flagged": 36
    }
   ],
   "nextRound": 2,
   "unregistered": 7,
   "flagged": {
-   "out": 33,
-   "doubt": 38,
+   "out": 34,
+   "doubt": 37,
    "probable": 7
   }
  },
