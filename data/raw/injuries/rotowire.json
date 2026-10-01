@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-01T07:21:00.253595+00:00",
+ "fetchedAt": "2026-10-01T14:40:42.335445+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -275,6 +275,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "MTA",
+   "position": "C",
+   "name": "Daniel Theis",
+   "status": "Game time",
+   "round": "",
+   "comment": "Ankle"
   },
   {
    "team": "HTA",

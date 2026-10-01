@@ -1,7 +1,7 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-10-01T07:21:30.822175+00:00",
+ "generatedAt": "2026-10-01T14:41:12.287811+00:00",
  "currentRound": 3,
  "totalRounds": 38,
  "hasPrices": true,
@@ -24,7 +24,7 @@
   "marginSd": 12.21
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-01T07:21:07.163453+00:00",
+  "generatedAt": "2026-10-01T14:40:48.176486+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -139,9 +139,9 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-01T07:21:00.253595+00:00",
-  "rows": 38,
-  "matched": 36,
+  "fetchedAt": "2026-10-01T14:40:42.335445+00:00",
+  "rows": 39,
+  "matched": 37,
   "unmatched": [
    "Marcio Santos (KBA)",
    "Mady Sissoko (BJK)"
@@ -151,17 +151,17 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-01T07:21:00.253595+00:00",
-    "rows": 38,
-    "matched": 36,
-    "flagged": 36
+    "fetchedAt": "2026-10-01T14:40:42.335445+00:00",
+    "rows": 39,
+    "matched": 37,
+    "flagged": 37
    }
   ],
   "nextRound": 3,
   "unregistered": 14,
   "flagged": {
    "out": 27,
-   "doubt": 23,
+   "doubt": 24,
    "probable": 0
   }
  },
