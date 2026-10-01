@@ -1,13 +1,13 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-09-30T23:08:35.275554+00:00",
+ "generatedAt": "2026-10-01T07:21:30.822175+00:00",
  "currentRound": 3,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 17,
- "lastPriceCapture": "2026-09-30T23:07:53.318098+00:00",
+ "priceSnapshots": 18,
+ "lastPriceCapture": "2026-10-01T07:21:01.490195+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -24,7 +24,7 @@
   "marginSd": 12.21
  },
  "modelBacktest": {
-  "generatedAt": "2026-09-30T23:07:58.158181+00:00",
+  "generatedAt": "2026-10-01T07:21:07.163453+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -136,57 +136,43 @@
   ]
  },
  "injuries": {
-  "source": "RotoWire + Basketball Sphere",
+  "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
-  "updatedAt": "2026-09-28T17:42:00",
-  "fetchedAt": "2026-09-30T23:07:52.082561+00:00",
-  "rows": 108,
-  "matched": 72,
+  "updatedAt": null,
+  "fetchedAt": "2026-10-01T07:21:00.253595+00:00",
+  "rows": 38,
+  "matched": 36,
   "unmatched": [
    "Marcio Santos (KBA)",
-   "Mady Sissoko (BJK)",
-   "Enzo Shahrvin (Paris)",
-   "Mady Sissoko (Besiktas)",
-   "Awudu Abass (Dubai)"
+   "Mady Sissoko (BJK)"
   ],
   "sources": [
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-09-30T23:07:52.082561+00:00",
+    "fetchedAt": "2026-10-01T07:21:00.253595+00:00",
     "rows": 38,
     "matched": 36,
-    "flagged": 36
-   },
-   {
-    "source": "Basketball Sphere",
-    "url": "https://basketballsphere.com/en/injuries/euroleague/",
-    "updatedAt": "2026-09-28T17:42:00",
-    "fetchedAt": "2026-09-29T07:06:07.842760+00:00",
-    "rows": 70,
-    "matched": 67,
     "flagged": 36
    }
   ],
   "nextRound": 3,
-  "unregistered": 7,
+  "unregistered": 14,
   "flagged": {
    "out": 27,
-   "doubt": 45,
-   "probable": 7
+   "doubt": 23,
+   "probable": 0
   }
  },
- "warnings": [
-  "Precios capturados el 2026-09-30 23:07 UTC: el juego aún no ha aplicado la revalorización (J2). Se usa el precio pendiente de 301 jugadores hasta la próxima captura."
- ],
+ "warnings": [],
  "priceFreshness": {
-  "stale": true,
-  "capturedAt": "2026-09-30T23:07:53.318098+00:00",
+  "stale": false,
+  "capturedAt": "2026-10-01T07:21:01.490195+00:00",
   "lastGameAt": "2026-09-30T18:15:00+00:00",
   "round": 2,
-  "reason": "el juego aún no ha aplicado la revalorización",
-  "pending": 301
+  "reason": null,
+  "pending": 0
  },
  "priceModel": {
   "a": 0.04,
