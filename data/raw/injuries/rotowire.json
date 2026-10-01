@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-01T14:40:42.335445+00:00",
+ "fetchedAt": "2026-10-01T23:17:30.205115+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "CZV",
    "position": "F",
    "name": "Patrick Baldwin",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Back"
   },
@@ -96,7 +96,7 @@
    "team": "HTA",
    "position": "F",
    "name": "Tomer Ginat",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -125,20 +125,20 @@
    "comment": "Achilles"
   },
   {
+   "team": "EFS",
+   "position": "G",
+   "name": "Mike James",
+   "status": "Game time",
+   "round": "",
+   "comment": "Leg"
+  },
+  {
    "team": "BJK",
    "position": "F",
    "name": "DaQuan Jeffries",
    "status": "Out",
    "round": "",
    "comment": "Wrist"
-  },
-  {
-   "team": "OLY",
-   "position": "G",
-   "name": "Cory Joseph",
-   "status": "Game time",
-   "round": "",
-   "comment": "Back"
   },
   {
    "team": "VIR",
@@ -176,7 +176,7 @@
    "team": "ZAL",
    "position": "G",
    "name": "Saben Lee",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Hamstring"
   },
@@ -248,7 +248,7 @@
    "team": "OLY",
    "position": "G",
    "name": "George Papas",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -256,7 +256,7 @@
    "team": "KBA",
    "position": "C",
    "name": "Marcio Santos",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -277,6 +277,14 @@
    "comment": "Knee"
   },
   {
+   "team": "PAR",
+   "position": "F",
+   "name": "Lamar Stevens",
+   "status": "Game time",
+   "round": "",
+   "comment": "Finger"
+  },
+  {
    "team": "MTA",
    "position": "C",
    "name": "Daniel Theis",
@@ -288,7 +296,7 @@
    "team": "HTA",
    "position": "F",
    "name": "Jacob Toppin",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Leg"
   },

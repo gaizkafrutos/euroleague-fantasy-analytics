@@ -1,30 +1,30 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-10-01T14:41:12.287811+00:00",
+ "generatedAt": "2026-10-01T23:18:13.856357+00:00",
  "currentRound": 3,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 18,
- "lastPriceCapture": "2026-10-01T07:21:01.490195+00:00",
+ "priceSnapshots": 19,
+ "lastPriceCapture": "2026-10-01T23:17:31.523221+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
-  "games": 20
+  "games": 24
  },
  "teamStrengthSource": "temporada en curso, encogida hacia la anterior",
  "players": 353,
  "matched": 346,
  "matchRate": 0.98,
  "budget": 100.0,
- "coachGames": 40,
+ "coachGames": 48,
  "matchModel": {
   "homeAdvantage": 3.52,
-  "marginSd": 12.21
+  "marginSd": 12.15
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-01T14:40:48.176486+00:00",
+  "generatedAt": "2026-10-01T23:17:36.720428+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -82,23 +82,35 @@
   },
   "current": {
    "code": "E2026",
-   "n": 324,
+   "n": 229,
    "rounds": 2,
    "v2": {
-    "mae": 5.821,
-    "rmse": 7.288,
-    "bias": 0.62
+    "mae": 6.06,
+    "rmse": 7.67,
+    "bias": 0.136
+   },
+   "legacy": {
+    "mae": 7.038,
+    "rmse": 9.083,
+    "bias": -0.586
+   },
+   "mean": {
+    "mae": 7.259,
+    "rmse": 9.29,
+    "bias": -0.825
    },
    "prior_mean": {
-    "mae": 5.975,
-    "rmse": 7.483,
-    "bias": 0.667
+    "mae": 6.48,
+    "rmse": 8.072,
+    "bias": 0.411
    },
    "byGames": {
     "1-3": {
-     "n": 157,
-     "v2": 5.668,
-     "prior_mean": 6.021
+     "n": 229,
+     "v2": 6.06,
+     "legacy": 7.038,
+     "mean": 7.259,
+     "prior_mean": 6.48
     }
    }
   },
@@ -139,9 +151,9 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-01T14:40:42.335445+00:00",
-  "rows": 39,
-  "matched": 37,
+  "fetchedAt": "2026-10-01T23:17:30.205115+00:00",
+  "rows": 40,
+  "matched": 38,
   "unmatched": [
    "Marcio Santos (KBA)",
    "Mady Sissoko (BJK)"
@@ -151,28 +163,30 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-01T14:40:42.335445+00:00",
-    "rows": 39,
-    "matched": 37,
-    "flagged": 37
+    "fetchedAt": "2026-10-01T23:17:30.205115+00:00",
+    "rows": 40,
+    "matched": 38,
+    "flagged": 38
    }
   ],
   "nextRound": 3,
   "unregistered": 14,
   "flagged": {
-   "out": 27,
-   "doubt": 24,
+   "out": 32,
+   "doubt": 20,
    "probable": 0
   }
  },
- "warnings": [],
+ "warnings": [
+  "Precios capturados el 2026-10-01 23:17 UTC: el juego aún no ha aplicado la revalorización (J3). Se usa el precio pendiente de 123 jugadores hasta la próxima captura."
+ ],
  "priceFreshness": {
-  "stale": false,
-  "capturedAt": "2026-10-01T07:21:01.490195+00:00",
-  "lastGameAt": "2026-09-30T18:15:00+00:00",
-  "round": 2,
-  "reason": null,
-  "pending": 0
+  "stale": true,
+  "capturedAt": "2026-10-01T23:17:31.523221+00:00",
+  "lastGameAt": "2026-10-01T18:45:00+00:00",
+  "round": 3,
+  "reason": "el juego aún no ha aplicado la revalorización",
+  "pending": 123
  },
  "priceModel": {
   "a": 0.04,
@@ -185,43 +199,43 @@
  "league": {
   "zones": [
    [
-    9396,
-    7265
+    9480,
+    7336
    ],
    [
-    16927,
-    8244
+    17126,
+    8343
    ],
    [
-    2288,
-    883
+    2305,
+    889
    ],
    [
-    936,
-    390
+    945,
+    394
    ],
    [
-    2340,
-    928
+    2355,
+    931
    ],
    [
-    1264,
-    526
+    1273,
+    531
    ],
    [
-    7308,
-    2588
+    7396,
+    2608
    ],
    [
-    4986,
-    1696
+    5029,
+    1716
    ],
    [
-    7564,
-    2715
+    7643,
+    2738
    ],
    [
-    1353,
+    1362,
     540
    ]
   ],
@@ -250,10 +264,10 @@
    "Esquina derecha"
   ],
   "allowed": {
-   "G": 43.03,
+   "G": 43.0,
    "F": 35.27,
-   "C": 19.9,
-   "all": 98.2
+   "C": 19.86,
+   "all": 98.13
   },
   "shotSeasons": [
    "E2025",
