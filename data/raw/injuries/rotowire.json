@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-02T13:59:38.882660+00:00",
+ "fetchedAt": "2026-10-02T23:07:23.683516+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "CZV",
    "position": "F",
    "name": "Patrick Baldwin",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -40,7 +40,7 @@
    "team": "MTA",
    "position": "G",
    "name": "John DiBartolomeo",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Personal"
   },
@@ -96,23 +96,23 @@
    "team": "HTA",
    "position": "F",
    "name": "Tomer Ginat",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
   },
   {
-   "team": "PAO",
-   "position": "F",
-   "name": "Nigel Hayes-Davis",
-   "status": "Out",
+   "team": "MIL",
+   "position": "G",
+   "name": "Marko Guduric",
+   "status": "Game time",
    "round": "",
-   "comment": "Hand"
+   "comment": "Personal"
   },
   {
    "team": "PAO",
    "position": "F",
    "name": "Juancho Hernangomez",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Groin"
   },
@@ -128,9 +128,9 @@
    "team": "EFS",
    "position": "G",
    "name": "Mike James",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
-   "comment": "Leg"
+   "comment": "Achilles"
   },
   {
    "team": "BJK",
@@ -157,14 +157,6 @@
    "comment": ""
   },
   {
-   "team": "PAR",
-   "position": "C",
-   "name": "Joffrey Lauvergne",
-   "status": "Game time",
-   "round": "",
-   "comment": "Calf"
-  },
-  {
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
@@ -176,7 +168,7 @@
    "team": "ZAL",
    "position": "G",
    "name": "Saben Lee",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Hamstring"
   },
@@ -200,9 +192,17 @@
    "team": "OLY",
    "position": "C",
    "name": "Nikola Milutinov",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Leg"
+  },
+  {
+   "team": "CZV",
+   "position": "C",
+   "name": "Johnathan Motley",
+   "status": "Game time",
+   "round": "",
+   "comment": "Groin"
   },
   {
    "team": "DUB",
@@ -248,15 +248,7 @@
    "team": "OLY",
    "position": "G",
    "name": "George Papas",
-   "status": "Out",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
-   "team": "KBA",
-   "position": "C",
-   "name": "Marcio Santos",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -296,7 +288,7 @@
    "team": "HTA",
    "position": "F",
    "name": "Jacob Toppin",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Leg"
   },
