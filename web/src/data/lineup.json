@@ -1,8 +1,8 @@
 {
  "method": "ilp",
  "totalPrice": 99.9,
- "totalProjection": 133.2,
- "scoredProjection": 161.35,
+ "totalProjection": 140.61,
+ "scoredProjection": 165.32,
  "captain": "3766",
  "starters": [
   "3766",
@@ -13,17 +13,17 @@
  ],
  "sixth": "3948",
  "bench": [
+  "4061",
   "3975",
   "3933",
-  "3950",
-  "4088"
+  "4258"
  ],
  "coach": {
   "key": "3995",
   "name": "LEFEVRE, MAXIME",
   "position": "E",
   "club": "PRS",
-  "price": 4.0,
+  "price": 4.4,
   "projection": 10.3
  },
  "players": [
@@ -32,7 +32,7 @@
    "name": "BRYANT, ELIJAH",
    "position": "G",
    "club": "HTA",
-   "price": 17.6,
+   "price": 17.1,
    "projection": 23.88
   },
   {
@@ -40,7 +40,7 @@
    "name": "MALEDON, THEO",
    "position": "G",
    "club": "MAD",
-   "price": 11.4,
+   "price": 11.2,
    "projection": 17.92
   },
   {
@@ -48,23 +48,23 @@
    "name": "HERRERA, SEBASTIAN",
    "position": "G",
    "club": "PRS",
-   "price": 5.4,
+   "price": 5.2,
    "projection": 6.64
   },
   {
-   "key": "4088",
-   "name": "UGURLU, BERK",
+   "key": "4258",
+   "name": "PUERTO, JOSEP",
    "position": "G",
-   "club": "BES",
-   "price": 4.1,
-   "projection": 2.99
+   "club": "PAM",
+   "price": 5.5,
+   "projection": 5.99
   },
   {
    "key": "3766",
    "name": "VEZENKOV, SASHA",
    "position": "F",
    "club": "OLY",
-   "price": 19.1,
+   "price": 18.1,
    "projection": 28.15
   },
   {
@@ -76,6 +76,14 @@
    "projection": 12.79
   },
   {
+   "key": "4061",
+   "name": "MANTZOUKAS, ELEFTHERIOS",
+   "position": "F",
+   "club": "PAN",
+   "price": 5.5,
+   "projection": 8.74
+  },
+  {
    "key": "3933",
    "name": "CAVALIERE, LEOPOLD",
    "position": "F",
@@ -84,27 +92,19 @@
    "projection": 6.12
   },
   {
-   "key": "3950",
-   "name": "DOBRIC, OGNJEN",
-   "position": "F",
-   "club": "RED",
-   "price": 4.4,
-   "projection": 4.85
-  },
-  {
    "key": "11504",
    "name": "THIEMANN, JOHANNES",
    "position": "C",
    "club": "MUN",
-   "price": 11.7,
-   "projection": 16.14
+   "price": 11.4,
+   "projection": 16.66
   },
   {
    "key": "7424",
    "name": "DIARRA, ALIOU",
    "position": "C",
    "club": "VIR",
-   "price": 8.9,
+   "price": 8.2,
    "projection": 13.72
   }
  ],
