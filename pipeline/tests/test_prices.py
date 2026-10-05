@@ -105,7 +105,9 @@ def test_no_se_guarda_un_snapshot_sin_cambios(monkeypatch, tmp_path, market):
             ]
 
     assert prices.take_snapshot(FakeClient()) is None
-    assert not list(tmp_path.iterdir())
+    # No se guarda snapshot, pero sí la hora de la comprobación.
+    assert [path.name for path in tmp_path.iterdir()] == ["last_check.json"]
+    assert prices.last_check() is not None
 
 
 # ---------------------------------------------------------------------------

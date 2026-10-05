@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { credits, normalize, num, percent, positionLabel, signed } from "@/lib/format";
 import { fixtureLabel, turnLabel } from "@/lib/projection";
@@ -43,6 +43,19 @@ export interface CompareRow {
   availability: string | null;
   out: boolean;
 }
+
+/** Lo mínimo para buscar y validar la URL; va en el HTML. */
+export interface CompareIndexEntry {
+  id: number;
+  name: string;
+  club: string;
+  position: string | null;
+  isCoach: boolean;
+  price: number | null;
+}
+
+/** Filas completas: se piden a `/comparar/datos` cuando hay a quién comparar. */
+const DATA_URL = "/comparar/datos";
 
 const MAX = 4;
 
@@ -209,21 +222,40 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
   },
 ];
 
-export default function Comparator({ rows }: { rows: CompareRow[] }) {
+export default function Comparator({ index: entries }: { index: CompareIndexEntry[] }) {
   const router = useRouter();
   const params = useSearchParams();
-  const byId = useMemo(() => new Map(rows.map((row) => [row.id, row])), [rows]);
+  const known = useMemo(() => new Set(entries.map((entry) => entry.id)), [entries]);
   const ids = (params.get("ids") ?? "")
     .split(",")
     .map(Number)
-    .filter((id, index, list) => byId.has(id) && list.indexOf(id) === index)
+    .filter((id, index, list) => known.has(id) && list.indexOf(id) === index)
     .slice(0, MAX);
-  const picked = ids.map((id) => byId.get(id) as CompareRow);
+
+  const [full, setFull] = useState<Map<number, CompareRow> | null>(null);
+  const [failed, setFailed] = useState(false);
+  const wanted = ids.length > 0;
+  useEffect(() => {
+    if (!wanted || full) return;
+    let cancelled = false;
+    fetch(DATA_URL)
+      .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+      .then((rows: CompareRow[]) => {
+        if (!cancelled) setFull(new Map(rows.map((row) => [row.id, row])));
+      })
+      .catch(() => {
+        if (!cancelled) setFailed(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [wanted, full]);
+  const picked = full ? ids.map((id) => full.get(id)).filter((row): row is CompareRow => Boolean(row)) : [];
 
   const [query, setQuery] = useState("");
   const index = useMemo(
-    () => rows.map((row) => ({ row, haystack: normalize(`${row.name} ${row.club}`) })),
-    [rows],
+    () => entries.map((row) => ({ row, haystack: normalize(`${row.name} ${row.club}`) })),
+    [entries],
   );
   const needle = normalize(query);
   const results =
@@ -244,11 +276,11 @@ export default function Comparator({ rows }: { rows: CompareRow[] }) {
 
   return (
     <div className="stack" style={{ "--gap": "18px" } as React.CSSProperties}>
-      {picked.length < MAX ? (
+      {ids.length < MAX ? (
         <div className="compare-picker">
           <label className="control">
             <span className="control-label">
-              Añadir jugador ({picked.length}/{MAX})
+              Añadir jugador ({ids.length}/{MAX})
             </span>
             <input
               className="input"
@@ -282,11 +314,15 @@ export default function Comparator({ rows }: { rows: CompareRow[] }) {
         </div>
       ) : null}
 
-      {picked.length === 0 ? (
+      {ids.length === 0 ? (
         <p className="muted">
           Busca a dos o más jugadores para verlos cara a cara. También puedes llegar aquí con el
           botón «Comparar» de cualquier ficha.
         </p>
+      ) : failed ? (
+        <p className="muted">No se han podido cargar los datos. Recarga la página para reintentarlo.</p>
+      ) : !full ? (
+        <p className="muted">Cargando la comparación…</p>
       ) : (
         <div className="table-wrap" tabIndex={0} role="region" aria-label="Comparación">
           <table className="data compare-table">

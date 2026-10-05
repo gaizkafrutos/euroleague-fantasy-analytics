@@ -56,6 +56,14 @@ export function dateTime(value: string | null | undefined): string {
   }).format(parsed);
 }
 
+/** ¿Se comprobó el mercado después de la última captura con cambios? Una
+ *  captura sin cambios no se guarda, así que "precios del 3 de octubre" el día
+ *  5 no quiere decir que estén viejos. Margen de una hora. */
+export function checkedLater(meta: { lastPriceCapture: string | null; lastPriceCheck?: string | null }): boolean {
+  if (!meta.lastPriceCapture || !meta.lastPriceCheck) return false;
+  return new Date(meta.lastPriceCheck).getTime() - new Date(meta.lastPriceCapture).getTime() > 3_600_000;
+}
+
 export const POSITION_LABEL: Record<string, string> = {
   G: "Base",
   F: "Alero",
@@ -89,7 +97,13 @@ export function prettyName(raw: string | null | undefined): string {
           return bare === "JR" || bare === "SR"
             ? `${bare.charAt(0)}${bare.charAt(1).toLowerCase()}.`
             : bare;
-        return part.charAt(0) + part.slice(1).toLowerCase();
+        return (
+          (part.charAt(0) + part.slice(1).toLowerCase())
+            // Mayúscula tras punto y apóstrofo: "A.J.", "O'Shae", "M'Baye".
+            .replace(/([.'’])([a-z])/g, (_, mark: string, letter: string) => mark + letter.toUpperCase())
+            // Y en los Mc: "McKinley", "Miller-McIntyre".
+            .replace(/^Mc([a-z])(?=[a-z])/, (_, letter: string) => `Mc${letter.toUpperCase()}`)
+        );
       })
       .join("");
 

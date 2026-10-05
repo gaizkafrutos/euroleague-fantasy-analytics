@@ -23,6 +23,22 @@ from efa.config import RAW_PRICES_DIR, ensure_dirs
 log = logging.getLogger(__name__)
 
 INDEX_PATH = RAW_PRICES_DIR / "index.json"
+#: Hora de la última captura que respondió, haya cambiado el mercado o no. Sin
+#: esto la web decía "precios del 3 de octubre" el día 5, cuando el mercado se
+#: había comprobado esa misma mañana y simplemente no se había movido.
+LAST_CHECK_NAME = "last_check.json"
+
+
+def record_check(captured_at: str) -> None:
+    (RAW_PRICES_DIR / LAST_CHECK_NAME).write_text(json.dumps({"checkedAt": captured_at}), encoding="utf-8")
+
+
+def last_check() -> str | None:
+    """Hora de la última captura que respondió (ver `record_check`)."""
+    try:
+        return json.loads((RAW_PRICES_DIR / LAST_CHECK_NAME).read_text(encoding="utf-8")).get("checkedAt")
+    except (OSError, ValueError):
+        return None
 
 
 def market_to_frame(columns: list[str], players: list[dict[str, Any]], captured_at: str) -> pd.DataFrame:
@@ -74,6 +90,7 @@ def take_snapshot(
 
     columns, players = client.fetch_market(matchday_id=matchday_id)
     frame = market_to_frame(columns, players, captured_at)
+    record_check(captured_at)
 
     # Con cuatro capturas al día, la mayoría no traen nada nuevo. Guardarlas
     # llenaría el histórico de puntos repetidos y haría creer que hay "12

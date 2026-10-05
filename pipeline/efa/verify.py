@@ -18,6 +18,8 @@ import numpy as np
 
 from efa.build import build_crosswalk, resolve_gamelog
 from efa.config import SEASON_CODE
+from efa.context import season_boxscores
+from efa.gamelogs import build_coach_gamelog
 from efa.ingest.official import load_reference
 from efa.ingest.prices import latest_snapshot
 from efa.metrics import player_performance
@@ -28,6 +30,51 @@ log = logging.getLogger(__name__)
 #: o calculado sobre un subconjunto de jornadas distinto.
 MIN_CORRELATION = 0.95
 MAX_MEAN_ABS_ERROR = 2.5
+#: El mercado redondea las medias a un decimal: más de 0,06 es un error de verdad.
+ROUNDING = 0.06
+
+#: Media por acción del mercado -> columna del game log. Si la media total
+#: cuadra pero una acción no, el baremo ha cambiado justo en esa acción.
+ACTIONS = {
+    "pts": "points", "reb": "rebounds", "ast": "assists", "stl": "steals",
+    "tov": "turnovers", "blk": "blocks_favour", "blka": "blocks_against",
+    "fd": "fouls_drawn", "pf": "fouls_committed", "fg_missed": "missed_fg",
+    "ft_missed": "missed_ft",
+}
+
+
+def _actions(market, crosswalk, gamelog) -> dict[str, float]:
+    """Mayor diferencia, por acción, entre la media del mercado y la calculada."""
+    played = gamelog[gamelog["played"]]
+    means = played.groupby("person_code")[[c for c in ACTIONS.values() if c in played.columns]].mean()
+    merged = market.merge(crosswalk[["fantaking_id", "person_code"]], on="fantaking_id").merge(
+        means, left_on="person_code", right_index=True
+    )
+    out = {}
+    for column, source in ACTIONS.items():
+        if column in merged.columns and source in merged.columns:
+            diff = (merged[column] - merged[source].round(1)).abs()
+            out[column] = round(float(diff.max()), 3) if len(diff) else 0.0
+    return out
+
+
+def _coaches(market, crosswalk) -> dict[str, Any] | None:
+    """Los entrenadores puntúan por el marcador: su media tiene que cuadrar exacta."""
+    reference = load_reference(SEASON_CODE)
+    log = build_coach_gamelog(season_boxscores(SEASON_CODE), reference.get("games", []))
+    if log.empty:
+        return None
+    means = log.groupby("person_code")["fantasy_points"].mean()
+    merged = market.merge(crosswalk[["fantaking_id", "person_code"]], on="fantaking_id")
+    merged = merged[merged["person_code"].isin(means.index) & merged["fpt"].notna()]
+    if merged.empty:
+        return None
+    diff = (merged["fpt"] - merged["person_code"].map(means)).abs()
+    return {
+        "coaches": int(len(merged)),
+        "maxAbsError": round(float(diff.max()), 3),
+        "overtimeGames": int(log["overtime"].sum()) if "overtime" in log.columns else 0,
+    }
 
 
 def run_verification() -> dict[str, Any]:
@@ -89,9 +136,18 @@ def run_verification() -> dict[str, Any]:
         .to_dict(orient="records")
     )
 
-    ok = correlation >= MIN_CORRELATION and mae <= MAX_MEAN_ABS_ERROR
+    actions = _actions(market, crosswalk, gamelog)
+    coaches = _coaches(market, crosswalk)
+    ok = (
+        correlation >= MIN_CORRELATION
+        and mae <= MAX_MEAN_ABS_ERROR
+        and all(value <= ROUNDING for value in actions.values())
+        and (coaches is None or coaches["maxAbsError"] <= ROUNDING)
+    )
     return {
         "ok": ok,
+        "actionsMaxAbsError": actions,
+        "coaches": coaches,
         "skipped": False,
         "players": int(len(comparable)),
         "correlation": round(correlation, 4),

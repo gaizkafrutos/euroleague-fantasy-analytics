@@ -29,6 +29,8 @@ from efa.config import (
     AVAILABILITY_PRIOR_GAMES,
     CLUB_COLORS_PATH,
     CROSSWALK_PATH,
+    NEVER_DRESSED_PRIOR,
+    PLAY_PROB_REPORT,
     PLAYER_OVERRIDES_PATH,
     PRIOR_SEASON_CODE,
     PRIOR_WEIGHT_GAMES,
@@ -38,17 +40,17 @@ from efa.config import (
     WEB_DATA_DIR,
     ensure_dirs,
 )
+from efa.context import player_positions, season_boxscores, season_gamelog, season_label
 from efa.demo import has_demo_data
 from efa.gamelogs import build_coach_gamelog, build_gamelog, team_minutes_share
-from efa.ingest.official import load_boxscores, load_reference
-from efa.ingest.prices import latest_snapshot, load_snapshots
+from efa.ingest.official import load_reference
+from efa.ingest.prices import last_check, latest_snapshot, load_snapshots
 from efa.ingest.roster import current_round
 from efa.matching import OfficialPlayer, PlayerMatcher, build_club_alias_map
 from efa.metrics import (
     bargain_score,
     player_performance,
     price_history,
-    price_pressure,
     project_fantasy_points,
     recent_series,
     schedule_difficulty,
@@ -58,6 +60,7 @@ from efa.metrics import (
 )
 from efa.optimizer import Candidate, normalize_position, optimize
 from efa.projection import production_projection
+from efa.published import archive_predictions
 
 log = logging.getLogger(__name__)
 
@@ -202,7 +205,7 @@ def headshot_index(*seasons: str) -> dict[str, str]:
                 index.setdefault(code, url)
 
     for season in seasons:
-        for payload in load_boxscores(season).values():
+        for payload in season_boxscores(season).values():
             for side in ("local", "road"):
                 for entry in (payload.get(side) or {}).get("players", []):
                     player = entry.get("player") or {}
@@ -220,11 +223,10 @@ def prior_season_performance() -> pd.DataFrame:
 
     Es la previa hacia la que se encoge la proyección en las primeras jornadas.
     """
-    boxscores = load_boxscores(PRIOR_SEASON_CODE)
-    if not boxscores:
+    gamelog = season_gamelog(PRIOR_SEASON_CODE)
+    if gamelog.empty:
         return pd.DataFrame(columns=["person_code", "prior_fp_avg", "prior_games"])
-    reference = load_reference(PRIOR_SEASON_CODE)
-    perf = player_performance(build_gamelog(boxscores, reference.get("games", [])))
+    perf = player_performance(gamelog)
     return perf[["person_code", "fp_avg", "games_played"]].rename(
         columns={"fp_avg": "prior_fp_avg", "games_played": "prior_games"}
     )
@@ -240,7 +242,7 @@ def club_games_played(gamelog: pd.DataFrame) -> dict[str, int]:
 def resolve_gamelog(reference: dict[str, Any]) -> tuple[pd.DataFrame, dict[str, Any]]:
     """Game log de la temporada actual, o de la anterior si aún no hay partidos."""
     games = reference.get("games", [])
-    boxscores = load_boxscores(SEASON_CODE)
+    boxscores = season_boxscores(SEASON_CODE)
     if boxscores:
         gamelog = build_gamelog(boxscores, games)
         if not gamelog.empty:
@@ -250,10 +252,9 @@ def resolve_gamelog(reference: dict[str, Any]) -> tuple[pd.DataFrame, dict[str, 
                 "games": len(boxscores),
             }
 
-    prior_boxscores = load_boxscores(PRIOR_SEASON_CODE)
+    prior_boxscores = season_boxscores(PRIOR_SEASON_CODE)
     if prior_boxscores:
-        prior_reference = load_reference(PRIOR_SEASON_CODE)
-        gamelog = build_gamelog(prior_boxscores, prior_reference.get("games", []))
+        gamelog = season_gamelog(PRIOR_SEASON_CODE)
         log.info(
             "Sin partidos en %s: se usa %s como línea base (%d partidos).",
             SEASON_CODE,
@@ -328,6 +329,12 @@ def build_player_table(
         table = table.merge(prior_performance, on="person_code", how="left")
     if club_games is not None:
         table["club_games"] = table["club_code"].map(club_games).fillna(0)
+        # Partidos sin jugar sobre los de su CLUB, no sobre las filas del acta:
+        # quien se pierde una jornada por lesión no sale en el boxscore, y antes
+        # Williams-Goss, con dos jornadas fuera, enseñaba "0 % sin jugar".
+        played = pd.to_numeric(table.get("games_played"), errors="coerce").fillna(0.0)
+        club = pd.to_numeric(table["club_games"], errors="coerce")
+        table["dnp_rate"] = (1 - played / club).clip(lower=0.0, upper=1.0).round(3).where(club > 0)
 
     # Metadatos del jugador desde el censo oficial.
     people_index: dict[str, dict[str, Any]] = {}
@@ -379,24 +386,35 @@ def build_player_table(
     table["projected_fp"] = project_fantasy_points(table, baseline=baseline)
     if v2 is not None and not v2.empty and not baseline:
         table = _apply_v2(table, v2)
-    table["price_pressure"] = price_pressure(table)
     table = value_metrics(table)
     table["bargain_score"] = bargain_score(table)
     return table
+
+
+def play_share(played: pd.Series, appeared: pd.Series, club_games: pd.Series) -> pd.Series:
+    """Probabilidad de jugar por historial, sin parte de lesiones.
+
+    (jugados + 2) / (partidos del club + 2), salvo para quien no ha aparecido en
+    ninguna convocatoria con su club ya jugando: ese parte de un colchón de 0,2
+    y no de 2 (ver NEVER_DRESSED_PRIOR).
+    """
+    prior = pd.Series(AVAILABILITY_PRIOR_GAMES, index=played.index, dtype=float)
+    prior = prior.where(~((appeared <= 0) & (club_games > 0)), NEVER_DRESSED_PRIOR)
+    return ((played + prior) / (club_games + AVAILABILITY_PRIOR_GAMES)).clip(upper=1.0)
 
 
 def _apply_v2(table: pd.DataFrame, v2: pd.DataFrame) -> pd.DataFrame:
     """Proyección v2 (si juega) por la probabilidad de jugar según su historial.
 
     Sin datos para el v2 (ni temporada ni año pasado ni precio), se queda la de
-    antes. La probabilidad de jugar por historial es la de siempre:
-    (jugados + 2) / (partidos del club + 2); las lesiones la sustituyen luego.
+    antes. La probabilidad de jugar por historial es `play_share`; las lesiones
+    la sustituyen luego.
     """
     out = table.merge(v2, on="person_code", how="left")
     out.index = table.index
     games = pd.to_numeric(out.get("games_played"), errors="coerce").fillna(0.0)
     club_games = pd.to_numeric(out.get("club_games"), errors="coerce").fillna(0.0).clip(lower=games)
-    share = ((games + AVAILABILITY_PRIOR_GAMES) / (club_games + AVAILABILITY_PRIOR_GAMES)).clip(upper=1.0)
+    share = play_share(games, pd.to_numeric(out.get("games"), errors="coerce").fillna(0.0), club_games)
     cond = pd.to_numeric(out["v2_projection"], errors="coerce")
     usable = cond.notna() & ~out["is_coach"].astype(bool)
     out["projected_if_plays"] = cond.where(usable).round(2)
@@ -493,7 +511,6 @@ def player_records(
                 "valuePerCredit": row.get("value_per_credit"),
                 "valueProjected": row.get("value_projected"),
                 "valueMarket": row.get("value_market"),
-                "pricePressure": row.get("price_pressure"),
                 "bargainScore": row.get("bargain_score"),
                 "schedule": {"difficulty": schedule.get("difficulty")},
                 "match": {
@@ -573,11 +590,11 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     # base el "historial" ya es el año pasado.
     v2 = None
     if not baseline:
-        prior_log = build_gamelog(load_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", []))
+        prior_log = season_gamelog(PRIOR_SEASON_CODE)
         pre = market.merge(crosswalk[["fantaking_id", "person_code", "club_code"]], on="fantaking_id", how="left")
         v2 = production_projection(
             pre, gamelog, prior_log, games, round_now,
-            _position_map(pre, [reference, prior_reference]),
+            player_positions([reference, prior_reference], pre[["person_code", "position"]].itertuples(index=False)),
         )
 
     table = build_player_table(
@@ -606,9 +623,9 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     match = matchmodel.fit(games, prior_reference.get("games", []))
     schedule_meta = _apply_schedule(records, games, round_now, match)
 
-    coach_log = build_coach_gamelog(load_boxscores(SEASON_CODE), games)
+    coach_log = build_coach_gamelog(season_boxscores(SEASON_CODE), games)
     prior_coach_log = build_coach_gamelog(
-        load_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", [])
+        season_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", [])
     )
     if coach_log.empty:
         # Igual que con los jugadores: si la temporada en curso no tiene
@@ -620,7 +637,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     matched = int(table["person_code"].notna().sum())
     meta = {
         "season": SEASON_CODE,
-        "seasonLabel": f"EuroLeague {_season_label(SEASON_CODE)}",
+        "seasonLabel": f"EuroLeague {season_label(SEASON_CODE)}",
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "currentRound": round_now,
         "totalRounds": max((int(g["round"]) for g in games if g.get("round")), default=0),
@@ -630,6 +647,8 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         "lastPriceCapture": market["captured_at"].max().isoformat()
         if has_prices and hasattr(market["captured_at"].max(), "isoformat")
         else None,
+        # La última vez que el mercado se comprobó (aunque no cambiara).
+        "lastPriceCheck": _later(last_check(), market["captured_at"].max()) if has_prices else None,
         "performanceSource": gamelog_meta,
         "teamStrengthSource": strength["source"].iloc[0] if not strength.empty else None,
         "players": len(records),
@@ -649,7 +668,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     # no cuenten cosas distintas.
     box_season = gamelog_meta.get("source") or SEASON_CODE
     box_games = games if box_season == SEASON_CODE else prior_reference.get("games", [])
-    team_box = team_box_stats(load_boxscores(box_season), box_games)
+    team_box = team_box_stats(season_boxscores(box_season), box_games)
 
     teams = _team_records(
         reference.get("clubs", []),
@@ -676,6 +695,12 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     # precio pendiente, no a uno que el juego ya ha dejado atrás.
     lineup = _build_optimal_lineup(records, budget=budget)
 
+    # Lo que se publica antes del primer partido de la jornada se guarda para
+    # evaluarlo cuando se juegue (efa.published).
+    archived = archive_predictions(records, games, round_now)
+    if archived:
+        log.info("Predicción de la J%d guardada en %s", round_now, archived)
+
     write_json("players.json", records)
     write_json("details.json", details)
     write_json("teams.json", teams)
@@ -683,7 +708,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     write_json("meta.json", meta)
     write_json(
         "matching.json",
-        crosswalk.sort_values("match_confidence").to_dict(orient="records"),
+        crosswalk.sort_values(["match_confidence", "fantaking_id"], kind="stable").to_dict(orient="records"),
     )
 
     return meta
@@ -711,6 +736,13 @@ def _market_from_official(reference: dict[str, Any]) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(rows)
+
+
+def _later(check: str | None, captured: Any) -> str | None:
+    """La más reciente entre la última comprobación y la última captura guardada."""
+    stamps = [pd.to_datetime(v, utc=True, errors="coerce") for v in (check, captured) if v is not None]
+    stamps = [t for t in stamps if not pd.isna(t)]
+    return max(stamps).isoformat() if stamps else None
 
 
 def _usable_number(value: Any) -> float | None:
@@ -788,25 +820,8 @@ def _apply_availability(
     return summary
 
 
-#: Probabilidad de jugar según el parte. Sin histórico de partes no se puede
-#: calibrar: "duda" es literalmente al 50 %, y "probable" casi seguro.
-PLAY_PROB = {"out": 0.0, "doubt": 0.5, "probable": 0.9}
-
-
-def _position_map(pre: pd.DataFrame, references: list[dict[str, Any]]) -> dict[str, str]:
-    """person_code -> G/F/C: el del juego si está en el mercado; si no, el oficial."""
-    out: dict[str, str] = {}
-    for reference in references:
-        for entry in reference.get("players", []):
-            code = str((entry.get("person") or {}).get("code") or "")
-            pos = normalize_position(entry.get("positionName"))
-            if code and pos:
-                out.setdefault(code, pos)
-    for row in pre[["person_code", "position"]].dropna().itertuples(index=False):
-        pos = normalize_position(row.position)
-        if pos:
-            out[str(row.person_code)] = pos
-    return out
+#: Probabilidad de jugar según el parte (calibrada en J2–J3, ver config).
+PLAY_PROB = PLAY_PROB_REPORT
 
 
 def _apply_play_probability(records: list[dict[str, Any]]) -> None:
@@ -841,11 +856,17 @@ def _apply_schedule(
     round_now: int,
     match: matchmodel.MatchModel,
 ) -> dict[str, Any]:
-    """Para cada club, su partido de la jornada: turno, descanso, semana doble y
-    probabilidad de ganar. Se copia en `schedule` de cada jugador."""
+    """Para cada club, su próximo partido sin jugar (el de la jornada, o el de la
+    siguiente si ya jugó): turno, descanso, semana doble y probabilidad de
+    ganar. Se copia en `schedule` de cada jugador."""
+    from efa.projection import next_games
+
     def when(game: dict[str, Any]) -> pd.Timestamp | None:
         stamp = pd.to_datetime(game.get("utcDate"), utc=True, errors="coerce")
         return None if pd.isna(stamp) else stamp
+
+    def round_days(number: int) -> list[Any]:
+        return sorted({when(g).date() for g in games if int(g.get("round") or 0) == number and when(g) is not None})
 
     in_round = [g for g in games if int(g.get("round") or 0) == round_now and when(g) is not None]
     days = sorted({when(g).date() for g in in_round})
@@ -864,27 +885,33 @@ def _apply_schedule(
                 last_played[club] = stamp
 
     clubs: dict[str, dict[str, Any]] = {}
-    for game in in_round:
+    for club, game in next_games(games, round_now).items():
         stamp = when(game)
+        if stamp is None:
+            continue
         local = ((game.get("local") or {}).get("club") or {}).get("code")
         road = ((game.get("road") or {}).get("club") or {}).get("code")
-        for club, rival, home in ((local, road, True), (road, local, False)):
-            if not club or not rival:
-                continue
-            week_start = (stamp - pd.Timedelta(days=stamp.weekday())).normalize()
-            in_week = [d for d in all_dates.get(club, []) if week_start <= d < week_start + pd.Timedelta(days=7)]
-            rest = (stamp - last_played[club]).days if club in last_played and last_played[club] < stamp else None
-            clubs[club] = {
-                "date": stamp.isoformat(),
-                "turn": days.index(stamp.date()) + 1,
-                "turns": len(days),
-                "opponent": rival,
-                "home": home,
-                "restDays": rest,
-                "doubleWeek": len(in_week) >= 2,
-                "winProb": round(match.win_prob(club, rival, home), 3),
-                "expectedMargin": round(match.margin(club, rival, home), 1),
-            }
+        home = str(local) == club
+        rival = road if home else local
+        if not rival:
+            continue
+        number = int(game.get("round") or 0)
+        game_days = days if number == round_now else round_days(number)
+        week_start = (stamp - pd.Timedelta(days=stamp.weekday())).normalize()
+        in_week = [d for d in all_dates.get(club, []) if week_start <= d < week_start + pd.Timedelta(days=7)]
+        rest = (stamp - last_played[club]).days if club in last_played and last_played[club] < stamp else None
+        clubs[club] = {
+            "date": stamp.isoformat(),
+            "round": number,
+            "turn": game_days.index(stamp.date()) + 1,
+            "turns": len(game_days),
+            "opponent": rival,
+            "home": home,
+            "restDays": rest,
+            "doubleWeek": len(in_week) >= 2,
+            "winProb": round(match.win_prob(club, rival, home), 3),
+            "expectedMargin": round(match.margin(club, rival, home), 1),
+        }
     for record in records:
         info = clubs.get(str(record.get("club")))
         if info:
@@ -1132,14 +1159,6 @@ def _team_records(
     return out
 
 
-def _season_label(season_code: str | None) -> str:
-    """E2026 -> 2026-27."""
-    if not season_code or not season_code[1:].isdigit():
-        return str(season_code or "—")
-    year = int(season_code[1:])
-    return f"{year}-{str(year + 1)[-2:]}"
-
-
 def _warnings(has_prices: bool, gamelog_meta: dict[str, Any], matched: int, total: int) -> list[str]:
     notes: list[str] = []
     if not has_prices:
@@ -1148,8 +1167,8 @@ def _warnings(has_prices: bool, gamelog_meta: dict[str, Any], matched: int, tota
         )
     if gamelog_meta.get("isBaseline"):
         notes.append(
-            f"La temporada {_season_label(SEASON_CODE)} aún no tiene partidos jugados: "
-            f"el rendimiento mostrado es la línea base de la {_season_label(gamelog_meta['source'])}."
+            f"La temporada {season_label(SEASON_CODE)} aún no tiene partidos jugados: "
+            f"el rendimiento mostrado es la línea base de la {season_label(gamelog_meta['source'])}."
         )
     if has_demo_data():
         notes.append(

@@ -516,10 +516,12 @@ def quarter_splits(games: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
 DEFAULT_PRICE_MODEL = {"a": 0.0400, "b": -0.0458, "c": 0.0273, "r2": 0.985, "n": 159, "source": "J1"}
 
 
-def fit_price_model(frame: pd.DataFrame) -> dict[str, Any]:
-    """Ajusta `plus ~ fp_ultima + precio` sobre quienes jugaron la última jornada.
+def fit_price_model(frame: pd.DataFrame, *, source: str = "último snapshot") -> dict[str, Any]:
+    """Ajusta `variación ~ puntos de la jornada + precio de antes de la jornada`.
 
-    `frame` necesita las columnas `last_fp`, `quotation` y `plus`.
+    `frame` necesita las columnas `last_fp`, `quotation` y `plus` (la variación
+    de la jornada, ver `advanced_build.round_price_frame`). `source` dice de qué
+    jornadas sale, para que la web no diga "del último mercado" si no lo es.
     """
     usable = frame.dropna(subset=["last_fp", "quotation", "plus"])
     usable = usable[usable["quotation"] > 0]
@@ -539,7 +541,7 @@ def fit_price_model(frame: pd.DataFrame) -> dict[str, Any]:
         "c": round(float(coef[2]), 5),
         "r2": round(r2, 3),
         "n": int(len(usable)),
-        "source": "último snapshot",
+        "source": source,
     }
 
 

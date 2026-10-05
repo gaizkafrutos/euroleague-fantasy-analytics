@@ -104,10 +104,9 @@ COACH_SCORING = {
 # Parámetros de análisis
 # --------------------------------------------------------------------------
 FORM_WINDOW = 5           # jornadas para la media de forma reciente
-#: Peso máximo de la forma (últimos 5) frente a la media en la proyección. Era
-#: 0,6; en el backtest de la 2025-26 (7.764 predicciones a un paso) la forma no
-#: mejora a la media simple y el 0,6 subía el error medio de 6,05 a 6,11.
-FORM_WEIGHT_MAX = 0.0
+# La forma (últimos 5) ya no entra en ninguna proyección: en el backtest de la
+# 2025-26 (7.764 predicciones a un paso) no mejoraba a la media simple y con
+# un 60 % de peso subía el error medio de 6,05 a 6,11.
 #: Fracción del ajuste por tendencia de minutos que se aplica. A tope metía un
 #: sesgo de +0,22 y subía el error; al 30 % mejora a la media desde el 4.º partido.
 ROLE_ADJUSTMENT_SCALE = 0.3
@@ -129,6 +128,13 @@ PRIOR_MIN_GAMES = 5
 #: Previa de disponibilidad: quien no ha jugado ninguno de sus partidos de esta
 #: temporada no proyecta cero de golpe, sino (jugados + k) / (partidos + k).
 AVAILABILITY_PRIOR_GAMES = 2.0
+#: Quien no ha entrado en NINGUNA convocatoria de su club esta temporada no
+#: parte de (0 + 2)/(partidos + 2), sino de (0 + 0,2)/(partidos + 2). En J2–J3
+#: a estos se les daba un 57 % y jugó el 5 % (64 casos).
+NEVER_DRESSED_PRIOR = 0.2
+#: Probabilidad de jugar según el parte de lesiones. "Duda" era 0,5 y en J2–J3
+#: jugaron 14 de 57 (25 %). "Probable" se queda en 0,9: 7 casos no bastan.
+PLAY_PROB_REPORT = {"out": 0.0, "doubt": 0.25, "probable": 0.9}
 
 
 def ensure_dirs() -> None:

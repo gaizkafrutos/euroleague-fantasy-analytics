@@ -216,7 +216,7 @@ def test_indice_de_chollo_entre_cero_y_cien():
             "projected_fp": [5.0, 12.0, 20.0],
             "consistency": [0.2, 0.6, 0.9],
             "minutes_share_trend": [-0.01, 0.0, 0.03],
-            "price_pressure": [-1.0, 0.0, 1.5],
+            "rise_prob": [0.1, 0.3, 0.6],
         }
     )
     scores = bargain_score(table)

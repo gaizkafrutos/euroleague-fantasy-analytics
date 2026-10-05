@@ -47,8 +47,9 @@ const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: bo
   { key: "price", label: "Precio", title: "Precio y variación en la última jornada" },
   {
     key: "expectedChange",
-    label: "Revalor.",
-    title: "Variación de precio esperada si puntúa lo proyectado (créditos)",
+    label: "Revalor. est.",
+    title:
+      "Variación de precio esperada (créditos), contando que puede no jugar. Orientativa: depende de lo que puntúe, y eso se acierta solo a medias",
   },
   {
     key: "projectedFp",

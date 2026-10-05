@@ -57,6 +57,9 @@ interface OrbSpec {
   polarity?: boolean;
 }
 
+/** Partidos a partir de los cuales suelo, techo y dispersión dicen algo. */
+const MIN_GAMES_FOR_SPREAD = 3;
+
 export default async function PlayerPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const player = getPlayer(Number(id));
@@ -276,8 +279,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 <h2 className="card-title">¿Sube o baja de precio?</h2>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
                   El juego revaloriza según lo que puntúa frente a lo que cuesta. Ajustado sobre{" "}
-                  {meta.priceModel?.n ?? "—"} jugadores del último mercado: explica el{" "}
-                  {percent(meta.priceModel?.r2 ?? null)} de las variaciones.
+                  {meta.priceModel?.n ?? "—"} variaciones reales ({meta.priceModel?.source ?? "—"}): con
+                  los puntos de la jornada explica el {percent(meta.priceModel?.r2 ?? null)} de cada
+                  cambio. Lo incierto es cuánto va a puntuar, así que la previsión es orientativa.
                 </p>
               </div>
             </div>
@@ -469,11 +473,20 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               <Row label="Titularidades" value={percent(perf.startedRate)} />
               <Row label="Partidos sin jugar" value={percent(perf.dnpRate)} />
               <Row label="Puntos fantasy por minuto" value={num(perf.fpPerMin, 2)} />
+              {/* Con uno o dos partidos, el suelo es el techo y la dispersión es
+                  0: no es un jugador fiable, es que no hay muestra. */}
               <Row
                 label="Suelo / techo"
-                value={`${num(perf.fpFloor)} — ${num(perf.fpCeiling)}`}
+                value={
+                  (perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD
+                    ? `${num(perf.fpFloor)} — ${num(perf.fpCeiling)}`
+                    : "— (pocos partidos)"
+                }
               />
-              <Row label="Desviación típica" value={`${num(perf.fpStd)} pts`} />
+              <Row
+                label="Desviación típica"
+                value={(perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD ? `${num(perf.fpStd)} pts` : "—"}
+              />
             </dl>
           </div>
 

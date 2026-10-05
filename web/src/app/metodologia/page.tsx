@@ -1,6 +1,11 @@
 import { matching, meta } from "@/lib/data";
 import { dateTime, num, percent } from "@/lib/format";
 
+function signedNum(value: number | null | undefined): string {
+  if (value === null || value === undefined) return "—";
+  return `${value > 0 ? "+" : value < 0 ? "−" : ""}${num(Math.abs(value), 2)}`;
+}
+
 export const metadata = {
   title: "Metodología",
   description:
@@ -18,6 +23,7 @@ export default function MethodologyPage() {
   // más parecido, que es otra cosa) y los que sí cruzaron por una vía con
   // margen de error.
   const unmatched = matching.filter((row) => !row.person_code);
+  const injurySources = meta.injuries?.sources ?? [];
   const lowConfidence = matching
     .filter((row) => row.person_code && row.match_confidence < 92)
     .sort((a, b) => a.match_confidence - b.match_confidence)
@@ -108,7 +114,10 @@ export default function MethodologyPage() {
             aplica al precio hasta que se cierra la jornada. Si la última captura es de antes, la
             web lo avisa y enseña el <strong>precio pendiente</strong>: la variación que ya
             publica el juego para quien ha jugado, y la del modelo de precio para quien jugó
-            después. Con los datos de la J1 acertaba 334 de 350 precios al décimo.
+            después. Ojo con el dato del juego: su columna de variación es la{" "}
+            <em>acumulada</em> desde el precio de salida, así que lo de la jornada es lo que ha
+            cambiado desde antes del primer partido. Así calculado, a mitad de la J2 y de la J3
+            acertaba los 350 precios al décimo.
           </p>
         </article>
       </div>
@@ -202,16 +211,19 @@ export default function MethodologyPage() {
               <a href="#proyeccion">el modelo de proyección</a>.
             </Definition>
             <Definition term="Umbral de revalorización">
-              Los puntos con los que un precio no se mueve. Sale de ajustar la variación que
-              publica el propio juego contra puntos y precio
-              {meta.priceModel ? ` (explica el ${percent(meta.priceModel.r2)} de las variaciones)` : ""},
-              y queda entre 1,0 y 1,1 veces el precio: más alto cuanto más caro es el jugador.
+              Los puntos con los que un precio no se mueve. Sale de ajustar la variación real de
+              cada jornada cerrada contra lo que puntuó y lo que costaba
+              {meta.priceModel
+                ? ` (${meta.priceModel.source}: explica el ${percent(meta.priceModel.r2)} de las variaciones)`
+                : ""}
+              , y queda en torno a 1,1 veces el precio: más alto cuanto más caro es el jugador.
             </Definition>
             <Definition term="Horquilla y techo">
               Suelo, techo y p90 salen de los errores reales del backtest, no de una normal: la
               puntuación tiene la cola de arriba más larga que la de abajo (el percentil 75 queda
               a +0,57 desviaciones y el 25 a −0,68). La dispersión se encoge hacia la del año
-              pasado y, si puede no jugar, suma el riesgo de quedarse en cero. La del entrenador
+              pasado, se ensancha con pocos partidos (la media del propio jugador aún es dudosa)
+              y, si puede no jugar, suma el riesgo de quedarse en cero. La del entrenador
               es exacta: solo puede sacar seis cifras. El p90 es el que importa para el capitán.
             </Definition>
             <Definition term="En pista, on/off y quintetos">
@@ -240,8 +252,9 @@ export default function MethodologyPage() {
               con «≈».
             </Definition>
             <Definition term="Probabilidad de subir">
-              La probabilidad de que puntúe por encima de su umbral de revalorización, con su
-              proyección y su dispersión.
+              La probabilidad de que juegue y, jugando, puntúe lo bastante para que el precio
+              suba al menos una décima. Quien no juega pierde 0,1, así que una duda tiene poca
+              probabilidad de subir aunque juegue bien cuando juega.
             </Definition>
             <Definition term="Cuota de minutos">
               Porcentaje de los minutos de su equipo que juega. Señal de rol más limpia que
@@ -304,10 +317,10 @@ export default function MethodologyPage() {
           {unmatched.length ? (
             <p className="card-note" style={{ marginTop: 12 }}>
               <strong>{unmatched.length} sin cruzar.</strong> No es que el emparejamiento
-              dude: es que esos jugadores todavía no existen en el censo oficial. Son en su
-              mayoría fichajes llegados de la NBA y jugadores jóvenes que los clubes aún no
-              han inscrito. Se resuelve solo conforme avanza la pretemporada, porque el
-              censo se vuelve a descargar cada día.
+              dude: es que esos jugadores no están en el censo oficial de la temporada, porque
+              su club no los ha inscrito en la Euroliga (lesiones largas, canteranos, fichajes
+              pendientes). El Fantasy los lista igual. En cuanto los inscriban aparecerán: el
+              censo se vuelve a descargar en cada captura.
             </p>
           ) : null}
 
@@ -338,15 +351,23 @@ export default function MethodologyPage() {
         <h2 className="card-title">Límites que conviene tener presentes</h2>
         <ul className="card-note" style={{ margin: 0, maxWidth: "72ch" }}>
           <li>
-            La fórmula de revalorización no es pública. El modelo de precio se ajusta cada día
-            a la variación que publica el juego, pero es una aproximación: a los entrenadores
-            que juegan después de la captura no se les estima el precio pendiente.
+            La fórmula de revalorización no es pública. El modelo de precio se reajusta en cada
+            captura con las variaciones reales de las jornadas ya cerradas
+            {meta.priceModel ? ` (ahora, ${meta.priceModel.source}: ${num(meta.priceModel.n, 0)} casos)` : ""}.
+            Con los puntos reales clava la variación; lo que no se puede clavar es cuántos va a
+            hacer, así que la revalorización esperada es orientativa. A los entrenadores que
+            juegan después de la captura no se les estima el precio pendiente.
           </li>
           <li>
-            Las lesiones combinan tres partes públicos: BasketNews (el más completo),
-            RotoWire y Basketball Sphere; si uno no responde, siguen los otros. Una baja
-            proyecta 0 y el óptimo no la ficha; una duda cuenta la mitad y un probable, el 90 %.
-            Son probabilidades fijas, no estimadas: el parte no dice más.
+            Las lesiones salen de hasta tres partes públicos (BasketNews, RotoWire y Basketball
+            Sphere); un parte de más de 48 horas no se usa.{" "}
+            {injurySources.length
+              ? `Ahora mismo: ${injurySources
+                  .map((src) => `${src.source}${src.fetchedAt ? ` (${dateTime(src.fetchedAt)})` : ""}`)
+                  .join(", ")}.`
+              : "Ahora mismo no hay ninguno al día."}{" "}
+            Una baja proyecta 0 y el óptimo no la ficha; una duda cuenta un 25 % y un probable,
+            el 90 %. El 25 % sale de lo observado: en J2 y J3 jugaron 14 de las 57 dudas.
           </li>
           <li>
             La horquilla de la plantilla suma a los jugadores como si fueran independientes. Los
@@ -380,6 +401,7 @@ function ProjectionModel() {
   const bt = meta.modelBacktest ?? null;
   const season = bt?.season;
   const current = bt?.current;
+  const published = bt?.published;
   const coach = bt?.coach;
   const match = meta.matchModel;
   const buckets = season?.byGames ? Object.entries(season.byGames) : [];
@@ -405,9 +427,10 @@ function ProjectionModel() {
             peso y encogido con 8 partidos. <strong>Campo:</strong> lo que se puntúa de más en casa.
           </li>
           <li>
-            <strong>Probabilidad de jugar:</strong> si hay parte, 0 de baja, 50 % en duda y 90 %
-            probable; si no, la parte de partidos de su club que ha jugado, con colchón de 2. La
-            proyección que se enseña es lo que hace si juega por esa probabilidad; «si juega» va
+            <strong>Probabilidad de jugar:</strong> si hay parte, 0 de baja, 25 % en duda y 90 %
+            probable; si no, la parte de partidos de su club que ha jugado, con colchón de 2 (y
+            de solo 0,2 si no ha entrado en ninguna convocatoria: en J2–J3 jugó el 5 % de
+            ellos). La proyección que se enseña es lo que hace si juega por esa probabilidad; «si juega» va
             aparte en la ficha, el mercado y el comparador.
           </li>
           <li>
@@ -475,7 +498,55 @@ function ProjectionModel() {
             de los últimos cinco no entra: en el backtest, darle peso empeoraba el error.
           </p>
         ) : null}
-        {current && current.n > 0 ? (
+        {published && published.rounds.length ? (
+          <>
+            <p style={{ margin: 0 }}>
+              <strong>Lo que publicamos frente a lo que pasó.</strong> Antes del primer partido
+              de cada jornada se guarda la proyección que enseña la web, de todo el mercado y
+              con la probabilidad de jugar dentro; quien no juega cuenta como 0. Es la cifra que
+              de verdad le llega a quien ficha.
+            </p>
+            <div className="table-wrap" tabIndex={0}>
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Jornada</th>
+                    <th className="num">N</th>
+                    <th className="num">Error HoopIQ</th>
+                    <th className="num">Error de su media</th>
+                    <th className="num">Sesgo</th>
+                    <th className="num">Orden (Spearman)</th>
+                    <th className="num">Dudas: dicho / jugaron</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {published.rounds.map((row) => (
+                    <tr key={row.round}>
+                      <td>J{row.round}</td>
+                      <td className="num">{num(row.n, 0)}</td>
+                      <td className="num">{num(row.model.mae, 2)}</td>
+                      <td className="num">{num(row.mean.mae, 2)}</td>
+                      <td className="num">{signedNum(row.model.bias)}</td>
+                      <td className="num">
+                        {num(row.model.spearman, 2)} / {num(row.mean.spearman, 2)}
+                      </td>
+                      <td className="num">
+                        {row.playProb?.doubt
+                          ? `${percent(row.playProb.doubt.predicted)} / ${percent(row.playProb.doubt.real)}`
+                          : "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{ margin: 0 }}>
+              Las jornadas 2 y 3 son las que publicó la web antes de la auditoría del 5 de
+              octubre, con la duda al 50 %: de ahí el sesgo al alza. Aun así, la proyección
+              acierta más que la media de cada jugador y, sobre todo, ordena mejor el mercado.
+            </p>
+          </>
+        ) : current && current.n > 0 ? (
           <p style={{ margin: 0 }}>
             Esta temporada, {num(current.n, 0)} partidos predichos: {num(current.v2.mae, 2)} de error
             medio

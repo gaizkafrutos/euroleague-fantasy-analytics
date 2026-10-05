@@ -308,17 +308,32 @@ def backtest(
 # ---------------------------------------------------------------------------
 # Producción: la próxima jornada de cada jugador del mercado
 # ---------------------------------------------------------------------------
-def next_fixtures(games: list[dict[str, Any]], round_now: int) -> dict[str, tuple[str, bool]]:
-    """club -> (rival, juega en casa) en la jornada `round_now`."""
-    out: dict[str, tuple[str, bool]] = {}
-    for game in games:
-        if int(game.get("round") or 0) != round_now:
+def next_games(games: list[dict[str, Any]], round_now: int) -> dict[str, dict[str, Any]]:
+    """club -> su primer partido SIN JUGAR desde la jornada `round_now`.
+
+    Con la jornada a medias, quien ya jugó la suya pasa a la siguiente: antes se
+    le seguía proyectando (y enseñando como "próximo") el partido ya jugado.
+    """
+    out: dict[str, dict[str, Any]] = {}
+    ordered = sorted(games, key=lambda g: (int(g.get("round") or 0), str(g.get("utcDate") or "")))
+    for game in ordered:
+        if int(game.get("round") or 0) < round_now or game.get("played"):
             continue
+        for side in ("local", "road"):
+            club = ((game.get(side) or {}).get("club") or {}).get("code")
+            if club and str(club) not in out:
+                out[str(club)] = game
+    return out
+
+
+def next_fixtures(games: list[dict[str, Any]], round_now: int) -> dict[str, tuple[str, bool]]:
+    """club -> (rival, juega en casa) en su próximo partido sin jugar."""
+    out: dict[str, tuple[str, bool]] = {}
+    for club, game in next_games(games, round_now).items():
         local = ((game.get("local") or {}).get("club") or {}).get("code")
         road = ((game.get("road") or {}).get("club") or {}).get("code")
         if local and road:
-            out[str(local)] = (str(road), True)
-            out[str(road)] = (str(local), False)
+            out[club] = (str(road), True) if str(local) == club else (str(local), False)
     return out
 
 
@@ -390,20 +405,14 @@ def run_backtests() -> dict[str, Any]:
 
     from efa import matchmodel
     from efa.config import PRIOR_SEASON_CODE, SEASON_CODE
-    from efa.gamelogs import build_gamelog
-    from efa.ingest.official import load_boxscores, load_reference
-    from efa.optimizer import normalize_position
+    from efa.context import player_positions, season_gamelog
+    from efa.ingest.official import load_reference
 
     ref_prior, ref_now = load_reference(PRIOR_SEASON_CODE), load_reference(SEASON_CODE)
-    positions: dict[str, str] = {}
-    for ref in (ref_prior, ref_now):
-        for entry in ref.get("players", []):
-            pos = normalize_position(entry.get("positionName"))
-            code = str((entry.get("person") or {}).get("code") or "")
-            if pos and code:
-                positions[code] = pos
-    log_prior = build_gamelog(load_boxscores(PRIOR_SEASON_CODE), ref_prior.get("games", []))
-    log_now = build_gamelog(load_boxscores(SEASON_CODE), ref_now.get("games", []))
+    # La de esta temporada manda (por eso va primero).
+    positions = player_positions([ref_now, ref_prior])
+    log_prior = season_gamelog(PRIOR_SEASON_CODE)
+    log_now = season_gamelog(SEASON_CODE)
 
     out: dict[str, Any] = {"generatedAt": datetime.now(timezone.utc).isoformat(), "params": asdict(PARAMS)}
     if not log_prior.empty:
@@ -415,6 +424,13 @@ def run_backtests() -> dict[str, Any]:
         out["season"] = {"code": PRIOR_SEASON_CODE, **season}
     if not log_now.empty and log_now["played"].any():
         out["current"] = {"code": SEASON_CODE, **backtest(log_now, positions, prior=log_prior, min_games=0)}
+    # Lo que la web publicó antes de cada jornada, frente a lo que pasó.
+    from efa.ingest.prices import load_snapshots
+    from efa.published import evaluate_published
+
+    published = evaluate_published(log_now, ref_now.get("games", []), load_snapshots())
+    if published:
+        out["published"] = published
     out["coach"] = {
         "code": PRIOR_SEASON_CODE,
         **matchmodel.backtest([g for g in ref_prior.get("games", []) if (g.get("phaseType") or {}).get("code") == "RS"]),

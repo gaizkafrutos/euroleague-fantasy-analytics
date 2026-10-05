@@ -141,7 +141,6 @@ export interface Player {
   valuePerCredit: number | null;
   valueProjected: number | null;
   valueMarket: number | null;
-  pricePressure: number | null;
   bargainScore: number | null;
   schedule: { difficulty: number | null; next?: NextGame | null };
   match: { method: string | null; confidence: number | null };
@@ -157,6 +156,8 @@ export interface Player {
 /** El partido de su club en la jornada que viene. */
 export interface NextGame {
   date: string;
+  /** Jornada del partido: la vigente o, si su club ya la jugó, la siguiente. */
+  round?: number;
   /** Turno de la jornada (día): entre turnos se puede cambiar quinteto y capitán. */
   turn: number;
   turns: number;
@@ -414,6 +415,8 @@ export interface Meta {
   hasPrices: boolean;
   priceSnapshots: number;
   lastPriceCapture: string | null;
+  /** Última vez que se consultó el mercado, aunque no hubiera cambios. */
+  lastPriceCheck?: string | null;
   performanceSource: { source: string | null; isBaseline: boolean; games: number };
   teamStrengthSource: string | null;
   players: number;
@@ -451,6 +454,32 @@ export interface ModelBacktest {
   };
   current?: { code: string; n: number; rounds?: number; v2: BacktestScore; prior_mean?: BacktestScore };
   coach?: { code: string; n: number; model: number; mean: number | null };
+  /** Lo que publicó la web antes de cada jornada frente a lo que pasó. */
+  published?: PublishedBacktest;
+}
+
+export interface PublishedScore {
+  mae: number;
+  rmse?: number;
+  bias: number;
+  spearman: number;
+}
+
+export interface PublishedBacktest {
+  rounds: Array<{
+    round: number;
+    n: number;
+    model: PublishedScore;
+    mean: PublishedScore;
+    biasExpensiveIfPlays?: number | null;
+    playProb?: Record<string, { n: number; predicted: number | null; real: number }>;
+    bandCoverage?: number;
+    riseBrier?: number;
+    riseBrierConstant?: number;
+    changeMae?: number;
+    changeMaeZero?: number;
+  }>;
+  total: { n: number; model: Partial<PublishedScore>; mean: Partial<PublishedScore> };
 }
 
 /** ¿El último snapshot lleva ya la revalorización de la última jornada? */
