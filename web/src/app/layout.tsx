@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import Header from "@/components/ui/Header";
 import MobileNav from "@/components/ui/MobileNav";
 import { meta } from "@/lib/data";
+import { checkedLater } from "@/lib/format";
 import { searchIndex } from "@/lib/search-index";
 import PriceNotice from "@/components/ui/PriceNotice";
 import { body, display } from "@/lib/fonts";
@@ -87,6 +88,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Datos generados el {new Date(meta.generatedAt).toLocaleString("es-ES")}
               {meta.lastPriceCapture
                 ? ` · precios capturados el ${new Date(meta.lastPriceCapture).toLocaleString("es-ES")}`
+                : ""}
+              {checkedLater(meta) && meta.lastPriceCheck
+                ? ` (sin cambios desde entonces; comprobados el ${new Date(meta.lastPriceCheck).toLocaleString("es-ES")})`
                 : ""}{" "}
               ·{" "}
               <a href="/metodologia">Cómo se calcula todo</a>

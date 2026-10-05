@@ -46,10 +46,11 @@ from efa.advanced import (
     zone_table,
 )
 from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE
-from efa.gamelogs import build_gamelog
-from efa.ingest.official import load_boxscores, load_player_stats, load_reference
+from efa.context import player_positions, season_boxscores, season_gamelog, season_label
+from efa.ingest.official import load_player_stats, load_reference
 from efa.ingest.playbyplay import load_pbp, shots_frame
 from efa.matchmodel import coach_outcomes, coach_prob_above, coach_quantile, coach_sd
+from efa.optimizer import normalize_position
 
 log = logging.getLogger(__name__)
 
@@ -70,9 +71,12 @@ Z_QUANTILES = _load_z_quantiles()
 
 #: Partidos de esta temporada a partir de los cuales ya no se mira la anterior.
 CURRENT_ENOUGH = 5
+#: Colchón, en partidos, de la incertidumbre sobre la media de cada jugador:
+#: la horquilla se ensancha por √(1 + k/(n + k)), ×1,22 con 2 partidos y ×1,05
+#: a final de temporada.
+SD_PRIOR_GAMES = 2.0
 #: Desviación típica del entrenador: puntúa −20…+25 según el margen.
 COACH_SD = 11.0
-POSITION_FROM_OFFICIAL = {"Guard": "G", "Forward": "F", "Center": "C"}
 
 #: Métricas avanzadas oficiales que se enseñan, en este orden.
 #: (clave de salida, campo del v3, etiqueta, mayor es mejor, formato)
@@ -111,29 +115,9 @@ def _num(value: Any) -> float | None:
     return None if math.isnan(number) or math.isinf(number) else number
 
 
-def _season_label(code: str) -> str:
-    year = int(code[1:])
-    return f"{year}-{str(year + 1)[-2:]}"
-
-
 # ---------------------------------------------------------------------------
 # Piezas
 # ---------------------------------------------------------------------------
-def _positions(records: list[dict[str, Any]], references: list[dict[str, Any]]) -> dict[str, str]:
-    """person_code -> G/F/C: el del juego si está en el mercado; si no, el oficial."""
-    out: dict[str, str] = {}
-    for reference in references:
-        for entry in reference.get("players", []):
-            code = str((entry.get("person") or {}).get("code") or "")
-            pos = POSITION_FROM_OFFICIAL.get(str(entry.get("positionName") or ""))
-            if code and pos:
-                out.setdefault(code, pos)
-    for record in records:
-        if record.get("personCode") and record.get("position") in ("G", "F", "C"):
-            out[str(record["personCode"])] = record["position"]
-    return out
-
-
 def _last_club(gamelog: pd.DataFrame) -> dict[str, str]:
     if gamelog.empty:
         return {}
@@ -167,35 +151,81 @@ def _projection_sd(
         n = max(n_now.get(code, 0) - 1, 0)
         cur = sd_now.get(code, 0.0)
         weight = n / (n + PRIOR_WEIGHT_GAMES)
-        out[int(record["id"])] = round(math.sqrt(weight * cur**2 + (1 - weight) * base**2), 2)
+        # A la dispersión de sus partidos se suma la duda sobre su propia media,
+        # que con pocos partidos es grande: en J2–J3 la horquilla p25–p75
+        # recogía el 41 % de los resultados en vez del 50 %.
+        widen = math.sqrt(1 + SD_PRIOR_GAMES / (n_now.get(code, 0) + SD_PRIOR_GAMES))
+        out[int(record["id"])] = round(widen * math.sqrt(weight * cur**2 + (1 - weight) * base**2), 2)
     return out
 
 
-def _price_frame(market: pd.DataFrame, crosswalk: pd.DataFrame, current: pd.DataFrame) -> pd.DataFrame:
-    """Para ajustar el modelo de precio: la última puntuación de cada jugador en
-    un partido ANTERIOR a la captura (si no, `plus` todavía no la refleja)."""
-    if current.empty or "plus" not in market.columns:
-        return pd.DataFrame(columns=["last_fp", "quotation", "plus"])
-    captured = pd.to_datetime(market["captured_at"], utc=True).max()
-    log = current[current["played"]].copy()
-    log["date"] = pd.to_datetime(log["utc_date"], utc=True, errors="coerce")
-    log = log[log["date"] < captured - pd.Timedelta(hours=2)]
-    if log.empty:
-        return pd.DataFrame(columns=["last_fp", "quotation", "plus"])
-    last = log.sort_values("date").groupby("person_code").tail(1)
-    # Solo si su ÚLTIMO partido de club es ese: si el club jugó después y él no,
-    # la variación ya descuenta otro partido.
-    latest_by_club = current.assign(date=pd.to_datetime(current["utc_date"], utc=True, errors="coerce"))
-    latest_by_club = latest_by_club[latest_by_club["date"] < captured - pd.Timedelta(hours=2)]
-    club_last = latest_by_club.groupby("club_code")["game_code"].max()
-    last = last[last.apply(lambda r: club_last.get(r["club_code"]) == r["game_code"], axis=1)]
-    frame = (
-        market[["fantaking_id", "quotation", "plus"]]
-        .merge(crosswalk[["fantaking_id", "person_code"]], on="fantaking_id")
-        .merge(last[["person_code", "fantasy_points"]], on="person_code")
-        .rename(columns={"fantasy_points": "last_fp"})
-    )
-    return frame
+PRICE_FRAME_COLUMNS = ["round", "last_fp", "quotation", "plus"]
+
+
+def round_price_frame(
+    history: pd.DataFrame | None,
+    crosswalk: pd.DataFrame,
+    current: pd.DataFrame,
+    games: list[dict[str, Any]],
+) -> pd.DataFrame:
+    """Para ajustar el modelo de precio: en cada jornada ya revalorizada, la
+    variación REAL de la cotización (captura de después menos captura de antes)
+    frente a lo que puntuó cada jugador y lo que costaba al empezarla.
+
+    Antes se ajustaba `plus` contra la cotización del último snapshot. Pero
+    `plus` es acumulado y esa cotización ya lleva la variación dentro: desde la
+    J2 el ajuste salía con R² < 0,8 y se volvía en silencio a los coeficientes
+    de la J1. La columna `plus` del resultado es aquí la variación de la jornada.
+    """
+    empty = pd.DataFrame(columns=PRICE_FRAME_COLUMNS)
+    if history is None or history.empty or current.empty or "quotation" not in history.columns:
+        return empty
+    history = history.assign(_t=pd.to_datetime(history["captured_at"], utc=True))
+    stamps = sorted(history["_t"].unique())
+    floor = float(pd.to_numeric(history["quotation"], errors="coerce").min())
+    played = current[current["played"]]
+    rounds: dict[int, list[pd.Timestamp]] = {}
+    complete: dict[int, bool] = {}
+    for game in games:
+        number, stamp = int(game.get("round") or 0), _game_time(game)
+        if not number or stamp is None:
+            continue
+        rounds.setdefault(number, []).append(stamp)
+        complete[number] = complete.get(number, True) and bool(game.get("played"))
+
+    frames = []
+    for number, times in sorted(rounds.items()):
+        if not complete.get(number):
+            continue
+        before = [s for s in stamps if s < min(times)]
+        after = [s for s in stamps if s > max(times) + GAME_DURATION]
+        if not before or not after:
+            continue
+        base = history[history["_t"] == before[-1]][["fantaking_id", "quotation"]]
+        post = None
+        for stamp in after:
+            candidate = history[history["_t"] == stamp][["fantaking_id", "quotation"]]
+            joined = base.merge(candidate, on="fantaking_id", suffixes=("_pre", "_post"))
+            if len(joined) and float((joined["quotation_pre"] != joined["quotation_post"]).mean()) >= 0.5:
+                post = joined
+                break
+        if post is None:
+            continue
+        scores = played[played["round"] == number].groupby("person_code")["fantasy_points"].first()
+        frame = post.merge(crosswalk[["fantaking_id", "person_code"]], on="fantaking_id")
+        frame["last_fp"] = frame["person_code"].map(scores)
+        frame = frame.dropna(subset=["last_fp"])
+        # El suelo del juego corta la variación: esas filas no informan de la recta.
+        frame = frame[frame["quotation_post"] > floor]
+        frames.append(
+            pd.DataFrame({
+                "round": number,
+                "last_fp": frame["last_fp"].astype(float),
+                "quotation": frame["quotation_pre"].astype(float),
+                "plus": (frame["quotation_post"] - frame["quotation_pre"]).round(2),
+            })
+        )
+    return pd.concat(frames, ignore_index=True) if frames else empty
 
 
 # ---------------------------------------------------------------------------
@@ -206,6 +236,8 @@ def _price_frame(market: pd.DataFrame, crosswalk: pd.DataFrame, current: pd.Data
 GAME_DURATION = pd.Timedelta(hours=2)
 #: Lo que el juego resta a quien no juega (J1: −0,1 en todos los casos vistos).
 DNP_PRICE_CHANGE = -0.1
+#: Variación mínima que se ve como subida: el juego redondea a 0,1.
+RISE_STEP = 0.05
 
 
 def _game_time(game: dict[str, Any]) -> pd.Timestamp | None:
@@ -248,17 +280,68 @@ def price_freshness(
     if any(t >= captured - GAME_DURATION for t in in_round):
         return {**out, "stale": True, "reason": "captura con la jornada a medias"}
 
-    # Jornada terminada antes de capturar: ¿se aplicó ya la variación?
+    # Jornada terminada antes de capturar: ¿se aplicó ya la variación? `plus` es
+    # acumulado desde el inicio de temporada, así que lo que se mueve en esta
+    # jornada es lo que ha cambiado `plus` respecto a la captura de antes.
     latest = history[history["captured_at"] == captured]
     before = history[history["captured_at"] < min(in_round)]
     if before.empty or "plus" not in latest.columns:
         return out
     base = before[before["captured_at"] == before["captured_at"].max()]
-    merged = latest.merge(base[["fantaking_id", "quotation"]], on="fantaking_id", suffixes=("", "_base"))
-    movers = merged[pd.to_numeric(merged["plus"], errors="coerce").fillna(0).ne(0)]
+    merged = latest.merge(
+        base[["fantaking_id", "quotation", "plus"]], on="fantaking_id", suffixes=("", "_base")
+    )
+    moved = (
+        pd.to_numeric(merged["plus"], errors="coerce").fillna(0)
+        - pd.to_numeric(merged["plus_base"], errors="coerce").fillna(0)
+    ).round(2)
+    movers = merged[moved.ne(0)]
     if len(movers) >= 20 and float((movers["quotation"] != movers["quotation_base"]).mean()) < 0.5:
         return {**out, "stale": True, "reason": "el juego aún no ha aplicado la revalorización"}
     return out
+
+
+def round_plus_base(
+    history: pd.DataFrame | None, games: list[dict[str, Any]], round_number: int
+) -> dict[int, float]:
+    """`plus` de cada jugador justo antes del primer partido de la jornada.
+
+    `plus` NO es la variación de la jornada: es la acumulada desde el precio de
+    salida (cotización − cotización inicial), más la provisional de la jornada en
+    curso. Comprobado con los snapshots de la J2 y la J3: tras cada
+    revalorización, `plus` = cotización − la del 24-09 en los 350 jugadores. Lo
+    que se mueve en la jornada es, por tanto, `plus` ahora menos `plus` antes.
+
+    Quien no está en la captura de antes (llegó al mercado después) usa su
+    acumulado hasta entonces: su cotización de entrada menos la primera vista.
+    """
+    if history is None or history.empty or "plus" not in history.columns:
+        return {}
+    starts = [
+        t for g in games
+        if int(g.get("round") or 0) == round_number and (t := _game_time(g)) is not None
+    ]
+    if not starts:
+        return {}
+    stamps = pd.to_datetime(history["captured_at"], utc=True)
+    before = history[stamps < min(starts)]
+    if before.empty:
+        return {}
+    base = before[pd.to_datetime(before["captured_at"], utc=True) == pd.to_datetime(before["captured_at"], utc=True).max()]
+    return {
+        int(pid): float(value)
+        for pid, value in zip(base["fantaking_id"], pd.to_numeric(base["plus"], errors="coerce"), strict=False)
+        if not pd.isna(value)
+    }
+
+
+def _first_quotes(history: pd.DataFrame | None) -> dict[int, float]:
+    """Primera cotización vista de cada jugador (su precio de salida)."""
+    if history is None or history.empty or "quotation" not in history.columns:
+        return {}
+    ordered = history.sort_values("captured_at")
+    first = ordered.groupby("fantaking_id")["quotation"].first()
+    return {int(k): float(v) for k, v in first.items() if not pd.isna(v)}
 
 
 def pending_prices(
@@ -268,12 +351,17 @@ def pending_prices(
     games: list[dict[str, Any]],
     model: dict[str, Any],
     freshness: dict[str, Any],
+    history: pd.DataFrame | None = None,
 ) -> int:
     """Rellena `pricePending`: la cotización que tendrá cada uno al cerrar la jornada.
 
-    Quien ya había jugado al capturar lleva la variación del propio juego
-    (`plus`); quien jugó después, la del modelo de precio con su puntuación real;
-    quien no jugó, lo que el juego resta en ese caso. Devuelve cuántos cambian.
+    Quien ya había jugado al capturar lleva la variación del propio juego: lo
+    que ha cambiado su `plus` (acumulado) desde antes de la jornada. Quien jugó
+    después, la del modelo de precio con su puntuación real; quien no jugó, lo
+    que el juego resta en ese caso. Devuelve cuántos cambian.
+
+    Sin `history` se supone que `plus` empezaba la jornada en 0, que solo es
+    cierto en la J1.
     """
     if not freshness.get("stale") or freshness.get("round") is None:
         return 0
@@ -288,6 +376,8 @@ def pending_prices(
             club = _club(game, side)
             if club:
                 club_game[club] = (int(game["gameCode"]), stamp)
+    plus_base = round_plus_base(history, games, last_round)
+    first_quote = _first_quotes(history)
 
     fp: dict[tuple[str, int], float] = {}
     if not log_now.empty:
@@ -314,9 +404,17 @@ def pending_prices(
             continue
         code, stamp = game
         if stamp < captured - GAME_DURATION:
-            delta, source = plus.get(int(record["id"])), "juego"
-            if delta is None or pd.isna(delta):
+            pid = int(record["id"])
+            total, source = plus.get(pid), "juego"
+            if total is None or pd.isna(total):
                 continue
+            if pid in plus_base:
+                start = plus_base[pid]
+            elif pid in first_quote:
+                start = price - first_quote[pid]
+            else:
+                start = 0.0
+            delta = float(total) - start
         elif record.get("isCoach"):
             continue  # su variación depende del marcador y no hay modelo para ella
         else:
@@ -399,10 +497,10 @@ def apply_advanced(
 ) -> None:
     """Muta los cuatro objetos añadiendo la capa avanzada."""
     prior_reference = load_reference(PRIOR_SEASON_CODE)
-    box_now = load_boxscores(SEASON_CODE)
-    box_prior = load_boxscores(PRIOR_SEASON_CODE)
-    log_now = build_gamelog(box_now, reference.get("games", [])) if box_now else pd.DataFrame()
-    log_prior = build_gamelog(box_prior, prior_reference.get("games", [])) if box_prior else pd.DataFrame()
+    box_now = season_boxscores(SEASON_CODE)
+    box_prior = season_boxscores(PRIOR_SEASON_CODE)
+    log_now = season_gamelog(SEASON_CODE)
+    log_prior = season_gamelog(PRIOR_SEASON_CODE)
     games_now = {str(k): int(v) for k, v in (log_now[log_now["played"]].groupby("person_code").size().items() if not log_now.empty else [])}
     club_prior = _last_club(log_prior)
     club_now = _last_club(log_now)
@@ -421,9 +519,17 @@ def apply_advanced(
         record.setdefault("perf", {})["minutesPrior"] = round(float(value), 1) if value is not None else None
 
     # ------------------------------------------------------------ precio
-    model = fit_price_model(_price_frame(market, crosswalk, log_now))
-    freshness = price_freshness(history if history is not None else market, reference.get("games", []))
-    pending = pending_prices(records, market, log_now, reference.get("games", []), model, freshness)
+    calendar = reference.get("games", [])
+    price_rows = round_price_frame(history, crosswalk, log_now, calendar)
+    rounds_fit = sorted(int(r) for r in price_rows["round"].unique()) if not price_rows.empty else []
+    label = (
+        f"J{rounds_fit[0]}" if len(rounds_fit) == 1
+        else f"J{rounds_fit[0]}–J{rounds_fit[-1]}" if rounds_fit
+        else "J1"
+    )
+    model = fit_price_model(price_rows, source=label)
+    freshness = price_freshness(history if history is not None else market, calendar)
+    pending = pending_prices(records, market, log_now, calendar, model, freshness, history=history)
     meta["priceFreshness"] = {**freshness, "pending": pending}
     if freshness.get("stale"):
         meta.setdefault("warnings", []).append(
@@ -432,6 +538,9 @@ def apply_advanced(
             f"Se usa el precio pendiente de {pending} jugadores hasta la próxima captura."
         )
     sds = _projection_sd(records, log_now, log_prior)
+    #: σ de lo que hace SI juega, antes de mezclar con el riesgo de no jugar: es
+    #: la que decide si supera el umbral cuando juega.
+    sd_if_plays = dict(sds)
     for record in records:
         # Puede no jugar: la puntuación es una mezcla (0 con probabilidad 1-p, su
         # normal con probabilidad p). Var = p·σ² + p(1-p)·μ², con μ lo que hace
@@ -468,10 +577,22 @@ def apply_advanced(
                 "p90": coach_quantile(outcomes, 0.9),
             }
             continue
+        # Subir es que la variación redondeada sea al menos +0,1, no que pase de
+        # 0: eso pide unos puntos más que el umbral. Y solo puede subir si juega:
+        # quien no juega pierde 0,1. Antes se evaluaba la normal de la proyección
+        # mezclada (que ya descuenta los ceros) contra el umbral, y en J2–J3 el
+        # tramo "40-60 %" subía el 36 % de las veces y el "20-40 %", el 13 %.
+        prob = record.get("playProb")
+        prob = 1.0 if prob is None else float(prob)
+        cond = _num(record.get("projectedIfPlays"))
+        cond = proj if cond is None else cond
+        sd_cond = sd_if_plays.get(int(record["id"])) or sd
+        rise_at = threshold + RISE_STEP / model["a"]
+        expected = prob * expected_change(model, cond, price) + (1 - prob) * DNP_PRICE_CHANGE
         record["outlook"] = {
             "breakEven": round(threshold, 1),
-            "expectedChange": round(max(-1.5, min(1.5, expected_change(model, proj, price))), 2),
-            "riseProb": round(prob_above(threshold, proj, sd), 3),
+            "expectedChange": round(max(-1.5, min(1.5, expected)), 2),
+            "riseProb": round(prob * prob_above(rise_at, cond, sd_cond), 3),
             "sd": sd,
             # Cuantiles empíricos del backtest, no ±0,674σ: la puntuación tiene
             # la cola de arriba más larga que la de abajo.
@@ -562,7 +683,10 @@ def apply_advanced(
             detail["official"] = {**off_prior, "season": PRIOR_SEASON_CODE}
 
     # ------------------------------------------------------------- clubs
-    positions = _positions(records, [reference, prior_reference])
+    positions = player_positions(
+        [reference, prior_reference],
+        ((r.get("personCode"), r.get("position")) for r in records if r.get("position") in ("G", "F", "C")),
+    )
     allowed = blend_allowed(allowed_by_position(log_now, positions), allowed_by_position(log_prior, positions))
     q_now = quarter_splits(reference.get("games", []))
     q_prior = quarter_splits(prior_reference.get("games", []))
@@ -595,7 +719,7 @@ def apply_advanced(
         "zoneLabels": [label for _, label in ZONES],
         "allowed": allowed["league"],
         "shotSeasons": [s for s, frame in ((PRIOR_SEASON_CODE, shots_prior), (SEASON_CODE, shots_now)) if not frame.empty],
-        "seasonLabels": {SEASON_CODE: _season_label(SEASON_CODE), PRIOR_SEASON_CODE: _season_label(PRIOR_SEASON_CODE)},
+        "seasonLabels": {SEASON_CODE: season_label(SEASON_CODE), PRIOR_SEASON_CODE: season_label(PRIOR_SEASON_CODE)},
     }
     log.info(
         "Capa avanzada: modelo de precio %s (R² %.3f, n=%d) · %d tiros · on/off de %d jugadores",
@@ -641,7 +765,7 @@ def _official_table(stats: dict[str, list[dict[str, Any]]], reference: dict[str,
     if not advanced:
         return {}
     position = {
-        str((entry.get("person") or {}).get("code")): POSITION_FROM_OFFICIAL.get(str(entry.get("positionName") or ""))
+        str((entry.get("person") or {}).get("code")): normalize_position(entry.get("positionName"))
         for entry in reference.get("players", [])
     }
     rows = []

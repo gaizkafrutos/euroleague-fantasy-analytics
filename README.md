@@ -151,8 +151,13 @@ cd web && npm run typecheck && npm run build
 ```
 
 `efa verify` compara la media calculada aquí con la columna `fpt` del propio
-mercado de Fantaking. Si la correlación cae por debajo del umbral, es que el
-baremo del juego ha cambiado — y conviene enterarse por ahí y no por un fichaje.
+mercado de Fantaking, y también la media de cada una de las 11 acciones del
+baremo y la de los entrenadores. Si algo se desvía más que el redondeo, es que
+el baremo del juego ha cambiado — y conviene enterarse por ahí y no por un fichaje.
+
+`efa backtest` publica además lo que la web proyectó antes de cada jornada
+frente a lo que pasó (`data/processed/predictions/`, ver `efa/published.py`):
+error, sesgo, orden y calibración de la probabilidad de jugar y de subir.
 
 ## Automatización
 

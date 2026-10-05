@@ -9,7 +9,12 @@
  */
 import { NextResponse } from "next/server";
 
-export const revalidate = 600;
+/** Dinámica: con `export const revalidate` la ruta se generaba en el build como
+ *  estática y el parámetro `?matchday=` se ignoraba. La caché de 10 minutos se
+ *  queda en la petición a Fantaking. */
+export const dynamic = "force-dynamic";
+
+const CACHE_SECONDS = 600;
 
 const API_BASE = "https://fantaking-api.dunkest.com/api/v1";
 const ORIGIN = "https://euroleaguefantasy.euroleaguebasketball.net";
@@ -54,7 +59,7 @@ export async function GET(request: Request) {
           Referer: `${ORIGIN}/`,
           Accept: "application/json",
         },
-        next: { revalidate },
+        next: { revalidate: CACHE_SECONDS },
       },
     );
 

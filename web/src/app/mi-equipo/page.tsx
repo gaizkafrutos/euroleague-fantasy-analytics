@@ -71,11 +71,28 @@ function squadRow(player: Player): Player {
     projectedFp: player.projectedFp,
     projectedIfPlays: player.projectedIfPlays,
     playProb: player.playProb,
-    valueProjected: player.valueProjected,
-    availability: player.availability,
+    // Del parte y del próximo partido solo lo que pinta la consola: el registro
+    // completo repetía 353 veces los mismos 20 partidos.
+    availability: player.availability
+      ? {
+          level: player.availability.level,
+          label: player.availability.label,
+          detail: player.availability.detail,
+        }
+      : null,
     registered: player.registered,
     outlook: player.outlook ? { sd: player.outlook.sd } : null,
-    schedule: { difficulty: null, next: player.schedule.next ?? null },
+    schedule: {
+      difficulty: null,
+      next: player.schedule.next
+        ? {
+            opponent: player.schedule.next.opponent,
+            home: player.schedule.next.home,
+            turn: player.schedule.next.turn,
+            turns: player.schedule.next.turns,
+          }
+        : null,
+    },
     perf: { gamesPlayed: player.perf.gamesPlayed },
   } as unknown as Player;
 }

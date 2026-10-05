@@ -36,10 +36,11 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
       <ul className="game-figures">
         {games.map((game, index) => (
           <li key={`${game.round}-${index}`}>
-            <span className="single-reading-value num">{num(game.fp)}</span>
+            <span className="single-reading-value num">{game.played ? num(game.fp) : "—"}</span>
             <span className="muted num">
-              pts · J{game.round ?? "—"} · {game.home ? "vs" : "@"} {game.opponent ?? "—"} ·{" "}
-              {num(game.minutes)} min
+              {game.played ? "pts" : "No jugó"} · J{game.round ?? "—"} · {game.home ? "vs" : "@"}{" "}
+              {game.opponent ?? "—"}
+              {game.played ? ` · ${num(game.minutes)} min` : ""}
             </span>
           </li>
         ))}
@@ -165,7 +166,9 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
             top: `${(y(Math.max(games[active].fp, 0)) / height) * 100}%`,
           }}
         >
-          <div className="tooltip-title num">{num(games[active].fp)} pts</div>
+          <div className="tooltip-title num">
+            {games[active].played ? `${num(games[active].fp)} pts` : "No jugó"}
+          </div>
           <div className="muted">
             J{games[active].round ?? "—"} · {games[active].home ? "vs" : "@"}{" "}
             {games[active].opponent ?? "—"}

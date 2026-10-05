@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-05T07:17:13.508419+00:00",
+ "generatedAt": "2026-10-05T14:02:13.244186+00:00",
  "params": {
   "rate_prior_minutes": 100.0,
   "minutes_half_life": 3.0,
@@ -101,6 +101,122 @@
    "0.5": -0.93,
    "0.75": 3.72,
    "0.9": 8.68
+  }
+ },
+ "published": {
+  "rounds": [
+   {
+    "round": 2,
+    "n": 326,
+    "model": {
+     "mae": 4.668,
+     "rmse": 6.067,
+     "bias": 0.688,
+     "spearman": 0.637
+    },
+    "mean": {
+     "mae": 5.317,
+     "rmse": 7.887,
+     "bias": -0.625,
+     "spearman": 0.467
+    },
+    "biasExpensiveIfPlays": 1.649,
+    "expensiveN": 42,
+    "playProb": {
+     "doubt": {
+      "n": 39,
+      "predicted": 0.5,
+      "real": 0.308
+     },
+     "nunca convocado": {
+      "n": 26,
+      "predicted": 0.667,
+      "real": 0.0
+     },
+     "out": {
+      "n": 24,
+      "predicted": 0.0,
+      "real": 0.0
+     },
+     "probable": {
+      "n": 7,
+      "predicted": 0.667,
+      "real": 0.429
+     },
+     "sin parte": {
+      "n": 230,
+      "predicted": 0.983,
+      "real": 0.917
+     }
+    },
+    "bandCoverage": 0.429,
+    "aboveP90": 0.086,
+    "riseBrier": 0.1854,
+    "riseBrierConstant": 0.1913,
+    "changeMae": 0.192,
+    "changeMaeZero": 0.178,
+    "generatedAt": "2026-09-29T07:06:49.270917+00:00"
+   },
+   {
+    "round": 3,
+    "n": 326,
+    "model": {
+     "mae": 4.712,
+     "rmse": 6.511,
+     "bias": 1.104,
+     "spearman": 0.602
+    },
+    "mean": {
+     "mae": 4.827,
+     "rmse": 7.128,
+     "bias": 0.53,
+     "spearman": 0.538
+    },
+    "biasExpensiveIfPlays": 1.81,
+    "expensiveN": 39,
+    "playProb": {
+     "doubt": {
+      "n": 18,
+      "predicted": 0.5,
+      "real": 0.111
+     },
+     "nunca convocado": {
+      "n": 38,
+      "predicted": 0.5,
+      "real": 0.079
+     },
+     "out": {
+      "n": 26,
+      "predicted": 0.0,
+      "real": 0.038
+     },
+     "sin parte": {
+      "n": 244,
+      "predicted": 0.953,
+      "real": 0.902
+     }
+    },
+    "bandCoverage": 0.479,
+    "aboveP90": 0.08,
+    "riseBrier": 0.1713,
+    "riseBrierConstant": 0.1738,
+    "changeMae": 0.195,
+    "changeMaeZero": 0.184,
+    "generatedAt": "2026-10-01T14:41:12.287811+00:00"
+   }
+  ],
+  "total": {
+   "n": 652,
+   "model": {
+    "mae": 4.69,
+    "bias": 0.896,
+    "spearman": 0.619
+   },
+   "mean": {
+    "mae": 5.072,
+    "bias": -0.048,
+    "spearman": 0.502
+   }
   }
  },
  "coach": {

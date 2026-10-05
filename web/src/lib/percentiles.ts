@@ -111,6 +111,9 @@ for (const position of ["G", "F", "C"] as const) {
   pools.set(position, { sorted, size: group.length });
 }
 
+/** Partidos mínimos del jugador para situarlo en su grupo. */
+const MIN_GAMES_FOR_PERCENTILE = 2;
+
 /** Percentil 0–1 con corrección de empates (mitad de los iguales cuenta). */
 function rank(values: number[], value: number): number | null {
   if (values.length < 6) return null; // con menos de seis, el percentil miente
@@ -130,7 +133,8 @@ export function percentileOf(player: Player, key: PercentileKey): number | null 
   // Quien no ha jugado está fuera del grupo de referencia, así que tampoco se
   // le puede situar dentro: su proyección es un cero por falta de datos, y
   // salía "p1" como si fuera el peor pívot de la liga.
-  if ((player.perf.gamesPlayed ?? 0) <= 0) return null;
+  // Con un solo partido, "p97 en asistencias" es un buen día, no un perfil.
+  if ((player.perf.gamesPlayed ?? 0) < MIN_GAMES_FOR_PERCENTILE) return null;
   const pool = pools.get(player.position);
   const value = metric(player, key);
   if (!pool || value === null) return null;

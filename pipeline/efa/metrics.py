@@ -7,7 +7,7 @@ fichar:
   ¿es fiable o una lotería?           -> fp_std, floor, ceiling, consistency
   ¿está subiendo o bajando de forma?  -> form, form_delta
   ¿está ganando o perdiendo rol?      -> minutes_trend, minutes_share_trend
-  ¿va a subir de precio?              -> price_pressure
+  ¿va a subir de precio?              -> efa.advanced (modelo de precio del juego)
   ¿tiene buen calendario?             -> schedule_difficulty
 """
 from __future__ import annotations
@@ -20,7 +20,6 @@ import pandas as pd
 
 from efa.config import (
     AVAILABILITY_PRIOR_GAMES,
-    FORM_WEIGHT_MAX,
     FORM_WINDOW,
     MIN_GAMES_FOR_TREND,
     PRIOR_MIN_GAMES,
@@ -168,12 +167,16 @@ def price_history(snapshots: pd.DataFrame) -> pd.DataFrame:
     for pid, group in snapshots.sort_values("captured_at").groupby("fantaking_id"):
         quotes = group["quotation"].astype(float).tolist()
         stamps = group["captured_at"].tolist()
+        # Última variación = entre las dos últimas cotizaciones DISTINTAS. A mitad
+        # de jornada se guardan capturas en las que solo cambia `fpt`, y con
+        # capturas consecutivas la variación de la jornada anterior pasaba a 0.
+        distinct = [q for i, q in enumerate(quotes) if i == 0 or q != quotes[i - 1]]
         rows.append(
             {
                 "fantaking_id": pid,
                 "quotation": quotes[-1],
                 "quotation_open": quotes[0],
-                "price_delta_last": round(quotes[-1] - quotes[-2], 2) if len(quotes) > 1 else 0.0,
+                "price_delta_last": round(distinct[-1] - distinct[-2], 2) if len(distinct) > 1 else 0.0,
                 "price_delta_total": round(quotes[-1] - quotes[0], 2),
                 "price_points": [
                     {"t": stamp.isoformat(), "q": round(float(q), 2)}
@@ -183,38 +186,6 @@ def price_history(snapshots: pd.DataFrame) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(rows)
-
-
-def price_pressure(table: pd.DataFrame) -> pd.Series:
-    """Cuánto rinde un jugador por encima de lo que su precio implica.
-
-    Las reglas dicen que la revalorización depende del score obtenido y del
-    precio de partida: a igual score, sube más quien parte de un precio bajo.
-    Así que se ajusta una curva fp ~ precio sobre el mercado entero y se mira el
-    residuo. Residuo positivo grande = candidato a subir.
-
-    No es la fórmula real de Fantaking (no es pública), es un proxy: mide
-    sobre-rendimiento relativo a la banda de precio, que es exactamente lo que
-    la regla describe.
-    """
-    quotation = pd.to_numeric(table.get("quotation"), errors="coerce")
-    reference = pd.to_numeric(table.get("form"), errors="coerce")
-    reference = reference.where(reference.notna() & (reference != 0), pd.to_numeric(table.get("fp_avg"), errors="coerce"))
-
-    mask = quotation.notna() & reference.notna() & (quotation > 0)
-    result = pd.Series(np.nan, index=table.index, dtype=float)
-    if mask.sum() < 8:
-        return result
-
-    x = quotation[mask].to_numpy(dtype=float)
-    y = reference[mask].to_numpy(dtype=float)
-    # Cuadrática: la relación precio-rendimiento se aplana en la banda alta.
-    coefficients = np.polyfit(x, y, 2)
-    expected = np.polyval(coefficients, x)
-    residual = y - expected
-    spread = residual.std()
-    result.loc[mask] = residual / spread if spread > 0 else 0.0
-    return result.round(2)
 
 
 # ---------------------------------------------------------------------------
@@ -304,7 +275,8 @@ def schedule_difficulty(
 
     for game in sorted(games, key=lambda g: (g.get("round") or 0, g.get("utcDate") or "")):
         round_number = game.get("round")
-        if round_number is None or int(round_number) < from_round:
+        # Con la jornada a medias, lo ya jugado no es "próximo rival".
+        if round_number is None or int(round_number) < from_round or game.get("played"):
             continue
         local = ((game.get("local") or {}).get("club") or {}).get("code")
         road = ((game.get("road") or {}).get("club") or {}).get("code")
@@ -443,29 +415,24 @@ def team_box_stats(
 # Proyección y valor
 # ---------------------------------------------------------------------------
 def project_fantasy_points(table: pd.DataFrame, *, baseline: bool = False) -> pd.Series:
-    """Proyección para la próxima jornada.
+    """Proyección de respaldo (el modelo anterior al v2 de `efa.projection`).
 
-    Mezcla media de temporada y forma reciente, con el peso de la forma
-    creciendo conforme hay más partidos, y un ajuste por tendencia de minutos.
-    Sin partidos jugados cae de vuelta a la media que da el propio mercado.
+    Solo se usa para quien no tiene proyección v2 y como referencia en el
+    backtest: media de temporada más un ajuste por tendencia de minutos. Sin
+    partidos jugados cae de vuelta a la media que da el propio mercado.
 
     Con la temporada en curso como fuente y `prior_fp_avg` en la tabla, se
     encoge hacia la media del año pasado según los partidos jugados
     (ver PRIOR_WEIGHT_GAMES).
     """
     fp_avg = pd.to_numeric(table.get("fp_avg"), errors="coerce").fillna(0.0)
-    form = pd.to_numeric(table.get("form"), errors="coerce").fillna(0.0)
     games = pd.to_numeric(table.get("games_played"), errors="coerce").fillna(0.0)
     market_avg = pd.to_numeric(table.get("fpt"), errors="coerce").fillna(0.0)
     minutes_trend = pd.to_numeric(table.get("minutes_trend"), errors="coerce").fillna(0.0)
     fp_per_min = pd.to_numeric(table.get("fp_per_min"), errors="coerce").fillna(0.0)
 
-    # Entre temporadas, la "forma reciente" son los últimos partidos de la
-    # temporada ANTERIOR: mayo, otra plantilla, rotaciones cortas, eliminatorias
-    # decididas. Pesarlos al máximo mandaba a cero a jugadores de 11 créditos.
-    # Mientras la fuente sea la línea base, la proyección es la media.
-    form_weight = 0.0 if baseline else np.clip(games / 10.0, 0.0, FORM_WEIGHT_MAX)
-    blended = fp_avg * (1 - form_weight) + form * form_weight
+    # La forma reciente no entra (ver config): la base es la media.
+    blended = fp_avg
 
     # Un cambio de rol se traduce en puntos vía su producción por minuto, pero
     # acotado EN RELATIVO: restarle 6 puntos a quien proyecta 4 es borrarlo.
@@ -541,7 +508,7 @@ def value_metrics(table: pd.DataFrame) -> pd.DataFrame:
     out["value_per_credit"] = out["value_per_credit"].fillna(out["value_market"])
     out["value_form"] = out["value_form"].fillna(out["value_market"])
 
-    for column in ("value_projected", "projected_fp", "consistency", "price_pressure"):
+    for column in ("value_projected", "projected_fp", "consistency"):
         if column in out.columns:
             series = pd.to_numeric(out[column], errors="coerce")
             out[f"{column}_pct"] = (series.rank(pct=True) * 100).round(0)

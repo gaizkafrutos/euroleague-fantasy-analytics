@@ -49,6 +49,24 @@ jobs:
         run: python -m efa injuries
         continue-on-error: true
 
+      # El paso anterior solo falla si no responde NINGUNA fuente. BasketNews y
+      # Basketball Sphere llevaban días caídas sin que se notara: se avisa de
+      # cada parte con más de 48 h, que es cuando el build deja de usarlo.
+      - name: Avisar de partes de lesiones caducados
+        run: |
+          python - <<'EOF'
+          import datetime as dt, glob, json
+          now = dt.datetime.now(dt.timezone.utc)
+          for path in sorted(glob.glob("data/raw/injuries/*.json")):
+              report = json.load(open(path, encoding="utf-8"))
+              fetched = dt.datetime.fromisoformat(report["fetchedAt"])
+              hours = (now - fetched).total_seconds() / 3600
+              if hours > 48:
+                  print(f"::warning title=Parte de lesiones caducado::{report.get('source')} "
+                        f"no se actualiza desde hace {hours:.0f} h ({report['fetchedAt'][:16]} UTC); "
+                        "la web no lo está usando.")
+          EOF
+
       - name: Capturar precios del Fantasy
         id: snapshot
         env:

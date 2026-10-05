@@ -12,7 +12,7 @@ import MarketExplorer from "@/components/market/MarketExplorer";
 import { BarCell, PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
-import { credits, dateTime, displayName, num, percent } from "@/lib/format";
+import { checkedLater, credits, dateTime, displayName, num, percent } from "@/lib/format";
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 
@@ -28,8 +28,14 @@ export default function MercadoPage() {
   // Solo la serie de puntos de cada uno: details.json entero pesa más de un
   // megabyte y viajaría serializado dentro de la página.
   const details = Object.fromEntries(
-    Object.entries(detailsJson as unknown as Record<string, { recent: Array<{ fp: number }> }>).map(
-      ([id, detail]) => [id, { recent: detail.recent.map((game) => ({ fp: game.fp })) }],
+    Object.entries(
+      detailsJson as unknown as Record<string, { recent: Array<{ fp: number; played: boolean }> }>,
+    ).map(
+      // Solo los partidos jugados: un DNP no es un 0 en la forma reciente.
+      ([id, detail]) => [
+        id,
+        { recent: detail.recent.filter((game) => game.played).map((game) => ({ fp: game.fp })) },
+      ],
     ),
   );
 
@@ -113,6 +119,7 @@ export default function MercadoPage() {
             {meta.lastPriceCapture
               ? `Precios del ${dateTime(meta.lastPriceCapture)}`
               : "Sin precios todavía"}
+            {checkedLater(meta) ? `, comprobados el ${dateTime(meta.lastPriceCheck)}` : ""}
             {meta.priceFreshness?.stale ? " (pendientes de revalorizar)" : ""}
           </span>
           <span className="status-sep">·</span>
