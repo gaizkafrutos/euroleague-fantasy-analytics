@@ -35330,9 +35330,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OACA",
+   "name": "RYZHYK, BORYS",
+   "alias": "RYZHYK, B.",
+   "country": {
+    "code": "UKR",
+    "name": "Ukraine"
+   },
+   "images": {
+    "verticalSmall": "8868n7x43bynj5fi"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJLN",
+   "name": "RACYS, SAULIUS",
+   "alias": "RACYS, S.",
+   "country": {
+    "code": "SWE",
+    "name": "Sweden"
+   },
+   "images": {
+    "verticalSmall": "8863qecdbweor58t"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMA",
+   "name": "TSAROUCHA, VASILIKI",
+   "alias": "TSAROUCHA, V.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "images": {
+    "verticalSmall": "9ybhvmvviw9hqohm"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ADIDAS ARENA",
