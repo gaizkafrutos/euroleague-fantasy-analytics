@@ -1,12 +1,12 @@
 {
  "method": "ilp",
- "totalPrice": 99.9,
- "totalProjection": 140.61,
- "scoredProjection": 165.32,
+ "totalPrice": 100.0,
+ "totalProjection": 132.18,
+ "scoredProjection": 164.25,
  "captain": "3766",
  "starters": [
   "3766",
-  "3903",
+  "4252",
   "3850",
   "11504",
   "7424"
@@ -14,26 +14,26 @@
  "sixth": "3948",
  "bench": [
   "4061",
-  "3975",
   "3933",
-  "4258"
+  "11521",
+  "11540"
  ],
  "coach": {
-  "key": "3995",
-  "name": "LEFEVRE, MAXIME",
+  "key": "3885",
+  "name": "BARTZOKAS, GEORGIOS",
   "position": "E",
-  "club": "PRS",
-  "price": 4.4,
-  "projection": 10.3
+  "club": "OLY",
+  "price": 9.9,
+  "projection": 15.91
  },
  "players": [
   {
-   "key": "3903",
-   "name": "BRYANT, ELIJAH",
+   "key": "4252",
+   "name": "MONTERO, JEAN",
    "position": "G",
-   "club": "HTA",
-   "price": 17.1,
-   "projection": 23.88
+   "club": "OLY",
+   "price": 13.2,
+   "projection": 19.0
   },
   {
    "key": "3850",
@@ -41,23 +41,23 @@
    "position": "G",
    "club": "MAD",
    "price": 11.2,
-   "projection": 17.92
+   "projection": 17.9
   },
   {
-   "key": "3975",
-   "name": "HERRERA, SEBASTIAN",
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
    "position": "G",
-   "club": "PRS",
-   "price": 5.2,
-   "projection": 6.64
+   "club": "ASV",
+   "price": 4.7,
+   "projection": 4.96
   },
   {
-   "key": "4258",
-   "name": "PUERTO, JOSEP",
+   "key": "11540",
+   "name": "SAINT-SUPERY, MARIO",
    "position": "G",
    "club": "PAM",
-   "price": 5.5,
-   "projection": 5.99
+   "price": 4.4,
+   "projection": 3.91
   },
   {
    "key": "3766",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "OLY",
    "price": 18.1,
-   "projection": 28.15
+   "projection": 28.14
   },
   {
    "key": "3948",
@@ -88,8 +88,8 @@
    "name": "CAVALIERE, LEOPOLD",
    "position": "F",
    "club": "PRS",
-   "price": 5.0,
-   "projection": 6.12
+   "price": 5.1,
+   "projection": 6.35
   },
   {
    "key": "11504",
@@ -105,7 +105,7 @@
    "position": "C",
    "club": "VIR",
    "price": 8.2,
-   "projection": 13.72
+   "projection": 13.73
   }
  ],
  "available": true,

@@ -120,16 +120,6 @@
   "match_confidence": 90.0
  },
  {
-  "fantaking_id": 8815,
-  "fantaking_name": "C. Payne",
-  "fantaking_team": "EFS",
-  "club_code": "IST",
-  "person_code": "014213",
-  "official_name": "PAYNE, CAMERON",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
   "fantaking_id": 11533,
   "fantaking_name": "U. Mijailovic",
   "fantaking_team": "PAR",
@@ -2816,6 +2806,16 @@
   "club_code": "BES",
   "person_code": "014207",
   "official_name": "OMORUYI, EUGENE",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 8815,
+  "fantaking_name": "C. Payne",
+  "fantaking_team": "EFS",
+  "club_code": "IST",
+  "person_code": "014213",
+  "official_name": "PAYNE, CAMERON",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },

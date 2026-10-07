@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "014213",
+   "name": "PAYNE, CAMERON",
+   "alias": "PAYNE, CAMERON",
+   "aliasRaw": "PAYNE, CAMERON",
+   "passportName": "CAMERON",
+   "passportSurname": "PAYNE",
+   "jerseyName": "PAYNE",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 191,
+   "weight": 83,
+   "birthDate": "1994-08-08T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-07T15:09:46.869",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "22",
+  "dorsalRaw": "22",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "PHILADELPHIA 76ERS",
+  "externalId": 57059,
+  "images": {},
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "013289",
    "name": "SANTOS, MARCIO",
    "alias": "SANTOS, MARCIO",
