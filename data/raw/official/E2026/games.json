@@ -34421,9 +34421,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJLM",
+   "name": "NEDOVIC, MILAN",
+   "alias": "NEDOVIC, M.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "885uo7l4abjbyoam"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJGK",
+   "name": "PETEK, SASO",
+   "alias": "PETEK, S.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "885y7w6ple8p7mei"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJLT",
+   "name": "THEPENIER, HUGUES",
+   "alias": "THEPENIER, H.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": "94qpwqdkg8h5heb3"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "PALAU BLAUGRANA",
@@ -34522,9 +34558,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJFC",
+   "name": "JAVOR, DAMIR",
+   "alias": "JAVOR, D.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "883i7yokjhfy7pih"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "QJMN",
+   "name": "BISSUEL, THOMAS",
+   "alias": "BISSUEL, T.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJFU",
+   "name": "SILVA, SERGIO",
+   "alias": "SILVA, S.",
+   "country": {
+    "code": "POR",
+    "name": "Portugal"
+   },
+   "images": {
+    "verticalSmall": "88694sdmpnbwjska"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "BUESA ARENA",
@@ -34623,9 +34695,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJCL",
+   "name": "LOTTERMOSER, ROBERT",
+   "alias": "LOTTERMOSER, R.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "images": {
+    "verticalSmall": "8845rp7o4ifpg9kf"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJLO",
+   "name": "ROSSI, MICHELE",
+   "alias": "ROSSI, M.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "images": {
+    "verticalSmall": "8868fcomeqrjyexb"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJGB",
+   "name": "CICI, GENTIAN",
+   "alias": "CICI, G.",
+   "country": {
+    "code": "ALB",
+    "name": "Albania"
+   },
+   "images": {
+    "verticalSmall": "ayrpbkbms3twsd7q"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "SUNEL ARENA",
