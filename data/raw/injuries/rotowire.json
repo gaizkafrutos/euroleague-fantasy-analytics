@@ -1,16 +1,32 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-08T07:38:50.785968+00:00",
+ "fetchedAt": "2026-10-08T19:20:57.529553+00:00",
  "updatedAt": null,
  "rows": [
   {
-   "team": "CZV",
+   "team": "DUB",
    "position": "F",
-   "name": "Patrick Baldwin",
+   "name": "Justin Anderson",
+   "status": "Out",
+   "round": "",
+   "comment": "Hamstring"
+  },
+  {
+   "team": "ASV",
+   "position": "F",
+   "name": "Juhann Begarin",
    "status": "Game time",
    "round": "",
-   "comment": "Back"
+   "comment": "Not Injury Related"
+  },
+  {
+   "team": "FBT",
+   "position": "F",
+   "name": "Onuralp Bitim",
+   "status": "Out",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "HTA",
@@ -40,17 +56,9 @@
    "team": "MTA",
    "position": "G",
    "name": "John DiBartolomeo",
-   "status": "Game time",
-   "round": "",
-   "comment": "Personal"
-  },
-  {
-   "team": "CZV",
-   "position": "G",
-   "name": "Nikola Djurisic",
    "status": "Out",
    "round": "",
-   "comment": "Quadriceps"
+   "comment": "Personal"
   },
   {
    "team": "ASV",
@@ -72,17 +80,9 @@
    "team": "BAR",
    "position": "F",
    "name": "Tosan Evbuomwan",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Shoulder"
-  },
-  {
-   "team": "PAO",
-   "position": "C",
-   "name": "Moustapha Fall",
-   "status": "Out",
-   "round": "",
-   "comment": "Hamstring"
   },
   {
    "team": "RMB",
@@ -96,14 +96,14 @@
    "team": "HTA",
    "position": "F",
    "name": "Tomer Ginat",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
   {
-   "team": "MIL",
-   "position": "G",
-   "name": "Marko Guduric",
+   "team": "OLY",
+   "position": "C",
+   "name": "Donta Hall",
    "status": "Game time",
    "round": "",
    "comment": "Personal"
@@ -112,7 +112,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Juancho Hernangomez",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Groin"
   },
@@ -141,20 +141,12 @@
    "comment": "Wrist"
   },
   {
-   "team": "VIR",
-   "position": "C",
-   "name": "Kevin Kokila",
-   "status": "Out",
-   "round": "",
-   "comment": "Thigh"
-  },
-  {
    "team": "FBT",
    "position": "G",
    "name": "Shane Larkin",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
-   "comment": ""
+   "comment": "Not Injury Related"
   },
   {
    "team": "MTA",
@@ -189,20 +181,28 @@
    "comment": "Achilles"
   },
   {
+   "team": "BAR",
+   "position": "G",
+   "name": "Justin Minaya",
+   "status": "Out",
+   "round": "",
+   "comment": "Thigh"
+  },
+  {
    "team": "OLY",
-   "position": "C",
-   "name": "Nikola Milutinov",
+   "position": "G",
+   "name": "Jean Montero",
    "status": "Game time",
    "round": "",
-   "comment": "Leg"
+   "comment": "Illness"
   },
   {
    "team": "CZV",
    "position": "C",
    "name": "Johnathan Motley",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
-   "comment": "Groin"
+   "comment": "Thigh"
   },
   {
    "team": "DUB",
@@ -216,7 +216,7 @@
    "team": "BAR",
    "position": "C",
    "name": "Josh Nebo",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Calf"
   },
@@ -227,6 +227,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "BAY",
+   "position": "F",
+   "name": "Miles Norris",
+   "status": "Out",
+   "round": "",
+   "comment": "Teeth"
   },
   {
    "team": "PAO",
@@ -253,6 +261,22 @@
    "comment": "Not Injury Related"
   },
   {
+   "team": "EFS",
+   "position": "G",
+   "name": "Cameron Payne",
+   "status": "Game time",
+   "round": "",
+   "comment": "Not Injury Related"
+  },
+  {
+   "team": "VBC",
+   "position": "G",
+   "name": "Mario Saint-Supery",
+   "status": "Out",
+   "round": "",
+   "comment": "Illness"
+  },
+  {
    "team": "BJK",
    "position": "C",
    "name": "Mady Sissoko",
@@ -272,25 +296,17 @@
    "team": "PAR",
    "position": "F",
    "name": "Lamar Stevens",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Finger"
   },
   {
-   "team": "MTA",
-   "position": "C",
-   "name": "Daniel Theis",
-   "status": "Game time",
+   "team": "MIL",
+   "position": "G",
+   "name": "Stefano Tonut",
+   "status": "Out",
    "round": "",
-   "comment": "Ankle"
-  },
-  {
-   "team": "HTA",
-   "position": "F",
-   "name": "Jacob Toppin",
-   "status": "Game time",
-   "round": "",
-   "comment": "Leg"
+   "comment": "Hand"
   },
   {
    "team": "ASV",

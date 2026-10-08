@@ -1,22 +1,22 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 132.18,
- "scoredProjection": 164.25,
+ "totalProjection": 128.42,
+ "scoredProjection": 162.45,
  "captain": "3766",
  "starters": [
   "3766",
-  "4252",
+  "3903",
   "3850",
-  "11504",
-  "7424"
+  "7424",
+  "3948"
  ],
- "sixth": "3948",
+ "sixth": "3842",
  "bench": [
   "4061",
-  "3933",
   "11521",
-  "11540"
+  "3984",
+  "8644"
  ],
  "coach": {
   "key": "3885",
@@ -24,16 +24,16 @@
   "position": "E",
   "club": "OLY",
   "price": 9.9,
-  "projection": 15.91
+  "projection": 15.88
  },
  "players": [
   {
-   "key": "4252",
-   "name": "MONTERO, JEAN",
+   "key": "3903",
+   "name": "BRYANT, ELIJAH",
    "position": "G",
-   "club": "OLY",
-   "price": 13.2,
-   "projection": 19.0
+   "club": "HTA",
+   "price": 17.1,
+   "projection": 23.9
   },
   {
    "key": "3850",
@@ -44,20 +44,20 @@
    "projection": 17.9
   },
   {
+   "key": "3842",
+   "name": "WILBEKIN, SCOTTIE",
+   "position": "G",
+   "club": "BES",
+   "price": 8.5,
+   "projection": 12.1
+  },
+  {
    "key": "11521",
    "name": "FODZO DADA, MARC-OWEN",
    "position": "G",
    "club": "ASV",
    "price": 4.7,
-   "projection": 4.96
-  },
-  {
-   "key": "11540",
-   "name": "SAINT-SUPERY, MARIO",
-   "position": "G",
-   "club": "PAM",
-   "price": 4.4,
-   "projection": 3.91
+   "projection": 4.91
   },
   {
    "key": "3766",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "OLY",
    "price": 18.1,
-   "projection": 28.14
+   "projection": 28.11
   },
   {
    "key": "3948",
@@ -73,7 +73,7 @@
    "position": "F",
    "club": "OLY",
    "price": 8.3,
-   "projection": 12.79
+   "projection": 12.77
   },
   {
    "key": "4061",
@@ -81,23 +81,15 @@
    "position": "F",
    "club": "PAN",
    "price": 5.5,
-   "projection": 8.74
+   "projection": 8.73
   },
   {
-   "key": "3933",
-   "name": "CAVALIERE, LEOPOLD",
+   "key": "8644",
+   "name": "JOKSIMOVIC, STEFAN",
    "position": "F",
-   "club": "PRS",
-   "price": 5.1,
-   "projection": 6.35
-  },
-  {
-   "key": "11504",
-   "name": "THIEMANN, JOHANNES",
-   "position": "C",
-   "club": "MUN",
-   "price": 11.4,
-   "projection": 16.66
+   "club": "BAS",
+   "price": 4.0,
+   "projection": 2.6
   },
   {
    "key": "7424",
@@ -106,6 +98,14 @@
    "club": "VIR",
    "price": 8.2,
    "projection": 13.73
+  },
+  {
+   "key": "3984",
+   "name": "SANLI, SERTAC",
+   "position": "C",
+   "club": "ULK",
+   "price": 4.5,
+   "projection": 3.67
   }
  ],
  "available": true,
