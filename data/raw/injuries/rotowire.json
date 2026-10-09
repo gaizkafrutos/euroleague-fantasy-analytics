@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-09T07:34:41.490976+00:00",
+ "fetchedAt": "2026-10-09T18:54:03.442997+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -77,14 +77,6 @@
    "comment": "Achilles"
   },
   {
-   "team": "BAR",
-   "position": "F",
-   "name": "Tosan Evbuomwan",
-   "status": "Game time",
-   "round": "",
-   "comment": "Shoulder"
-  },
-  {
    "team": "RMB",
    "position": "C",
    "name": "Usman Garuba",
@@ -104,7 +96,7 @@
    "team": "OLY",
    "position": "C",
    "name": "Donta Hall",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Personal"
   },
@@ -157,14 +149,6 @@
    "comment": ""
   },
   {
-   "team": "ZAL",
-   "position": "G",
-   "name": "Saben Lee",
-   "status": "Game time",
-   "round": "",
-   "comment": "Hamstring"
-  },
-  {
    "team": "BAR",
    "position": "C",
    "name": "Yoan Makoundou",
@@ -189,14 +173,6 @@
    "comment": "Thigh"
   },
   {
-   "team": "OLY",
-   "position": "G",
-   "name": "Jean Montero",
-   "status": "Game time",
-   "round": "",
-   "comment": "Illness"
-  },
-  {
    "team": "CZV",
    "position": "C",
    "name": "Johnathan Motley",
@@ -211,14 +187,6 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
-  },
-  {
-   "team": "BAR",
-   "position": "C",
-   "name": "Josh Nebo",
-   "status": "Game time",
-   "round": "",
-   "comment": "Calf"
   },
   {
    "team": "CZV",
@@ -256,14 +224,6 @@
    "team": "OLY",
    "position": "G",
    "name": "George Papas",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
-   "team": "EFS",
-   "position": "G",
-   "name": "Cameron Payne",
    "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
