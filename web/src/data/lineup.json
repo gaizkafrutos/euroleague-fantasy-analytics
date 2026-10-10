@@ -1,8 +1,8 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 134.05,
- "scoredProjection": 162.15,
+ "totalPrice": 99.7,
+ "totalProjection": 132.93,
+ "scoredProjection": 162.4,
  "captain": "3903",
  "starters": [
   "3903",
@@ -11,12 +11,12 @@
   "7424",
   "11516"
  ],
- "sixth": "8846",
+ "sixth": "11511",
  "bench": [
   "4061",
   "3933",
-  "4258",
-  "3976"
+  "3976",
+  "3984"
  ],
  "coach": {
   "key": "3909",
@@ -52,12 +52,12 @@
    "projection": 16.52
   },
   {
-   "key": "4258",
-   "name": "PUERTO, JOSEP",
+   "key": "11511",
+   "name": "DUARTE, CHRIS",
    "position": "G",
-   "club": "PAM",
-   "price": 5.6,
-   "projection": 6.21
+   "club": "BAS",
+   "price": 10.8,
+   "projection": 14.84
   },
   {
    "key": "11516",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "ASV",
    "price": 10.1,
-   "projection": 13.93
+   "projection": 14.13
   },
   {
    "key": "4061",
@@ -73,7 +73,7 @@
    "position": "F",
    "club": "PAN",
    "price": 5.3,
-   "projection": 7.07
+   "projection": 7.01
   },
   {
    "key": "3933",
@@ -100,12 +100,12 @@
    "projection": 14.2
   },
   {
-   "key": "8846",
-   "name": "JEKIRI, TONYE",
+   "key": "3984",
+   "name": "SANLI, SERTAC",
    "position": "C",
-   "club": "PAR",
-   "price": 9.6,
-   "projection": 13.42
+   "club": "ULK",
+   "price": 4.1,
+   "projection": 3.53
   }
  ],
  "available": true,
