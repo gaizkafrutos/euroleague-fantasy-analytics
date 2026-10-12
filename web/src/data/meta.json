@@ -1,22 +1,22 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-10-12T07:34:37.419453+00:00",
+ "generatedAt": "2026-10-12T21:49:05.988092+00:00",
  "currentRound": 5,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 28,
- "lastPriceCapture": "2026-10-10T07:21:55.395736+00:00",
- "lastPriceCheck": "2026-10-12T07:34:11.313038+00:00",
+ "priceSnapshots": 29,
+ "lastPriceCapture": "2026-10-12T21:48:20.363005+00:00",
+ "lastPriceCheck": "2026-10-12T21:48:20.363005+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
   "games": 40
  },
  "teamStrengthSource": "temporada en curso, encogida hacia la anterior",
- "players": 356,
- "matched": 349,
+ "players": 357,
+ "matched": 350,
  "matchRate": 0.98,
  "budget": 100.0,
  "coachGames": 80,
@@ -25,7 +25,7 @@
   "marginSd": 12.2
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-12T07:34:16.352415+00:00",
+  "generatedAt": "2026-10-12T21:48:26.157815+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -310,11 +310,10 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-12T07:34:10.238997+00:00",
-  "rows": 36,
-  "matched": 34,
+  "fetchedAt": "2026-10-12T21:48:18.919049+00:00",
+  "rows": 28,
+  "matched": 27,
   "unmatched": [
-   "Juhann Begarin (ASV)",
    "Mady Sissoko (BJK)"
   ],
   "sources": [
@@ -322,24 +321,24 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-12T07:34:10.238997+00:00",
-    "rows": 36,
-    "matched": 34,
-    "flagged": 34
+    "fetchedAt": "2026-10-12T21:48:18.919049+00:00",
+    "rows": 28,
+    "matched": 27,
+    "flagged": 27
    }
   ],
   "nextRound": 5,
-  "unregistered": 14,
+  "unregistered": 15,
   "flagged": {
-   "out": 33,
-   "doubt": 15,
+   "out": 10,
+   "doubt": 32,
    "probable": 0
   }
  },
  "warnings": [],
  "priceFreshness": {
   "stale": false,
-  "capturedAt": "2026-10-10T07:21:55.395736+00:00",
+  "capturedAt": "2026-10-12T21:48:20.363005+00:00",
   "lastGameAt": "2026-10-09T18:30:00+00:00",
   "round": 4,
   "reason": null,

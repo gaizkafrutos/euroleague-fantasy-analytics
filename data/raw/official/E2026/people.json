@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "008161",
+   "name": "BEGARIN, JUHANN",
+   "alias": "BEGARIN, JUHANN",
+   "aliasRaw": "BEGARIN, JUHANN",
+   "passportName": "JUHANN, MATHIEU",
+   "passportSurname": "BEGARIN",
+   "jerseyName": "BEGARIN",
+   "abbreviatedName": "Begarin, J.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 196,
+   "weight": 84,
+   "birthDate": "2002-08-07T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-12T08:04:28.326",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "97",
+  "dorsalRaw": "97",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "AS MONACO",
+  "externalId": 57070,
+  "images": {},
+  "club": {
+   "code": "ASV",
+   "name": "LDLC ASVEL Villeurbanne",
+   "abbreviatedName": "LDLC ASVEL",
+   "editorialName": "ASVEL",
+   "tvCode": "ASV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "014213",
    "name": "PAYNE, CAMERON",
    "alias": "PAYNE, CAMERON",
