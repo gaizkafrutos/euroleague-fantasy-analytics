@@ -33411,9 +33411,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJDL",
+   "name": "MOGULKOC, EMIN",
+   "alias": "MOGULKOC, E.",
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "images": {
+    "verticalSmall": "885ubsvbyuo7gpso"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJFC",
+   "name": "JAVOR, DAMIR",
+   "alias": "JAVOR, D.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "883i7yokjhfy7pih"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJFP",
+   "name": "DRAGOJEVIC, IGOR",
+   "alias": "DRAGOJEVIC, I.",
+   "country": {
+    "code": "MNE",
+    "name": "Montenegro"
+   },
+   "images": {
+    "verticalSmall": "87yus4cpo4p8q56s"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ADIDAS ARENA",
@@ -33512,9 +33548,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJDF",
+   "name": "LATISEVS, OLEGS",
+   "alias": "LATISEVS, O.",
+   "country": {
+    "code": "LAT",
+    "name": "Latvia"
+   },
+   "images": {
+    "verticalSmall": "8845j7vs5indngbw"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJLP",
+   "name": "SUKYS, ARTURAS",
+   "alias": "SUKYS, A.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "images": {
+    "verticalSmall": "89oview3i6xl9tp4"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMF",
+   "name": "KARDUM, LUKA",
+   "alias": "KARDUM, L.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": "awgpghekyaxank3l"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
@@ -33613,9 +33685,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJLM",
+   "name": "NEDOVIC, MILAN",
+   "alias": "NEDOVIC, M.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "885uo7l4abjbyoam"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJLQ",
+   "name": "ALIAGA, JORDI",
+   "alias": "ALIAGA, J.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "ayrigtbycwi5iitj"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJIY",
+   "name": "PASTUSIAK, PIOTR",
+   "alias": "PASTUSIAK, P.",
+   "country": {
+    "code": "POL",
+    "name": "Poland"
+   },
+   "images": {
+    "verticalSmall": "885wrb4rki89jxa3"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ARENA 8888 SOFIA",
