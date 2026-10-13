@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "014597",
+   "name": "SANZ, LORENZ",
+   "alias": "SANZ, LORENZ,ANTOINE",
+   "aliasRaw": "SANZ, LORENZ,ANTOINE",
+   "passportName": "LORENZ,ANTOINE",
+   "passportSurname": "SANZ",
+   "jerseyName": "SANZ",
+   "abbreviatedName": null,
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 187,
+   "weight": 72,
+   "birthDate": "2009-09-24T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-13T18:05:51.471",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "7",
+  "dorsalRaw": "7",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "LDLC ASVEL",
+  "externalId": 57077,
+  "images": {},
+  "club": {
+   "code": "ASV",
+   "name": "LDLC ASVEL Villeurbanne",
+   "abbreviatedName": "LDLC ASVEL",
+   "editorialName": "ASVEL",
+   "tvCode": "ASV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "008161",
    "name": "BEGARIN, JUHANN",
    "alias": "BEGARIN, JUHANN",

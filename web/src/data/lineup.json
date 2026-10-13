@@ -1,30 +1,30 @@
 {
  "method": "ilp",
- "totalPrice": 99.7,
- "totalProjection": 132.9,
- "scoredProjection": 162.38,
+ "totalPrice": 99.9,
+ "totalProjection": 134.89,
+ "scoredProjection": 164.66,
  "captain": "3903",
  "starters": [
   "3903",
   "3791",
   "3850",
-  "7424",
-  "11516"
+  "7221",
+  "7424"
  ],
- "sixth": "11511",
+ "sixth": "11516",
  "bench": [
   "4061",
-  "3933",
-  "3976",
-  "3984"
+  "3975",
+  "3984",
+  "3976"
  ],
  "coach": {
-  "key": "3909",
-  "name": "SEKULIC, ALEKSANDER",
+  "key": "4006",
+  "name": "MASIULIS, TOMAS",
   "position": "E",
-  "club": "BAR",
-  "price": 7.8,
-  "projection": 11.76
+  "club": "ZAL",
+  "price": 6.7,
+  "projection": 12.28
  },
  "players": [
   {
@@ -33,7 +33,7 @@
    "position": "G",
    "club": "HTA",
    "price": 17.3,
-   "projection": 28.05
+   "projection": 28.06
   },
   {
    "key": "3791",
@@ -41,7 +41,7 @@
    "position": "G",
    "club": "PAR",
    "price": 15.3,
-   "projection": 24.5
+   "projection": 24.51
   },
   {
    "key": "3850",
@@ -49,15 +49,23 @@
    "position": "G",
    "club": "MAD",
    "price": 11.2,
-   "projection": 16.52
+   "projection": 16.51
   },
   {
-   "key": "11511",
-   "name": "DUARTE, CHRIS",
+   "key": "3975",
+   "name": "HERRERA, SEBASTIAN",
    "position": "G",
-   "club": "BAS",
-   "price": 10.8,
-   "projection": 14.83
+   "club": "PRS",
+   "price": 5.0,
+   "projection": 5.67
+  },
+  {
+   "key": "7221",
+   "name": "TUBELIS, AZUOLAS",
+   "position": "F",
+   "club": "ZAL",
+   "price": 11.9,
+   "projection": 16.35
   },
   {
    "key": "11516",
@@ -76,14 +84,6 @@
    "projection": 7.0
   },
   {
-   "key": "3933",
-   "name": "CAVALIERE, LEOPOLD",
-   "position": "F",
-   "club": "PRS",
-   "price": 5.1,
-   "projection": 6.34
-  },
-  {
    "key": "3976",
    "name": "LAKIC, ARIJAN",
    "position": "F",
@@ -97,15 +97,15 @@
    "position": "C",
    "club": "VIR",
    "price": 8.6,
-   "projection": 14.2
+   "projection": 14.19
   },
   {
    "key": "3984",
    "name": "SANLI, SERTAC",
    "position": "C",
    "club": "ULK",
-   "price": 4.1,
-   "projection": 3.52
+   "price": 4.4,
+   "projection": 4.66
   }
  ],
  "available": true,

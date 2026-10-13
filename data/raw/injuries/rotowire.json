@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-13T07:54:01.391804+00:00",
+ "fetchedAt": "2026-10-13T19:55:13.992331+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "DUB",
    "position": "F",
    "name": "Justin Anderson",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Hamstring"
   },
@@ -16,15 +16,23 @@
    "team": "HTA",
    "position": "G",
    "name": "Tamir Blatt",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
+  },
+  {
+   "team": "PAO",
+   "position": "F",
+   "name": "Isaac Bonga",
+   "status": "Out",
+   "round": "",
+   "comment": "Wrist"
   },
   {
    "team": "HTA",
    "position": "G",
    "name": "Amir Coffey",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Calf"
   },
@@ -32,7 +40,7 @@
    "team": "EFS",
    "position": "G",
    "name": "Isaia Cordinier",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -72,23 +80,23 @@
    "team": "HTA",
    "position": "F",
    "name": "Tomer Ginat",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
   {
-   "team": "KBA",
-   "position": "G",
-   "name": "Markus Howard",
-   "status": "Game time",
+   "team": "CZV",
+   "position": "C",
+   "name": "Ebuka Izundu",
+   "status": "Out",
    "round": "",
-   "comment": "Not Injury Related"
+   "comment": "Ankle"
   },
   {
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Achilles"
   },
@@ -109,18 +117,10 @@
    "comment": "Wrist"
   },
   {
-   "team": "FBT",
-   "position": "G",
-   "name": "Shane Larkin",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -141,6 +141,14 @@
    "comment": "Achilles"
   },
   {
+   "team": "CZV",
+   "position": "G",
+   "name": "Stefan Miljenovic",
+   "status": "Out",
+   "round": "",
+   "comment": "Ankle"
+  },
+  {
    "team": "BAR",
    "position": "G",
    "name": "Justin Minaya",
@@ -152,7 +160,7 @@
    "team": "CZV",
    "position": "C",
    "name": "Johnathan Motley",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Thigh"
   },
@@ -160,7 +168,7 @@
    "team": "DUB",
    "position": "G",
    "name": "Dzanan Musa",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -168,7 +176,7 @@
    "team": "CZV",
    "position": "F",
    "name": "Aleksej Nedeljkovic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -176,7 +184,7 @@
    "team": "PAO",
    "position": "G",
    "name": "Kendrick Nunn",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -184,7 +192,7 @@
    "team": "EFS",
    "position": "C",
    "name": "Georgios Papagiannis",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -192,7 +200,7 @@
    "team": "BJK",
    "position": "C",
    "name": "Mady Sissoko",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -200,23 +208,15 @@
    "team": "PAO",
    "position": "G",
    "name": "Kostas Sloukas",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
-  },
-  {
-   "team": "ASV",
-   "position": "G",
-   "name": "TyTy Washington Jr",
-   "status": "Game time",
-   "round": "",
-   "comment": "Ankle"
   },
   {
    "team": "ZAL",
    "position": "G",
    "name": "Nigel Williams-Goss",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Hamstring"
   },
