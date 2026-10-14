@@ -1,6 +1,366 @@
 [
  {
   "person": {
+   "code": "014380",
+   "name": "KUTLUAY, OMER",
+   "alias": "KUTLUAY, ÖMER",
+   "aliasRaw": "KUTLUAY, ÖMER",
+   "passportName": "OMER",
+   "passportSurname": "KUTLUAY",
+   "jerseyName": "KUTLUAY",
+   "abbreviatedName": null,
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "height": 190,
+   "weight": 93,
+   "birthDate": "2009-03-27T00:00:00",
+   "birthCountry": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-14T15:02:31.105",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "27",
+  "dorsalRaw": "27",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "REAL MADRID",
+  "externalId": 57085,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "014635",
+   "name": "SARR, SERIGNE",
+   "alias": "SARR, SERIGNE",
+   "aliasRaw": "SARR, SERIGNE",
+   "passportName": "SERIGNE MOURTALLA",
+   "passportSurname": "SARR",
+   "jerseyName": "SARR",
+   "abbreviatedName": null,
+   "country": {
+    "code": "SEN",
+    "name": "Senegal"
+   },
+   "height": 213,
+   "weight": 110,
+   "birthDate": "2009-10-18T00:00:00",
+   "birthCountry": {
+    "code": "SEN",
+    "name": "Senegal"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-14T15:02:30.864",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "17",
+  "dorsalRaw": "17",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "REAL MADRID",
+  "externalId": 57084,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "014384",
+   "name": "MERA, PABLO",
+   "alias": "MERA, PABLO",
+   "aliasRaw": "MERA, PABLO",
+   "passportName": "PABLO",
+   "passportSurname": "MERA",
+   "jerseyName": "MERA",
+   "abbreviatedName": null,
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 190,
+   "weight": 75,
+   "birthDate": "2010-02-22T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-14T15:02:30.382",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "15",
+  "dorsalRaw": "15",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "REAL MADRID",
+  "externalId": 57083,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "014244",
+   "name": "DOLO, SEYDOU",
+   "alias": "DOLO, SEYDOU",
+   "aliasRaw": "DOLO, SEYDOU",
+   "passportName": "SEYDOU",
+   "passportSurname": "DOLO",
+   "jerseyName": "DOLO",
+   "abbreviatedName": null,
+   "country": {
+    "code": "MLI",
+    "name": "Mali"
+   },
+   "height": 203,
+   "weight": 90,
+   "birthDate": "2009-11-02T00:00:00",
+   "birthCountry": {
+    "code": "MLI",
+    "name": "Mali"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-14T15:02:30.157",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "13",
+  "dorsalRaw": "13",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "BT TORRELODONES",
+  "externalId": 57082,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "013553",
+   "name": "KAYSER, FABIAN",
+   "alias": "KAYSER, F.",
+   "aliasRaw": "KAYSER, F.",
+   "passportName": "FABIAN",
+   "passportSurname": "KAYSER",
+   "jerseyName": "KAYSER",
+   "abbreviatedName": "",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 204,
+   "weight": 89,
+   "birthDate": "2009-03-25T00:00:00",
+   "birthCountry": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-14T15:02:29.964",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "11",
+  "dorsalRaw": "11",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "REAL MADRID",
+  "externalId": 57081,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "014379",
+   "name": "ROBINSON, RHYS",
+   "alias": "ROBINSON, RHYS",
+   "aliasRaw": "ROBINSON, RHYS",
+   "passportName": "RHYS SHELBY",
+   "passportSurname": "ROBINSON",
+   "jerseyName": "ROBINSON",
+   "abbreviatedName": null,
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 198,
+   "weight": 80,
+   "birthDate": "2010-01-20T00:00:00",
+   "birthCountry": {
+    "code": "ENG",
+    "name": "England"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-14T15:02:29.489",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "5",
+  "dorsalRaw": "5",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "REAL MADRID",
+  "externalId": 57080,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "014597",
    "name": "SANZ, LORENZ",
    "alias": "SANZ, LORENZ,ANTOINE",

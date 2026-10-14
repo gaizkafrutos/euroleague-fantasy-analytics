@@ -1,8 +1,8 @@
 {
  "method": "ilp",
- "totalPrice": 99.9,
- "totalProjection": 133.02,
- "scoredProjection": 165.93,
+ "totalPrice": 100.0,
+ "totalProjection": 128.19,
+ "scoredProjection": 155.93,
  "captain": "3903",
  "starters": [
   "3903",
@@ -16,7 +16,7 @@
   "4061",
   "3933",
   "3984",
-  "4019"
+  "11548"
  ],
  "coach": {
   "key": "4255",
@@ -24,7 +24,7 @@
   "position": "E",
   "club": "PAM",
   "price": 7.9,
-  "projection": 15.14
+  "projection": 15.16
  },
  "players": [
   {
@@ -32,8 +32,8 @@
    "name": "BRYANT, ELIJAH",
    "position": "G",
    "club": "HTA",
-   "price": 17.3,
-   "projection": 27.98
+   "price": 17.2,
+   "projection": 22.9
   },
   {
    "key": "4252",
@@ -49,15 +49,15 @@
    "position": "G",
    "club": "MAD",
    "price": 11.7,
-   "projection": 19.51
+   "projection": 19.53
   },
   {
-   "key": "4019",
-   "name": "KALAITZAKIS, PANAGIOTIS",
+   "key": "11548",
+   "name": "BALDASSO, TOMMASO",
    "position": "G",
-   "club": "PAN",
-   "price": 4.0,
-   "projection": 2.79
+   "club": "VIR",
+   "price": 4.2,
+   "projection": 3.02
   },
   {
    "key": "3773",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "PAM",
    "price": 12.6,
-   "projection": 17.64
+   "projection": 17.65
   },
   {
    "key": "4246",
@@ -73,7 +73,7 @@
    "position": "F",
    "club": "RED",
    "price": 8.7,
-   "projection": 13.26
+   "projection": 13.27
   },
   {
    "key": "4061",
@@ -81,7 +81,7 @@
    "position": "F",
    "club": "PAN",
    "price": 5.1,
-   "projection": 6.6
+   "projection": 6.59
   },
   {
    "key": "3933",
@@ -97,7 +97,7 @@
    "position": "C",
    "club": "VIR",
    "price": 8.6,
-   "projection": 14.23
+   "projection": 14.22
   },
   {
    "key": "3984",

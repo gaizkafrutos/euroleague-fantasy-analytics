@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-14T12:58:11.723092+00:00",
+ "fetchedAt": "2026-10-14T18:05:38.598197+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -27,14 +27,6 @@
    "status": "Out",
    "round": "",
    "comment": "Wrist"
-  },
-  {
-   "team": "HTA",
-   "position": "G",
-   "name": "Amir Coffey",
-   "status": "Out",
-   "round": "",
-   "comment": "Calf"
   },
   {
    "team": "EFS",
@@ -211,6 +203,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "PAR",
+   "position": "F",
+   "name": "Lamar Stevens",
+   "status": "Game time",
+   "round": "",
+   "comment": "Illness"
   },
   {
    "team": "ZAL",

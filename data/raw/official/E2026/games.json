@@ -33774,7 +33774,7 @@
   "round": 5,
   "roundAlias": "Round 5",
   "roundName": "Round 5",
-  "played": false,
+  "played": true,
   "date": "2026-10-14T18:00:00",
   "confirmedDate": true,
   "confirmedHour": true,
@@ -33793,13 +33793,13 @@
      "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 100,
+   "standingsScore": 100,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 22,
+    "partials2": 21,
+    "partials3": 32,
+    "partials4": 25,
     "extraPeriods": {}
    }
   },
@@ -33815,18 +33815,18 @@
      "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 82,
+   "standingsScore": 82,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 18,
+    "partials2": 21,
+    "partials3": 16,
+    "partials4": 27,
     "extraPeriods": {}
    }
   },
-  "audience": 0,
-  "audienceConfirmed": false,
+  "audience": 218,
+  "audienceConfirmed": true,
   "socialFeed": "",
   "operationsCode": null,
   "referee1": {
