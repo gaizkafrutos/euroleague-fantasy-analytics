@@ -1,8 +1,8 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 128.19,
- "scoredProjection": 155.93,
+ "totalProjection": 134.09,
+ "scoredProjection": 157.64,
  "captain": "3903",
  "starters": [
   "3903",
@@ -11,20 +11,20 @@
   "3773",
   "7424"
  ],
- "sixth": "4246",
+ "sixth": "11547",
  "bench": [
+  "3836",
   "4061",
-  "3933",
-  "3984",
-  "11548"
+  "3991",
+  "3984"
  ],
  "coach": {
-  "key": "4255",
-  "name": "ALBERT, XAVIER",
+  "key": "3964",
+  "name": "MUMBRU, ALEX",
   "position": "E",
-  "club": "PAM",
-  "price": 7.9,
-  "projection": 15.16
+  "club": "VIR",
+  "price": 4.9,
+  "projection": 12.38
  },
  "players": [
   {
@@ -33,7 +33,7 @@
    "position": "G",
    "club": "HTA",
    "price": 17.2,
-   "projection": 22.9
+   "projection": 22.89
   },
   {
    "key": "4252",
@@ -41,7 +41,7 @@
    "position": "G",
    "club": "OLY",
    "price": 14.5,
-   "projection": 19.98
+   "projection": 19.97
   },
   {
    "key": "3850",
@@ -49,15 +49,15 @@
    "position": "G",
    "club": "MAD",
    "price": 11.7,
-   "projection": 19.53
+   "projection": 19.5
   },
   {
-   "key": "11548",
-   "name": "BALDASSO, TOMMASO",
+   "key": "11547",
+   "name": "MOORE, WENDELL",
    "position": "G",
    "club": "VIR",
-   "price": 4.2,
-   "projection": 3.02
+   "price": 9.9,
+   "projection": 15.52
   },
   {
    "key": "3773",
@@ -65,15 +65,15 @@
    "position": "F",
    "club": "PAM",
    "price": 12.6,
-   "projection": 17.65
+   "projection": 17.63
   },
   {
-   "key": "4246",
-   "name": "OJELEYE, SEMI",
+   "key": "3836",
+   "name": "MITOGLOU, KONSTANTINOS",
    "position": "F",
-   "club": "RED",
-   "price": 8.7,
-   "projection": 13.27
+   "club": "PAN",
+   "price": 6.2,
+   "projection": 7.42
   },
   {
    "key": "4061",
@@ -81,23 +81,23 @@
    "position": "F",
    "club": "PAN",
    "price": 5.1,
-   "projection": 6.59
+   "projection": 6.58
   },
   {
-   "key": "3933",
-   "name": "CAVALIERE, LEOPOLD",
+   "key": "3991",
+   "name": "ABALDE, ALBERTO",
    "position": "F",
-   "club": "PRS",
-   "price": 5.1,
-   "projection": 6.32
+   "club": "MAD",
+   "price": 4.5,
+   "projection": 4.74
   },
   {
    "key": "7424",
    "name": "DIARRA, ALIOU",
    "position": "C",
    "club": "VIR",
-   "price": 8.6,
-   "projection": 14.22
+   "price": 9.0,
+   "projection": 15.14
   },
   {
    "key": "3984",
@@ -105,7 +105,7 @@
    "position": "C",
    "club": "ULK",
    "price": 4.4,
-   "projection": 4.71
+   "projection": 4.7
   }
  ],
  "available": true,

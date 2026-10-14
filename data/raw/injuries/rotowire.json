@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-14T18:05:38.598197+00:00",
+ "fetchedAt": "2026-10-14T22:26:21.464157+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -24,7 +24,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Isaac Bonga",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Wrist"
   },
@@ -77,10 +77,18 @@
    "comment": "Knee"
   },
   {
+   "team": "PBB",
+   "position": "G",
+   "name": "Nadir Hifi",
+   "status": "Game time",
+   "round": "",
+   "comment": "Ankle"
+  },
+  {
    "team": "CZV",
    "position": "C",
    "name": "Ebuka Izundu",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -136,7 +144,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -171,6 +179,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "PBB",
+   "position": "G",
+   "name": "Frank Ntilikina",
+   "status": "Out",
+   "round": "",
+   "comment": "Strain"
   },
   {
    "team": "PAO",
