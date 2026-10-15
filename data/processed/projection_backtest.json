@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-15T06:02:06.984288+00:00",
+ "generatedAt": "2026-10-15T12:45:34.265656+00:00",
  "params": {
   "rate_prior_minutes": 100.0,
   "minutes_half_life": 3.0,
@@ -289,6 +289,10 @@
     },
     "bandCoverage": 0.594,
     "aboveP90": 0.079,
+    "riseBrier": 0.1674,
+    "riseBrierConstant": 0.1825,
+    "changeMae": 0.178,
+    "changeMaeZero": 0.181,
     "generatedAt": "2026-10-13T07:55:07.339431+00:00"
    }
   ],

@@ -1,8 +1,8 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 134.09,
- "scoredProjection": 157.64,
+ "totalProjection": 134.23,
+ "scoredProjection": 157.79,
  "captain": "3903",
  "starters": [
   "3903",
@@ -15,8 +15,8 @@
  "bench": [
   "3836",
   "4061",
-  "3991",
-  "3984"
+  "3984",
+  "3991"
  ],
  "coach": {
   "key": "3964",
@@ -57,7 +57,7 @@
    "position": "G",
    "club": "VIR",
    "price": 9.9,
-   "projection": 15.52
+   "projection": 15.68
   },
   {
    "key": "3773",
@@ -81,7 +81,7 @@
    "position": "F",
    "club": "PAN",
    "price": 5.1,
-   "projection": 6.58
+   "projection": 6.51
   },
   {
    "key": "3991",
@@ -105,7 +105,7 @@
    "position": "C",
    "club": "ULK",
    "price": 4.4,
-   "projection": 4.7
+   "projection": 4.75
   }
  ],
  "available": true,
