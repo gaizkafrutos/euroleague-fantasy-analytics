@@ -1,1 +1,2042 @@
-[]
+[
+ {
+  "person": {
+   "code": "010362",
+   "name": "TRIFUNOVIC, RADOVAN",
+   "alias": "TRIFUNOVIC, RADOVAN",
+   "aliasRaw": "TRIFUNOVIC, RADOVAN",
+   "passportName": "RADOVAN",
+   "passportSurname": "TRIFUNOVIC",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1973-01-25T00:00:00",
+   "birthCountry": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-12-03T10:11:31.076",
+  "endDate": "2025-12-15T07:23:14.123",
+  "order": 5,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53743,
+  "images": {},
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "003516",
+   "name": "SEKULIC, ALEKSANDER",
+   "alias": "SEKULIC, ALEKSANDER",
+   "aliasRaw": "SEKULIC, ALEKSANDER",
+   "passportName": "ALEKSANDER",
+   "passportSurname": "SEKULIC",
+   "jerseyName": "",
+   "abbreviatedName": "Sekulic, A.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1978-02-24T00:00:00",
+   "birthCountry": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-04-16T07:51:43.143",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 54537,
+  "images": {},
+  "club": {
+   "code": "DUB",
+   "name": "Dubai Basketball",
+   "abbreviatedName": "Dubai",
+   "editorialName": "Dubai",
+   "tvCode": "DUB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007843",
+   "name": "JAKOVLJEVIC, NENAD",
+   "alias": "JAKOVLJEVIC, NENAD",
+   "aliasRaw": "JAKOVLJEVIC, NENAD",
+   "passportName": "NENAD",
+   "passportSurname": "JAKOVLJEVIC",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1988-10-30T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-03-30T14:25:24.091",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 54534,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "012563",
+   "name": "THOMAS, JULIUS",
+   "alias": "THOMAS, JULIUS",
+   "aliasRaw": "THOMAS, JULIUS",
+   "passportName": "JULIUS",
+   "passportSurname": "THOMAS",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1997-08-23T00:00:00",
+   "birthCountry": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-03-30T14:17:22.236",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 54533,
+  "images": {},
+  "club": {
+   "code": "PRS",
+   "name": "Paris Basketball",
+   "abbreviatedName": "Paris",
+   "editorialName": "Paris",
+   "tvCode": "PBB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "BED",
+   "name": "MARKOISHVILI, MANUCHAR",
+   "alias": "Markoishvili",
+   "aliasRaw": "Markoishvili",
+   "passportName": "MANUCHAR",
+   "passportSurname": "MARKOISHVILI",
+   "jerseyName": "Markoishvili",
+   "abbreviatedName": "Markoishvili, M.",
+   "country": {
+    "code": "GEO",
+    "name": "Georgia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1986-11-17T00:00:00",
+   "birthCountry": {
+    "code": "GEO",
+    "name": "Georgia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-03-12T09:23:03.122",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 54361,
+  "images": {},
+  "club": {
+   "code": "MCO",
+   "name": "AS Monaco",
+   "abbreviatedName": "Monaco",
+   "editorialName": "Monaco",
+   "tvCode": "ASM",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/89ed276a-2ba3-413f-8ea2-b3be209ca129.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007973",
+   "name": "PENARROYA, JOAN",
+   "alias": "PENARROYA, JOAN",
+   "aliasRaw": "PENARROYA, JOAN",
+   "passportName": "JUAN",
+   "passportSurname": "PENARROYA RODRIGUEZ",
+   "jerseyName": "",
+   "abbreviatedName": "Penarroya, J.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1969-04-20T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-12-23T17:48:38.551",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53808,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WCT",
+   "name": "PESIC, SVETISLAV",
+   "alias": "PESIC, SVETISLAV",
+   "aliasRaw": "PESIC, SVETISLAV",
+   "passportName": "SVETISLAV",
+   "passportSurname": "PESIC",
+   "jerseyName": "",
+   "abbreviatedName": "Pesic, S.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1949-08-28T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-12-23T09:42:59.966",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53806,
+  "images": {},
+  "club": {
+   "code": "MUN",
+   "name": "FC Bayern Munich",
+   "abbreviatedName": "Bayern",
+   "editorialName": "Bayern",
+   "tvCode": "BAY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/817b0e58-d595-4b09-ab0b-1e7cc26249ff.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "BSS",
+   "name": "LASO, PABLO",
+   "alias": "LASO, PABLO",
+   "aliasRaw": "LASO, PABLO",
+   "passportName": "PABLO",
+   "passportSurname": "LASO BIURRUN",
+   "jerseyName": "",
+   "abbreviatedName": "Laso, P.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1967-10-13T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "pablolaso",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-12-15T14:10:39.609",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53793,
+  "images": {},
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "008875",
+   "name": "OCOKOLJIC, MIRKO",
+   "alias": "OCOKOLJIC, MIRKO",
+   "aliasRaw": "OCOKOLJIC, MIRKO",
+   "passportName": "MIRKO",
+   "passportSurname": "OCOKOLJIC",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1974-09-22T00:00:00",
+   "birthCountry": {
+    "code": "ZAM",
+    "name": "Zambia"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-12-03T16:44:39.216",
+  "endDate": "2025-12-23T16:42:00.756",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53746,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "002083",
+   "name": "POETA, GIUSEPPE",
+   "alias": "Poeta",
+   "aliasRaw": "Poeta",
+   "passportName": "GIUSEPPE",
+   "passportSurname": "POETA",
+   "jerseyName": "POETA",
+   "abbreviatedName": "Poeta, G.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1985-09-12T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-11-25T14:57:58.444",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53714,
+  "images": {},
+  "club": {
+   "code": "MIL",
+   "name": "EA7 Emporio Armani Milan",
+   "abbreviatedName": "Milan",
+   "editorialName": "Milan",
+   "tvCode": "EA7",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "KOW",
+   "name": "PASCUAL, XAVI",
+   "alias": "PASCUAL, XAVI",
+   "aliasRaw": "PASCUAL, XAVI",
+   "passportName": "XAVIER",
+   "passportSurname": "PASCUAL VIVES",
+   "jerseyName": "",
+   "abbreviatedName": "Pascual, X.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1972-09-09T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-11-19T12:06:21.245",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53702,
+  "images": {},
+  "club": {
+   "code": "BAR",
+   "name": "FC Barcelona",
+   "abbreviatedName": "Barcelona",
+   "editorialName": "Barcelona",
+   "tvCode": "BAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007411",
+   "name": "ORELLANA, OSCAR",
+   "alias": "ORELLANA, OSCAR",
+   "aliasRaw": "ORELLANA, OSCAR",
+   "passportName": "OSCAR",
+   "passportSurname": "ORELLANA RIBAS",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1980-02-05T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-11-10T16:58:22.344",
+  "endDate": "2025-11-19T07:48:57.125",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53687,
+  "images": {},
+  "club": {
+   "code": "BAR",
+   "name": "FC Barcelona",
+   "abbreviatedName": "Barcelona",
+   "editorialName": "Barcelona",
+   "tvCode": "BAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "AEY",
+   "name": "OBRADOVIC, SASA",
+   "alias": "OBRADOVIC, SASA",
+   "aliasRaw": "OBRADOVIC, SASA",
+   "passportName": "SASA",
+   "passportSurname": "OBRADOVIC",
+   "jerseyName": "",
+   "abbreviatedName": "Obradovic, S.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1969-01-29T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-10-13T15:27:08.071",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53621,
+  "images": {},
+  "club": {
+   "code": "RED",
+   "name": "Crvena Zvezda Meridianbet Belgrade",
+   "abbreviatedName": "Crvena Zvezda",
+   "editorialName": "Crvena Zvezda",
+   "tvCode": "CZV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "012530",
+   "name": "TOMOVIC, TOMISLAV",
+   "alias": "TOMOVIC, TOMISLAV",
+   "aliasRaw": "TOMOVIC, TOMISLAV",
+   "passportName": "TOMISLAV",
+   "passportSurname": "TOMOVIC",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1983-05-13T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-10-09T14:12:32.747",
+  "endDate": "2025-10-13T15:00:21.016",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53603,
+  "images": {},
+  "club": {
+   "code": "RED",
+   "name": "Crvena Zvezda Meridianbet Belgrade",
+   "abbreviatedName": "Crvena Zvezda",
+   "editorialName": "Crvena Zvezda",
+   "tvCode": "CZV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "ADG",
+   "name": "JASIKEVICIUS, SARAS",
+   "alias": "Jasikevicius",
+   "aliasRaw": "Jasikevicius",
+   "passportName": "SARUNAS",
+   "passportSurname": "JASIKEVICIUS",
+   "jerseyName": "",
+   "abbreviatedName": "Jasikevicius, S.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1976-03-05T00:00:00",
+   "birthCountry": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-29T11:23:37.119",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53554,
+  "images": {},
+  "club": {
+   "code": "ULK",
+   "name": "Fenerbahce Beko Istanbul",
+   "abbreviatedName": "Fenerbahce",
+   "editorialName": "Fenerbahce",
+   "tvCode": "FBB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "TFT",
+   "name": "KATTASH, ODED",
+   "alias": "KATTACHE, DAVID ODED",
+   "aliasRaw": "KATTACHE, DAVID ODED",
+   "passportName": "DAVID ODED",
+   "passportSurname": "KATTACHE",
+   "jerseyName": "",
+   "abbreviatedName": "Kattash, O.",
+   "country": {
+    "code": "ISR",
+    "name": "Israel"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1974-10-10T00:00:00",
+   "birthCountry": {
+    "code": "ISR",
+    "name": "Israel"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-28T11:19:43.604",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53540,
+  "images": {},
+  "club": {
+   "code": "TEL",
+   "name": "Maccabi Rapyd Tel Aviv",
+   "abbreviatedName": "Maccabi",
+   "editorialName": "Maccabi",
+   "tvCode": "MTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "014089",
+   "name": "TABELLINI, FRANCESCO",
+   "alias": "TABELLINI, FRANCESCO",
+   "aliasRaw": "TABELLINI, FRANCESCO",
+   "passportName": "FRANCESCO",
+   "passportSurname": "TABELLINI",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1983-08-18T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-18T07:20:08.481",
+  "endDate": "2026-03-27T14:05:27.921",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53406,
+  "images": {},
+  "club": {
+   "code": "PRS",
+   "name": "Paris Basketball",
+   "abbreviatedName": "Paris",
+   "editorialName": "Paris",
+   "tvCode": "PBB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WCL",
+   "name": "ATAMAN, ERGIN",
+   "alias": "ATAMAN, ERGIN",
+   "aliasRaw": "ATAMAN, ERGIN",
+   "passportName": "HALIL ERGIN",
+   "passportSurname": "ATAMAN",
+   "jerseyName": "",
+   "abbreviatedName": "Ataman, E.",
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1966-01-07T00:00:00",
+   "birthCountry": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-18T07:07:13.686",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53400,
+  "images": {},
+  "club": {
+   "code": "PAN",
+   "name": "Panathinaikos AKTOR Athens",
+   "abbreviatedName": "Panathinaikos",
+   "editorialName": "Panathinaikos",
+   "tvCode": "PAO",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "JUO",
+   "name": "SPANOULIS, VASSILIS",
+   "alias": "Spanoulis",
+   "aliasRaw": "Spanoulis",
+   "passportName": "VASILEIOS",
+   "passportSurname": "SPANOULIS",
+   "jerseyName": "SPANOULIS",
+   "abbreviatedName": "Spanoulis, V.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1982-08-07T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-17T07:24:18.955",
+  "endDate": "2026-03-12T03:53:34.704",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53328,
+  "images": {},
+  "club": {
+   "code": "MCO",
+   "name": "AS Monaco",
+   "abbreviatedName": "Monaco",
+   "editorialName": "Monaco",
+   "tvCode": "ASM",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/89ed276a-2ba3-413f-8ea2-b3be209ca129.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "KBM",
+   "name": "SFAIROPOULOS, IOANNIS",
+   "alias": "SFAIROPOULOS, IOANNIS",
+   "aliasRaw": "SFAIROPOULOS, IOANNIS",
+   "passportName": "IOANNIS",
+   "passportSurname": "SFAIROPOULOS",
+   "jerseyName": "",
+   "abbreviatedName": "Sfairopoulos, I.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1967-03-21T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-16T07:01:35.585",
+  "endDate": "2025-10-09T11:38:28.326",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53277,
+  "images": {},
+  "club": {
+   "code": "RED",
+   "name": "Crvena Zvezda Meridianbet Belgrade",
+   "abbreviatedName": "Crvena Zvezda",
+   "editorialName": "Crvena Zvezda",
+   "tvCode": "CZV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "010561",
+   "name": "KOKOSKOV, IGOR",
+   "alias": "KOKOSKOV, IGOR",
+   "aliasRaw": "KOKOSKOV, IGOR",
+   "passportName": "IGOR",
+   "passportSurname": "KOKOSKOV",
+   "jerseyName": "",
+   "abbreviatedName": "Kokoskov, I.",
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1971-12-17T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-15T14:55:07.116",
+  "endDate": "2025-12-02T14:58:58.924",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53227,
+  "images": {},
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007886",
+   "name": "GALBIATI, PAOLO",
+   "alias": "GALBIATI, PAOLO",
+   "aliasRaw": "GALBIATI, PAOLO",
+   "passportName": "PAOLO",
+   "passportSurname": "GALBIATI",
+   "jerseyName": "",
+   "abbreviatedName": "Galbiati, P.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1984-02-20T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-15T14:54:17.057",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53226,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "AGI",
+   "name": "GOLEMAC, JURICA",
+   "alias": "Golemac",
+   "aliasRaw": "Golemac",
+   "passportName": "JURICA",
+   "passportSurname": "GOLEMAC",
+   "jerseyName": "",
+   "abbreviatedName": "Golemac, J.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1977-05-29T00:00:00",
+   "birthCountry": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-15T14:53:14.565",
+  "endDate": "2026-04-16T07:51:33.1",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53225,
+  "images": {},
+  "club": {
+   "code": "DUB",
+   "name": "Dubai Basketball",
+   "abbreviatedName": "Dubai",
+   "editorialName": "Dubai",
+   "tvCode": "DUB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WAF",
+   "name": "MESSINA, ETTORE",
+   "alias": "MESSINA, ETTORE",
+   "aliasRaw": "MESSINA, ETTORE",
+   "passportName": "ETTORE",
+   "passportSurname": "MESSINA",
+   "jerseyName": "",
+   "abbreviatedName": "Messina, E.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1959-09-30T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-15T14:27:20.946",
+  "endDate": "2025-11-25T12:36:48.93",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53215,
+  "images": {},
+  "club": {
+   "code": "MIL",
+   "name": "EA7 Emporio Armani Milan",
+   "abbreviatedName": "Milan",
+   "editorialName": "Milan",
+   "tvCode": "EA7",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WBR",
+   "name": "HERBERT, GORDON",
+   "alias": "HERBERT, GORDON",
+   "aliasRaw": "HERBERT, GORDON",
+   "passportName": "GORDON WALTER",
+   "passportSurname": "HERBERT",
+   "jerseyName": "",
+   "abbreviatedName": "Herbert, G.",
+   "country": {
+    "code": "FIN",
+    "name": "Finland"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1959-02-16T00:00:00",
+   "birthCountry": {
+    "code": "CAN",
+    "name": "Canada"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-15T14:16:05.845",
+  "endDate": "2025-12-22T06:48:06.037",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53204,
+  "images": {},
+  "club": {
+   "code": "MUN",
+   "name": "FC Bayern Munich",
+   "abbreviatedName": "Bayern",
+   "editorialName": "Bayern",
+   "tvCode": "BAY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/817b0e58-d595-4b09-ab0b-1e7cc26249ff.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "CAG",
+   "name": "ITOUDIS, DIMITRIS",
+   "alias": "ITOUDIS, DIMITRIS",
+   "aliasRaw": "ITOUDIS, DIMITRIS",
+   "passportName": "DIMITRIOS",
+   "passportSurname": "ITOUDIS",
+   "jerseyName": "",
+   "abbreviatedName": "Itoudis, D.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1970-09-08T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "ItoudisD",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-15T13:36:44.829",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53181,
+  "images": {},
+  "club": {
+   "code": "HTA",
+   "name": "Hapoel IBI Tel Aviv",
+   "abbreviatedName": "Hapoel Tel Aviv",
+   "editorialName": "Hapoel Tel Aviv",
+   "tvCode": "HTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "TFC",
+   "name": "POUPET, PIERRIC",
+   "alias": "POUPET, PIERRIC",
+   "aliasRaw": "POUPET, PIERRIC",
+   "passportName": "PIERRIC NICOLAS VINCENT",
+   "passportSurname": "POUPET",
+   "jerseyName": "",
+   "abbreviatedName": "",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1984-08-18T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-15T13:22:01.973",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53169,
+  "images": {},
+  "club": {
+   "code": "ASV",
+   "name": "LDLC ASVEL Villeurbanne",
+   "abbreviatedName": "ASVEL",
+   "editorialName": "ASVEL",
+   "tvCode": "ASV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "001869",
+   "name": "BARTZOKAS, GEORGIOS",
+   "alias": "BARTZOKAS, GEORGIOS",
+   "aliasRaw": "BARTZOKAS, GEORGIOS",
+   "passportName": "GEORGIOS",
+   "passportSurname": "BARTZOKAS",
+   "jerseyName": "",
+   "abbreviatedName": "Bartzokas, G.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1965-06-11T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-15T12:56:48.363",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53154,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WBC",
+   "name": "OBRADOVIC, ZELJKO",
+   "alias": "OBRADOVIC, ZELJKO",
+   "aliasRaw": "OBRADOVIC, ZELJKO",
+   "passportName": "ZELIMIR",
+   "passportSurname": "OBRADOVIC",
+   "jerseyName": "",
+   "abbreviatedName": "Obradovic, Z.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1960-03-09T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-15T11:56:11.167",
+  "endDate": "2025-12-02T15:01:15.25",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53113,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WAV",
+   "name": "SCARIOLO, SERGIO",
+   "alias": "SCARIOLO, SERGIO",
+   "aliasRaw": "SCARIOLO, SERGIO",
+   "passportName": "SERGIO",
+   "passportSurname": "SCARIOLO",
+   "jerseyName": "",
+   "abbreviatedName": "Scariolo, S.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1961-04-01T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-15T10:45:09.717",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53102,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "CWX",
+   "name": "MARTINEZ, PEDRO",
+   "alias": "MARTINEZ, PEDRO",
+   "aliasRaw": "MARTINEZ, PEDRO",
+   "passportName": "PEDRO",
+   "passportSurname": "MARTINEZ SANCHEZ",
+   "jerseyName": "",
+   "abbreviatedName": "Martinez, P.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1961-06-29T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-15T10:43:43.842",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53101,
+  "images": {},
+  "club": {
+   "code": "PAM",
+   "name": "Valencia Basket",
+   "abbreviatedName": "Valencia",
+   "editorialName": "Valencia",
+   "tvCode": "VBC",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WAW",
+   "name": "IVANOVIC, DUSKO",
+   "alias": "IVANOVIC, DUSKO",
+   "aliasRaw": "IVANOVIC, DUSKO",
+   "passportName": "DUSKO",
+   "passportSurname": "IVANOVIC",
+   "jerseyName": "",
+   "abbreviatedName": "Ivanovic, D.",
+   "country": {
+    "code": "MNE",
+    "name": "Montenegro"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1957-09-01T00:00:00",
+   "birthCountry": {
+    "code": "MNE",
+    "name": "Montenegro"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-15T10:23:50.277",
+  "endDate": "2026-03-30T07:43:54.286",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53093,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "ACX",
+   "name": "MASIULIS, TOMAS",
+   "alias": "Masiulis",
+   "aliasRaw": "Masiulis",
+   "passportName": "TOMAS",
+   "passportSurname": "MASIULIS",
+   "jerseyName": "",
+   "abbreviatedName": "Masiulis, T.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1975-09-19T00:00:00",
+   "birthCountry": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2025-09-15T10:10:05.019",
+  "endDate": "2026-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 53081,
+  "images": {},
+  "club": {
+   "code": "ZAL",
+   "name": "Zalgiris Kaunas",
+   "abbreviatedName": "Zalgiris",
+   "editorialName": "Zalgiris",
+   "tvCode": "ZAL",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007973",
+   "name": "PENARROYA, JOAN",
+   "alias": "PENARROYA, JOAN",
+   "aliasRaw": "PENARROYA, JOAN",
+   "passportName": "JUAN",
+   "passportSurname": "PENARROYA RODRIGUEZ",
+   "jerseyName": "",
+   "abbreviatedName": "Penarroya, J.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1969-04-20T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2025-09-09T13:47:07.486",
+  "endDate": "2025-11-10T16:15:30.078",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 51929,
+  "images": {},
+  "club": {
+   "code": "BAR",
+   "name": "FC Barcelona",
+   "abbreviatedName": "Barcelona",
+   "editorialName": "Barcelona",
+   "tvCode": "BAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2025-26",
+   "code": "E2025",
+   "alias": "2025-26",
+   "competitionCode": "E",
+   "year": 2025,
+   "startDate": "2025-07-01T00:00:00"
+  }
+ }
+]

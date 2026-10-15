@@ -1,22 +1,22 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 134.23,
- "scoredProjection": 157.79,
+ "totalProjection": 135.35,
+ "scoredProjection": 154.22,
  "captain": "3903",
  "starters": [
   "3903",
-  "4252",
   "3850",
-  "3773",
-  "7424"
+  "3898",
+  "11547",
+  "4246"
  ],
- "sixth": "11547",
+ "sixth": "7424",
  "bench": [
-  "3836",
+  "3842",
+  "4084",
   "4061",
-  "3984",
-  "3991"
+  "3950"
  ],
  "coach": {
   "key": "3964",
@@ -24,7 +24,7 @@
   "position": "E",
   "club": "VIR",
   "price": 4.9,
-  "projection": 12.38
+  "projection": 12.41
  },
  "players": [
   {
@@ -33,23 +33,15 @@
    "position": "G",
    "club": "HTA",
    "price": 17.2,
-   "projection": 22.89
-  },
-  {
-   "key": "4252",
-   "name": "MONTERO, JEAN",
-   "position": "G",
-   "club": "OLY",
-   "price": 14.5,
-   "projection": 19.97
+   "projection": 22.88
   },
   {
    "key": "3850",
    "name": "MALEDON, THEO",
    "position": "G",
    "club": "MAD",
-   "price": 11.7,
-   "projection": 19.5
+   "price": 12.3,
+   "projection": 18.25
   },
   {
    "key": "11547",
@@ -60,20 +52,28 @@
    "projection": 15.68
   },
   {
-   "key": "3773",
-   "name": "MIROTIC, NIKOLA",
-   "position": "F",
-   "club": "PAM",
-   "price": 12.6,
-   "projection": 17.63
+   "key": "3842",
+   "name": "WILBEKIN, SCOTTIE",
+   "position": "G",
+   "club": "BES",
+   "price": 8.7,
+   "projection": 12.57
   },
   {
-   "key": "3836",
-   "name": "MITOGLOU, KONSTANTINOS",
+   "key": "4246",
+   "name": "OJELEYE, SEMI",
    "position": "F",
-   "club": "PAN",
-   "price": 6.2,
-   "projection": 7.42
+   "club": "RED",
+   "price": 8.7,
+   "projection": 13.36
+  },
+  {
+   "key": "4084",
+   "name": "SLEVA, DUSTIN",
+   "position": "F",
+   "club": "ZAL",
+   "price": 6.4,
+   "projection": 7.7
   },
   {
    "key": "4061",
@@ -84,12 +84,20 @@
    "projection": 6.51
   },
   {
-   "key": "3991",
-   "name": "ABALDE, ALBERTO",
+   "key": "3950",
+   "name": "DOBRIC, OGNJEN",
    "position": "F",
-   "club": "MAD",
-   "price": 4.5,
-   "projection": 4.74
+   "club": "RED",
+   "price": 5.1,
+   "projection": 6.05
+  },
+  {
+   "key": "3898",
+   "name": "ZIZIC, ANTE",
+   "position": "C",
+   "club": "BES",
+   "price": 12.7,
+   "projection": 17.2
   },
   {
    "key": "7424",
@@ -97,15 +105,7 @@
    "position": "C",
    "club": "VIR",
    "price": 9.0,
-   "projection": 15.14
-  },
-  {
-   "key": "3984",
-   "name": "SANLI, SERTAC",
-   "position": "C",
-   "club": "ULK",
-   "price": 4.4,
-   "projection": 4.75
+   "projection": 15.15
   }
  ],
  "available": true,
