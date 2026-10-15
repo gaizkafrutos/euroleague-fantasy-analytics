@@ -265,3 +265,26 @@ def test_recien_llegado_usa_la_previa_de_su_precio():
 def test_en_linea_base_no_hay_encogimiento():
     table = pd.DataFrame([_row(fp_avg=20.0, form=20.0, games_played=30, games=30, club_games=30)])
     assert project_fantasy_points(table, baseline=True).iloc[0] == pytest.approx(20.0)
+
+
+def test_la_tendencia_de_rol_existe_antes_de_la_sexta_jornada():
+    """Con cinco partidos no hay "últimos cinco" frente a "los anteriores":
+    la tendencia salía a 0 para todos. Se parte lo jugado por la mitad."""
+    minutes = [10.0, 10.0, 10.0, 20.0, 20.0]
+    log = pd.DataFrame(
+        {
+            "person_code": "001",
+            "round": range(1, 6),
+            "game_code": range(1, 6),
+            "played": True,
+            "started": False,
+            "fantasy_points": 10.0,
+            "minutes": minutes,
+            "minutes_share": [m / 200 for m in minutes],
+        }
+    )
+    perf = player_performance(log).set_index("person_code")
+    assert perf.loc["001", "minutes_trend"] == pytest.approx(10.0)
+    assert perf.loc["001", "minutes_share_trend"] == pytest.approx(0.05)
+    # La forma y los minutos recientes siguen siendo los de la ventana entera.
+    assert perf.loc["001", "minutes_recent"] == pytest.approx(14.0)

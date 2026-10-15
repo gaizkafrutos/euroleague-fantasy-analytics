@@ -71,7 +71,6 @@ def player_performance(gamelog: pd.DataFrame, *, window: int = FORM_WINDOW) -> p
         fp = active["fantasy_points"]
         minutes = active["minutes"]
         recent = active.tail(window)
-        earlier = active.iloc[:-window] if n_active > window else active.head(0)
 
         fp_avg = float(fp.mean()) if n_active else 0.0
         fp_std = float(fp.std(ddof=0)) if n_active > 1 else 0.0
@@ -79,18 +78,35 @@ def player_performance(gamelog: pd.DataFrame, *, window: int = FORM_WINDOW) -> p
 
         minutes_avg = float(minutes.mean()) if n_active else 0.0
         minutes_recent = float(recent["minutes"].mean()) if len(recent) else 0.0
-        minutes_prior = float(earlier["minutes"].mean()) if len(earlier) else minutes_avg
+
+        # Las tendencias comparan lo reciente con lo anterior, y con `window`
+        # partidos o menos no hay "anterior": salían a 0 para todos hasta la
+        # J6 (el "Rol al alza" de octubre, entero a +0,0). Hasta tener dos
+        # ventanas, se parte lo jugado por la mitad: últimos n//2 frente al resto.
+        split = min(window, n_active // 2)
+        trend_recent = active.tail(split) if split else active.head(0)
+        trend_earlier = active.iloc[:-split] if split else active.head(0)
+        minutes_prior = (
+            float(trend_earlier["minutes"].mean()) if len(trend_earlier) else minutes_avg
+        )
+        minutes_trend_recent = (
+            float(trend_recent["minutes"].mean()) if len(trend_recent) else minutes_avg
+        )
 
         # Coeficiente de variación invertido y acotado: 1 = metronomo, 0 = lotería.
         consistency = 0.0
         if n_active >= 2 and fp_avg > 0:
             consistency = float(np.clip(1 - (fp_std / fp_avg), 0, 1))
 
-        share_recent = float(recent["minutes_share"].mean()) if "minutes_share" in group and len(recent) else 0.0
+        has_share = "minutes_share" in group
+        share_recent = float(recent["minutes_share"].mean()) if has_share and len(recent) else 0.0
+        share_trend_recent = (
+            float(trend_recent["minutes_share"].mean()) if has_share and len(trend_recent) else 0.0
+        )
         share_prior = (
-            float(earlier["minutes_share"].mean())
-            if "minutes_share" in group and len(earlier)
-            else share_recent
+            float(trend_earlier["minutes_share"].mean())
+            if has_share and len(trend_earlier)
+            else share_trend_recent
         )
 
         return (
@@ -102,9 +118,9 @@ def player_performance(gamelog: pd.DataFrame, *, window: int = FORM_WINDOW) -> p
                 "started_rate": round(float(active["started"].mean()), 3) if n_active else 0.0,
                 "minutes_avg": round(minutes_avg, 1),
                 "minutes_recent": round(minutes_recent, 1),
-                "minutes_trend": round(minutes_recent - minutes_prior, 1) if n_active >= MIN_GAMES_FOR_TREND else 0.0,
+                "minutes_trend": round(minutes_trend_recent - minutes_prior, 1) if n_active >= MIN_GAMES_FOR_TREND else 0.0,
                 "minutes_share_recent": round(share_recent, 4),
-                "minutes_share_trend": round(share_recent - share_prior, 4),
+                "minutes_share_trend": round(share_trend_recent - share_prior, 4) if n_active >= MIN_GAMES_FOR_TREND else 0.0,
                 "fp_avg": round(fp_avg, 2),
                 "fp_median": round(float(fp.median()), 2) if n_active else 0.0,
                 "fp_std": round(fp_std, 2),

@@ -43,8 +43,11 @@ export default function MercadoPage() {
   // hay "últimas cinco", y exigirlas dejaba las tres listas vacías hasta
   // octubre. Hasta la J5, el rol se mide contra la temporada anterior y la
   // fiabilidad sale de la dispersión que ya usa la proyección.
+  // La fiabilidad propia pide diez partidos: entre la J5 y la J10 la lista se
+  // quedaba vacía, así que sigue saliendo de la proyección hasta entonces.
   const roundsPlayed = Math.max(meta.currentRound - 1, 0);
   const early = roundsPlayed < 5;
+  const earlyReliability = roundsPlayed < 10;
   const minGames = Math.min(5, Math.max(1, roundsPlayed));
 
   // Un chollo de baja no es un chollo: no se recomienda a quien no va a jugar.
@@ -66,7 +69,12 @@ export default function MercadoPage() {
         .sort((a, b) => minutesGain(b) - minutesGain(a))
         .slice(0, 5)
     : [...universe]
-        .filter((player) => (player.perf.gamesPlayed ?? 0) >= 5)
+        .filter(
+          (player) =>
+            (player.perf.gamesPlayed ?? 0) >= 5 &&
+            (player.perf.minutesShareTrend ?? 0) > 0 &&
+            isSignable(player),
+        )
         .sort((a, b) => (b.perf.minutesShareTrend ?? 0) - (a.perf.minutesShareTrend ?? 0))
         .slice(0, 5);
 
@@ -74,7 +82,7 @@ export default function MercadoPage() {
     player.outlook && (player.projectedFp ?? 0) > 0
       ? Math.max(0, 1 - player.outlook.sd / (player.projectedFp ?? 1))
       : 0;
-  const mostConsistent = early
+  const mostConsistent = earlyReliability
     ? [...universe]
         .filter((player) => (player.projectedFp ?? 0) >= 10 && isSignable(player))
         .sort((a, b) => reliability(b) - reliability(a))
@@ -140,7 +148,9 @@ export default function MercadoPage() {
           <p className="card-note" style={{ margin: 0 }}>
             {early
               ? `Con ${roundsPlayed} ${roundsPlayed === 1 ? "jornada jugada" : "jornadas jugadas"}, el rol se compara con la temporada pasada y la fiabilidad sale de la dispersión que usa la proyección.`
-              : "Requieren al menos cinco partidos jugados para entrar en el ranking."}
+              : earlyReliability
+                ? "El rol pide cinco partidos jugados. La fiabilidad sale de la dispersión que usa la proyección hasta que haya diez."
+                : "Requieren al menos cinco partidos jugados para entrar en el ranking, diez para la fiabilidad."}
           </p>
         </div>
 
@@ -169,7 +179,9 @@ export default function MercadoPage() {
             title="Los más fiables"
             note="Menor dispersión en su puntuación. Lo que se busca en un titular indiscutible."
             players={mostConsistent}
-            render={(player) => percent(early ? reliability(player) : player.perf.consistency)}
+            render={(player) =>
+              percent(earlyReliability ? reliability(player) : player.perf.consistency)
+            }
           />
         </div>
       </section>
