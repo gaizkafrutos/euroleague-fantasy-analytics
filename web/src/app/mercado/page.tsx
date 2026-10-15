@@ -170,13 +170,21 @@ export default function MercadoPage() {
             note={
               early
                 ? "Más minutos por partido que el año pasado: rol nuevo, o ganado."
-                : "Mayor ganancia de peso en los minutos de su equipo en las últimas jornadas."
+                : "Más minutos por partido en sus últimos partidos que en los primeros. Debajo, cuánto más del total de su equipo."
             }
             players={risingRole}
+            // Se ordena por la parte de los minutos del equipo (las prórrogas no
+            // la inflan), pero se enseña en minutos: "+6,5 pp" se leía como
+            // puntos fantasy.
             render={(player) =>
               early
                 ? `${minutesGain(player) >= 0 ? "+" : "−"}${num(Math.abs(minutesGain(player)))} min`
-                : `+${num((player.perf.minutesShareTrend ?? 0) * 100, 1)} pp`
+                : `${signedNum(player.perf.minutesTrend ?? 0)} min`
+            }
+            detail={
+              early
+                ? undefined
+                : (player) => `${num((player.perf.minutesShareTrend ?? 0) * 100, 1)} % más del equipo`
             }
           />
           <RankCard
@@ -366,6 +374,10 @@ function RoleBadge({ role, captain }: { role: Role; captain: boolean }) {
   return null;
 }
 
+function signedNum(value: number): string {
+  return `${value >= 0 ? "+" : "−"}${num(Math.abs(value))}`;
+}
+
 /** Los entrenadores no cruzan con el censo oficial, así que el lineup los
  *  trae sin nombre. La ficha del mercado sí tiene el suyo ("X. Albert"); si
  *  ni eso, el club identifica igual de bien y no inventa nada. */
@@ -382,11 +394,14 @@ function RankCard({
   note,
   players,
   render,
+  detail,
 }: {
   title: string;
   note: string;
   players: Player[];
   render: (player: Player) => string;
+  /** Una segunda cifra, pequeña, bajo la principal. */
+  detail?: (player: Player) => string;
 }) {
   return (
     <div className="card">
@@ -401,7 +416,10 @@ function RankCard({
           {players.map((player, index) => (
             <li key={player.id} className={index === 0 ? "is-lead" : undefined}>
               <PlayerCell player={player} />
-              <span className="rank-value">{render(player)}</span>
+              <span className="rank-value">
+                {render(player)}
+                {detail ? <small className="rank-detail">{detail(player)}</small> : null}
+              </span>
             </li>
           ))}
         </ol>

@@ -1360,6 +1360,18 @@ table.data th.num {
   font-variant-numeric: tabular-nums;
 }
 
+.rank-detail {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
 /* --------------------------------------------------------------------------
    Gráficos
    -------------------------------------------------------------------------- */
