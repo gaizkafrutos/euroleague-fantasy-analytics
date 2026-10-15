@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-10-15T12:45:59.240288+00:00",
+ "generatedAt": "2026-10-15T17:50:48.448260+00:00",
  "currentRound": 6,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 34,
- "lastPriceCapture": "2026-10-15T12:45:29.218919+00:00",
- "lastPriceCheck": "2026-10-15T12:45:29.218919+00:00",
+ "priceSnapshots": 35,
+ "lastPriceCapture": "2026-10-15T17:50:17.226126+00:00",
+ "lastPriceCheck": "2026-10-15T17:50:17.226126+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.21
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-15T12:45:34.265656+00:00",
+  "generatedAt": "2026-10-15T17:50:22.675213+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -359,19 +359,20 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-15T12:45:28.228691+00:00",
-  "rows": 30,
+  "fetchedAt": "2026-10-15T17:50:16.019972+00:00",
+  "rows": 31,
   "matched": 29,
   "unmatched": [
-   "Mady Sissoko (BJK)"
+   "Mady Sissoko (BJK)",
+   "Lonnie Walker IV (BJK)"
   ],
   "sources": [
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-15T12:45:28.228691+00:00",
-    "rows": 30,
+    "fetchedAt": "2026-10-15T17:50:16.019972+00:00",
+    "rows": 31,
     "matched": 29,
     "flagged": 29
    }
@@ -379,15 +380,15 @@
   "nextRound": 6,
   "unregistered": 15,
   "flagged": {
-   "out": 24,
-   "doubt": 20,
+   "out": 25,
+   "doubt": 19,
    "probable": 0
   }
  },
  "warnings": [],
  "priceFreshness": {
   "stale": false,
-  "capturedAt": "2026-10-15T12:45:29.218919+00:00",
+  "capturedAt": "2026-10-15T17:50:17.226126+00:00",
   "lastGameAt": "2026-10-14T18:45:00+00:00",
   "round": 5,
   "reason": null,

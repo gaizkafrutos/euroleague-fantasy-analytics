@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-15T12:45:28.228691+00:00",
+ "fetchedAt": "2026-10-15T17:50:16.019972+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -205,6 +205,14 @@
    "comment": "Knee"
   },
   {
+   "team": "PAO",
+   "position": "F",
+   "name": "Nikos Rogkavopoulos",
+   "status": "Out",
+   "round": "",
+   "comment": "Hamstring"
+  },
+  {
    "team": "BJK",
    "position": "C",
    "name": "Mady Sissoko",
@@ -221,12 +229,12 @@
    "comment": "Knee"
   },
   {
-   "team": "PAR",
-   "position": "F",
-   "name": "Lamar Stevens",
+   "team": "BJK",
+   "position": "G",
+   "name": "Lonnie Walker IV",
    "status": "Game time",
    "round": "",
-   "comment": "Illness"
+   "comment": "Not Injury Related"
   },
   {
    "team": "ZAL",
