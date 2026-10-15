@@ -216,21 +216,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 note={pctNote(player, "valueProjected")}
               />
               <BandItem
-                label="Fiabilidad"
-                value={
-                  perf.consistencyEstimated
-                    ? `≈${percent(perf.consistency)}`
-                    : (perf.gamesPlayed ?? 0) >= 3
-                      ? percent(perf.consistency)
-                      : "—"
-                }
-                note={
-                  perf.consistencyEstimated
-                    ? "estimada"
-                    : (perf.gamesPlayed ?? 0) >= 3
-                      ? pctNote(player, "consistency")
-                      : "3+ partidos"
-                }
+                label="Regularidad"
+                value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
+                note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
               />
               <BandItem
                 label="Próximo partido"
@@ -570,6 +558,9 @@ function ProjectionBreakdown({ player }: { player: Player }) {
             label="Horquilla p25–p75 · techo p90"
             value={`${num(outlook.floor)}–${num(outlook.ceiling)} · ${num(outlook.p90 ?? null)}`}
           />
+        ) : null}
+        {typeof outlook?.certainty === "number" ? (
+          <Row label="Seguridad de la proyección" value={percent(outlook.certainty)} />
         ) : null}
         <Row label="Último partido" value={`${num(player.perf.lastFp)} pts`} />
       </dl>

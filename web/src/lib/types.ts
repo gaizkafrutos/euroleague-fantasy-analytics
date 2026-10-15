@@ -39,9 +39,8 @@ export interface Performance {
   fpFloor: number | null;
   fpCeiling: number | null;
   fpPerMin: number | null;
+  /** Regularidad: 1 − σ/media de lo que ya puntuó (3+ partidos). */
   consistency: number | null;
-  /** La fiabilidad sale de la dispersión encogida (menos de 3 partidos), no de la suya. */
-  consistencyEstimated?: boolean;
   form: number | null;
   formDelta: number | null;
   lastFp: number | null;
@@ -179,6 +178,9 @@ export interface Outlook {
   /** Probabilidad de superar el umbral, con una normal (proyección, sd). */
   riseProb: number;
   sd: number;
+  /** Seguridad de la proyección: 1 − σ/proyección. No es la regularidad: mide
+   *  el margen de error de la cifra de la próxima jornada, no lo ya jugado. */
+  certainty?: number;
   /** Percentiles 25 y 75 de su puntuación esperada (cuantiles empíricos). */
   floor: number;
   ceiling: number;

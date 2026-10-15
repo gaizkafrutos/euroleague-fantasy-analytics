@@ -19,8 +19,10 @@ from typing import Any
 
 from efa.clients import EuroleagueClient
 from efa.config import (
+    ARCHIVE_PEOPLE_PATH,
     DATA_DIR,
     EUROLEAGUE_API_BASE,
+    PLAYER_OVERRIDES_PATH,
     PRIOR_SEASON_CODE,
     SEASON_CODE,
     boxscores_path,
@@ -63,7 +65,7 @@ def ingest_reference(season_code: str = SEASON_CODE, client: EuroleagueClient | 
     payloads = {
         "clubs": client.clubs(),
         "players": client.people("J"),
-        "coaches": client.people("C"),
+        "coaches": client.people("E"),
         "games": client.games(),
     }
     for key, filename in FILES.items():
@@ -223,8 +225,8 @@ def _registration_rank(entry: dict[str, Any]) -> tuple[int, str]:
 def coach_census(season_code: str = SEASON_CODE) -> list[dict[str, Any]]:
     """Censo de entrenadores reconstruido desde los boxscores.
 
-    El endpoint de personas devuelve cero entrenadores (ni con `personType=C`),
-    pero cada boxscore sí trae el entrenador de cada banquillo. Como el mercado
+    Respaldo por si el censo de entrenadores (`personType=E`) llega vacío:
+    cada boxscore trae el entrenador de cada banquillo. Como el mercado
     de Fantaking incluye a los 20 entrenadores — puntúan por el marcador de su
     equipo — hace falta poder identificarlos.
 
@@ -303,6 +305,60 @@ def _migrate_legacy_boxscores(season_code: str) -> dict[int, dict[str, Any]]:
     return store
 
 
+def load_archive_people() -> list[dict[str, Any]]:
+    """Identidades de temporadas antiguas para los overrides que las piden."""
+    return _read_json(ARCHIVE_PEOPLE_PATH, [])
+
+
+def ingest_archive_people(
+    season_codes: tuple[str, ...] = (SEASON_CODE, PRIOR_SEASON_CODE),
+    client: EuroleagueClient | None = None,
+) -> dict[str, int]:
+    """Trae del registro histórico a quien un override nombra y no está en el
+    censo de las temporadas cargadas.
+
+    Hay jugadores en el mercado del Fantasy sin inscribir en la Euroliga
+    (Jaiteh, lesionado del Aquiles) cuya última ficha oficial es de hace dos o
+    tres temporadas. Sin esto el override apuntaba a un código que nadie
+    conocía y el jugador seguía sin identificar. Se descarga una vez por
+    persona: una identidad no cambia.
+    """
+    import pandas as pd
+
+    if not PLAYER_OVERRIDES_PATH.exists():
+        return {"requested": 0, "fetched": 0}
+    overrides = pd.read_csv(PLAYER_OVERRIDES_PATH, dtype={"person_code": str}, comment="#")
+    wanted = {str(code).strip() for code in overrides.get("person_code", []) if isinstance(code, str) and code.strip()}
+
+    known: set[str] = set()
+    for season in season_codes:
+        reference = load_reference(season)
+        for entry in list(reference.get("players", [])) + list(reference.get("coaches", [])):
+            known.add(str((entry.get("person") or {}).get("code") or ""))
+
+    archive = {str((e.get("person") or {}).get("code")): e for e in load_archive_people()}
+    missing = sorted(wanted - known - set(archive))
+    client = client or EuroleagueClient(SEASON_CODE)
+    fetched = 0
+    for code in missing:
+        try:
+            person = client.person(code)
+        except Exception as exc:  # noqa: BLE001 - se registra y se sigue
+            log.warning("Ficha %s no disponible: %s", code, str(exc)[:160])
+            continue
+        if not person.get("code"):
+            continue
+        archive[code] = {"person": person, "type": "J", "typeName": "Player", "active": False, "club": None}
+        fetched += 1
+        time.sleep(client.polite_delay)
+
+    # Solo se guardan los que algún override sigue pidiendo.
+    kept = [archive[code] for code in sorted(archive) if code in wanted]
+    if fetched or len(kept) != len(archive):
+        _write_json(ARCHIVE_PEOPLE_PATH, kept)
+    return {"requested": len(missing), "fetched": fetched}
+
+
 def ingest_all(
     season_code: str = SEASON_CODE,
     prior_season_code: str | None = PRIOR_SEASON_CODE,
@@ -340,5 +396,11 @@ def ingest_all(
                     summary[prior_season_code]["playerStats"] = ingest_player_stats(prior_season_code)
                 except Exception as exc:  # noqa: BLE001
                     log.warning("Avanzadas oficiales de %s no disponibles: %s", prior_season_code, exc)
+
+    try:
+        seasons = tuple(code for code in (season_code, prior_season_code) if code)
+        summary["archive"] = ingest_archive_people(seasons)
+    except Exception as exc:  # noqa: BLE001
+        log.warning("Fichas históricas no disponibles: %s", exc)
 
     return summary

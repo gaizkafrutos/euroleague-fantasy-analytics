@@ -234,22 +234,28 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Mapa de tiro">
               Coordenadas de cada tiro de campo (API oficial), repartidas en diez zonas con las
-              medidas FIBA y comparadas con la media de la liga en esa zona. Dos temporadas: el
-              tiro viaja con el jugador.
+              medidas FIBA y comparadas con la media de la liga en esa zona. Hasta la jornada 5
+              se suman las dos temporadas (el tiro viaja con el jugador); desde ahí, solo esta.
             </Definition>
             <Definition term="Lo que concede cada club">
-              Puntos fantasy por partido de los rivales de cada puesto, encogidos hacia el año
-              pasado como la proyección. Es lo que colorea el calendario fantasy.
+              Puntos fantasy por partido de los rivales de cada puesto, encogidos hacia la media
+              de la liga con 5 partidos (y hacia el año pasado solo hasta la jornada 5). Es lo que
+              colorea el calendario fantasy.
             </Definition>
             <Definition term="Puntos por crédito">
               Proyección dividida entre precio. Es el ratio que decide casi todo: 18 puntos a
               12 créditos rinden peor que 12 puntos a 7.
             </Definition>
-            <Definition term="Fiabilidad">
-              Uno menos el coeficiente de variación, acotado entre 0 y 1. Un 70% es un
-              jugador que repite; un 30% es una lotería con la misma media. Con menos de tres
-              partidos se estima con la dispersión encogida hacia el año pasado, y se marca
-              con «≈».
+            <Definition term="Regularidad">
+              Uno menos el coeficiente de variación de lo que ya ha puntuado esta temporada,
+              acotado entre 0 y 1. Un 70% es un jugador que repite; un 30% es una lotería con la
+              misma media. Con menos de tres partidos no se da: con uno es 0 por definición.
+            </Definition>
+            <Definition term="Seguridad de la proyección">
+              Uno menos la desviación de la proyección entre la proyección. No mira lo jugado sino
+              lo que se espera: incluye la duda sobre su media y la de si juega, así que un
+              titular regular con parte de duda puede tener mucha regularidad y poca seguridad.
+              Está en la ficha, junto a la horquilla.
             </Definition>
             <Definition term="Probabilidad de subir">
               La probabilidad de que juegue y, jugando, puntúe lo bastante para que el precio
@@ -280,7 +286,7 @@ export default function MethodologyPage() {
               valor de mercado.
             </Definition>
             <Definition term="Índice de chollo">
-              40% valor por crédito, 25% proyección, 15% fiabilidad, 10% tendencia de rol,
+              40% valor por crédito, 25% proyección, 15% regularidad, 10% tendencia de rol,
               10% probabilidad de subir. Pesos a la vista y discutibles a propósito.
             </Definition>
           </dl>

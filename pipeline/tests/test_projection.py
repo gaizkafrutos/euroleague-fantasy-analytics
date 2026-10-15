@@ -86,3 +86,26 @@ def test_reparto_del_entrenador():
     assert coach_quantile(favourite, 0.25) >= 10.0
     assert coach_quantile(favourite, 0.9) == 25.0
     assert 5 < coach_sd(outcomes) < 20
+
+
+def test_sin_temporada_anterior_las_medias_de_puesto_salen_de_esta():
+    """Sin año pasado, la producción por minuto de referencia es la del puesto
+    en esta temporada, no un 0,5 fijo para todo el mundo."""
+    import pandas as pd
+
+    from efa.projection import project
+
+    rows = []
+    for game in range(1, 4):
+        for code, pos_fp in (("A", 30.0), ("B", 10.0)):
+            rows.append({
+                "person_code": code, "game_code": game, "round": game, "utc_date": f"2026-10-0{game}",
+                "played": True, "fantasy_points": pos_fp, "minutes": 20.0,
+                "opponent_code": "X", "is_home": True,
+            })
+    history = pd.DataFrame(rows)
+    targets = pd.DataFrame([{"person_code": "A", "opponent_code": "X", "is_home": True}])
+    out = project(targets, history, None, {"A": "C", "B": "G"})
+    # La referencia de A es la media de pívots (1,5 pts/min): su producción no
+    # se arrastra hacia 0,5.
+    assert out["rate"].iloc[0] == pytest.approx(1.5, abs=0.01)

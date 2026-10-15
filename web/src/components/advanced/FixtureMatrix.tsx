@@ -139,7 +139,7 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
       <p className="fxm-note">
         Media de la liga: {league ? num(league[pos]) : "—"} puntos fantasy por partido
         {pos === "all" ? " entre todos los jugadores del rival" : ` para sus ${word}`}. Las cifras de esta
-        temporada se encogen hacia las de la anterior hasta que haya jornadas suficientes.
+        temporada se encogen hacia la media de la liga hasta que haya jornadas suficientes.
       </p>
     </div>
   );

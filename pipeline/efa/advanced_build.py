@@ -45,7 +45,7 @@ from efa.advanced import (
     team_lineups,
     zone_table,
 )
-from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE
+from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE, use_prior_player_stats
 from efa.context import player_positions, season_boxscores, season_gamelog, season_label
 from efa.ingest.official import load_player_stats, load_reference
 from efa.ingest.playbyplay import load_pbp, shots_frame
@@ -62,9 +62,19 @@ def _load_z_quantiles() -> dict[str, float]:
     path = PROCESSED_DIR / "projection_backtest.json"
     default = {"p10": -1.14, "p25": -0.68, "p50": -0.12, "p75": 0.56, "p90": 1.32}
     try:
-        return {**default, **json.loads(path.read_text(encoding="utf-8"))["season"]["zQuantiles"]}
-    except (OSError, KeyError, ValueError):
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
         return default
+    # Con muestra suficiente, la horquilla se calibra con esta temporada.
+    current = data.get("current") or {}
+    if current.get("zQuantiles") and (current.get("n") or 0) >= CURRENT_Z_MIN_N:
+        return {**default, **current["zQuantiles"]}
+    return {**default, **((data.get("season") or {}).get("zQuantiles") or {})}
+
+
+#: Predicciones de esta temporada a partir de las cuales la horquilla se
+#: calibra con ellas y no con las de la anterior.
+CURRENT_Z_MIN_N = 500
 
 
 Z_QUANTILES = _load_z_quantiles()
@@ -138,6 +148,16 @@ def _projection_sd(
 
     sd_now, n_now = stds(current)
     sd_prior, n_prior = stds(prior)
+    # Sin año pasado, la referencia de quien lleva pocos partidos es la
+    # dispersión relativa típica de esta temporada (σ/media de quien ya tiene
+    # cinco), no el 50 % fijo de antes.
+    relative = 0.5
+    if not current.empty:
+        played = current[current["played"]].groupby("person_code")["fantasy_points"]
+        frame = pd.DataFrame({"sd": played.std(ddof=1), "mean": played.mean(), "n": played.size()})
+        frame = frame[(frame["n"] >= 5) & (frame["mean"] >= 5)]
+        if len(frame) >= 30:
+            relative = float((frame["sd"] / frame["mean"]).median())
     out: dict[int, float] = {}
     for record in records:
         proj = _num(record.get("projectedIfPlays")) or _num(record.get("projectedFp")) or 0.0
@@ -145,7 +165,7 @@ def _projection_sd(
             out[int(record["id"])] = COACH_SD
             continue
         code = str(record.get("personCode"))
-        fallback = max(3.0, 0.5 * proj)
+        fallback = max(3.0, relative * proj)
         base = sd_prior.get(code) if n_prior.get(code, 0) >= 5 else None
         base = base if base and base > 0 else fallback
         n = max(n_now.get(code, 0) - 1, 0)
@@ -433,22 +453,24 @@ def pending_prices(
     return changed
 
 
-#: Partidos a partir de los cuales la fiabilidad sale de su propia dispersión.
+#: Partidos a partir de los cuales hay regularidad propia que enseñar.
 RELIABILITY_MIN_GAMES = 3
 
 
-def _early_reliability(records: list[dict[str, Any]]) -> None:
-    """Fiabilidad estimada mientras no hay 3 partidos: 1 − σ/proyección, con la σ
-    encogida hacia el año pasado (la misma que usa la horquilla). Antes la tabla
-    enseñaba "—" en las 330 filas hasta la tercera jornada."""
+def _projection_certainty(records: list[dict[str, Any]]) -> None:
+    """Seguridad de la proyección: 1 − σ/proyección, acotada entre 0 y 1.
+
+    Es otra cosa que la regularidad (`perf.consistency`, que sale de lo que ya
+    puntuó): mide el margen de error de la cifra de la próxima jornada, con la
+    duda de si juega incluida. Antes las dos se llamaban "fiabilidad" y, con
+    menos de tres partidos, esta se colaba en el sitio de la otra.
+    """
     for record in records:
-        perf = record.get("perf") or {}
-        outlook = record.get("outlook") or {}
+        outlook = record.get("outlook")
         proj = _num(record.get("projectedFp")) or 0.0
-        if (perf.get("gamesPlayed") or 0) >= RELIABILITY_MIN_GAMES or not outlook or proj <= 0:
+        if not outlook or proj <= 0 or outlook.get("sd") is None:
             continue
-        perf["consistency"] = round(max(0.0, min(1.0, 1 - outlook["sd"] / proj)), 3)
-        perf["consistencyEstimated"] = True
+        outlook["certainty"] = round(max(0.0, min(1.0, 1 - float(outlook["sd"]) / proj)), 3)
 
 
 def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
@@ -459,7 +481,14 @@ def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
         {
             "value_projected": [_num(r.get("valueProjected")) for r in records],
             "projected_fp": [_num(r.get("projectedFp")) for r in records],
-            "consistency": [_num((r.get("perf") or {}).get("consistency")) for r in records],
+            # Con menos de tres partidos la regularidad no existe (con uno es 0
+            # por definición): cuenta como neutra, no como un suspenso.
+            "consistency": [
+                _num((r.get("perf") or {}).get("consistency"))
+                if ((r.get("perf") or {}).get("gamesPlayed") or 0) >= RELIABILITY_MIN_GAMES
+                else None
+                for r in records
+            ],
             "minutes_share_trend": [_num((r.get("perf") or {}).get("minutesShareTrend")) for r in records],
             "rise_prob": [_num((r.get("outlook") or {}).get("riseProb")) for r in records],
         }
@@ -498,9 +527,14 @@ def apply_advanced(
     """Muta los cuatro objetos añadiendo la capa avanzada."""
     prior_reference = load_reference(PRIOR_SEASON_CODE)
     box_now = season_boxscores(SEASON_CODE)
-    box_prior = season_boxscores(PRIOR_SEASON_CODE)
     log_now = season_gamelog(SEASON_CODE)
-    log_prior = season_gamelog(PRIOR_SEASON_CODE)
+    # Pasada la J5, ninguna cifra descriptiva de jugador sale ya de la
+    # temporada anterior (ver PRIOR_PLAYER_STATS_ROUNDS): ni tiros, ni en
+    # pista, ni mezcla, ni avanzadas, ni lo que concede cada club.
+    rounds_played = int(log_now["round"].nunique()) if not log_now.empty else 0
+    use_prior = use_prior_player_stats(rounds_played)
+    box_prior = season_boxscores(PRIOR_SEASON_CODE) if use_prior else {}
+    log_prior = season_gamelog(PRIOR_SEASON_CODE) if use_prior else log_now.iloc[0:0]
     games_now = {str(k): int(v) for k, v in (log_now[log_now["played"]].groupby("person_code").size().items() if not log_now.empty else [])}
     club_prior = _last_club(log_prior)
     club_now = _last_club(log_now)
@@ -537,7 +571,8 @@ def apply_advanced(
             f"{freshness['reason']} (J{freshness['round']}). "
             f"Se usa el precio pendiente de {pending} jugadores hasta la próxima captura."
         )
-    sds = _projection_sd(records, log_now, log_prior)
+    # La horquilla acompaña a la proyección: también mira el año pasado.
+    sds = _projection_sd(records, log_now, season_gamelog(PRIOR_SEASON_CODE))
     #: σ de lo que hace SI juega, antes de mezclar con el riesgo de no jugar: es
     #: la que decide si supera el umbral cuando juega.
     sd_if_plays = dict(sds)
@@ -601,12 +636,12 @@ def apply_advanced(
             "p90": round(proj + Z_QUANTILES["p90"] * sd, 1),
         }
     meta["priceModel"] = {**DEFAULT_PRICE_MODEL, **model}
-    _early_reliability(records)
+    _projection_certainty(records)
     _rebuild_bargain(records)
 
     # ------------------------------------------------------------ tiros
     shots_now = add_zones(shots_frame(SEASON_CODE))
-    shots_prior = add_zones(shots_frame(PRIOR_SEASON_CODE))
+    shots_prior = add_zones(shots_frame(PRIOR_SEASON_CODE)) if use_prior else shots_now.iloc[0:0]
     shots_all = pd.concat([shots_prior, shots_now], ignore_index=True)
     league_zones = zone_table(shots_all)
     by_player_all = dict(tuple(shots_all.groupby("player"))) if not shots_all.empty else {}
@@ -614,7 +649,7 @@ def apply_advanced(
 
     # ---------------------------------------------------------- en pista
     court_now = player_court_stats(analyse_season(load_pbp(SEASON_CODE), box_now))
-    court_prior = player_court_stats(analyse_season(load_pbp(PRIOR_SEASON_CODE), box_prior))
+    court_prior = player_court_stats(analyse_season(load_pbp(PRIOR_SEASON_CODE), box_prior)) if use_prior else {}
 
     # ------------------------------------------------------------- mezcla
     mix_now = fantasy_mix(log_now)
@@ -622,7 +657,9 @@ def apply_advanced(
 
     # --------------------------------------------------------- oficiales
     official_now = _official_table(load_player_stats(SEASON_CODE), reference)
-    official_prior = _official_table(load_player_stats(PRIOR_SEASON_CODE), prior_reference)
+    official_prior = (
+        _official_table(load_player_stats(PRIOR_SEASON_CODE), prior_reference) if use_prior else {}
+    )
 
     for record in records:
         key = str(record["id"])
@@ -633,7 +670,8 @@ def apply_advanced(
         code = str(code)
         n_now = games_now.get(code, 0)
 
-        # Tiros: dos temporadas siempre (el tiro viaja con el jugador).
+        # Tiros: las dos temporadas hasta la J5 (el tiro viaja con el jugador);
+        # desde ahí, solo esta.
         mine = by_player_all.get(code)
         if mine is not None and len(mine):
             now = by_player_now.get(code)
@@ -689,7 +727,7 @@ def apply_advanced(
     )
     allowed = blend_allowed(allowed_by_position(log_now, positions), allowed_by_position(log_prior, positions))
     q_now = quarter_splits(reference.get("games", []))
-    q_prior = quarter_splits(prior_reference.get("games", []))
+    q_prior = quarter_splits(prior_reference.get("games", [])) if use_prior else {}
     lineups = team_lineups(analyse_season(load_pbp(SEASON_CODE), box_now))
     names = _short_names(reference)
     upcoming = _upcoming(reference.get("games", []), round_now, horizon=5)

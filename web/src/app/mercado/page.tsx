@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Mercado",
   description:
     "Los precios del EuroLeague Fantasy Challenge cruzados con las estadísticas oficiales: " +
-    "chollos, rol al alza, los más fiables y el explorador completo.",
+    "chollos, rol al alza, los más regulares y el explorador completo.",
 };
 
 export default function MercadoPage() {
@@ -41,14 +41,18 @@ export default function MercadoPage() {
 
   // Las señales se adaptan al punto de la temporada: con una jornada jugada no
   // hay "últimas cinco", y exigirlas dejaba las tres listas vacías hasta
-  // octubre. Hasta la J5, el rol se mide contra la temporada anterior y la
-  // fiabilidad sale de la dispersión que ya usa la proyección.
-  // La fiabilidad propia pide diez partidos: entre la J5 y la J10 la lista se
-  // quedaba vacía, así que sigue saliendo de la proyección hasta entonces.
+  // octubre. Hasta la J5, el rol se mide contra la temporada anterior.
   const roundsPlayed = Math.max(meta.currentRound - 1, 0);
   const early = roundsPlayed < 5;
-  const earlyReliability = roundsPlayed < 10;
   const minGames = Math.min(5, Math.max(1, roundsPlayed));
+  // Regularidad (lo ya jugado) y seguridad de la proyección (su margen de
+  // error) son dos cifras distintas; antes las dos se llamaban "fiabilidad" y
+  // la tarjeta enseñaba una y el explorador la otra. La tarjeta es la de la
+  // regularidad, la misma del explorador, y pide más partidos según avanza la
+  // temporada (de 3 a 10). Sin tres jornadas no hay regularidad: hasta
+  // entonces se enseña la seguridad de la proyección, con su nombre.
+  const byCertainty = roundsPlayed < 3;
+  const regularGames = Math.min(10, Math.max(3, roundsPlayed));
 
   // Un chollo de baja no es un chollo: no se recomienda a quien no va a jugar.
   const topBargains = [...universe]
@@ -78,17 +82,19 @@ export default function MercadoPage() {
         .sort((a, b) => (b.perf.minutesShareTrend ?? 0) - (a.perf.minutesShareTrend ?? 0))
         .slice(0, 5);
 
-  const reliability = (player: Player) =>
-    player.outlook && (player.projectedFp ?? 0) > 0
-      ? Math.max(0, 1 - player.outlook.sd / (player.projectedFp ?? 1))
-      : 0;
-  const mostConsistent = earlyReliability
+  const certainty = (player: Player) => player.outlook?.certainty ?? 0;
+  const mostConsistent = byCertainty
     ? [...universe]
         .filter((player) => (player.projectedFp ?? 0) >= 10 && isSignable(player))
-        .sort((a, b) => reliability(b) - reliability(a))
+        .sort((a, b) => certainty(b) - certainty(a))
         .slice(0, 5)
     : [...universe]
-        .filter((player) => (player.perf.gamesPlayed ?? 0) >= 10 && (player.perf.fpAvg ?? 0) >= 10)
+        .filter(
+          (player) =>
+            (player.perf.gamesPlayed ?? 0) >= regularGames &&
+            (player.perf.fpAvg ?? 0) >= 10 &&
+            isSignable(player),
+        )
         .sort((a, b) => (b.perf.consistency ?? 0) - (a.perf.consistency ?? 0))
         .slice(0, 5);
 
@@ -147,17 +153,15 @@ export default function MercadoPage() {
           </div>
           <p className="card-note" style={{ margin: 0 }}>
             {early
-              ? `Con ${roundsPlayed} ${roundsPlayed === 1 ? "jornada jugada" : "jornadas jugadas"}, el rol se compara con la temporada pasada y la fiabilidad sale de la dispersión que usa la proyección.`
-              : earlyReliability
-                ? "El rol pide cinco partidos jugados. La fiabilidad sale de la dispersión que usa la proyección hasta que haya diez."
-                : "Requieren al menos cinco partidos jugados para entrar en el ranking, diez para la fiabilidad."}
+              ? `Con ${roundsPlayed} ${roundsPlayed === 1 ? "jornada jugada" : "jornadas jugadas"}, el rol se compara con la temporada pasada.`
+              : `El rol pide 5 partidos jugados; la regularidad, ${regularGames}.`}
           </p>
         </div>
 
         <div className="grid grid-3 signals">
           <RankCard
             title="Mejores chollos"
-            note="Índice compuesto: valor por crédito, proyección, fiabilidad, rol y probabilidad de subir."
+            note="Índice compuesto: valor por crédito, proyección, regularidad, rol y probabilidad de subir."
             players={topBargains}
             render={(player) => num(player.bargainScore, 0)}
           />
@@ -176,12 +180,14 @@ export default function MercadoPage() {
             }
           />
           <RankCard
-            title="Los más fiables"
-            note="Menor dispersión en su puntuación. Lo que se busca en un titular indiscutible."
-            players={mostConsistent}
-            render={(player) =>
-              percent(earlyReliability ? reliability(player) : player.perf.consistency)
+            title={byCertainty ? "Proyección más segura" : "Los más regulares"}
+            note={
+              byCertainty
+                ? "Menor margen de error en lo que se espera de ellos. Sin tres jornadas aún no hay regularidad propia."
+                : "Menor dispersión en lo que ya han puntuado. Lo que se busca en un titular indiscutible."
             }
+            players={mostConsistent}
+            render={(player) => percent(byCertainty ? certainty(player) : player.perf.consistency)}
           />
         </div>
       </section>
@@ -212,7 +218,10 @@ export default function MercadoPage() {
               doble y el banquillo la mitad. Se dicen las dos cifras. */}
           {typeof lineup.scoredProjection === "number" ? (
             <p className="card-note" style={{ margin: "0 0 18px", maxWidth: "66ch" }}>
-              Suma llana de los once: {num(lineup.totalProjection)} puntos. Con el capitán al doble,
+              {/* `totalProjection` es la de los diez jugadores; la cifra que
+                  puntúa lleva al entrenador, así que la llana también. */}
+              Suma llana de los once: {num((lineup.totalProjection ?? 0) + (lineup.coach?.projection ?? 0))}{" "}
+              puntos. Con el capitán al doble,
               el quinteto y el sexto hombre al 100 % y el banquillo a la mitad, lo que de verdad
               puntúa son {num(lineup.scoredProjection)}. El presupuesto se concentra en los seis que
               puntúan enteros.
@@ -409,7 +418,7 @@ function RankCard({
  *  serializaba unos 660 KB en el HTML de /mercado; esto lo deja en un tercio. */
 const EXPLORER_PERF = [
   "games", "gamesPlayed", "minutesAvg", "minutesTrend", "minutesShareTrend",
-  "fpAvg", "form", "formDelta", "lastFp", "consistency", "consistencyEstimated",
+  "fpAvg", "form", "formDelta", "lastFp", "consistency",
 ] as const;
 
 function explorerRow(player: Player): Player {

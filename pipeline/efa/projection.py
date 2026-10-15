@@ -153,8 +153,11 @@ def project(
     """
     now = player_state(history, params.minutes_half_life)
     before = player_state(prior, params.minutes_half_life) if prior is not None else now.iloc[0:0]
-    rates = position_rates(history, positions) if len(history) > 2000 else {}
-    if prior is not None and not prior.empty:
+    has_prior = prior is not None and not prior.empty
+    # Sin año pasado, las medias de puesto salen de esta temporada desde el
+    # primer partido; antes se quedaban vacías y todo el mundo partía de 0,5.
+    rates = position_rates(history, positions) if len(history) > 2000 or not has_prior else {}
+    if has_prior:
         prior_rates = position_rates(prior, positions)
         # Con poca temporada, las medias de puesto también salen del año pasado.
         rates = {**prior_rates, **rates} if rates else prior_rates
@@ -423,7 +426,12 @@ def run_backtests() -> dict[str, Any]:
         }
         out["season"] = {"code": PRIOR_SEASON_CODE, **season}
     if not log_now.empty and log_now["played"].any():
-        out["current"] = {"code": SEASON_CODE, **backtest(log_now, positions, prior=log_prior, min_games=0)}
+        current = backtest(log_now, positions, prior=log_prior, min_games=0)
+        rmse = current.get("v2", {}).get("rmse") or 1.0
+        current["zQuantiles"] = {
+            f"p{int(q * 100)}": round(v / rmse, 3) for q, v in current.get("residualQuantiles", {}).items()
+        }
+        out["current"] = {"code": SEASON_CODE, **current}
     # Lo que la web publicó antes de cada jornada, frente a lo que pasó.
     from efa.ingest.prices import load_snapshots
     from efa.published import evaluate_published

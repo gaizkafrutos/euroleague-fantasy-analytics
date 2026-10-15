@@ -1,1 +1,1262 @@
-[]
+[
+ {
+  "person": {
+   "code": "LAF",
+   "name": "PERASOVIC, VELIMIR",
+   "alias": "PERASOVIC, VELIMIR",
+   "aliasRaw": "PERASOVIC, VELIMIR",
+   "passportName": "VELIMIR",
+   "passportSurname": "PERASOVIC",
+   "jerseyName": "",
+   "abbreviatedName": "Perasovic, V.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1965-02-09T00:00:00",
+   "birthCountry": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-10-15T10:40:18.093",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 57087,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "000019",
+   "name": "NAVARRO, IBON",
+   "alias": "NAVARRO, IBON",
+   "aliasRaw": "NAVARRO, IBON",
+   "passportName": "IBON",
+   "passportSurname": "NAVARRO PEREZ DE ALBENIZ",
+   "jerseyName": "",
+   "abbreviatedName": "Navarro, I.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1976-04-30T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-21T08:23:32.096",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56911,
+  "images": {},
+  "club": {
+   "code": "RED",
+   "name": "Crvena Zvezda Meridianbet Belgrade",
+   "abbreviatedName": "Crvena Zvezda",
+   "editorialName": "Crvena",
+   "tvCode": "CZV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015170",
+   "name": "LEFEVRE, MAXIME",
+   "alias": "LEFEVRE, MAXIME",
+   "aliasRaw": "LEFEVRE, MAXIME",
+   "passportName": "MAXIME JOCELYN",
+   "passportSurname": "LEFEVRE",
+   "jerseyName": null,
+   "abbreviatedName": null,
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1987-05-09T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-21T08:20:21.163",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56909,
+  "images": {},
+  "club": {
+   "code": "PRS",
+   "name": "Paris Basketball",
+   "abbreviatedName": "Paris",
+   "editorialName": "Paris",
+   "tvCode": "PBB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "003550",
+   "name": "PARKER, TONY",
+   "alias": "PARKER, ANTHONY",
+   "aliasRaw": "PARKER, ANTHONY",
+   "passportName": "TONY",
+   "passportSurname": "PARKER",
+   "jerseyName": "",
+   "abbreviatedName": "Parker, A.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1982-05-17T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-16T10:26:15.891",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56727,
+  "images": {},
+  "club": {
+   "code": "ASV",
+   "name": "LDLC ASVEL Villeurbanne",
+   "abbreviatedName": "LDLC ASVEL",
+   "editorialName": "ASVEL",
+   "tvCode": "ASV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "009154",
+   "name": "ALBERT, XAVIER",
+   "alias": "ALBERT, XAVIER",
+   "aliasRaw": "ALBERT, XAVIER",
+   "passportName": "XAVIER",
+   "passportSurname": "ALBERT PERALTA",
+   "jerseyName": "",
+   "abbreviatedName": "",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1987-07-17T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-16T10:24:59.024",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56726,
+  "images": {},
+  "club": {
+   "code": "PAM",
+   "name": "Valencia Basket",
+   "abbreviatedName": "Valencia",
+   "editorialName": "Valencia",
+   "tvCode": "VBC",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "TFT",
+   "name": "KATTASH, ODED",
+   "alias": "KATTACHE, DAVID ODED",
+   "aliasRaw": "KATTACHE, DAVID ODED",
+   "passportName": "DAVID ODED",
+   "passportSurname": "KATTACHE",
+   "jerseyName": "",
+   "abbreviatedName": "Kattash, O.",
+   "country": {
+    "code": "ISR",
+    "name": "Israel"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1974-10-10T00:00:00",
+   "birthCountry": {
+    "code": "ISR",
+    "name": "Israel"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-16T10:23:43.666",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56725,
+  "images": {},
+  "club": {
+   "code": "TEL",
+   "name": "Maccabi Rapyd Tel Aviv",
+   "abbreviatedName": "Maccabi",
+   "editorialName": "Maccabi",
+   "tvCode": "MTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "003516",
+   "name": "SEKULIC, ALEKSANDER",
+   "alias": "SEKULIC, ALEKSANDER",
+   "aliasRaw": "SEKULIC, ALEKSANDER",
+   "passportName": "ALEKSANDER",
+   "passportSurname": "SEKULIC",
+   "jerseyName": "",
+   "abbreviatedName": "Sekulic, A.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1978-02-24T00:00:00",
+   "birthCountry": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-16T10:21:51.347",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56724,
+  "images": {},
+  "club": {
+   "code": "BAR",
+   "name": "FC Barcelona",
+   "abbreviatedName": "FC Barcelona",
+   "editorialName": "Barca",
+   "tvCode": "BAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "001869",
+   "name": "BARTZOKAS, GEORGIOS",
+   "alias": "BARTZOKAS, GEORGIOS",
+   "aliasRaw": "BARTZOKAS, GEORGIOS",
+   "passportName": "GEORGIOS",
+   "passportSurname": "BARTZOKAS",
+   "jerseyName": "",
+   "abbreviatedName": "Bartzokas, G.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1965-06-11T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-16T05:40:48.849",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56715,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "008017",
+   "name": "ALIMPIJEVIC, DUSAN",
+   "alias": "ALIMPIJEVIC, DUSAN",
+   "aliasRaw": "ALIMPIJEVIC, DUSAN",
+   "passportName": "DUSAN",
+   "passportSurname": "ALIMPIJEVIC",
+   "jerseyName": "",
+   "abbreviatedName": "Alimpijevic, D.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1986-03-09T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-15T08:36:39.547",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56703,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "BFJ",
+   "name": "MUMBRU, ALEX",
+   "alias": "Mumbru",
+   "aliasRaw": "Mumbru",
+   "passportName": "ALEX",
+   "passportSurname": "MUMBRU MURCIA",
+   "jerseyName": "MUMBRU",
+   "abbreviatedName": "Mumbru, A.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1979-06-12T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-15T08:33:38.37",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56700,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus Bologna",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "CWX",
+   "name": "MARTINEZ, PEDRO",
+   "alias": "MARTINEZ, PEDRO",
+   "aliasRaw": "MARTINEZ, PEDRO",
+   "passportName": "PEDRO",
+   "passportSurname": "MARTINEZ SANCHEZ",
+   "jerseyName": "",
+   "abbreviatedName": "Martinez, P.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1961-06-29T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-10T14:05:19.699",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56488,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "ACX",
+   "name": "MASIULIS, TOMAS",
+   "alias": "Masiulis",
+   "aliasRaw": "Masiulis",
+   "passportName": "TOMAS",
+   "passportSurname": "MASIULIS",
+   "jerseyName": "",
+   "abbreviatedName": "Masiulis, T.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1975-09-19T00:00:00",
+   "birthCountry": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T16:04:27.005",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56378,
+  "images": {},
+  "club": {
+   "code": "ZAL",
+   "name": "Zalgiris Kaunas",
+   "abbreviatedName": "Zalgiris",
+   "editorialName": "Zalgiris",
+   "tvCode": "ZAL",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007973",
+   "name": "PENARROYA, JOAN",
+   "alias": "PENARROYA, JOAN",
+   "aliasRaw": "PENARROYA, JOAN",
+   "passportName": "JUAN",
+   "passportSurname": "PENARROYA RODRIGUEZ",
+   "jerseyName": "",
+   "abbreviatedName": "Penarroya, J.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1969-04-20T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:59:53.235",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56377,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "WBC",
+   "name": "OBRADOVIC, ZELJKO",
+   "alias": "OBRADOVIC, ZELJKO",
+   "aliasRaw": "OBRADOVIC, ZELJKO",
+   "passportName": "ZELIMIR",
+   "passportSurname": "OBRADOVIC",
+   "jerseyName": "",
+   "abbreviatedName": "Obradovic, Z.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1960-03-09T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:58:21.575",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56376,
+  "images": {},
+  "club": {
+   "code": "PAN",
+   "name": "Panathinaikos AKTOR Athens",
+   "abbreviatedName": "Panathinaikos",
+   "editorialName": "Panathinaikos",
+   "tvCode": "PAO",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007886",
+   "name": "GALBIATI, PAOLO",
+   "alias": "GALBIATI, PAOLO",
+   "aliasRaw": "GALBIATI, PAOLO",
+   "passportName": "PAOLO",
+   "passportSurname": "GALBIATI",
+   "jerseyName": "",
+   "abbreviatedName": "Galbiati, P.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1984-02-20T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": false,
+  "startDate": "2026-09-09T15:57:22.127",
+  "endDate": "2026-10-15T07:20:06.447",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56375,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "CAG",
+   "name": "ITOUDIS, DIMITRIS",
+   "alias": "ITOUDIS, DIMITRIS",
+   "aliasRaw": "ITOUDIS, DIMITRIS",
+   "passportName": "DIMITRIOS",
+   "passportSurname": "ITOUDIS",
+   "jerseyName": "",
+   "abbreviatedName": "Itoudis, D.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1970-09-08T00:00:00",
+   "birthCountry": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "twitterAccount": "ItoudisD",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:55:58.099",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56374,
+  "images": {},
+  "club": {
+   "code": "HTA",
+   "name": "Hapoel IBI Tel Aviv",
+   "abbreviatedName": "Hapoel TLV",
+   "editorialName": "Hapoel",
+   "tvCode": "HTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "ADG",
+   "name": "JASIKEVICIUS, SARAS",
+   "alias": "Jasikevicius",
+   "aliasRaw": "Jasikevicius",
+   "passportName": "SARUNAS",
+   "passportSurname": "JASIKEVICIUS",
+   "jerseyName": "",
+   "abbreviatedName": "Jasikevicius, S.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1976-03-05T00:00:00",
+   "birthCountry": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:54:39.28",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56373,
+  "images": {},
+  "club": {
+   "code": "ULK",
+   "name": "Fenerbahce Tarfin Istanbul",
+   "abbreviatedName": "Fenerbahce",
+   "editorialName": "Fenerbahce",
+   "tvCode": "FBT",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "001252",
+   "name": "GAVEL, ANTON",
+   "alias": "Gavel",
+   "aliasRaw": "Gavel",
+   "passportName": "ANTON",
+   "passportSurname": "GAVEL",
+   "jerseyName": "Gavel",
+   "abbreviatedName": "Gavel, A.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1984-10-24T00:00:00",
+   "birthCountry": {
+    "code": "SVK",
+    "name": "Slovakia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:52:42.872",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56368,
+  "images": {},
+  "club": {
+   "code": "MUN",
+   "name": "FC Bayern Munich",
+   "abbreviatedName": "Bayern Munich",
+   "editorialName": "Bayern",
+   "tvCode": "BAY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/817b0e58-d595-4b09-ab0b-1e7cc26249ff.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "KOW",
+   "name": "PASCUAL, XAVI",
+   "alias": "PASCUAL, XAVI",
+   "aliasRaw": "PASCUAL, XAVI",
+   "passportName": "XAVIER",
+   "passportSurname": "PASCUAL VIVES",
+   "jerseyName": "",
+   "abbreviatedName": "Pascual, X.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1972-09-09T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:47:18.594",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56367,
+  "images": {},
+  "club": {
+   "code": "DUB",
+   "name": "Dubai Basketball",
+   "abbreviatedName": "Dubai",
+   "editorialName": "Dubai",
+   "tvCode": "DUB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "002083",
+   "name": "POETA, GIUSEPPE",
+   "alias": "Poeta",
+   "aliasRaw": "Poeta",
+   "passportName": "GIUSEPPE",
+   "passportSurname": "POETA",
+   "jerseyName": "POETA",
+   "abbreviatedName": "Poeta, G.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1985-09-12T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:44:58.091",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56365,
+  "images": {},
+  "club": {
+   "code": "MIL",
+   "name": "Armani Olimpia Milan",
+   "abbreviatedName": "Milan",
+   "editorialName": "Milan",
+   "tvCode": "MIL",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "BSS",
+   "name": "LASO, PABLO",
+   "alias": "LASO, PABLO",
+   "aliasRaw": "LASO, PABLO",
+   "passportName": "PABLO",
+   "passportSurname": "LASO BIURRUN",
+   "jerseyName": "",
+   "abbreviatedName": "Laso, P.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1967-10-13T00:00:00",
+   "birthCountry": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "twitterAccount": "pablolaso",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-09-09T15:43:51.138",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 56364,
+  "images": {},
+  "club": {
+   "code": "IST",
+   "name": "Anadolu Efes Istanbul",
+   "abbreviatedName": "Anadolu Efes",
+   "editorialName": "Efes",
+   "tvCode": "EFS",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ }
+]

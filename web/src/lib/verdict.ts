@@ -116,21 +116,21 @@ export function verdictFor(player: Player): Verdict {
   }
 
   /* ------------------------------------------------------------------- regularidad */
-  // Con uno o dos partidos la "fiabilidad" es 0 por definición: no se juzga.
+  // Con uno o dos partidos la regularidad es 0 por definición: no se juzga.
   if (typeof consistency === "number" && games >= 3) {
     if (consistency >= 0.72) {
       signals.push({
         direction: 1,
         weight: 0.34,
         clause: "es de los que no te dan sustos",
-        reason: `Fiabilidad ${percent(consistency)}`,
+        reason: `Regularidad ${percent(consistency)}`,
       });
     } else if (consistency <= 0.45) {
       signals.push({
         direction: -1,
         weight: 0.32,
         clause: "es una lotería de una jornada a otra",
-        reason: `Fiabilidad ${percent(consistency)} · desviación ${num(player.perf.fpStd)} pts`,
+        reason: `Regularidad ${percent(consistency)} · desviación ${num(player.perf.fpStd)} pts`,
       });
     }
   }

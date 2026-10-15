@@ -25,7 +25,6 @@ export interface CompareRow {
   lastFp: number | null;
   form: number | null;
   consistency: number | null;
-  consistencyEstimated: boolean;
   gamesPlayed: number | null;
   startedRate: number | null;
   ptsAvg: number | null;
@@ -183,9 +182,9 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Fiabilidad",
+        label: "Regularidad",
         value: (r) => r.consistency,
-        show: (r) => (r.consistency === null ? "—" : `${r.consistencyEstimated ? "≈" : ""}${percent(r.consistency)}`),
+        show: (r) => (r.consistency === null ? "—" : percent(r.consistency)),
         better: "high",
         playersOnly: true,
       },

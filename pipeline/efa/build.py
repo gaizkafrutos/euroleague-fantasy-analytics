@@ -43,7 +43,7 @@ from efa.config import (
 from efa.context import player_positions, season_boxscores, season_gamelog, season_label
 from efa.demo import has_demo_data
 from efa.gamelogs import build_coach_gamelog, build_gamelog, team_minutes_share
-from efa.ingest.official import load_reference
+from efa.ingest.official import load_archive_people, load_reference
 from efa.ingest.prices import last_check, latest_snapshot, load_snapshots
 from efa.ingest.roster import current_round
 from efa.matching import OfficialPlayer, PlayerMatcher, build_club_alias_map
@@ -127,6 +127,8 @@ def build_crosswalk(market: pd.DataFrame, reference: dict[str, Any]) -> pd.DataF
     prior_reference = load_reference(PRIOR_SEASON_CODE)
     prior = [OfficialPlayer.from_feed(entry) for entry in prior_reference.get("players", [])]
     prior += [OfficialPlayer.from_feed(entry) for entry in prior_reference.get("coaches", [])]
+    # Y el registro histórico, solo para los overrides que lo piden.
+    prior += [OfficialPlayer.from_feed(entry) for entry in load_archive_people()]
 
     matcher = PlayerMatcher(official, alias_map, load_overrides(), prior_players=prior)
     rows = [
@@ -338,14 +340,17 @@ def build_player_table(
 
     # Metadatos del jugador desde el censo oficial.
     people_index: dict[str, dict[str, Any]] = {}
-    for entry in list(reference.get("players", [])) + list(reference.get("coaches", [])):
+    # El histórico va primero: el censo de la temporada lo pisa si coincide.
+    archive = load_archive_people()
+    for entry in archive + list(reference.get("players", [])) + list(reference.get("coaches", [])):
         person = entry.get("person") or {}
         code = str(person.get("code", ""))
         if not code:
             continue
         people_index[code] = {
             "image": _pick_image(entry.get("images"), person.get("images")),
-            "height": person.get("height"),
+            # La API da 0 cm a los entrenadores: es "sin dato", no una altura.
+            "height": person.get("height") or None,
             "country": (person.get("country") or {}).get("code"),
             "birth_date": (person.get("birthDate") or "")[:10] or None,
             "official_position": entry.get("positionName"),
@@ -586,7 +591,8 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     baseline = bool(gamelog_meta.get("isBaseline"))
 
     # Proyección v2: minutos x producción por minuto x rival x cancha, con el
-    # año pasado como referencia. Solo con temporada en curso: en la línea
+    # año pasado como referencia (su peso cae con cada partido; ver
+    # PRIOR_PLAYER_STATS_ROUNDS). Solo con temporada en curso: en la línea
     # base el "historial" ya es el año pasado.
     v2 = None
     if not baseline:

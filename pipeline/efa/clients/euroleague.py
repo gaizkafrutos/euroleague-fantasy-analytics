@@ -51,8 +51,8 @@ class EuroleagueClient:
             f"/seasons/{self.season_code}"
         )
 
-    def _get(self, path: str, params: dict[str, Any] | None = None) -> Any:
-        url = f"{self._season_base}{path}"
+    def _get(self, path: str, params: dict[str, Any] | None = None, *, base: str | None = None) -> Any:
+        url = f"{base or self._season_base}{path}"
         for attempt in range(1, self.max_retries + 1):
             try:
                 resp = self.session.get(url, params=params, timeout=self.timeout)
@@ -83,8 +83,18 @@ class EuroleagueClient:
         return self._get("/clubs").get("data", [])
 
     def people(self, person_type: str = "J", limit: int = 1000) -> list[dict[str, Any]]:
-        """Personas de la temporada. `J` = jugadores, `C` = entrenadores."""
+        """Personas de la temporada. `J` = jugadores, `E` = entrenadores.
+
+        Ojo: `C` devuelve una lista vacía. Con ella el censo de entrenadores
+        salía de los boxscores y un relevo en el banquillo (Perasovic por
+        Galbiati en el Baskonia, octubre de 2026) no se veía hasta su primer
+        partido.
+        """
         return self._get("/people", {"personType": person_type, "limit": limit}).get("data", [])
+
+    def person(self, person_code: str) -> dict[str, Any]:
+        """Ficha de una persona en el registro histórico, sin temporada."""
+        return self._get(f"/people/{person_code}", base=EUROLEAGUE_API_BASE)
 
     def games(self, limit: int = 1000) -> list[dict[str, Any]]:
         """Calendario completo, jugado y por jugar."""

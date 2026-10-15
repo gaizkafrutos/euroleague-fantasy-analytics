@@ -28,7 +28,9 @@ export default function HomePage() {
       budget={num(meta.budget, 0)}
       ptsPerCredit={num(median(rates), 2)}
       referenceGames={meta.performanceSource.games}
-      players={meta.players}
+      // Los mismos que cuenta /mercado: sin los 20 entrenadores, que inflaban
+      // la cifra (356 aquí frente a 336 allí).
+      players={(meta.hasPrices ? pricedPlayers : rosterPlayers).length}
       matchRate={percent(meta.matchRate)}
       snapshots={meta.priceSnapshots}
       isBaseline={meta.performanceSource.isBaseline}

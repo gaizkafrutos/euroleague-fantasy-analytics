@@ -28,6 +28,9 @@ WEB_DATA_DIR = REPO_ROOT / "web" / "src" / "data"
 PLAYER_OVERRIDES_PATH = OVERRIDES_DIR / "player_overrides.csv"
 CLUB_COLORS_PATH = OVERRIDES_DIR / "club_colors.csv"
 INJURY_OVERRIDES_PATH = OVERRIDES_DIR / "injury_overrides.csv"
+#: Fichas del registro histórico de la Euroliga para overrides que apuntan a
+#: alguien fuera del censo de esta temporada y la anterior.
+ARCHIVE_PEOPLE_PATH = OVERRIDES_DIR / "archive_people.json"
 UNMATCHED_REPORT_PATH = PROCESSED_DIR / "unmatched_players.csv"
 CROSSWALK_PATH = PROCESSED_DIR / "crosswalk.csv"
 
@@ -125,6 +128,22 @@ ROLE_ALERT_MIN_DELTA = 4.0  # minutos de variación para lanzar alerta de rol
 PRIOR_WEIGHT_GAMES = 5.0
 #: Partidos mínimos el año pasado para que su media cuente como referencia.
 PRIOR_MIN_GAMES = 5
+#: Jornadas jugadas a partir de las cuales las cifras DESCRIPTIVAS de jugador
+#: salen solo de esta temporada: tiros, en pista, mezcla fantasy, avanzadas
+#: oficiales, cuartos y lo que concede cada club.
+#:
+#: Las PREDICCIONES siguen encogiéndose hacia la anterior, con un peso que cae
+#: solo con cada partido. Backtest de la 2026-27, J4–J5 (447 partidos): la
+#: proyección con la anterior falla 5,80 de media y la mejor sin ella 5,85; en
+#: los de 13+ créditos, 7,08 frente a 7,59 (a la media del puesto se les
+#: infravalora 2,1 puntos). Con los equipos pasa lo mismo: el margen se falla
+#: por 9,8 puntos con la anterior y por 11,1 sin ella.
+PRIOR_PLAYER_STATS_ROUNDS = 5
+
+
+def use_prior_player_stats(rounds_played: int) -> bool:
+    """¿Entra todavía la temporada anterior en las cifras de jugador?"""
+    return rounds_played < PRIOR_PLAYER_STATS_ROUNDS
 #: Previa de disponibilidad: quien no ha jugado ninguno de sus partidos de esta
 #: temporada no proyecta cero de golpe, sino (jugados + k) / (partidos + k).
 AVAILABILITY_PRIOR_GAMES = 2.0

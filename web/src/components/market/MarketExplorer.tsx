@@ -69,7 +69,7 @@ const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: bo
     title: "Minutos por partido y su tendencia (los esperados, en el detalle)",
     optional: true,
   },
-  { key: "consistency", label: "Fiabilidad", title: "1 = regular, 0 = lotería", optional: true },
+  { key: "consistency", label: "Regularidad", title: "1 − desviación/media de lo que ya puntuó: 1 = repite, 0 = lotería", optional: true },
   {
     key: "difficulty",
     label: "Calendario",
@@ -746,7 +746,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     </span>
                     <span>
                       <b className="num">{reliable(player)}</b>
-                      <i>fiabilidad</i>
+                      <i>regularidad</i>
                     </span>
                   </span>
                   {/* Índice de chollo como barra: la cifra suelta no dice nada
@@ -830,11 +830,10 @@ function Revalue({ player }: { player: Player }) {
   );
 }
 
-/** Con menos de tres partidos la fiabilidad propia no existe: el pipeline la
- *  estima con la dispersión encogida hacia el año pasado, y se marca con "≈". */
+/** Con menos de tres partidos no hay regularidad que medir: con uno es 0 por
+ *  definición, y eso no es un jugador irregular sino falta de muestra. */
 function reliable(player: Player): string {
   if (player.perf.consistency === null || player.perf.consistency === undefined) return "—";
-  if (player.perf.consistencyEstimated) return `≈${percent(player.perf.consistency)}`;
   return (player.perf.gamesPlayed ?? 0) >= 3 ? percent(player.perf.consistency) : "—";
 }
 

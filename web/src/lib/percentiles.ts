@@ -19,9 +19,8 @@ export type PercentileKey =
   | "minutesAvg"
   | "bargainScore"
   /* Medias de caja. Son las que pintan los globos de la ficha: el número
-     centra y el percentil lo sitúa. Llegan desde la 2025-26 agregada en el
-     pipeline, así que un players.json anterior al parche las deja a null y
-     el globo simplemente no dibuja arco. */
+     centra y el percentil lo sitúa. Un players.json anterior al parche las
+     deja a null y el globo simplemente no dibuja arco. */
   | "ptsAvg"
   | "rebAvg"
   | "astAvg"
@@ -33,7 +32,7 @@ export const PERCENTILE_LABEL: Record<PercentileKey, string> = {
   projectedFp: "Proyección",
   fpAvg: "Media",
   valueProjected: "Puntos por crédito",
-  consistency: "Fiabilidad",
+  consistency: "Regularidad",
   minutesAvg: "Minutos",
   bargainScore: "Índice de chollo",
   ptsAvg: "Puntos",

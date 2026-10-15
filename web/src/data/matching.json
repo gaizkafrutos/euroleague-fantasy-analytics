@@ -1,15 +1,5 @@
 [
  {
-  "fantaking_id": 4215,
-  "fantaking_name": "M. Heidegger",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 50.0
- },
- {
   "fantaking_id": 11523,
   "fantaking_name": "S. Hunter",
   "fantaking_team": "MTA",
@@ -20,46 +10,6 @@
   "match_confidence": 50.0
  },
  {
-  "fantaking_id": 3955,
-  "fantaking_name": "V. Perasovic",
-  "fantaking_team": "KBA",
-  "club_code": "BAS",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 52.2
- },
- {
-  "fantaking_id": 3952,
-  "fantaking_name": "M. Jaiteh",
-  "fantaking_team": "DUB",
-  "club_code": "DUB",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 55.6
- },
- {
-  "fantaking_id": 7347,
-  "fantaking_name": "G. Papas",
-  "fantaking_team": "OLY",
-  "club_code": "OLY",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 55.6
- },
- {
-  "fantaking_id": 11510,
-  "fantaking_name": "F. Bourdillon",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 56.0
- },
- {
   "fantaking_id": 11497,
   "fantaking_name": "V. Medarevic",
   "fantaking_team": "CZV",
@@ -68,16 +18,6 @@
   "official_name": null,
   "match_method": "unmatched",
   "match_confidence": 59.3
- },
- {
-  "fantaking_id": 11531,
-  "fantaking_name": "N. Boungou-colo",
-  "fantaking_team": "PBB",
-  "club_code": "PRS",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 66.7
  },
  {
   "fantaking_id": 3960,
@@ -138,6 +78,16 @@
   "official_name": "MIJAILOVIC, UROS",
   "match_method": "prior-season",
   "match_confidence": 90.0
+ },
+ {
+  "fantaking_id": 3961,
+  "fantaking_name": "O. Kattash",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "TFT",
+  "official_name": "KATTASH, ODED",
+  "match_method": "subset",
+  "match_confidence": 95.0
  },
  {
   "fantaking_id": 3980,
@@ -1360,22 +1310,22 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3955,
+  "fantaking_name": "V. Perasovic",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "LAF",
+  "official_name": "PERASOVIC, VELIMIR",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 3957,
   "fantaking_name": "O. Da Silva",
   "fantaking_team": "BAY",
   "club_code": "MUN",
   "person_code": "011244",
   "official_name": "DA SILVA, OSCAR",
-  "match_method": "initial-club",
-  "match_confidence": 99.0
- },
- {
-  "fantaking_id": 3961,
-  "fantaking_name": "O. Kattash",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": "TFT",
-  "official_name": "KATTASH, ODED",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3550,12 +3500,62 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3952,
+  "fantaking_name": "M. Jaiteh",
+  "fantaking_team": "DUB",
+  "club_code": "DUB",
+  "person_code": "002581",
+  "official_name": "JAITEH, MAM",
+  "match_method": "override",
+  "match_confidence": 100.0
+ },
+ {
+  "fantaking_id": 4215,
+  "fantaking_name": "M. Heidegger",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "012259",
+  "official_name": "HEIDEGGER, MAX",
+  "match_method": "override",
+  "match_confidence": 100.0
+ },
+ {
+  "fantaking_id": 7347,
+  "fantaking_name": "G. Papas",
+  "fantaking_team": "OLY",
+  "club_code": "OLY",
+  "person_code": "012023",
+  "official_name": "PAPAS, GEORGE",
+  "match_method": "override",
+  "match_confidence": 100.0
+ },
+ {
   "fantaking_id": 11501,
   "fantaking_name": "T. Martin",
   "fantaking_team": "BAR",
   "club_code": "BAR",
   "person_code": "015138",
   "official_name": "MARTIN, TYRESE",
+  "match_method": "override",
+  "match_confidence": 100.0
+ },
+ {
+  "fantaking_id": 11510,
+  "fantaking_name": "F. Bourdillon",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "009928",
+  "official_name": "BOURDILLON, FREDERIC",
+  "match_method": "override",
+  "match_confidence": 100.0
+ },
+ {
+  "fantaking_id": 11531,
+  "fantaking_name": "N. Boungou-colo",
+  "fantaking_team": "PBB",
+  "club_code": "PRS",
+  "person_code": "003650",
+  "official_name": "BOUNGOU-COLO, NOBEL",
   "match_method": "override",
   "match_confidence": 100.0
  }
