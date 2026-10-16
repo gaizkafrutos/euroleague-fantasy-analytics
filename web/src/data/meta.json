@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-10-16T12:36:57.431071+00:00",
+ "generatedAt": "2026-10-16T17:34:46.836107+00:00",
  "currentRound": 6,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 36,
- "lastPriceCapture": "2026-10-15T22:32:18.649721+00:00",
- "lastPriceCheck": "2026-10-16T12:36:10.272266+00:00",
+ "priceSnapshots": 37,
+ "lastPriceCapture": "2026-10-16T17:34:21.696306+00:00",
+ "lastPriceCheck": "2026-10-16T17:34:21.696306+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.19
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-16T12:36:15.348497+00:00",
+  "generatedAt": "2026-10-16T17:34:26.473931+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -358,9 +358,9 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-16T12:36:08.932166+00:00",
-  "rows": 31,
-  "matched": 29,
+  "fetchedAt": "2026-10-16T17:34:20.493804+00:00",
+  "rows": 29,
+  "matched": 27,
   "unmatched": [
    "Mady Sissoko (BJK)",
    "Lonnie Walker IV (BJK)"
@@ -370,26 +370,26 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-16T12:36:08.932166+00:00",
-    "rows": 31,
-    "matched": 29,
-    "flagged": 29
+    "fetchedAt": "2026-10-16T17:34:20.493804+00:00",
+    "rows": 29,
+    "matched": 27,
+    "flagged": 27
    }
   ],
   "nextRound": 6,
   "unregistered": 15,
   "flagged": {
-   "out": 25,
-   "doubt": 19,
+   "out": 26,
+   "doubt": 16,
    "probable": 0
   }
  },
  "warnings": [
-  "Precios capturados el 2026-10-15 22:32 UTC: el juego aún no ha aplicado la revalorización (J6). Se usa el precio pendiente de 110 jugadores hasta la próxima captura."
+  "Precios capturados el 2026-10-16 17:34 UTC: el juego aún no ha aplicado la revalorización (J6). Se usa el precio pendiente de 110 jugadores hasta la próxima captura."
  ],
  "priceFreshness": {
   "stale": true,
-  "capturedAt": "2026-10-15T22:32:18.649721+00:00",
+  "capturedAt": "2026-10-16T17:34:21.696306+00:00",
   "lastGameAt": "2026-10-15T19:00:00+00:00",
   "round": 6,
   "reason": "el juego aún no ha aplicado la revalorización",

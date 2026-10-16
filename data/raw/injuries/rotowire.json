@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-16T12:36:08.932166+00:00",
+ "fetchedAt": "2026-10-16T17:34:20.493804+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -24,7 +24,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Isaac Bonga",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Wrist"
   },
@@ -80,15 +80,7 @@
    "team": "PBB",
    "position": "G",
    "name": "Nadir Hifi",
-   "status": "Game time",
-   "round": "",
-   "comment": "Ankle"
-  },
-  {
-   "team": "CZV",
-   "position": "C",
-   "name": "Ebuka Izundu",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   },
@@ -232,17 +224,9 @@
    "team": "BJK",
    "position": "G",
    "name": "Lonnie Walker IV",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
-   "team": "ZAL",
-   "position": "G",
-   "name": "Nigel Williams-Goss",
    "status": "Out",
    "round": "",
-   "comment": "Hamstring"
+   "comment": "Not Injury Related"
   },
   {
    "team": "PAR",
