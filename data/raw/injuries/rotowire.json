@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-16T17:34:20.493804+00:00",
+ "fetchedAt": "2026-10-16T22:10:02.635297+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -85,6 +85,14 @@
    "comment": "Ankle"
   },
   {
+   "team": "CZV",
+   "position": "C",
+   "name": "Ebuka Izundu",
+   "status": "Out",
+   "round": "",
+   "comment": "Ankle"
+  },
+  {
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
@@ -136,7 +144,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   },

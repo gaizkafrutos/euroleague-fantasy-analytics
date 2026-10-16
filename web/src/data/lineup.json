@@ -1,30 +1,30 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 135.35,
- "scoredProjection": 154.22,
+ "totalPrice": 99.9,
+ "totalProjection": 127.06,
+ "scoredProjection": 155.16,
  "captain": "3903",
  "starters": [
   "3903",
+  "3887",
   "3850",
-  "3898",
-  "11547",
-  "4246"
+  "11504",
+  "3948"
  ],
  "sixth": "7424",
  "bench": [
-  "3842",
-  "4084",
-  "4061",
-  "3950"
+  "3975",
+  "3933",
+  "3991",
+  "3867"
  ],
  "coach": {
-  "key": "3964",
-  "name": "MUMBRU, ALEX",
+  "key": "4006",
+  "name": "MASIULIS, TOMAS",
   "position": "E",
-  "club": "VIR",
-  "price": 4.9,
-  "projection": 12.41
+  "club": "ZAL",
+  "price": 6.3,
+  "projection": 13.24
  },
  "players": [
   {
@@ -32,8 +32,16 @@
    "name": "BRYANT, ELIJAH",
    "position": "G",
    "club": "HTA",
-   "price": 17.2,
-   "projection": 22.88
+   "price": 17.4,
+   "projection": 24.79
+  },
+  {
+   "key": "3887",
+   "name": "FRANCISCO, SYLVAIN",
+   "position": "G",
+   "club": "PAN",
+   "price": 15.2,
+   "projection": 21.76
   },
   {
    "key": "3850",
@@ -41,71 +49,63 @@
    "position": "G",
    "club": "MAD",
    "price": 12.3,
-   "projection": 18.25
+   "projection": 18.26
   },
   {
-   "key": "11547",
-   "name": "MOORE, WENDELL",
+   "key": "3975",
+   "name": "HERRERA, SEBASTIAN",
    "position": "G",
-   "club": "VIR",
-   "price": 9.9,
-   "projection": 15.68
-  },
-  {
-   "key": "3842",
-   "name": "WILBEKIN, SCOTTIE",
-   "position": "G",
-   "club": "BES",
-   "price": 8.7,
-   "projection": 12.57
-  },
-  {
-   "key": "4246",
-   "name": "OJELEYE, SEMI",
-   "position": "F",
-   "club": "RED",
-   "price": 8.7,
-   "projection": 13.36
-  },
-  {
-   "key": "4084",
-   "name": "SLEVA, DUSTIN",
-   "position": "F",
-   "club": "ZAL",
-   "price": 6.4,
-   "projection": 7.7
-  },
-  {
-   "key": "4061",
-   "name": "MANTZOUKAS, ELEFTHERIOS",
-   "position": "F",
-   "club": "PAN",
+   "club": "PRS",
    "price": 5.1,
-   "projection": 6.51
+   "projection": 6.01
   },
   {
-   "key": "3950",
-   "name": "DOBRIC, OGNJEN",
+   "key": "3948",
+   "name": "NDIAYE, MBAYE",
    "position": "F",
-   "club": "RED",
-   "price": 5.1,
-   "projection": 6.05
+   "club": "OLY",
+   "price": 9.6,
+   "projection": 14.3
   },
   {
-   "key": "3898",
-   "name": "ZIZIC, ANTE",
+   "key": "3933",
+   "name": "CAVALIERE, LEOPOLD",
+   "position": "F",
+   "club": "PRS",
+   "price": 4.9,
+   "projection": 5.83
+  },
+  {
+   "key": "3991",
+   "name": "ABALDE, ALBERTO",
+   "position": "F",
+   "club": "MAD",
+   "price": 4.4,
+   "projection": 4.33
+  },
+  {
+   "key": "3867",
+   "name": "PAPANIKOLAOU, KOSTAS",
+   "position": "F",
+   "club": "OLY",
+   "price": 4.2,
+   "projection": 3.68
+  },
+  {
+   "key": "11504",
+   "name": "THIEMANN, JOHANNES",
    "position": "C",
-   "club": "BES",
-   "price": 12.7,
-   "projection": 17.2
+   "club": "MUN",
+   "price": 11.2,
+   "projection": 14.86
   },
   {
    "key": "7424",
    "name": "DIARRA, ALIOU",
    "position": "C",
    "club": "VIR",
-   "price": 9.0,
-   "projection": 15.15
+   "price": 9.3,
+   "projection": 13.24
   }
  ],
  "available": true,
