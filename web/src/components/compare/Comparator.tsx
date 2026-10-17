@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import Avatar from "@/components/ui/Avatar";
 import { credits, normalize, num, percent, positionLabel, signed } from "@/lib/format";
-import { fixtureLabel, turnLabel } from "@/lib/projection";
+import { fixtureName, turnLabel } from "@/lib/projection";
 import type { NextGame } from "@/lib/types";
 
 export interface CompareRow {
@@ -121,7 +121,7 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         value: () => null,
         show: (r) =>
           r.next
-            ? `${fixtureLabel(r.next)}${turnLabel(r.next) ? ` · ${turnLabel(r.next)}` : ""}`
+            ? `${fixtureName(r.next)}${turnLabel(r.next) ? ` · ${turnLabel(r.next)}` : ""}`
             : "—",
       },
       {
@@ -230,14 +230,15 @@ function rankMetric(metric: Metric, picked: CompareRow[]) {
   const values = picked.map((row) => (metric.playersOnly && row.isCoach ? null : metric.value(row)));
   const shown = picked.map((row) => (metric.playersOnly && row.isCoach ? "—" : metric.show(row)));
   const numeric = values.filter((value): value is number => typeof value === "number");
-  let winner = -1;
+  const winners = new Set<number>();
   if (metric.better && numeric.length > 1) {
     const best = metric.better === "high" ? Math.max(...numeric) : Math.min(...numeric);
-    const index = values.indexOf(best);
-    const tied = shown.filter((text) => text === shown[index]).length > 1;
-    if (!tied) winner = index;
+    const top = shown[values.indexOf(best)];
+    const leaders = shown.flatMap((text, index) => (text === top ? [index] : []));
+    // Si empatan todos, no hay mejor que marcar.
+    if (leaders.length < numeric.length) leaders.forEach((index) => winners.add(index));
   }
-  return { shown, winner };
+  return { shown, winners };
 }
 
 /** Apellido para la cabecera estrecha del móvil. */
@@ -386,14 +387,14 @@ export default function Comparator({ index: entries }: { index: CompareIndexEntr
                 {group.rows
                   .filter((metric) => !(metric.playersOnly && onlyCoaches))
                   .map((metric) => {
-                    const { shown, winner } = rankMetric(metric, picked);
+                    const { shown, winners } = rankMetric(metric, picked);
                     return (
                       <tr key={metric.label}>
                         <th scope="row" title={metric.title}>
                           {metric.label}
                         </th>
                         {picked.map((row, column) => (
-                          <td key={row.id} className={`num${column === winner ? " is-best" : ""}`}>
+                          <td key={row.id} className={`num${winners.has(column) ? " is-best" : ""}`}>
                             {shown[column]}
                           </td>
                         ))}
@@ -439,7 +440,7 @@ export default function Comparator({ index: entries }: { index: CompareIndexEntr
                 {group.rows
                   .filter((metric) => !(metric.playersOnly && onlyCoaches))
                   .map((metric) => {
-                    const { shown, winner } = rankMetric(metric, picked);
+                    const { shown, winners } = rankMetric(metric, picked);
                     return (
                       <div key={metric.label} className="compare-metric">
                         <dt title={metric.title}>{metric.label}</dt>
@@ -447,7 +448,7 @@ export default function Comparator({ index: entries }: { index: CompareIndexEntr
                           {picked.map((row, column) => (
                             <span
                               key={row.id}
-                              className={`num${column === winner ? " is-best" : ""}`}
+                              className={`num${winners.has(column) ? " is-best" : ""}`}
                               aria-label={`${row.name}: ${shown[column]}`}
                             >
                               {shown[column]}

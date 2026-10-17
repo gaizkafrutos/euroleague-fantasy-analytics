@@ -9,6 +9,7 @@
  */
 import { num, percent, signed } from "./format";
 import { percentileOf } from "./percentiles";
+import { clubName } from "./clubs";
 import type { Player, Team } from "./types";
 
 export interface Verdict {
@@ -196,7 +197,7 @@ export function coachVerdict(player: Player, team: Team | null | undefined): Ver
     };
   }
 
-  const rival = next.opponent;
+  const rival = clubName(next.opponent);
   const favourite = next.winProb >= 0.6;
   const underdog = next.winProb < 0.4;
   const headline = favourite

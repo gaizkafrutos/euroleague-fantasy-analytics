@@ -6,6 +6,7 @@
  *  `{ ids, coach }`). Las reglas (cuotas, presupuesto, máximo por club) las
  *  valida la consola al abrirla: aquí solo se evita pasar de diez jugadores.
  */
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "efa-squad";
@@ -80,6 +81,19 @@ export default function AddToSquad({
   // Con otro entrenador ya en la plantilla, ficharlo es sustituirlo: el botón
   // lo dice en vez de prometer un "Fichar" que echa al que hay.
   const swapsCoach = isCoach && !inSquad && squad.coach !== null;
+  if (full) {
+    return (
+      <Link
+        href="/mi-equipo"
+        className={`chip add-squad is-full${compact ? " is-compact" : ""}`}
+        aria-label="Plantilla llena: abre Mi equipo para hacer sitio"
+        title="Ya tienes diez jugadores: quita a alguien en Mi equipo"
+      >
+        {compact ? <span aria-hidden>↗</span> : <span>Plantilla llena · Mi equipo</span>}
+      </Link>
+    );
+  }
+
   const label = inSquad
     ? `Quitar a ${name} de tu equipo`
     : full

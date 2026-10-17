@@ -25,7 +25,7 @@ import {
   signed,
 } from "@/lib/format";
 import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
-import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
+import { fixtureName, playRisk, turnLabel } from "@/lib/projection";
 import { METHOD_LABEL } from "@/lib/matching";
 import { coachVerdict, verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
@@ -183,6 +183,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                   height={1000}
                   sizes="(min-width: 620px) 340px, 62vw"
                   priority
+                  fetchPriority="high"
                 />
               ) : player.isCoach && team?.crest ? (
                 // El feed no trae retrato de los entrenadores: el escudo de su
@@ -227,20 +228,28 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 unit={hasProjection ? "pts/cr" : undefined}
                 note={pctNote(player, "valueProjected")}
               />
-              <BandItem
-                label="Regularidad"
-                value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
-                note={
-                  player.isCoach
-                    ? "no aplica"
-                    : (perf.gamesPlayed ?? 0) >= 3
-                      ? pctNote(player, "consistency")
-                      : "3+ partidos"
-                }
-              />
+              {/* Al entrenador no le aplica la regularidad: en su sitio, lo que
+                  decide sus puntos. */}
+              {player.isCoach ? (
+                <BandItem
+                  label="Su equipo"
+                  value={
+                    team?.box && typeof team.box.wins === "number"
+                      ? `${team.box.wins}-${team.box.losses ?? 0}`
+                      : "—"
+                  }
+                  note="balance"
+                />
+              ) : (
+                <BandItem
+                  label="Regularidad"
+                  value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
+                  note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
+                />
+              )}
               <BandItem
                 label="Próximo partido"
-                value={next ? fixtureLabel(next) : "—"}
+                value={next ? fixtureName(next) : "—"}
                 note={
                   next
                     ? [turnLabel(next), `${percent(next.winProb)} gana`].filter(Boolean).join(" · ")
@@ -311,7 +320,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
           <div className="card">
             <div className="card-head">
               <div>
-                <div className="card-title">Partido a partido</div>
+                <h2 className="card-title">Partido a partido</h2>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
                   Puntuación fantasy calculada con el baremo oficial del juego sobre los
                   boxscores reales.
@@ -330,7 +339,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
           <div className="card">
             <div className="card-head">
               <div>
-                <div className="card-title">Evolución del precio</div>
+                <h2 className="card-title">Evolución del precio</h2>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
                   Un punto por captura del mercado.
                 </p>
@@ -469,7 +478,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
           {player.isCoach ? null : (
           <div className="card">
             <div className="card-head">
-              <div className="card-title">Rol y recorrido</div>
+              <h2 className="card-title">Rol y recorrido</h2>
             </div>
             <dl className="fact-list">
               <Row
@@ -545,7 +554,7 @@ function ProjectionBreakdown({ player }: { player: Player }) {
           </div>
         </div>
         <dl className="fact-list">
-          <Row label="Próximo partido" value={next ? fixtureLabel(next) : "—"} />
+          <Row label="Próximo partido" value={next ? fixtureName(next) : "—"} />
           <Row label="Probabilidad de ganar" value={next ? percent(next.winProb) : "—"} />
           <Row label="Margen esperado" value={next ? `${signed(next.expectedMargin)} pts` : "—"} />
           <Row label="Puntos esperados" value={num(player.projectedFp)} />
@@ -577,7 +586,7 @@ function ProjectionBreakdown({ player }: { player: Player }) {
       <dl className="fact-list">
         <Row label="Minutos esperados" value={minutes === null ? "—" : `${num(minutes)} min`} />
         <Row label="Puntos por minuto" value={num(rate, 2)} />
-        <Row label={`Rival${next ? ` (${fixtureLabel(next)})` : ""}`} value={factor(opp)} />
+        <Row label={`Rival${next ? ` (${fixtureName(next)})` : ""}`} value={factor(opp)} />
         <Row label={next ? (next.home ? "En casa" : "Fuera") : "Campo"} value={factor(home)} />
         <Row label="Si juega" value={ifPlays === null ? "—" : `${num(ifPlays)} pts`} />
         <Row label={`Probabilidad de jugar (${source})`} value={percent(player.playProb ?? null)} />
@@ -723,7 +732,7 @@ function CoachTeamCard({ team }: { team: ReturnType<typeof getTeam> }) {
     <div className="card">
       <div className="card-head">
         <div>
-          <div className="card-title">Su equipo</div>
+          <h2 className="card-title">Su equipo</h2>
           <p className="card-note" style={{ margin: "4px 0 0" }}>
             El entrenador puntúa por el resultado: lo que importa es cómo llega el equipo.
           </p>

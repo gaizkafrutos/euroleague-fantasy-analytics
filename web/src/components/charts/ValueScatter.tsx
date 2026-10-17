@@ -14,7 +14,7 @@
 import { useMemo, useState } from "react";
 
 import { breakEvenAt } from "@/lib/advanced";
-import { credits, num, positionLabel, signed } from "@/lib/format";
+import { credits, displayName, num, positionLabel, signed } from "@/lib/format";
 import type { Player } from "@/lib/types";
 import { CHART_MARGIN, extent, linearScale, tickLabel, tickStep, ticks } from "./scales";
 import { useFitWidth } from "./useFitWidth";
@@ -183,9 +183,6 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
             <text x={x(reference.x0) + 6} y={MARGIN.top + 10} className="chart-halo">
               ↑ se revaloriza
             </text>
-            <text x={x(reference.x1) - 6} y={height - MARGIN.bottom - 8} textAnchor="end" className="chart-halo">
-              pierde valor ↓
-            </text>
           </>
         ) : null}
 
@@ -237,6 +234,15 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
         >
           precio (créditos) →
         </text>
+        <text
+          x={-(MARGIN.top + (height - MARGIN.top - MARGIN.bottom) / 2)}
+          y={11}
+          transform="rotate(-90)"
+          textAnchor="middle"
+          fill="var(--ink-muted)"
+        >
+          pts proyectados
+        </text>
       </svg>
 
       {hover ? (
@@ -244,7 +250,7 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
           className="tooltip"
           style={{ left: `${(hover.x / width) * 100}%`, top: `${(hover.y / height) * 100}%` }}
         >
-          <div className="tooltip-title">{hover.player.name}</div>
+          <div className="tooltip-title">{displayName(hover.player)}</div>
           <div className="muted">
             {positionLabel(hover.player.position)} · {hover.player.clubShort ?? hover.player.club}
           </div>
@@ -272,7 +278,7 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
               aria-pressed={highlight === position}
               onClick={() => setHighlight(position)}
             >
-              {position ? positionLabel(position) : "Todas"}
+              {position ? (position === "G" ? "Bases" : position === "F" ? "Aleros" : "Pívots") : "Todas"}
             </button>
           ))}
         </span>

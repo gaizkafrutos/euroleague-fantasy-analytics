@@ -20,7 +20,7 @@ import AddToSquad from "@/components/team/AddToSquad";
 import ValueScatter from "@/components/charts/ValueScatter";
 import { BarCell, Delta, PlayerCell } from "@/components/ui/primitives";
 import { credits, displayName, num, percent } from "@/lib/format";
-import { fixtureLabel, playRisk, projectionNote, turnLabel } from "@/lib/projection";
+import { fixtureLabel, fixtureName, playRisk, projectionNote, turnLabel } from "@/lib/projection";
 import type { Player, Team } from "@/lib/types";
 
 type SortKey =
@@ -41,6 +41,15 @@ const PAGE_SIZE = 50;
 /** Las columnas con `optional` no se ven por defecto: se añaden desde el botón
  *  "Columnas". Con todas a la vez la tabla no cabía a 1440 px y la última
  *  quedaba cortada. */
+/** Nombres completos para el selector de orden del móvil: "Min" se leía
+ *  como "mínimo" y "Revalor." como una abreviatura sin más. */
+const SORT_NAME: Partial<Record<SortKey, string>> = {
+  expectedChange: "Revalorización esperada",
+  valueProjected: "Puntos por crédito",
+  minutesAvg: "Minutos",
+  bargainScore: "Índice de chollo",
+};
+
 const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: boolean }> = [
   // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
   // y la tabla ya usa ese patrón en Forma y en Minutos.
@@ -373,7 +382,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
         return (
           <>
             {credits(player.price)}
-            <span className="cell-delta">
+            <span className="cell-delta is-past">
               <Delta value={player.priceDeltaLast} digits={1} quiet />
             </span>
           </>
@@ -414,7 +423,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       case "difficulty":
         return (
           <>
-            <span className="muted" style={{ fontSize: "0.8em" }}>
+            <span
+              className="muted"
+              style={{ fontSize: "0.8em" }}
+              title={player.schedule.next ? fixtureName(player.schedule.next) : undefined}
+            >
               {player.schedule.next ? fixtureLabel(player.schedule.next) : ""}
             </span>{" "}
             {num(player.schedule.difficulty, 0)}
@@ -509,7 +522,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             >
               {COLUMNS.map((column) => (
                 <option key={column.key} value={column.key}>
-                  {column.label}
+                  {SORT_NAME[column.key] ?? column.label}
                 </option>
               ))}
             </select>
@@ -518,7 +531,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             type="button"
             className="chip sort-dir"
             onClick={() => setSort({ key: sort.key, desc: !sort.desc })}
-            aria-label={sort.desc ? "De mayor a menor: cambiar a de menor a mayor" : "De menor a mayor: cambiar a de mayor a menor"}
+            aria-label={sort.desc ? "Mayor primero. Cambiar a menor primero" : "Menor primero. Cambiar a mayor primero"}
           >
             <span aria-hidden>{sort.desc ? "↓" : "↑"}</span>
             {sort.desc ? "Mayor primero" : "Menor primero"}
@@ -746,13 +759,15 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     </span>
                     <span className="market-row-meta num">
                       <span>
-                        <b>{credits(player.price)}</b> <Revalue player={player} />
+                        <b>{credits(player.price)}</b>
+                      </span>
+                      <span>
+                        revalor. <Revalue player={player} />
                       </span>
                       <span>{num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr</span>
                       <span>reg. {reliable(player)}</span>
-                      {/* El índice solo cuando es por lo que se ordena: con él
-                          siempre, la línea no cabía en 375 px. */}
-                      {sort.key === "bargainScore" ? <span>índice {num(player.bargainScore, 0)}</span> : null}
+                      {/* Sin el índice: la lista ya va ordenada por él y, con
+                          "revalor." escrito, la línea no cabía en 390 px. */}
                     </span>
                   </a>
                   {/* Fuera del enlace: un botón dentro de un <a> es HTML inválido. */}
@@ -803,7 +818,7 @@ function nextTitle(player: Player): string | undefined {
   if (!next) return undefined;
   const turn = turnLabel(next);
   return [
-    `${fixtureLabel(next)} el ${new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", timeZone: "Europe/Madrid" }).format(new Date(next.date))}`,
+    `${fixtureName(next)} el ${new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", timeZone: "Europe/Madrid" }).format(new Date(next.date))}`,
     turn ? `turno ${next.turn} de ${next.turns}` : null,
     `${percent(next.winProb)} de ganar`,
     next.restDays !== null ? `${next.restDays} días de descanso` : null,

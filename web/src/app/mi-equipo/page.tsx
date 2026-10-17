@@ -80,6 +80,7 @@ function squadRow(player: Player): Player {
     thumb: player.thumb,
     price: player.price,
     projectedFp: player.projectedFp,
+    bargainScore: player.bargainScore,
     projectedIfPlays: player.projectedIfPlays,
     playProb: player.playProb,
     // Del parte y del próximo partido solo lo que pinta la consola: el registro

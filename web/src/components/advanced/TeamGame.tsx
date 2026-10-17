@@ -31,7 +31,13 @@ export function QuarterMargins({
   const margins = main.for.map((value, i) => value - (main.against[i] ?? 0));
   const refMargins = reference ? reference.for.map((value, i) => value - (reference.against[i] ?? 0)) : null;
   const reach = Math.max(6, ...margins.map(Math.abs), ...(refMargins ?? []).map(Math.abs)) * 1.1;
-  const pct = (value: number) => `${(Math.abs(value) / reach) * 50}%`;
+  // Si todo va hacia el mismo lado del cero, la otra mitad del gráfico era un
+  // hueco vacío entre las barras y las cifras: se dibuja solo la mitad útil.
+  const all = [...margins, ...(refMargins ?? [])];
+  const side = all.every((v) => v >= 0) ? "up" : all.every((v) => v <= 0) ? "down" : "both";
+  const scale = side === "both" ? 50 : 100;
+  const pct = (value: number) => `${(Math.abs(value) / reach) * scale}%`;
+  const base = side === "both" ? "50%" : "0%";
   const best = margins.indexOf(Math.max(...margins));
   const worst = margins.indexOf(Math.min(...margins));
 
@@ -41,7 +47,7 @@ export function QuarterMargins({
         {margins[best]! > 0 ? `Donde más saca: el ${QUARTERS[best]} cuarto (${signed(margins[best])}).` : "No gana ningún cuarto de media."}{" "}
         {margins[worst]! < 0 ? `Donde más cede: el ${QUARTERS[worst]} (${signed(margins[worst])}).` : ""}
       </p>
-      <div className="qm-plot" role="img" aria-label={`Diferencial medio por cuarto: ${margins.map((m, i) => `${QUARTERS[i]} ${signed(m)}`).join(", ")}`}>
+      <div className={`qm-plot is-${side}`} role="img" aria-label={`Diferencial medio por cuarto: ${margins.map((m, i) => `${QUARTERS[i]} ${signed(m)}`).join(", ")}`}>
         {margins.map((margin, index) => {
           const cls = divergingClass(margin, 2);
           const ref = refMargins?.[index];
@@ -56,11 +62,13 @@ export function QuarterMargins({
                 {ref !== undefined ? (
                   <span
                     className="qm-ref"
-                    style={{ [ref >= 0 ? "bottom" : "top"]: `calc(50% + ${pct(ref)})` } as CSSProperties}
+                    style={{ [ref >= 0 ? "bottom" : "top"]: `calc(${base} + ${pct(ref)})` } as CSSProperties}
                   />
                 ) : null}
               </span>
-              <span className="qm-value num">{signed(margin)}</span>
+              <span className={`qm-value num ${margin > 0.05 ? "delta-up" : margin < -0.05 ? "delta-down" : ""}`}>
+                {signed(margin)}
+              </span>
               <span className="qm-label">{QUARTERS[index]}</span>
             </div>
           );
@@ -68,7 +76,7 @@ export function QuarterMargins({
       </div>
       <div className="chart-legend qm-legend">
         <span>
-          <i className="legend-swatch zone-div-1" /> {seasonLabel(current ? currentSeason : priorSeason)} ·{" "}
+          <i className="legend-swatch" /> {seasonLabel(current ? currentSeason : priorSeason)} ·{" "}
           {main.games} {main.games === 1 ? "partido" : "partidos"}
         </span>
         {reference ? (
@@ -137,7 +145,9 @@ export function Lineups({ lineups }: { lineups: TeamLineup[] }) {
                     }}
                   />
                 </span>
-                <b>{signed(lineup.net)}</b>
+                <b className={(lineup.net ?? 0) > 0.05 ? "delta-up" : (lineup.net ?? 0) < -0.05 ? "delta-down" : undefined}>
+                  {signed(lineup.net)}
+                </b>
               </span>
               <small className="muted">
                 {lineup.pointsFor}–{lineup.pointsAgainst}
