@@ -1395,6 +1395,59 @@ table.data th.num {
   font-size: 11px;
 }
 
+/* Con el viewBox al ancho medido (useFitWidth) una unidad es un píxel: el
+   texto sale a su tamaño real en cualquier pantalla. */
+.chart.is-fit text {
+  font-size: 12px;
+}
+
+.chart .chart-halo {
+  fill: var(--ink-2);
+  stroke: var(--bg);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.chart .axis-sub {
+  fill: var(--ink-3);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.chart.is-fit .bar-label {
+  font-size: 13px;
+}
+
+/* Lecturas de la curva de precio: actual, máximo, mínimo y desde la salida. */
+.price-figs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 14px;
+}
+
+.price-figs dt {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.price-figs dd {
+  margin: 4px 0 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 700;
+  font-size: 1.125rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+@media (max-width: 559px) {
+  .price-figs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+  }
+}
+
 .chart .axis-line {
   stroke: var(--axis);
   stroke-width: 1;
@@ -6708,10 +6761,22 @@ h2.card-title {
 
 .legend-line {
   display: inline-block;
+  flex: none;
+  align-self: flex-start;
   width: 16px;
-  margin-right: 4px;
+  margin: 0.62em 4px 0 0;
   vertical-align: middle;
   border-top: 1.5px dashed var(--ink-2);
+}
+
+.legend-line.is-dotted {
+  border-top-style: dotted;
+  border-top-color: var(--ink-3);
+}
+
+.chart-refs {
+  margin-top: 6px;
+  color: var(--ink-3);
 }
 
 @media (max-width: 420px) {

@@ -13,6 +13,7 @@ import { useState } from "react";
 import { num } from "@/lib/format";
 import type { GameLine } from "@/lib/types";
 import { CHART_MARGIN, linearScale, tickLabel, tickStep, ticks } from "./scales";
+import { useFitWidth } from "./useFitWidth";
 
 interface Props {
   games: GameLine[];
@@ -23,7 +24,8 @@ interface Props {
 
 export default function GameLogBars({ games, average, floor, height = 220 }: Props) {
   const [active, setActive] = useState<number | null>(null);
-  const width = 720;
+  const [frame, measured] = useFitWidth();
+  const width = measured ?? 720;
 
   if (!games.length) {
     return <p className="muted" style={{ margin: 0 }}>Sin partidos registrados todavía.</p>;
@@ -57,12 +59,16 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
   const barWidth = Math.max(Math.min(slot - 4, 26), 6);
   const zero = y(0);
   const best = Math.max(...values);
+  // Con sitio, el rival debajo de la jornada: la barra sin contexto no dice
+  // contra quién fue el 41,8.
+  const showRival = slot >= 44 && games.length <= 16;
+  const svgHeight = height + (showRival ? 16 : 0);
 
   return (
-    <div className="chart-frame">
+    <div className="chart-frame" ref={frame}>
       <svg
-        className="chart"
-        viewBox={`0 0 ${width} ${height}`}
+        className={`chart${measured ? " is-fit" : ""}`}
+        viewBox={`0 0 ${width} ${svgHeight}`}
         role="img"
         aria-label="Puntos fantasy por partido"
         onMouseLeave={() => setActive(null)}
@@ -93,9 +99,6 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
               strokeWidth={1.5}
               strokeDasharray="5 4"
             />
-            <text x={width - CHART_MARGIN.right} y={y(average) - 6} textAnchor="end">
-              media {num(average)}
-            </text>
           </>
         ) : null}
 
@@ -105,9 +108,10 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
             x2={width - CHART_MARGIN.right}
             y1={y(floor)}
             y2={y(floor)}
-            stroke="var(--grid)"
+            stroke="var(--ink-3)"
             strokeWidth={1.5}
-            strokeDasharray="2 4"
+            strokeDasharray="1 4"
+            strokeLinecap="round"
           />
         ) : null}
 
@@ -142,6 +146,16 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
                   {game.round ?? "—"}
                 </text>
               ) : null}
+              {showRival ? (
+                <text
+                  x={centre}
+                  y={height - CHART_MARGIN.bottom + 31}
+                  textAnchor="middle"
+                  className="axis-sub"
+                >
+                  {game.home ? "vs" : "@"} {game.opponent ?? "—"}
+                </text>
+              ) : null}
             </g>
           );
         })}
@@ -153,17 +167,34 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
           y1={zero}
           y2={zero}
         />
-        <text x={CHART_MARGIN.left} y={height - 3} textAnchor="start" fill="var(--ink-muted)">
-          jornada
+        <text x={CHART_MARGIN.left - 8} y={height - CHART_MARGIN.bottom + 15} textAnchor="end" fill="var(--ink-muted)">
+          J
         </text>
       </svg>
+
+      {/* Las referencias se nombran fuera: dentro, cualquier barra alta
+          tapaba la etiqueta. */}
+      {average != null || floor != null ? (
+        <div className="chart-legend chart-refs">
+          {average != null ? (
+            <span>
+              <i className="legend-line" aria-hidden /> media {num(average)}
+            </span>
+          ) : null}
+          {floor != null ? (
+            <span>
+              <i className="legend-line is-dotted" aria-hidden /> suelo {num(floor)}
+            </span>
+          ) : null}
+        </div>
+      ) : null}
 
       {active !== null ? (
         <div
           className="tooltip"
           style={{
             left: `${((CHART_MARGIN.left + slot * (active + 0.5)) / width) * 100}%`,
-            top: `${(y(Math.max(games[active].fp, 0)) / height) * 100}%`,
+            top: `${(y(Math.max(games[active].fp, 0)) / svgHeight) * 100}%`,
           }}
         >
           <div className="tooltip-title num">

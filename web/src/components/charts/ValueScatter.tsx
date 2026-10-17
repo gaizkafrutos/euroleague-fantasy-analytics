@@ -17,6 +17,7 @@ import { breakEvenAt } from "@/lib/advanced";
 import { credits, num, positionLabel, signed } from "@/lib/format";
 import type { Player } from "@/lib/types";
 import { CHART_MARGIN, extent, linearScale, tickLabel, tickStep, ticks } from "./scales";
+import { useFitWidth } from "./useFitWidth";
 
 /* Más margen abajo: la etiqueta del eje X va bajo las cifras, no encima. */
 const MARGIN = { ...CHART_MARGIN, bottom: 46 };
@@ -36,10 +37,17 @@ interface Hover {
   y: number;
 }
 
-export default function ValueScatter({ players, height = 380, labelCount = 6 }: Props) {
+export default function ValueScatter({ players, height: baseHeight = 380, labelCount: baseLabels = 6 }: Props) {
   const [hover, setHover] = useState<Hover | null>(null);
   const [highlight, setHighlight] = useState<Position | null>(null);
-  const width = 900;
+  const [frame, measured] = useFitWidth();
+  const width = measured ?? 900;
+  // En el móvil la nube se hace casi cuadrada: a 343 × 144 los 336 puntos se
+  // amontonaban en una franja. Menos etiquetas y puntos algo más pequeños.
+  const narrow = width < 560;
+  const height = narrow ? Math.max(300, Math.round(width * 0.92)) : baseHeight;
+  const labelCount = narrow ? Math.min(baseLabels, 4) : baseLabels;
+  const radius = narrow ? 4 : 5;
 
   const points = useMemo(
     () =>
@@ -58,7 +66,7 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
     const x = linearScale(xDomain, [MARGIN.left, width - MARGIN.right]);
     const y = linearScale(yDomain, [height - MARGIN.bottom, MARGIN.top]);
     return { x, y, xDomain, yDomain };
-  }, [points, height]);
+  }, [points, height, width]);
 
   /** Recta de referencia: el umbral de revalorización. Es la que el juego usa
    *  de verdad para mover precios (plus = a·puntos + b·precio + c), así que por
@@ -123,9 +131,9 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
   const { x, y } = geometry;
 
   return (
-    <div className="chart-frame">
+    <div className="chart-frame" ref={frame}>
       <svg
-        className="chart is-wide"
+        className={`chart${measured ? " is-fit" : " is-wide"}`}
         viewBox={`0 0 ${width} ${height}`}
         role="img"
         aria-label="Dispersión de precio contra puntos fantasy proyectados, por posición"
@@ -146,9 +154,9 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
             </text>
           </g>
         ))}
-        {ticks(geometry.xDomain, 6).map((tick) => (
+        {ticks(geometry.xDomain, narrow ? 4 : 6).map((tick) => (
           <text key={`x-${tick}`} x={x(tick)} y={height - MARGIN.bottom + 20} textAnchor="middle">
-            {tickLabel(tick, tickStep(geometry.xDomain, 6))}
+            {tickLabel(tick, tickStep(geometry.xDomain, narrow ? 4 : 6))}
           </text>
         ))}
 
@@ -172,10 +180,10 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
               strokeWidth={1.5}
               strokeDasharray="6 4"
             />
-            <text x={x(reference.x0) + 6} y={MARGIN.top + 10} fill="var(--ink-muted)">
+            <text x={x(reference.x0) + 6} y={MARGIN.top + 10} className="chart-halo">
               ↑ se revaloriza
             </text>
-            <text x={x(reference.x1) - 6} y={height - MARGIN.bottom - 8} textAnchor="end" fill="var(--ink-muted)">
+            <text x={x(reference.x1) - 6} y={height - MARGIN.bottom - 8} textAnchor="end" className="chart-halo">
               pierde valor ↓
             </text>
           </>
@@ -193,7 +201,7 @@ export default function ValueScatter({ players, height = 380, labelCount = 6 }: 
               className="mark"
               cx={cx}
               cy={cy}
-              r={active ? 7 : 5}
+              r={active ? radius + 2 : radius}
               fill={lit ? "var(--brand)" : "var(--ink-3)"}
               fillOpacity={lit || highlight === null ? 1 : 0.35}
               onMouseEnter={() => setHover({ player, x: cx, y: cy })}
