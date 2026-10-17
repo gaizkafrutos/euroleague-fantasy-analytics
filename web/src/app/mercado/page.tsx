@@ -115,33 +115,35 @@ export default function MercadoPage() {
           Quién rinde más de lo que cuesta, quién va a subir y quién está perdiendo sitio.
         </p>
 
+        {/* Los datos van como una frase (el punto se pega a lo anterior con
+            un espacio duro y nunca empieza línea) y los enlaces aparte: en el
+            móvil la franja se partía en cinco líneas con puntos sueltos. */}
         <div className="status-strip">
-          <span>{meta.seasonLabel}</span>
-          <span className="status-sep">·</span>
-          <span className={`status-dot${isBaseline ? "" : " is-live"}`} aria-hidden />
-          <span>
+          <p className="status-facts">
+            <span className={`status-dot${isBaseline ? "" : " is-live"}`} aria-hidden />
+            {meta.seasonLabel}
+            {" · "}
             {isBaseline
               ? `Referencia: ${meta.performanceSource.games} partidos de la 2025-26`
               : `${meta.performanceSource.games} partidos de esta temporada`}
-          </span>
-          <span className="status-sep">·</span>
-          <span className="num">
-            {universe.length} jugadores, {percent(meta.matchRate)} identificados
-          </span>
-          <span className="status-sep">·</span>
-          <span className="num" title={`${meta.priceSnapshots} capturas con cambios guardadas`}>
-            {meta.lastPriceCapture
-              ? `Precios del ${dateTime(meta.lastPriceCapture)}`
-              : "Sin precios todavía"}
-            {checkedLater(meta) ? `, comprobados el ${dateTime(meta.lastPriceCheck)}` : ""}
-            {meta.priceFreshness?.stale ? " (pendientes de revalorizar)" : ""}
-          </span>
-          <span className="status-sep">·</span>
-          <a href="#explorador">Ir al explorador ↓</a>
-          <span className="status-sep">·</span>
-          <Link href="/comparar">Comparar jugadores</Link>
-          <span className="status-sep">·</span>
-          <Link href="/metodologia">Metodología</Link>
+            {" · "}
+            <span className="num">
+              {universe.length} jugadores, {percent(meta.matchRate)} identificados
+            </span>
+            {" · "}
+            <span className="num" title={`${meta.priceSnapshots} capturas con cambios guardadas`}>
+              {meta.lastPriceCapture
+                ? `Precios del ${dateTime(meta.lastPriceCapture)}`
+                : "Sin precios todavía"}
+              {checkedLater(meta) ? `, comprobados el ${dateTime(meta.lastPriceCheck)}` : ""}
+              {meta.priceFreshness?.stale ? " (pendientes de revalorizar)" : ""}
+            </span>
+          </p>
+          <p className="status-links">
+            <a href="#explorador">Ir al explorador</a>
+            <Link href="/comparar">Comparar jugadores</Link>
+            <Link href="/metodologia">Metodología</Link>
+          </p>
         </div>
       </section>
 

@@ -330,7 +330,7 @@ export default function Portada({
           <nav className="outro-links">
             <Link href="/mercado">
               <span className="t">
-                El mercado <span className="arrow">→</span>
+                El mercado{" "}<span className="arrow">→</span>
               </span>
               <span className="d num">
                 {players} jugadores y quién se sale de la cuenta
@@ -338,33 +338,27 @@ export default function Portada({
             </Link>
             <Link href="/mi-equipo">
               <span className="t">
-                Mi equipo <span className="arrow">→</span>
+                Mi equipo{" "}<span className="arrow">→</span>
               </span>
               <span className="d">Tu once, con el capitán al doble</span>
             </Link>
             <Link href="/equipos">
               <span className="t">
-                Los equipos <span className="arrow">→</span>
+                Los equipos{" "}<span className="arrow">→</span>
               </span>
               <span className="d">Clasificación, factores y próximos cinco</span>
             </Link>
           </nav>
 
-          <div className="outro-strip num">
-            <span>
-              {referenceGames} partidos {isBaseline ? "de referencia" : "de esta temporada"}
-            </span>
-            <span className="sep">·</span>
-            <span>
-              {players} jugadores, {matchRate} identificados
-            </span>
-            <span className="sep">·</span>
-            <span>
-              {snapshots} {snapshots === 1 ? "captura" : "capturas"} de precio
-            </span>
-            <span className="sep">·</span>
+          <p className="outro-strip num">
+            {referenceGames} partidos {isBaseline ? "de referencia" : "de esta temporada"}
+            {" · "}
+            {players} jugadores, {matchRate} identificados
+            {" · "}
+            {snapshots} {snapshots === 1 ? "captura" : "capturas"} de precio
+            {" · "}
             <Link href="/metodologia">Metodología</Link>
-          </div>
+          </p>
         </div>
       </div>
     </div>

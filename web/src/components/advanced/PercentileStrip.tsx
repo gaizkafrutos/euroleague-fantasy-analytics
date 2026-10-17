@@ -22,9 +22,17 @@ export default function PercentileStrip({ official }: { official: OfficialDetail
       <div className="pstrip-scale" aria-hidden>
         <span />
         <span className="pstrip-scale-mid">
-          <span>0 · peor</span>
-          <span>50 · media</span>
-          <span>mejor · 100</span>
+          {/* En el móvil no caben las cifras y las palabras: quedan las
+              palabras, que son las que se leen. */}
+          <span>
+            <span className="pstrip-num">0 · </span>peor
+          </span>
+          <span>
+            <span className="pstrip-num">50 · </span>media
+          </span>
+          <span>
+            mejor<span className="pstrip-num"> · 100</span>
+          </span>
         </span>
         <span />
       </div>
