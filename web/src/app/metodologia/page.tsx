@@ -110,13 +110,13 @@ export default function MethodologyPage() {
         <article className="card">
           <h2 className="card-title">2. Precios del Fantasy</h2>
           <p className="card-note">
-            El EuroLeague Fantasy Challenge no publica API. Su frontend habla contra{" "}
+            El EuroLeague Fantasy Challenge no publica API. Su web pide los datos a{" "}
             <code>fantaking-api.dunkest.com</code>, donde la Euroliga es la competición 49.
             De ahí sale la columna que no existe en ningún otro sitio: el precio en créditos
             de cada jugador.
           </p>
           <p className="card-note">
-            Un snapshot completo son cuatro peticiones. Se captura cuatro veces al día y solo se
+            Una captura completa son cuatro peticiones. Se captura cuatro veces al día y solo se
             guarda si el mercado ha cambiado: el histórico acumulado es lo que permite ver quién
             sube y quién baja.
           </p>
@@ -222,7 +222,7 @@ export default function MethodologyPage() {
               , y queda en torno a 1,1 veces el precio: más alto cuanto más caro es el jugador.
             </Definition>
             <Definition term="Horquilla y techo">
-              Suelo, techo y p90 salen de los errores reales del backtest, no de una normal: la
+              Suelo, techo y p90 salen de los errores reales en jornadas pasadas, no de una normal: la
               puntuación tiene la cola de arriba más larga que la de abajo (el percentil 75 queda
               a +0,57 desviaciones y el 25 a −0,68). La dispersión se encoge hacia la del año
               pasado, se ensancha con pocos partidos (la media del propio jugador aún es dudosa)
@@ -301,7 +301,7 @@ export default function MethodologyPage() {
             Los identificadores de Fantaking y de la EuroLeague no tienen nada que ver. El
             único puente es nombre + equipo, con acentos, apellidos compuestos y nombres
             abreviados de por medio. El emparejamiento va en cascada, de más fiable a menos, y
-            lo que no llega al umbral se deja sin cruzar en vez de inventarse.
+            lo que no llega al mínimo de parecido se deja sin cruzar en vez de inventarse.
           </p>
           <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Métodos de cruce">
             <table className="data is-compact">
@@ -510,7 +510,7 @@ function ProjectionModel() {
           <p style={{ margin: 0 }}>
             Donde más gana es al principio, que es cuando la media propia no existe: con 1 a 3
             partidos se equivoca bastante menos que la media y que el modelo anterior. La forma
-            de los últimos cinco no entra: en el backtest, darle peso empeoraba el error.
+            de los últimos cinco no entra: probado en jornadas pasadas, darle peso empeoraba el error.
           </p>
         ) : null}
         {published && published.rounds.length ? (

@@ -17,6 +17,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 import { sequentialClass } from "@/lib/advanced";
+import { clubAbbr } from "@/lib/clubs";
 import { dateShort, num } from "@/lib/format";
 import type { Team } from "@/lib/types";
 
@@ -126,7 +127,7 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
                       // la web, y la mitad de texto en cada una de las cien celdas.
                       <b>
                         {fixture.home ? "" : "@"}
-                        {fixture.opponent}
+                        {clubAbbr(fixture.opponent)}
                       </b>
                     ) : (
                       "—"

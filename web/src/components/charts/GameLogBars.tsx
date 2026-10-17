@@ -10,6 +10,7 @@
  */
 import { useState } from "react";
 
+import { clubAbbr, clubName } from "@/lib/clubs";
 import { num } from "@/lib/format";
 import type { GameLine } from "@/lib/types";
 import { CHART_MARGIN, linearScale, tickLabel, tickStep, ticks } from "./scales";
@@ -41,7 +42,7 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
             <span className="single-reading-value num">{game.played ? num(game.fp) : "—"}</span>
             <span className="muted num">
               {game.played ? "pts" : "No jugó"} · J{game.round ?? "—"} · {game.home ? "vs" : "@"}{" "}
-              {game.opponent ?? "—"}
+              {clubName(game.opponent)}
               {game.played ? ` · ${num(game.minutes)} min` : ""}
             </span>
           </li>
@@ -153,7 +154,7 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
                   textAnchor="middle"
                   className="axis-sub"
                 >
-                  {game.home ? "vs" : "@"} {game.opponent ?? "—"}
+                  {game.home ? "vs" : "@"} {clubAbbr(game.opponent)}
                 </text>
               ) : null}
             </g>
@@ -202,7 +203,7 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
           </div>
           <div className="muted">
             J{games[active].round ?? "—"} · {games[active].home ? "vs" : "@"}{" "}
-            {games[active].opponent ?? "—"}
+            {clubName(games[active].opponent)}
           </div>
           <div className="muted num">{num(games[active].minutes)} min</div>
         </div>

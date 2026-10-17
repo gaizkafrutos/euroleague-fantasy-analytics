@@ -6,13 +6,13 @@
  *  funciones dan el desglose para los `title` y las notas.
  */
 import { num, percent } from "@/lib/format";
-import { clubName } from "@/lib/clubs";
+import { clubAbbr, clubName } from "@/lib/clubs";
 import type { NextGame, Player } from "@/lib/types";
 
 /** "@ZAL" fuera, "vs ZAL" en casa. */
 export function fixtureLabel(next: NextGame | null | undefined): string {
   if (!next) return "—";
-  return `${next.home ? "vs" : "@"} ${next.opponent}`;
+  return `${next.home ? "vs" : "@"} ${clubAbbr(next.opponent)}`;
 }
 
 /** "@ Fenerbahce" fuera, "vs Fenerbahce" en casa: el nombre y no el código
@@ -22,10 +22,11 @@ export function fixtureName(next: NextGame | null | undefined): string {
   return `${next.home ? "vs" : "@"} ${clubName(next.opponent)}`;
 }
 
-/** "T1" si la jornada se juega en varios días; nada si es de un solo turno. */
-export function turnLabel(next: NextGame | null | undefined): string | null {
+/** "T1" si la jornada se juega en varios días; nada si es de un solo turno.
+ *  Con `long`, "turno 1": donde hay sitio, sin abreviatura que aprenderse. */
+export function turnLabel(next: NextGame | null | undefined, long = false): string | null {
   if (!next || next.turns <= 1) return null;
-  return `T${next.turn}`;
+  return long ? `turno ${next.turn}` : `T${next.turn}`;
 }
 
 /** Probabilidad de jugar por debajo de la cual se avisa. */

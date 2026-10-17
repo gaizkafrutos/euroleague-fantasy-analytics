@@ -16,6 +16,7 @@ import { checkedLater, credits, dateTime, displayName, num, percent, positionLab
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 import Explain from "@/components/ui/Explain";
+import { clubName } from "@/lib/clubs";
 
 export const metadata: Metadata = {
   title: "Mercado",
@@ -269,7 +270,7 @@ export default function MercadoPage() {
                     <td className="is-text" title={positionLabel(player.position)}>
                       {positionShort(player.position)}
                     </td>
-                    <td className="is-text">{player.club}</td>
+                    <td className="is-text">{clubName(player.club)}</td>
                     <td className="num">{credits(player.price)}</td>
                     <td className="num">
                       <BarCell
@@ -310,7 +311,7 @@ export default function MercadoPage() {
                       role={roleOf(player.key, starters, bench, lineup.sixth)}
                       captain={lineup.captain === player.key}
                     />
-                    <i className="muted">{player.club}</i>
+                    <i className="muted">{clubName(player.club)}</i>
                   </span>
                   <span className="lineup-figures">
                     <b className="num">{num(player.projection)}</b>

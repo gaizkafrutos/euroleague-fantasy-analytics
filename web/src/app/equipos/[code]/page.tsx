@@ -427,7 +427,7 @@ function Roster({ roster }: { roster: Player[] }) {
                   {hasProjection(player) ? (
                     <span className="eq-grp-proj num">{num(player.projectedFp)}</span>
                   ) : (
-                    <span className="eq-grp-proj is-none">sin proy.</span>
+                    <span className="eq-grp-proj is-none" title="Sin partidos para proyectarle">sin datos</span>
                   )}
                 </li>
               ))}

@@ -7,6 +7,8 @@ export interface NavItem {
   /** Etiqueta corta para la barra del móvil, donde no cabe "Metodología". */
   short: string;
   icon: "market" | "squad" | "compare" | "teams" | "method";
+  /** Solo en la cabecera de escritorio. */
+  wideOnly?: boolean;
 }
 
 export const NAV_ITEMS: NavItem[] = [
@@ -16,6 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "/comparar", label: "Comparar", short: "Comparar", icon: "compare" },
   { href: "/equipos", label: "Equipos", short: "Equipos", icon: "teams" },
   { href: "/metodologia", label: "Metodología", short: "Método", icon: "method" },
+  { href: "/acierta", label: "Acierto", short: "Acierto", icon: "method", wideOnly: true },
 ];
 
 export function NavIcon({ name }: { name: NavItem["icon"] }) {
