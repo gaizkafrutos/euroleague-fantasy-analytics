@@ -7275,6 +7275,156 @@ dl dd.dl-note {
   background: var(--accent-soft);
 }
 
+.compare-picker .control {
+  display: flex;
+}
+
+/* Comparador en el móvil: cabecera fija con las caras y una fila de valores
+   por métrica, en el mismo orden. */
+.compare-mobile {
+  display: none;
+}
+
+.compare-heads {
+  position: sticky;
+  top: calc(61px + env(safe-area-inset-top, 0px));
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: 8px;
+  padding: 12px 0 10px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.compare-head {
+  position: relative;
+  min-width: 0;
+}
+
+.compare-head-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+  text-align: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.compare-head .compare-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-position: 50% 0;
+  margin-bottom: 3px;
+}
+
+.compare-head-name {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.compare-head-sub {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.compare-head-remove {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg-raised);
+  color: var(--ink-3);
+  cursor: pointer;
+}
+
+.compare-head-remove::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+}
+
+.compare-head-remove svg {
+  width: 13px;
+  height: 13px;
+}
+
+.compare-sec {
+  margin-top: 26px;
+}
+
+.compare-sec-title {
+  margin: 0 0 6px;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.compare-sec dl {
+  margin: 0;
+}
+
+.compare-metric {
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+}
+
+.compare-metric dt {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.compare-vals {
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: 8px;
+  margin: 6px 0 0;
+  text-align: center;
+}
+
+.compare-vals span {
+  padding: 5px 2px;
+  border-radius: 6px;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+
+.compare-vals .is-best {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-variation-settings: "wdth" 90, "wght" 800;
+}
+
+@media (max-width: 599px) {
+  .compare-desktop {
+    display: none;
+  }
+
+  .compare-mobile {
+    display: block;
+  }
+}
+
 .budget-row {
   display: flex;
   align-items: center;
