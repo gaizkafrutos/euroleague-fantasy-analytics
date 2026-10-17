@@ -97,7 +97,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data web/src/data
+          # Las miniaturas de los avatares (efa.thumbs) también: solo cambian
+          # cuando entra un jugador o la EuroLeague cambia una foto.
+          git add data web/src/data web/public/fotos web/public/escudos
           if git diff --staged --quiet; then
             echo "Sin cambios que commitear."
           else

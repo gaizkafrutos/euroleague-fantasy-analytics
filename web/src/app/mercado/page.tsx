@@ -456,6 +456,7 @@ function explorerRow(player: Player): Player {
     position: player.position,
     isCoach: player.isCoach,
     image: player.image,
+    thumb: player.thumb,
     price: player.price,
     priceGame: player.priceGame,
     pricePendingSource: player.pricePendingSource,

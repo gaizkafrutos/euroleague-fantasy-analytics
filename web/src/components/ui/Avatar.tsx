@@ -1,7 +1,12 @@
 "use client";
 
-/** Foto de jugador con repuesto: si la CDN falla, iniciales en vez del icono de
- *  imagen rota (en la cancha de Mi equipo se veía un hueco feo). */
+/** Foto de jugador con repuesto: si la imagen falla, iniciales en vez del icono
+ *  de imagen rota (en la cancha de Mi equipo se veía un hueco feo).
+ *
+ *  `src` debe ser la miniatura (`player.thumb`, WebP de 96 px servido desde
+ *  `public/fotos/`), no la foto original de la CDN: esa pesa ~700 KB y aquí se
+ *  pinta a 30-36 px. No se usa `next/image` por el cupo de transformaciones del
+ *  plan Hobby (ver `next.config.mjs` y `pipeline/efa/thumbs.py`). */
 import { useState } from "react";
 
 import { initials } from "@/lib/format";

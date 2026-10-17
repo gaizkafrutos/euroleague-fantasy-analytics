@@ -62,6 +62,7 @@ from efa.metrics import (
 from efa.optimizer import Candidate, normalize_position, optimize
 from efa.projection import production_projection
 from efa.published import archive_predictions
+from efa.thumbs import apply_thumbs
 
 log = logging.getLogger(__name__)
 
@@ -561,7 +562,8 @@ def player_details(
 # Orquestación
 # ---------------------------------------------------------------------------
 def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
-    """Genera todos los JSON de la web. No toca la red."""
+    """Genera todos los JSON de la web. Solo sale a la red para las miniaturas
+    de fotos nuevas o cambiadas (efa.thumbs)."""
     ensure_dirs()
     reference = load_reference(SEASON_CODE)
     if not reference.get("clubs"):
@@ -707,6 +709,9 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     archived = archive_predictions(records, games, round_now)
     if archived:
         log.info("Predicción de la J%d guardada en %s", round_now, archived)
+
+    # Avatares de 30-36 px: miniaturas propias en vez de los PNG de 750 KB.
+    apply_thumbs(records)
 
     write_json("players.json", records)
     write_json("details.json", details)
