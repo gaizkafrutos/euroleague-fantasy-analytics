@@ -41,6 +41,22 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: web
+      - name: Instalar Chromium para las pruebas en navegador
+        run: npx playwright install --with-deps chromium
+        working-directory: web
+      - name: Pruebas en navegador (consola, scroll, axe y flujos)
+        run: npm run test:e2e
+        working-directory: web
+      # Capturas de cada página a 375 y 1280 px, y la traza de lo que falle.
+      # Para mirarlas, no para compararlas: los datos cambian a diario.
+      - name: Subir capturas y trazas
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: capturas-e2e
+          path: web/test-results/
+          retention-days: 7
+          if-no-files-found: ignore
 
   secretos:
     runs-on: ubuntu-latest

@@ -28,3 +28,7 @@ Claude outputs/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Pruebas en navegador (Playwright)
+web/test-results/
+web/playwright-report/
