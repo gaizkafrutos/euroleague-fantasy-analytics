@@ -161,10 +161,14 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 {typeof player.priceGame === "number" ? " · pendiente" : ""}
               </small>
             </span>
-            <AddToSquad id={player.id} isCoach={player.isCoach} name={displayName(player)} />
-            <Link className="button-ghost ficha-compare" href={`/comparar?ids=${player.id}`}>
-              Comparar
-            </Link>
+            {/* Fichar y Comparar van juntos: sueltos, en el móvil Comparar
+                caía solo a una tercera línea. */}
+            <span className="ficha-actions">
+              <AddToSquad id={player.id} isCoach={player.isCoach} name={displayName(player)} />
+              <Link className="button-ghost ficha-compare" href={`/comparar?ids=${player.id}`}>
+                Comparar
+              </Link>
+            </span>
           </div>
 
           <div className={`ficha-orbit${hasOrbs ? "" : " is-bare"}`}>

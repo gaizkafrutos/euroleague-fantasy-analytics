@@ -27,18 +27,19 @@ export const metadata: Metadata = {
 
 export default function MercadoPage() {
   const universe = meta.hasPrices ? pricedPlayers : rosterPlayers;
-  // Solo la serie de puntos de cada uno: details.json entero pesa más de un
-  // megabyte y viajaría serializado dentro de la página.
+  // Solo la serie de puntos de cada uno, y solo de quien sale en el
+  // explorador: details.json entero pesa más de un megabyte y viajaría
+  // serializado dentro de la página.
+  const inUniverse = new Set(universe.map((player) => String(player.id)));
   const details = Object.fromEntries(
     Object.entries(
       detailsJson as unknown as Record<string, { recent: Array<{ fp: number; played: boolean }> }>,
-    ).map(
-      // Solo los partidos jugados: un DNP no es un 0 en la forma reciente.
-      ([id, detail]) => [
-        id,
-        { recent: detail.recent.filter((game) => game.played).map((game) => ({ fp: game.fp })) },
-      ],
-    ),
+    )
+      .filter(([id]) => inUniverse.has(id))
+      .map(
+        // Solo los partidos jugados: un DNP no es un 0 en la forma reciente.
+        ([id, detail]) => [id, detail.recent.filter((game) => game.played).map((game) => game.fp)],
+      ),
   );
 
   // Las señales se adaptan al punto de la temporada: con una jornada jugada no
@@ -287,7 +288,7 @@ export default function MercadoPage() {
                       <span className="badge">Entrenador</span>
                     </td>
                     <td className="is-text">E</td>
-                    <td className="is-text">{lineup.coach.club}</td>
+                    <td className="is-text">{clubName(lineup.coach.club)}</td>
                     <td className="num">{credits(lineup.coach.price)}</td>
                     <td className="num">{num(lineup.coach.projection)}</td>
                   </tr>
@@ -327,7 +328,7 @@ export default function MercadoPage() {
                   <span className="lineup-name">
                     <span className="lineup-player">{coachLabel(lineup.coach)}</span>
                     <span className="badge">Entrenador</span>
-                    <i className="muted">{lineup.coach.club}</i>
+                    <i className="muted">{clubName(lineup.coach.club)}</i>
                   </span>
                   <span className="lineup-figures">
                     <b className="num">{num(lineup.coach.projection)}</b>
@@ -448,11 +449,20 @@ const EXPLORER_PERF = [
   "fpAvg", "form", "formDelta", "lastFp", "consistency",
 ] as const;
 
+/** Lo que el explorador lee de cada jugador, nada más: son 336 filas
+ *  serializadas en la página y cada campo de sobra se paga al cargarla. */
 function explorerRow(player: Player): Player {
   const perf = Object.fromEntries(EXPLORER_PERF.map((key) => [key, player.perf[key] ?? null]));
-  return {
+  const outlook = player.outlook
+    ? {
+        breakEven: player.outlook.breakEven,
+        expectedChange: player.outlook.expectedChange,
+        riseProb: player.outlook.riseProb,
+        p90: player.outlook.p90,
+      }
+    : null;
+  const row = {
     id: player.id,
-    personCode: player.personCode,
     name: player.name,
     marketName: player.marketName,
     club: player.club,
@@ -460,7 +470,8 @@ function explorerRow(player: Player): Player {
     clubShort: player.clubShort,
     position: player.position,
     isCoach: player.isCoach,
-    image: player.image,
+    // La foto grande solo si no hay miniatura: la URL del CDN es larga.
+    image: player.thumb ? null : player.image,
     thumb: player.thumb,
     price: player.price,
     priceGame: player.priceGame,
@@ -476,7 +487,11 @@ function explorerRow(player: Player): Player {
     schedule: player.schedule,
     availability: player.availability,
     registered: player.registered,
-    outlook: player.outlook,
+    outlook,
     perf,
-  } as unknown as Player;
+  };
+  // Lo que no tiene valor no viaja: "$undefined" ocupaba sitio en cada fila.
+  return Object.fromEntries(
+    Object.entries(row).filter(([, value]) => value !== undefined),
+  ) as unknown as Player;
 }

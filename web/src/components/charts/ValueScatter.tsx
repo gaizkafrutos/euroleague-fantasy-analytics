@@ -270,6 +270,8 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
       ) : null}
 
       <div className="chart-legend" style={{ marginTop: 10 }}>
+        {/* Resalta sin quitar a nadie: filtrar ya se filtra en Filtros. */}
+        <span className="muted">Resaltar</span>
         <span className="segmented" role="group" aria-label="Resaltar una posición">
           {([null, "G", "F", "C"] as const).map((position) => (
             <button
@@ -283,8 +285,8 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
           ))}
         </span>
         <span className="muted">
-          <i className="legend-line" aria-hidden /> Umbral: por encima, sube de precio si rinde lo
-          proyectado.
+          <i className="legend-line" aria-hidden /> Por encima de la línea, sube de precio si rinde
+          lo proyectado.
         </span>
       </div>
     </div>
