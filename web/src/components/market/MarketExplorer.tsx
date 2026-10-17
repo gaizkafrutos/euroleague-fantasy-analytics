@@ -373,7 +373,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
         return (
           <>
             {credits(player.price)}
-            <span className="cell-delta">
+            <span className="cell-delta is-past">
               <Delta value={player.priceDeltaLast} digits={1} quiet />
             </span>
           </>

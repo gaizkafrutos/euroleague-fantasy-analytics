@@ -459,9 +459,9 @@ table.data td.num,
 }
 
 .wordmark-sub {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -3548,8 +3548,9 @@ table.data th.num {
 
 .portada .hl-w > span {
   display: inline-block;
-  animation: hl-rise 1s var(--ease-out-expo) both;
-  animation-delay: calc(180ms + var(--i, 0) * 55ms);
+  /* El mismo gesto, más corto: la última palabra llegaba a 1,7 s. */
+  animation: hl-rise 0.75s var(--ease-out-expo) both;
+  animation-delay: calc(80ms + var(--i, 0) * 35ms);
 }
 
 /* La segunda línea baja el tono con peso, no con color: el acento es solo
@@ -8019,4 +8020,58 @@ ul.card-note,
 .input[type="search"]::-webkit-search-cancel-button {
   filter: grayscale(1) opacity(0.6);
   cursor: pointer;
+}
+
+/* Pie en dos líneas: el aviso y los datos con sus enlaces. */
+.footer-legal {
+  margin: 0;
+  max-width: 76ch;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 8px 0 0;
+}
+
+.footer-meta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+/* Lo que ya pasó, en gris: dos flechas verdes seguidas (precio y
+   revalorización) decían cosas distintas con el mismo color. */
+.cell-delta.is-past .delta-up,
+.cell-delta.is-past .delta-down {
+  color: var(--ink-3);
+}
+
+.compare-table thead .player-name {
+  display: inline-block;
+  padding-block: 4px;
+}
+
+/* Por cuartos con todo al mismo lado del cero: media altura, cero en el
+   borde. */
+.qm-plot.is-up .qm-area,
+.qm-plot.is-down .qm-area {
+  height: 72px;
+}
+
+.qm-plot.is-up .qm-zero {
+  top: 100%;
+}
+
+.qm-plot.is-down .qm-zero {
+  top: 0;
+}
+
+.qm-plot.is-up .qm-bar.is-up {
+  bottom: 0;
+}
+
+.qm-plot.is-down .qm-bar.is-down {
+  top: 0;
 }

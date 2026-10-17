@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import Header from "@/components/ui/Header";
 import MobileNav from "@/components/ui/MobileNav";
 import { meta } from "@/lib/data";
-import { checkedLater } from "@/lib/format";
+import { checkedLater, dateTime } from "@/lib/format";
 import { searchIndex } from "@/lib/search-index";
 import PriceNotice from "@/components/ui/PriceNotice";
 import { body, display } from "@/lib/fonts";
@@ -79,21 +79,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="contenido">{children}</main>
         <footer className="footer">
           <div className="shell">
-            <p style={{ margin: 0, maxWidth: "76ch" }}>
-              Proyecto personal, sin ánimo comercial y sin relación con Euroleague Basketball
-              ni con Fantaking. Estadísticas de la API pública de la EuroLeague; precios del
-              EuroLeague Fantasy Challenge.
+            {/* Dos líneas y no un párrafo que se repetía entero, con fechas al
+                segundo, al final de cada página. */}
+            <p className="footer-legal">
+              Proyecto personal, sin relación con Euroleague Basketball ni con Fantaking. Datos de
+              la API pública de la EuroLeague y del EuroLeague Fantasy Challenge.
             </p>
-            <p style={{ margin: "8px 0 0" }} className="num">
-              Datos generados el {new Date(meta.generatedAt).toLocaleString("es-ES")}
-              {meta.lastPriceCapture
-                ? ` · precios capturados el ${new Date(meta.lastPriceCapture).toLocaleString("es-ES")}`
-                : ""}
-              {checkedLater(meta) && meta.lastPriceCheck
-                ? ` (sin cambios desde entonces; comprobados el ${new Date(meta.lastPriceCheck).toLocaleString("es-ES")})`
-                : ""}{" "}
-              ·{" "}
-              <a href="/metodologia">Cómo se calcula todo</a> ·{" "}
+            <p className="footer-meta">
+              <span>
+                Datos del {dateTime(meta.generatedAt)}
+                {meta.lastPriceCapture ? ` · precios del ${dateTime(meta.lastPriceCapture)}` : ""}
+                {checkedLater(meta) && meta.lastPriceCheck
+                  ? `, comprobados el ${dateTime(meta.lastPriceCheck)}`
+                  : ""}
+              </span>
+              <a href="/metodologia">Cómo se calcula</a>
               <a href="/acierta">¿Acierta HoopIQ?</a>
             </p>
           </div>
