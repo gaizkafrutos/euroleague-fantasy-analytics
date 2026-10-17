@@ -76,6 +76,13 @@ export const POSITION_PLURAL: Record<string, string> = {
   C: "Pívots",
 };
 
+/** Inicial en castellano para columnas estrechas: B, A, P. Los datos vienen
+ *  con las del inglés (G, F, C), que no casaban con la E del entrenador. */
+export function positionShort(position: string | null | undefined): string {
+  if (!position) return "—";
+  return ({ G: "B", F: "A", C: "P" } as Record<string, string>)[position] ?? position;
+}
+
 export function positionLabel(position: string | null | undefined): string {
   if (!position) return "—";
   return POSITION_LABEL[position] ?? position;
@@ -116,7 +123,7 @@ export function prettyName(raw: string | null | undefined): string {
 
 /** El nombre que se enseña.
  *
- *  Los jugadores que no cruzan con el censo oficial de la EuroLiga no tienen
+ *  Los jugadores que no cruzan con el censo oficial de la Euroliga no tienen
  *  `name`; ahí se cae al del mercado, que viene abreviado ("M. Jaiteh") pero
  *  es mejor que un guion. */
 export function displayName(player: { name: string | null; marketName: string | null }): string {

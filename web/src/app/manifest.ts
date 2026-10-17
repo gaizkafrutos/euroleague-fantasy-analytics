@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "HoopIQ — EuroLeague Fantasy Challenge",
     short_name: "HoopIQ",
     description:
-      "Precios del EuroLeague Fantasy Challenge cruzados con las estadísticas oficiales de la EuroLiga.",
+      "Precios del EuroLeague Fantasy Challenge cruzados con las estadísticas oficiales de la Euroliga.",
     lang: "es",
     start_url: "/",
     display: "standalone",

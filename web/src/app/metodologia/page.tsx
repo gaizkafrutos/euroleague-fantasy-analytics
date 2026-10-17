@@ -1,5 +1,6 @@
 import { matching, meta } from "@/lib/data";
 import { dateTime, num, percent } from "@/lib/format";
+import { METHOD_LABEL } from "@/lib/matching";
 
 function signedNum(value: number | null | undefined): string {
   if (value === null || value === undefined) return "—";
@@ -652,16 +653,3 @@ function Definition({ term, children }: { term: string; children: React.ReactNod
   );
 }
 
-const METHOD_LABEL: Record<string, string> = {
-  override: "Corrección manual",
-  "initial-club": "Apellido e inicial, mismo club",
-  "surname-club": "Apellido único en el club",
-  exact: "Nombre completo idéntico",
-  subset: "Apellido compuesto o con partícula",
-  "fuzzy-club": "Similitud alta, mismo club",
-  "initial-open": "Apellido e inicial, único en la liga",
-  "exact-open": "Nombre exacto, club distinto",
-  "prior-season": "Censo de la temporada anterior",
-  "fuzzy-open": "Similitud muy alta, sin club",
-  unmatched: "Sin cruzar (aún no inscrito)",
-};

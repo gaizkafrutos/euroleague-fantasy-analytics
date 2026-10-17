@@ -43,6 +43,10 @@ export default function TeamPage() {
             últimos van al banquillo a la mitad. Luego señala a quién le pagas de más y qué fichaje
             cabe. <Link href="/metodologia#reglas">Las reglas, en 30 segundos</Link>.
           </p>
+          <p>
+            <b>T1, T2, T3:</b> el turno (día) de la jornada en que juega cada uno. Entre turno y
+            turno se puede cambiar el capitán y mover gente entre pista y banquillo.
+          </p>
         </details>
       </header>
       <SquadConsole

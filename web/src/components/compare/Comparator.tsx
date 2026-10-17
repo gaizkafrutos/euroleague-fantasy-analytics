@@ -103,13 +103,14 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Horquilla p25–p75",
+        label: "Rango habitual",
+        title: "Entre qué cifras cae la mitad de las veces (percentiles 25 y 75)",
         value: (r) => r.floor,
         show: (r) => (r.floor === null ? "—" : `${num(r.floor)}–${num(r.ceiling)}`),
         better: "high",
       },
       {
-        label: "Techo (p90)",
+        label: "Techo",
         title: "Lo que hace en una buena noche: lo que importa para el capitán",
         value: (r) => r.p90,
         show: (r) => num(r.p90),
