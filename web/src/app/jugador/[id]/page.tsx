@@ -25,7 +25,7 @@ import {
 } from "@/lib/format";
 import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
 import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
-import { verdictFor } from "@/lib/verdict";
+import { coachVerdict, verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
 
 export function generateStaticParams() {
@@ -67,7 +67,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
   const detail = await getDetail(player.id);
   const team = getTeam(player.club);
-  const verdict = verdictFor(player);
+  const verdict = player.isCoach ? coachVerdict(player, team) : verdictFor(player);
   const groupSize = poolSize(player.position);
   const perf = player.perf;
   const { given, surname } = splitName(player);
@@ -137,7 +137,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             {team?.crest ? (
               <Image className="ficha-crest" src={team.crest} alt="" width={22} height={22} />
             ) : null}
-            <PositionBadge position={player.position} />
+            {player.isCoach ? <span className="badge">Entrenador</span> : <PositionBadge position={player.position} />}
             {player.height ? <span className="badge">{player.height} cm</span> : null}
             {player.birthDate ? <span className="badge">{age(player.birthDate)} años</span> : null}
             {player.country ? <span className="badge">{player.country}</span> : null}
@@ -178,6 +178,12 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                   sizes="(min-width: 620px) 340px, 62vw"
                   priority
                 />
+              ) : player.isCoach && team?.crest ? (
+                // El feed no trae retrato de los entrenadores: el escudo de su
+                // equipo, que es por lo que puntúan, en vez de una inicial.
+                <div className="ficha-portrait-crest" aria-hidden>
+                  <Image src={team.crest} alt="" width={180} height={180} />
+                </div>
               ) : (
                 <div className="ficha-portrait-empty" aria-hidden>
                   {surname.slice(0, 1)}
@@ -218,7 +224,13 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               <BandItem
                 label="Regularidad"
                 value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
-                note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
+                note={
+                  player.isCoach
+                    ? "no aplica"
+                    : (perf.gamesPlayed ?? 0) >= 3
+                      ? pctNote(player, "consistency")
+                      : "3+ partidos"
+                }
               />
               <BandItem
                 label="Próximo partido"
@@ -285,6 +297,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
       <section className="section shell">
         <div className="grid grid-2">
+          {player.isCoach ? (
+            <CoachTeamCard team={team} />
+          ) : (
           <div className="card">
             <div className="card-head">
               <div>
@@ -301,6 +316,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               floor={perf.fpFloor}
             />
           </div>
+          )}
 
           <div className="card">
             <div className="card-head">
@@ -441,6 +457,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
       <section className="section shell">
         <div className="grid grid-2">
+          {player.isCoach ? null : (
           <div className="card">
             <div className="card-head">
               <div className="card-title">Rol y recorrido</div>
@@ -477,6 +494,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               />
             </dl>
           </div>
+          )}
 
           <ProjectionBreakdown player={player} />
         </div>
@@ -681,4 +699,36 @@ function priceSinceOpen(player: Player): string {
   if (player.price === null || player.priceOpen === null) return "sin variación";
   const change = Math.round((player.price - player.priceOpen) * 10) / 10;
   return change ? `${signed(change)} cr desde el inicio` : "sin variación";
+}
+
+/** En la ficha del entrenador, donde iría su serie de partidos: el equipo del
+ *  que dependen sus puntos. El entrenador no tiene boxscore propio. */
+function CoachTeamCard({ team }: { team: ReturnType<typeof getTeam> }) {
+  const box = team?.box ?? null;
+  return (
+    <div className="card">
+      <div className="card-head">
+        <div>
+          <div className="card-title">Su equipo</div>
+          <p className="card-note" style={{ margin: "4px 0 0" }}>
+            El entrenador puntúa por el resultado: lo que importa es cómo llega el equipo.
+          </p>
+        </div>
+      </div>
+      {box ? (
+        <dl className="fact-list">
+          <Row label="Balance" value={`${num(box.wins, 0)}-${num(box.losses, 0)}`} />
+          <Row label="Diferencial por 100 posesiones" value={signed(box.netRating ?? null)} />
+          <Row label="Puntos a favor / en contra" value={`${num(box.ppg)} / ${num(box.papg)}`} />
+        </dl>
+      ) : (
+        <p className="muted" style={{ margin: 0 }}>Sin partidos de su equipo todavía.</p>
+      )}
+      {team ? (
+        <p className="card-note" style={{ margin: "12px 0 0" }}>
+          <Link href={`/equipos/${team.code}`}>Ver {team.short ?? team.name}</Link>
+        </p>
+      ) : null}
+    </div>
+  );
 }

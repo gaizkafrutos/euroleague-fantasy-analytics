@@ -9,7 +9,7 @@
  */
 import { num, percent, signed } from "./format";
 import { percentileOf } from "./percentiles";
-import type { Player } from "./types";
+import type { Player, Team } from "./types";
 
 export interface Verdict {
   tone: "good" | "warn" | "neutral";
@@ -173,4 +173,43 @@ export function verdictFor(player: Player): Verdict {
     headline,
     reasons: signals.slice(0, 3).map((signal) => signal.reason),
   };
+}
+
+/** Veredicto del entrenador. Solo puntúa por el marcador, así que no tiene
+ *  partidos propios: se juzga por su equipo y por el próximo rival. Antes caía
+ *  en "sin partidos, nada que juzgar" mientras la ficha enseñaba proyección y
+ *  previsión de precio. */
+export function coachVerdict(player: Player, team: Team | null | undefined): Verdict {
+  const next = player.schedule.next ?? null;
+  const box = team?.box ?? null;
+  const name = team?.short ?? team?.name ?? player.clubShort ?? "Su equipo";
+  const record =
+    box && typeof box.wins === "number" && typeof box.losses === "number"
+      ? `${box.wins}-${box.losses}`
+      : null;
+
+  if (!next) {
+    return {
+      tone: "neutral",
+      headline: record ? `${name} va ${record}. Sin partido a la vista para proyectar.` : `Sin partido a la vista para proyectar.`,
+      reasons: [],
+    };
+  }
+
+  const rival = next.opponent;
+  const favourite = next.winProb >= 0.6;
+  const underdog = next.winProb < 0.4;
+  const headline = favourite
+    ? `${name}${record ? `, ${record},` : ""} es favorito ${next.home ? "en casa" : "fuera"} ante ${rival}: buena jornada para su entrenador.`
+    : underdog
+      ? `${name}${record ? `, ${record},` : ""} sale por detrás ante ${rival}: el entrenador puede restar.`
+      : `${name}${record ? `, ${record},` : ""} ante ${rival}, un partido abierto: el entrenador puede sumar o restar.`;
+
+  const reasons = [
+    `${percent(next.winProb)} de ganar`,
+    `margen esperado ${signed(next.expectedMargin)}`,
+    typeof player.projectedFp === "number" ? `proyección de ${num(player.projectedFp)} puntos` : null,
+  ].filter((reason): reason is string => Boolean(reason));
+
+  return { tone: favourite ? "good" : underdog ? "warn" : "neutral", headline, reasons };
 }

@@ -2903,6 +2903,20 @@ table.data th.num {
   height: auto;
 }
 
+.ficha-portrait-crest {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 4;
+  max-width: 200px;
+  margin-inline: auto;
+}
+
+.ficha-portrait-crest img {
+  width: 72%;
+  height: auto;
+  object-fit: contain;
+}
+
 .ficha-portrait-empty {
   display: grid;
   place-items: center;
