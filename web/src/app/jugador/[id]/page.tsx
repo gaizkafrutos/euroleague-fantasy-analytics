@@ -8,6 +8,7 @@ import FantasyMix from "@/components/advanced/FantasyMix";
 import PercentileStrip from "@/components/advanced/PercentileStrip";
 import PriceOutlook from "@/components/advanced/PriceOutlook";
 import ShotChart from "@/components/advanced/ShotChart";
+import GameLogTable from "@/components/advanced/GameLogTable";
 import GameLogBars from "@/components/charts/GameLogBars";
 import PriceHistory from "@/components/charts/PriceHistory";
 import AddToSquad from "@/components/team/AddToSquad";
@@ -322,6 +323,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               average={perf.fpAvg}
               floor={perf.fpFloor}
             />
+            <GameLogTable games={detail.recent} />
           </div>
           )}
 

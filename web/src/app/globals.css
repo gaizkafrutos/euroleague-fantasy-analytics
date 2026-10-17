@@ -2958,7 +2958,7 @@ table.data th.num {
   /* --ink-muted se quedaba en 4,07:1 sobre el halo de algunos clubes (axe). */
   color: var(--ink-2);
   font-weight: 400;
-  font-size: 0.78em;
+  font-size: 0.86em;
 }
 
 /* --------------------------------------------------------- retrato + globos
@@ -8002,4 +8002,14 @@ ul.card-note,
   content: "";
   position: absolute;
   inset: -4px;
+}
+
+/* Tabla de partidos de la ficha, bajo las barras. */
+.game-log {
+  margin-top: 16px;
+}
+
+.game-log table.data td:first-child,
+.game-log table.data th:first-child {
+  text-align: right;
 }
