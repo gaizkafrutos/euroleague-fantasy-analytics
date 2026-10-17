@@ -772,8 +772,14 @@ table.data td.num,
 .status-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 18px;
-  margin: 6px 0 0;
+  gap: 0 18px;
+  margin: 4px 0 0;
+}
+
+.status-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
 }
 
 .status-dot {
@@ -3703,11 +3709,16 @@ table.data th.num {
   padding: 18px 2px;
   border-bottom: 1px solid var(--hairline);
   color: var(--ink);
-  transition: padding 0.18s ease;
 }
 
-.portada .outro-links a:hover {
-  padding-left: 8px;
+/* El empujón al pasar el ratón mueve el contenido, no la caja: animar el
+   relleno recalculaba el layout en cada fotograma. */
+.portada .outro-links a > * {
+  transition: transform 0.18s ease;
+}
+
+.portada .outro-links a:hover > * {
+  transform: translateX(6px);
 }
 
 .portada .outro-links .t {
@@ -4802,6 +4813,7 @@ a.eq-grp-name:hover {
 }
 
 .cancha-legend small {
+  font-size: 0.75rem;
   color: var(--ink-muted);
 }
 
