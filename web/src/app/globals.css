@@ -3836,8 +3836,13 @@ table.data th.num {
   opacity: 0.5;
 }
 
+/* Dentro de una frase, el enlace se distingue por el subrayado y no solo
+   por el color (axe: link-in-text-block). */
 .portada .outro-strip a {
   color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--ink-3);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5082,9 +5087,13 @@ a.eq-grp-name:hover {
     gap: 12px;
   }
 
-  .squad-cash .input {
+  /* Más específica que la regla general de más abajo (width: 100%): con la
+     etiqueta en la misma fila, el 100 % sacaba el campo de la pantalla y en
+     un iPhone de 390 px la página entera se ensanchaba 31 px. */
+  .squad-controls .squad-cash .input {
     flex: none;
     width: 84px;
+    min-width: 0;
   }
 
   /* Los filtros de fichar se parten en dos líneas en vez de esconder los
