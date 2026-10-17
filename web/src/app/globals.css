@@ -8238,3 +8238,94 @@ main p a:not([class]):hover,
     justify-self: start;
   }
 }
+
+/* Auditoría final ------------------------------------------------------- */
+
+/* Hueco del botón de fichar antes de leer la plantilla: mismo tamaño, sin
+   verse, para que nada se mueva al aparecer. */
+.add-squad.is-placeholder {
+  visibility: hidden;
+}
+
+.ficha-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Zonas táctiles que quedaban cortas en el móvil: los nombres de la pista
+   (30 px) y las filas de la plantilla y del calendario del equipo (24 px).
+   El relleno negativo agranda la zona sin mover nada de lo que se ve. */
+.tok-name a {
+  padding-block: 12px;
+  margin-block: -12px;
+}
+
+a.eq-grp-name {
+  padding-block: 9px;
+  margin-block: -9px;
+}
+
+.eq-fx-rival {
+  min-height: 40px;
+}
+
+/* Nada por debajo de 12 px: cabecera de la ficha y unidades de las cifras. */
+.ficha-eyebrow {
+  font-size: 0.75rem;
+}
+
+.orb-label,
+.orb-pct {
+  font-size: 0.75rem;
+}
+
+.ficha-price {
+  font-size: 0.875rem;
+}
+
+.cancha-figures dd em,
+.eq-factor dd em {
+  font-size: max(0.5em, 12px);
+}
+
+@media (max-width: 400px) {
+  .orb-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Portada en el móvil: las tres frases cortas del relato, a media pantalla
+   (el vídeo sigue detrás; eran casi tres pantallas para tres frases). */
+@media (max-width: 760px) {
+  .portada .beat:not(.is-hero):not(.is-lede) {
+    min-height: 50svh;
+  }
+
+  .portada .beat.is-lede {
+    min-height: 60svh;
+  }
+}
+
+/* Filtros de escritorio: "Precio máximo · sin límite" partía en dos líneas y
+   descuadraba la fila. */
+@media (min-width: 761px) {
+  .filter-price {
+    flex: 0 1 auto;
+  }
+
+  .filter-price .control-label {
+    white-space: nowrap;
+  }
+
+  .filter-price .slider {
+    min-width: 190px;
+  }
+}
+
+/* Equipos de la matriz de calendario: zona de 36 px sin ensanchar la fila. */
+.fxm-team {
+  padding-block: 6px;
+  margin-block: -6px;
+}

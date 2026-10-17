@@ -1,14 +1,16 @@
 name: Captura de datos
 
-# Cuatro capturas al día, lejos del minuto 0 (el más saturado de Actions: el
-# cron de las 07:00 llegaba entre las 11:47 y las 13:38). El juego aplica la
-# revalorización al cerrar la jornada, de madrugada; con una sola captura a
-# mediodía la J1 se quedó 16 h con los precios de antes de jugarse. Las
+# Una captura cada dos horas, lejos del minuto 0 (el más saturado de Actions).
+# GitHub arranca los crons programados entre 3 y 5,5 h tarde y eso no se puede
+# arreglar desde aquí: lo que sí se controla es cada cuánto llegan. Con cuatro
+# al día el hueco entre dos capturas reales era de 6 h; con doce, de unas 2.
+# El repositorio es público, así que los minutos de Actions no cuestan. El
+# juego aplica la revalorización al cerrar la jornada, de madrugada; las
 # capturas sin cambios no se guardan (ver `same_market`), así que el histórico
 # no se llena de puntos repetidos.
 on:
   schedule:
-    - cron: "23 1,7,13,19 * * *"
+    - cron: "23 */2 * * *"
   workflow_dispatch:
     inputs:
       label:
@@ -104,7 +106,7 @@ jobs:
             echo "Sin cambios que commitear."
           else
             git commit -m "datos: snapshot $(date -u +'%Y-%m-%d %H:%M')"
-            # Con cuatro ejecuciones al día puede haber entrado otro push mientras
+            # Con doce ejecuciones al día puede haber entrado otro push mientras
             # tanto: se rebasa el commit de datos encima en vez de fallar.
             git pull --rebase origin main
             git push

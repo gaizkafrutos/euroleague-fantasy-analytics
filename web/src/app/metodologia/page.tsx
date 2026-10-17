@@ -116,7 +116,7 @@ export default function MethodologyPage() {
             de cada jugador.
           </p>
           <p className="card-note">
-            Una captura completa son cuatro peticiones. Se captura cuatro veces al día y solo se
+            Una captura completa son cuatro peticiones. Se captura cada dos horas y solo se
             guarda si el mercado ha cambiado: el histórico acumulado es lo que permite ver quién
             sube y quién baja.
           </p>

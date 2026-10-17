@@ -61,7 +61,7 @@ export function projectionNote(player: Player): string {
   if (typeof factor === "number" && Math.abs(factor - 1) >= 0.02) {
     parts.push(`rival ${factor > 1 ? "blando" : "duro"} (${factor > 1 ? "+" : "−"}${num(Math.abs(factor - 1) * 100, 0)} %)`);
   }
-  if (player.outlook?.p90 !== undefined) parts.push(`techo (p90) ${num(player.outlook.p90)}`);
+  if (player.outlook?.p90 !== undefined) parts.push(`techo ${num(player.outlook.p90)}`);
   return parts.join(" · ");
 }
 

@@ -36,8 +36,9 @@ type SortKey =
   | "expectedChange"
   | "difficulty";
 
-const PAGE_SIZE = 50;
-const PAGE_SIZE_NARROW = 25;
+/** Filas por tanda, igual en el móvil y en el escritorio: con 50 la página
+ *  pintaba cien filas (tabla y lista) y era la más lenta de la web. */
+const PAGE_SIZE = 25;
 
 /** Las columnas con `optional` no se ven por defecto: se añaden desde el botón
  *  "Columnas". Con todas a la vez la tabla no cabía a 1440 px y la última
@@ -51,13 +52,19 @@ const SORT_NAME: Partial<Record<SortKey, string>> = {
   bargainScore: "Índice de chollo",
 };
 
+const SORT_GROUPS: Array<{ label: string; keys: SortKey[] }> = [
+  { label: "Para fichar", keys: ["bargainScore", "projectedFp", "valueProjected", "expectedChange"] },
+  { label: "Rendimiento", keys: ["fpAvg", "minutesAvg", "consistency"] },
+  { label: "Precio y calendario", keys: ["price", "difficulty"] },
+];
+
 const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: boolean }> = [
   // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
   // y la tabla ya usa ese patrón en Forma y en Minutos.
   { key: "price", label: "Precio", title: "Precio y variación en la última jornada" },
   {
     key: "expectedChange",
-    label: "Revalor.",
+    label: "Revalorización",
     title:
       "Variación de precio esperada (créditos), contando que puede no jugar. Orientativa: depende de lo que puntúe, y eso se acierta solo a medias",
   },
@@ -126,7 +133,8 @@ function metric(player: Player, key: SortKey): number | null {
 interface Props {
   players: Player[];
   teams: Team[];
-  details: Record<string, { recent: Array<{ fp: number }> }>;
+  /** Puntos de los últimos partidos jugados de cada uno, por id. */
+  details: Record<string, number[]>;
   hasPrices: boolean;
 }
 
@@ -146,7 +154,6 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     desc: true,
   });
   const [view, setView] = useState<"tabla" | "grafico">("tabla");
-  const [pageSize, setPageSize] = useState(PAGE_SIZE);
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [extraColumns, setExtraColumns] = useState<Set<SortKey>>(new Set());
@@ -307,14 +314,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   // Cualquier cambio de filtro u orden reinicia la paginación: si no, el
   // usuario se queda mirando la fila 80 de una lista que ya es otra.
   useEffect(() => {
-    setVisible(pageSize);
-  }, [pageSize, deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly, sort]);
-
-  // En el móvil, tandas de 25: con 50 la lista medía más de 8.000 px antes
-  // de llegar a "Mostrar más".
-  useEffect(() => {
-    if (window.matchMedia("(max-width: 760px)").matches) setPageSize(PAGE_SIZE_NARROW);
-  }, []);
+    setVisible(PAGE_SIZE);
+  }, [deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly, sort]);
 
   function togglePosition(position: string) {
     setPositions((previous) => {
@@ -351,7 +352,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   const rows = sorted.slice(0, visible);
   // La columna de tendencia necesita dos partidos: con uno solo sería una
   // columna entera de guiones.
-  const hasTrend = rows.some((player) => (details[String(player.id)]?.recent.length ?? 0) >= 2);
+  const hasTrend = rows.some((player) => (details[String(player.id)]?.length ?? 0) >= 2);
 
   /** Texto de ayuda de cada celda (lo que antes iba en el `title` de cada td). */
   function cellTitle(player: Player, key: SortKey): string | undefined {
@@ -528,10 +529,16 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
               value={sort.key}
               onChange={(event) => setSort({ key: event.target.value as SortKey, desc: sort.desc })}
             >
-              {COLUMNS.map((column) => (
-                <option key={column.key} value={column.key}>
-                  {SORT_NAME[column.key] ?? column.label}
-                </option>
+              {/* Nueve criterios en tres grupos: en una lista seguida había que
+                  leerlos todos para encontrar el que se buscaba. */}
+              {SORT_GROUPS.map((group) => (
+                <optgroup key={group.label} label={group.label}>
+                  {group.keys.map((key) => (
+                    <option key={key} value={key}>
+                      {SORT_NAME[key] ?? COLUMNS.find((column) => column.key === key)?.label ?? key}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </select>
           </label>
@@ -739,7 +746,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     {hasTrend ? (
                       <td>
                         <Sparkline
-                          values={(details[String(player.id)]?.recent ?? []).map((game) => game.fp)}
+                          values={details[String(player.id)] ?? []}
                           label={`Últimos partidos de ${displayName(player)}`}
                         />
                       </td>
@@ -799,9 +806,9 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             <button
               type="button"
               className="button-ghost"
-              onClick={() => setVisible((current) => current + pageSize)}
+              onClick={() => setVisible((current) => current + PAGE_SIZE)}
             >
-              Mostrar {Math.min(pageSize, sorted.length - visible)} más
+              Mostrar {Math.min(PAGE_SIZE, sorted.length - visible)} más
             </button>
           ) : null}
         </div>

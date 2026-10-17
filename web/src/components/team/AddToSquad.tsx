@@ -63,8 +63,16 @@ export default function AddToSquad({
   }, []);
 
   // Antes de leer el almacenamiento no se pinta estado: evita un parpadeo de
-  // "Fichar" a "En tu equipo" y un desajuste de hidratación.
-  if (!squad) return <span className={`add-squad${compact ? " is-compact" : ""}`} aria-hidden />;
+  // "Fichar" a "En tu equipo" y un desajuste de hidratación. Pero el hueco sí
+  // se reserva, con el tamaño del botón: si no, al aparecer empujaba lo de al
+  // lado a otra línea y la ficha entera bajaba 54 px (CLS 0,11).
+  if (!squad) {
+    return (
+      <span className={`chip add-squad is-placeholder${compact ? " is-compact" : ""}`} aria-hidden>
+        +{compact ? null : <span> Fichar</span>}
+      </span>
+    );
+  }
 
   const inSquad = isCoach ? squad.coach === id : squad.ids.includes(id);
   const full = !isCoach && !inSquad && squad.ids.length >= SQUAD_SIZE;

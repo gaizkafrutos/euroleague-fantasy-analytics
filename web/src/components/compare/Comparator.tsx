@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import Avatar from "@/components/ui/Avatar";
 import { credits, normalize, num, percent, positionLabel, signed } from "@/lib/format";
-import { fixtureName, turnLabel } from "@/lib/projection";
+import { fixtureName } from "@/lib/projection";
 import type { NextGame } from "@/lib/types";
 
 export interface CompareRow {
@@ -119,10 +119,14 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
       {
         label: "Rival",
         value: () => null,
-        show: (r) =>
-          r.next
-            ? `${fixtureName(r.next)}${turnLabel(r.next, true) ? ` · ${turnLabel(r.next, true)}` : ""}`
-            : "—",
+        show: (r) => (r.next ? fixtureName(r.next) : "—"),
+      },
+      // El turno, como el día en que juega: "turno 1" en una columna de un
+      // tercio de pantalla partía en dos líneas y dejaba el número suelto.
+      {
+        label: "Juega el",
+        value: () => null,
+        show: (r) => (r.next ? playDay(r.next.date) : "—"),
       },
       {
         label: "Probabilidad de ganar",
@@ -471,4 +475,13 @@ export default function Comparator({ index: entries }: { index: CompareIndexEntr
       ) : null}
     </div>
   );
+}
+
+/** "jueves 22": el día de la jornada en que juega, en hora de Madrid. */
+function playDay(date: string): string {
+  return new Intl.DateTimeFormat("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    timeZone: "Europe/Madrid",
+  }).format(new Date(date));
 }

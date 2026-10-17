@@ -161,9 +161,10 @@ error, sesgo, orden y calibración de la probabilidad de jugar y de subir.
 
 ## Automatización
 
-`.github/workflows/snapshot.yml` captura el mercado cuatro veces al día (01:23,
-07:23, 13:23 y 19:23 UTC), regenera los datos y los commitea; Vercel redespliega
-con el push. Una captura idéntica a la anterior no se guarda. Si el juego aún no
+`.github/workflows/snapshot.yml` captura el mercado cada dos horas (al minuto 23,
+UTC), regenera los datos y los commitea; Vercel redespliega con el push. GitHub
+arranca los crons programados con horas de retraso, así que la frecuencia es lo
+que acota lo viejos que pueden llegar a estar los precios. Una captura idéntica a la anterior no se guarda. Si el juego aún no
 ha aplicado la revalorización de la última jornada, `efa build` lo detecta, avisa
 en la web y usa el precio pendiente. Si la captura falla (token caducado), las
 estadísticas oficiales se commitean igual pero la ejecución sale en rojo.
