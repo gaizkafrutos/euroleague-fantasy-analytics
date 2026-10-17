@@ -495,6 +495,37 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
         </div>
       ) : null}
 
+      {/* Ordenar sin cabecera de tabla: en el móvil no hay dónde pinchar. Va
+          a la vista, no dentro de Filtros, y con dirección: antes siempre
+          ordenaba de mayor a menor y no había forma de ver los más baratos. */}
+      {view === "tabla" ? (
+        <div className="sort-row only-narrow">
+          <label className="control filter-sort">
+            <span className="control-label">Ordenar por</span>
+            <select
+              className="select"
+              value={sort.key}
+              onChange={(event) => setSort({ key: event.target.value as SortKey, desc: sort.desc })}
+            >
+              {COLUMNS.map((column) => (
+                <option key={column.key} value={column.key}>
+                  {column.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button
+            type="button"
+            className="chip sort-dir"
+            onClick={() => setSort({ key: sort.key, desc: !sort.desc })}
+            aria-label={sort.desc ? "De mayor a menor: cambiar a de menor a mayor" : "De menor a mayor: cambiar a de mayor a menor"}
+          >
+            <span aria-hidden>{sort.desc ? "↓" : "↑"}</span>
+            {sort.desc ? "Mayor primero" : "Menor primero"}
+          </button>
+        </div>
+      ) : null}
+
       <div className={`filter-panel${filtersOpen ? " is-open" : ""}`}>
         <div className="control">
           <span className="control-label">Posición</span>
@@ -528,7 +559,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
         {hasPrices ? (
           <label className="control filter-price">
             <span className="control-label">
-              Precio máximo {maxPrice !== null ? `· ${maxPrice} cr` : ""}
+              Precio máximo · {maxPrice !== null ? `${num(maxPrice)} cr` : "sin límite"}
             </span>
             <input
               className="slider"
@@ -541,21 +572,6 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             />
           </label>
         ) : null}
-
-        <label className="control">
-          <span className="control-label">Mín. partidos</span>
-          <select
-            className="select"
-            value={minGames}
-            onChange={(event) => setMinGames(Number(event.target.value))}
-          >
-            {[0, 3, 5, 10, 20].map((value) => (
-              <option key={value} value={value}>
-                {value === 0 ? "Sin mínimo" : `${value}+`}
-              </option>
-            ))}
-          </select>
-        </label>
 
         {hasPrices ? (
           <label className="control">
@@ -573,6 +589,21 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             </select>
           </label>
         ) : null}
+
+        <label className="control">
+          <span className="control-label">Mín. partidos</span>
+          <select
+            className="select"
+            value={minGames}
+            onChange={(event) => setMinGames(Number(event.target.value))}
+          >
+            {[0, 3, 5, 10, 20].map((value) => (
+              <option key={value} value={value}>
+                {value === 0 ? "Sin mínimo" : `${value}+`}
+              </option>
+            ))}
+          </select>
+        </label>
 
         <div className="control">
           <span className="control-label">Disponibilidad</span>
@@ -599,22 +630,6 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             Rol al alza
           </button>
         </div>
-
-        {/* Ordenar sin cabecera de tabla: en el móvil no hay dónde pinchar. */}
-        <label className="control filter-sort">
-          <span className="control-label">Ordenar por</span>
-          <select
-            className="select"
-            value={sort.key}
-            onChange={(event) => setSort({ key: event.target.value as SortKey, desc: true })}
-          >
-            {COLUMNS.map((column) => (
-              <option key={column.key} value={column.key}>
-                {column.label}
-              </option>
-            ))}
-          </select>
-        </label>
 
         {activeFilters ? (
           <button type="button" className="button-ghost filter-reset" onClick={reset}>
@@ -715,55 +730,39 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             </table>
           </div>
 
-          {/* ------------------------------------------------------- móvil */}
-          <ul className="player-cards only-narrow">
-            {rows.map((player) => (
-              <li key={player.id}>
-                <a className="player-card" href={`/jugador/${player.id}`}>
-                  {/* La tarjeta ya es el enlace: la celda va sin el suyo. */}
-                  <PlayerCell player={player} linked={false} />
-                  <span className="player-card-price credit num">{credits(player.price)}</span>
-                  <span className="player-card-stats">
-                    <span>
+          {/* ------------------------------------------------------- móvil
+              Una fila por jugador, no una tarjeta: con tarjetas de 220 px
+              los 50 primeros ocupaban 11.000 px. La proyección manda a la
+              derecha; precio, revalorización y el resto, en una línea. */}
+          <ul className="market-rows only-narrow">
+            {rows.map((player) => {
+              const risk = playRisk(player);
+              return (
+                <li key={player.id}>
+                  <a className="market-row" href={`/jugador/${player.id}`}>
+                    <PlayerCell player={player} linked={false} />
+                    <span className="market-row-proj">
                       <b className="num">{num(player.projectedFp)}</b>
-                      <i>
-                        {playRisk(player) !== null
-                          ? `proy. · ${percent(playRisk(player))} juega`
-                          : `proy. ${player.schedule.next ? fixtureLabel(player.schedule.next) : ""}`}
-                      </i>
+                      <i>{risk !== null ? `${percent(risk)} juega` : "proy."}</i>
                     </span>
-                    <span>
-                      <b className="num">
-                        {num(player.valueProjected ?? player.valuePerCredit, 2)}
-                      </b>
-                      <i>pts/cr</i>
+                    <span className="market-row-meta num">
+                      <span>
+                        <b>{credits(player.price)}</b> <Revalue player={player} />
+                      </span>
+                      <span>{num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr</span>
+                      <span>reg. {reliable(player)}</span>
+                      {/* El índice solo cuando es por lo que se ordena: con él
+                          siempre, la línea no cabía en 375 px. */}
+                      {sort.key === "bargainScore" ? <span>índice {num(player.bargainScore, 0)}</span> : null}
                     </span>
-                    <span>
-                      <b className="num">
-                        <Revalue player={player} />
-                      </b>
-                      <i>revalor.</i>
-                    </span>
-                    <span>
-                      <b className="num">{reliable(player)}</b>
-                      <i>regularidad</i>
-                    </span>
-                  </span>
-                  {/* Índice de chollo como barra: la cifra suelta no dice nada
-                      sin el resto de la columna delante. */}
-                  <span className="player-card-bar">
-                    <i>índice {num(player.bargainScore, 0)}</i>
-                    <span aria-hidden>
-                      <span style={{ width: `${(share(player.bargainScore, "bargainScore") ?? 0) * 100}%` }} />
-                    </span>
-                  </span>
-                </a>
-                {/* Fuera del enlace: un botón dentro de un <a> es HTML inválido. */}
-                <div className="player-card-actions">
-                  <AddToSquad id={player.id} name={displayName(player)} />
-                </div>
-              </li>
-            ))}
+                  </a>
+                  {/* Fuera del enlace: un botón dentro de un <a> es HTML inválido. */}
+                  <div className="market-row-add">
+                    <AddToSquad id={player.id} name={displayName(player)} compact />
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </>
       )}
