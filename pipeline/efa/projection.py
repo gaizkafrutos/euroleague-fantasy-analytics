@@ -456,11 +456,10 @@ def run_backtests() -> dict[str, Any]:
         }
         out["current"] = {"code": SEASON_CODE, **current}
     # Lo que la web publicó antes de cada jornada, frente a lo que pasó.
-    from efa.ingest.prices import load_snapshots
-    from efa.published import evaluate_published
-
     from efa.context import season_boxscores
     from efa.gamelogs import build_coach_gamelog
+    from efa.ingest.prices import load_snapshots
+    from efa.published import evaluate_published
 
     coach_log = build_coach_gamelog(season_boxscores(SEASON_CODE), ref_now.get("games", []))
     published = evaluate_published(log_now, ref_now.get("games", []), load_snapshots(), coach_log)
