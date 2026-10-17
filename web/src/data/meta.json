@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-10-17T05:47:04.044588+00:00",
+ "generatedAt": "2026-10-17T11:42:56.553979+00:00",
  "currentRound": 7,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 39,
  "lastPriceCapture": "2026-10-17T05:46:15.612073+00:00",
- "lastPriceCheck": "2026-10-17T05:46:15.612073+00:00",
+ "lastPriceCheck": "2026-10-17T11:42:09.208794+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-17T05:46:20.556118+00:00",
+  "generatedAt": "2026-10-17T11:42:14.279259+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -387,7 +387,7 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-17T05:46:14.527470+00:00",
+  "fetchedAt": "2026-10-17T11:42:07.876030+00:00",
   "rows": 30,
   "matched": 28,
   "unmatched": [
@@ -399,7 +399,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-17T05:46:14.527470+00:00",
+    "fetchedAt": "2026-10-17T11:42:07.876030+00:00",
     "rows": 30,
     "matched": 28,
     "flagged": 28
