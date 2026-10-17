@@ -77,7 +77,16 @@ export default function AddToSquad({
     else if (current.ids.length < SQUAD_SIZE) write({ ...current, ids: [...current.ids, id] });
   }
 
-  const label = inSquad ? `Quitar a ${name} de tu equipo` : full ? "Plantilla llena" : `Fichar a ${name}`;
+  // Con otro entrenador ya en la plantilla, ficharlo es sustituirlo: el botón
+  // lo dice en vez de prometer un "Fichar" que echa al que hay.
+  const swapsCoach = isCoach && !inSquad && squad.coach !== null;
+  const label = inSquad
+    ? `Quitar a ${name} de tu equipo`
+    : full
+      ? "Plantilla llena"
+      : swapsCoach
+        ? `Poner a ${name} de entrenador en lugar del actual`
+        : `Fichar a ${name}`;
   return (
     <button
       type="button"
@@ -89,7 +98,9 @@ export default function AddToSquad({
       onClick={toggle}
     >
       {inSquad ? "✓" : "+"}
-      {compact ? null : <span>{inSquad ? " En tu equipo" : full ? " Plantilla llena" : " Fichar"}</span>}
+      {compact ? null : (
+        <span>{inSquad ? " En tu equipo" : full ? " Plantilla llena" : swapsCoach ? " Cambiar entrenador" : " Fichar"}</span>
+      )}
     </button>
   );
 }

@@ -25,8 +25,9 @@ import {
 } from "@/lib/format";
 import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
 import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
-import { verdictFor } from "@/lib/verdict";
+import { coachVerdict, verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
+import Explain from "@/components/ui/Explain";
 
 export function generateStaticParams() {
   return players.map((player) => ({ id: String(player.id) }));
@@ -51,6 +52,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 interface OrbSpec {
   key: PercentileKey;
   label: string;
+  /** Abreviatura de acta (PTS, REB…): la palabra entera no cabía en el aro
+   *  del móvil sin bajar a 7 px. */
+  short: string;
   value: number | null | undefined;
   unit?: string;
   /** El ± es polaridad, no magnitud: no lleva arco de percentil. */
@@ -67,7 +71,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
   const detail = await getDetail(player.id);
   const team = getTeam(player.club);
-  const verdict = verdictFor(player);
+  const verdict = player.isCoach ? coachVerdict(player, team) : verdictFor(player);
   const groupSize = poolSize(player.position);
   const perf = player.perf;
   const { given, surname } = splitName(player);
@@ -94,14 +98,14 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   } as CSSProperties;
 
   const left: OrbSpec[] = [
-    { key: "ptsAvg", label: "Puntos", value: perf.ptsAvg },
-    { key: "rebAvg", label: "Rebotes", value: perf.rebAvg },
-    { key: "astAvg", label: "Asistencias", value: perf.astAvg },
+    { key: "ptsAvg", label: "Puntos", short: "PTS", value: perf.ptsAvg },
+    { key: "rebAvg", label: "Rebotes", short: "REB", value: perf.rebAvg },
+    { key: "astAvg", label: "Asistencias", short: "AST", value: perf.astAvg },
   ];
   const right: OrbSpec[] = [
-    { key: "minutesAvg", label: "Minutos", value: perf.minutesAvg, unit: "min" },
-    { key: "pirAvg", label: "Valoración", value: perf.pirAvg },
-    { key: "plusMinusAvg", label: "Más / menos", value: perf.plusMinusAvg, polarity: true },
+    { key: "minutesAvg", label: "Minutos", short: "MIN", value: perf.minutesAvg },
+    { key: "pirAvg", label: "Valoración", short: "VAL", value: perf.pirAvg },
+    { key: "plusMinusAvg", label: "Más / menos", short: "+/−", value: perf.plusMinusAvg, polarity: true },
   ];
   const hasOrbs = [...left, ...right].some((spec) => usable(spec.value));
 
@@ -137,7 +141,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             {team?.crest ? (
               <Image className="ficha-crest" src={team.crest} alt="" width={22} height={22} />
             ) : null}
-            <PositionBadge position={player.position} />
+            {player.isCoach ? <span className="badge">Entrenador</span> : <PositionBadge position={player.position} />}
             {player.height ? <span className="badge">{player.height} cm</span> : null}
             {player.birthDate ? <span className="badge">{age(player.birthDate)} años</span> : null}
             {player.country ? <span className="badge">{player.country}</span> : null}
@@ -178,6 +182,12 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                   sizes="(min-width: 620px) 340px, 62vw"
                   priority
                 />
+              ) : player.isCoach && team?.crest ? (
+                // El feed no trae retrato de los entrenadores: el escudo de su
+                // equipo, que es por lo que puntúan, en vez de una inicial.
+                <div className="ficha-portrait-crest" aria-hidden>
+                  <Image src={team.crest} alt="" width={180} height={180} />
+                </div>
               ) : (
                 <div className="ficha-portrait-empty" aria-hidden>
                   {surname.slice(0, 1)}
@@ -218,7 +228,13 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               <BandItem
                 label="Regularidad"
                 value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
-                note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
+                note={
+                  player.isCoach
+                    ? "no aplica"
+                    : (perf.gamesPlayed ?? 0) >= 3
+                      ? pctNote(player, "consistency")
+                      : "3+ partidos"
+                }
               />
               <BandItem
                 label="Próximo partido"
@@ -236,8 +252,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             <p className="ficha-note">
               Los percentiles comparan con los {groupSize}{" "}
               {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()} del mercado
-              que han jugado. Una media de 15 puntos no significa lo mismo en un pívot que en un
-              base.
+              que han jugado.
             </p>
           ) : null}
         </div>
@@ -266,11 +281,14 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               <div>
                 <h2 className="card-title">¿Sube o baja de precio?</h2>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  El juego revaloriza según lo que puntúa frente a lo que cuesta. Ajustado sobre{" "}
-                  {meta.priceModel?.n ?? "—"} variaciones reales ({meta.priceModel?.source ?? "—"}): con
-                  los puntos de la jornada explica el {percent(meta.priceModel?.r2 ?? null)} de cada
-                  cambio. Lo incierto es cuánto va a puntuar, así que la previsión es orientativa.
+                  El juego revaloriza según lo que puntúa frente a lo que cuesta.
                 </p>
+                <Explain summary="Cómo de fiable es">
+                  Ajustado sobre {meta.priceModel?.n ?? "—"} variaciones reales (
+                  {meta.priceModel?.source ?? "—"}): con los puntos de la jornada explica el{" "}
+                  {percent(meta.priceModel?.r2 ?? null)} de cada cambio. Lo incierto es cuánto va a
+                  puntuar, así que la previsión es orientativa.
+                </Explain>
               </div>
             </div>
             <PriceOutlook
@@ -285,6 +303,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
       <section className="section shell">
         <div className="grid grid-2">
+          {player.isCoach ? (
+            <CoachTeamCard team={team} />
+          ) : (
           <div className="card">
             <div className="card-head">
               <div>
@@ -301,6 +322,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               floor={perf.fpFloor}
             />
           </div>
+          )}
 
           <div className="card">
             <div className="card-head">
@@ -441,6 +463,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
 
       <section className="section shell">
         <div className="grid grid-2">
+          {player.isCoach ? null : (
           <div className="card">
             <div className="card-head">
               <div className="card-title">Rol y recorrido</div>
@@ -477,6 +500,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               />
             </dl>
           </div>
+          )}
 
           <ProjectionBreakdown player={player} />
         </div>
@@ -603,7 +627,10 @@ function Orb({ player, spec }: { player: Player; spec: OrbSpec }) {
           {spec.polarity ? signed(spec.value) : num(spec.value)}
           {spec.unit ? <em>{spec.unit}</em> : null}
         </span>
-        <span className="orb-label">{spec.label}</span>
+        <span className="orb-label">
+          <span aria-hidden>{spec.short}</span>
+          <span className="sr-only">{spec.label}</span>
+        </span>
       </div>
       {pct !== null ? <span className="orb-pct num">p{pct}</span> : null}
     </div>
@@ -681,4 +708,36 @@ function priceSinceOpen(player: Player): string {
   if (player.price === null || player.priceOpen === null) return "sin variación";
   const change = Math.round((player.price - player.priceOpen) * 10) / 10;
   return change ? `${signed(change)} cr desde el inicio` : "sin variación";
+}
+
+/** En la ficha del entrenador, donde iría su serie de partidos: el equipo del
+ *  que dependen sus puntos. El entrenador no tiene boxscore propio. */
+function CoachTeamCard({ team }: { team: ReturnType<typeof getTeam> }) {
+  const box = team?.box ?? null;
+  return (
+    <div className="card">
+      <div className="card-head">
+        <div>
+          <div className="card-title">Su equipo</div>
+          <p className="card-note" style={{ margin: "4px 0 0" }}>
+            El entrenador puntúa por el resultado: lo que importa es cómo llega el equipo.
+          </p>
+        </div>
+      </div>
+      {box ? (
+        <dl className="fact-list">
+          <Row label="Balance" value={`${num(box.wins, 0)}-${num(box.losses, 0)}`} />
+          <Row label="Diferencial por 100 posesiones" value={signed(box.netRating ?? null)} />
+          <Row label="Puntos a favor / en contra" value={`${num(box.ppg)} / ${num(box.papg)}`} />
+        </dl>
+      ) : (
+        <p className="muted" style={{ margin: 0 }}>Sin partidos de su equipo todavía.</p>
+      )}
+      {team ? (
+        <p className="card-note" style={{ margin: "12px 0 0" }}>
+          <Link href={`/equipos/${team.code}`}>Ver {team.short ?? team.name}</Link>
+        </p>
+      ) : null}
+    </div>
+  );
 }

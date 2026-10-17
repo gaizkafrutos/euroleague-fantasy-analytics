@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
+import Avatar from "@/components/ui/Avatar";
 import { credits, normalize, num, percent, positionLabel, signed } from "@/lib/format";
 import { fixtureLabel, turnLabel } from "@/lib/projection";
 import type { NextGame } from "@/lib/types";
@@ -221,6 +222,29 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
   },
 ];
 
+/** Valores de una métrica y quién la gana. El empate se decide con la cifra
+ *  que se ve: 24,83 contra 24,79 se lee "24,8 y 24,8" y no puede marcar a uno
+ *  solo. */
+function rankMetric(metric: Metric, picked: CompareRow[]) {
+  const values = picked.map((row) => (metric.playersOnly && row.isCoach ? null : metric.value(row)));
+  const shown = picked.map((row) => (metric.playersOnly && row.isCoach ? "—" : metric.show(row)));
+  const numeric = values.filter((value): value is number => typeof value === "number");
+  let winner = -1;
+  if (metric.better && numeric.length > 1) {
+    const best = metric.better === "high" ? Math.max(...numeric) : Math.min(...numeric);
+    const index = values.indexOf(best);
+    const tied = shown.filter((text) => text === shown[index]).length > 1;
+    if (!tied) winner = index;
+  }
+  return { shown, winner };
+}
+
+/** Apellido para la cabecera estrecha del móvil. */
+function surname(name: string): string {
+  const parts = name.trim().split(" ");
+  return parts.length > 1 ? parts.slice(1).join(" ") : name;
+}
+
 export default function Comparator({ index: entries }: { index: CompareIndexEntry[] }) {
   const router = useRouter();
   const params = useSearchParams();
@@ -323,7 +347,7 @@ export default function Comparator({ index: entries }: { index: CompareIndexEntr
       ) : !full ? (
         <p className="muted">Cargando la comparación…</p>
       ) : (
-        <div className="table-wrap" tabIndex={0} role="region" aria-label="Comparación">
+        <div className="table-wrap compare-desktop" tabIndex={0} role="region" aria-label="Comparación">
           <table className="data compare-table">
             <thead>
               <tr>
@@ -361,28 +385,15 @@ export default function Comparator({ index: entries }: { index: CompareIndexEntr
                 {group.rows
                   .filter((metric) => !(metric.playersOnly && onlyCoaches))
                   .map((metric) => {
-                    const values = picked.map((row) =>
-                      metric.playersOnly && row.isCoach ? null : metric.value(row),
-                    );
-                    const numeric = values.filter((value): value is number => typeof value === "number");
-                    const best =
-                      metric.better && numeric.length > 1
-                        ? metric.better === "high"
-                          ? Math.max(...numeric)
-                          : Math.min(...numeric)
-                        : null;
-                    const unique = best !== null && numeric.filter((value) => value === best).length === 1;
+                    const { shown, winner } = rankMetric(metric, picked);
                     return (
                       <tr key={metric.label}>
                         <th scope="row" title={metric.title}>
                           {metric.label}
                         </th>
                         {picked.map((row, column) => (
-                          <td
-                            key={row.id}
-                            className={`num${unique && values[column] === best ? " is-best" : ""}`}
-                          >
-                            {metric.playersOnly && row.isCoach ? "—" : metric.show(row)}
+                          <td key={row.id} className={`num${column === winner ? " is-best" : ""}`}>
+                            {shown[column]}
                           </td>
                         ))}
                       </tr>
@@ -393,6 +404,63 @@ export default function Comparator({ index: entries }: { index: CompareIndexEntr
           </table>
         </div>
       )}
+
+      {/* Móvil: la tabla dejaba ver un jugador y pico con la cabecera fuera de
+          la pantalla. Aquí la cabecera se queda fija arriba y cada métrica
+          es una fila de valores en el mismo orden que las fotos. */}
+      {full && picked.length ? (
+        <div className="compare-mobile" style={{ "--n": picked.length } as React.CSSProperties}>
+          <div className="compare-heads">
+            {picked.map((row) => (
+              <div key={row.id} className="compare-head">
+                <Link href={`/jugador/${row.id}`} className="compare-head-link">
+                  <Avatar src={row.image} name={row.name} className="avatar compare-avatar" />
+                  <span className="compare-head-name">{surname(row.name)}</span>
+                  <span className="compare-head-sub">{row.club}</span>
+                </Link>
+                <button
+                  type="button"
+                  className="compare-head-remove"
+                  onClick={() => setIds(ids.filter((id) => id !== row.id))}
+                  aria-label={`Quitar a ${row.name} de la comparación`}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                    <path d="M7 7l10 10M17 7 7 17" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+            ))}
+          </div>
+          {METRICS.map((group) => (
+            <section key={group.group} className="compare-sec" aria-label={group.group}>
+              <h2 className="compare-sec-title">{group.group}</h2>
+              <dl>
+                {group.rows
+                  .filter((metric) => !(metric.playersOnly && onlyCoaches))
+                  .map((metric) => {
+                    const { shown, winner } = rankMetric(metric, picked);
+                    return (
+                      <div key={metric.label} className="compare-metric">
+                        <dt title={metric.title}>{metric.label}</dt>
+                        <dd className="compare-vals">
+                          {picked.map((row, column) => (
+                            <span
+                              key={row.id}
+                              className={`num${column === winner ? " is-best" : ""}`}
+                              aria-label={`${row.name}: ${shown[column]}`}
+                            >
+                              {shown[column]}
+                            </span>
+                          ))}
+                        </dd>
+                      </div>
+                    );
+                  })}
+              </dl>
+            </section>
+          ))}
+        </div>
+      ) : null}
       {anyCoach && !onlyCoaches ? (
         <p className="card-note" style={{ margin: 0 }}>
           El entrenador puntúa solo por el resultado de su equipo: las filas de minutos y medias de

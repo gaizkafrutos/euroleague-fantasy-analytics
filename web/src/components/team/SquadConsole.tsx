@@ -54,6 +54,7 @@ import {
   type TradePlan,
 } from "@/lib/squad";
 import type { Player } from "@/lib/types";
+import Explain from "@/components/ui/Explain";
 
 const STORAGE_KEY = "efa-squad";
 /** Aparte de la plantilla: `AddToSquad` reescribe `efa-squad` con solo
@@ -318,6 +319,7 @@ export default function SquadConsole({
   }
 
   function autofill() {
+    keepForUndo("Plantilla sustituida por el óptimo");
     // Con 100 créditos se carga el óptimo exacto que resolvió el pipeline por
     // programación entera: el mismo que enseña el mercado. Con otro
     // presupuesto, la aproximación voraz de squad.ts.
@@ -331,7 +333,35 @@ export default function SquadConsole({
     setCoachId(built.coach?.id ?? null);
   }
 
+  // Vaciar o rellenar machaca la plantilla de un toque: se guarda la anterior
+  // unos segundos para poder deshacerlo.
+  const [undo, setUndo] = useState<{
+    message: string;
+    ids: number[];
+    coachId: number | null;
+    manual: ManualLineup | null;
+  } | null>(null);
+
+  useEffect(() => {
+    if (!undo) return;
+    const timer = window.setTimeout(() => setUndo(null), 6000);
+    return () => window.clearTimeout(timer);
+  }, [undo]);
+
+  function keepForUndo(message: string) {
+    if (ids.length || coachId !== null) setUndo({ message, ids, coachId, manual });
+  }
+
+  function restoreUndo() {
+    if (!undo) return;
+    setIds(undo.ids);
+    setCoachId(undo.coachId);
+    setManual(undo.manual);
+    setUndo(null);
+  }
+
   function clear() {
+    keepForUndo("Plantilla vaciada");
     setIds([]);
     setCoachId(null);
   }
@@ -354,23 +384,40 @@ export default function SquadConsole({
     (a, b) => (courtOrder[a.position ?? ""] ?? 3) - (courtOrder[b.position ?? ""] ?? 3),
   );
 
+  const search = (
+    <SquadSearch
+      market={market}
+      coaches={coaches}
+      ids={ids}
+      coach={coach}
+      check={check}
+      onAdd={add}
+    />
+  );
+
   return (
     <div className="cancha">
       {/* ------------------------------------------------------- controles */}
       <div className="squad-controls">
-        {rosterConfigured ? (
-          // Es el equipo de la cuenta configurada en el despliegue (la del autor),
-          // no el de quien visita: el texto no puede prometer otra cosa.
-          <button type="button" className="chip" onClick={loadRoster}>
-            {roster.status === "loading" ? "Cargando…" : "Cargar el equipo del autor"}
+        {/* Rellenar es la acción de la página: el único botón sólido. Vaciar
+            es destructiva y va aparte, discreta, con deshacer. */}
+        <div className="squad-actions">
+          <button type="button" className="button-primary" onClick={autofill}>
+            Rellenar con el óptimo
           </button>
-        ) : null}
-        <button type="button" className="chip" onClick={autofill}>
-          Rellenar con el óptimo
-        </button>
-        <button type="button" className="chip" onClick={clear}>
-          Vaciar
-        </button>
+          {rosterConfigured ? (
+            // Es el equipo de la cuenta configurada en el despliegue (la del autor),
+            // no el de quien visita: el texto no puede prometer otra cosa.
+            <button type="button" className="button-ghost" onClick={loadRoster}>
+              {roster.status === "loading" ? "Cargando…" : "Cargar el equipo del autor"}
+            </button>
+          ) : null}
+          {squad.length || coach ? (
+            <button type="button" className="text-button squad-clear" onClick={clear}>
+              Vaciar
+            </button>
+          ) : null}
+        </div>
         {/* Deslizador para tantear y campo para la cifra exacta: tras la J1 el
             presupuesto de cada uno tiene decimales (100,7, por ejemplo), y
             una décima puede decidir si un jugador cabe. */}
@@ -557,15 +604,10 @@ export default function SquadConsole({
         </ul>
       ) : null}
 
-      {/* ---------------------------------------------------------- fichar */}
-      <SquadSearch
-        market={market}
-        coaches={coaches}
-        ids={ids}
-        coach={coach}
-        check={check}
-        onAdd={add}
-      />
+      {/* ---------------------------------------------------------- fichar
+          Mientras faltan huecos, fichar es lo primero. Con la plantilla
+          completa manda el equipo y el buscador baja (sirve para comparar). */}
+      {full ? null : search}
 
       {squad.length || coach ? (
         <>
@@ -575,10 +617,7 @@ export default function SquadConsole({
             {roles.starters.length === STARTERS ? (
               <span className="bench-tag num">{formationOf(roles.starters)}</span>
             ) : null}
-            <p>
-              Bases, aleros y pívots en pista. El reglamento solo admite 2-2-1, 1-2-2, 2-1-2,
-              1-3-1 y 3-1-1: siempre al menos uno de cada puesto.
-            </p>
+            <p>Al menos uno de cada puesto: 2-2-1, 1-2-2, 2-1-2, 1-3-1 o 3-1-1.</p>
             {squad.length === SQUAD_SIZE ? (
               <div className="lineup-tools">
                 <button
@@ -724,8 +763,9 @@ export default function SquadConsole({
         </>
       ) : (
         <p className="muted cancha-empty">
-          Busca y ficha jugadores arriba, carga tu equipo real o deja que lo rellene el
-          optimizador.
+          {rosterConfigured
+            ? "Busca y ficha jugadores arriba, carga el equipo del autor o deja que lo rellene el optimizador."
+            : "Busca y ficha jugadores arriba o deja que lo rellene el optimizador."}
         </p>
       )}
 
@@ -806,12 +846,12 @@ export default function SquadConsole({
                     Aplicar el plan
                   </button>
                 </div>
-                <p className="card-note" style={{ margin: 0 }}>
+                <Explain summary="Cómo se calcula el plan">
                   Ordenados por lo que ganan y en un orden que siempre cabe en la caja. Cada cifra
                   recoloca capitán, quinteto y banquillo tras el cambio. Búsqueda local contrastada
                   con el óptimo exacto: igual en 26 de 30 plantillas de prueba, 0,1 puntos por
                   debajo de media.
-                </p>
+                </Explain>
               </>
             ) : (
               <p className="muted" style={{ margin: 0 }}>
@@ -832,10 +872,12 @@ export default function SquadConsole({
               <div>
                 <div className="card-title">Lo que menos te renta</div>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Puntos que aporta cada crédito en el sitio que ocupa: el capitán cuenta doble y
-                  el banquillo la mitad. Un titular caro que proyecta poco sale aquí antes que un
-                  suplente barato.
+                  Puntos por crédito en el sitio que ocupa cada uno.
                 </p>
+                <Explain summary="Por qué este orden">
+                  El capitán cuenta doble y el banquillo la mitad. Un titular caro que proyecta
+                  poco sale aquí antes que un suplente barato.
+                </Explain>
               </div>
             </div>
             {weakest.length ? (
@@ -873,11 +915,13 @@ export default function SquadConsole({
               <div>
                 <div className="card-title">Fichajes que caben</div>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Mejor recambio por puesto (entrenador incluido) dentro de tus{" "}
-                  {credits(Math.max(check.free, 0))} libres más lo que recuperas al vender. La
-                  ganancia es la real: si el fichaje acaba en el banquillo, suma la mitad. Nunca
-                  propone a nadie de baja o sin inscribir.
+                  El mejor recambio por puesto que cabe en tu caja.
                 </p>
+                <Explain summary="Cómo se calcula">
+                  Entrenador incluido, dentro de tus {credits(Math.max(check.free, 0))} libres más
+                  lo que recuperas al vender. La ganancia es la real: si el fichaje acaba en el
+                  banquillo, suma la mitad. Nunca propone a nadie de baja o sin inscribir.
+                </Explain>
               </div>
             </div>
             {swaps.length ? (
@@ -923,6 +967,19 @@ export default function SquadConsole({
           </div>
         </div>
       ) : null}
+
+      {full ? search : null}
+
+      <div className="toast-region" aria-live="polite">
+        {undo ? (
+          <div className="toast">
+            <span>{undo.message}</span>
+            <button type="button" onClick={restoreUndo}>
+              Deshacer
+            </button>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -969,12 +1026,6 @@ function Token({
           ? projection / 2
           : projection;
   const isCoach = role === "coach";
-  const sub = [
-    isCoach ? "Entrenador" : positionLabel(player.position),
-    next ? fixtureLabel(next) : null,
-  ]
-    .filter(Boolean)
-    .join(" · ");
 
   return (
     <div
@@ -984,7 +1035,15 @@ function Token({
         edit ? " is-editing" : ""
       }${edit?.picked ? " is-picked" : ""}${className}`}
     >
-      {role === "captain" ? <span className="cap-badge">Capitán ×2</span> : null}
+      {role === "captain" ? (
+        <span className="cap-badge">
+          <span className="cap-long">Capitán </span>
+          <span className="cap-short" aria-hidden>
+            C{" "}
+          </span>
+          ×2
+        </span>
+      ) : null}
       {edit ? (
         <>
           {/* Toda la ficha es el botón: en el móvil, apuntar a algo pequeño
@@ -1056,8 +1115,11 @@ function Token({
             </Link>
           )}
         </div>
+        {/* Puesto y rival en piezas separadas: en la pista del móvil el puesto
+            sobra (ya lo dice el sitio) y el separador no se queda colgando. */}
         <div className="tok-sub">
-          {sub}
+          <span className="tok-pos">{isCoach ? "Entrenador" : positionLabel(player.position)}</span>
+          {next ? <span className="tok-fixture">{fixtureLabel(next)}</span> : null}
           {turn ? (
             <span className="turn-tag" title={`Juega en el turno ${next?.turn} de ${next?.turns}`}>
               {turn}

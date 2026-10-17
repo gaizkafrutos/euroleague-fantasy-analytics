@@ -11,6 +11,7 @@ import { useState } from "react";
 import { credits, dateShort, signed } from "@/lib/format";
 import type { PricePoint } from "@/lib/types";
 import { CHART_MARGIN, extent, linePath, linearScale, tickLabel, tickStep, ticks } from "./scales";
+import { useFitWidth } from "./useFitWidth";
 
 interface Props {
   points: PricePoint[];
@@ -19,7 +20,8 @@ interface Props {
 
 export default function PriceHistory({ points, height = 220 }: Props) {
   const [active, setActive] = useState<number | null>(null);
-  const width = 720;
+  const [frame, measured] = useFitWidth();
+  const width = measured ?? 720;
 
   /* Con una sola captura no hay curva que dibujar. Un punto solitario en un eje
      vacío parece un error del gráfico; mejor enseñar la lectura que hay y decir
@@ -71,11 +73,37 @@ export default function PriceHistory({ points, height = 220 }: Props) {
   const path = linePath(points.map((point, index): [number, number] => [x(index), y(point.q)]));
   const open = values[0];
   const current = values[values.length - 1];
+  const high = Math.max(...values);
+  const low = Math.min(...values);
+  // En estrecho, puntos más pequeños: 30 capturas en 300 px se tocaban.
+  const dot = width < 480 ? 3 : 4;
+  const showDots = points.length <= 16;
 
   return (
-    <div className="chart-frame">
+    <div className="chart-frame" ref={frame}>
+      {/* Las cuatro lecturas que se buscan en la curva, ya escritas. */}
+      <dl className="price-figs">
+        <div>
+          <dt>Ahora</dt>
+          <dd className="num">{credits(current)}</dd>
+        </div>
+        <div>
+          <dt>Máximo</dt>
+          <dd className="num">{credits(high)}</dd>
+        </div>
+        <div>
+          <dt>Mínimo</dt>
+          <dd className="num">{credits(low)}</dd>
+        </div>
+        <div>
+          <dt>Desde la salida</dt>
+          <dd className={`num ${current - open > 0.05 ? "delta-up" : current - open < -0.05 ? "delta-down" : ""}`}>
+            {signed(current - open)} cr
+          </dd>
+        </div>
+      </dl>
       <svg
-        className="chart"
+        className={`chart${measured ? " is-fit" : ""}`}
         viewBox={`0 0 ${width} ${height}`}
         role="img"
         aria-label="Evolución del precio en créditos"
@@ -109,18 +137,39 @@ export default function PriceHistory({ points, height = 220 }: Props) {
 
         <path className="series-line" d={path} stroke="var(--brand)" />
 
-        {points.map((point, index) => (
-          <circle
-            key={point.t}
-            cx={x(index)}
-            cy={y(point.q)}
-            r={active === index ? 6 : 4}
-            fill="var(--brand)"
-            stroke="var(--surface)"
-            strokeWidth={2}
-            onMouseEnter={() => setActive(index)}
-          />
-        ))}
+        {/* Con muchas capturas los puntos convertían la línea en un punteado:
+            entonces solo el último y el que se señala. */}
+        {points.map((point, index) =>
+          showDots || index === points.length - 1 || index === active ? (
+            <circle
+              key={point.t}
+              cx={x(index)}
+              cy={y(point.q)}
+              r={active === index ? dot + 2 : dot}
+              fill="var(--brand)"
+              stroke="var(--surface)"
+              strokeWidth={2}
+              pointerEvents="none"
+            />
+          ) : null,
+        )}
+
+        {/* Capa de puntero: el punto más cercano en x, también con el dedo. */}
+        <rect
+          x={CHART_MARGIN.left}
+          y={CHART_MARGIN.top}
+          width={width - CHART_MARGIN.left - CHART_MARGIN.right}
+          height={height - CHART_MARGIN.top - CHART_MARGIN.bottom}
+          fill="transparent"
+          onPointerMove={(event) => {
+            const box = event.currentTarget.ownerSVGElement?.getBoundingClientRect();
+            if (!box) return;
+            const px = ((event.clientX - box.left) / box.width) * width;
+            const index = Math.round(x.invert(px));
+            setActive(Math.max(0, Math.min(points.length - 1, index)));
+          }}
+          onPointerLeave={() => setActive(null)}
+        />
 
         <text
           x={x(points.length - 1)}
@@ -178,8 +227,7 @@ export default function PriceHistory({ points, height = 220 }: Props) {
       ) : null}
 
       <p className="card-note" style={{ marginTop: 8, marginBottom: 0 }}>
-        La línea discontinua es el precio de salida ({credits(open)}). Ahora mismo:{" "}
-        <strong className="num">{credits(current)}</strong> ({signed(current - open)} cr).
+        La línea discontinua es el precio de salida ({credits(open)}).
       </p>
     </div>
   );

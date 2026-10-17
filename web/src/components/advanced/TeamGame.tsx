@@ -3,7 +3,7 @@
  *  jugada).
  */
 import Link from "next/link";
-import type { CSSProperties } from "react";
+import { Fragment, type CSSProperties } from "react";
 
 import { divergingClass, seasonLabel } from "@/lib/advanced";
 import { num, signed } from "@/lib/format";
@@ -104,14 +104,23 @@ export function Lineups({ lineups }: { lineups: TeamLineup[] }) {
           <tr key={lineup.players.join("-")}>
             <th scope="row">
               <span className="lineup-names">
-                {lineup.names.map((name, i) => {
+                {/* Apellidos separados por un punto pegado al anterior: con
+                    solo espacios, al partir la línea no se sabía dónde
+                    acababa uno y empezaba otro. */}
+                {lineup.names.map((raw, i) => {
                   const id = lineup.ids[i];
+                  const name = fixCase(raw);
+                  const sep = i < lineup.names.length - 1 ? " · " : "";
                   return id ? (
-                    <Link key={lineup.players[i]} href={`/jugador/${id}`}>
-                      {name}
-                    </Link>
+                    <Fragment key={lineup.players[i]}>
+                      <Link href={`/jugador/${id}`}>{name}</Link>
+                      {sep}
+                    </Fragment>
                   ) : (
-                    <span key={lineup.players[i]}>{name}</span>
+                    <Fragment key={lineup.players[i]}>
+                      <span>{name}</span>
+                      {sep}
+                    </Fragment>
                   );
                 })}
               </span>
@@ -139,4 +148,9 @@ export function Lineups({ lineups }: { lineups: TeamLineup[] }) {
       </tbody>
     </table>
   );
+}
+
+/** "Weiler-babb" → "Weiler-Babb": la mayúscula tras guion o apóstrofo. */
+function fixCase(name: string): string {
+  return name.replace(/([-'’])(\p{Ll})/gu, (_, mark: string, letter: string) => mark + letter.toUpperCase());
 }
