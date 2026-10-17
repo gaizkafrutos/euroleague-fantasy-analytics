@@ -1,12 +1,12 @@
 {
  "method": "ilp",
  "totalPrice": 99.9,
- "totalProjection": 127.07,
- "scoredProjection": 155.18,
+ "totalProjection": 121.29,
+ "scoredProjection": 147.97,
  "captain": "3903",
  "starters": [
   "3903",
-  "3887",
+  "4252",
   "3850",
   "11504",
   "3948"
@@ -15,7 +15,7 @@
  "bench": [
   "3975",
   "3933",
-  "3991",
+  "4061",
   "3867"
  ],
  "coach": {
@@ -33,15 +33,15 @@
    "position": "G",
    "club": "HTA",
    "price": 17.4,
-   "projection": 24.79
+   "projection": 23.38
   },
   {
-   "key": "3887",
-   "name": "FRANCISCO, SYLVAIN",
+   "key": "4252",
+   "name": "MONTERO, JEAN",
    "position": "G",
-   "club": "PAN",
-   "price": 15.2,
-   "projection": 21.76
+   "club": "OLY",
+   "price": 14.7,
+   "projection": 19.84
   },
   {
    "key": "3850",
@@ -49,7 +49,7 @@
    "position": "G",
    "club": "MAD",
    "price": 12.3,
-   "projection": 18.26
+   "projection": 17.77
   },
   {
    "key": "3975",
@@ -57,7 +57,7 @@
    "position": "G",
    "club": "PRS",
    "price": 5.1,
-   "projection": 6.01
+   "projection": 5.78
   },
   {
    "key": "3948",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "OLY",
    "price": 9.6,
-   "projection": 14.3
+   "projection": 13.25
   },
   {
    "key": "3933",
@@ -73,15 +73,15 @@
    "position": "F",
    "club": "PRS",
    "price": 4.9,
-   "projection": 5.83
+   "projection": 5.52
   },
   {
-   "key": "3991",
-   "name": "ABALDE, ALBERTO",
+   "key": "4061",
+   "name": "MANTZOUKAS, ELEFTHERIOS",
    "position": "F",
-   "club": "MAD",
-   "price": 4.4,
-   "projection": 4.33
+   "club": "PAN",
+   "price": 4.9,
+   "projection": 5.1
   },
   {
    "key": "3867",
@@ -89,7 +89,7 @@
    "position": "F",
    "club": "OLY",
    "price": 4.2,
-   "projection": 3.68
+   "projection": 3.49
   },
   {
    "key": "11504",
@@ -97,7 +97,7 @@
    "position": "C",
    "club": "MUN",
    "price": 11.2,
-   "projection": 14.87
+   "projection": 13.99
   },
   {
    "key": "7424",
@@ -105,7 +105,7 @@
    "position": "C",
    "club": "VIR",
    "price": 9.3,
-   "projection": 13.24
+   "projection": 13.17
   }
  ],
  "available": true,
