@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "EuroLeague 2026-27",
- "generatedAt": "2026-10-16T22:10:35.400274+00:00",
+ "generatedAt": "2026-10-17T05:47:04.044588+00:00",
  "currentRound": 7,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 38,
- "lastPriceCapture": "2026-10-16T22:10:03.816130+00:00",
- "lastPriceCheck": "2026-10-16T22:10:03.816130+00:00",
+ "priceSnapshots": 39,
+ "lastPriceCapture": "2026-10-17T05:46:15.612073+00:00",
+ "lastPriceCheck": "2026-10-17T05:46:15.612073+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-16T22:10:08.764353+00:00",
+  "generatedAt": "2026-10-17T05:46:20.556118+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -350,6 +350,10 @@
      },
      "bandCoverage": 0.565,
      "aboveP90": 0.094,
+     "riseBrier": 0.1682,
+     "riseBrierConstant": 0.176,
+     "changeMae": 0.184,
+     "changeMaeZero": 0.183,
      "generatedAt": "2026-10-15T12:46:13.433982+00:00"
     }
    ],
@@ -383,7 +387,7 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-16T22:10:02.635297+00:00",
+  "fetchedAt": "2026-10-17T05:46:14.527470+00:00",
   "rows": 30,
   "matched": 28,
   "unmatched": [
@@ -395,7 +399,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-16T22:10:02.635297+00:00",
+    "fetchedAt": "2026-10-17T05:46:14.527470+00:00",
     "rows": 30,
     "matched": 28,
     "flagged": 28
@@ -409,24 +413,22 @@
    "probable": 0
   }
  },
- "warnings": [
-  "Precios capturados el 2026-10-16 22:10 UTC: el juego aún no ha aplicado la revalorización (J6). Se usa el precio pendiente de 266 jugadores hasta la próxima captura."
- ],
+ "warnings": [],
  "priceFreshness": {
-  "stale": true,
-  "capturedAt": "2026-10-16T22:10:03.816130+00:00",
+  "stale": false,
+  "capturedAt": "2026-10-17T05:46:15.612073+00:00",
   "lastGameAt": "2026-10-16T18:30:00+00:00",
   "round": 6,
-  "reason": "el juego aún no ha aplicado la revalorización",
-  "pending": 266
+  "reason": null,
+  "pending": 0
  },
  "priceModel": {
   "a": 0.0399,
-  "b": -0.0442,
-  "c": 0.0076,
-  "r2": 0.99,
-  "n": 1107,
-  "source": "J1–J5"
+  "b": -0.0441,
+  "c": 0.0068,
+  "r2": 0.991,
+  "n": 1327,
+  "source": "J1–J6"
  },
  "league": {
   "zones": [
