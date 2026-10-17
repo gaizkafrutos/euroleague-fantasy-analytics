@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import Avatar from "@/components/ui/Avatar";
 import { credits, normalize, num, percent, positionLabel, signed } from "@/lib/format";
-import { fixtureLabel, turnLabel } from "@/lib/projection";
+import { fixtureName, turnLabel } from "@/lib/projection";
 import type { NextGame } from "@/lib/types";
 
 export interface CompareRow {
@@ -121,7 +121,7 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         value: () => null,
         show: (r) =>
           r.next
-            ? `${fixtureLabel(r.next)}${turnLabel(r.next) ? ` · ${turnLabel(r.next)}` : ""}`
+            ? `${fixtureName(r.next)}${turnLabel(r.next) ? ` · ${turnLabel(r.next)}` : ""}`
             : "—",
       },
       {

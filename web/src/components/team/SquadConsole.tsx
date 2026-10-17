@@ -26,7 +26,7 @@ import SquadSearch from "@/components/team/SquadSearch";
 import { sdOf, squadRange } from "@/lib/advanced";
 import { AvailabilityTag, Delta, PlayerCell } from "@/components/ui/primitives";
 import { credits, displayName, num, percent, positionLabel, signed } from "@/lib/format";
-import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
+import { fixtureLabel, fixtureName, playRisk, turnLabel } from "@/lib/projection";
 import {
   DEFAULT_BUDGET,
   MAX_PER_CLUB,
@@ -1119,7 +1119,11 @@ function Token({
             sobra (ya lo dice el sitio) y el separador no se queda colgando. */}
         <div className="tok-sub">
           <span className="tok-pos">{isCoach ? "Entrenador" : positionLabel(player.position)}</span>
-          {next ? <span className="tok-fixture">{fixtureLabel(next)}</span> : null}
+          {next ? (
+            <span className="tok-fixture" title={fixtureName(next)}>
+              {fixtureLabel(next)}
+            </span>
+          ) : null}
           {turn ? (
             <span className="turn-tag" title={`Juega en el turno ${next?.turn} de ${next?.turns}`}>
               {turn}

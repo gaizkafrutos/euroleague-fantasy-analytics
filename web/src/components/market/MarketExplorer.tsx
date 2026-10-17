@@ -20,7 +20,7 @@ import AddToSquad from "@/components/team/AddToSquad";
 import ValueScatter from "@/components/charts/ValueScatter";
 import { BarCell, Delta, PlayerCell } from "@/components/ui/primitives";
 import { credits, displayName, num, percent } from "@/lib/format";
-import { fixtureLabel, playRisk, projectionNote, turnLabel } from "@/lib/projection";
+import { fixtureLabel, fixtureName, playRisk, projectionNote, turnLabel } from "@/lib/projection";
 import type { Player, Team } from "@/lib/types";
 
 type SortKey =
@@ -414,7 +414,11 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
       case "difficulty":
         return (
           <>
-            <span className="muted" style={{ fontSize: "0.8em" }}>
+            <span
+              className="muted"
+              style={{ fontSize: "0.8em" }}
+              title={player.schedule.next ? fixtureName(player.schedule.next) : undefined}
+            >
               {player.schedule.next ? fixtureLabel(player.schedule.next) : ""}
             </span>{" "}
             {num(player.schedule.difficulty, 0)}
@@ -746,7 +750,10 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     </span>
                     <span className="market-row-meta num">
                       <span>
-                        <b>{credits(player.price)}</b> <Revalue player={player} />
+                        <b>{credits(player.price)}</b>
+                      </span>
+                      <span>
+                        revalor. <Revalue player={player} />
                       </span>
                       <span>{num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr</span>
                       <span>reg. {reliable(player)}</span>
@@ -803,7 +810,7 @@ function nextTitle(player: Player): string | undefined {
   if (!next) return undefined;
   const turn = turnLabel(next);
   return [
-    `${fixtureLabel(next)} el ${new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", timeZone: "Europe/Madrid" }).format(new Date(next.date))}`,
+    `${fixtureName(next)} el ${new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", timeZone: "Europe/Madrid" }).format(new Date(next.date))}`,
     turn ? `turno ${next.turn} de ${next.turns}` : null,
     `${percent(next.winProb)} de ganar`,
     next.restDays !== null ? `${next.restDays} días de descanso` : null,

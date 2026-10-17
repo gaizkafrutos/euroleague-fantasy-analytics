@@ -248,7 +248,7 @@ export default function SquadSearch({ market, coaches, ids, coach, check, onAdd 
       : full
         ? null
         : filter === "all"
-          ? `Para tus huecos: ${missing
+          ? `Mejores chollos para tus huecos: ${missing
               .map((slot) => `${slot.left} ${slot.left === 1 ? positionLabel(slot.position).toLowerCase() : positionWord(slot.position)}`)
               .join(" · ")}`
           : `Mejor relación precio-proyección · ${positionWord(filter)}`;
@@ -362,9 +362,10 @@ export default function SquadSearch({ market, coaches, ids, coach, check, onAdd 
                 <span className="fichar-who">
                   <span className="fichar-name">{displayName(player)}</span>
                   <span className="fichar-meta">
-                    <i className="fichar-pos" aria-hidden />
-                    {player.isCoach ? "Entrenador" : positionLabel(player.position)} ·{" "}
-                    {player.clubShort ?? player.club ?? "—"}
+                    {/* "Club · puesto", como en el mercado; sin el punto gris,
+                        que era un resto del color por puesto. */}
+                    {player.clubShort ?? player.club ?? "—"} ·{" "}
+                    {player.isCoach ? "Entrenador" : positionLabel(player.position)}
                     {player.availability ? <AvailabilityTag player={player} /> : null}
                   </span>
                   {outcome.note ? (

@@ -25,7 +25,7 @@ import {
   signed,
 } from "@/lib/format";
 import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
-import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
+import { fixtureName, playRisk, turnLabel } from "@/lib/projection";
 import { METHOD_LABEL } from "@/lib/matching";
 import { coachVerdict, verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
@@ -241,7 +241,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               />
               <BandItem
                 label="Próximo partido"
-                value={next ? fixtureLabel(next) : "—"}
+                value={next ? fixtureName(next) : "—"}
                 note={
                   next
                     ? [turnLabel(next), `${percent(next.winProb)} gana`].filter(Boolean).join(" · ")
@@ -546,7 +546,7 @@ function ProjectionBreakdown({ player }: { player: Player }) {
           </div>
         </div>
         <dl className="fact-list">
-          <Row label="Próximo partido" value={next ? fixtureLabel(next) : "—"} />
+          <Row label="Próximo partido" value={next ? fixtureName(next) : "—"} />
           <Row label="Probabilidad de ganar" value={next ? percent(next.winProb) : "—"} />
           <Row label="Margen esperado" value={next ? `${signed(next.expectedMargin)} pts` : "—"} />
           <Row label="Puntos esperados" value={num(player.projectedFp)} />
@@ -578,7 +578,7 @@ function ProjectionBreakdown({ player }: { player: Player }) {
       <dl className="fact-list">
         <Row label="Minutos esperados" value={minutes === null ? "—" : `${num(minutes)} min`} />
         <Row label="Puntos por minuto" value={num(rate, 2)} />
-        <Row label={`Rival${next ? ` (${fixtureLabel(next)})` : ""}`} value={factor(opp)} />
+        <Row label={`Rival${next ? ` (${fixtureName(next)})` : ""}`} value={factor(opp)} />
         <Row label={next ? (next.home ? "En casa" : "Fuera") : "Campo"} value={factor(home)} />
         <Row label="Si juega" value={ifPlays === null ? "—" : `${num(ifPlays)} pts`} />
         <Row label={`Probabilidad de jugar (${source})`} value={percent(player.playProb ?? null)} />

@@ -6,12 +6,20 @@
  *  funciones dan el desglose para los `title` y las notas.
  */
 import { num, percent } from "@/lib/format";
+import { clubName } from "@/lib/clubs";
 import type { NextGame, Player } from "@/lib/types";
 
 /** "@ZAL" fuera, "vs ZAL" en casa. */
 export function fixtureLabel(next: NextGame | null | undefined): string {
   if (!next) return "—";
   return `${next.home ? "vs" : "@"} ${next.opponent}`;
+}
+
+/** "@ Fenerbahce" fuera, "vs Fenerbahce" en casa: el nombre y no el código
+ *  interno (ULK), para frases y etiquetas donde cabe. */
+export function fixtureName(next: NextGame | null | undefined): string {
+  if (!next) return "—";
+  return `${next.home ? "vs" : "@"} ${clubName(next.opponent)}`;
 }
 
 /** "T1" si la jornada se juega en varios días; nada si es de un solo turno. */
