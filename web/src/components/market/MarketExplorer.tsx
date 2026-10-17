@@ -41,6 +41,15 @@ const PAGE_SIZE = 50;
 /** Las columnas con `optional` no se ven por defecto: se añaden desde el botón
  *  "Columnas". Con todas a la vez la tabla no cabía a 1440 px y la última
  *  quedaba cortada. */
+/** Nombres completos para el selector de orden del móvil: "Min" se leía
+ *  como "mínimo" y "Revalor." como una abreviatura sin más. */
+const SORT_NAME: Partial<Record<SortKey, string>> = {
+  expectedChange: "Revalorización esperada",
+  valueProjected: "Puntos por crédito",
+  minutesAvg: "Minutos",
+  bargainScore: "Índice de chollo",
+};
+
 const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: boolean }> = [
   // Precio y variación comparten celda: son el mismo dato mirado a dos tiempos,
   // y la tabla ya usa ese patrón en Forma y en Minutos.
@@ -513,7 +522,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             >
               {COLUMNS.map((column) => (
                 <option key={column.key} value={column.key}>
-                  {column.label}
+                  {SORT_NAME[column.key] ?? column.label}
                 </option>
               ))}
             </select>
@@ -757,9 +766,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                       </span>
                       <span>{num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr</span>
                       <span>reg. {reliable(player)}</span>
-                      {/* El índice solo cuando es por lo que se ordena: con él
-                          siempre, la línea no cabía en 375 px. */}
-                      {sort.key === "bargainScore" ? <span>índice {num(player.bargainScore, 0)}</span> : null}
+                      {/* Sin el índice: la lista ya va ordenada por él y, con
+                          "revalor." escrito, la línea no cabía en 390 px. */}
                     </span>
                   </a>
                   {/* Fuera del enlace: un botón dentro de un <a> es HTML inválido. */}

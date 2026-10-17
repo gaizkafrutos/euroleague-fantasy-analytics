@@ -319,7 +319,12 @@ export default function SquadConsole({
   }
 
   function autofill() {
-    keepForUndo("Plantilla sustituida por el óptimo");
+    keepForUndo(ids.length || coachId !== null ? "Plantilla sustituida por el óptimo" : "Óptimo aplicado", true);
+    if (typeof window !== "undefined" && window.innerWidth < 760) {
+      window.requestAnimationFrame(() =>
+        document.getElementById("quinteto")?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      );
+    }
     // Con 100 créditos se carga el óptimo exacto que resolvió el pipeline por
     // programación entera: el mismo que enseña el mercado. Con otro
     // presupuesto, la aproximación voraz de squad.ts.
@@ -342,14 +347,16 @@ export default function SquadConsole({
     manual: ManualLineup | null;
   } | null>(null);
 
-  useEffect(() => {
-    if (!undo) return;
-    const timer = window.setTimeout(() => setUndo(null), 6000);
-    return () => window.clearTimeout(timer);
-  }, [undo]);
+  const [undoPaused, setUndoPaused] = useState(false);
 
-  function keepForUndo(message: string) {
-    if (ids.length || coachId !== null) setUndo({ message, ids, coachId, manual });
+  useEffect(() => {
+    if (!undo || undoPaused) return;
+    const timer = window.setTimeout(() => setUndo(null), 10000);
+    return () => window.clearTimeout(timer);
+  }, [undo, undoPaused]);
+
+  function keepForUndo(message: string, always = false) {
+    if (always || ids.length || coachId !== null) setUndo({ message, ids, coachId, manual });
   }
 
   function restoreUndo() {
@@ -375,6 +382,9 @@ export default function SquadConsole({
     const built = buildSquad(market, budget, coaches);
     return built.players.length === SQUAD_SIZE ? checkSquad(built.players, budget, built.coach).scored : null;
   }, [budget, full, optimal, market, coaches]);
+
+  const atOptimum =
+    full && typeof optimalScored === "number" && Math.abs(scored - optimalScored) < 0.05;
 
   // El quinteto se coloca por puesto, no por proyección: los pívots junto al
   // aro, luego aleros, los bases al perímetro. El del medio ocupa las dos
@@ -402,8 +412,13 @@ export default function SquadConsole({
         {/* Rellenar es la acción de la página: el único botón sólido. Vaciar
             es destructiva y va aparte, discreta, con deshacer. */}
         <div className="squad-actions">
-          <button type="button" className="button-primary" onClick={autofill}>
-            Rellenar con el óptimo
+          <button
+            type="button"
+            className="button-primary"
+            onClick={autofill}
+            disabled={atOptimum}
+          >
+            {atOptimum ? "Ya es el óptimo" : "Rellenar con el óptimo"}
           </button>
           {rosterConfigured ? (
             // Es el equipo de la cuenta configurada en el despliegue (la del autor),
@@ -613,7 +628,7 @@ export default function SquadConsole({
         <>
           {/* ----------------------------------------------------- la pista */}
           <div className="bench-head court-head">
-            <h2>Quinteto</h2>
+            <h2 id="quinteto">Quinteto</h2>
             {roles.starters.length === STARTERS ? (
               <span className="bench-tag num">{formationOf(roles.starters)}</span>
             ) : null}
@@ -623,7 +638,6 @@ export default function SquadConsole({
                 <button
                   type="button"
                   className="chip"
-                  aria-pressed={editing}
                   onClick={() => {
                     setEditing((value) => !value);
                     setPicked(null);
@@ -972,7 +986,13 @@ export default function SquadConsole({
 
       <div className="toast-region" aria-live="polite">
         {undo ? (
-          <div className="toast">
+          <div
+            className="toast"
+            onPointerEnter={() => setUndoPaused(true)}
+            onPointerLeave={() => setUndoPaused(false)}
+            onFocus={() => setUndoPaused(true)}
+            onBlur={() => setUndoPaused(false)}
+          >
             <span>{undo.message}</span>
             <button type="button" onClick={restoreUndo}>
               Deshacer

@@ -127,7 +127,10 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
           <section className="eq-section">
             <div className="eq-section-head">
               <h2>Los cuatro factores</h2>
-              <p>Percentil entre los {withBox.length} clubes con histórico.</p>
+              <p>
+                Percentil entre los {withBox.length} clubes con histórico: p100 es el mejor (en
+                pérdidas, el que menos pierde).
+              </p>
             </div>
             <dl className="eq-factors">
               <Factor label="Tiro (eFG)" value={box.efg} unit="%" pct={pctOf(box, "efg")} />
@@ -136,7 +139,6 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
                 value={box.tovRate}
                 unit="%"
                 pct={pctOf(box, "tovRate", true)}
-                note="menos es mejor"
               />
               <Factor
                 label="Rebote ofensivo"
@@ -299,7 +301,7 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
         )}
         <p className="eq-foot-note">
           Borde naranja: rival asequible (por debajo de −3 de diferencial). Pizarra: rival duro (más
-          de +3). El resto, neutro. El mismo código que el mapa de tiro: naranja, bueno para ti.
+          de +3). El resto, neutro: naranja, bueno para ti.
         </p>
       </section>
 

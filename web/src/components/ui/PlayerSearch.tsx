@@ -60,7 +60,7 @@ export default function PlayerSearch({ index }: { index: SearchEntry[] }) {
     setOpen(false);
     setQuery("");
     inputRef.current?.blur();
-    router.push(`/jugador/${entry.id}`);
+    router.push(entry.href ?? `/jugador/${entry.id}`);
   }
 
   function onKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
@@ -129,8 +129,7 @@ export default function PlayerSearch({ index }: { index: SearchEntry[] }) {
               >
                 <span className="search-name">{entry.name}</span>
                 <span className="search-meta">
-                  {entry.club}
-                  {entry.position ? ` · ${positionLabel(entry.position)}` : ""}
+                  {entry.meta ?? `${entry.club}${entry.position ? ` · ${positionLabel(entry.position)}` : ""}`}
                 </span>
               </button>
             </li>

@@ -66,7 +66,9 @@ export function QuarterMargins({
                   />
                 ) : null}
               </span>
-              <span className="qm-value num">{signed(margin)}</span>
+              <span className={`qm-value num ${margin > 0.05 ? "delta-up" : margin < -0.05 ? "delta-down" : ""}`}>
+                {signed(margin)}
+              </span>
               <span className="qm-label">{QUARTERS[index]}</span>
             </div>
           );
@@ -143,7 +145,9 @@ export function Lineups({ lineups }: { lineups: TeamLineup[] }) {
                     }}
                   />
                 </span>
-                <b>{signed(lineup.net)}</b>
+                <b className={(lineup.net ?? 0) > 0.05 ? "delta-up" : (lineup.net ?? 0) < -0.05 ? "delta-down" : undefined}>
+                  {signed(lineup.net)}
+                </b>
               </span>
               <small className="muted">
                 {lineup.pointsFor}–{lineup.pointsAgainst}

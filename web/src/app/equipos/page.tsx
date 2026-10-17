@@ -119,7 +119,7 @@ export default function TeamsPage() {
         </ol>
       </div>
 
-      <p className="card-note" style={{ marginTop: 14, maxWidth: "78ch" }}>
+      <p className="card-note only-wide" style={{ marginTop: 14, maxWidth: "78ch" }}>
         Ataque y defensa son puntos por 100 posesiones; el ritmo, posesiones por partido.
         Reconstruidos desde los boxscores oficiales de {withHistory} clubes.{" "}
         <Link href="/metodologia">Cómo se calcula</Link>.

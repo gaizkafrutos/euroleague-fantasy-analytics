@@ -8103,3 +8103,111 @@ ul.card-note li + li,
 .card-note ul li + li {
   margin-top: 6px;
 }
+
+/* Auditoría 2 (diseño) --------------------------------------------------- */
+
+/* Texto con cifras dentro de una celda tabular: proporcional y en la letra
+   del texto ("6,1 %", no "6 , 1 %"; "sin proy.", no "sin proy ."). */
+.rank-detail,
+.eq-grp-proj.is-none {
+  font-family: var(--font);
+  font-variant-numeric: proportional-nums;
+  font-feature-settings: normal;
+}
+
+.eq-grp-proj.is-none {
+  white-space: nowrap;
+}
+
+/* Enlaces dentro de una frase: subrayados, como el resto (antes algunos eran
+   del mismo gris que el texto y no se sabía que eran enlaces). */
+main p a:not([class]),
+.card-note a:not([class]),
+.muted a:not([class]) {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+main p a:not([class]):hover,
+.card-note a:not([class]):hover {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 760px) {
+  /* Las explicaciones de cada módulo, de 12 a 14 px en el móvil: es donde se
+     leen de pie y con una mano. */
+  .card-note,
+  .bench-head p,
+  .cancha-section-head p,
+  .eq-section-head p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* Filtros abiertos: aire antes de los resultados. */
+  .filter-panel.is-open {
+    margin-bottom: 8px;
+  }
+}
+
+/* Filas etiqueta–valor de la ficha: apiladas en estrecho, donde la etiqueta
+   y el valor partían los dos en dos líneas lado a lado. */
+@media (max-width: 480px) {
+  .fact-list > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}
+
+/* Colocar a mano en el móvil: los marcos discontinuos se solapaban 4 px y la
+   ficha del capitán era más alta que las demás. */
+@media (max-width: 559px) {
+  .court-grid .tok-pick {
+    inset: 0;
+  }
+
+  .court-grid > .tok {
+    min-height: 196px;
+  }
+}
+
+/* Escala de títulos de sección en Mi equipo: uno solo, como el resto. */
+.cancha-section-head h2,
+.bench-head h2,
+.cancha .card-title {
+  font-size: var(--text-lg);
+}
+
+/* Plantilla llena: no es un botón muerto, es un enlace a donde se hace sitio. */
+.add-squad.is-full {
+  color: var(--ink-3);
+  border-style: dashed;
+  text-decoration: none;
+}
+
+.button-primary:disabled {
+  filter: none;
+  background: var(--bg-sunken);
+  color: var(--ink-3);
+  cursor: default;
+}
+
+/* Pista de escritorio: 1.150 px para cinco jugadores se leía vacía. */
+@media (min-width: 761px) {
+  .court {
+    max-width: 880px;
+    margin-inline: auto;
+  }
+}
+
+/* Portada en el móvil: los pasos del relato a 70 % de pantalla (eran cuatro
+   pantallas enteras de una frase cada una). */
+@media (max-width: 760px) {
+  .portada .beat:not(.is-hero) {
+    min-height: 70svh;
+  }
+}

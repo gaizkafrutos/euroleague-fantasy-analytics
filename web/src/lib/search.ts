@@ -11,6 +11,10 @@ export interface SearchEntry {
   name: string;
   club: string;
   position: string | null;
+  /** Destino; sin él, la ficha del jugador. Los equipos llevan el suyo. */
+  href?: string;
+  /** Segunda línea ya compuesta (club · puesto · precio). */
+  meta?: string;
   /** Nombre + club sin acentos, en minúscula. */
   haystack: string;
 }
