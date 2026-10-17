@@ -445,6 +445,8 @@ export interface BacktestScore {
 /** `efa backtest`: cada partido predicho solo con los anteriores. */
 export interface ModelBacktest {
   generatedAt: string;
+  /** Parámetros del modelo v2 (projection.PARAMS). */
+  params?: { minutes_prior_games?: number; league_minutes_scale?: boolean } & Record<string, number | boolean>;
   season?: {
     code: string;
     n: number;
@@ -480,8 +482,16 @@ export interface PublishedBacktest {
     riseBrierConstant?: number;
     changeMae?: number;
     changeMaeZero?: number;
+    /** El once óptimo de lo publicado: lo que proyectaba, lo que puntuó y el
+     *  mejor posible sabiendo ya los resultados. */
+    lineup?: { projected: number; real: number; best: number | null; withCoach: boolean };
   }>;
-  total: { n: number; model: Partial<PublishedScore>; mean: Partial<PublishedScore> };
+  total: {
+    n: number;
+    model: Partial<PublishedScore>;
+    mean: Partial<PublishedScore>;
+    playProb?: Record<string, { n: number; predicted: number | null; real: number }>;
+  };
 }
 
 /** ¿El último snapshot lleva ya la revalorización de la última jornada? */

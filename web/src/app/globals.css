@@ -1473,6 +1473,75 @@ table.data th.num {
   position: relative;
 }
 
+.chart-frame:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Dibujados a escala 1:1 (useChartWidth): el texto mide lo que dice. */
+.chart.is-px text {
+  font-size: 12px;
+}
+
+.chart.is-px .bar-label {
+  font-size: 12.5px;
+}
+
+/* Clave de línea en leyendas y tooltips. */
+.legend-key {
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  flex: none;
+}
+
+.tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* --------------------------------------------------------------------------
+   ¿Acierta HoopIQ?
+   -------------------------------------------------------------------------- */
+.ac-figures {
+  margin: 28px 0 8px;
+}
+
+/* Dos por fila en el escritorio (con `grid-2` salían tres y la cuarta se
+   quedaba sola), uno en el móvil. */
+.ac-charts {
+  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+}
+
+.ac-chart h2 {
+  margin: 0;
+}
+
+.ac-chart > .card-note {
+  margin: 4px 0 14px;
+  max-width: 60ch;
+}
+
+.ac-chart .ac-read {
+  margin: 12px 0 0;
+  max-width: 60ch;
+}
+
+.ac-data summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.ac-data .table-wrap {
+  margin-top: 12px;
+}
+
 /* --------------------------------------------------------------------------
    Avisos
    -------------------------------------------------------------------------- */
