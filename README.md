@@ -5,8 +5,8 @@ en créditos del juego oficial con las estadísticas reales de la EuroLiga para
 responder a la única pregunta que importa antes de fichar — *¿quién rinde más
 de lo que cuesta?*
 
-**[Ver la web](https://euroleague-fantasy-analytics.vercel.app)** ·
-[Metodología](https://euroleague-fantasy-analytics.vercel.app/metodologia) ·
+**[Ver la web](https://hoopiq-fantasy.vercel.app)** ·
+[Metodología](https://hoopiq-fantasy.vercel.app/metodologia) ·
 [Guía de uso](docs/USO.md)
 
 ---

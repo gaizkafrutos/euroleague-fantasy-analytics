@@ -7,7 +7,7 @@ cuando algo pide tu intervención.
 
 ## 1. Acceder
 
-**<https://euroleague-fantasy-analytics.vercel.app>**
+**<https://hoopiq-fantasy.vercel.app>**
 
 No hay que instalar nada ni iniciar sesión. Funciona en el móvil igual que en el
 ordenador. Guárdalo en favoritos o añádelo a la pantalla de inicio del teléfono:
@@ -109,7 +109,7 @@ Ya está. La siguiente ejecución diaria vuelve a capturar precios.
 **Le mandas el enlace y ya.** Nada más:
 
 ```
-https://euroleague-fantasy-analytics.vercel.app
+https://hoopiq-fantasy.vercel.app
 ```
 
 No necesita cuenta, ni instalar nada, ni tu token, ni permisos.
@@ -190,7 +190,7 @@ Vercel: si está en rojo, el build ha fallado y el enlace sigue sirviendo la
 versión anterior. Eso es bueno — nunca se queda a medias.
 
 **Números que no te cuadran.** Antes de dudar del cálculo, mira la
-[metodología](https://euroleague-fantasy-analytics.vercel.app/metodologia).
+[metodología](https://hoopiq-fantasy.vercel.app/metodologia).
 Hay dos cosas que sorprenden y son correctas: las medias excluyen los partidos
 sin jugar (un cero por no estar convocado hundiría la media y mentiría sobre el
 jugador), y la "presión de precio" es una aproximación razonada, no la fórmula
