@@ -7827,3 +7827,134 @@ dl dd.dl-note {
   min-height: 0;
   padding-block: 5px;
 }
+
+/* Índice de Metodología: chips de enlace, en varias líneas en el móvil. */
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.toc a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+
+/* Baremo en dos listas. */
+.score-rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 32px;
+  margin-top: 14px;
+  max-width: 640px;
+}
+
+.score-rules h3 {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.score-rules dl {
+  margin: 0;
+}
+
+.score-rules dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.9375rem;
+}
+
+.score-rules dd {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 700;
+}
+
+.score-rules-bonus {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+@media (max-width: 560px) {
+  .score-rules {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Tablas de cifras de Metodología: más justas en el móvil, para que quepan
+   sin desplazarse de lado, y con los títulos en varias líneas. */
+@media (max-width: 560px) {
+  table.data.is-compact th,
+  table.data.is-compact td {
+    padding: 9px 5px;
+    font-size: 0.8125rem;
+  }
+
+  table.data.is-compact thead th {
+    white-space: normal;
+    vertical-align: bottom;
+  }
+
+  table.data.is-compact td:first-child {
+    white-space: normal;
+  }
+}
+
+/* "Qué se usa de la Euroliga" en el móvil: un bloque por fuente. */
+.official-list {
+  margin: 12px 0 0;
+}
+
+.official-list > div {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.official-list dt {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.official-list dd {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.official-list .official-unused {
+  color: var(--ink-3);
+}
+
+.official-list .official-unused span {
+  font-weight: 600;
+}
+
+/* Las listas de las notas sangraban 40 px por defecto del navegador. */
+ul.card-note,
+.card-note ul {
+  padding-left: 20px;
+}
