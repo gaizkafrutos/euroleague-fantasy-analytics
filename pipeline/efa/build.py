@@ -31,6 +31,7 @@ from efa.config import (
     CROSSWALK_PATH,
     NEVER_DRESSED_PRIOR,
     PLAY_PROB_REPORT,
+    PLAY_SHARE_CAP,
     PLAYER_OVERRIDES_PATH,
     PRIOR_SEASON_CODE,
     PRIOR_WEIGHT_GAMES,
@@ -401,11 +402,11 @@ def play_share(played: pd.Series, appeared: pd.Series, club_games: pd.Series) ->
 
     (jugados + 2) / (partidos del club + 2), salvo para quien no ha aparecido en
     ninguna convocatoria con su club ya jugando: ese parte de un colchón de 0,2
-    y no de 2 (ver NEVER_DRESSED_PRIOR).
+    y no de 2 (ver NEVER_DRESSED_PRIOR). Nadie pasa de PLAY_SHARE_CAP.
     """
     prior = pd.Series(AVAILABILITY_PRIOR_GAMES, index=played.index, dtype=float)
     prior = prior.where(~((appeared <= 0) & (club_games > 0)), NEVER_DRESSED_PRIOR)
-    return ((played + prior) / (club_games + AVAILABILITY_PRIOR_GAMES)).clip(upper=1.0)
+    return ((played + prior) / (club_games + AVAILABILITY_PRIOR_GAMES)).clip(upper=PLAY_SHARE_CAP)
 
 
 def _apply_v2(table: pd.DataFrame, v2: pd.DataFrame) -> pd.DataFrame:

@@ -149,7 +149,7 @@ def test_nunca_convocado_casi_no_juega():
     share = play_share(played, appeared, club)
     assert share.iloc[0] < 0.1
     assert share.iloc[1] == pytest.approx(0.4)
-    assert share.iloc[2] == pytest.approx(1.0)
+    assert share.iloc[2] == pytest.approx(0.95)  # tope: los fijos juegan el 94 %
 
 
 # ---------------------------------------------------------------------------
