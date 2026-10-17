@@ -33,12 +33,17 @@ export default function TeamPage() {
       <header className="cancha-head">
         <h1>Tu once, y lo que de verdad va a puntuar.</h1>
         <p className="lede">
-          Monta la plantilla y la consola la coloca: los seis que más proyectan puntúan enteros, el
-          mejor lleva el brazalete y los cuatro últimos van al banquillo a la mitad. Luego señala a
-          quién le pagas de más y qué fichaje cabe.{" "}
-          <Link href="/metodologia#reglas">Las reglas, en 30 segundos</Link>.
+          Monta la plantilla para la jornada {meta.currentRound}: la consola la coloca, calcula lo
+          que puntúa y te dice qué fichaje cabe.
         </p>
-        <p className="eq-eyebrow">Jornada {meta.currentRound}</p>
+        <details className="explain">
+          <summary>Cómo coloca a tus jugadores</summary>
+          <p>
+            Los seis que más proyectan puntúan enteros, el mejor lleva el brazalete y los cuatro
+            últimos van al banquillo a la mitad. Luego señala a quién le pagas de más y qué fichaje
+            cabe. <Link href="/metodologia#reglas">Las reglas, en 30 segundos</Link>.
+          </p>
+        </details>
       </header>
       <SquadConsole
         market={market.map(squadRow)}

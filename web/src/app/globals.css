@@ -4598,6 +4598,399 @@ a.eq-grp-name:hover {
   }
 }
 
+/* ------------------------------------------------------------- explicación
+   Una línea a la vista y el resto a un toque: el porqué de cada cifra sigue
+   ahí, pero ya no compite con la cifra. */
+.explain {
+  margin-top: 6px;
+}
+
+.explain > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  cursor: pointer;
+  list-style: none;
+}
+
+.explain > summary::-webkit-details-marker {
+  display: none;
+}
+
+.explain > summary::after {
+  content: "";
+  width: 11px;
+  height: 7px;
+  background: var(--chevron) no-repeat center / contain;
+  transition: rotate 0.2s ease;
+}
+
+.explain[open] > summary::after {
+  rotate: 180deg;
+}
+
+.explain > summary:hover {
+  color: var(--ink);
+}
+
+.explain > summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.explain > :not(summary) {
+  margin: 0 0 10px;
+  max-width: 64ch;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+/* ------------------------------------------------------- acciones y avisos */
+.squad-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.squad-actions .button-primary,
+.squad-actions .button-ghost {
+  min-height: var(--control-h);
+}
+
+/* Botón de texto: para lo secundario o destructivo que no debe competir con
+   la acción principal. Sigue teniendo el alto táctil de un control. */
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-h);
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.text-button:hover {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+
+.squad-clear {
+  margin-left: auto;
+}
+
+/* Deshacer: flota sobre la barra de pestañas del móvil. */
+.toast-region {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  padding: 4px 4px 4px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: var(--shadow-float);
+  font-size: 0.875rem;
+}
+
+.toast button {
+  margin-left: auto;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--bg);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.toast button:hover {
+  background: color-mix(in srgb, var(--bg) 12%, transparent);
+}
+
+@media (max-width: 760px) {
+  .toast-region {
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .squad-actions {
+    flex: 1 1 100%;
+  }
+
+  .squad-actions .button-primary {
+    flex: 1 1 auto;
+  }
+
+  /* La caja es una cifra corta: en línea con su etiqueta, alineada con el
+     campo del presupuesto, no un campo a todo lo ancho. */
+  .squad-cash {
+    flex: 1 1 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .squad-cash .input {
+    flex: none;
+    width: 84px;
+  }
+
+  /* Los filtros de fichar se parten en dos líneas en vez de esconder los
+     últimos fuera de la pantalla. */
+  .fichar-filters {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .toast {
+    animation: toast-in 0.24s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+}
+
+/* Zona táctil de 44 px sin agrandar el botón que se ve. */
+.tok-remove::after,
+.tok-cap::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+}
+
+.tok-name a {
+  padding-block: 8px;
+  margin-block: -8px;
+}
+
+.tok-pos + .tok-fixture::before {
+  content: " · ";
+}
+
+.cap-short {
+  display: none;
+}
+
+/* ------------------------------------------------- plantilla en el móvil
+   En 375 px la pista a dos columnas y los bancos con foto ocupaban casi
+   1.900 px: la plantilla no se veía entera nunca. El quinteto pasa a tres
+   arriba y dos abajo, y sexto, banquillo y entrenador a filas compactas. */
+@media (max-width: 559px) {
+  .court {
+    padding: 16px 8px 20px;
+  }
+
+  .court-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px 4px;
+  }
+
+  .court-grid > .tok,
+  .court-grid .slot-mid {
+    grid-column: span 2;
+  }
+
+  .court-grid > .tok:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .court-grid > .tok:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  .court-grid .tok-shot {
+    width: 62px;
+  }
+
+  .court-grid .tok-plate {
+    padding: 6px 2px;
+  }
+
+  /* El puesto ya lo dice el sitio en la pista. */
+  .court-grid .tok-pos {
+    display: none;
+  }
+
+  .court-grid .tok-fixture::before {
+    content: none;
+  }
+
+  .court-grid .tok-figs {
+    gap: 6px;
+  }
+
+  .court .cap-badge {
+    right: 0;
+    padding: 3px 7px;
+  }
+
+  .cap-long {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .cap-short {
+    display: inline;
+  }
+
+  .bench-head {
+    margin-bottom: 4px;
+  }
+
+  .bench-grid,
+  .bench-grid.is-single {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    justify-items: stretch;
+  }
+
+  .bench-row .tok {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) auto 32px;
+    column-gap: 12px;
+    align-items: center;
+    min-height: 66px;
+    padding: 9px 0;
+    text-align: left;
+    border-top: 1px solid var(--line);
+  }
+
+  .bench-row .tok:first-child {
+    border-top: 0;
+  }
+
+  .bench-row .tok .tok-shot {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: 48px;
+    height: 48px;
+    aspect-ratio: auto;
+    margin: 0;
+    border: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--bg-sunken);
+    place-items: center;
+    opacity: 1;
+  }
+
+  .bench-row .tok.is-empty .tok-shot {
+    border: 1px dashed var(--rule);
+    background: transparent;
+  }
+
+  /* Recorte de cara: las fotos son de cuerpo entero hasta la cadera. */
+  .bench-row .tok-shot img {
+    object-fit: cover;
+    object-position: 50% 0;
+    scale: 1.75;
+    transform-origin: 50% 4%;
+  }
+
+  .bench-row .tok .tok-shot .tok-shot-crest {
+    width: 30px;
+    height: 30px;
+    scale: 1;
+  }
+
+  .bench-row .tok-plate {
+    display: contents;
+  }
+
+  .bench-row .tok-name {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-start;
+  }
+
+  .bench-row .tok-name a,
+  .bench-row .tok-name span {
+    font-size: 0.9375rem;
+  }
+
+  .bench-row .tok-sub {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 3px;
+  }
+
+  .bench-row .tok-avail {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+  }
+
+  .bench-row .tok-figs {
+    grid-column: 3;
+    grid-row: 1;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .bench-row .tok-half {
+    grid-column: 3;
+    grid-row: 2;
+    margin-top: 3px;
+    text-align: right;
+  }
+
+  .bench-row .tok-remove {
+    position: relative;
+    left: auto;
+    top: auto;
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    justify-self: end;
+  }
+
+  .bench-row .tok-pick {
+    inset: 3px -6px;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .court-grid .tok {
     animation: cancha-rise 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
