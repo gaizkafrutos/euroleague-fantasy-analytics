@@ -8329,3 +8329,20 @@ a.eq-grp-name {
   padding-block: 6px;
   margin-block: -6px;
 }
+
+/* Comparar: una pantalla de alto desde el principio, para que el pie no
+   salte cuando llegan los datos de los jugadores. */
+.compare-page {
+  min-height: 100svh;
+}
+
+/* Fichar y Comparar, el mismo alto y el mismo radio: en escritorio uno medía
+   36 px y el otro 44, y se leían como dos piezas de sitios distintos. */
+.ficha-actions .add-squad,
+.ficha-actions .ficha-compare {
+  min-height: 44px;
+  padding-block: 0;
+  padding-inline: 18px;
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+}

@@ -30,7 +30,9 @@ export function compareRows(): CompareRow[] {
     club: player.clubShort ?? player.club ?? "",
     position: player.isCoach ? "E" : player.position,
     isCoach: player.isCoach,
-    image: player.image,
+    // La miniatura de /fotos (5 KB), no el PNG original del CDN (500-640 KB):
+    // se pinta en un círculo de 44 px.
+    image: player.thumb ?? player.image,
     price: player.price,
     projectedFp: player.projectedFp,
     projectedIfPlays: player.projectedIfPlays ?? null,
