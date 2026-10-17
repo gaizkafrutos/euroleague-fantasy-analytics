@@ -7275,6 +7275,27 @@ dl dd.dl-note {
   background: var(--accent-soft);
 }
 
+.not-found {
+  min-height: 50vh;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.not-found-actions .button-primary,
+.not-found-actions .button-ghost {
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.not-found-actions .text-button {
+  padding-inline: 0;
+}
+
 .compare-picker .control {
   display: flex;
 }
