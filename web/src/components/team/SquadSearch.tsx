@@ -344,10 +344,15 @@ export default function SquadSearch({ market, coaches, ids, coach, check, onAdd 
                 onMouseEnter={() => setActive(position)}
               >
                 {player.image ? (
-                  <Avatar src={player.image} name={player.name ?? player.marketName ?? "?"} />
+                  <Avatar src={player.thumb ?? player.image} name={player.name ?? player.marketName ?? "?"} />
                 ) : player.clubCrest ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img className="avatar avatar-crest" src={player.clubCrest} alt="" loading="lazy" />
+                  <img
+                    className="avatar avatar-crest"
+                    src={player.clubCrestThumb ?? player.clubCrest}
+                    alt=""
+                    loading="lazy"
+                  />
                 ) : (
                   <span className="avatar avatar-initials" aria-hidden>
                     {initials(player.name ?? player.marketName)}

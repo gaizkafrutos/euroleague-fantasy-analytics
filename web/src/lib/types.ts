@@ -104,11 +104,18 @@ export interface Player {
   clubName: string | null;
   clubShort: string | null;
   clubCrest: string | null;
+  /** Escudo reducido a WebP en `public/escudos/` (efa.thumbs). Null si no se
+   *  pudo generar: entonces se usa `clubCrest`. */
+  clubCrestThumb?: string | null;
   position: Position | null;
   positionLabel: string | null;
   isCoach: boolean;
   dorsal: string | null;
+  /** Foto original de la CDN (750x1000, ~700 KB): solo para la ficha. */
   image: string | null;
+  /** La misma foto a 96 px en WebP (`public/fotos/`, efa.thumbs), para los
+   *  avatares. Null si no se pudo generar: entonces se usa `image`. */
+  thumb?: string | null;
   height: number | null;
   country: string | null;
   birthDate: string | null;

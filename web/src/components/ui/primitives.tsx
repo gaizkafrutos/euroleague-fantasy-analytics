@@ -84,7 +84,7 @@ export function AvailabilityTag({
 export function PlayerCell({ player, linked = true }: { player: Player; linked?: boolean }) {
   const inner = (
     <>
-      <Avatar src={player.image} name={player.name ?? player.marketName ?? "?"} />
+      <Avatar src={player.thumb ?? player.image} name={player.name ?? player.marketName ?? "?"} />
       <span>
         <span className="player-name">{displayName(player)}</span>
         <br />

@@ -24,6 +24,10 @@ OVERRIDES_DIR = DATA_DIR / "overrides"
 
 # Salida que consume la app Next.js (se importa en build time).
 WEB_DATA_DIR = REPO_ROOT / "web" / "src" / "data"
+#: Estáticos de la web: las miniaturas de fotos y escudos (efa.thumbs) van en
+#: `fotos/` y `escudos/`, y el manifiesto recuerda de qué URL salió cada una.
+WEB_PUBLIC_DIR = REPO_ROOT / "web" / "public"
+THUMBS_MANIFEST_PATH = PROCESSED_DIR / "miniaturas.json"
 
 PLAYER_OVERRIDES_PATH = OVERRIDES_DIR / "player_overrides.csv"
 CLUB_COLORS_PATH = OVERRIDES_DIR / "club_colors.csv"
