@@ -2951,7 +2951,8 @@ table.data th.num {
 }
 
 .ficha-price small {
-  color: var(--ink-muted);
+  /* --ink-muted se quedaba en 4,07:1 sobre el halo de algunos clubes (axe). */
+  color: var(--ink-2);
   font-weight: 400;
   font-size: 0.78em;
 }
