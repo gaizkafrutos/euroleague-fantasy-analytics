@@ -3008,8 +3008,9 @@ table.data th.num {
 }
 
 .orb-label {
-  font-size: clamp(0.48rem, 1.5vw, 0.58rem);
-  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-muted);
   line-height: 1.2;
@@ -3020,8 +3021,11 @@ table.data th.num {
   left: 50%;
   bottom: -17px;
   transform: translateX(-50%);
-  font-size: clamp(0.56rem, 1.7vw, 0.64rem);
-  color: var(--stat);
+  font-size: 0.6875rem;
+  /* Tinta, no el color del club: un p9 en el verde del Zalgiris parecía
+     bueno y un p100 en el rojo del Olympiacos parecía malo. El club se
+     queda en el aro. */
+  color: var(--ink-2);
   white-space: nowrap;
 }
 
@@ -3043,8 +3047,8 @@ table.data th.num {
   }
 
   .orb-label {
-    font-size: 0.46rem;
-    letter-spacing: 0.04em;
+    font-size: 0.625rem;
+    letter-spacing: 0.05em;
   }
 }
 

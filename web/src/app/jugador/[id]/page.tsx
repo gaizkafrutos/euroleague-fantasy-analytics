@@ -51,6 +51,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 interface OrbSpec {
   key: PercentileKey;
   label: string;
+  /** Abreviatura de acta (PTS, REB…): la palabra entera no cabía en el aro
+   *  del móvil sin bajar a 7 px. */
+  short: string;
   value: number | null | undefined;
   unit?: string;
   /** El ± es polaridad, no magnitud: no lleva arco de percentil. */
@@ -94,14 +97,14 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   } as CSSProperties;
 
   const left: OrbSpec[] = [
-    { key: "ptsAvg", label: "Puntos", value: perf.ptsAvg },
-    { key: "rebAvg", label: "Rebotes", value: perf.rebAvg },
-    { key: "astAvg", label: "Asistencias", value: perf.astAvg },
+    { key: "ptsAvg", label: "Puntos", short: "PTS", value: perf.ptsAvg },
+    { key: "rebAvg", label: "Rebotes", short: "REB", value: perf.rebAvg },
+    { key: "astAvg", label: "Asistencias", short: "AST", value: perf.astAvg },
   ];
   const right: OrbSpec[] = [
-    { key: "minutesAvg", label: "Minutos", value: perf.minutesAvg, unit: "min" },
-    { key: "pirAvg", label: "Valoración", value: perf.pirAvg },
-    { key: "plusMinusAvg", label: "Más / menos", value: perf.plusMinusAvg, polarity: true },
+    { key: "minutesAvg", label: "Minutos", short: "MIN", value: perf.minutesAvg },
+    { key: "pirAvg", label: "Valoración", short: "VAL", value: perf.pirAvg },
+    { key: "plusMinusAvg", label: "Más / menos", short: "+/−", value: perf.plusMinusAvg, polarity: true },
   ];
   const hasOrbs = [...left, ...right].some((spec) => usable(spec.value));
 
@@ -621,7 +624,10 @@ function Orb({ player, spec }: { player: Player; spec: OrbSpec }) {
           {spec.polarity ? signed(spec.value) : num(spec.value)}
           {spec.unit ? <em>{spec.unit}</em> : null}
         </span>
-        <span className="orb-label">{spec.label}</span>
+        <span className="orb-label">
+          <span aria-hidden>{spec.short}</span>
+          <span className="sr-only">{spec.label}</span>
+        </span>
       </div>
       {pct !== null ? <span className="orb-pct num">p{pct}</span> : null}
     </div>
