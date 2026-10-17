@@ -54,6 +54,7 @@ import {
   type TradePlan,
 } from "@/lib/squad";
 import type { Player } from "@/lib/types";
+import Explain from "@/components/ui/Explain";
 
 const STORAGE_KEY = "efa-squad";
 /** Aparte de la plantilla: `AddToSquad` reescribe `efa-squad` con solo
@@ -616,10 +617,7 @@ export default function SquadConsole({
             {roles.starters.length === STARTERS ? (
               <span className="bench-tag num">{formationOf(roles.starters)}</span>
             ) : null}
-            <p>
-              Bases, aleros y pívots en pista. El reglamento solo admite 2-2-1, 1-2-2, 2-1-2,
-              1-3-1 y 3-1-1: siempre al menos uno de cada puesto.
-            </p>
+            <p>Al menos uno de cada puesto: 2-2-1, 1-2-2, 2-1-2, 1-3-1 o 3-1-1.</p>
             {squad.length === SQUAD_SIZE ? (
               <div className="lineup-tools">
                 <button
@@ -848,12 +846,12 @@ export default function SquadConsole({
                     Aplicar el plan
                   </button>
                 </div>
-                <p className="card-note" style={{ margin: 0 }}>
+                <Explain summary="Cómo se calcula el plan">
                   Ordenados por lo que ganan y en un orden que siempre cabe en la caja. Cada cifra
                   recoloca capitán, quinteto y banquillo tras el cambio. Búsqueda local contrastada
                   con el óptimo exacto: igual en 26 de 30 plantillas de prueba, 0,1 puntos por
                   debajo de media.
-                </p>
+                </Explain>
               </>
             ) : (
               <p className="muted" style={{ margin: 0 }}>
@@ -874,10 +872,12 @@ export default function SquadConsole({
               <div>
                 <div className="card-title">Lo que menos te renta</div>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Puntos que aporta cada crédito en el sitio que ocupa: el capitán cuenta doble y
-                  el banquillo la mitad. Un titular caro que proyecta poco sale aquí antes que un
-                  suplente barato.
+                  Puntos por crédito en el sitio que ocupa cada uno.
                 </p>
+                <Explain summary="Por qué este orden">
+                  El capitán cuenta doble y el banquillo la mitad. Un titular caro que proyecta
+                  poco sale aquí antes que un suplente barato.
+                </Explain>
               </div>
             </div>
             {weakest.length ? (
@@ -915,11 +915,13 @@ export default function SquadConsole({
               <div>
                 <div className="card-title">Fichajes que caben</div>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Mejor recambio por puesto (entrenador incluido) dentro de tus{" "}
-                  {credits(Math.max(check.free, 0))} libres más lo que recuperas al vender. La
-                  ganancia es la real: si el fichaje acaba en el banquillo, suma la mitad. Nunca
-                  propone a nadie de baja o sin inscribir.
+                  El mejor recambio por puesto que cabe en tu caja.
                 </p>
+                <Explain summary="Cómo se calcula">
+                  Entrenador incluido, dentro de tus {credits(Math.max(check.free, 0))} libres más
+                  lo que recuperas al vender. La ganancia es la real: si el fichaje acaba en el
+                  banquillo, suma la mitad. Nunca propone a nadie de baja o sin inscribir.
+                </Explain>
               </div>
             </div>
             {swaps.length ? (

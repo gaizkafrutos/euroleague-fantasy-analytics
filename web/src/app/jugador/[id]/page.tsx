@@ -27,6 +27,7 @@ import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
 import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
 import { coachVerdict, verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
+import Explain from "@/components/ui/Explain";
 
 export function generateStaticParams() {
   return players.map((player) => ({ id: String(player.id) }));
@@ -251,8 +252,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
             <p className="ficha-note">
               Los percentiles comparan con los {groupSize}{" "}
               {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()} del mercado
-              que han jugado. Una media de 15 puntos no significa lo mismo en un pívot que en un
-              base.
+              que han jugado.
             </p>
           ) : null}
         </div>
@@ -281,11 +281,14 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               <div>
                 <h2 className="card-title">¿Sube o baja de precio?</h2>
                 <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  El juego revaloriza según lo que puntúa frente a lo que cuesta. Ajustado sobre{" "}
-                  {meta.priceModel?.n ?? "—"} variaciones reales ({meta.priceModel?.source ?? "—"}): con
-                  los puntos de la jornada explica el {percent(meta.priceModel?.r2 ?? null)} de cada
-                  cambio. Lo incierto es cuánto va a puntuar, así que la previsión es orientativa.
+                  El juego revaloriza según lo que puntúa frente a lo que cuesta.
                 </p>
+                <Explain summary="Cómo de fiable es">
+                  Ajustado sobre {meta.priceModel?.n ?? "—"} variaciones reales (
+                  {meta.priceModel?.source ?? "—"}): con los puntos de la jornada explica el{" "}
+                  {percent(meta.priceModel?.r2 ?? null)} de cada cambio. Lo incierto es cuánto va a
+                  puntuar, así que la previsión es orientativa.
+                </Explain>
               </div>
             </div>
             <PriceOutlook

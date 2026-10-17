@@ -645,8 +645,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             <div>
               <div className="card-title">Precio contra rendimiento esperado</div>
               <p className="card-note" style={{ margin: "4px 0 0" }}>
-                Cada punto es un jugador. La diagonal marca lo que el mercado cobra de media
-                por punto: quien está por encima rinde más de lo que cuesta.
+                Cada punto es un jugador: por encima de la diagonal, rinde más de lo que cuesta.
               </p>
             </div>
           </div>

@@ -15,6 +15,7 @@ import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams }
 import { checkedLater, credits, dateTime, displayName, num, percent } from "@/lib/format";
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
+import Explain from "@/components/ui/Explain";
 
 export const metadata: Metadata = {
   title: "Mercado",
@@ -209,10 +210,22 @@ export default function MercadoPage() {
             <div>
               <h2>El equipo óptimo con {credits(lineup.budget)}</h2>
               <p className="card-note" style={{ margin: "8px 0 0", maxWidth: "62ch" }}>
-                La mejor combinación posible respetando las reglas del juego — 4 bases, 4 aleros, 2
-                pívots, un entrenador, máximo 6 del mismo club. Resuelto por programación entera,
-                así que es el óptimo, no una aproximación.
+                La mejor plantilla posible con todas las reglas del juego.
               </p>
+              <Explain summary="Cómo se calcula">
+                4 bases, 4 aleros, 2 pívots, un entrenador y máximo 6 del mismo club. Resuelto por
+                programación entera, así que es el óptimo, no una aproximación.
+                {typeof lineup.scoredProjection === "number" ? (
+                  <>
+                    {" "}
+                    Suma llana de los once:{" "}
+                    {num((lineup.totalProjection ?? 0) + (lineup.coach?.projection ?? 0))} puntos.
+                    Con el capitán al doble, el quinteto y el sexto hombre al 100 % y el banquillo a
+                    la mitad, lo que de verdad puntúa son {num(lineup.scoredProjection)}: el
+                    presupuesto se concentra en los seis que puntúan enteros.
+                  </>
+                ) : null}
+              </Explain>
             </div>
             <div className="section-figure">
               <div className="tile-value" style={{ marginTop: 0 }}>
@@ -224,19 +237,8 @@ export default function MercadoPage() {
             </div>
           </div>
 
-          {/* La suma llana engaña en las dos direcciones: el capitán suma el
-              doble y el banquillo la mitad. Se dicen las dos cifras. */}
-          {typeof lineup.scoredProjection === "number" ? (
-            <p className="card-note" style={{ margin: "0 0 18px", maxWidth: "66ch" }}>
-              {/* `totalProjection` es la de los diez jugadores; la cifra que
-                  puntúa lleva al entrenador, así que la llana también. */}
-              Suma llana de los once: {num((lineup.totalProjection ?? 0) + (lineup.coach?.projection ?? 0))}{" "}
-              puntos. Con el capitán al doble,
-              el quinteto y el sexto hombre al 100 % y el banquillo a la mitad, lo que de verdad
-              puntúa son {num(lineup.scoredProjection)}. El presupuesto se concentra en los seis que
-              puntúan enteros.
-            </p>
-          ) : null}
+          {/* La suma llana (el capitán suma el doble y el banquillo la mitad) va
+              dentro de "Cómo se calcula". */}
 
           <div className="table-wrap only-wide" tabIndex={0} role="region" aria-label="Equipo óptimo">
             <table className="data">
@@ -299,7 +301,7 @@ export default function MercadoPage() {
                 <Link href={`/jugador/${player.key}`}>
                   <span className="lineup-pos">{player.position}</span>
                   <span className="lineup-name">
-                    {prettyName(player.name)}
+                    <span className="lineup-player">{prettyName(player.name)}</span>
                     <RoleBadge
                       role={roleOf(player.key, starters, bench, lineup.sixth)}
                       captain={lineup.captain === player.key}
@@ -318,7 +320,7 @@ export default function MercadoPage() {
                 <span className="lineup-static">
                   <span className="lineup-pos">E</span>
                   <span className="lineup-name">
-                    {coachLabel(lineup.coach)}
+                    <span className="lineup-player">{coachLabel(lineup.coach)}</span>
                     <span className="badge">Entrenador</span>
                     <i className="muted">{lineup.coach.club}</i>
                   </span>

@@ -2234,6 +2234,16 @@ table.data th.num {
   font-size: 0.75rem;
 }
 
+/* El nombre en su línea y el papel y el club debajo: todos juntos se partían
+   donde caía ("Papanikolaou Banquillo ×0,5 / OLY"). */
+.lineup-player {
+  flex: 1 0 100%;
+}
+
+.lineup-name {
+  row-gap: 2px;
+}
+
 .lineup-figures {
   display: flex;
   flex-direction: column;
