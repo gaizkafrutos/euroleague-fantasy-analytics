@@ -15,19 +15,21 @@ Dos piezas:
   evaluate_published()   con la jornada jugada (y revalorizada), compara lo
                          guardado con lo real: error frente a la media de
                          temporada, calibración de la probabilidad de jugar, de
-                         la de subir y de la horquilla.
+                         la de subir y de la horquilla, y lo que puntuó el once
+                         óptimo que salía de lo publicado.
 """
 from __future__ import annotations
 
 import json
 import logging
+from dataclasses import replace
 from datetime import datetime, timezone
 from typing import Any
 
 import numpy as np
 import pandas as pd
 
-from efa.config import PROCESSED_DIR
+from efa.config import PROCESSED_DIR, ROSTER_BUDGET
 
 log = logging.getLogger(__name__)
 
@@ -124,11 +126,75 @@ def _price_after(history: pd.DataFrame | None, games: list[dict[str, Any]], roun
     return {}
 
 
+def _lineup_check(
+    prediction: dict[str, Any],
+    scores: pd.Series,
+    coach_scores: dict[str, float] | None,
+    budget: float,
+) -> dict[str, Any] | None:
+    """El once óptimo de lo publicado: lo que proyectaba y lo que puntuó.
+
+    Se rehace con el optimizador sobre las proyecciones archivadas (las mismas
+    reglas que `build._build_optimal_lineup`, salvo la inscripción, que no se
+    archiva) y se puntúa con los papeles fijados antes de la jornada: quinteto
+    y sexto al 100 %, banquillo a la mitad y capitán doble. `best` es el mejor
+    once posible sabiendo ya los resultados, para dar escala.
+    """
+    from efa.optimizer import BENCH_MULTIPLIER, CAPTAIN_MULTIPLIER, Candidate, assign_roles, optimize
+
+    players, coaches, real = [], [], {}
+    for row in prediction["players"]:
+        price = pd.to_numeric(row.get("price"), errors="coerce")
+        projection = pd.to_numeric(row.get("projectedFp"), errors="coerce")
+        if pd.isna(price) or price <= 0:
+            continue
+        key, club = str(row.get("id")), str(row.get("club") or "")
+        if row.get("isCoach"):
+            if coach_scores is None:
+                continue
+            real[key] = float(coach_scores.get(club, 0.0))
+            coaches.append(Candidate(key, "", "E", club, float(price), 0.0 if pd.isna(projection) else float(projection)))
+            continue
+        if row.get("position") not in {"G", "F", "C"} or pd.isna(projection) or row.get("availability") == "out":
+            continue
+        real[key] = float(scores.get(row.get("personCode"), 0.0))
+        players.append(Candidate(key, "", row["position"], club, float(price), float(projection)))
+    if len(players) < 10:
+        return None
+
+    def scored(lineup: Any, points: dict[str, float]) -> float:
+        starters, sixth, bench = assign_roles(lineup.players)
+        full = sum(points[c.key] for c in starters) + (points[sixth.key] if sixth else 0.0)
+        half = BENCH_MULTIPLIER * sum(points[c.key] for c in bench)
+        captain = (CAPTAIN_MULTIPLIER - 1) * points[lineup.captain.key] if lineup.captain else 0.0
+        return full + half + captain + (points[lineup.coach.key] if lineup.coach else 0.0)
+
+    lineup = optimize(players, budget=budget, coaches=coaches)
+    if lineup is None:
+        return None
+    # Los papeles (quinteto, sexto, capitán) se fijan con la proyección.
+    projected = {c.key: c.projection for c in [*lineup.players, *([lineup.coach] if lineup.coach else [])]}
+    hindsight = optimize(
+        [replace(c, projection=real[c.key]) for c in players],
+        budget=budget,
+        coaches=[replace(c, projection=real[c.key]) for c in coaches],
+    )
+    return {
+        "projected": round(scored(lineup, projected), 1),
+        "real": round(scored(lineup, real), 1),
+        "best": round(hindsight.scored_projection, 1) if hindsight else None,
+        "withCoach": bool(coaches),
+    }
+
+
 def evaluate_round(
     prediction: dict[str, Any],
     gamelog: pd.DataFrame,
     games: list[dict[str, Any]],
     history: pd.DataFrame | None = None,
+    coach_log: pd.DataFrame | None = None,
+    *,
+    budget: float = ROSTER_BUDGET,
 ) -> dict[str, Any] | None:
     """Lo publicado antes de una jornada frente a lo que pasó en ella."""
     number = int(prediction["round"])
@@ -183,6 +249,14 @@ def evaluate_round(
         }
     out["playProb"] = calibration
 
+    coach_scores = None
+    if coach_log is not None and not coach_log.empty:
+        rows = coach_log[coach_log["round"] == number]
+        coach_scores = rows.groupby("club_code")["fantasy_points"].sum().to_dict()
+    lineup = _lineup_check(prediction, scores, coach_scores, budget)
+    if lineup:
+        out["lineup"] = lineup
+
     # Horquilla publicada (p25–p75): debería recoger la mitad de los resultados.
     band = frame.dropna(subset=["floor", "ceiling"])
     if len(band):
@@ -212,6 +286,7 @@ def evaluate_published(
     gamelog: pd.DataFrame,
     games: list[dict[str, Any]],
     history: pd.DataFrame | None = None,
+    coach_log: pd.DataFrame | None = None,
 ) -> dict[str, Any] | None:
     """Todas las jornadas guardadas que ya se han jugado."""
     if not PREDICTIONS_DIR.exists():
@@ -220,7 +295,7 @@ def evaluate_published(
     for path in sorted(PREDICTIONS_DIR.glob("R*.json")):
         try:
             prediction = json.loads(path.read_text(encoding="utf-8"))
-            result = evaluate_round(prediction, gamelog, games, history)
+            result = evaluate_round(prediction, gamelog, games, history, coach_log)
         except (OSError, ValueError, KeyError) as exc:
             log.warning("No se pudo evaluar %s: %s", path.name, exc)
             continue
@@ -235,11 +310,31 @@ def evaluate_published(
         total = sum(n for _, n in values)
         return round(sum(v * n for v, n in values) / total, 3) if total else None
 
+    # Probabilidad de jugar de todas las jornadas juntas, por estado del parte.
+    play: dict[str, dict[str, float]] = {}
+    for r in rounds:
+        for name, group in (r.get("playProb") or {}).items():
+            acc = play.setdefault(name, {"n": 0, "predicted": 0.0, "real": 0.0, "nPredicted": 0})
+            acc["n"] += group["n"]
+            acc["real"] += group["real"] * group["n"]
+            if group.get("predicted") is not None:
+                acc["predicted"] += group["predicted"] * group["n"]
+                acc["nPredicted"] += group["n"]
+    play_total = {
+        name: {
+            "n": acc["n"],
+            "predicted": round(acc["predicted"] / acc["nPredicted"], 3) if acc["nPredicted"] else None,
+            "real": round(acc["real"] / acc["n"], 3),
+        }
+        for name, acc in play.items()
+    }
+
     return {
         "rounds": rounds,
         "total": {
             "n": sum(r["n"] for r in rounds),
             "model": {m: pooled("model", m) for m in ("mae", "bias", "spearman")},
             "mean": {m: pooled("mean", m) for m in ("mae", "bias", "spearman")},
+            "playProb": play_total,
         },
     }

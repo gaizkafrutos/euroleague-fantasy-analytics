@@ -77,4 +77,16 @@ export function linePath(points: Array<[number, number]>): string {
   return points.map(([x, y], index) => `${index === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`).join(" ");
 }
 
-export const CHART_MARGIN = { top: 14, right: 16, bottom: 30, left: 42 };
+/** Barra vertical con la punta (el extremo del dato) redondeada y la base
+ *  recta sobre la línea de cero. `y0` es la base; `y1`, la punta. */
+export function barPath(x: number, width: number, y0: number, y1: number, radius = 4): string {
+  const height = Math.abs(y1 - y0);
+  const r = Math.min(radius, width / 2, height);
+  const right = x + width;
+  if (y1 <= y0) {
+    return `M${x},${y0} V${y1 + r} Q${x},${y1} ${x + r},${y1} H${right - r} Q${right},${y1} ${right},${y1 + r} V${y0} Z`;
+  }
+  return `M${x},${y0} V${y1 - r} Q${x},${y1} ${x + r},${y1} H${right - r} Q${right},${y1} ${right},${y1 - r} V${y0} Z`;
+}
+
+export const CHART_MARGIN ={ top: 14, right: 16, bottom: 30, left: 42 };

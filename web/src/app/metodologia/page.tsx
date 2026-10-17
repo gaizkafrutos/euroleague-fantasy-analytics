@@ -421,7 +421,13 @@ function ProjectionModel() {
         <ul style={{ margin: 0, display: "grid", gap: 4 }}>
           <li>
             <strong>Minutos:</strong> media con más peso a los últimos partidos (vida media de 3),
-            encogida hacia sus minutos del año pasado con un colchón de 2 partidos.
+            encogida hacia sus minutos del año pasado con un colchón de{" "}
+            {num(bt?.params?.minutes_prior_games ?? 1, 0)}{" "}
+            {bt?.params?.minutes_prior_games === 1 ? "partido" : "partidos"}
+            {bt?.params?.league_minutes_scale
+              ? ". Los del año pasado se escalan antes por lo que ha cambiado el minuto medio de la liga: esta temporada las rotaciones son más largas y cada jugador juega algo menos"
+              : ""}
+            .
           </li>
           <li>
             <strong>Puntos por minuto:</strong> su ritmo de la temporada encogido con un colchón de
@@ -436,7 +442,7 @@ function ProjectionModel() {
             <strong>Probabilidad de jugar:</strong> si hay parte, 0 de baja, 25 % en duda y 90 %
             probable; si no, la parte de partidos de su club que ha jugado, con colchón de 2 (y
             de solo 0,2 si no ha entrado en ninguna convocatoria: en J2–J3 jugó el 5 % de
-            ellos). La proyección que se enseña es lo que hace si juega por esa probabilidad; «si juega» va
+            ellos) y un tope del 95 %: los fijos sin parte juegan el 94 %. La proyección que se enseña es lo que hace si juega por esa probabilidad; «si juega» va
             aparte en la ficha, el mercado y el comparador.
           </li>
           <li>
@@ -564,6 +570,11 @@ function ProjectionModel() {
           <p style={{ margin: 0 }}>
             Entrenadores ({num(coach.n, 0)} partidos): {num(coach.model, 2)} de error medio con el
             modelo de partido frente a {num(coach.mean, 2)} con su media.
+          </p>
+        ) : null}
+        {published && published.rounds.length > 1 ? (
+          <p style={{ margin: 0 }}>
+            Jornada a jornada, en gráficos: <a href="/acierta">¿Acierta HoopIQ?</a>
           </p>
         ) : null}
         {bt ? (

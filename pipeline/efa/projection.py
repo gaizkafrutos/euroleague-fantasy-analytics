@@ -20,6 +20,13 @@ compara con el modelo de antes. Los parámetros de `PARAMS` salen de ahí: una
 rejilla de 27 combinaciones sobre la 2025-26 (7.924 partidos) dio el mejor
 error medio con el rival al 50 %, 100 min de colchón y vida media de 3
 partidos: 5,945 frente a 6,072 del modelo de antes y 6,098 de la media.
+
+En octubre de 2026 lo publicado sobreestimaba +0,49 en J2–J6 (sobre todo a los
+caros): los minutos del año pasado no contaban con rotaciones más largas. Con
+`league_minutes_scale` y el colchón de minutos en 1, y el tope de 0,95 a la
+probabilidad de jugar por historial (config.PLAY_SHARE_CAP), la reconstrucción
+de lo publicado pasa de MAE 4,519 / sesgo +0,49 a 4,444 / +0,01, con el
+Spearman igual (0,608 → 0,610).
 """
 from __future__ import annotations
 
@@ -40,14 +47,20 @@ class Params:
     rate_prior_minutes: float = 100.0
     #: Vida media, en partidos, de la media exponencial de minutos.
     minutes_half_life: float = 3.0
-    #: Colchón de los minutos, en partidos, hacia los del año pasado.
-    minutes_prior_games: float = 2.0
+    #: Colchón de los minutos, en partidos, hacia los del año pasado. Era 2;
+    #: con 1 pesan antes los de esta temporada (ver `league_minutes_scale`).
+    minutes_prior_games: float = 1.0
     #: Colchón del factor rival, en partidos del rival.
     opponent_prior_games: float = 8.0
     #: Cuánto del factor rival se aplica (0 = nada, 1 = entero).
     opponent_weight: float = 0.5
     #: Aplicar el factor cancha medido.
     use_home: bool = True
+    #: Escalar los minutos de referencia (año pasado o precio) por lo que ha
+    #: cambiado el minuto medio por partido jugado en la liga. En la 2026-27 las
+    #: rotaciones son más largas (11,4 jugadores por partido frente a 10,9) y los
+    #: minutos del año pasado sobraban: +0,35 de sesgo en el backtest.
+    league_minutes_scale: bool = True
 
 
 PARAMS = Params()
@@ -166,6 +179,14 @@ def project(
     home_f, away_f = home_factor(pd.concat([prior, history]) if prior is not None else history) if params.use_home else (1.0, 1.0)
     league_rate = rates.get("all", 0.5)
 
+    # Minuto medio por partido jugado de esta temporada frente al del año
+    # pasado: escala los minutos de referencia. Hace falta una jornada entera.
+    minutes_scale = 1.0
+    if params.league_minutes_scale and has_prior and not history.empty:
+        now_played, prior_played = history[history["played"]], prior[prior["played"]]
+        if len(now_played) >= 150 and len(prior_played):
+            minutes_scale = float(now_played["minutes"].mean()) / float(prior_played["minutes"].mean())
+
     out = []
     for row in targets.itertuples(index=False):
         code = str(row.person_code)
@@ -181,6 +202,8 @@ def project(
             ref_rate, ref_minutes = implied["rate"], implied["minutes"]
         else:
             ref_rate, ref_minutes = pos_rate, None
+        if ref_minutes is not None:
+            ref_minutes *= minutes_scale
 
         n = now.loc[code] if code in now.index else None
         if n is not None:
@@ -436,7 +459,11 @@ def run_backtests() -> dict[str, Any]:
     from efa.ingest.prices import load_snapshots
     from efa.published import evaluate_published
 
-    published = evaluate_published(log_now, ref_now.get("games", []), load_snapshots())
+    from efa.context import season_boxscores
+    from efa.gamelogs import build_coach_gamelog
+
+    coach_log = build_coach_gamelog(season_boxscores(SEASON_CODE), ref_now.get("games", []))
+    published = evaluate_published(log_now, ref_now.get("games", []), load_snapshots(), coach_log)
     if published:
         out["published"] = published
     out["coach"] = {

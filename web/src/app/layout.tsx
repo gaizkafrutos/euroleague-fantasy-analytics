@@ -93,7 +93,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 ? ` (sin cambios desde entonces; comprobados el ${new Date(meta.lastPriceCheck).toLocaleString("es-ES")})`
                 : ""}{" "}
               ·{" "}
-              <a href="/metodologia">Cómo se calcula todo</a>
+              <a href="/metodologia">Cómo se calcula todo</a> ·{" "}
+              <a href="/acierta">¿Acierta HoopIQ?</a>
             </p>
           </div>
         </footer>

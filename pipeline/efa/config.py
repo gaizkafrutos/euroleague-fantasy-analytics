@@ -154,6 +154,10 @@ NEVER_DRESSED_PRIOR = 0.2
 #: Probabilidad de jugar según el parte de lesiones. "Duda" era 0,5 y en J2–J3
 #: jugaron 14 de 57 (25 %). "Probable" se queda en 0,9: 7 casos no bastan.
 PLAY_PROB_REPORT = {"out": 0.0, "doubt": 0.25, "probable": 0.9}
+#: Tope de la probabilidad de jugar por historial (sin parte de lesiones). Un
+#: fijo que lo ha jugado todo salía con 1,0 y en J2–J6 jugó el 94,4 % (entre el
+#: 92 y el 97 % cada jornada, 981 casos): bajas de última hora, descansos.
+PLAY_SHARE_CAP = 0.95
 
 
 def ensure_dirs() -> None:
