@@ -432,12 +432,12 @@ table.data td.num,
 }
 
 .wordmark-mark .mark-ring {
-  --mask: url("/brand/mark-ring.png");
+  --mask: url("/brand/mark-ring.webp");
   background: var(--ink);
 }
 
 .wordmark-mark .mark-bars {
-  --mask: url("/brand/mark-bars.png");
+  --mask: url("/brand/mark-bars.webp");
   background: var(--brand);
 }
 
@@ -1605,6 +1605,9 @@ table.data th.num {
 }
 
 .ac-data summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 600;
@@ -3699,17 +3702,19 @@ table.data th.num {
 .portada-pips i {
   display: block;
   width: 2px;
-  height: 20px;
+  height: 32px;
   border-radius: 1px;
   background: var(--rule);
+  /* Escala y no altura: animar height recalculaba el layout (detector). */
+  transform: scaleY(0.625);
   transition:
     background 0.3s ease,
-    height 0.3s ease;
+    transform 0.3s ease;
 }
 
 .portada-pips i.on {
   background: var(--ink);
-  height: 32px;
+  transform: none;
 }
 
 @media (min-width: 900px) {
@@ -4275,7 +4280,7 @@ a.eq-row:focus-visible {
 .eq-rows dd small {
   margin-left: 6px;
   font-family: var(--font);
-  font-size: 0.72em;
+  font-size: 0.75rem;
   font-weight: 400;
   color: var(--ink-muted);
 }
@@ -5939,7 +5944,7 @@ h2.card-title {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 3px;
+  gap: 8px;
 }
 
 .mix-rows li {
@@ -6265,7 +6270,7 @@ h2.card-title {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 6px;
+  gap: 10px;
 }
 
 .pstrip-rows li {
@@ -8074,4 +8079,27 @@ ul.card-note,
 
 .qm-plot.is-down .qm-bar.is-down {
   top: 0;
+}
+
+/* Auditoría 2 (medidas) ------------------------------------------------- */
+
+/* Enlaces sueltos en notas (p. ej. "Ver Panathinaikos" en la ficha del
+   entrenador): 32 px de alto táctil. */
+.card-note > a:only-child {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+/* Nombres de la tabla del mercado en escritorio: 18 px de alto → zona
+   táctil sin mover la fila. */
+table.data td a.player-name,
+table.data td .player-cell {
+  padding-block: 3px;
+}
+
+/* Listas de las notas de Metodología: los puntos iban a 3,5 px uno de otro. */
+ul.card-note li + li,
+.card-note ul li + li {
+  margin-top: 6px;
 }

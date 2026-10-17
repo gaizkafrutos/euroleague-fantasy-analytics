@@ -890,7 +890,7 @@ export default function SquadConsole({
                         dice algo que el dato no dice. El orden ya ordena. */}
                     <span className="rank-value">
                       {num(rentInRole(roles, player), 2)}
-                      <span className="muted" style={{ fontSize: "0.7em", fontWeight: 500 }}>
+                      <span className="muted" style={{ fontSize: "0.75rem", fontWeight: 500 }}>
                         {" "}
                         pts/cr{" "}
                         {roleMultiplier(roles, player) === 0.5

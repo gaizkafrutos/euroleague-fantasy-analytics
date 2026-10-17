@@ -518,7 +518,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             type="button"
             className="chip sort-dir"
             onClick={() => setSort({ key: sort.key, desc: !sort.desc })}
-            aria-label={sort.desc ? "De mayor a menor: cambiar a de menor a mayor" : "De menor a mayor: cambiar a de mayor a menor"}
+            aria-label={sort.desc ? "Mayor primero. Cambiar a menor primero" : "Menor primero. Cambiar a mayor primero"}
           >
             <span aria-hidden>{sort.desc ? "↓" : "↑"}</span>
             {sort.desc ? "Mayor primero" : "Menor primero"}

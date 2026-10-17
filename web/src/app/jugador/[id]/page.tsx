@@ -183,6 +183,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                   height={1000}
                   sizes="(min-width: 620px) 340px, 62vw"
                   priority
+                  fetchPriority="high"
                 />
               ) : player.isCoach && team?.crest ? (
                 // El feed no trae retrato de los entrenadores: el escudo de su
