@@ -62,3 +62,21 @@ test("mercado: de la tabla a la nube y vuelta", async ({ page }) => {
   await expect(region).toBeVisible();
   await expect(grafico).toHaveCount(0);
 });
+
+/* Con la plantilla vacía no aparece "En caja", y en un iPhone de 390 px ese
+   campo llegó a ensanchar la página 31 px: se podía arrastrar de lado y se
+   quedaba descuadrada. Se mira con la plantilla llena en los anchos de móvil
+   más comunes. */
+for (const width of [375, 390, 430]) {
+  test(`mi equipo con la plantilla llena no se sale de ${width} px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto("/mi-equipo");
+    await page.getByRole("button", { name: "Rellenar con el óptimo" }).click();
+    await expect(page.locator(".cancha .tok:not(.is-empty)")).toHaveCount(11);
+    const overflow = await page.evaluate(() => ({
+      scroll: document.documentElement.scrollWidth,
+      client: document.documentElement.clientWidth,
+    }));
+    expect(overflow.scroll, "scroll horizontal").toBeLessThanOrEqual(overflow.client);
+  });
+}
