@@ -95,7 +95,19 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
                 </b>
               </span>
               <span className="eq-pill">
-                Diferencial <b>{signed(box.netRating)}</b>
+                Diferencial{" "}
+                {/* Con el mismo color que en la clasificación. */}
+                <b
+                  className={
+                    typeof box.netRating === "number" && box.netRating > 0.05
+                      ? "delta-up"
+                      : typeof box.netRating === "number" && box.netRating < -0.05
+                        ? "delta-down"
+                        : undefined
+                  }
+                >
+                  {signed(box.netRating)}
+                </b>
               </span>
               <span className="eq-pill">
                 {num(box.ppg)} <b>a favor</b>

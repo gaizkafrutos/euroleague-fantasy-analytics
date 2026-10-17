@@ -8013,3 +8013,10 @@ ul.card-note,
 .game-log table.data th:first-child {
   text-align: right;
 }
+
+/* El aspa de borrar de los campos de búsqueda, en el tono del sitio y no el
+   azul del navegador (ya se hacía en el buscador de la cabecera). */
+.input[type="search"]::-webkit-search-cancel-button {
+  filter: grayscale(1) opacity(0.6);
+  cursor: pointer;
+}
