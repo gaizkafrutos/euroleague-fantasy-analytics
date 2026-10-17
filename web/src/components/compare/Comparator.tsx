@@ -121,7 +121,7 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         value: () => null,
         show: (r) =>
           r.next
-            ? `${fixtureName(r.next)}${turnLabel(r.next) ? ` · ${turnLabel(r.next)}` : ""}`
+            ? `${fixtureName(r.next)}${turnLabel(r.next, true) ? ` · ${turnLabel(r.next, true)}` : ""}`
             : "—",
       },
       {

@@ -25,6 +25,7 @@ import ScoreRange from "@/components/advanced/ScoreRange";
 import SquadSearch from "@/components/team/SquadSearch";
 import { sdOf, squadRange } from "@/lib/advanced";
 import { AvailabilityTag, Delta, PlayerCell } from "@/components/ui/primitives";
+import { clubName } from "@/lib/clubs";
 import { credits, displayName, num, percent, positionLabel, signed } from "@/lib/format";
 import { fixtureLabel, fixtureName, playRisk, turnLabel } from "@/lib/projection";
 import {
@@ -260,11 +261,17 @@ export default function SquadConsole({
     }
     const result = swapInLineup(squad, manual ?? toManual(check.roles), picked, id);
     if ("error" in result) setLineupError(result.error);
-    else setManual(result.lineup);
+    else {
+      // Cada cambio suelto también se puede deshacer, no solo vaciar y rellenar.
+      keepForUndo("Cambio hecho");
+      setManual(result.lineup);
+    }
     setPicked(null);
   }
 
   function makeCaptain(id: number) {
+    const player = byId.get(id);
+    keepForUndo(player ? `Capitán: ${displayName(player)}` : "Capitán cambiado");
     setManual({ ...(manual ?? toManual(roles)), captain: id });
   }
 
@@ -314,6 +321,8 @@ export default function SquadConsole({
   }
 
   function remove(id: number) {
+    const player = byId.get(id);
+    keepForUndo(player ? `${displayName(player)}, fuera` : "Jugador quitado");
     if (id === coachId) setCoachId(null);
     else setIds((previous) => previous.filter((value) => value !== id));
   }
@@ -382,6 +391,9 @@ export default function SquadConsole({
     const built = buildSquad(market, budget, coaches);
     return built.players.length === SQUAD_SIZE ? checkSquad(built.players, budget, built.coach).scored : null;
   }, [budget, full, optimal, market, coaches]);
+
+  // La jornada se juega en varios días: las fichas llevan T1/T2/T3.
+  const multiTurn = squad.some((player) => (player.schedule?.next?.turns ?? 1) > 1);
 
   const atOptimum =
     full && typeof optimalScored === "number" && Math.abs(scored - optimalScored) < 0.05;
@@ -592,7 +604,7 @@ export default function SquadConsole({
             {topClub ? topClub[1] : 0}
             <em>máx. {MAX_PER_CLUB}</em>
           </dd>
-          <dd className="dl-note">{topClub ? topClub[0] : "—"}</dd>
+          <dd className="dl-note">{topClub ? clubName(topClub[0]) : "—"}</dd>
         </div>
       </dl>
 
@@ -632,7 +644,10 @@ export default function SquadConsole({
             {roles.starters.length === STARTERS ? (
               <span className="bench-tag num">{formationOf(roles.starters)}</span>
             ) : null}
-            <p>Al menos uno de cada puesto: 2-2-1, 1-2-2, 2-1-2, 1-3-1 o 3-1-1.</p>
+            <p>
+              Al menos uno de cada puesto: 2-2-1, 1-2-2, 2-1-2, 1-3-1 o 3-1-1.
+              {multiTurn ? " T1, T2 y T3: el día de la jornada en que juega cada uno." : null}
+            </p>
             {squad.length === SQUAD_SIZE ? (
               <div className="lineup-tools">
                 <button
@@ -651,6 +666,7 @@ export default function SquadConsole({
                     type="button"
                     className="chip"
                     onClick={() => {
+                      keepForUndo("Alineación automática");
                       setManual(null);
                       setPicked(null);
                       setLineupError(null);

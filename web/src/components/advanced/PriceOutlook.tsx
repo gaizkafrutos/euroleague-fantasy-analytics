@@ -57,7 +57,7 @@ export default function PriceOutlook({ outlook, projection, price, out = false }
           />
           <span className="outlook-threshold" style={{ left: at(breakEven) }}>
             <b className="num">{num(breakEven)}</b>
-            <i>umbral</i>
+            <i>para mantener</i>
           </span>
           <span
             className={`outlook-dot${out ? " is-out" : ""}`}

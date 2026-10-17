@@ -37,6 +37,7 @@ type SortKey =
   | "difficulty";
 
 const PAGE_SIZE = 50;
+const PAGE_SIZE_NARROW = 25;
 
 /** Las columnas con `optional` no se ven por defecto: se añaden desde el botón
  *  "Columnas". Con todas a la vez la tabla no cabía a 1440 px y la última
@@ -145,6 +146,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
     desc: true,
   });
   const [view, setView] = useState<"tabla" | "grafico">("tabla");
+  const [pageSize, setPageSize] = useState(PAGE_SIZE);
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [extraColumns, setExtraColumns] = useState<Set<SortKey>>(new Set());
@@ -305,8 +307,14 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
   // Cualquier cambio de filtro u orden reinicia la paginación: si no, el
   // usuario se queda mirando la fila 80 de una lista que ya es otra.
   useEffect(() => {
-    setVisible(PAGE_SIZE);
-  }, [deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly, sort]);
+    setVisible(pageSize);
+  }, [pageSize, deferredQuery, positions, team, maxPrice, minPrice, hideOut, minGames, risingOnly, sort]);
+
+  // En el móvil, tandas de 25: con 50 la lista medía más de 8.000 px antes
+  // de llegar a "Mostrar más".
+  useEffect(() => {
+    if (window.matchMedia("(max-width: 760px)").matches) setPageSize(PAGE_SIZE_NARROW);
+  }, []);
 
   function togglePosition(position: string) {
     setPositions((previous) => {
@@ -557,7 +565,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </div>
         </div>
 
-        <label className="control">
+        <label className="control filter-team">
           <span className="control-label">Equipo</span>
           <select className="select" value={team} onChange={(event) => setTeam(event.target.value)}>
             <option value="">Todos</option>
@@ -587,7 +595,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
         ) : null}
 
         {hasPrices ? (
-          <label className="control">
+          <label className="control filter-half">
             <span className="control-label">Precio mínimo</span>
             <select
               className="select"
@@ -603,8 +611,8 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </label>
         ) : null}
 
-        <label className="control">
-          <span className="control-label">Mín. partidos</span>
+        <label className="control filter-half">
+          <span className="control-label">Mínimo de partidos</span>
           <select
             className="select"
             value={minGames}
@@ -618,30 +626,30 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
           </select>
         </label>
 
+        {/* Dos interruptores, un solo grupo: en el móvil eran dos bloques con
+            su título cada uno para un solo botón. */}
         <div className="control">
-          <span className="control-label">Disponibilidad</span>
-          <button
-            type="button"
-            className="chip"
-            aria-pressed={hideOut}
-            onClick={() => setHideOut((value) => !value)}
-            title="Quita a los que están de baja para la próxima jornada o sin inscribir"
-          >
-            Ocultar bajas
-          </button>
-        </div>
-
-        <div className="control">
-          <span className="control-label">Rotación</span>
-          <button
-            type="button"
-            className="chip"
-            aria-pressed={risingOnly}
-            onClick={() => setRisingOnly((value) => !value)}
-            title="Solo jugadores que están ganando peso en la rotación de su equipo"
-          >
-            Rol al alza
-          </button>
+          <span className="control-label">Disponibilidad y rol</span>
+          <div className="row" style={{ gap: 6 }}>
+            <button
+              type="button"
+              className="chip"
+              aria-pressed={hideOut}
+              onClick={() => setHideOut((value) => !value)}
+              title="Quita a los que están de baja para la próxima jornada o sin inscribir"
+            >
+              Ocultar bajas
+            </button>
+            <button
+              type="button"
+              className="chip"
+              aria-pressed={risingOnly}
+              onClick={() => setRisingOnly((value) => !value)}
+              title="Solo jugadores que están ganando peso en la rotación de su equipo"
+            >
+              Rol al alza
+            </button>
+          </div>
         </div>
 
         {activeFilters ? (
@@ -755,7 +763,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                     <PlayerCell player={player} linked={false} />
                     <span className="market-row-proj">
                       <b className="num">{num(player.projectedFp)}</b>
-                      <i>{risk !== null ? `${percent(risk)} juega` : "proy."}</i>
+                      <i>{risk !== null ? `${percent(risk)} juega` : "puntos"}</i>
                     </span>
                     <span className="market-row-meta num">
                       <span>
@@ -765,7 +773,7 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
                         revalor. <Revalue player={player} />
                       </span>
                       <span>{num(player.valueProjected ?? player.valuePerCredit, 2)} pts/cr</span>
-                      <span>reg. {reliable(player)}</span>
+                      <span>regular {reliable(player)}</span>
                       {/* Sin el índice: la lista ya va ordenada por él y, con
                           "revalor." escrito, la línea no cabía en 390 px. */}
                     </span>
@@ -791,9 +799,9 @@ export default function MarketExplorer({ players, teams, details, hasPrices }: P
             <button
               type="button"
               className="button-ghost"
-              onClick={() => setVisible((current) => current + PAGE_SIZE)}
+              onClick={() => setVisible((current) => current + pageSize)}
             >
-              Mostrar {Math.min(PAGE_SIZE, sorted.length - visible)} más
+              Mostrar {Math.min(pageSize, sorted.length - visible)} más
             </button>
           ) : null}
         </div>

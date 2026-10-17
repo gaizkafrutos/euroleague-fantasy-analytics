@@ -255,14 +255,14 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
             {positionLabel(hover.player.position)} · {hover.player.clubShort ?? hover.player.club}
           </div>
           <div className="num">
-            {credits(hover.player.price)} · {num(hover.player.projectedFp)} pts proy.
+            {credits(hover.player.price)} · {num(hover.player.projectedFp)} pts previstos
           </div>
           <div className="num muted">
             {num(hover.player.valueProjected, 2)} pts por crédito
           </div>
           {hover.player.outlook ? (
             <div className="num muted">
-              umbral {num(hover.player.outlook.breakEven)} · precio{" "}
+              necesita {num(hover.player.outlook.breakEven)} · precio{" "}
               {signed(hover.player.outlook.expectedChange)} cr
             </div>
           ) : null}

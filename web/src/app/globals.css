@@ -8211,3 +8211,30 @@ main p a:not([class]):hover,
     min-height: 70svh;
   }
 }
+
+/* Filtros en el móvil: a dos columnas donde caben (precio mínimo y partidos),
+   para que el panel no empuje la lista una pantalla entera hacia abajo. */
+@media (max-width: 760px) {
+  .filter-panel.is-open {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px 12px;
+  }
+
+  .filter-panel > * {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel > .filter-half {
+    grid-column: auto;
+  }
+
+  .filter-panel .filter-half .select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .filter-panel > .filter-reset {
+    justify-self: start;
+  }
+}

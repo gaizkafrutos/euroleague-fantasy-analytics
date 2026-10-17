@@ -32,6 +32,26 @@ const CLUB_SHORT: Record<string, string> = {
   ZAL: "Zalgiris",
 };
 
+/** Tres letras que se leen como el club (FEN, EFE, VAL) para las celdas
+ *  donde no cabe el nombre: los códigos de la Euroliga (ULK, IST, PAM) no
+ *  se parecen al nombre y había que sabérselos. */
+const CLUB_ABBR: Record<string, string> = {
+  HTA: "HAP",
+  IST: "EFE",
+  MAD: "RMA",
+  MUN: "BAY",
+  PAM: "VAL",
+  PAN: "PAO",
+  RED: "CZV",
+  TEL: "MTA",
+  ULK: "FEN",
+};
+
+export function clubAbbr(code: string | null | undefined): string {
+  if (!code) return "—";
+  return CLUB_ABBR[code] ?? code;
+}
+
 export function clubName(code: string | null | undefined): string {
   if (!code) return "—";
   return CLUB_SHORT[code] ?? code;

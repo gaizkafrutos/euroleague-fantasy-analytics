@@ -252,7 +252,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 value={next ? fixtureName(next) : "—"}
                 note={
                   next
-                    ? [turnLabel(next), `${percent(next.winProb)} gana`].filter(Boolean).join(" · ")
+                    ? [turnLabel(next, true), `${percent(next.winProb)} gana`].filter(Boolean).join(" · ")
                     : null
                 }
               />

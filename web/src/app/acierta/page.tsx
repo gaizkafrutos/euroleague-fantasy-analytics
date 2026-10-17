@@ -94,7 +94,7 @@ export default function AccuracyPage() {
         <StatTile
           label="Orden del mercado"
           value={num(total.model.spearman ?? null, 2)}
-          sub={`Spearman; 1 es el orden perfecto. Con la media, ${num(total.mean.spearman ?? null, 2)}.`}
+          sub={`1 sería acertar el orden entero. Con la media, ${num(total.mean.spearman ?? null, 2)}.`}
         />
         <StatTile
           label="Sesgo"
@@ -130,12 +130,12 @@ export default function AccuracyPage() {
         <div className="card ac-chart">
           <h2 className="card-title">Orden del mercado</h2>
           <p className="card-note">
-            Si quien sale arriba en la proyección es quien más puntúa (Spearman). Para fichar importa
+            Si quien sale arriba en la proyección es quien más puntúa luego. Para fichar importa
             más el orden que la cifra exacta. Cuanto más alto, mejor.
           </p>
           <RoundLines
             rounds={numbers}
-            ariaLabel="Spearman por jornada: HoopIQ frente a la media de cada jugador"
+            ariaLabel="Acierto del orden por jornada: HoopIQ frente a la media de cada jugador"
             series={[
               { key: "model", label: "HoopIQ", color: MODEL_COLOR, values: rounds.map((r) => r.model.spearman) },
               { key: "mean", label: "Media de cada jugador", color: BASE_COLOR, values: rounds.map((r) => r.mean.spearman) },
@@ -197,11 +197,11 @@ export default function AccuracyPage() {
             <thead>
               <tr>
                 <th>Jornada</th>
-                <th className="num">N</th>
+                <th className="num">Jugadores</th>
                 <th className="num">Error HoopIQ</th>
                 <th className="num">Error media</th>
-                <th className="num">Spearman HoopIQ</th>
-                <th className="num">Spearman media</th>
+                <th className="num">Orden HoopIQ</th>
+                <th className="num">Orden media</th>
                 <th className="num">Sesgo</th>
                 <th className="num">Once proyectado</th>
                 <th className="num">Once real</th>

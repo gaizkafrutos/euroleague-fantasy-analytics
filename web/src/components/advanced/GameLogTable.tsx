@@ -1,6 +1,7 @@
 /** Partido a partido en tabla: rival, resultado, minutos y la caja básica
  *  junto a los puntos fantasy. Las barras dicen cuánto; esto, contra quién y
  *  cómo. El más reciente arriba. */
+import { clubAbbr, clubName } from "@/lib/clubs";
 import { num } from "@/lib/format";
 import type { GameLine } from "@/lib/types";
 
@@ -42,8 +43,8 @@ export default function GameLogTable({ games }: { games: GameLine[] }) {
           {rows.map((game, index) => (
             <tr key={`${game.round}-${index}`}>
               <td className="num">{game.round ?? "—"}</td>
-              <td className="is-text">
-                {game.home ? "vs" : "@"} {game.opponent ?? "—"}
+              <td className="is-text" title={clubName(game.opponent)}>
+                {game.home ? "vs" : "@"} {clubAbbr(game.opponent)}
               </td>
               <td className="is-text">
                 {typeof game.won === "boolean"
