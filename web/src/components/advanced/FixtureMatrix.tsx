@@ -79,6 +79,7 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
             <i key={step} className={`seq-${step}`} />
           ))}
           <span>concede más</span>
+          <span className="fxm-legend-away">@ = fuera</span>
         </div>
       </div>
 
@@ -121,10 +122,12 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
                     }
                   >
                     {fixture ? (
-                      <>
-                        <b>{fixture.opponent}</b>
-                        <i>{fixture.home ? "casa" : "fuera"}</i>
-                      </>
+                      // "@" fuera, nada en casa: la misma convención que el resto de
+                      // la web, y la mitad de texto en cada una de las cien celdas.
+                      <b>
+                        {fixture.home ? "" : "@"}
+                        {fixture.opponent}
+                      </b>
                     ) : (
                       "—"
                     )}

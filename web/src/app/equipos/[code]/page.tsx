@@ -76,7 +76,11 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
             priority
           />
         ) : null}
-        <h1>{team.name ?? team.code}</h1>
+        {/* Los nombres con patrocinador ("Crvena Zvezda Meridianbet Belgrade")
+            ocupaban tres líneas de titular en el móvil: un cuerpo menor. */}
+        <h1 className={(team.name ?? "").length > 22 ? "is-long" : undefined}>
+          {team.name ?? team.code}
+        </h1>
         <p className="eq-hero-sub">
           {team.country ? `${team.country} · ` : ""}
           {roster.length} fichas en el Fantasy
@@ -91,7 +95,19 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
                 </b>
               </span>
               <span className="eq-pill">
-                Diferencial <b>{signed(box.netRating)}</b>
+                Diferencial{" "}
+                {/* Con el mismo color que en la clasificación. */}
+                <b
+                  className={
+                    typeof box.netRating === "number" && box.netRating > 0.05
+                      ? "delta-up"
+                      : typeof box.netRating === "number" && box.netRating < -0.05
+                        ? "delta-down"
+                        : undefined
+                  }
+                >
+                  {signed(box.netRating)}
+                </b>
               </span>
               <span className="eq-pill">
                 {num(box.ppg)} <b>a favor</b>
@@ -282,7 +298,8 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
           <p className="muted">Sin calendario disponible.</p>
         )}
         <p className="eq-foot-note">
-          Borde rojo: rival con más de +3 de diferencial. Verde: por debajo de −3. El resto, neutro.
+          Borde naranja: rival asequible (por debajo de −3 de diferencial). Pizarra: rival duro (más
+          de +3). El resto, neutro. El mismo código que el mapa de tiro: naranja, bueno para ti.
         </p>
       </section>
 
@@ -386,8 +403,13 @@ function Roster({ roster }: { roster: Player[] }) {
         if (!members.length) return null;
         return (
           <div key={key} className={`eq-grp pos-${key}`}>
-            <h3>
-              {label} · {members.length}
+            {/* Con título en las columnas: la segunda cifra no se sabía qué era. */}
+            <h3 className="eq-grp-head">
+              <span>
+                {label} · {members.length}
+              </span>
+              <span className="eq-grp-col">Precio</span>
+              <span className="eq-grp-col">Proy.</span>
             </h3>
             <ul>
               {members.map((player) => (

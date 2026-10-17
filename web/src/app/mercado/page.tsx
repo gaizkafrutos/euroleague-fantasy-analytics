@@ -12,7 +12,7 @@ import MarketExplorer from "@/components/market/MarketExplorer";
 import { BarCell, PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
-import { checkedLater, credits, dateTime, displayName, num, percent } from "@/lib/format";
+import { checkedLater, credits, dateTime, displayName, num, percent, positionLabel, positionShort } from "@/lib/format";
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 import Explain from "@/components/ui/Explain";
@@ -266,7 +266,9 @@ export default function MercadoPage() {
                         captain={lineup.captain === player.key}
                       />
                     </td>
-                    <td className="is-text">{player.position}</td>
+                    <td className="is-text" title={positionLabel(player.position)}>
+                      {positionShort(player.position)}
+                    </td>
                     <td className="is-text">{player.club}</td>
                     <td className="num">{credits(player.price)}</td>
                     <td className="num">
@@ -299,7 +301,9 @@ export default function MercadoPage() {
             {lineup.players.map((player) => (
               <li key={player.key}>
                 <Link href={`/jugador/${player.key}`}>
-                  <span className="lineup-pos">{player.position}</span>
+                  <span className="lineup-pos" title={positionLabel(player.position)}>
+                    {positionShort(player.position)}
+                  </span>
                   <span className="lineup-name">
                     <span className="lineup-player">{prettyName(player.name)}</span>
                     <RoleBadge

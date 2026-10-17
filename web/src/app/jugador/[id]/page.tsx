@@ -8,6 +8,7 @@ import FantasyMix from "@/components/advanced/FantasyMix";
 import PercentileStrip from "@/components/advanced/PercentileStrip";
 import PriceOutlook from "@/components/advanced/PriceOutlook";
 import ShotChart from "@/components/advanced/ShotChart";
+import GameLogTable from "@/components/advanced/GameLogTable";
 import GameLogBars from "@/components/charts/GameLogBars";
 import PriceHistory from "@/components/charts/PriceHistory";
 import AddToSquad from "@/components/team/AddToSquad";
@@ -25,6 +26,7 @@ import {
 } from "@/lib/format";
 import { percentileOf, poolSize, type PercentileKey } from "@/lib/percentiles";
 import { fixtureLabel, playRisk, turnLabel } from "@/lib/projection";
+import { METHOD_LABEL } from "@/lib/matching";
 import { coachVerdict, verdictFor } from "@/lib/verdict";
 import type { Player } from "@/lib/types";
 import Explain from "@/components/ui/Explain";
@@ -321,6 +323,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               average={perf.fpAvg}
               floor={perf.fpFloor}
             />
+            <GameLogTable games={detail.recent} />
           </div>
           )}
 
@@ -510,9 +513,11 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         {/* La trazabilidad del cruce es una nota al pie, no una etiqueta de
             depuración junto al nombre del jugador. */}
         <p className="provenance">
-          Identificado con el censo oficial de la EuroLiga
-          {player.match.method ? ` por ${player.match.method}` : ""}
-          {player.personCode ? ` · ficha ${player.personCode}` : ""}.{" "}
+          Identificado con el censo oficial de la Euroliga
+          {player.match.method
+            ? ` (${(METHOD_LABEL[player.match.method] ?? player.match.method).toLowerCase()})`
+            : ""}
+          {player.personCode ? ` · ficha oficial ${player.personCode}` : ""}.{" "}
           <Link href="/metodologia">Cómo se cruzan los nombres</Link>
         </p>
       </section>
@@ -579,7 +584,7 @@ function ProjectionBreakdown({ player }: { player: Player }) {
         <Row label="Proyección (esperada)" value={`${num(player.projectedFp)} pts`} />
         {outlook ? (
           <Row
-            label="Horquilla p25–p75 · techo p90"
+            label="La mitad de las veces · techo (1 de cada 10)"
             value={`${num(outlook.floor)}–${num(outlook.ceiling)} · ${num(outlook.p90 ?? null)}`}
           />
         ) : null}

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s · HoopIQ",
   },
   description:
-    "Cruce de los precios del EuroLeague Fantasy Challenge con las estadísticas oficiales de la EuroLiga: valor por crédito, tendencias de precio, consistencia y cambios de rol.",
+    "Cruce de los precios del EuroLeague Fantasy Challenge con las estadísticas oficiales de la Euroliga: valor por crédito, tendencias de precio, consistencia y cambios de rol.",
   applicationName: "HoopIQ",
   manifest: "/manifest.webmanifest",
   appleWebApp: {

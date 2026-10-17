@@ -10,6 +10,9 @@ const PORT = 3100;
 
 export default defineConfig({
   testDir: "./e2e",
+  // axe sobre el mercado (unos 4.000 nodos) pasa de 30 s cuando corre en
+  // paralelo con el resto: fallaba por tiempo, no por un error.
+  timeout: 60_000,
   outputDir: "./test-results",
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),

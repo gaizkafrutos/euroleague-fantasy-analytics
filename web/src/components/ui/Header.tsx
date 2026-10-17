@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import type { SearchEntry } from "@/lib/search";
 
@@ -16,9 +17,19 @@ interface Props {
 
 export default function Header({ round, totalRounds, searchIndex }: Props) {
   const pathname = usePathname();
+  // En la portada la cabecera es transparente sobre el vídeo; al bajar, el
+  // texto del relato pasaba por debajo del logo. Pasado el primer tramo se
+  // vuelve opaca.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 48);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="masthead">
+    <header className={`masthead${scrolled ? " is-scrolled" : ""}`}>
       <div className="shell masthead-inner">
         <Link href="/" className="wordmark" aria-label="HoopIQ, inicio">
           {/* El símbolo del logotipo original, partido en dos máscaras (aro y
@@ -52,7 +63,11 @@ export default function Header({ round, totalRounds, searchIndex }: Props) {
         <PlayerSearch index={searchIndex} />
 
         <div className="masthead-tools">
-          <span className="round-pill" aria-label={`Jornada ${round} de ${totalRounds}`}>
+          <span
+            className="round-pill"
+            aria-label={`Jornada ${round} de ${totalRounds}`}
+            title={`Jornada ${round} de ${totalRounds}`}
+          >
             <span className="round-word">Jornada</span>
             <span className="round-short" aria-hidden>
               J

@@ -646,7 +646,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     matched = int(table["person_code"].notna().sum())
     meta = {
         "season": SEASON_CODE,
-        "seasonLabel": f"EuroLeague {season_label(SEASON_CODE)}",
+        "seasonLabel": f"Euroliga {season_label(SEASON_CODE)}",
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "currentRound": round_now,
         "totalRounds": max((int(g["round"]) for g in games if g.get("round")), default=0),

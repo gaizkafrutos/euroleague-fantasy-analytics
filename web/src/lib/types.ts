@@ -23,6 +23,13 @@ export interface GameLine {
   minutes: number;
   fp: number;
   played: boolean;
+  /** Resultado y caja básica, para la tabla de partidos. Opcionales: un
+   *  details.json anterior no los trae. */
+  won?: boolean;
+  margin?: number;
+  pts?: number;
+  reb?: number;
+  ast?: number;
 }
 
 export interface Performance {

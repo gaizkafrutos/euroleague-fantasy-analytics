@@ -20,7 +20,7 @@ import type { Team } from "@/lib/types";
 export const metadata: Metadata = {
   title: "Equipos",
   description:
-    "Clasificación de los 20 clubes de la EuroLeague: balance, diferencial, ataque, defensa, ritmo y próximo rival.",
+    "Clasificación de los 20 clubes de la Euroliga: balance, diferencial, ataque, defensa, ritmo y próximo rival.",
 };
 
 export default function TeamsPage() {

@@ -1,27 +1,15 @@
 "use client";
 
-/** Ancho real del contenedor, para dibujar el SVG a escala 1:1.
+/** Ancho real del contenedor, para dibujar el SVG a escala 1:1, con un valor
+ *  por defecto para el servidor y antes de medir.
  *
- *  Los demás gráficos usan un viewBox fijo de 720 y en el móvil el texto se
- *  encoge hasta los 7 px. Con el ancho medido, las cifras de los ejes se leen
- *  igual en un teléfono que en el escritorio. En el servidor (y antes de medir)
- *  vale `fallback`.
+ *  Es la misma medida que `useFitWidth` (que usan los gráficos de la ficha y
+ *  del mercado); esta variante solo añade el ancho de reserva y un mínimo de
+ *  240 px para los gráficos de la página de acierto.
  */
-import { useEffect, useRef, useState } from "react";
+import { useFitWidth } from "./useFitWidth";
 
 export function useChartWidth<T extends HTMLElement>(fallback = 560) {
-  const ref = useRef<T>(null);
-  const [width, setWidth] = useState(fallback);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    const update = () => setWidth(Math.max(240, Math.round(node.getBoundingClientRect().width)));
-    update();
-    const observer = new ResizeObserver(update);
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  return [ref, width] as const;
+  const [ref, measured] = useFitWidth<T>();
+  return [ref, Math.max(240, measured ?? fallback)] as const;
 }

@@ -63,7 +63,7 @@ export default function OpengraphImage() {
             de que se juegue.
           </div>
           <div style={{ fontSize: 27, color: C.ink2, maxWidth: 820, lineHeight: 1.4 }}>
-            Precios del Fantasy cruzados con las estadísticas oficiales de la EuroLiga.
+            Precios del Fantasy cruzados con las estadísticas oficiales de la Euroliga.
           </div>
         </div>
 

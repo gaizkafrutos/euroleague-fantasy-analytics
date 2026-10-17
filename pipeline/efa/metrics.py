@@ -161,10 +161,25 @@ def recent_series(gamelog: pd.DataFrame, *, limit: int = 12) -> dict[str, list[d
                 "minutes": float(row["minutes"]),
                 "fp": float(row["fantasy_points"]),
                 "played": bool(row["played"]),
+                # Para la tabla de partidos de la ficha: el resultado y la
+                # caja básica. Opcionales: un game log de pruebas no los trae.
+                **_box_fields(row),
             }
             for _, row in tail.iterrows()
         ]
     return out
+
+
+def _box_fields(row: pd.Series) -> dict[str, Any]:
+    fields: dict[str, Any] = {}
+    if "team_won" in row and pd.notna(row["team_won"]):
+        fields["won"] = bool(row["team_won"])
+    if "margin" in row and pd.notna(row["margin"]):
+        fields["margin"] = int(row["margin"])
+    for source, key in (("points", "pts"), ("rebounds", "reb"), ("assists", "ast")):
+        if source in row and pd.notna(row[source]):
+            fields[key] = float(row[source])
+    return fields
 
 
 # ---------------------------------------------------------------------------

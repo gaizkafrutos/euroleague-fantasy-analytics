@@ -1,5 +1,6 @@
 import { matching, meta } from "@/lib/data";
 import { dateTime, num, percent } from "@/lib/format";
+import { METHOD_LABEL } from "@/lib/matching";
 
 function signedNum(value: number | null | undefined): string {
   if (value === null || value === undefined) return "—";
@@ -38,7 +39,17 @@ export default function MethodologyPage() {
           una caja negra: si una recomendación no se puede explicar, no sirve para decidir un
           fichaje.
         </p>
-        <span className="eyebrow">Cómo funciona</span>
+        {/* 9.000 px en el móvil: un índice para ir directo a lo que se busca. */}
+        <nav className="toc" aria-label="En esta página">
+          <a href="#reglas">Reglas</a>
+          <a href="#fuentes">Fuentes</a>
+          <a href="#formula">Puntuación</a>
+          <a href="#proyeccion">Proyección</a>
+          <a href="#datos-oficiales">Datos oficiales</a>
+          <a href="#metricas">Métricas</a>
+          <a href="#cruce">Cruce de nombres</a>
+          <a href="#limites">Límites</a>
+        </nav>
       </div>
 
       {/* Primero las reglas: sin ellas no se entiende ni el óptimo ni la consola. */}
@@ -80,7 +91,7 @@ export default function MethodologyPage() {
         </p>
       </div>
 
-      <div className="grid grid-2">
+      <div className="grid grid-2" id="fuentes">
         <article className="card">
           <h2 className="card-title">1. Estadísticas oficiales</h2>
           <p className="card-note">
@@ -122,7 +133,7 @@ export default function MethodologyPage() {
         </article>
       </div>
 
-      <div className="card" style={{ marginTop: 16 }}>
+      <div className="card" style={{ marginTop: 16 }} id="formula">
         <h2 className="card-title">La fórmula de puntuación</h2>
         <p className="card-note" style={{ maxWidth: "72ch" }}>
           Fantaking documenta el baremo, pero el mercado solo devuelve medias. Reimplementar
@@ -130,55 +141,47 @@ export default function MethodologyPage() {
           separado — y sin eso no hay forma de medir varianza, forma reciente ni cambios de
           rol.
         </p>
-        <div className="table-wrap" style={{ marginTop: 12 }} tabIndex={0} role="region" aria-label="Baremo de puntuación">
-          <table className="data">
-            <thead>
-              <tr>
-                <th>Acción</th>
-                <th className="num">Valor</th>
-                <th className="is-text">Acción</th>
-                <th className="num">Valor</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Punto anotado</td>
-                <td className="num">+1</td>
-                <td className="is-text">Pérdida</td>
-                <td className="num">−1</td>
-              </tr>
-              <tr>
-                <td>Rebote</td>
-                <td className="num">+1</td>
-                <td className="is-text">Tapón recibido</td>
-                <td className="num">−1</td>
-              </tr>
-              <tr>
-                <td>Asistencia</td>
-                <td className="num">+1</td>
-                <td className="is-text">Falta cometida</td>
-                <td className="num">−1</td>
-              </tr>
-              <tr>
-                <td>Robo</td>
-                <td className="num">+1</td>
-                <td className="is-text">Tiro de campo fallado</td>
-                <td className="num">−1</td>
-              </tr>
-              <tr>
-                <td>Tapón</td>
-                <td className="num">+1</td>
-                <td className="is-text">Tiro libre fallado</td>
-                <td className="num">−1</td>
-              </tr>
-              <tr>
-                <td>Falta recibida</td>
-                <td className="num">+1</td>
-                <td className="is-text">Victoria del equipo</td>
-                <td className="num">+10% del valor absoluto</td>
-              </tr>
-            </tbody>
-          </table>
+        {/* Dos listas y no una tabla de cuatro columnas: en el móvil obligaba a
+            desplazarse de lado para leer once filas de "+1" y "−1". */}
+        <div className="score-rules">
+          <section aria-labelledby="suman">
+            <h3 id="suman">Suman</h3>
+            <dl>
+              {[
+                ["Punto anotado", "+1"],
+                ["Rebote", "+1"],
+                ["Asistencia", "+1"],
+                ["Robo", "+1"],
+                ["Tapón", "+1"],
+                ["Falta recibida", "+1"],
+              ].map(([action, value]) => (
+                <div key={action}>
+                  <dt>{action}</dt>
+                  <dd className="num">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+          <section aria-labelledby="restan">
+            <h3 id="restan">Restan</h3>
+            <dl>
+              {[
+                ["Pérdida", "−1"],
+                ["Tapón recibido", "−1"],
+                ["Falta cometida", "−1"],
+                ["Tiro de campo fallado", "−1"],
+                ["Tiro libre fallado", "−1"],
+              ].map(([action, value]) => (
+                <div key={action}>
+                  <dt>{action}</dt>
+                  <dd className="num">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+          <p className="score-rules-bonus">
+            <strong>Victoria del equipo:</strong> +10 % del valor absoluto de lo que haya sumado.
+          </p>
         </div>
         <p className="card-note" style={{ marginTop: 10 }}>
           El entrenador puntúa solo por el marcador: +10 / +20 / +25 según gane por 1-10,
@@ -202,7 +205,7 @@ export default function MethodologyPage() {
       <OfficialData />
 
       <div className="grid grid-2" style={{ marginTop: 16 }}>
-        <article className="card">
+        <article className="card" id="metricas">
           <h2 className="card-title">Las métricas, una a una</h2>
           <dl className="card-note" style={{ display: "grid", gap: 10, margin: 0 }}>
             <Definition term="Proyección">
@@ -292,7 +295,7 @@ export default function MethodologyPage() {
           </dl>
         </article>
 
-        <article className="card">
+        <article className="card" id="cruce">
           <h2 className="card-title">Cruce de identidades</h2>
           <p className="card-note">
             Los identificadores de Fantaking y de la EuroLeague no tienen nada que ver. El
@@ -301,7 +304,7 @@ export default function MethodologyPage() {
             lo que no llega al umbral se deja sin cruzar en vez de inventarse.
           </p>
           <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Métodos de cruce">
-            <table className="data">
+            <table className="data is-compact">
               <thead>
                 <tr>
                   <th>Método</th>
@@ -353,7 +356,7 @@ export default function MethodologyPage() {
         </article>
       </div>
 
-      <div className="card" style={{ marginTop: 16 }}>
+      <div className="card" style={{ marginTop: 16 }} id="limites">
         <h2 className="card-title">Límites que conviene tener presentes</h2>
         <ul className="card-note" style={{ margin: 0, maxWidth: "72ch" }}>
           <li>
@@ -465,7 +468,7 @@ function ProjectionModel() {
       </div>
       {season ? (
         <div className="table-wrap" style={{ marginTop: 10, maxWidth: 620 }} tabIndex={0} role="region" aria-label="Backtest de la proyección">
-          <table className="data">
+          <table className="data is-compact">
             <thead>
               <tr>
                 <th>Partidos jugados antes</th>
@@ -518,40 +521,8 @@ function ProjectionModel() {
               con la probabilidad de jugar dentro; quien no juega cuenta como 0. Es la cifra que
               de verdad le llega a quien ficha.
             </p>
-            <div className="table-wrap" tabIndex={0}>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Jornada</th>
-                    <th className="num">N</th>
-                    <th className="num">Error HoopIQ</th>
-                    <th className="num">Error de su media</th>
-                    <th className="num">Sesgo</th>
-                    <th className="num">Orden (Spearman)</th>
-                    <th className="num">Dudas: dicho / jugaron</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {published.rounds.map((row) => (
-                    <tr key={row.round}>
-                      <td>J{row.round}</td>
-                      <td className="num">{num(row.n, 0)}</td>
-                      <td className="num">{num(row.model.mae, 2)}</td>
-                      <td className="num">{num(row.mean.mae, 2)}</td>
-                      <td className="num">{signedNum(row.model.bias)}</td>
-                      <td className="num">
-                        {num(row.model.spearman, 2)} / {num(row.mean.spearman, 2)}
-                      </td>
-                      <td className="num">
-                        {row.playProb?.doubt
-                          ? `${percent(row.playProb.doubt.predicted)} / ${percent(row.playProb.doubt.real)}`
-                          : "—"}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            {/* La tabla jornada a jornada vive en /acierta, con gráficos: aquí
+                se duplicaba y en el móvil no cabía (siete columnas). */}
             <p style={{ margin: 0 }}>
               Las jornadas 2 y 3 son las que publicó la web antes de la auditoría del 5 de
               octubre, con la duda al 50 %: de ahí el sesgo al alza. Aun así, la proyección
@@ -634,7 +605,7 @@ function OfficialData() {
         porcentajes avanzados describen al jugador en su ficha, pero no entran en la cifra: ya
         están dentro de lo que puntúa por minuto.
       </p>
-      <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Datos oficiales usados">
+      <div className="table-wrap only-wide" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Datos oficiales usados">
         <table className="data">
           <thead>
             <tr>
@@ -647,8 +618,8 @@ function OfficialData() {
             {rows.map(([source, used, unused]) => (
               <tr key={source}>
                 <td style={{ fontWeight: 600, whiteSpace: "nowrap" }}>{source}</td>
-                <td style={{ whiteSpace: "normal", minWidth: 260 }}>{used}</td>
-                <td style={{ whiteSpace: "normal", minWidth: 200 }} className="muted">
+                <td className="is-text" style={{ whiteSpace: "normal", minWidth: 260 }}>{used}</td>
+                <td style={{ whiteSpace: "normal", minWidth: 200 }} className="muted is-text">
                   {unused}
                 </td>
               </tr>
@@ -656,6 +627,19 @@ function OfficialData() {
           </tbody>
         </table>
       </div>
+      <dl className="official-list only-narrow">
+        {rows.map(([source, used, unused]) => (
+          <div key={source}>
+            <dt>{source}</dt>
+            <dd>{used}</dd>
+            {unused !== "—" ? (
+              <dd className="official-unused">
+                <span>No se usa:</span> {unused}
+              </dd>
+            ) : null}
+          </div>
+        ))}
+      </dl>
     </div>
   );
 }
@@ -669,16 +653,3 @@ function Definition({ term, children }: { term: string; children: React.ReactNod
   );
 }
 
-const METHOD_LABEL: Record<string, string> = {
-  override: "Corrección manual",
-  "initial-club": "Apellido e inicial, mismo club",
-  "surname-club": "Apellido único en el club",
-  exact: "Nombre completo idéntico",
-  subset: "Apellido compuesto o con partícula",
-  "fuzzy-club": "Similitud alta, mismo club",
-  "initial-open": "Apellido e inicial, único en la liga",
-  "exact-open": "Nombre exacto, club distinto",
-  "prior-season": "Censo de la temporada anterior",
-  "fuzzy-open": "Similitud muy alta, sin club",
-  unmatched: "Sin cruzar (aún no inscrito)",
-};

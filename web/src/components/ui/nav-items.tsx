@@ -6,12 +6,14 @@ export interface NavItem {
   label: string;
   /** Etiqueta corta para la barra del móvil, donde no cabe "Metodología". */
   short: string;
-  icon: "market" | "squad" | "teams" | "method";
+  icon: "market" | "squad" | "compare" | "teams" | "method";
 }
 
 export const NAV_ITEMS: NavItem[] = [
   { href: "/mercado", label: "Mercado", short: "Mercado", icon: "market" },
   { href: "/mi-equipo", label: "Mi equipo", short: "Mi equipo", icon: "squad" },
+  // Antes solo se llegaba desde enlaces sueltos: en el móvil no tenía sitio.
+  { href: "/comparar", label: "Comparar", short: "Comparar", icon: "compare" },
   { href: "/equipos", label: "Equipos", short: "Equipos", icon: "teams" },
   { href: "/metodologia", label: "Metodología", short: "Método", icon: "method" },
 ];
@@ -39,6 +41,13 @@ export function NavIcon({ name }: { name: NavItem["icon"] }) {
         <>
           <circle cx="12" cy="8.2" r="3.4" />
           <path d="M5 20c0-3.6 3.1-5.8 7-5.8s7 2.2 7 5.8" />
+        </>
+      ) : null}
+      {name === "compare" ? (
+        <>
+          <path d="M12 4v16M7 20h10M5 7h14" />
+          <path d="M5 7l-2.6 5.4a2.6 2.6 0 0 0 5.2 0z" />
+          <path d="M19 7l-2.6 5.4a2.6 2.6 0 0 0 5.2 0z" />
         </>
       ) : null}
       {name === "teams" ? (
