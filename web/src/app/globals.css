@@ -1378,9 +1378,11 @@ table.data th.num {
 
 .rank-detail {
   display: block;
-  margin-top: 2px;
+  margin-top: 3px;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.72rem;
+  /* Proporcionales: la coma tabular de Schibsted se separa ("6 , 1 %"). */
+  font-variant-numeric: proportional-nums;
+  font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0;
   color: var(--ink-muted);
@@ -3318,6 +3320,13 @@ table.data th.num {
   background: transparent;
   backdrop-filter: none;
   border-bottom-color: transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Al bajar, opaca: el relato ya no pasa por debajo del logo y el buscador. */
+:root:has(.portada) .masthead.is-scrolled {
+  background: var(--bg);
+  border-bottom-color: var(--line);
 }
 
 :root:has(.portada) .footer {
@@ -3642,6 +3651,7 @@ table.data th.num {
 
 /* Pausa del vídeo: pequeña y a mano, sin pedir protagonismo. */
 .portada .clip-toggle {
+  position: relative;
   display: grid;
   place-items: center;
   width: 36px;
@@ -7985,4 +7995,11 @@ ul.card-note,
     font-size: clamp(1.75rem, 8vw, 2.25rem);
     line-height: 1.08;
   }
+}
+
+/* Pausar el vídeo de la portada: 44 px de zona táctil con el mismo botón. */
+.portada .clip-toggle::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
 }
