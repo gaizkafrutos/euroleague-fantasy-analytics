@@ -18,7 +18,10 @@ export const metadata: Metadata = {
 
 export default function ComparePage() {
   return (
-    <section className="section shell">
+    // compare-page reserva una pantalla de alto: los jugadores llegan después
+    // de pintar la página y, sin ese hueco, el pie aparecía arriba y luego
+    // bajaba de golpe (CLS 0,88 en escritorio).
+    <section className="section shell compare-page">
       <header className="cancha-head">
         <h1>Comparar jugadores</h1>
         <p className="lede">

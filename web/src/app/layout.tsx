@@ -7,19 +7,14 @@ import { checkedLater, dateTime } from "@/lib/format";
 import { searchIndex } from "@/lib/search-index";
 import PriceNotice from "@/components/ui/PriceNotice";
 import { body, display } from "@/lib/fonts";
+import { SITE_URL } from "@/lib/site";
 
 import "./globals.css";
 
 /** La URL absoluta del sitio, necesaria para que la tarjeta de compartir
  *  apunte a una imagen real. Vercel inyecta el dominio de producción solo. */
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "HoopIQ — análisis del EuroLeague Fantasy Challenge",
     template: "%s · HoopIQ",
@@ -33,8 +28,10 @@ export const metadata: Metadata = {
     title: "HoopIQ",
     statusBarStyle: "black-translucent",
   },
+  // Lo que enseña LinkedIn al compartir el enlace: "HoopIQ" a secas no decía
+  // de qué va la web.
   openGraph: {
-    title: "HoopIQ",
+    title: "HoopIQ — análisis del EuroLeague Fantasy Challenge",
     description:
       "Chollos, subidas de precio y cambios de rol en el EuroLeague Fantasy Challenge, con datos reales.",
     type: "website",
@@ -43,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HoopIQ",
+    title: "HoopIQ — análisis del EuroLeague Fantasy Challenge",
     description:
       "Chollos, subidas de precio y cambios de rol en el EuroLeague Fantasy Challenge, con datos reales.",
   },
