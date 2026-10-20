@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "013403",
+   "name": "WALKER IV, LONNIE",
+   "alias": "WALKER IV, LONNIE",
+   "aliasRaw": "WALKER IV, LONNIE",
+   "passportName": "LONNIE TERRANCE",
+   "passportSurname": "WALKER IV",
+   "jerseyName": "WALKER IV",
+   "abbreviatedName": "",
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 196,
+   "weight": 87,
+   "birthDate": "1998-12-14T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-20T12:13:55.31",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "4",
+  "dorsalRaw": "4",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "MACCABI TEL AVIV",
+  "externalId": 57220,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "014380",
    "name": "KUTLUAY, OMER",
    "alias": "KUTLUAY, ÖMER",

@@ -14140,107 +14140,6 @@
   "winner": null
  },
  {
-  "id": "f6a455fb-7643-41a2-8da3-82e3b21676be",
-  "identifier": "E2026_240",
-  "gameCode": 240,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 24,
-  "roundAlias": "Round 24",
-  "roundName": "Round 24",
-  "played": false,
-  "date": "2027-01-22T20:30:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 1,
-  "localDate": "2027-01-22T20:30:00",
-  "utcDate": "2027-01-22T19:30:00Z",
-  "local": {
-   "club": {
-    "code": "PAM",
-    "name": "Valencia Basket",
-    "abbreviatedName": "Valencia",
-    "editorialName": "Valencia",
-    "tvCode": "VBC",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "ASV",
-    "name": "LDLC ASVEL Villeurbanne",
-    "abbreviatedName": "LDLC ASVEL",
-    "editorialName": "ASVEL",
-    "tvCode": "ASV",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "ROIG ARENA",
-   "code": "AVJ1",
-   "capacity": 15600,
-   "address": "C/ del Bomber Ramon Duart, 12, Quatre Carreres, 46013 Valencia ",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
   "id": "80b016f7-b5a0-486c-8125-cd6bc2a196ce",
   "identifier": "E2026_237",
   "gameCode": 237,
@@ -14836,6 +14735,107 @@
    "code": "AVB11",
    "capacity": 8000,
    "address": "56 Boulevard Ney, 75018 Paris, France",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
+  "id": "f6a455fb-7643-41a2-8da3-82e3b21676be",
+  "identifier": "E2026_240",
+  "gameCode": 240,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 24,
+  "roundAlias": "Round 24",
+  "roundName": "Round 24",
+  "played": false,
+  "date": "2027-01-21T20:00:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 1,
+  "localDate": "2027-01-21T20:00:00",
+  "utcDate": "2027-01-21T19:00:00Z",
+  "local": {
+   "club": {
+    "code": "PAM",
+    "name": "Valencia Basket",
+    "abbreviatedName": "Valencia",
+    "editorialName": "Valencia",
+    "tvCode": "VBC",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "ASV",
+    "name": "LDLC ASVEL Villeurbanne",
+    "abbreviatedName": "LDLC ASVEL",
+    "editorialName": "ASVEL",
+    "tvCode": "ASV",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "ROIG ARENA",
+   "code": "AVJ1",
+   "capacity": 15600,
+   "address": "C/ del Bomber Ramon Duart, 12, Quatre Carreres, 46013 Valencia ",
    "images": {
     "medium": null
    },

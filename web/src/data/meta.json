@@ -1,23 +1,23 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-20T11:50:58.192714+00:00",
+ "generatedAt": "2026-10-20T17:20:15.881503+00:00",
  "currentRound": 7,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 39,
- "lastPriceCapture": "2026-10-17T05:46:15.612073+00:00",
- "lastPriceCheck": "2026-10-20T11:50:32.675759+00:00",
+ "priceSnapshots": 40,
+ "lastPriceCapture": "2026-10-20T17:19:42.249708+00:00",
+ "lastPriceCheck": "2026-10-20T17:19:42.249708+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
   "games": 60
  },
  "teamStrengthSource": "temporada en curso, encogida hacia la anterior",
- "players": 356,
+ "players": 357,
  "matched": 354,
- "matchRate": 0.994,
+ "matchRate": 0.992,
  "budget": 100.0,
  "coachGames": 120,
  "matchModel": {
@@ -25,7 +25,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-20T11:50:37.301733+00:00",
+  "generatedAt": "2026-10-20T17:19:47.205073+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -445,7 +445,7 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-20T11:50:31.024809+00:00",
+  "fetchedAt": "2026-10-20T17:19:41.029796+00:00",
   "rows": 30,
   "matched": 28,
   "unmatched": [
@@ -457,24 +457,24 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-20T11:50:31.024809+00:00",
+    "fetchedAt": "2026-10-20T17:19:41.029796+00:00",
     "rows": 30,
     "matched": 28,
     "flagged": 28
    }
   ],
   "nextRound": 7,
-  "unregistered": 15,
+  "unregistered": 16,
   "flagged": {
    "out": 28,
-   "doubt": 15,
+   "doubt": 16,
    "probable": 0
   }
  },
  "warnings": [],
  "priceFreshness": {
   "stale": false,
-  "capturedAt": "2026-10-17T05:46:15.612073+00:00",
+  "capturedAt": "2026-10-20T17:19:42.249708+00:00",
   "lastGameAt": "2026-10-16T18:30:00+00:00",
   "round": 6,
   "reason": null,
