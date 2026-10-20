@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-20T17:19:41.029796+00:00",
+ "fetchedAt": "2026-10-20T21:44:02.362196+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -24,7 +24,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Isaac Bonga",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Wrist"
   },
@@ -69,18 +69,10 @@
    "comment": "Leg"
   },
   {
-   "team": "HTA",
-   "position": "F",
-   "name": "Tomer Ginat",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
-  },
-  {
    "team": "PBB",
    "position": "G",
    "name": "Nadir Hifi",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -88,7 +80,7 @@
    "team": "CZV",
    "position": "C",
    "name": "Ebuka Izundu",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -144,7 +136,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -173,28 +165,12 @@
    "comment": "Knee"
   },
   {
-   "team": "CZV",
-   "position": "F",
-   "name": "Aleksej Nedeljkovic",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
-  },
-  {
    "team": "PBB",
    "position": "G",
    "name": "Frank Ntilikina",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
-   "comment": "Strain"
-  },
-  {
-   "team": "PAO",
-   "position": "G",
-   "name": "Kendrick Nunn",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
+   "comment": ""
   },
   {
    "team": "EFS",
@@ -208,7 +184,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Nikos Rogkavopoulos",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Hamstring"
   },
@@ -221,18 +197,10 @@
    "comment": ""
   },
   {
-   "team": "PAO",
-   "position": "G",
-   "name": "Kostas Sloukas",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
-  },
-  {
    "team": "BJK",
    "position": "G",
    "name": "Lonnie Walker IV",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
