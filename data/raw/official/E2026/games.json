@@ -32300,9 +32300,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJGG",
+   "name": "CORTES, CARLOS",
+   "alias": "CORTES, C.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "87ytqfifoj5rk4lk"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "QJMQ",
+   "name": "BAENA, ALBERTO",
+   "alias": "BAENA, A.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMF",
+   "name": "KARDUM, LUKA",
+   "alias": "KARDUM, L.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": "awgpghekyaxank3l"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ARENA 8888 SOFIA",
