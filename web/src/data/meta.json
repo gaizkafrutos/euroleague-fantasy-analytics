@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-21T07:49:23.733250+00:00",
+ "generatedAt": "2026-10-21T13:57:06.035021+00:00",
  "currentRound": 7,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 41,
  "lastPriceCapture": "2026-10-21T00:41:39.849963+00:00",
- "lastPriceCheck": "2026-10-21T07:48:49.046900+00:00",
+ "lastPriceCheck": "2026-10-21T13:56:16.498594+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-21T07:48:53.648362+00:00",
+  "generatedAt": "2026-10-21T13:56:21.642643+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -442,32 +442,49 @@
   "doubleWeekClubs": []
  },
  "injuries": {
-  "source": "RotoWire",
-  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
-  "updatedAt": null,
-  "fetchedAt": "2026-10-21T07:48:48.095715+00:00",
-  "rows": 37,
-  "matched": 36,
+  "source": "BasketNews + RotoWire",
+  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
+  "updatedAt": "2026-10-21T13:30:00",
+  "fetchedAt": "2026-10-21T13:56:15.255761+00:00",
+  "rows": 139,
+  "matched": 95,
   "unmatched": [
+   "Mady Sissoko (Besiktas Istanbul)",
+   "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
+   "Ognjen Simjanovski (Crvena Zvezda Meridianbet Belgrade)",
+   "Awudu Abass (Dubai Basketball)",
+   "Tomislav Vuckovic (Dubai Basketball)",
+   "Gabriel Lundberg (Maccabi Rapyd Tel Aviv)",
+   "Mitar Bosnjakovic (Partizan Mozzart Bet Belgrade)",
+   "Jabari Parker (Partizan Mozzart Bet Belgrade)",
    "Mady Sissoko (BJK)"
   ],
   "sources": [
    {
+    "source": "BasketNews",
+    "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
+    "updatedAt": "2026-10-21T13:30:00",
+    "fetchedAt": "2026-10-21T13:56:14.806187+00:00",
+    "rows": 102,
+    "matched": 94,
+    "flagged": 94
+   },
+   {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-21T07:48:48.095715+00:00",
+    "fetchedAt": "2026-10-21T13:56:15.255761+00:00",
     "rows": 37,
     "matched": 36,
-    "flagged": 36
+    "flagged": 1
    }
   ],
   "nextRound": 7,
-  "unregistered": 16,
+  "unregistered": 8,
   "flagged": {
-   "out": 24,
-   "doubt": 28,
-   "probable": 0
+   "out": 34,
+   "doubt": 55,
+   "probable": 14
   }
  },
  "warnings": [],
