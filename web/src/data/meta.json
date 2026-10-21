@@ -1,22 +1,22 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-20T21:44:44.671969+00:00",
+ "generatedAt": "2026-10-21T00:42:30.323607+00:00",
  "currentRound": 7,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 40,
- "lastPriceCapture": "2026-10-20T17:19:42.249708+00:00",
- "lastPriceCheck": "2026-10-20T21:44:03.513716+00:00",
+ "priceSnapshots": 41,
+ "lastPriceCapture": "2026-10-21T00:41:39.849963+00:00",
+ "lastPriceCheck": "2026-10-21T00:41:39.849963+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
   "games": 60
  },
  "teamStrengthSource": "temporada en curso, encogida hacia la anterior",
- "players": 357,
- "matched": 354,
+ "players": 358,
+ "matched": 355,
  "matchRate": 0.992,
  "budget": 100.0,
  "coachGames": 120,
@@ -25,7 +25,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-20T21:44:08.445500+00:00",
+  "generatedAt": "2026-10-21T00:41:45.119630+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -445,36 +445,35 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-20T21:44:02.362196+00:00",
+  "fetchedAt": "2026-10-21T00:41:38.559915+00:00",
   "rows": 26,
-  "matched": 24,
+  "matched": 25,
   "unmatched": [
-   "Mady Sissoko (BJK)",
-   "Lonnie Walker IV (BJK)"
+   "Mady Sissoko (BJK)"
   ],
   "sources": [
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-20T21:44:02.362196+00:00",
+    "fetchedAt": "2026-10-21T00:41:38.559915+00:00",
     "rows": 26,
-    "matched": 24,
-    "flagged": 24
+    "matched": 25,
+    "flagged": 25
    }
   ],
   "nextRound": 7,
   "unregistered": 17,
   "flagged": {
    "out": 18,
-   "doubt": 23,
+   "doubt": 24,
    "probable": 0
   }
  },
  "warnings": [],
  "priceFreshness": {
   "stale": false,
-  "capturedAt": "2026-10-20T17:19:42.249708+00:00",
+  "capturedAt": "2026-10-21T00:41:39.849963+00:00",
   "lastGameAt": "2026-10-16T18:30:00+00:00",
   "round": 6,
   "reason": null,
