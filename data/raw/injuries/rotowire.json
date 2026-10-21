@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-21T13:56:15.255761+00:00",
+ "fetchedAt": "2026-10-21T18:45:14.327190+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -32,7 +32,7 @@
    "team": "BAR",
    "position": "G",
    "name": "Dario Brizuela",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -192,7 +192,7 @@
    "team": "BAR",
    "position": "G",
    "name": "Justin Minaya",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
   },
@@ -251,6 +251,14 @@
    "status": "Out",
    "round": "",
    "comment": "Back"
+  },
+  {
+   "team": "PAR",
+   "position": "G",
+   "name": "Antonio Reeves",
+   "status": "Game time",
+   "round": "",
+   "comment": "Not Injury Related"
   },
   {
    "team": "PAO",

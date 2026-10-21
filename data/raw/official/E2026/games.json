@@ -32461,7 +32461,7 @@
   "round": 7,
   "roundAlias": "Round 7",
   "roundName": "Round 7",
-  "played": false,
+  "played": true,
   "date": "2026-10-21T18:00:00",
   "confirmedDate": true,
   "confirmedHour": true,
@@ -32480,13 +32480,13 @@
      "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 90,
+   "standingsScore": 90,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 23,
+    "partials2": 13,
+    "partials3": 28,
+    "partials4": 26,
     "extraPeriods": {}
    }
   },
@@ -32502,18 +32502,18 @@
      "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 81,
+   "standingsScore": 81,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 25,
+    "partials2": 23,
+    "partials3": 14,
+    "partials4": 19,
     "extraPeriods": {}
    }
   },
-  "audience": 0,
-  "audienceConfirmed": false,
+  "audience": 432,
+  "audienceConfirmed": true,
   "socialFeed": "",
   "operationsCode": null,
   "referee1": {
