@@ -74,7 +74,7 @@
   "valuePerCredit": 0.916,
   "valueProjected": 0.0,
   "valueMarket": 0.916,
-  "bargainScore": 15.7,
+  "bargainScore": 15.8,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -1519,7 +1519,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.035,
   "valueMarket": 0.0,
-  "bargainScore": 23.8,
+  "bargainScore": 24.1,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -2077,7 +2077,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 29.0,
    "next": {
@@ -3076,7 +3076,7 @@
   "valuePerCredit": -0.133,
   "valueProjected": 0.0,
   "valueMarket": -0.133,
-  "bargainScore": 8.3,
+  "bargainScore": 8.4,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -3303,7 +3303,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.032,
   "valueMarket": 0.0,
-  "bargainScore": 23.9,
+  "bargainScore": 24.1,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -4743,7 +4743,7 @@
   "valuePerCredit": -0.145,
   "valueProjected": 0.075,
   "valueMarket": -0.145,
-  "bargainScore": 24.7,
+  "bargainScore": 24.9,
   "schedule": {
    "difficulty": 51.0,
    "next": {
@@ -4861,7 +4861,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -5426,7 +5426,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -6103,7 +6103,7 @@
   "valuePerCredit": -0.093,
   "valueProjected": 0.289,
   "valueMarket": -0.096,
-  "bargainScore": 33.1,
+  "bargainScore": 33.2,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -6763,7 +6763,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -8092,7 +8092,7 @@
   "valuePerCredit": 1.054,
   "valueProjected": 0.228,
   "valueMarket": 1.057,
-  "bargainScore": 26.2,
+  "bargainScore": 26.3,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -8320,7 +8320,7 @@
   "valuePerCredit": 0.733,
   "valueProjected": 0.0,
   "valueMarket": 0.733,
-  "bargainScore": 17.7,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -9335,7 +9335,7 @@
   "valuePerCredit": 0.622,
   "valueProjected": 0.339,
   "valueMarket": 0.634,
-  "bargainScore": 36.2,
+  "bargainScore": 36.3,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -9445,7 +9445,7 @@
   "valuePerCredit": 1.174,
   "valueProjected": -0.488,
   "valueMarket": 1.174,
-  "bargainScore": 14.9,
+  "bargainScore": 15.0,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -9886,7 +9886,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 29.0,
    "next": {
@@ -10003,7 +10003,7 @@
   "valuePerCredit": 0.944,
   "valueProjected": 0.0,
   "valueMarket": 0.962,
-  "bargainScore": 20.9,
+  "bargainScore": 21.0,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -10549,18 +10549,18 @@
    "plusMinusAvg": -6.0,
    "minutesPrior": null
   },
-  "projectedFp": 2.38,
+  "projectedFp": 0.0,
   "projectedIfPlays": 9.54,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 19.5,
   "matchup": {
    "opponentFactor": 1.05,
    "homeFactor": 1.055
   },
   "valuePerCredit": 0.689,
-  "valueProjected": 0.264,
+  "valueProjected": 0.0,
   "valueMarket": 0.689,
-  "bargainScore": 35.4,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 9.0,
    "next": {
@@ -10582,23 +10582,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Duda",
-   "untilRound": null,
-   "detail": "Made his return after hamstring injury in Round 6, but might have picked up another injury. DNP in domestic league (10.18)",
-   "reported": "Uncertain · Round 7",
+   "label": "Baja hasta la J14",
+   "untilRound": 14,
+   "detail": "Aggravated previous hamstring injury in Round 6. Set to miss about 4 weeks.",
+   "reported": "Out · Round 7-14",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 9.8,
-   "expectedChange": -0.08,
-   "riseProb": 0.113,
-   "sd": 7.34,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 6.8,
-   "p90": 11.6,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/3914.webp?v=19b31c45",
   "clubCrestThumb": "/escudos/ZAL.webp?v=e452f9b4"
@@ -10788,7 +10787,7 @@
   "valuePerCredit": 0.779,
   "valueProjected": 0.476,
   "valueMarket": 0.786,
-  "bargainScore": 39.2,
+  "bargainScore": 39.3,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -11228,7 +11227,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.153,
   "valueMarket": 0.0,
-  "bargainScore": 26.9,
+  "bargainScore": 27.1,
   "schedule": {
    "difficulty": 14.0,
    "next": {
@@ -11346,7 +11345,7 @@
   "valuePerCredit": -0.778,
   "valueProjected": 0.254,
   "valueMarket": -0.778,
-  "bargainScore": 38.9,
+  "bargainScore": 39.1,
   "schedule": {
    "difficulty": 92.0,
    "next": {
@@ -12124,7 +12123,7 @@
   "valuePerCredit": 2.274,
   "valueProjected": 0.0,
   "valueMarket": 2.28,
-  "bargainScore": 13.8,
+  "bargainScore": 13.9,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -12461,7 +12460,7 @@
   "valuePerCredit": 0.131,
   "valueProjected": 0.181,
   "valueMarket": 0.138,
-  "bargainScore": 19.6,
+  "bargainScore": 19.8,
   "schedule": {
    "difficulty": 9.0,
    "next": {
@@ -12579,7 +12578,7 @@
   "valuePerCredit": 0.806,
   "valueProjected": 0.323,
   "valueMarket": 0.806,
-  "bargainScore": 42.2,
+  "bargainScore": 42.3,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -12799,7 +12798,7 @@
   "valuePerCredit": 0.7,
   "valueProjected": 0.268,
   "valueMarket": 0.7,
-  "bargainScore": 33.9,
+  "bargainScore": 34.0,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -13137,7 +13136,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 29.0,
    "next": {
@@ -13473,7 +13472,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -13701,7 +13700,7 @@
   "valuePerCredit": 0.34,
   "valueProjected": 0.357,
   "valueMarket": 0.34,
-  "bargainScore": 30.5,
+  "bargainScore": 30.6,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -14041,7 +14040,7 @@
   "valuePerCredit": 0.771,
   "valueProjected": 0.0,
   "valueMarket": 0.78,
-  "bargainScore": 14.5,
+  "bargainScore": 14.6,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -14268,7 +14267,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -14385,7 +14384,7 @@
   "valuePerCredit": -0.37,
   "valueProjected": 0.355,
   "valueMarket": -0.375,
-  "bargainScore": 30.0,
+  "bargainScore": 30.1,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -14935,7 +14934,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.122,
   "valueMarket": 0.0,
-  "bargainScore": 25.6,
+  "bargainScore": 25.8,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -15605,7 +15604,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.245,
   "valueMarket": 0.25,
-  "bargainScore": 30.9,
+  "bargainScore": 31.1,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -16264,7 +16263,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.24,
   "valueMarket": 0.0,
-  "bargainScore": 29.8,
+  "bargainScore": 30.1,
   "schedule": {
    "difficulty": 92.0,
    "next": {
@@ -16374,7 +16373,7 @@
   "valuePerCredit": -0.25,
   "valueProjected": 0.077,
   "valueMarket": -0.25,
-  "bargainScore": 22.3,
+  "bargainScore": 22.5,
   "schedule": {
    "difficulty": 9.0,
    "next": {
@@ -16492,7 +16491,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.22,
   "valueMarket": 0.0,
-  "bargainScore": 27.5,
+  "bargainScore": 27.8,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -16830,7 +16829,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.11,
   "valueMarket": 0.0,
-  "bargainScore": 25.0,
+  "bargainScore": 25.2,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -16940,7 +16939,7 @@
   "valuePerCredit": 0.409,
   "valueProjected": 0.33,
   "valueMarket": 0.404,
-  "bargainScore": 28.1,
+  "bargainScore": 28.2,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -17050,7 +17049,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.255,
   "valueMarket": 0.25,
-  "bargainScore": 31.9,
+  "bargainScore": 32.1,
   "schedule": {
    "difficulty": 92.0,
    "next": {
@@ -17160,7 +17159,7 @@
   "valuePerCredit": 0.562,
   "valueProjected": 0.475,
   "valueMarket": 0.575,
-  "bargainScore": 36.5,
+  "bargainScore": 36.6,
   "schedule": {
    "difficulty": 92.0,
    "next": {
@@ -17270,7 +17269,7 @@
   "valuePerCredit": -0.25,
   "valueProjected": 0.142,
   "valueMarket": -0.25,
-  "bargainScore": 25.8,
+  "bargainScore": 26.0,
   "schedule": {
    "difficulty": 92.0,
    "next": {
@@ -17497,7 +17496,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.207,
   "valueMarket": 0.0,
-  "bargainScore": 27.9,
+  "bargainScore": 28.1,
   "schedule": {
    "difficulty": 92.0,
    "next": {
@@ -17725,7 +17724,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 31.5,
+  "bargainScore": 31.7,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -17843,7 +17842,7 @@
   "valuePerCredit": -0.225,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 22.9,
+  "bargainScore": 23.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -17953,7 +17952,7 @@
   "valuePerCredit": 1.459,
   "valueProjected": 0.0,
   "valueMarket": 1.469,
-  "bargainScore": 7.5,
+  "bargainScore": 7.6,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -18622,7 +18621,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 29.0,
    "next": {
@@ -19401,7 +19400,7 @@
   "valuePerCredit": 0.185,
   "valueProjected": 0.0,
   "valueMarket": 0.185,
-  "bargainScore": 17.7,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -19520,7 +19519,7 @@
   "valuePerCredit": -0.322,
   "valueProjected": 0.128,
   "valueMarket": -0.322,
-  "bargainScore": 18.2,
+  "bargainScore": 18.4,
   "schedule": {
    "difficulty": 13.0,
    "next": {
@@ -19638,7 +19637,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -19979,7 +19978,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -20096,7 +20095,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -20213,7 +20212,7 @@
   "valuePerCredit": 1.343,
   "valueProjected": 0.272,
   "valueMarket": 1.346,
-  "bargainScore": 35.5,
+  "bargainScore": 35.6,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -20661,7 +20660,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -20778,7 +20777,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.241,
   "valueMarket": 0.0,
-  "bargainScore": 31.3,
+  "bargainScore": 31.5,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -21008,7 +21007,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -21127,7 +21126,7 @@
   "valuePerCredit": 0.449,
   "valueProjected": 0.0,
   "valueMarket": 0.449,
-  "bargainScore": 17.7,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -22244,7 +22243,7 @@
   "valuePerCredit": 0.919,
   "valueProjected": 0.0,
   "valueMarket": 0.922,
-  "bargainScore": 20.2,
+  "bargainScore": 20.3,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -22471,7 +22470,7 @@
   "valuePerCredit": 0.2,
   "valueProjected": 0.247,
   "valueMarket": 0.2,
-  "bargainScore": 24.2,
+  "bargainScore": 24.4,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -22691,7 +22690,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.7,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -23148,7 +23147,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.125,
   "valueMarket": 0.0,
-  "bargainScore": 25.8,
+  "bargainScore": 26.0,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -23376,7 +23375,7 @@
   "valuePerCredit": 0.817,
   "valueProjected": 0.0,
   "valueMarket": 0.819,
-  "bargainScore": 9.6,
+  "bargainScore": 9.7,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -25365,7 +25364,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.288,
   "valueMarket": 0.0,
-  "bargainScore": 35.5,
+  "bargainScore": 35.6,
   "schedule": {
    "difficulty": 51.0,
    "next": {
@@ -25829,7 +25828,7 @@
   "valuePerCredit": 0.373,
   "valueProjected": 0.224,
   "valueMarket": 0.382,
-  "bargainScore": 21.6,
+  "bargainScore": 21.8,
   "schedule": {
    "difficulty": 13.0,
    "next": {
@@ -26049,7 +26048,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 29.0,
    "next": {
@@ -26276,7 +26275,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.292,
   "valueMarket": 0.0,
-  "bargainScore": 35.5,
+  "bargainScore": 35.6,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -26504,7 +26503,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.024,
   "valueMarket": 0.0,
-  "bargainScore": 22.8,
+  "bargainScore": 23.0,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -26944,7 +26943,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.195,
   "valueMarket": 0.0,
-  "bargainScore": 27.2,
+  "bargainScore": 27.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -27172,7 +27171,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 32.4,
+  "bargainScore": 32.6,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -27290,7 +27289,7 @@
   "valuePerCredit": 0.018,
   "valueProjected": 0.09,
   "valueMarket": 0.025,
-  "bargainScore": 19.8,
+  "bargainScore": 20.0,
   "schedule": {
    "difficulty": 13.0,
    "next": {
@@ -27408,7 +27407,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.07,
   "valueMarket": 0.0,
-  "bargainScore": 23.6,
+  "bargainScore": 23.8,
   "schedule": {
    "difficulty": 29.0,
    "next": {
@@ -27518,7 +27517,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -27635,7 +27634,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.247,
   "valueMarket": 0.0,
-  "bargainScore": 30.7,
+  "bargainScore": 30.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -27753,7 +27752,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.233,
   "valueMarket": 0.0,
-  "bargainScore": 28.7,
+  "bargainScore": 28.9,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -28201,7 +28200,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.252,
   "valueMarket": 0.0,
-  "bargainScore": 33.6,
+  "bargainScore": 33.8,
   "schedule": {
    "difficulty": 9.0,
    "next": {
@@ -28429,7 +28428,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.233,
   "valueMarket": 0.0,
-  "bargainScore": 28.8,
+  "bargainScore": 29.0,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -28767,7 +28766,7 @@
   "valuePerCredit": 0.694,
   "valueProjected": 0.223,
   "valueMarket": 0.694,
-  "bargainScore": 29.9,
+  "bargainScore": 30.1,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -29107,7 +29106,7 @@
   "valuePerCredit": 0.348,
   "valueProjected": 0.185,
   "valueMarket": 0.344,
-  "bargainScore": 21.3,
+  "bargainScore": 21.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -29547,7 +29546,7 @@
   "valuePerCredit": 0.092,
   "valueProjected": 0.28,
   "valueMarket": 0.1,
-  "bargainScore": 25.4,
+  "bargainScore": 25.5,
   "schedule": {
    "difficulty": 29.0,
    "next": {
@@ -29657,7 +29656,7 @@
   "valuePerCredit": 0.27,
   "valueProjected": 0.422,
   "valueMarket": 0.275,
-  "bargainScore": 34.3,
+  "bargainScore": 34.4,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -29767,7 +29766,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.22,
   "valueMarket": 0.0,
-  "bargainScore": 27.5,
+  "bargainScore": 27.7,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -29885,7 +29884,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 13.0,
    "next": {
@@ -30002,7 +30001,7 @@
   "valuePerCredit": 0.409,
   "valueProjected": 0.0,
   "valueMarket": 0.412,
-  "bargainScore": 16.4,
+  "bargainScore": 16.5,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -30559,7 +30558,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 31.5,
+  "bargainScore": 31.7,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -30677,7 +30676,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 32.6,
+  "bargainScore": 32.8,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -31015,7 +31014,7 @@
   "valuePerCredit": 0.357,
   "valueProjected": 0.0,
   "valueMarket": 0.364,
-  "bargainScore": 13.3,
+  "bargainScore": 13.4,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -31134,7 +31133,7 @@
   "valuePerCredit": -0.136,
   "valueProjected": 0.097,
   "valueMarket": -0.136,
-  "bargainScore": 18.5,
+  "bargainScore": 18.7,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -31252,7 +31251,7 @@
   "valuePerCredit": 1.555,
   "valueProjected": 0.0,
   "valueMarket": 1.553,
-  "bargainScore": 18.3,
+  "bargainScore": 18.4,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -31479,7 +31478,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.025,
   "valueMarket": 0.0,
-  "bargainScore": 23.0,
+  "bargainScore": 23.2,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -31589,7 +31588,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -31706,7 +31705,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.245,
   "valueMarket": 0.0,
-  "bargainScore": 30.3,
+  "bargainScore": 30.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -31824,7 +31823,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.247,
   "valueMarket": 0.0,
-  "bargainScore": 30.8,
+  "bargainScore": 31.0,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -32934,7 +32933,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.022,
   "valueMarket": 0.0,
-  "bargainScore": 22.4,
+  "bargainScore": 22.7,
   "schedule": {
    "difficulty": 13.0,
    "next": {
@@ -33044,7 +33043,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 13.0,
    "next": {
@@ -34373,7 +34372,7 @@
   "valuePerCredit": 0.191,
   "valueProjected": 0.337,
   "valueMarket": 0.185,
-  "bargainScore": 31.4,
+  "bargainScore": 31.5,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -34483,7 +34482,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.24,
   "valueMarket": 0.0,
-  "bargainScore": 30.3,
+  "bargainScore": 30.5,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -34603,7 +34602,7 @@
   "valuePerCredit": 1.183,
   "valueProjected": 0.0,
   "valueMarket": 1.188,
-  "bargainScore": 14.1,
+  "bargainScore": 14.2,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -35404,7 +35403,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 14.0,
    "next": {
@@ -35961,7 +35960,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.053,
   "valueMarket": 0.0,
-  "bargainScore": 23.8,
+  "bargainScore": 24.0,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -36079,7 +36078,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.7,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -36196,7 +36195,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.239,
   "valueMarket": 0.0,
-  "bargainScore": 31.5,
+  "bargainScore": 31.7,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -36872,7 +36871,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 51.0,
    "next": {
@@ -37099,7 +37098,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 30.5,
+  "bargainScore": 30.7,
   "schedule": {
    "difficulty": 35.0,
    "next": {
@@ -37217,7 +37216,7 @@
   "valuePerCredit": 0.824,
   "valueProjected": 0.162,
   "valueMarket": 0.824,
-  "bargainScore": 28.5,
+  "bargainScore": 28.7,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -37335,7 +37334,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.228,
   "valueMarket": 0.0,
-  "bargainScore": 31.3,
+  "bargainScore": 31.6,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -37673,7 +37672,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.243,
   "valueMarket": 0.0,
-  "bargainScore": 32.9,
+  "bargainScore": 33.1,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -37791,7 +37790,7 @@
   "valuePerCredit": 0.33,
   "valueProjected": 0.535,
   "valueMarket": 0.325,
-  "bargainScore": 32.2,
+  "bargainScore": 32.3,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -38011,7 +38010,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.235,
   "valueMarket": 0.0,
-  "bargainScore": 29.2,
+  "bargainScore": 29.4,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -39147,7 +39146,7 @@
   "valuePerCredit": -0.417,
   "valueProjected": 0.0,
   "valueMarket": -0.417,
-  "bargainScore": 17.7,
+  "bargainScore": 17.8,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -39264,7 +39263,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 31.5,
+  "bargainScore": 31.7,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -39382,7 +39381,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.223,
   "valueMarket": 0.0,
-  "bargainScore": 27.8,
+  "bargainScore": 28.0,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -39500,7 +39499,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.025,
   "valueMarket": 0.0,
-  "bargainScore": 23.0,
+  "bargainScore": 23.2,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -39610,7 +39609,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.025,
   "valueMarket": 0.0,
-  "bargainScore": 23.0,
+  "bargainScore": 23.2,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -39720,7 +39719,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.02,
   "valueMarket": 0.0,
-  "bargainScore": 22.3,
+  "bargainScore": 22.5,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -39830,7 +39829,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.233,
   "valueMarket": 0.0,
-  "bargainScore": 28.8,
+  "bargainScore": 29.0,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -39948,7 +39947,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.265,
   "valueMarket": 0.0,
-  "bargainScore": 33.1,
+  "bargainScore": 33.2,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -40066,7 +40065,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -40183,7 +40182,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.8,
+  "bargainScore": 17.9,
   "schedule": {
    "difficulty": 13.0,
    "next": {
