@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-21T00:42:30.323607+00:00",
+ "generatedAt": "2026-10-21T07:49:23.733250+00:00",
  "currentRound": 7,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 41,
  "lastPriceCapture": "2026-10-21T00:41:39.849963+00:00",
- "lastPriceCheck": "2026-10-21T00:41:39.849963+00:00",
+ "lastPriceCheck": "2026-10-21T07:48:49.046900+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-21T00:41:45.119630+00:00",
+  "generatedAt": "2026-10-21T07:48:53.648362+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -445,9 +445,9 @@
   "source": "RotoWire",
   "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
   "updatedAt": null,
-  "fetchedAt": "2026-10-21T00:41:38.559915+00:00",
-  "rows": 26,
-  "matched": 25,
+  "fetchedAt": "2026-10-21T07:48:48.095715+00:00",
+  "rows": 37,
+  "matched": 36,
   "unmatched": [
    "Mady Sissoko (BJK)"
   ],
@@ -456,17 +456,17 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-21T00:41:38.559915+00:00",
-    "rows": 26,
-    "matched": 25,
-    "flagged": 25
+    "fetchedAt": "2026-10-21T07:48:48.095715+00:00",
+    "rows": 37,
+    "matched": 36,
+    "flagged": 36
    }
   ],
   "nextRound": 7,
-  "unregistered": 17,
+  "unregistered": 16,
   "flagged": {
-   "out": 18,
-   "doubt": 24,
+   "out": 24,
+   "doubt": 28,
    "probable": 0
   }
  },

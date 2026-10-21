@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-21T00:41:38.559915+00:00",
+ "fetchedAt": "2026-10-21T07:48:48.095715+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -18,7 +18,7 @@
    "name": "Tamir Blatt",
    "status": "Out",
    "round": "",
-   "comment": "Not Injury Related"
+   "comment": "Coach's Decision"
   },
   {
    "team": "PAO",
@@ -27,6 +27,14 @@
    "status": "Game time",
    "round": "",
    "comment": "Wrist"
+  },
+  {
+   "team": "BAR",
+   "position": "G",
+   "name": "Dario Brizuela",
+   "status": "Game time",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "EFS",
@@ -53,12 +61,28 @@
    "comment": "Thigh"
   },
   {
+   "team": "EFS",
+   "position": "G",
+   "name": "PJ Dozier",
+   "status": "Out",
+   "round": "",
+   "comment": "Back"
+  },
+  {
    "team": "HTA",
    "position": "G",
    "name": "Tyler Ennis",
    "status": "Out",
    "round": "",
    "comment": "Achilles"
+  },
+  {
+   "team": "OLY",
+   "position": "F",
+   "name": "Evan Fournier",
+   "status": "Out",
+   "round": "",
+   "comment": "Shoulder"
   },
   {
    "team": "RMB",
@@ -72,14 +96,6 @@
    "team": "PBB",
    "position": "G",
    "name": "Nadir Hifi",
-   "status": "Game time",
-   "round": "",
-   "comment": "Ankle"
-  },
-  {
-   "team": "CZV",
-   "position": "C",
-   "name": "Ebuka Izundu",
    "status": "Game time",
    "round": "",
    "comment": "Ankle"
@@ -109,12 +125,44 @@
    "comment": "Wrist"
   },
   {
+   "team": "PAR",
+   "position": "C",
+   "name": "Tonye Jekiri",
+   "status": "Out",
+   "round": "",
+   "comment": "Thigh"
+  },
+  {
+   "team": "CZV",
+   "position": "C",
+   "name": "Christian Koloko",
+   "status": "Game time",
+   "round": "",
+   "comment": "Not Injury Related"
+  },
+  {
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
    "status": "Out",
    "round": "",
    "comment": ""
+  },
+  {
+   "team": "PAO",
+   "position": "C",
+   "name": "Mathias Lessort",
+   "status": "Game time",
+   "round": "",
+   "comment": "Knee"
+  },
+  {
+   "team": "MTA",
+   "position": "G",
+   "name": "Iffe Lundberg",
+   "status": "Out",
+   "round": "",
+   "comment": "Quadriceps"
   },
   {
    "team": "BAR",
@@ -149,6 +197,14 @@
    "comment": "Thigh"
   },
   {
+   "team": "OLY",
+   "position": "G",
+   "name": "Jean Montero",
+   "status": "Game time",
+   "round": "",
+   "comment": "Ankle"
+  },
+  {
    "team": "CZV",
    "position": "C",
    "name": "Johnathan Motley",
@@ -181,6 +237,22 @@
    "comment": "Knee"
   },
   {
+   "team": "OLY",
+   "position": "G",
+   "name": "Nikolaos Plotas",
+   "status": "Out",
+   "round": "",
+   "comment": "Elbow"
+  },
+  {
+   "team": "DUB",
+   "position": "G",
+   "name": "Klemen Prepelic",
+   "status": "Out",
+   "round": "",
+   "comment": "Back"
+  },
+  {
    "team": "PAO",
    "position": "F",
    "name": "Nikos Rogkavopoulos",
@@ -197,12 +269,28 @@
    "comment": ""
   },
   {
+   "team": "ZAL",
+   "position": "F",
+   "name": "Azuolas Tubelis",
+   "status": "Game time",
+   "round": "",
+   "comment": "Face"
+  },
+  {
    "team": "BJK",
    "position": "G",
    "name": "Lonnie Walker IV",
    "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
+  },
+  {
+   "team": "ZAL",
+   "position": "G",
+   "name": "Nigel Williams-Goss",
+   "status": "Game time",
+   "round": "",
+   "comment": "Thigh"
   },
   {
    "team": "PAR",
