@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-22T17:19:22.847039+00:00",
+ "fetchedAt": "2026-10-22T21:45:19.840690+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -19,14 +19,6 @@
    "status": "Out",
    "round": "",
    "comment": "Coach's Decision"
-  },
-  {
-   "team": "PAO",
-   "position": "F",
-   "name": "Isaac Bonga",
-   "status": "Game time",
-   "round": "",
-   "comment": "Wrist"
   },
   {
    "team": "BAR",
@@ -144,7 +136,7 @@
    "team": "CZV",
    "position": "C",
    "name": "Christian Koloko",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -163,14 +155,6 @@
    "status": "Out",
    "round": "",
    "comment": ""
-  },
-  {
-   "team": "PAO",
-   "position": "C",
-   "name": "Mathias Lessort",
-   "status": "Game time",
-   "round": "",
-   "comment": "Knee"
   },
   {
    "team": "MTA",
@@ -200,17 +184,9 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
-  },
-  {
-   "team": "BAR",
-   "position": "G",
-   "name": "Justin Minaya",
-   "status": "Game time",
-   "round": "",
-   "comment": "Thigh"
   },
   {
    "team": "OLY",
@@ -261,18 +237,10 @@
    "comment": "Elbow"
   },
   {
-   "team": "DUB",
-   "position": "G",
-   "name": "Klemen Prepelic",
-   "status": "Out",
-   "round": "",
-   "comment": "Back"
-  },
-  {
    "team": "PAR",
    "position": "G",
    "name": "Antonio Reeves",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -280,7 +248,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Nikos Rogkavopoulos",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Hamstring"
   },
@@ -291,6 +259,14 @@
    "status": "Out",
    "round": "",
    "comment": ""
+  },
+  {
+   "team": "PAO",
+   "position": "G",
+   "name": "Kostas Sloukas",
+   "status": "Out",
+   "round": "",
+   "comment": "Not Injury Related"
   },
   {
    "team": "ZAL",

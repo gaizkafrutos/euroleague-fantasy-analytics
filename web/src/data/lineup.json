@@ -1,22 +1,22 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 119.17,
- "scoredProjection": 147.45,
+ "totalProjection": 123.12,
+ "scoredProjection": 149.29,
  "captain": "3766",
  "starters": [
   "3766",
-  "3799",
+  "4233",
   "3850",
   "7424",
-  "11504"
+  "3842"
  ],
- "sixth": "3948",
+ "sixth": "4246",
  "bench": [
-  "3975",
+  "4258",
   "3933",
-  "4019",
-  "11540"
+  "3991",
+  "4088"
  ],
  "coach": {
   "key": "4006",
@@ -24,7 +24,7 @@
   "position": "E",
   "club": "ZAL",
   "price": 6.3,
-  "projection": 13.25
+  "projection": 13.17
  },
  "players": [
   {
@@ -32,32 +32,32 @@
    "name": "MALEDON, THEO",
    "position": "G",
    "club": "MAD",
-   "price": 12.3,
-   "projection": 17.77
+   "price": 11.9,
+   "projection": 17.22
   },
   {
-   "key": "3975",
-   "name": "HERRERA, SEBASTIAN",
+   "key": "3842",
+   "name": "WILBEKIN, SCOTTIE",
    "position": "G",
-   "club": "PRS",
-   "price": 5.1,
-   "projection": 5.78
+   "club": "BES",
+   "price": 9.3,
+   "projection": 13.26
   },
   {
-   "key": "4019",
-   "name": "KALAITZAKIS, PANAGIOTIS",
-   "position": "G",
-   "club": "PAN",
-   "price": 4.0,
-   "projection": 2.96
-  },
-  {
-   "key": "11540",
-   "name": "SAINT-SUPERY, MARIO",
+   "key": "4258",
+   "name": "PUERTO, JOSEP",
    "position": "G",
    "club": "PAM",
+   "price": 5.8,
+   "projection": 6.26
+  },
+  {
+   "key": "4088",
+   "name": "UGURLU, BERK",
+   "position": "G",
+   "club": "BES",
    "price": 4.0,
-   "projection": 2.14
+   "projection": 3.4
   },
   {
    "key": "3766",
@@ -65,23 +65,15 @@
    "position": "F",
    "club": "OLY",
    "price": 18.4,
-   "projection": 23.23
+   "projection": 23.2
   },
   {
-   "key": "3799",
-   "name": "LEDAY, ZACH",
+   "key": "4246",
+   "name": "OJELEYE, SEMI",
    "position": "F",
-   "club": "HTA",
-   "price": 14.4,
-   "projection": 19.39
-  },
-  {
-   "key": "3948",
-   "name": "NDIAYE, MBAYE",
-   "position": "F",
-   "club": "OLY",
-   "price": 9.6,
-   "projection": 13.25
+   "club": "RED",
+   "price": 9.0,
+   "projection": 13.03
   },
   {
    "key": "3933",
@@ -89,7 +81,23 @@
    "position": "F",
    "club": "PRS",
    "price": 4.9,
-   "projection": 5.52
+   "projection": 5.51
+  },
+  {
+   "key": "3991",
+   "name": "ABALDE, ALBERTO",
+   "position": "F",
+   "club": "MAD",
+   "price": 5.0,
+   "projection": 5.22
+  },
+  {
+   "key": "4233",
+   "name": "KABENGELE, MFIONDU",
+   "position": "C",
+   "club": "DUB",
+   "price": 15.6,
+   "projection": 20.89
   },
   {
    "key": "7424",
@@ -97,15 +105,7 @@
    "position": "C",
    "club": "VIR",
    "price": 9.8,
-   "projection": 15.14
-  },
-  {
-   "key": "11504",
-   "name": "THIEMANN, JOHANNES",
-   "position": "C",
-   "club": "MUN",
-   "price": 11.2,
-   "projection": 13.99
+   "projection": 15.13
   }
  ],
  "available": true,

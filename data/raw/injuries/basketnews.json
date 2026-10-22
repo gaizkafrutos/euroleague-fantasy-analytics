@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-22T17:19:22.350439+00:00",
- "updatedAt": "2026-10-22T17:05:00",
+ "fetchedAt": "2026-10-22T21:45:19.352621+00:00",
+ "updatedAt": "2026-10-22T17:34:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -64,7 +64,7 @@
    "team": "Armani Olimpia Milan",
    "position": "SF",
    "name": "Nicola Akele",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 2-6 (coach's decision). Played in the domestic league (10.18)"
   },
@@ -72,9 +72,17 @@
    "team": "Armani Olimpia Milan",
    "position": "PG",
    "name": "Diego Flaccadori",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 2-6 (coach's decision)"
+  },
+  {
+   "team": "Armani Olimpia Milan",
+   "position": "PG",
+   "name": "Stefano Tonut",
+   "status": "Out",
+   "round": "Round 7",
+   "comment": "Coach's decision"
   },
   {
    "team": "Besiktas Istanbul",
@@ -128,7 +136,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "C",
    "name": "Ebuka Izundu",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 7",
    "comment": "DNP in Rounds 5-6 (ankle injury). Played in the domestic league (10.18)"
   },
@@ -152,7 +160,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "PG",
    "name": "Stefan Miljenovic",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 4-6 (ankle injury)"
   },
@@ -160,7 +168,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "C",
    "name": "Johnathan Motley",
-   "status": "Game-time",
+   "status": "Out",
    "round": "Round 7",
    "comment": "Groin injury"
   },
@@ -256,7 +264,7 @@
    "team": "FC Bayern Munich",
    "position": "C",
    "name": "Kilian Fischer",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 2-6 (coach's decision)"
   },
@@ -264,7 +272,7 @@
    "team": "FC Bayern Munich",
    "position": "PG",
    "name": "Tobias Jensen",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 5-6 (coach's decision). Played in the domestic cup (10.18)"
   },
@@ -272,15 +280,23 @@
    "team": "FC Bayern Munich",
    "position": "PG",
    "name": "Rokas Jokubaitis",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 7",
    "comment": "DNP in Round 6 (rest). Played in the domestic cup (10.18)"
   },
   {
    "team": "FC Bayern Munich",
+   "position": "SF",
+   "name": "Miles Norris",
+   "status": "Out",
+   "round": "Round 7",
+   "comment": "Coach's decision"
+  },
+  {
+   "team": "FC Bayern Munich",
    "position": "C",
    "name": "Johannes Voigtmann",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 7",
    "comment": "DNP in Round 6 (undisclosed). Played in the domestic cup (10.18)"
   },
@@ -416,7 +432,7 @@
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "SF",
    "name": "Pedro Souza",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 2-6 (coach's decision)"
   },
@@ -464,7 +480,7 @@
    "team": "Maccabi Rapyd Tel Aviv",
    "position": "PG",
    "name": "Amit Ebo",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 4-6 (coach's decision). Played in the domestic league (10.18)"
   },
@@ -472,7 +488,7 @@
    "team": "Maccabi Rapyd Tel Aviv",
    "position": "SF",
    "name": "Gur Lavi",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (undisclosed injury)"
   },
@@ -672,7 +688,7 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SF",
    "name": "Uros Danilovic",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 2-6 (coach's decision)"
   },
@@ -696,7 +712,7 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SF",
    "name": "Mario Nakic",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 7",
    "comment": "DNP in Rounds 5-6 (undisclosed). Played in the domestic league (10.18)"
   },
@@ -736,7 +752,7 @@
    "team": "Real Madrid",
    "position": "PG",
    "name": "Sergio Llull",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
   },
@@ -744,7 +760,7 @@
    "team": "Real Madrid",
    "position": "C",
    "name": "Olivier Sarr",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
   },
@@ -752,7 +768,7 @@
    "team": "Real Madrid",
    "position": "SF",
    "name": "Max Shulga",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (coach's decision)"
   },
