@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-22T05:02:06.792416+00:00",
- "updatedAt": "2026-10-21T19:04:00",
+ "fetchedAt": "2026-10-22T12:05:01.696733+00:00",
+ "updatedAt": "2026-10-22T09:03:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -112,9 +112,9 @@
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Lonnie Walker IV",
-   "status": "Game-time",
+   "status": "Expected",
    "round": "Round 7",
-   "comment": "Has been registered to EuroLeague's roster after a DNP in Round 6 (new signing)"
+   "comment": "Listed as available per official injury report (new signing)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -344,9 +344,9 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Khadeen Carrington",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 5-6 (coach's decision)."
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "DNP in Rounds 5-7 (coach's decision)."
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -360,9 +360,9 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "SF",
    "name": "Tomer Ginat",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster (coach's decision) after DNP in Rounds 1-6 (knee injury). Played in the domestic league (10.18)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "DNP in Round 7 after returning from a knee injury (coach's decision)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -376,9 +376,9 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Bar Timor",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "DNP in Round 7 (coach's decision)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -465,7 +465,7 @@
    "position": "PG",
    "name": "Gabriel Lundberg",
    "status": "Out",
-   "round": "Round 7-12",
+   "round": "Round 7-14",
    "comment": "Expected to miss 6-8 weeks after suffering a partial tear of his quadriceps tendon during a team practice (10.20)"
   },
   {
@@ -570,7 +570,7 @@
    "name": "Eleftherios Mantzoukas",
    "status": "Out",
    "round": "Round 7",
-   "comment": "Virus"
+   "comment": "Illness"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -760,33 +760,25 @@
    "team": "Virtus Bologna",
    "position": "PG",
    "name": "Matteo Baiocchi",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision)."
-  },
-  {
-   "team": "Virtus Bologna",
-   "position": "PG",
-   "name": "Tommaso Baldasso",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Round 6 (coach's decision)."
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "DNP in Rounds 1-7 (coach's decision)"
   },
   {
    "team": "Virtus Bologna",
    "position": "PG",
    "name": "Davide Casarin",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Round 6 (coach's decision)."
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "DNP in Rounds 6-7 (coach's decision)"
   },
   {
    "team": "Virtus Bologna",
    "position": "SF",
    "name": "Francesco Ferrari",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster (coach's decision)."
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "DNP in Round 7 (coach's decision)"
   },
   {
    "team": "Zalgiris Kaunas",
