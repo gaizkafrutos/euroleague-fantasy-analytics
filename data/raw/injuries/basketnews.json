@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-22T12:05:01.696733+00:00",
- "updatedAt": "2026-10-22T09:03:00",
+ "fetchedAt": "2026-10-22T17:19:22.350439+00:00",
+ "updatedAt": "2026-10-22T17:05:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -24,7 +24,7 @@
    "team": "Anadolu Efes Istanbul",
    "position": "PG",
    "name": "Ruzgar Fenemen",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (coach's decision)"
   },
@@ -40,7 +40,7 @@
    "team": "Anadolu Efes Istanbul",
    "position": "SF",
    "name": "D. Karutasu",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (coach's decision)"
   },
@@ -48,7 +48,7 @@
    "team": "Anadolu Efes Istanbul",
    "position": "PG",
    "name": "David Mutaf",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.19)"
   },
@@ -80,7 +80,7 @@
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Yagiz Aksu",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
    "comment": "DNP in Rounds 1-6 (coach's decision)"
   },
@@ -88,7 +88,7 @@
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Devon Dotson",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 7",
    "comment": "Dislocated his finger during last domestic league game"
   },
@@ -112,7 +112,7 @@
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Lonnie Walker IV",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 7",
    "comment": "Listed as available per official injury report (new signing)"
   },
@@ -224,9 +224,17 @@
    "team": "Dubai Basketball",
    "position": "PG",
    "name": "Klemen Prepelic",
+   "status": "Ready",
+   "round": "Round 7",
+   "comment": "Included in 12-man roster after DNP in Rounds 1-6, but might not enter the court (back injury)"
+  },
+  {
+   "team": "Dubai Basketball",
+   "position": "SF",
+   "name": "Tornike Shengelia",
    "status": "Out",
    "round": "Round 7",
-   "comment": "DNP in Rounds 1-6 (back injury)"
+   "comment": "Undisclosed"
   },
   {
    "team": "Dubai Basketball",
@@ -235,6 +243,14 @@
    "status": "Out",
    "round": "Indefinitely",
    "comment": "Not included in official Euroleague roster"
+  },
+  {
+   "team": "Dubai Basketball",
+   "position": "PG",
+   "name": "Thomas Walkup",
+   "status": "Out",
+   "round": "Round 7",
+   "comment": "Back discomfort"
   },
   {
    "team": "FC Bayern Munich",
@@ -480,9 +496,9 @@
    "team": "Olympiacos Piraeus",
    "position": "PG",
    "name": "Tyler Dorsey",
-   "status": "Uncertain",
-   "round": "Round 7",
-   "comment": "DNP in Round 6 (club's decision). DNP in the domestic league (10.18)"
+   "status": "Out",
+   "round": "Round 7-13",
+   "comment": "Received one-month suspension by the club (10.22)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -560,9 +576,9 @@
    "team": "Panathinaikos AKTOR Athens",
    "position": "C",
    "name": "Mathias Lessort",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 7",
-   "comment": "Small bone swelling, underwent MRI after Round 6 on his knee"
+   "comment": "Included in 12-man roster (small bone swelling)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -578,7 +594,7 @@
    "name": "Konstantinos Mitoglou",
    "status": "Ready",
    "round": "Round 7",
-   "comment": "Left Round 6 game (leg injury). Played in the domestic league (10.18)"
+   "comment": "Included in 12-man roster after leaving Round 6 game (leg injury)."
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -586,7 +602,7 @@
    "name": "Kendrick Nunn",
    "status": "Ready",
    "round": "Round 7",
-   "comment": "Played in domestic league after DNP in Rounds 1-6 (medial right meniscus tear)"
+   "comment": "Included in 12-man roster after DNP in Rounds 1-6 (medial right meniscus tear)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -600,17 +616,17 @@
    "team": "Panathinaikos AKTOR Athens",
    "position": "PG",
    "name": "Kostas Sloukas",
-   "status": "Ready",
+   "status": "Out",
    "round": "Round 7",
-   "comment": "Played in domestic league DNP in Rounds 1-6 (rehab after leg injury)"
+   "comment": "Not included in 12-man roster after returning to action in domestic league (coach's decision)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
    "position": "PG",
    "name": "Iason Varvaritis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 7",
-   "comment": "DNP in Rounds 1-6 (coach's decision)"
+   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision)"
   },
   {
    "team": "Paris Basketball",

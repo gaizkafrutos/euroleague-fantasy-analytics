@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-22T12:05:02.190349+00:00",
+ "fetchedAt": "2026-10-22T17:19:22.847039+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -51,6 +51,14 @@
    "status": "Out",
    "round": "",
    "comment": "Shoulder"
+  },
+  {
+   "team": "OLY",
+   "position": "G",
+   "name": "Tyler Dorsey",
+   "status": "Out",
+   "round": "",
+   "comment": "Not Injury Related"
   },
   {
    "team": "ASV",
@@ -136,6 +144,14 @@
    "team": "CZV",
    "position": "C",
    "name": "Christian Koloko",
+   "status": "Game time",
+   "round": "",
+   "comment": "Not Injury Related"
+  },
+  {
+   "team": "OLY",
+   "position": "G",
+   "name": "John Konchar",
    "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
@@ -285,20 +301,12 @@
    "comment": "Face"
   },
   {
-   "team": "BJK",
-   "position": "G",
-   "name": "Lonnie Walker IV",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
    "team": "ZAL",
    "position": "G",
    "name": "Nigel Williams-Goss",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
-   "comment": "Thigh"
+   "comment": "Hamstring"
   },
   {
    "team": "PAR",
