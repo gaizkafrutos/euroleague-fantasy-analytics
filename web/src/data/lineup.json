@@ -1,8 +1,8 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 123.12,
- "scoredProjection": 149.29,
+ "totalProjection": 122.21,
+ "scoredProjection": 148.09,
  "captain": "3766",
  "starters": [
   "3766",
@@ -13,18 +13,18 @@
  ],
  "sixth": "4246",
  "bench": [
-  "4258",
-  "3933",
+  "3975",
   "3991",
-  "4088"
+  "11521",
+  "3867"
  ],
  "coach": {
-  "key": "4006",
-  "name": "MASIULIS, TOMAS",
+  "key": "3938",
+  "name": "NAVARRO, IBON",
   "position": "E",
-  "club": "ZAL",
-  "price": 6.3,
-  "projection": 13.17
+  "club": "RED",
+  "price": 6.7,
+  "projection": 12.31
  },
  "players": [
   {
@@ -33,7 +33,7 @@
    "position": "G",
    "club": "MAD",
    "price": 11.9,
-   "projection": 17.22
+   "projection": 17.2
   },
   {
    "key": "3842",
@@ -41,23 +41,23 @@
    "position": "G",
    "club": "BES",
    "price": 9.3,
-   "projection": 13.26
+   "projection": 13.32
   },
   {
-   "key": "4258",
-   "name": "PUERTO, JOSEP",
+   "key": "3975",
+   "name": "HERRERA, SEBASTIAN",
    "position": "G",
-   "club": "PAM",
-   "price": 5.8,
-   "projection": 6.26
+   "club": "PRS",
+   "price": 5.3,
+   "projection": 5.74
   },
   {
-   "key": "4088",
-   "name": "UGURLU, BERK",
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
    "position": "G",
-   "club": "BES",
-   "price": 4.0,
-   "projection": 3.4
+   "club": "ASV",
+   "price": 4.9,
+   "projection": 4.76
   },
   {
    "key": "3766",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "OLY",
    "price": 18.4,
-   "projection": 23.2
+   "projection": 23.29
   },
   {
    "key": "4246",
@@ -73,15 +73,7 @@
    "position": "F",
    "club": "RED",
    "price": 9.0,
-   "projection": 13.03
-  },
-  {
-   "key": "3933",
-   "name": "CAVALIERE, LEOPOLD",
-   "position": "F",
-   "club": "PRS",
-   "price": 4.9,
-   "projection": 5.51
+   "projection": 13.01
   },
   {
    "key": "3991",
@@ -92,12 +84,20 @@
    "projection": 5.22
   },
   {
+   "key": "3867",
+   "name": "PAPANIKOLAOU, KOSTAS",
+   "position": "F",
+   "club": "OLY",
+   "price": 4.1,
+   "projection": 3.73
+  },
+  {
    "key": "4233",
    "name": "KABENGELE, MFIONDU",
    "position": "C",
    "club": "DUB",
    "price": 15.6,
-   "projection": 20.89
+   "projection": 20.79
   },
   {
    "key": "7424",
@@ -105,7 +105,7 @@
    "position": "C",
    "club": "VIR",
    "price": 9.8,
-   "projection": 15.13
+   "projection": 15.15
   }
  ],
  "available": true,

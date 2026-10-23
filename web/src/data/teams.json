@@ -11,7 +11,7 @@
   "winRate": 0.377,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 54.0,
+  "difficulty": 59.0,
   "fixtures": [
    {
     "round": 8,
@@ -32,7 +32,7 @@
     "opponent": "PRS",
     "home": true,
     "date": "2026-11-05T17:15:00Z",
-    "opponent_rating": -3.82
+    "opponent_rating": -4.37
    },
    {
     "round": 11,
@@ -73,15 +73,15 @@
   },
   "allowed": {
    "games": 7,
-   "G": 45.58,
-   "F": 32.87,
-   "C": 15.98,
-   "all": 94.43,
+   "G": 45.64,
+   "F": 32.86,
+   "C": 15.89,
+   "all": 94.4,
    "index": {
-    "G": 1.057,
+    "G": 1.056,
     "F": 0.953,
-    "C": 0.776,
-    "all": 0.961
+    "C": 0.779,
+    "all": 0.962
    }
   },
   "upcoming": [
@@ -108,6 +108,12 @@
     "opponent": "VIR",
     "home": true,
     "date": "2026-11-13T17:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "DUB",
+    "home": false,
+    "date": "2026-11-17T16:00:00Z"
    }
   ],
   "quarters": {
@@ -334,21 +340,21 @@
     "opponent": "OLY",
     "home": false,
     "date": "2026-10-30T19:15:00Z",
-    "opponent_rating": 8.22
+    "opponent_rating": 7.35
    },
    {
     "round": 10,
     "opponent": "PAM",
     "home": true,
     "date": "2026-11-05T19:30:00Z",
-    "opponent_rating": 5.47
+    "opponent_rating": 5.89
    },
    {
     "round": 11,
     "opponent": "ZAL",
     "home": true,
     "date": "2026-11-12T19:30:00Z",
-    "opponent_rating": -0.35
+    "opponent_rating": 1.22
    },
    {
     "round": 12,
@@ -382,14 +388,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 49.71,
+   "G": 49.77,
    "F": 34.81,
-   "C": 23.49,
-   "all": 108.01,
+   "C": 23.41,
+   "all": 107.98,
    "index": {
-    "G": 1.153,
+    "G": 1.151,
     "F": 1.009,
-    "C": 1.14,
+    "C": 1.147,
     "all": 1.1
    }
   },
@@ -417,6 +423,12 @@
     "opponent": "ZAL",
     "home": true,
     "date": "2026-11-12T19:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "RED",
+    "home": true,
+    "date": "2026-11-17T19:30:00Z"
    }
   ],
   "quarters": {
@@ -629,14 +641,14 @@
   "winRate": 0.429,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 49.0,
+  "difficulty": 57.0,
   "fixtures": [
    {
     "round": 8,
     "opponent": "OLY",
     "home": true,
     "date": "2026-10-28T17:30:00Z",
-    "opponent_rating": 8.22
+    "opponent_rating": 7.35
    },
    {
     "round": 9,
@@ -650,14 +662,14 @@
     "opponent": "ZAL",
     "home": true,
     "date": "2026-11-06T17:00:00Z",
-    "opponent_rating": -0.35
+    "opponent_rating": 1.22
    },
    {
     "round": 11,
     "opponent": "ASV",
     "home": false,
     "date": "2026-11-13T19:30:00Z",
-    "opponent_rating": -7.4
+    "opponent_rating": -8.37
    },
    {
     "round": 12,
@@ -691,14 +703,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 47.15,
+   "G": 47.21,
    "F": 37.5,
-   "C": 20.41,
-   "all": 105.06,
+   "C": 20.33,
+   "all": 105.03,
    "index": {
-    "G": 1.094,
+    "G": 1.092,
     "F": 1.087,
-    "C": 0.991,
+    "C": 0.996,
     "all": 1.07
    }
   },
@@ -726,6 +738,12 @@
     "opponent": "ASV",
     "home": false,
     "date": "2026-11-13T19:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "MAD",
+    "home": true,
+    "date": "2026-11-18T17:00:00Z"
    }
   ],
   "quarters": {
@@ -938,7 +956,7 @@
   "winRate": 0.556,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 29.0,
+  "difficulty": 36.0,
   "fixtures": [
    {
     "round": 8,
@@ -959,7 +977,7 @@
     "opponent": "OLY",
     "home": false,
     "date": "2026-11-06T19:15:00Z",
-    "opponent_rating": 8.22
+    "opponent_rating": 7.35
    },
    {
     "round": 11,
@@ -1000,14 +1018,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 39.77,
-   "F": 31.69,
-   "C": 19.59,
-   "all": 91.05,
+   "G": 39.82,
+   "F": 31.68,
+   "C": 19.51,
+   "all": 91.02,
    "index": {
-    "G": 0.923,
+    "G": 0.921,
     "F": 0.918,
-    "C": 0.951,
+    "C": 0.956,
     "all": 0.927
    }
   },
@@ -1035,6 +1053,12 @@
     "opponent": "MAD",
     "home": false,
     "date": "2026-11-12T20:00:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "MIL",
+    "home": false,
+    "date": "2026-11-17T19:30:00Z"
    }
   ],
   "quarters": {
@@ -1247,14 +1271,14 @@
   "winRate": 0.615,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 25.0,
+  "difficulty": 33.0,
   "fixtures": [
    {
     "round": 8,
     "opponent": "PRS",
     "home": true,
     "date": "2026-10-27T16:00:00Z",
-    "opponent_rating": -3.82
+    "opponent_rating": -4.37
    },
    {
     "round": 9,
@@ -1275,7 +1299,7 @@
     "opponent": "OLY",
     "home": false,
     "date": "2026-11-12T19:15:00Z",
-    "opponent_rating": 8.22
+    "opponent_rating": 7.35
    },
    {
     "round": 12,
@@ -1309,14 +1333,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 40.57,
+   "G": 40.62,
    "F": 30.16,
-   "C": 21.74,
-   "all": 92.47,
+   "C": 21.66,
+   "all": 92.44,
    "index": {
-    "G": 0.941,
+    "G": 0.939,
     "F": 0.874,
-    "C": 1.055,
+    "C": 1.062,
     "all": 0.942
    }
   },
@@ -1344,6 +1368,12 @@
     "opponent": "OLY",
     "home": false,
     "date": "2026-11-12T19:15:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "IST",
+    "home": true,
+    "date": "2026-11-17T16:00:00Z"
    }
   ],
   "quarters": {
@@ -1556,7 +1586,7 @@
   "winRate": 0.562,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 50.0,
+  "difficulty": 58.0,
   "fixtures": [
    {
     "round": 8,
@@ -1570,7 +1600,7 @@
     "opponent": "PAM",
     "home": true,
     "date": "2026-10-30T19:30:00Z",
-    "opponent_rating": 5.47
+    "opponent_rating": 5.89
    },
    {
     "round": 10,
@@ -1591,7 +1621,7 @@
     "opponent": "PRS",
     "home": true,
     "date": "2026-11-17T19:30:00Z",
-    "opponent_rating": -3.82
+    "opponent_rating": -4.37
    }
   ],
   "box": {
@@ -1618,15 +1648,15 @@
   },
   "allowed": {
    "games": 7,
-   "G": 40.43,
-   "F": 39.08,
-   "C": 21.09,
-   "all": 100.59,
+   "G": 40.48,
+   "F": 39.07,
+   "C": 21.0,
+   "all": 100.56,
    "index": {
-    "G": 0.938,
+    "G": 0.936,
     "F": 1.133,
-    "C": 1.024,
-    "all": 1.024
+    "C": 1.029,
+    "all": 1.025
    }
   },
   "upcoming": [
@@ -1653,6 +1683,12 @@
     "opponent": "PAN",
     "home": false,
     "date": "2026-11-13T19:15:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "PRS",
+    "home": true,
+    "date": "2026-11-17T19:30:00Z"
    }
   ],
   "quarters": {
@@ -1865,7 +1901,7 @@
   "winRate": 0.36,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 30.0,
+  "difficulty": 37.0,
   "fixtures": [
    {
     "round": 8,
@@ -1886,21 +1922,21 @@
     "opponent": "ASV",
     "home": false,
     "date": "2026-11-05T19:00:00Z",
-    "opponent_rating": -7.4
+    "opponent_rating": -8.37
    },
    {
     "round": 11,
     "opponent": "PAM",
     "home": false,
     "date": "2026-11-12T19:30:00Z",
-    "opponent_rating": 5.47
+    "opponent_rating": 5.89
    },
    {
     "round": 12,
     "opponent": "ZAL",
     "home": false,
     "date": "2026-11-17T18:00:00Z",
-    "opponent_rating": -0.35
+    "opponent_rating": 1.22
    }
   ],
   "box": {
@@ -1927,14 +1963,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 48.88,
+   "G": 48.94,
    "F": 31.64,
-   "C": 27.59,
-   "all": 108.11,
+   "C": 27.5,
+   "all": 108.08,
    "index": {
-    "G": 1.134,
+    "G": 1.132,
     "F": 0.917,
-    "C": 1.339,
+    "C": 1.348,
     "all": 1.101
    }
   },
@@ -1962,6 +1998,12 @@
     "opponent": "PAM",
     "home": false,
     "date": "2026-11-12T19:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "ZAL",
+    "home": false,
+    "date": "2026-11-17T18:00:00Z"
    }
   ],
   "quarters": {
@@ -2168,27 +2210,20 @@
   "short": "Fenerbahce",
   "country": "TUR",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png",
-  "offense": 82.7,
-  "defense": 77.5,
-  "netRating": 5.2,
-  "winRate": 0.731,
-  "games": 6,
+  "offense": 81.3,
+  "defense": 76.2,
+  "netRating": 5.03,
+  "winRate": 0.751,
+  "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 99.0,
+  "difficulty": 57.0,
   "fixtures": [
-   {
-    "round": 7,
-    "opponent": "OLY",
-    "home": false,
-    "date": "2026-10-23T18:15:00Z",
-    "opponent_rating": 8.22
-   },
    {
     "round": 8,
     "opponent": "PAM",
     "home": false,
     "date": "2026-10-27T19:30:00Z",
-    "opponent_rating": 5.47
+    "opponent_rating": 5.89
    },
    {
     "round": 9,
@@ -2209,25 +2244,32 @@
     "opponent": "PRS",
     "home": false,
     "date": "2026-11-11T19:45:00Z",
-    "opponent_rating": -3.82
+    "opponent_rating": -4.37
+   },
+   {
+    "round": 12,
+    "opponent": "ASV",
+    "home": true,
+    "date": "2026-11-17T18:00:00Z",
+    "opponent_rating": -8.37
    }
   ],
   "box": {
-   "games": 6.0,
-   "wins": 5.0,
+   "games": 7.0,
+   "wins": 6.0,
    "losses": 1.0,
-   "ppg": 83.5,
-   "papg": 74.5,
-   "offRating": 116.0,
-   "defRating": 103.4,
-   "netRating": 12.6,
-   "pace": 72.0,
-   "efg": 55.5,
-   "tovRate": 18.1,
-   "orbRate": 34.0,
-   "ftRate": 31.8,
-   "astPerGame": 18.3,
-   "threeRate": 41.8
+   "ppg": 80.7,
+   "papg": 72.6,
+   "offRating": 113.0,
+   "defRating": 101.8,
+   "netRating": 11.2,
+   "pace": 71.4,
+   "efg": 53.8,
+   "tovRate": 17.2,
+   "orbRate": 32.5,
+   "ftRate": 30.3,
+   "astPerGame": 18.1,
+   "threeRate": 43.2
   },
   "colors": {
    "halo": "#807040",
@@ -2235,25 +2277,19 @@
    "statLight": "#6e6500"
   },
   "allowed": {
-   "games": 6,
-   "G": 34.69,
-   "F": 27.95,
-   "C": 21.48,
-   "all": 84.11,
+   "games": 7,
+   "G": 32.94,
+   "F": 28.03,
+   "C": 21.6,
+   "all": 82.57,
    "index": {
-    "G": 0.805,
-    "F": 0.81,
-    "C": 1.042,
-    "all": 0.856
+    "G": 0.762,
+    "F": 0.813,
+    "C": 1.059,
+    "all": 0.841
    }
   },
   "upcoming": [
-   {
-    "round": 7,
-    "opponent": "OLY",
-    "home": false,
-    "date": "2026-10-23T18:15:00Z"
-   },
    {
     "round": 8,
     "opponent": "PAM",
@@ -2277,22 +2313,28 @@
     "opponent": "PRS",
     "home": false,
     "date": "2026-11-11T19:45:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "ASV",
+    "home": true,
+    "date": "2026-11-17T18:00:00Z"
    }
   ],
   "quarters": {
    "current": {
-    "games": 6,
+    "games": 7,
     "for": [
-     23.8,
-     17.3,
-     22.3,
-     20.0
+     21.6,
+     17.1,
+     22.1,
+     19.9
     ],
     "against": [
-     17.7,
-     19.8,
-     16.5,
-     20.5
+     18.0,
+     19.0,
+     16.3,
+     19.3
     ],
     "overtimes": 0
    },
@@ -2309,12 +2351,12 @@
      "014124",
      "014168"
     ],
-    "minutes": 25.9,
-    "games": 5,
-    "pointsFor": 57,
-    "pointsAgainst": 49,
-    "possessions": 44.1,
-    "net": 18.1,
+    "minutes": 29.5,
+    "games": 6,
+    "pointsFor": 62,
+    "pointsAgainst": 56,
+    "possessions": 50.0,
+    "net": 12.0,
     "names": [
      "Sanli",
      "Shields",
@@ -2338,12 +2380,12 @@
      "014124",
      "014168"
     ],
-    "minutes": 17.2,
-    "games": 3,
+    "minutes": 18.5,
+    "games": 4,
     "pointsFor": 38,
-    "pointsAgainst": 32,
-    "possessions": 31.5,
-    "net": 19.1,
+    "pointsAgainst": 35,
+    "possessions": 34.5,
+    "net": 8.7,
     "names": [
      "Shields",
      "Forrest",
@@ -2357,6 +2399,64 @@
      4712,
      8567,
      8727
+    ]
+   },
+   {
+    "players": [
+     "002849",
+     "004888",
+     "007200",
+     "009863",
+     "013506"
+    ],
+    "minutes": 12.8,
+    "games": 3,
+    "pointsFor": 23,
+    "pointsAgainst": 19,
+    "possessions": 20.7,
+    "net": 19.3,
+    "names": [
+     "Melli",
+     "Clyburn",
+     "Larkin",
+     "Baldwin Iv",
+     "Bingham"
+    ],
+    "ids": [
+     3801,
+     3777,
+     3767,
+     3771,
+     4712
+    ]
+   },
+   {
+    "players": [
+     "002849",
+     "004888",
+     "007200",
+     "007831",
+     "009863"
+    ],
+    "minutes": 11.1,
+    "games": 2,
+    "pointsFor": 30,
+    "pointsAgainst": 23,
+    "possessions": 19.2,
+    "net": 36.4,
+    "names": [
+     "Melli",
+     "Clyburn",
+     "Larkin",
+     "Shields",
+     "Baldwin Iv"
+    ],
+    "ids": [
+     3801,
+     3777,
+     3767,
+     3775,
+     3771
     ]
    },
    {
@@ -2391,35 +2491,6 @@
    {
     "players": [
      "002849",
-     "004888",
-     "007200",
-     "009863",
-     "013506"
-    ],
-    "minutes": 8.8,
-    "games": 2,
-    "pointsFor": 20,
-    "pointsAgainst": 13,
-    "possessions": 13.4,
-    "net": 52.1,
-    "names": [
-     "Melli",
-     "Clyburn",
-     "Larkin",
-     "Baldwin Iv",
-     "Bingham"
-    ],
-    "ids": [
-     3801,
-     3777,
-     3767,
-     3771,
-     4712
-    ]
-   },
-   {
-    "players": [
-     "002849",
      "002968",
      "004888",
      "006896",
@@ -2445,35 +2516,6 @@
      11506,
      3771
     ]
-   },
-   {
-    "players": [
-     "002849",
-     "004888",
-     "006896",
-     "009863",
-     "013506"
-    ],
-    "minutes": 8.4,
-    "games": 2,
-    "pointsFor": 22,
-    "pointsAgainst": 15,
-    "possessions": 15.0,
-    "net": 46.5,
-    "names": [
-     "Melli",
-     "Clyburn",
-     "Sargiunas",
-     "Baldwin Iv",
-     "Bingham"
-    ],
-    "ids": [
-     3801,
-     3777,
-     11506,
-     3771,
-     4712
-    ]
    }
   ]
  },
@@ -2489,7 +2531,7 @@
   "winRate": 0.648,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 33.0,
+  "difficulty": 41.0,
   "fixtures": [
    {
     "round": 8,
@@ -2551,14 +2593,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 38.72,
-   "F": 28.73,
-   "C": 24.06,
-   "all": 91.5,
+   "G": 38.78,
+   "F": 28.72,
+   "C": 23.98,
+   "all": 91.47,
    "index": {
-    "G": 0.898,
+    "G": 0.897,
     "F": 0.833,
-    "C": 1.168,
+    "C": 1.175,
     "all": 0.932
    }
   },
@@ -2586,6 +2628,12 @@
     "opponent": "TEL",
     "home": false,
     "date": "2026-11-12T19:05:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "BAS",
+    "home": false,
+    "date": "2026-11-17T19:30:00Z"
    }
   ],
   "quarters": {
@@ -2798,7 +2846,7 @@
   "winRate": 0.235,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 48.0,
+  "difficulty": 52.0,
   "fixtures": [
    {
     "round": 8,
@@ -2812,14 +2860,14 @@
     "opponent": "ASV",
     "home": false,
     "date": "2026-10-30T19:00:00Z",
-    "opponent_rating": -7.4
+    "opponent_rating": -8.37
    },
    {
     "round": 10,
     "opponent": "ULK",
     "home": false,
     "date": "2026-11-05T18:00:00Z",
-    "opponent_rating": 5.2
+    "opponent_rating": 5.03
    },
    {
     "round": 11,
@@ -2860,14 +2908,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 46.89,
-   "F": 36.04,
-   "C": 25.69,
-   "all": 108.61,
+   "G": 46.95,
+   "F": 36.03,
+   "C": 25.6,
+   "all": 108.58,
    "index": {
-    "G": 1.088,
-    "F": 1.045,
-    "C": 1.247,
+    "G": 1.086,
+    "F": 1.044,
+    "C": 1.255,
     "all": 1.106
    }
   },
@@ -2895,6 +2943,12 @@
     "opponent": "PAR",
     "home": false,
     "date": "2026-11-11T19:45:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "HTA",
+    "home": true,
+    "date": "2026-11-17T19:30:00Z"
    }
   ],
   "quarters": {
@@ -3101,21 +3155,14 @@
   "short": "ASVEL",
   "country": "FRA",
   "crest": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png",
-  "offense": 83.6,
-  "defense": 91.0,
-  "netRating": -7.4,
-  "winRate": 0.272,
-  "games": 6,
+  "offense": 83.7,
+  "defense": 92.0,
+  "netRating": -8.37,
+  "winRate": 0.251,
+  "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 6.0,
+  "difficulty": 0.0,
   "fixtures": [
-   {
-    "round": 7,
-    "opponent": "ZAL",
-    "home": false,
-    "date": "2026-10-23T17:00:00Z",
-    "opponent_rating": -0.35
-   },
    {
     "round": 8,
     "opponent": "PAR",
@@ -3143,24 +3190,31 @@
     "home": true,
     "date": "2026-11-13T19:30:00Z",
     "opponent_rating": -1.43
+   },
+   {
+    "round": 12,
+    "opponent": "ULK",
+    "home": false,
+    "date": "2026-11-17T18:00:00Z",
+    "opponent_rating": 5.03
    }
   ],
   "box": {
-   "games": 6.0,
+   "games": 7.0,
    "wins": 2.0,
-   "losses": 4.0,
-   "ppg": 87.8,
-   "papg": 95.3,
-   "offRating": 113.3,
-   "defRating": 123.2,
-   "netRating": -9.9,
-   "pace": 77.5,
+   "losses": 5.0,
+   "ppg": 87.4,
+   "papg": 96.7,
+   "offRating": 112.1,
+   "defRating": 124.2,
+   "netRating": -12.1,
+   "pace": 78.0,
    "efg": 57.1,
    "tovRate": 18.7,
-   "orbRate": 29.9,
-   "ftRate": 29.7,
-   "astPerGame": 22.3,
-   "threeRate": 45.4
+   "orbRate": 27.2,
+   "ftRate": 30.2,
+   "astPerGame": 21.7,
+   "threeRate": 43.6
   },
   "colors": {
    "halo": "#202020",
@@ -3168,25 +3222,19 @@
    "statLight": "#0c0f16"
   },
   "allowed": {
-   "games": 6,
-   "G": 42.74,
-   "F": 44.1,
-   "C": 20.31,
-   "all": 107.15,
+   "games": 7,
+   "G": 43.54,
+   "F": 45.65,
+   "C": 20.18,
+   "all": 109.37,
    "index": {
-    "G": 0.992,
-    "F": 1.278,
-    "C": 0.986,
-    "all": 1.091
+    "G": 1.007,
+    "F": 1.323,
+    "C": 0.989,
+    "all": 1.114
    }
   },
   "upcoming": [
-   {
-    "round": 7,
-    "opponent": "ZAL",
-    "home": false,
-    "date": "2026-10-23T17:00:00Z"
-   },
    {
     "round": 8,
     "opponent": "PAR",
@@ -3210,22 +3258,28 @@
     "opponent": "BES",
     "home": true,
     "date": "2026-11-13T19:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "ULK",
+    "home": false,
+    "date": "2026-11-17T18:00:00Z"
    }
   ],
   "quarters": {
    "current": {
-    "games": 6,
+    "games": 7,
     "for": [
-     21.2,
-     25.0,
-     21.7,
-     20.0
+     21.0,
+     23.4,
+     22.1,
+     20.9
     ],
     "against": [
-     23.2,
-     24.2,
-     24.8,
-     23.2
+     24.0,
+     23.7,
+     25.7,
+     23.3
     ],
     "overtimes": 0
    },
@@ -3354,6 +3408,35 @@
     "players": [
      "003526",
      "011980",
+     "013269",
+     "015164",
+     "015165"
+    ],
+    "minutes": 7.0,
+    "games": 1,
+    "pointsFor": 15,
+    "pointsAgainst": 21,
+    "possessions": 14.0,
+    "net": -42.7,
+    "names": [
+     "Lighty",
+     "Sestina",
+     "Cale",
+     "Besson",
+     "Waters"
+    ],
+    "ids": [
+     3985,
+     7243,
+     4129,
+     11519,
+     11515
+    ]
+   },
+   {
+    "players": [
+     "003526",
+     "011980",
      "012618",
      "013269",
      "015161"
@@ -3378,35 +3461,6 @@
      4129,
      11521
     ]
-   },
-   {
-    "players": [
-     "009035",
-     "013269",
-     "013900",
-     "015165",
-     "015166"
-    ],
-    "minutes": 6.7,
-    "games": 1,
-    "pointsFor": 12,
-    "pointsAgainst": 16,
-    "possessions": 13.4,
-    "net": -29.9,
-    "names": [
-     "Bolomboy",
-     "Cale",
-     "Gach",
-     "Waters",
-     "Crowder"
-    ],
-    "ids": [
-     3822,
-     4129,
-     7338,
-     11515,
-     11516
-    ]
    }
   ]
  },
@@ -3422,7 +3476,7 @@
   "winRate": 0.373,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 30.0,
+  "difficulty": 37.0,
   "fixtures": [
    {
     "round": 8,
@@ -3436,7 +3490,7 @@
     "opponent": "PRS",
     "home": true,
     "date": "2026-10-29T19:05:00Z",
-    "opponent_rating": -3.82
+    "opponent_rating": -4.37
    },
    {
     "round": 10,
@@ -3457,7 +3511,7 @@
     "opponent": "OLY",
     "home": true,
     "date": "2026-11-17T17:00:00Z",
-    "opponent_rating": 8.22
+    "opponent_rating": 7.35
    }
   ],
   "box": {
@@ -3484,15 +3538,15 @@
   },
   "allowed": {
    "games": 7,
-   "G": 45.8,
+   "G": 45.86,
    "F": 39.96,
-   "C": 17.29,
-   "all": 103.05,
+   "C": 17.21,
+   "all": 103.02,
    "index": {
-    "G": 1.063,
+    "G": 1.061,
     "F": 1.158,
-    "C": 0.839,
-    "all": 1.049
+    "C": 0.844,
+    "all": 1.05
    }
   },
   "upcoming": [
@@ -3519,6 +3573,12 @@
     "opponent": "HTA",
     "home": true,
     "date": "2026-11-12T19:05:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "OLY",
+    "home": true,
+    "date": "2026-11-17T17:00:00Z"
    }
   ],
   "quarters": {
@@ -3725,21 +3785,14 @@
   "short": "Olympiacos",
   "country": "GRE",
   "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png",
-  "offense": 94.3,
-  "defense": 86.1,
-  "netRating": 8.22,
-  "winRate": 0.777,
-  "games": 6,
+  "offense": 91.8,
+  "defense": 84.4,
+  "netRating": 7.35,
+  "winRate": 0.717,
+  "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 29.0,
+  "difficulty": 31.0,
   "fixtures": [
-   {
-    "round": 7,
-    "opponent": "ULK",
-    "home": true,
-    "date": "2026-10-23T18:15:00Z",
-    "opponent_rating": 5.2
-   },
    {
     "round": 8,
     "opponent": "BES",
@@ -3767,24 +3820,31 @@
     "home": true,
     "date": "2026-11-12T19:15:00Z",
     "opponent_rating": 1.05
+   },
+   {
+    "round": 12,
+    "opponent": "TEL",
+    "home": false,
+    "date": "2026-11-17T17:00:00Z",
+    "opponent_rating": -4.66
    }
   ],
   "box": {
-   "games": 6.0,
+   "games": 7.0,
    "wins": 5.0,
-   "losses": 1.0,
-   "ppg": 98.2,
-   "papg": 89.8,
-   "offRating": 122.8,
-   "defRating": 112.5,
-   "netRating": 10.4,
-   "pace": 79.9,
-   "efg": 56.8,
-   "tovRate": 17.3,
-   "orbRate": 37.7,
-   "ftRate": 34.5,
-   "astPerGame": 20.8,
-   "threeRate": 37.1
+   "losses": 2.0,
+   "ppg": 92.9,
+   "papg": 86.1,
+   "offRating": 119.0,
+   "defRating": 110.2,
+   "netRating": 8.8,
+   "pace": 78.0,
+   "efg": 54.8,
+   "tovRate": 17.6,
+   "orbRate": 37.3,
+   "ftRate": 34.3,
+   "astPerGame": 20.3,
+   "threeRate": 37.7
   },
   "colors": {
    "halo": "#d00020",
@@ -3792,25 +3852,19 @@
    "statLight": "#bc001c"
   },
   "allowed": {
-   "games": 6,
-   "G": 43.46,
-   "F": 31.4,
-   "C": 19.1,
-   "all": 93.96,
+   "games": 7,
+   "G": 42.09,
+   "F": 32.08,
+   "C": 17.29,
+   "all": 91.47,
    "index": {
-    "G": 1.008,
-    "F": 0.91,
-    "C": 0.927,
-    "all": 0.957
+    "G": 0.973,
+    "F": 0.93,
+    "C": 0.847,
+    "all": 0.932
    }
   },
   "upcoming": [
-   {
-    "round": 7,
-    "opponent": "ULK",
-    "home": true,
-    "date": "2026-10-23T18:15:00Z"
-   },
    {
     "round": 8,
     "opponent": "BES",
@@ -3834,22 +3888,28 @@
     "opponent": "DUB",
     "home": true,
     "date": "2026-11-12T19:15:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "TEL",
+    "home": false,
+    "date": "2026-11-17T17:00:00Z"
    }
   ],
   "quarters": {
    "current": {
-    "games": 6,
+    "games": 7,
     "for": [
-     26.0,
-     20.0,
-     22.8,
-     25.2
+     25.1,
+     19.1,
+     21.7,
+     23.3
     ],
     "against": [
-     27.2,
-     18.8,
-     18.0,
-     23.3
+     24.4,
+     18.4,
+     18.4,
+     22.7
     ],
     "overtimes": 2
    },
@@ -3947,6 +4007,35 @@
    },
    {
     "players": [
+     "001255",
+     "003469",
+     "003941",
+     "009048",
+     "012610"
+    ],
+    "minutes": 14.3,
+    "games": 1,
+    "pointsFor": 27,
+    "pointsAgainst": 18,
+    "possessions": 24.5,
+    "net": 36.8,
+    "names": [
+     "Papanikolaou",
+     "Vezenkov",
+     "Milutinov",
+     "Miller-mcintyre",
+     "Ward"
+    ],
+    "ids": [
+     3867,
+     3766,
+     3782,
+     3808,
+     3846
+    ]
+   },
+   {
+    "players": [
      "003469",
      "009048",
      "009849",
@@ -4002,35 +4091,6 @@
      3870,
      3948
     ]
-   },
-   {
-    "players": [
-     "001255",
-     "010042",
-     "011196",
-     "012731",
-     "013380"
-    ],
-    "minutes": 8.6,
-    "games": 2,
-    "pointsFor": 24,
-    "pointsAgainst": 18,
-    "possessions": 17.4,
-    "net": 34.5,
-    "names": [
-     "Papanikolaou",
-     "Montero",
-     "Hall",
-     "Ndiaye",
-     "Fournier"
-    ],
-    "ids": [
-     3867,
-     4252,
-     3821,
-     3948,
-     4360
-    ]
    }
   ]
  },
@@ -4046,7 +4106,7 @@
   "winRate": 0.724,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 32.0,
+  "difficulty": 41.0,
   "fixtures": [
    {
     "round": 8,
@@ -4108,14 +4168,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 33.48,
-   "F": 31.67,
-   "C": 17.54,
-   "all": 82.68,
+   "G": 33.53,
+   "F": 31.66,
+   "C": 17.45,
+   "all": 82.65,
    "index": {
-    "G": 0.777,
+    "G": 0.775,
     "F": 0.918,
-    "C": 0.851,
+    "C": 0.855,
     "all": 0.842
    }
   },
@@ -4143,6 +4203,12 @@
     "opponent": "BAR",
     "home": true,
     "date": "2026-11-13T19:15:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "VIR",
+    "home": false,
+    "date": "2026-11-17T20:00:00Z"
    }
   ],
   "quarters": {
@@ -4349,21 +4415,14 @@
   "short": "Paris",
   "country": "FRA",
   "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png",
-  "offense": 87.0,
-  "defense": 90.9,
-  "netRating": -3.82,
-  "winRate": 0.281,
-  "games": 6,
+  "offense": 87.5,
+  "defense": 91.9,
+  "netRating": -4.37,
+  "winRate": 0.259,
+  "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 45.0,
+  "difficulty": 39.0,
   "fixtures": [
-   {
-    "round": 7,
-    "opponent": "PAM",
-    "home": true,
-    "date": "2026-10-23T18:45:00Z",
-    "opponent_rating": 5.47
-   },
    {
     "round": 8,
     "opponent": "DUB",
@@ -4390,25 +4449,32 @@
     "opponent": "ULK",
     "home": true,
     "date": "2026-11-11T19:45:00Z",
-    "opponent_rating": 5.2
+    "opponent_rating": 5.03
+   },
+   {
+    "round": 12,
+    "opponent": "BAR",
+    "home": false,
+    "date": "2026-11-17T19:30:00Z",
+    "opponent_rating": 1.34
    }
   ],
   "box": {
-   "games": 6.0,
+   "games": 7.0,
    "wins": 1.0,
-   "losses": 5.0,
-   "ppg": 84.0,
-   "papg": 90.8,
-   "offRating": 109.3,
-   "defRating": 119.0,
-   "netRating": -9.7,
-   "pace": 76.8,
-   "efg": 52.4,
-   "tovRate": 19.1,
-   "orbRate": 37.1,
-   "ftRate": 17.4,
-   "astPerGame": 20.3,
-   "threeRate": 50.3
+   "losses": 6.0,
+   "ppg": 85.3,
+   "papg": 92.7,
+   "offRating": 110.8,
+   "defRating": 120.7,
+   "netRating": -9.9,
+   "pace": 77.0,
+   "efg": 53.5,
+   "tovRate": 18.2,
+   "orbRate": 35.9,
+   "ftRate": 17.5,
+   "astPerGame": 20.4,
+   "threeRate": 49.1
   },
   "colors": {
    "halo": "#f00000",
@@ -4416,25 +4482,19 @@
    "statLight": "#bc0000"
   },
   "allowed": {
-   "games": 6,
-   "G": 46.69,
-   "F": 39.43,
-   "C": 22.44,
-   "all": 108.56,
+   "games": 7,
+   "G": 50.74,
+   "F": 37.91,
+   "C": 21.6,
+   "all": 110.26,
    "index": {
-    "G": 1.083,
-    "F": 1.143,
-    "C": 1.089,
-    "all": 1.105
+    "G": 1.173,
+    "F": 1.099,
+    "C": 1.059,
+    "all": 1.124
    }
   },
   "upcoming": [
-   {
-    "round": 7,
-    "opponent": "PAM",
-    "home": true,
-    "date": "2026-10-23T18:45:00Z"
-   },
    {
     "round": 8,
     "opponent": "DUB",
@@ -4458,22 +4518,28 @@
     "opponent": "ULK",
     "home": true,
     "date": "2026-11-11T19:45:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "BAR",
+    "home": false,
+    "date": "2026-11-17T19:30:00Z"
    }
   ],
   "quarters": {
    "current": {
-    "games": 6,
+    "games": 7,
     "for": [
-     19.5,
-     18.7,
-     23.2,
+     20.4,
+     20.0,
+     22.1,
      22.7
     ],
     "against": [
-     22.2,
-     21.5,
-     23.7,
-     23.5
+     23.6,
+     22.0,
+     24.0,
+     23.1
     ],
     "overtimes": 0
    },
@@ -4490,12 +4556,12 @@
      "012611",
      "015143"
     ],
-    "minutes": 11.2,
-    "games": 2,
-    "pointsFor": 25,
-    "pointsAgainst": 24,
-    "possessions": 18.8,
-    "net": 5.3,
+    "minutes": 18.7,
+    "games": 3,
+    "pointsFor": 45,
+    "pointsAgainst": 48,
+    "possessions": 32.1,
+    "net": -9.3,
     "names": [
      "Hommes",
      "Faye",
@@ -4571,6 +4637,35 @@
    },
    {
     "players": [
+     "006904",
+     "010431",
+     "013373",
+     "014010",
+     "014178"
+    ],
+    "minutes": 7.9,
+    "games": 2,
+    "pointsFor": 15,
+    "pointsAgainst": 26,
+    "possessions": 14.4,
+    "net": -76.3,
+    "names": [
+     "Ayayi",
+     "Morgan",
+     "Cavaliere",
+     "Dokossi",
+     "Rhoden"
+    ],
+    "ids": [
+     4546,
+     4156,
+     3933,
+     7226,
+     8762
+    ]
+   },
+   {
+    "players": [
      "012403",
      "012515",
      "012611",
@@ -4626,35 +4721,6 @@
      7226,
      11528
     ]
-   },
-   {
-    "players": [
-     "006904",
-     "010431",
-     "014010",
-     "014178",
-     "015168"
-    ],
-    "minutes": 6.2,
-    "games": 1,
-    "pointsFor": 13,
-    "pointsAgainst": 25,
-    "possessions": 11.7,
-    "net": -102.4,
-    "names": [
-     "Ayayi",
-     "Morgan",
-     "Dokossi",
-     "Rhoden",
-     "Warren"
-    ],
-    "ids": [
-     4546,
-     4156,
-     7226,
-     8762,
-     11527
-    ]
    }
   ]
  },
@@ -4670,21 +4736,21 @@
   "winRate": 0.502,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 6.0,
+  "difficulty": 19.0,
   "fixtures": [
    {
     "round": 8,
     "opponent": "ASV",
     "home": false,
     "date": "2026-10-28T19:00:00Z",
-    "opponent_rating": -7.4
+    "opponent_rating": -8.37
    },
    {
     "round": 9,
     "opponent": "ZAL",
     "home": false,
     "date": "2026-10-30T18:00:00Z",
-    "opponent_rating": -0.35
+    "opponent_rating": 1.22
    },
    {
     "round": 10,
@@ -4705,7 +4771,7 @@
     "opponent": "PAM",
     "home": true,
     "date": "2026-11-17T19:45:00Z",
-    "opponent_rating": 5.47
+    "opponent_rating": 5.89
    }
   ],
   "box": {
@@ -4732,14 +4798,14 @@
   },
   "allowed": {
    "games": 7,
-   "G": 39.92,
-   "F": 33.38,
-   "C": 19.29,
-   "all": 92.59,
+   "G": 39.98,
+   "F": 33.37,
+   "C": 19.21,
+   "all": 92.56,
    "index": {
-    "G": 0.926,
+    "G": 0.925,
     "F": 0.967,
-    "C": 0.936,
+    "C": 0.942,
     "all": 0.943
    }
   },
@@ -4767,6 +4833,12 @@
     "opponent": "BAS",
     "home": true,
     "date": "2026-11-11T19:45:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "PAM",
+    "home": true,
+    "date": "2026-11-17T19:45:00Z"
    }
   ],
   "quarters": {
@@ -4979,7 +5051,7 @@
   "winRate": 0.601,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 50.0,
+  "difficulty": 56.0,
   "fixtures": [
    {
     "round": 8,
@@ -4993,7 +5065,7 @@
     "opponent": "ULK",
     "home": true,
     "date": "2026-10-29T19:45:00Z",
-    "opponent_rating": 5.2
+    "opponent_rating": 5.03
    },
    {
     "round": 10,
@@ -5041,15 +5113,15 @@
   },
   "allowed": {
    "games": 7,
-   "G": 47.86,
+   "G": 47.92,
    "F": 29.36,
-   "C": 20.82,
-   "all": 98.04,
+   "C": 20.73,
+   "all": 98.01,
    "index": {
-    "G": 1.11,
+    "G": 1.108,
     "F": 0.851,
-    "C": 1.01,
-    "all": 0.998
+    "C": 1.016,
+    "all": 0.999
    }
   },
   "upcoming": [
@@ -5076,6 +5148,12 @@
     "opponent": "RED",
     "home": true,
     "date": "2026-11-12T20:00:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "BES",
+    "home": false,
+    "date": "2026-11-18T17:00:00Z"
    }
   ],
   "quarters": {
@@ -5282,27 +5360,20 @@
   "short": "Valencia",
   "country": "ESP",
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png",
-  "offense": 94.4,
-  "defense": 88.9,
-  "netRating": 5.47,
-  "winRate": 0.651,
-  "games": 6,
+  "offense": 95.1,
+  "defense": 89.2,
+  "netRating": 5.89,
+  "winRate": 0.678,
+  "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 48.0,
+  "difficulty": 50.0,
   "fixtures": [
-   {
-    "round": 7,
-    "opponent": "PRS",
-    "home": false,
-    "date": "2026-10-23T18:45:00Z",
-    "opponent_rating": -3.82
-   },
    {
     "round": 8,
     "opponent": "ULK",
     "home": true,
     "date": "2026-10-27T19:30:00Z",
-    "opponent_rating": 5.2
+    "opponent_rating": 5.03
    },
    {
     "round": 9,
@@ -5324,24 +5395,31 @@
     "home": true,
     "date": "2026-11-12T19:30:00Z",
     "opponent_rating": -4.95
+   },
+   {
+    "round": 12,
+    "opponent": "PAR",
+    "home": false,
+    "date": "2026-11-17T19:45:00Z",
+    "opponent_rating": -2.46
    }
   ],
   "box": {
-   "games": 6.0,
-   "wins": 4.0,
+   "games": 7.0,
+   "wins": 5.0,
    "losses": 2.0,
-   "ppg": 98.3,
-   "papg": 91.5,
-   "offRating": 122.3,
-   "defRating": 114.2,
-   "netRating": 8.1,
-   "pace": 80.4,
-   "efg": 56.7,
-   "tovRate": 14.3,
-   "orbRate": 31.7,
-   "ftRate": 32.2,
-   "astPerGame": 21.0,
-   "threeRate": 41.2
+   "ppg": 99.1,
+   "papg": 91.7,
+   "offRating": 123.5,
+   "defRating": 115.0,
+   "netRating": 8.5,
+   "pace": 80.3,
+   "efg": 57.1,
+   "tovRate": 13.9,
+   "orbRate": 32.6,
+   "ftRate": 33.4,
+   "astPerGame": 21.4,
+   "threeRate": 41.9
   },
   "colors": {
    "halo": "#e06020",
@@ -5349,25 +5427,19 @@
    "statLight": "#a53e00"
   },
   "allowed": {
-   "games": 6,
-   "G": 47.36,
-   "F": 33.83,
-   "C": 18.86,
-   "all": 100.04,
+   "games": 7,
+   "G": 46.63,
+   "F": 33.67,
+   "C": 19.45,
+   "all": 99.76,
    "index": {
-    "G": 1.099,
-    "F": 0.98,
-    "C": 0.915,
-    "all": 1.019
+    "G": 1.078,
+    "F": 0.976,
+    "C": 0.953,
+    "all": 1.017
    }
   },
   "upcoming": [
-   {
-    "round": 7,
-    "opponent": "PRS",
-    "home": false,
-    "date": "2026-10-23T18:45:00Z"
-   },
    {
     "round": 8,
     "opponent": "ULK",
@@ -5391,22 +5463,28 @@
     "opponent": "MUN",
     "home": true,
     "date": "2026-11-12T19:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "PAR",
+    "home": false,
+    "date": "2026-11-17T19:45:00Z"
    }
   ],
   "quarters": {
    "current": {
-    "games": 6,
+    "games": 7,
     "for": [
-     26.3,
+     27.1,
      25.3,
-     24.5,
+     24.7,
      21.0
     ],
     "against": [
-     22.5,
-     22.3,
-     21.0,
-     23.7
+     23.0,
+     23.1,
+     20.3,
+     23.6
     ],
     "overtimes": 1
    },
@@ -5446,6 +5524,35 @@
    },
    {
     "players": [
+     "010581",
+     "011217",
+     "012608",
+     "012738",
+     "013384"
+    ],
+    "minutes": 14.7,
+    "games": 5,
+    "pointsFor": 35,
+    "pointsAgainst": 33,
+    "possessions": 32.6,
+    "net": 6.1,
+    "names": [
+     "Osetkowski",
+     "Taylor",
+     "Shorts",
+     "Reuvers",
+     "Brooks"
+    ],
+    "ids": [
+     7215,
+     7218,
+     3795,
+     7237,
+     3833
+    ]
+   },
+   {
+    "players": [
      "000796",
      "010545",
      "011217",
@@ -5470,35 +5577,6 @@
      3884,
      7218,
      3795,
-     3833
-    ]
-   },
-   {
-    "players": [
-     "010581",
-     "011217",
-     "012608",
-     "012738",
-     "013384"
-    ],
-    "minutes": 11.7,
-    "games": 4,
-    "pointsFor": 28,
-    "pointsAgainst": 29,
-    "possessions": 25.4,
-    "net": -3.9,
-    "names": [
-     "Osetkowski",
-     "Taylor",
-     "Shorts",
-     "Reuvers",
-     "Brooks"
-    ],
-    "ids": [
-     7215,
-     7218,
-     3795,
-     7237,
      3833
     ]
    },
@@ -5603,14 +5681,14 @@
   "winRate": 0.478,
   "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 24.0,
+  "difficulty": 38.0,
   "fixtures": [
    {
     "round": 8,
     "opponent": "ZAL",
     "home": true,
     "date": "2026-10-28T19:30:00Z",
-    "opponent_rating": -0.35
+    "opponent_rating": 1.22
    },
    {
     "round": 9,
@@ -5665,15 +5743,15 @@
   },
   "allowed": {
    "games": 7,
-   "G": 38.83,
+   "G": 38.88,
    "F": 38.15,
-   "C": 19.5,
-   "all": 96.48,
+   "C": 19.42,
+   "all": 96.45,
    "index": {
-    "G": 0.901,
+    "G": 0.899,
     "F": 1.106,
-    "C": 0.946,
-    "all": 0.982
+    "C": 0.952,
+    "all": 0.983
    }
   },
   "upcoming": [
@@ -5700,6 +5778,12 @@
     "opponent": "IST",
     "home": false,
     "date": "2026-11-13T17:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "PAN",
+    "home": true,
+    "date": "2026-11-17T20:00:00Z"
    }
   ],
   "quarters": {
@@ -5906,21 +5990,14 @@
   "short": "Zalgiris",
   "country": "LTU",
   "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png",
-  "offense": 84.3,
+  "offense": 85.9,
   "defense": 84.7,
-  "netRating": -0.35,
-  "winRate": 0.452,
-  "games": 6,
+  "netRating": 1.22,
+  "winRate": 0.494,
+  "games": 7,
   "ratingSource": "temporada en curso, encogida hacia la anterior",
-  "difficulty": 0.0,
+  "difficulty": 33.0,
   "fixtures": [
-   {
-    "round": 7,
-    "opponent": "ASV",
-    "home": true,
-    "date": "2026-10-23T17:00:00Z",
-    "opponent_rating": -7.4
-   },
    {
     "round": 8,
     "opponent": "VIR",
@@ -5948,24 +6025,31 @@
     "home": false,
     "date": "2026-11-12T19:30:00Z",
     "opponent_rating": -5.35
+   },
+   {
+    "round": 12,
+    "opponent": "MUN",
+    "home": true,
+    "date": "2026-11-17T18:00:00Z",
+    "opponent_rating": -4.95
    }
   ],
   "box": {
-   "games": 6.0,
-   "wins": 2.0,
+   "games": 7.0,
+   "wins": 3.0,
    "losses": 4.0,
-   "ppg": 81.7,
-   "papg": 86.2,
-   "offRating": 111.7,
-   "defRating": 115.4,
-   "netRating": -3.7,
-   "pace": 73.1,
-   "efg": 53.3,
-   "tovRate": 19.4,
-   "orbRate": 35.5,
-   "ftRate": 30.3,
-   "astPerGame": 19.0,
-   "threeRate": 38.3
+   "ppg": 85.0,
+   "papg": 86.0,
+   "offRating": 114.5,
+   "defRating": 113.9,
+   "netRating": 0.7,
+   "pace": 74.2,
+   "efg": 54.7,
+   "tovRate": 19.6,
+   "orbRate": 37.1,
+   "ftRate": 28.9,
+   "astPerGame": 19.9,
+   "threeRate": 40.2
   },
   "colors": {
    "halo": "#008030",
@@ -5973,25 +6057,19 @@
    "statLight": "#00782d"
   },
   "allowed": {
-   "games": 6,
-   "G": 43.54,
-   "F": 37.83,
-   "C": 16.2,
-   "all": 97.57,
+   "games": 7,
+   "G": 44.47,
+   "F": 37.59,
+   "C": 15.02,
+   "all": 97.07,
    "index": {
-    "G": 1.01,
-    "F": 1.096,
-    "C": 0.786,
-    "all": 0.993
+    "G": 1.028,
+    "F": 1.09,
+    "C": 0.736,
+    "all": 0.989
    }
   },
   "upcoming": [
-   {
-    "round": 7,
-    "opponent": "ASV",
-    "home": true,
-    "date": "2026-10-23T17:00:00Z"
-   },
    {
     "round": 8,
     "opponent": "VIR",
@@ -6015,22 +6093,28 @@
     "opponent": "MIL",
     "home": false,
     "date": "2026-11-12T19:30:00Z"
+   },
+   {
+    "round": 12,
+    "opponent": "MUN",
+    "home": true,
+    "date": "2026-11-17T18:00:00Z"
    }
   ],
   "quarters": {
    "current": {
-    "games": 6,
+    "games": 7,
     "for": [
-     20.0,
-     20.5,
-     16.5,
-     24.7
+     21.3,
+     20.6,
+     18.6,
+     24.6
     ],
     "against": [
-     20.8,
-     23.0,
-     21.5,
-     20.8
+     20.7,
+     21.7,
+     22.0,
+     21.6
     ],
     "overtimes": 0
    },
@@ -6076,12 +6160,12 @@
      "008192",
      "012720"
     ],
-    "minutes": 11.1,
-    "games": 2,
+    "minutes": 11.5,
+    "games": 3,
     "pointsFor": 27,
-    "pointsAgainst": 25,
-    "possessions": 21.9,
-    "net": 9.1,
+    "pointsAgainst": 27,
+    "possessions": 22.8,
+    "net": 0.0,
     "names": [
      "Grigonis",
      "Ulanovas",
@@ -6130,6 +6214,64 @@
     "players": [
      "000898",
      "002676",
+     "008192",
+     "011987",
+     "013389"
+    ],
+    "minutes": 9.0,
+    "games": 3,
+    "pointsFor": 22,
+    "pointsAgainst": 24,
+    "possessions": 19.3,
+    "net": -10.4,
+    "names": [
+     "Valanciunas",
+     "Butkevicius",
+     "Tubelis",
+     "Edwards",
+     "Lee"
+    ],
+    "ids": [
+     11549,
+     4375,
+     7221,
+     3899,
+     4670
+    ]
+   },
+   {
+    "players": [
+     "000898",
+     "002676",
+     "007032",
+     "008192",
+     "011987"
+    ],
+    "minutes": 8.7,
+    "games": 2,
+    "pointsFor": 21,
+    "pointsAgainst": 17,
+    "possessions": 16.1,
+    "net": 24.8,
+    "names": [
+     "Valanciunas",
+     "Butkevicius",
+     "Lo",
+     "Tubelis",
+     "Edwards"
+    ],
+    "ids": [
+     11549,
+     4375,
+     3942,
+     7221,
+     3899
+    ]
+   },
+   {
+    "players": [
+     "000898",
+     "002676",
      "007513",
      "008192",
      "011987"
@@ -6153,64 +6295,6 @@
      3998,
      7221,
      3899
-    ]
-   },
-   {
-    "players": [
-     "000898",
-     "002676",
-     "007513",
-     "011927",
-     "011987"
-    ],
-    "minutes": 6.7,
-    "games": 1,
-    "pointsFor": 5,
-    "pointsAgainst": 10,
-    "possessions": 11.3,
-    "net": -44.4,
-    "names": [
-     "Valanciunas",
-     "Butkevicius",
-     "Giedraitis",
-     "Sleva",
-     "Edwards"
-    ],
-    "ids": [
-     11549,
-     4375,
-     3998,
-     4084,
-     3899
-    ]
-   },
-   {
-    "players": [
-     "002328",
-     "002329",
-     "007032",
-     "008186",
-     "012720"
-    ],
-    "minutes": 6.5,
-    "games": 3,
-    "pointsFor": 10,
-    "pointsAgainst": 14,
-    "possessions": 9.9,
-    "net": -40.2,
-    "names": [
-     "Grigonis",
-     "Ulanovas",
-     "Lo",
-     "Blazevic",
-     "Brown"
-    ],
-    "ids": [
-     3918,
-     3852,
-     3942,
-     4280,
-     3888
     ]
    }
   ]
