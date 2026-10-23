@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-23T13:35:17.042782+00:00",
+ "fetchedAt": "2026-10-23T18:28:56.894237+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -85,6 +85,14 @@
    "comment": "Shoulder"
   },
   {
+   "team": "PAR",
+   "position": "C",
+   "name": "Robert Franks",
+   "status": "Game time",
+   "round": "",
+   "comment": "Not Injury Related"
+  },
+  {
    "team": "RMB",
    "position": "C",
    "name": "Usman Garuba",
@@ -144,7 +152,7 @@
    "team": "OLY",
    "position": "G",
    "name": "John Konchar",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -192,7 +200,7 @@
    "team": "OLY",
    "position": "G",
    "name": "Jean Montero",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   },
@@ -267,14 +275,6 @@
    "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
-  },
-  {
-   "team": "ZAL",
-   "position": "F",
-   "name": "Azuolas Tubelis",
-   "status": "Game time",
-   "round": "",
-   "comment": "Face"
   },
   {
    "team": "ZAL",

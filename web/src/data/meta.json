@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-23T13:36:04.124153+00:00",
+ "generatedAt": "2026-10-23T18:29:44.048652+00:00",
  "currentRound": 7,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 45,
- "lastPriceCapture": "2026-10-23T00:43:48.757228+00:00",
- "lastPriceCheck": "2026-10-23T13:35:18.392277+00:00",
+ "priceSnapshots": 46,
+ "lastPriceCapture": "2026-10-23T18:28:57.972991+00:00",
+ "lastPriceCheck": "2026-10-23T18:28:57.972991+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.15
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-23T13:35:23.754978+00:00",
+  "generatedAt": "2026-10-23T18:29:03.007022+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -459,10 +459,10 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-10-23T05:55:00",
-  "fetchedAt": "2026-10-23T13:35:17.042782+00:00",
-  "rows": 131,
-  "matched": 88,
+  "updatedAt": "2026-10-23T17:49:00",
+  "fetchedAt": "2026-10-23T18:28:56.894237+00:00",
+  "rows": 135,
+  "matched": 91,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -472,6 +472,8 @@
    "Gabriel Lundberg (Maccabi Rapyd Tel Aviv)",
    "Mitar Bosnjakovic (Partizan Mozzart Bet Belgrade)",
    "Jabari Parker (Partizan Mozzart Bet Belgrade)",
+   "Keenan Evans (Zalgiris Kaunas)",
+   "Robert Franks (PAR)",
    "John Konchar (OLY)",
    "Antonio Reeves (PAR)",
    "Mady Sissoko (BJK)"
@@ -480,36 +482,36 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-10-23T05:55:00",
-    "fetchedAt": "2026-10-23T13:35:16.602258+00:00",
-    "rows": 95,
-    "matched": 87,
-    "flagged": 87
+    "updatedAt": "2026-10-23T17:49:00",
+    "fetchedAt": "2026-10-23T18:28:56.502847+00:00",
+    "rows": 99,
+    "matched": 90,
+    "flagged": 90
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-23T13:35:17.042782+00:00",
+    "fetchedAt": "2026-10-23T18:28:56.894237+00:00",
     "rows": 36,
-    "matched": 33,
+    "matched": 32,
     "flagged": 1
    }
   ],
   "nextRound": 7,
   "unregistered": 8,
   "flagged": {
-   "out": 25,
-   "doubt": 66,
-   "probable": 5
+   "out": 37,
+   "doubt": 51,
+   "probable": 11
   }
  },
  "warnings": [
-  "Precios capturados el 2026-10-23 00:43 UTC: el juego aún no ha aplicado la revalorización (J7). Se usa el precio pendiente de 192 jugadores hasta la próxima captura."
+  "Precios capturados el 2026-10-23 18:28 UTC: el juego aún no ha aplicado la revalorización (J7). Se usa el precio pendiente de 192 jugadores hasta la próxima captura."
  ],
  "priceFreshness": {
   "stale": true,
-  "capturedAt": "2026-10-23T00:43:48.757228+00:00",
+  "capturedAt": "2026-10-23T18:28:57.972991+00:00",
   "lastGameAt": "2026-10-22T18:45:00+00:00",
   "round": 7,
   "reason": "el juego aún no ha aplicado la revalorización",
