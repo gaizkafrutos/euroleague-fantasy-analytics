@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-24T04:49:00.115082+00:00",
+ "generatedAt": "2026-10-24T11:16:24.404502+00:00",
  "currentRound": 8,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 47,
- "lastPriceCapture": "2026-10-23T23:13:44.524174+00:00",
- "lastPriceCheck": "2026-10-24T04:48:16.225916+00:00",
+ "priceSnapshots": 48,
+ "lastPriceCapture": "2026-10-24T11:15:37.924971+00:00",
+ "lastPriceCheck": "2026-10-24T11:15:37.924971+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.16
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-24T04:48:22.175969+00:00",
+  "generatedAt": "2026-10-24T11:15:43.320891+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -434,6 +434,10 @@
      },
      "bandCoverage": 0.573,
      "aboveP90": 0.113,
+     "riseBrier": 0.1618,
+     "riseBrierConstant": 0.1864,
+     "changeMae": 0.183,
+     "changeMaeZero": 0.187,
      "generatedAt": "2026-10-21T13:57:10.808462+00:00"
     }
    ],
@@ -514,10 +518,10 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-10-23T18:38:00",
-  "fetchedAt": "2026-10-24T04:48:14.508122+00:00",
-  "rows": 135,
-  "matched": 91,
+  "updatedAt": "2026-10-24T04:58:00",
+  "fetchedAt": "2026-10-24T11:15:36.544773+00:00",
+  "rows": 130,
+  "matched": 84,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -526,7 +530,9 @@
    "Tomislav Vuckovic (Dubai Basketball)",
    "Gabriel Lundberg (Maccabi Rapyd Tel Aviv)",
    "Mitar Bosnjakovic (Partizan Mozzart Bet Belgrade)",
+   "Robert Franks (Partizan Mozzart Bet Belgrade)",
    "Jabari Parker (Partizan Mozzart Bet Belgrade)",
+   "Antonio Reeves (Partizan Mozzart Bet Belgrade)",
    "Keenan Evans (Zalgiris Kaunas)",
    "Robert Franks (PAR)",
    "John Konchar (OLY)",
@@ -537,17 +543,17 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-10-23T18:38:00",
-    "fetchedAt": "2026-10-23T23:13:42.905091+00:00",
-    "rows": 99,
-    "matched": 90,
-    "flagged": 80
+    "updatedAt": "2026-10-24T04:58:00",
+    "fetchedAt": "2026-10-24T11:15:36.100630+00:00",
+    "rows": 94,
+    "matched": 83,
+    "flagged": 83
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-24T04:48:14.508122+00:00",
+    "fetchedAt": "2026-10-24T11:15:36.544773+00:00",
     "rows": 36,
     "matched": 32,
     "flagged": 1
@@ -556,29 +562,27 @@
   "nextRound": 8,
   "unregistered": 8,
   "flagged": {
-   "out": 25,
-   "doubt": 64,
-   "probable": 0
+   "out": 26,
+   "doubt": 63,
+   "probable": 3
   }
  },
- "warnings": [
-  "Precios capturados el 2026-10-23 23:13 UTC: el juego aún no ha aplicado la revalorización (J7). Se usa el precio pendiente de 279 jugadores hasta la próxima captura."
- ],
+ "warnings": [],
  "priceFreshness": {
-  "stale": true,
-  "capturedAt": "2026-10-23T23:13:44.524174+00:00",
+  "stale": false,
+  "capturedAt": "2026-10-24T11:15:37.924971+00:00",
   "lastGameAt": "2026-10-23T18:45:00+00:00",
   "round": 7,
-  "reason": "el juego aún no ha aplicado la revalorización",
-  "pending": 279
+  "reason": null,
+  "pending": 0
  },
  "priceModel": {
   "a": 0.0399,
-  "b": -0.0441,
-  "c": 0.0068,
+  "b": -0.0442,
+  "c": 0.0075,
   "r2": 0.991,
-  "n": 1327,
-  "source": "J1–J6"
+  "n": 1539,
+  "source": "J1–J7"
  },
  "league": {
   "zones": [

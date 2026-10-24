@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-23T23:13:42.905091+00:00",
- "updatedAt": "2026-10-23T18:38:00",
+ "fetchedAt": "2026-10-24T11:15:36.100630+00:00",
+ "updatedAt": "2026-10-24T04:58:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -64,7 +64,7 @@
    "team": "Armani Olimpia Milan",
    "position": "PG",
    "name": "Diego Flaccadori",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "Round 8",
    "comment": "DNP in Rounds 2-7 (coach's decision)"
   },
@@ -232,7 +232,7 @@
    "team": "FC Bayern Munich",
    "position": "C",
    "name": "Kilian Fischer",
-   "status": "Game-time",
+   "status": "Uncertain",
    "round": "Round 8",
    "comment": "DNP in Rounds 2-7 (coach's decision)"
   },
@@ -280,33 +280,33 @@
    "team": "Fenerbahce Beko Istanbul",
    "position": "SF",
    "name": "Onuralp Bitim",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "SF",
    "name": "Johnny Juzang",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7(coach's decision)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "PG",
    "name": "Melih Mahmutoglu",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Chris Silva",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Rounds 5-6 (coach's decision). Played in the domestic league (10.18)"
+   "status": "Expected",
+   "round": "Round 8",
+   "comment": "Included in 12-man roster in Round 7 after DNP in Rounds 5-6 (coach's decision). Played in the domestic league (10.18)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -400,17 +400,9 @@
    "team": "LDLC ASVEL Villeurbanne",
    "position": "SF",
    "name": "Juhann Begarin",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 5-6 (coach's decision)"
-  },
-  {
-   "team": "LDLC ASVEL Villeurbanne",
-   "position": "SF",
-   "name": "Jae Crowder",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Round 6."
+   "status": "Doubtful",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 5-6 (coach's decision)"
   },
   {
    "team": "LDLC ASVEL Villeurbanne",
@@ -419,22 +411,6 @@
    "status": "Out",
    "round": "Round 1-9",
    "comment": "Adductor muscle injury (out until November)"
-  },
-  {
-   "team": "LDLC ASVEL Villeurbanne",
-   "position": "PG",
-   "name": "Patrick Mills",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Round 6."
-  },
-  {
-   "team": "LDLC ASVEL Villeurbanne",
-   "position": "PG",
-   "name": "Tremont Waters",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Round 6."
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
@@ -464,9 +440,9 @@
    "team": "Olympiacos Piraeus",
    "position": "PG",
    "name": "Georgios Bourneles",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
+   "status": "Expected",
+   "round": "Round 8",
+   "comment": "Included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -480,49 +456,41 @@
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Bryant Dunston",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Round 6 (coach's decision)"
+   "status": "Expected",
+   "round": "Round 8",
+   "comment": "Included in 12-man roster in Round 7 after DNP in Round 6 (coach's decision)"
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "SF",
    "name": "Evan Fournier",
    "status": "Out",
-   "round": "Round 7",
+   "round": "Round 8",
    "comment": "To miss approximately three weeks due to shoulder and knee injuries (10.20)"
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Antonios Karagiannidis",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision)"
+   "status": "Doubtful",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision)"
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "PG",
    "name": "Jean Montero",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster. Dealing with ankle and knee injuries."
-  },
-  {
-   "team": "Olympiacos Piraeus",
-   "position": "PG",
-   "name": "Omiros Netzipoglou",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Rounds 1-6 (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7. Dealing with ankle and knee injuries."
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "SG",
    "name": "George Papas",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
+   "status": "Doubtful",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -584,25 +552,25 @@
    "team": "Paris Basketball",
    "position": "PG",
    "name": "Nadir Hifi",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 5-6 (ankle injury). DNP in the domestic league (10.18)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 5-6 (ankle injury). DNP in the domestic league (10.18)"
   },
   {
    "team": "Paris Basketball",
    "position": "PG",
    "name": "Frank Ntilikina",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 5-6 (muscle pain)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 5-6 (muscle pain)"
   },
   {
    "team": "Paris Basketball",
    "position": "SF",
    "name": "T.J. Warren",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Round 6 (undisclosed). DNP in the domestic league (10.18)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Round 6 (undisclosed). DNP in the domestic league (10.18)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -619,6 +587,14 @@
    "status": "Doubtful",
    "round": "Round 8",
    "comment": "DNP in Rounds 2-7 (coach's decision)"
+  },
+  {
+   "team": "Partizan Mozzart Bet Belgrade",
+   "position": "PF",
+   "name": "Robert Franks",
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "New signning (10.23)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -643,6 +619,14 @@
    "status": "Out",
    "round": "Indefinitely",
    "comment": "Out of the squad"
+  },
+  {
+   "team": "Partizan Mozzart Bet Belgrade",
+   "position": "SG",
+   "name": "Antonio Reeves",
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "New signing (10.21)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -688,7 +672,7 @@
    "team": "Real Madrid",
    "position": "SF",
    "name": "Max Shulga",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "Round 8",
    "comment": "DNP in Rounds 1-7 (coach's decision)"
   },
@@ -696,31 +680,31 @@
    "team": "Valencia Basket",
    "position": "SF",
    "name": "Mouhamadou Gueye",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision)"
+   "status": "Doubtful",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision)"
   },
   {
    "team": "Valencia Basket",
    "position": "SG",
    "name": "Lucas Mari",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision)"
+   "status": "Doubtful",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster after in Round 7. DNP in Rounds 1-6 (coach's decision)"
   },
   {
    "team": "Valencia Basket",
    "position": "PG",
    "name": "Omari Moore",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 (coach's decision)"
   },
   {
    "team": "Virtus Bologna",
    "position": "PG",
    "name": "Matteo Baiocchi",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "Round 8",
    "comment": "DNP in Rounds 1-7 (coach's decision)"
   },
@@ -744,49 +728,25 @@
    "team": "Zalgiris Kaunas",
    "position": "C",
    "name": "Kaodirichi Akobundu-Ehiogu",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-6 (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision)"
   },
   {
    "team": "Zalgiris Kaunas",
    "position": "SF",
    "name": "Keenan Evans",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "New signing"
-  },
-  {
-   "team": "Zalgiris Kaunas",
-   "position": "PG",
-   "name": "Dovydas Giedraitis",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Rounds 5-6 (coach's decision)"
-  },
-  {
-   "team": "Zalgiris Kaunas",
-   "position": "PG",
-   "name": "Maodo Lo",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Included in 12-man roster after DNP in Round 6"
+   "status": "Game-time",
+   "round": "Round 8",
+   "comment": "New signing (10.23)"
   },
   {
    "team": "Zalgiris Kaunas",
    "position": "PG",
    "name": "Deividas Sirvydis",
-   "status": "Out",
-   "round": "Round 7",
-   "comment": "Not included in 12-man roster (coach's decision)"
-  },
-  {
-   "team": "Zalgiris Kaunas",
-   "position": "SF",
-   "name": "Ąžuolas Tubelis",
-   "status": "Ready",
-   "round": "Round 7",
-   "comment": "Cleared to play after suffering face injury in last domestic league game"
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Not included in 12-man roster in Round 7 (coach's decision)"
   },
   {
    "team": "Zalgiris Kaunas",
