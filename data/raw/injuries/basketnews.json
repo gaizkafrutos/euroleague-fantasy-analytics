@@ -1,7 +1,7 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-24T11:15:36.100630+00:00",
+ "fetchedAt": "2026-10-24T16:04:20.048992+00:00",
  "updatedAt": "2026-10-24T04:58:00",
  "rows": [
   {
@@ -478,6 +478,14 @@
   },
   {
    "team": "Olympiacos Piraeus",
+   "position": "SG",
+   "name": "John Konchar",
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "New signing (10.22)"
+  },
+  {
+   "team": "Olympiacos Piraeus",
    "position": "PG",
    "name": "Jean Montero",
    "status": "Uncertain",
@@ -611,14 +619,6 @@
    "status": "Out",
    "round": "Indefinitely",
    "comment": "Cleared to return to team practices, aiming to return in November (working back from Achilles surgery)"
-  },
-  {
-   "team": "Partizan Mozzart Bet Belgrade",
-   "position": "PF",
-   "name": "Jabari Parker",
-   "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Out of the squad"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
