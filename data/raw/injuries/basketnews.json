@@ -1,7 +1,7 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-24T22:34:36.783657+00:00",
+ "fetchedAt": "2026-10-25T04:55:06.648769+00:00",
  "updatedAt": "2026-10-24T04:58:00",
  "rows": [
   {
@@ -101,6 +101,14 @@
    "comment": "Began individual strength training after an injury"
   },
   {
+   "team": "Besiktas Istanbul",
+   "position": "PG",
+   "name": "Lonnie Walker IV",
+   "status": "Expected",
+   "round": "Round 8",
+   "comment": "Played in Round 7. Left domestic game limping in 4q. (10.24)"
+  },
+  {
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "SF",
    "name": "Jovan Bikic",
@@ -114,7 +122,7 @@
    "name": "Christian Koloko",
    "status": "Uncertain",
    "round": "Round 8",
-   "comment": "New signing (10.18)"
+   "comment": "New signing (10.18). DNP in the domestic league (10.24)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -136,9 +144,9 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "C",
    "name": "Johnathan Motley",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 8",
-   "comment": "DNP in Round 8 (Groin injury)"
+   "comment": "DNP in Round 7 (Groin injury). Played in the domestic league (10.24)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -192,9 +200,9 @@
    "team": "Dubai Basketball",
    "position": "PG",
    "name": "Dzanan Musa",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 8",
-   "comment": "Expected to return to the court for individual work next week (knee injury)"
+   "comment": "Expected to return to the court (knee injury). Played in the domestic league (10.24)"
   },
   {
    "team": "Dubai Basketball",
@@ -210,7 +218,7 @@
    "name": "Tornike Shengelia",
    "status": "Uncertain",
    "round": "Round 8",
-   "comment": "DNP in Round 7 (Undisclosed)"
+   "comment": "DNP in Round 7 and in domestic league (10.24)"
   },
   {
    "team": "Dubai Basketball",
@@ -226,7 +234,7 @@
    "name": "Thomas Walkup",
    "status": "Uncertain",
    "round": "Round 8",
-   "comment": "DNP in Round 7 Back discomfort"
+   "comment": "DNP in Round 7 and in domestic league (back discomfort)"
   },
   {
    "team": "FC Bayern Munich",
@@ -256,9 +264,9 @@
    "team": "FC Barcelona",
    "position": "PG",
    "name": "Dario Brizuela",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 8",
-   "comment": "DNP in Round 7 (Physical discomfort)"
+   "comment": "DNP in Round 7 (physical discomfort).Played in the domestic league (10.24)"
   },
   {
    "team": "FC Barcelona",
@@ -522,7 +530,7 @@
    "name": "Eleftherios Mantzoukas",
    "status": "Uncertain",
    "round": "Round 8",
-   "comment": "DNP in Round 7 (Illness)"
+   "comment": "DNP in Round 7 and in domestic league (Illness)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -530,15 +538,15 @@
    "name": "Nikos Rogkavopoulos",
    "status": "Uncertain",
    "round": "Round 8",
-   "comment": "DNP in Round 7 (hamstring discomfort)"
+   "comment": "DNP in Round 7 and in domestic league (hamstring discomfort)."
   },
   {
    "team": "Panathinaikos AKTOR Athens",
    "position": "PG",
    "name": "Kostas Sloukas",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 8",
-   "comment": "Not included in 12-man roster after returning to action in domestic league (coach's decision)"
+   "comment": "Not included in 12-man roster in Round 7 (coach's decision). Played in the domestic league (10.18-10.24)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -602,7 +610,7 @@
    "name": "Robert Franks",
    "status": "Uncertain",
    "round": "Round 8",
-   "comment": "New signning (10.23)"
+   "comment": "New signning (10.23). DNP in the domestic league (10.24)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -624,9 +632,9 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SG",
    "name": "Antonio Reeves",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 8",
-   "comment": "New signing (10.21)"
+   "comment": "New signing. Played in the domestic league (10.24)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -736,7 +744,7 @@
    "team": "Zalgiris Kaunas",
    "position": "SF",
    "name": "Keenan Evans",
-   "status": "Game-time",
+   "status": "Expected",
    "round": "Round 8",
    "comment": "New signing (10.23)"
   },
