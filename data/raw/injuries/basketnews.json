@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-25T11:44:56.219025+00:00",
- "updatedAt": "2026-10-24T04:58:00",
+ "fetchedAt": "2026-10-25T16:33:44.319016+00:00",
+ "updatedAt": "2026-10-25T16:17:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -67,6 +67,14 @@
    "status": "Doubtful",
    "round": "Round 8",
    "comment": "DNP in Rounds 2-7 (coach's decision)"
+  },
+  {
+   "team": "Armani Olimpia Milan",
+   "position": "PG",
+   "name": "Garrison Mathews",
+   "status": "Uncertain",
+   "round": "Round 8",
+   "comment": "Missed domestic league game (10.25) due to tendon discomfort"
   },
   {
    "team": "Armani Olimpia Milan",
@@ -384,9 +392,9 @@
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "SF",
    "name": "Tadas Sedekerskis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 8",
-   "comment": "Left Round 7 game with injury"
+   "comment": "Suffered a right thigh muscle injury in Round 7 (out indefinitely)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -709,6 +717,14 @@
    "comment": "Not included in 12-man roster in Round 7 (coach's decision)"
   },
   {
+   "team": "Valencia Basket",
+   "position": "SF",
+   "name": "Nate Reuvers",
+   "status": "Out",
+   "round": "Round 8",
+   "comment": "Suffered foot bone injury ahead of domestic league game (10.25), out indefinitely"
+  },
+  {
    "team": "Virtus Bologna",
    "position": "PG",
    "name": "Matteo Baiocchi",
@@ -736,9 +752,17 @@
    "team": "Zalgiris Kaunas",
    "position": "C",
    "name": "Kaodirichi Akobundu-Ehiogu",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 8",
    "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision)"
+  },
+  {
+   "team": "Zalgiris Kaunas",
+   "position": "PG",
+   "name": "Sterling Brown",
+   "status": "Out",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "Zalgiris Kaunas",
@@ -752,9 +776,25 @@
    "team": "Zalgiris Kaunas",
    "position": "PG",
    "name": "Deividas Sirvydis",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 8",
    "comment": "Not included in 12-man roster in Round 7 (coach's decision)"
+  },
+  {
+   "team": "Zalgiris Kaunas",
+   "position": "SF",
+   "name": "Ąžuolas Tubelis",
+   "status": "Out",
+   "round": "",
+   "comment": ""
+  },
+  {
+   "team": "Zalgiris Kaunas",
+   "position": "C",
+   "name": "Jonas Valančiūnas",
+   "status": "Out",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "Zalgiris Kaunas",
