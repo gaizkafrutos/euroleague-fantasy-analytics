@@ -1,23 +1,13 @@
 [
  {
-  "fantaking_id": 13930,
-  "fantaking_name": "C. Koloko",
-  "fantaking_team": "CZV",
-  "club_code": "RED",
+  "fantaking_id": 13936,
+  "fantaking_name": "R. Franks",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
   "person_code": null,
   "official_name": null,
   "match_method": "unmatched",
-  "match_confidence": 45.5
- },
- {
-  "fantaking_id": 11523,
-  "fantaking_name": "S. Hunter",
-  "fantaking_team": "MTA",
-  "club_code": "TEL",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 50.0
+  "match_confidence": 57.1
  },
  {
   "fantaking_id": 11497,
@@ -28,6 +18,16 @@
   "official_name": null,
   "match_method": "unmatched",
   "match_confidence": 59.3
+ },
+ {
+  "fantaking_id": 3788,
+  "fantaking_name": "K. Evans",
+  "fantaking_team": "ZAL",
+  "club_code": "ZAL",
+  "person_code": "011218",
+  "official_name": "EVANS, KEENAN",
+  "match_method": "prior-season",
+  "match_confidence": 90.0
  },
  {
   "fantaking_id": 3960,
@@ -66,16 +66,6 @@
   "club_code": "HTA",
   "person_code": "004161",
   "official_name": "SEGEV, ITAY",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
-  "fantaking_id": 8681,
-  "fantaking_name": "A. Nedeljkovic",
-  "fantaking_team": "CZV",
-  "club_code": "RED",
-  "person_code": "012948",
-  "official_name": "NEDELJKOVIC, ALEKSEJ",
   "match_method": "prior-season",
   "match_confidence": 90.0
  },
@@ -2700,6 +2690,16 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 8681,
+  "fantaking_name": "A. Nedeljkovic",
+  "fantaking_team": "CZV",
+  "club_code": "RED",
+  "person_code": "012948",
+  "official_name": "NEDELJKOVIC, ALEKSEJ",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 8714,
   "fantaking_name": "K. Simmons",
   "fantaking_team": "KBA",
@@ -3180,6 +3180,16 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 11523,
+  "fantaking_name": "S. Hunter",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
+  "person_code": "015398",
+  "official_name": "HUNTER, SHANE",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 11524,
   "fantaking_name": "N. Plotas",
   "fantaking_team": "OLY",
@@ -3516,6 +3526,26 @@
   "club_code": "BAR",
   "person_code": "012879",
   "official_name": "KONE, ABDU",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 13930,
+  "fantaking_name": "C. Koloko",
+  "fantaking_team": "CZV",
+  "club_code": "RED",
+  "person_code": "015396",
+  "official_name": "KOLOKO, CHRISTIAN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 13935,
+  "fantaking_name": "A. Reeves",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "015397",
+  "official_name": "REEVES, ANTONIO",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },

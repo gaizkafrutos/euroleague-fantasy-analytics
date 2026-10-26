@@ -1,6 +1,306 @@
 [
  {
   "person": {
+   "code": "015398",
+   "name": "HUNTER, SHANE",
+   "alias": "HUNTER, SHANE",
+   "aliasRaw": "HUNTER, SHANE",
+   "passportName": "SHANE TRUPIN",
+   "passportSurname": "HUNTER",
+   "jerseyName": "HUNTER",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 208,
+   "weight": 90,
+   "birthDate": "2001-01-27T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-26T14:43:11.871",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "40",
+  "dorsalRaw": "40",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "NORRKOPING DOLPHINS",
+  "externalId": 57254,
+  "images": {},
+  "club": {
+   "code": "TEL",
+   "name": "Maccabi Rapyd Tel Aviv",
+   "abbreviatedName": "Maccabi",
+   "editorialName": "Maccabi",
+   "tvCode": "MTA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015397",
+   "name": "REEVES, ANTONIO",
+   "alias": "REEVES, ANTONIO",
+   "aliasRaw": "REEVES, ANTONIO",
+   "passportName": "ANTONIO DUDLEY",
+   "passportSurname": "REEVES",
+   "jerseyName": "REEVES",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 196,
+   "weight": 93,
+   "birthDate": "2000-11-20T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-26T14:40:40.276",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "12",
+  "dorsalRaw": "12",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "MINNESOTA TIMBERWOLVES - NBA",
+  "externalId": 57253,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015396",
+   "name": "KOLOKO, CHRISTIAN",
+   "alias": "KOLOKO KAMDEU, CHRISTIAN JUNIOR",
+   "aliasRaw": "KOLOKO KAMDEU, CHRISTIAN JUNIOR",
+   "passportName": "CHRISTIAN JUNIOR",
+   "passportSurname": "KOLOKO KAMDEU",
+   "jerseyName": "Koloko",
+   "abbreviatedName": null,
+   "country": {
+    "code": "CMR",
+    "name": "Cameroon"
+   },
+   "height": 211,
+   "weight": 102,
+   "birthDate": "2000-06-20T00:00:00",
+   "birthCountry": {
+    "code": "CMR",
+    "name": "Cameroon"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-26T13:43:31.227",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "35",
+  "dorsalRaw": "35",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "ATLANTA HAWKS",
+  "externalId": 57251,
+  "images": {},
+  "club": {
+   "code": "RED",
+   "name": "Crvena Zvezda Meridianbet Belgrade",
+   "abbreviatedName": "Crvena Zvezda",
+   "editorialName": "Crvena",
+   "tvCode": "CZV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "014196",
+   "name": "SIMJANOVSKI, OGNJEN",
+   "alias": "SIMJANOVSKI, OGNJEN",
+   "aliasRaw": "SIMJANOVSKI, OGNJEN",
+   "passportName": "OGNJEN",
+   "passportSurname": "SIMJANOVSKI",
+   "jerseyName": "Simjanovski",
+   "abbreviatedName": null,
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 194,
+   "weight": 85,
+   "birthDate": "2009-09-28T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-26T13:43:30.499",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "10",
+  "dorsalRaw": "10",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "CRVENA ZVEZDA",
+  "externalId": 57250,
+  "images": {},
+  "club": {
+   "code": "RED",
+   "name": "Crvena Zvezda Meridianbet Belgrade",
+   "abbreviatedName": "Crvena Zvezda",
+   "editorialName": "Crvena",
+   "tvCode": "CZV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "012948",
+   "name": "NEDELJKOVIC, ALEKSEJ",
+   "alias": "NEDELJKOVIC, ALEKSEJ",
+   "aliasRaw": "NEDELJKOVIC, ALEKSEJ",
+   "passportName": "ALEKSEJ",
+   "passportSurname": "NEDELJKOVIC",
+   "jerseyName": "Nedeljkovic",
+   "abbreviatedName": "",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "height": 201,
+   "weight": 85,
+   "birthDate": "2008-05-05T00:00:00",
+   "birthCountry": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-26T13:43:30.185",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "5",
+  "dorsalRaw": "5",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "CRVENA ZVEZDA",
+  "externalId": 57249,
+  "images": {},
+  "club": {
+   "code": "RED",
+   "name": "Crvena Zvezda Meridianbet Belgrade",
+   "abbreviatedName": "Crvena Zvezda",
+   "editorialName": "Crvena",
+   "tvCode": "CZV",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "013403",
    "name": "WALKER IV, LONNIE",
    "alias": "WALKER IV, LONNIE",
