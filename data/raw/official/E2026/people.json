@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "011218",
+   "name": "EVANS, KEENAN",
+   "alias": "EVANS, KEENAN",
+   "aliasRaw": "EVANS, KEENAN",
+   "passportName": "KEENAN CORTEZ",
+   "passportSurname": "EVANS",
+   "jerseyName": "EVANS",
+   "abbreviatedName": "Evans, K.",
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 191,
+   "weight": 86,
+   "birthDate": "1996-08-23T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "K3vans12",
+   "instagramAccount": "k3vans12/",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-26T15:52:38.066",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "34",
+  "dorsalRaw": "34",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "LONDON LIONS",
+  "externalId": 57256,
+  "images": {},
+  "club": {
+   "code": "ZAL",
+   "name": "Zalgiris Kaunas",
+   "abbreviatedName": "Zalgiris",
+   "editorialName": "Zalgiris",
+   "tvCode": "ZAL",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "015398",
    "name": "HUNTER, SHANE",
    "alias": "HUNTER, SHANE",
@@ -20,9 +80,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -80,9 +140,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -140,9 +200,9 @@
     "code": "CMR",
     "name": "Cameroon"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },

@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-26T15:17:24.730255+00:00",
- "updatedAt": "2026-10-26T13:13:00",
+ "fetchedAt": "2026-10-26T21:05:08.620124+00:00",
+ "updatedAt": "2026-10-26T18:52:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -291,6 +291,14 @@
    "status": "Out",
    "round": "Round 8",
    "comment": "Left knee injury"
+  },
+  {
+   "team": "FC Barcelona",
+   "position": "SF",
+   "name": "Joel Parra",
+   "status": "Out",
+   "round": "Round 8",
+   "comment": "Didn't fly with the team to Munich (illness)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
@@ -701,6 +709,14 @@
    "comment": "DNP in Rounds 1-7 (coach's decision)"
   },
   {
+   "team": "Real Madrid",
+   "position": "SF",
+   "name": "Nick Smith Jr.",
+   "status": "Out",
+   "round": "Round 8",
+   "comment": "Felt discomfort in the sole of his right foot in domestic league game (10.25)"
+  },
+  {
    "team": "Valencia Basket",
    "position": "SF",
    "name": "Mouhamadou Gueye",
@@ -786,7 +802,7 @@
    "name": "Nigel Williams-Goss",
    "status": "Out",
    "round": "Round 7-14",
-   "comment": "Aggravated previous hamstring injury in Round 6. Set to miss about 4 weeks."
+   "comment": "Aggravated previous hamstring injury in Round 6. Set to miss about 4 weeks. Will undergo further testing."
   }
  ]
 }

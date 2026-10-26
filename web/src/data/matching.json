@@ -20,16 +20,6 @@
   "match_confidence": 59.3
  },
  {
-  "fantaking_id": 3788,
-  "fantaking_name": "K. Evans",
-  "fantaking_team": "ZAL",
-  "club_code": "ZAL",
-  "person_code": "011218",
-  "official_name": "EVANS, KEENAN",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
   "fantaking_id": 3960,
   "fantaking_name": "T. Blatt",
   "fantaking_team": "HTA",
@@ -316,6 +306,16 @@
   "club_code": "PAN",
   "person_code": "008962",
   "official_name": "HAYES-DAVIS, NIGEL",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3788,
+  "fantaking_name": "K. Evans",
+  "fantaking_team": "ZAL",
+  "club_code": "ZAL",
+  "person_code": "011218",
+  "official_name": "EVANS, KEENAN",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
