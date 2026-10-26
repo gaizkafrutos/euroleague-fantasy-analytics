@@ -301,7 +301,7 @@
   "valuePerCredit": 0.809,
   "valueProjected": 0.464,
   "valueMarket": 0.811,
-  "bargainScore": 54.4,
+  "bargainScore": 54.5,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -1071,7 +1071,7 @@
   "valuePerCredit": 0.312,
   "valueProjected": 0.183,
   "valueMarket": 0.312,
-  "bargainScore": 26.9,
+  "bargainScore": 27.0,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -2745,7 +2745,7 @@
   "valuePerCredit": 0.747,
   "valueProjected": 0.396,
   "valueMarket": 0.753,
-  "bargainScore": 32.4,
+  "bargainScore": 32.5,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -3309,7 +3309,7 @@
   "valuePerCredit": 0.642,
   "valueProjected": 0.357,
   "valueMarket": 0.642,
-  "bargainScore": 43.2,
+  "bargainScore": 43.3,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -5312,7 +5312,7 @@
   "valuePerCredit": 1.042,
   "valueProjected": 0.29,
   "valueMarket": 1.042,
-  "bargainScore": 50.7,
+  "bargainScore": 50.8,
   "schedule": {
    "difficulty": 39.0,
    "next": {
@@ -6097,7 +6097,7 @@
   "valuePerCredit": -0.077,
   "valueProjected": 0.266,
   "valueMarket": -0.071,
-  "bargainScore": 29.2,
+  "bargainScore": 29.4,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -8319,7 +8319,7 @@
   "valuePerCredit": 0.743,
   "valueProjected": 0.172,
   "valueMarket": 0.743,
-  "bargainScore": 28.0,
+  "bargainScore": 28.1,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -9317,7 +9317,7 @@
   "valuePerCredit": 0.638,
   "valueProjected": 0.292,
   "valueMarket": 0.65,
-  "bargainScore": 34.6,
+  "bargainScore": 34.7,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -9866,7 +9866,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.309,
   "valueMarket": 0.0,
-  "bargainScore": 37.3,
+  "bargainScore": 37.6,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -10768,7 +10768,7 @@
   "valuePerCredit": 0.798,
   "valueProjected": 0.434,
   "valueMarket": 0.805,
-  "bargainScore": 39.3,
+  "bargainScore": 39.5,
   "schedule": {
    "difficulty": 56.0,
    "next": {
@@ -12094,7 +12094,7 @@
   "valuePerCredit": 2.32,
   "valueProjected": 0.345,
   "valueMarket": 2.327,
-  "bargainScore": 34.4,
+  "bargainScore": 34.6,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -12751,18 +12751,18 @@
    "plusMinusAvg": 6.0,
    "minutesPrior": null
   },
-  "projectedFp": 2.14,
+  "projectedFp": 1.21,
   "projectedIfPlays": 4.83,
-  "playProb": 0.444,
+  "playProb": 0.25,
   "expectedMinutes": 12.6,
   "matchup": {
    "opponentFactor": 1.0,
    "homeFactor": 0.946
   },
   "valuePerCredit": 0.714,
-  "valueProjected": 0.437,
+  "valueProjected": 0.247,
   "valueMarket": 0.714,
-  "bargainScore": 40.4,
+  "bargainScore": 33.0,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -12784,22 +12784,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
+   "level": "doubt",
+   "kind": "roster",
+   "label": "Duda",
    "untilRound": null,
-   "detail": "Included in 12-man roster in Round 7 after DNP in Round 6 (coach's decision)",
-   "reported": "Expected · Round 8",
+   "detail": "Included in 12-man roster in Round 7. DNP in the domestic league (10.25)",
+   "reported": "Uncertain · Round 8",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 5.2,
-   "expectedChange": -0.06,
-   "riseProb": 0.174,
-   "sd": 4.7,
+   "expectedChange": -0.08,
+   "riseProb": 0.098,
+   "sd": 3.68,
    "floor": 0.0,
-   "ceiling": 5.2,
-   "p90": 8.1,
+   "ceiling": 3.6,
+   "p90": 5.9,
    "certainty": 0.0
   },
   "thumb": "/fotos/3947.webp?v=a0741e4c",
@@ -13662,7 +13662,7 @@
   "valuePerCredit": 0.348,
   "valueProjected": 0.298,
   "valueMarket": 0.348,
-  "bargainScore": 29.2,
+  "bargainScore": 29.4,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -14110,7 +14110,7 @@
   "valuePerCredit": 0.415,
   "valueProjected": 0.48,
   "valueMarket": 0.415,
-  "bargainScore": 39.3,
+  "bargainScore": 39.4,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -14337,7 +14337,7 @@
   "valuePerCredit": -0.37,
   "valueProjected": 0.307,
   "valueMarket": -0.375,
-  "bargainScore": 28.5,
+  "bargainScore": 28.7,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -15555,7 +15555,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.278,
   "valueMarket": 0.25,
-  "bargainScore": 36.8,
+  "bargainScore": 36.9,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -15665,7 +15665,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.34,
   "valueMarket": 0.25,
-  "bargainScore": 37.2,
+  "bargainScore": 37.4,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -16468,7 +16468,7 @@
    "kind": "coach",
    "label": "Duda · decisión técnica",
    "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)",
+   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)",
    "reported": "Uncertain · Round 8",
    "source": "BasketNews"
   },
@@ -16890,7 +16890,7 @@
   "valuePerCredit": 0.583,
   "valueProjected": 0.421,
   "valueMarket": 0.574,
-  "bargainScore": 31.4,
+  "bargainScore": 31.6,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -17110,7 +17110,7 @@
   "valuePerCredit": 0.562,
   "valueProjected": 0.378,
   "valueMarket": 0.575,
-  "bargainScore": 35.4,
+  "bargainScore": 35.6,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -17904,7 +17904,7 @@
   "valuePerCredit": 1.49,
   "valueProjected": 0.269,
   "valueMarket": 1.5,
-  "bargainScore": 24.6,
+  "bargainScore": 24.9,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -19018,7 +19018,7 @@
   "valuePerCredit": 0.481,
   "valueProjected": 0.423,
   "valueMarket": 0.487,
-  "bargainScore": 47.7,
+  "bargainScore": 47.9,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -19466,7 +19466,7 @@
   "valuePerCredit": -0.326,
   "valueProjected": 0.308,
   "valueMarket": -0.326,
-  "bargainScore": 29.0,
+  "bargainScore": 29.1,
   "schedule": {
    "difficulty": 36.0,
    "next": {
@@ -20713,7 +20713,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.239,
   "valueMarket": 0.0,
-  "bargainScore": 32.0,
+  "bargainScore": 32.1,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -21506,7 +21506,7 @@
   "valuePerCredit": 1.523,
   "valueProjected": 0.359,
   "valueMarket": 1.521,
-  "bargainScore": 52.9,
+  "bargainScore": 53.0,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -21532,7 +21532,7 @@
    "kind": "roster",
    "label": "Duda",
    "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7, DNP in domestic action. Dealing with ankle and knee injuries",
+   "detail": "Not included in 12-man roster in Round 7, DNP in domestic league. Dealing with ankle and knee injuries",
    "reported": "Uncertain · Round 8",
    "source": "BasketNews"
   },
@@ -21954,7 +21954,7 @@
   "valuePerCredit": 0.204,
   "valueProjected": 0.343,
   "valueMarket": 0.211,
-  "bargainScore": 28.5,
+  "bargainScore": 28.6,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -22621,7 +22621,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 32.6,
+  "bargainScore": 32.7,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -22959,7 +22959,7 @@
   "valuePerCredit": 0.385,
   "valueProjected": 0.309,
   "valueMarket": 0.385,
-  "bargainScore": 39.3,
+  "bargainScore": 39.5,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -23103,7 +23103,7 @@
    "kind": "coach",
    "label": "Duda · decisión técnica",
    "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)",
+   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)",
    "reported": "Uncertain · Round 8",
    "source": "BasketNews"
   },
@@ -24640,7 +24640,7 @@
   "valuePerCredit": 0.804,
   "valueProjected": 0.197,
   "valueMarket": 0.81,
-  "bargainScore": 27.4,
+  "bargainScore": 27.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -25308,7 +25308,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.254,
   "valueMarket": 0.0,
-  "bargainScore": 34.9,
+  "bargainScore": 35.1,
   "schedule": {
    "difficulty": 39.0,
    "next": {
@@ -25756,7 +25756,7 @@
   "valuePerCredit": 0.543,
   "valueProjected": 0.413,
   "valueMarket": 0.536,
-  "bargainScore": 32.9,
+  "bargainScore": 33.0,
   "schedule": {
    "difficulty": 36.0,
    "next": {
@@ -26204,7 +26204,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.269,
   "valueMarket": 0.0,
-  "bargainScore": 34.9,
+  "bargainScore": 35.1,
   "schedule": {
    "difficulty": 59.0,
    "next": {
@@ -26997,7 +26997,7 @@
   "valuePerCredit": 0.706,
   "valueProjected": 0.576,
   "valueMarket": 0.704,
-  "bargainScore": 43.4,
+  "bargainScore": 43.5,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -27562,7 +27562,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.247,
   "valueMarket": 0.0,
-  "bargainScore": 32.2,
+  "bargainScore": 32.3,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -27680,7 +27680,7 @@
   "valuePerCredit": 0.5,
   "valueProjected": 0.282,
   "valueMarket": 0.5,
-  "bargainScore": 34.0,
+  "bargainScore": 34.1,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -27790,7 +27790,7 @@
   "valuePerCredit": 0.369,
   "valueProjected": 0.39,
   "valueMarket": 0.371,
-  "bargainScore": 41.4,
+  "bargainScore": 41.5,
   "schedule": {
    "difficulty": 59.0,
    "next": {
@@ -28120,7 +28120,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.222,
   "valueMarket": 0.0,
-  "bargainScore": 30.6,
+  "bargainScore": 30.7,
   "schedule": {
    "difficulty": 33.0,
    "next": {
@@ -28374,7 +28374,7 @@
    "kind": "coach",
    "label": "Improbable · decisión técnica",
    "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)",
+   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)",
    "reported": "Doubtful · Round 8",
    "source": "BasketNews"
   },
@@ -28576,7 +28576,7 @@
   "valuePerCredit": 1.263,
   "valueProjected": 0.312,
   "valueMarket": 1.263,
-  "bargainScore": 37.3,
+  "bargainScore": 37.5,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -29024,7 +29024,7 @@
   "valuePerCredit": 0.475,
   "valueProjected": 0.205,
   "valueMarket": 0.475,
-  "bargainScore": 19.2,
+  "bargainScore": 19.3,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -31051,7 +31051,7 @@
   "valuePerCredit": -0.138,
   "valueProjected": 0.228,
   "valueMarket": -0.138,
-  "bargainScore": 24.8,
+  "bargainScore": 24.9,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -31077,7 +31077,7 @@
    "kind": "coach",
    "label": "Se espera que juegue",
    "untilRound": null,
-   "detail": "Included in 12-man roster in Round 7 after DNP in Rounds 5-6 (coach's decision). Played in the domestic league (10.18)",
+   "detail": "Included in 12-man roster in Round 7 after DNP in Rounds 5-6 (coach's decision). Played in the domestic league (10.25)",
    "reported": "Expected · Round 8",
    "source": "BasketNews"
   },
@@ -31624,7 +31624,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 32.8,
+  "bargainScore": 32.9,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -32300,7 +32300,7 @@
   "valuePerCredit": 0.919,
   "valueProjected": 0.245,
   "valueMarket": 0.917,
-  "bargainScore": 34.3,
+  "bargainScore": 34.4,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -32418,7 +32418,7 @@
   "valuePerCredit": 0.132,
   "valueProjected": 0.331,
   "valueMarket": 0.136,
-  "bargainScore": 30.2,
+  "bargainScore": 30.3,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -32638,7 +32638,7 @@
   "valuePerCredit": 0.482,
   "valueProjected": 0.427,
   "valueMarket": 0.478,
-  "bargainScore": 38.6,
+  "bargainScore": 38.7,
   "schedule": {
    "difficulty": 36.0,
    "next": {
@@ -33195,7 +33195,7 @@
   "valuePerCredit": 0.521,
   "valueProjected": 0.411,
   "valueMarket": 0.524,
-  "bargainScore": 31.3,
+  "bargainScore": 31.5,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -33881,7 +33881,7 @@
    "kind": "coach",
    "label": "Duda · decisión técnica",
    "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7(coach's decision)",
+   "detail": "Not included in 12-man roster in Round 7(coach's decision). DNP in the domestic league (10.25)",
    "reported": "Uncertain · Round 8",
    "source": "BasketNews"
   },
@@ -34303,7 +34303,7 @@
   "valuePerCredit": 0.191,
   "valueProjected": 0.338,
   "valueMarket": 0.185,
-  "bargainScore": 32.0,
+  "bargainScore": 32.1,
   "schedule": {
    "difficulty": 41.0,
    "next": {
@@ -34531,7 +34531,7 @@
   "valuePerCredit": 1.195,
   "valueProjected": 0.288,
   "valueMarket": 1.2,
-  "bargainScore": 34.3,
+  "bargainScore": 34.4,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -36101,7 +36101,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.217,
   "valueMarket": 0.0,
-  "bargainScore": 29.6,
+  "bargainScore": 29.7,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -36127,7 +36127,7 @@
    "kind": "coach",
    "label": "Improbable · decisión técnica",
    "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision)",
+   "detail": "DNP in Rounds 1-7 (coach's decision). Played in the domestic league (10.25)",
    "reported": "Doubtful · Round 8",
    "source": "BasketNews"
   },
@@ -36329,7 +36329,7 @@
   "valuePerCredit": 1.04,
   "valueProjected": 0.249,
   "valueMarket": 1.036,
-  "bargainScore": 45.2,
+  "bargainScore": 45.3,
   "schedule": {
    "difficulty": 39.0,
    "next": {
@@ -36667,7 +36667,7 @@
   "valuePerCredit": 1.034,
   "valueProjected": 0.245,
   "valueMarket": 1.034,
-  "bargainScore": 33.9,
+  "bargainScore": 34.0,
   "schedule": {
    "difficulty": 39.0,
    "next": {
@@ -37122,7 +37122,7 @@
   "valuePerCredit": 0.833,
   "valueProjected": 0.158,
   "valueMarket": 0.833,
-  "bargainScore": 26.9,
+  "bargainScore": 27.0,
   "schedule": {
    "difficulty": 56.0,
    "next": {
@@ -37696,7 +37696,7 @@
   "valuePerCredit": 0.32,
   "valueProjected": 0.475,
   "valueMarket": 0.325,
-  "bargainScore": 31.0,
+  "bargainScore": 31.1,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -38034,7 +38034,7 @@
   "valuePerCredit": 0.353,
   "valueProjected": 0.534,
   "valueMarket": 0.371,
-  "bargainScore": 42.0,
+  "bargainScore": 42.1,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -39259,7 +39259,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 32.8,
+  "bargainScore": 32.9,
   "schedule": {
    "difficulty": 57.0,
    "next": {
@@ -39733,7 +39733,7 @@
    "kind": "coach",
    "label": "Se espera que juegue",
    "untilRound": null,
-   "detail": "Included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.18)",
+   "detail": "Included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)",
    "reported": "Expected · Round 8",
    "source": "BasketNews"
   },
@@ -39825,7 +39825,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.268,
   "valueMarket": 0.0,
-  "bargainScore": 33.7,
+  "bargainScore": 33.8,
   "schedule": {
    "difficulty": 41.0,
    "next": {
