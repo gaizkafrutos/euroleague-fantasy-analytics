@@ -1,15 +1,5 @@
 [
  {
-  "fantaking_id": 13936,
-  "fantaking_name": "R. Franks",
-  "fantaking_team": "PAR",
-  "club_code": "PAR",
-  "person_code": null,
-  "official_name": null,
-  "match_method": "unmatched",
-  "match_confidence": 57.1
- },
- {
   "fantaking_id": 11497,
   "fantaking_name": "V. Medarevic",
   "fantaking_team": "CZV",
@@ -3546,6 +3536,16 @@
   "club_code": "PAR",
   "person_code": "015397",
   "official_name": "REEVES, ANTONIO",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 13936,
+  "fantaking_name": "R. Franks",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
+  "person_code": "015400",
+  "official_name": "FRANKS, ROBERT",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },

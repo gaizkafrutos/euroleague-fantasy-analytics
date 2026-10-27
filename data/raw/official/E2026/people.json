@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "015400",
+   "name": "FRANKS, ROBERT",
+   "alias": "ROBERT, FRANKS",
+   "aliasRaw": "ROBERT, FRANKS",
+   "passportName": "ROBERT CHRISTOPHER",
+   "passportSurname": "FRANKS",
+   "jerseyName": "FRANKS",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 203,
+   "weight": 107,
+   "birthDate": "1996-12-18T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": null,
+   "instagramAccount": null,
+   "facebookAccount": null,
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-27T08:06:35.624",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "8",
+  "dorsalRaw": "8",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "NANJING MONKEY KINGS",
+  "externalId": 57257,
+  "images": {},
+  "club": {
+   "code": "PAR",
+   "name": "Partizan Mozzart Bet Belgrade",
+   "abbreviatedName": "Partizan",
+   "editorialName": "Partizan",
+   "tvCode": "PAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "011218",
    "name": "EVANS, KEENAN",
    "alias": "EVANS, KEENAN",
