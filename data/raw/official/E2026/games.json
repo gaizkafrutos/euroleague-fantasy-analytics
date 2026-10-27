@@ -30381,9 +30381,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJIZ",
+   "name": "PERUGA, CARLOS",
+   "alias": "PERUGA, C.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "885qkoqdo5npvomj"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OAAX",
+   "name": "ZAMOJSKI, JAKUB",
+   "alias": "ZAMOJSKI, J.",
+   "country": {
+    "code": "POL",
+    "name": "Poland"
+   },
+   "images": {
+    "verticalSmall": "886d5v4r7bejwode"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "KAU4",
+   "name": "TIGANIS, IOANNIS",
+   "alias": "TIGANIS, I.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "PALADOZZA",
@@ -30482,9 +30518,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OAEF",
+   "name": "GARCIA, JUAN CARLOS",
+   "alias": "GARCIA GONZALEZ, J.C.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "883ghgjot7u5suil"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJCI",
+   "name": "KOWALSKI, MARCIN",
+   "alias": "KOWALSKI, M.",
+   "country": {
+    "code": "POL",
+    "name": "Poland"
+   },
+   "images": {
+    "verticalSmall": "88458wn9bg4cds6q"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJLI",
+   "name": "PEERANDI, RAIN",
+   "alias": "PEERANDI, R.",
+   "country": {
+    "code": "EST",
+    "name": "Estonia"
+   },
+   "images": {
+    "verticalSmall": "885xbuej88hcbpxv"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "LDLC ARENA",
@@ -30583,9 +30655,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OACI",
+   "name": "BELOSEVIC, ILIJA",
+   "alias": "BELOSEVIC, I.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "images": {
+    "verticalSmall": "ayrnxwrdng99dusy"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJFQ",
+   "name": "FOUFIS, IOANNIS",
+   "alias": "FOUFIS, I.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "images": {
+    "verticalSmall": "87yuyhwl9wgoi74r"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMH",
+   "name": "BITTNER, STEVE",
+   "alias": "BITTNER, S.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "images": {
+    "verticalSmall": "bugv8rrha7hj3eny"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ARENA BOTEVGRAD",
@@ -30684,9 +30792,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OADJ",
+   "name": "PUKL,SASA",
+   "alias": "PUKL,S.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "8863itxgormdtqhs"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJCL",
+   "name": "LOTTERMOSER, ROBERT",
+   "alias": "LOTTERMOSER, R.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "images": {
+    "verticalSmall": "8845rp7o4ifpg9kf"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJFP",
+   "name": "DRAGOJEVIC, IGOR",
+   "alias": "DRAGOJEVIC, I.",
+   "country": {
+    "code": "MNE",
+    "name": "Montenegro"
+   },
+   "images": {
+    "verticalSmall": "87yus4cpo4p8q56s"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
