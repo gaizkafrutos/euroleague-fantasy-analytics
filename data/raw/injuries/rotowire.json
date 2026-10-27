@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-27T14:39:21.651603+00:00",
+ "fetchedAt": "2026-10-27T20:47:17.171776+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -93,14 +93,6 @@
    "comment": "Leg"
   },
   {
-   "team": "PBB",
-   "position": "G",
-   "name": "Nadir Hifi",
-   "status": "Game time",
-   "round": "",
-   "comment": "Ankle"
-  },
-  {
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
@@ -133,20 +125,20 @@
    "comment": "Thigh"
   },
   {
-   "team": "CZV",
-   "position": "C",
-   "name": "Christian Koloko",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
    "team": "OLY",
    "position": "G",
    "name": "John Konchar",
    "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
+  },
+  {
+   "team": "BJK",
+   "position": "F",
+   "name": "Furkan Korkmaz",
+   "status": "Game time",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "MTA",
@@ -190,9 +182,17 @@
   },
   {
    "team": "OLY",
+   "position": "C",
+   "name": "Nikola Milutinov",
+   "status": "Out",
+   "round": "",
+   "comment": "Toe"
+  },
+  {
+   "team": "OLY",
    "position": "G",
    "name": "Jean Montero",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   },
@@ -200,7 +200,7 @@
    "team": "PBB",
    "position": "G",
    "name": "Frank Ntilikina",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -208,6 +208,14 @@
    "team": "EFS",
    "position": "C",
    "name": "Georgios Papagiannis",
+   "status": "Out",
+   "round": "",
+   "comment": "Knee"
+  },
+  {
+   "team": "MIL",
+   "position": "F",
+   "name": "Alec Peters",
    "status": "Out",
    "round": "",
    "comment": "Knee"
@@ -226,13 +234,13 @@
    "name": "Nate Reuvers",
    "status": "Out",
    "round": "",
-   "comment": ""
+   "comment": "Foot"
   },
   {
    "team": "PAO",
    "position": "F",
    "name": "Nikos Rogkavopoulos",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Hamstring"
   },
@@ -241,6 +249,14 @@
    "position": "C",
    "name": "Mady Sissoko",
    "status": "Out",
+   "round": "",
+   "comment": ""
+  },
+  {
+   "team": "BJK",
+   "position": "G",
+   "name": "Lonnie Walker IV",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },

@@ -31559,7 +31559,7 @@
   "round": 8,
   "roundAlias": "Round 8",
   "roundName": "Round 8",
-  "played": false,
+  "played": true,
   "date": "2026-10-27T17:00:00",
   "confirmedDate": true,
   "confirmedHour": true,
@@ -31578,13 +31578,13 @@
      "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 93,
+   "standingsScore": 93,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 25,
+    "partials2": 22,
+    "partials3": 25,
+    "partials4": 21,
     "extraPeriods": {}
    }
   },
@@ -31600,18 +31600,18 @@
      "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 99,
+   "standingsScore": 99,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 23,
+    "partials2": 31,
+    "partials3": 19,
+    "partials4": 26,
     "extraPeriods": {}
    }
   },
-  "audience": 0,
-  "audienceConfirmed": false,
+  "audience": 5900,
+  "audienceConfirmed": true,
   "socialFeed": "",
   "operationsCode": null,
   "referee1": {
