@@ -1,30 +1,30 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 118.87,
- "scoredProjection": 146.78,
+ "totalProjection": 114.43,
+ "scoredProjection": 148.92,
  "captain": "3766",
  "starters": [
   "3766",
   "4233",
   "3850",
   "7424",
-  "3842"
+  "3851"
  ],
- "sixth": "3851",
+ "sixth": "3846",
  "bench": [
-  "3991",
   "3933",
-  "3950",
+  "3867",
+  "3886",
   "4088"
  ],
  "coach": {
-  "key": "3938",
-  "name": "NAVARRO, IBON",
+  "key": "3885",
+  "name": "BARTZOKAS, GEORGIOS",
   "position": "E",
-  "club": "RED",
-  "price": 7.2,
-  "projection": 13.69
+  "club": "OLY",
+  "price": 9.9,
+  "projection": 17.53
  },
  "players": [
   {
@@ -33,15 +33,7 @@
    "position": "G",
    "club": "MAD",
    "price": 12.1,
-   "projection": 16.63
-  },
-  {
-   "key": "3842",
-   "name": "WILBEKIN, SCOTTIE",
-   "position": "G",
-   "club": "BES",
-   "price": 9.3,
-   "projection": 13.39
+   "projection": 16.62
   },
   {
    "key": "3851",
@@ -49,7 +41,15 @@
    "position": "G",
    "club": "MAD",
    "price": 8.6,
-   "projection": 11.66
+   "projection": 11.65
+  },
+  {
+   "key": "3886",
+   "name": "HACKETT, DANIEL",
+   "position": "G",
+   "club": "VIR",
+   "price": 4.4,
+   "projection": 3.75
   },
   {
    "key": "4088",
@@ -57,7 +57,7 @@
    "position": "G",
    "club": "BES",
    "price": 4.0,
-   "projection": 3.4
+   "projection": 2.75
   },
   {
    "key": "3766",
@@ -65,15 +65,15 @@
    "position": "F",
    "club": "OLY",
    "price": 18.4,
-   "projection": 23.3
+   "projection": 24.5
   },
   {
-   "key": "3991",
-   "name": "ABALDE, ALBERTO",
+   "key": "3846",
+   "name": "WARD, TYSON",
    "position": "F",
-   "club": "MAD",
-   "price": 5.4,
-   "projection": 6.09
+   "club": "OLY",
+   "price": 8.1,
+   "projection": 10.26
   },
   {
    "key": "3933",
@@ -81,15 +81,15 @@
    "position": "F",
    "club": "PRS",
    "price": 4.5,
-   "projection": 4.4
+   "projection": 4.41
   },
   {
-   "key": "3950",
-   "name": "DOBRIC, OGNJEN",
+   "key": "3867",
+   "name": "PAPANIKOLAOU, KOSTAS",
    "position": "F",
-   "club": "RED",
-   "price": 4.8,
-   "projection": 4.28
+   "club": "OLY",
+   "price": 4.1,
+   "projection": 4.17
   },
   {
    "key": "4233",
@@ -97,15 +97,15 @@
    "position": "C",
    "club": "DUB",
    "price": 15.9,
-   "projection": 20.61
+   "projection": 20.54
   },
   {
    "key": "7424",
    "name": "DIARRA, ALIOU",
    "position": "C",
    "club": "VIR",
-   "price": 9.8,
-   "projection": 15.11
+   "price": 10.0,
+   "projection": 15.78
   }
  ],
  "available": true,

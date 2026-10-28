@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-28T16:43:40.987920+00:00",
+ "fetchedAt": "2026-10-28T22:42:52.578668+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -16,7 +16,7 @@
    "team": "HTA",
    "position": "G",
    "name": "Tamir Blatt",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Coach's Decision"
   },
@@ -77,14 +77,6 @@
    "comment": "Shoulder"
   },
   {
-   "team": "PAR",
-   "position": "C",
-   "name": "Robert Franks",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
    "team": "RMB",
    "position": "C",
    "name": "Usman Garuba",
@@ -136,7 +128,7 @@
    "team": "BJK",
    "position": "F",
    "name": "Furkan Korkmaz",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -189,6 +181,14 @@
    "comment": "Toe"
   },
   {
+   "team": "VBC",
+   "position": "F",
+   "name": "Nikola Mirotic",
+   "status": "Game time",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "OLY",
    "position": "G",
    "name": "Jean Montero",
@@ -203,14 +203,6 @@
    "status": "Out",
    "round": "",
    "comment": ""
-  },
-  {
-   "team": "EFS",
-   "position": "C",
-   "name": "Georgios Papagiannis",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
   },
   {
    "team": "MIL",
@@ -256,7 +248,7 @@
    "team": "BJK",
    "position": "G",
    "name": "Lonnie Walker IV",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },

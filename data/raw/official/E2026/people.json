@@ -1,6 +1,126 @@
 [
  {
   "person": {
+   "code": "014422",
+   "name": "SIFTAR, JAKOB",
+   "alias": "SIFTAR, JAKOB",
+   "aliasRaw": "SIFTAR, JAKOB",
+   "passportName": "JAKOB",
+   "passportSurname": "SIFTAR",
+   "jerseyName": "SIFTAR",
+   "abbreviatedName": null,
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "height": 197,
+   "weight": 80,
+   "birthDate": "2009-02-03T00:00:00",
+   "birthCountry": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-28T16:58:21.805",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "42",
+  "dorsalRaw": "42",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "FC BARCELONA",
+  "externalId": 57263,
+  "images": {},
+  "club": {
+   "code": "BAR",
+   "name": "FC Barcelona",
+   "abbreviatedName": "FC Barcelona",
+   "editorialName": "Barca",
+   "tvCode": "BAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015402",
+   "name": "KONCHAR, JOHN",
+   "alias": "KONCHAR, JOHN",
+   "aliasRaw": "KONCHAR, JOHN",
+   "passportName": "JOHN JOSEPH",
+   "passportSurname": "KONCHAR",
+   "jerseyName": "KONCHAR",
+   "abbreviatedName": null,
+   "country": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "height": 196,
+   "weight": 92,
+   "birthDate": "1996-03-22T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-10-28T16:56:35.525",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "55",
+  "dorsalRaw": "55",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "NEW YORK KNICKS",
+  "externalId": 57262,
+  "images": {},
+  "club": {
+   "code": "OLY",
+   "name": "Olympiacos Piraeus",
+   "abbreviatedName": "Olympiacos",
+   "editorialName": "Olympiacos",
+   "tvCode": "OLY",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "015400",
    "name": "FRANKS, ROBERT",
    "alias": "ROBERT, FRANKS",
@@ -20,9 +140,9 @@
     "code": "USA",
     "name": "United States of America"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
