@@ -74,7 +74,7 @@
   "valuePerCredit": 0.922,
   "valueProjected": 0.0,
   "valueMarket": 0.922,
-  "bargainScore": 19.2,
+  "bargainScore": 15.5,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -301,7 +301,7 @@
   "valuePerCredit": 0.685,
   "valueProjected": 0.489,
   "valueMarket": 0.685,
-  "bargainScore": 54.5,
+  "bargainScore": 54.4,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -1106,15 +1106,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "injury",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Expected to return after DNP in Round 7 and in domestic league (10.24)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 11.0,
   "pricePendingSource": "juego",
   "outlook": {
@@ -1539,7 +1531,7 @@
   "valuePerCredit": 0.66,
   "valueProjected": 0.326,
   "valueMarket": 0.66,
-  "bargainScore": 41.1,
+  "bargainScore": 40.8,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -1560,15 +1552,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7 (coach's decision). Played in the domestic league (10.18-10.24)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 9.8,
   "pricePendingSource": "juego",
   "outlook": {
@@ -1659,7 +1643,7 @@
   "valuePerCredit": 0.689,
   "valueProjected": 0.192,
   "valueMarket": 0.689,
-  "bargainScore": 37.1,
+  "bargainScore": 33.2,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -1777,7 +1761,7 @@
   "valuePerCredit": 0.961,
   "valueProjected": 0.0,
   "valueMarket": 0.959,
-  "bargainScore": 31.4,
+  "bargainScore": 27.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -2118,7 +2102,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.02,
   "valueMarket": 0.0,
-  "bargainScore": 29.2,
+  "bargainScore": 21.8,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -2236,7 +2220,7 @@
   "valuePerCredit": 0.317,
   "valueProjected": 0.283,
   "valueMarket": 0.317,
-  "bargainScore": 40.5,
+  "bargainScore": 40.1,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -2257,15 +2241,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "injury",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Expected to return to the court (knee injury). Played in the domestic league (10.24)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 12.2,
   "pricePendingSource": "juego",
   "outlook": {
@@ -2912,7 +2888,7 @@
   "valuePerCredit": 0.748,
   "valueProjected": 0.36,
   "valueMarket": 0.753,
-  "bargainScore": 32.9,
+  "bargainScore": 32.4,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -3246,7 +3222,7 @@
   "valuePerCredit": -0.135,
   "valueProjected": 0.0,
   "valueMarket": -0.135,
-  "bargainScore": 11.5,
+  "bargainScore": 7.8,
   "schedule": {
    "difficulty": 83.0,
    "next": {
@@ -3365,7 +3341,7 @@
   "valuePerCredit": 1.202,
   "valueProjected": 0.0,
   "valueMarket": 1.202,
-  "bargainScore": 31.2,
+  "bargainScore": 27.5,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -3484,7 +3460,7 @@
   "valuePerCredit": 1.365,
   "valueProjected": 0.413,
   "valueMarket": 1.365,
-  "bargainScore": 46.6,
+  "bargainScore": 46.4,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -4266,7 +4242,7 @@
   "valuePerCredit": 0.452,
   "valueProjected": 0.438,
   "valueMarket": 0.455,
-  "bargainScore": 35.9,
+  "bargainScore": 35.7,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -4365,18 +4341,18 @@
    "plusMinusAvg": -7.4,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 2.65,
   "projectedIfPlays": 10.62,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 21.8,
   "matchup": {
    "opponentFactor": 0.955,
    "homeFactor": 0.947
   },
   "valuePerCredit": 1.036,
-  "valueProjected": 0.0,
+  "valueProjected": 0.232,
   "valueMarket": 1.035,
-  "bargainScore": 18.9,
+  "bargainScore": 33.4,
   "schedule": {
    "difficulty": 87.0,
    "next": {
@@ -4398,24 +4374,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Left knee contusion",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (left knee contusion)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 11.4,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 12.4,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.09,
+   "riseProb": 0.092,
+   "sd": 6.41,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 6.8,
+   "p90": 10.8,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3820.webp?v=895418c7",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
@@ -4926,18 +4903,18 @@
    "plusMinusAvg": -1.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.49,
   "projectedIfPlays": 1.97,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.8,
   "matchup": {
    "opponentFactor": 1.036,
    "homeFactor": 0.947
   },
   "valuePerCredit": -0.147,
-  "valueProjected": 0.0,
+  "valueProjected": 0.073,
   "valueMarket": -0.147,
-  "bargainScore": 20.7,
+  "bargainScore": 23.4,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -4959,24 +4936,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Traveled with the squad for Round 8 after DNP in Rounds 5-7 and in the domestic league on Sunday (muscle pain)",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Traveled with the squad for Round 8 but DNP after missing Rounds 5-7 (muscle pain)",
+   "reported": "Game-time · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 6.7,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 7.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.13,
+   "riseProb": 0.047,
+   "sd": 3.77,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.9,
+   "p90": 5.3,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3826.webp?v=d54815a4",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
@@ -5056,7 +5034,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -5173,7 +5151,7 @@
   "valuePerCredit": 0.834,
   "valueProjected": 0.0,
   "valueMarket": 0.841,
-  "bargainScore": 17.0,
+  "bargainScore": 13.2,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -5535,15 +5513,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "injury",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Traveled with the squad for Round 8 after DNP in Rounds 5-7 and in the domestic league on Sunday (ankle injury)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 14.4,
   "pricePendingSource": "juego",
   "outlook": {
@@ -5634,7 +5604,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 83.0,
    "next": {
@@ -5742,18 +5712,18 @@
    "plusMinusAvg": 3.9,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.66,
   "projectedIfPlays": 6.65,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 11.8,
   "matchup": {
    "opponentFactor": 1.04,
    "homeFactor": 0.947
   },
   "valuePerCredit": 1.483,
-  "valueProjected": 0.0,
+  "valueProjected": 0.263,
   "valueMarket": 1.484,
-  "bargainScore": 19.5,
+  "bargainScore": 34.7,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -5775,24 +5745,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
-   "kind": "roster",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not Included in 12-man roster.",
-   "reported": "Out · Round 8",
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 6.3,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 6.8,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.106,
+   "sd": 4.58,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 4.6,
+   "p90": 7.5,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3836.webp?v=ffeb3261",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
@@ -6314,7 +6285,7 @@
   "valuePerCredit": -0.077,
   "valueProjected": 0.266,
   "valueMarket": -0.071,
-  "bargainScore": 32.4,
+  "bargainScore": 30.6,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -6978,7 +6949,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -7418,18 +7389,18 @@
    "plusMinusAvg": -3.7,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 3.59,
   "projectedIfPlays": 4.49,
-  "playProb": 0.0,
+  "playProb": 0.8,
   "expectedMinutes": 14.5,
   "matchup": {
    "opponentFactor": 0.953,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.288,
-  "valueProjected": 0.0,
+  "valueProjected": 0.544,
   "valueMarket": 0.284,
-  "bargainScore": 18.5,
+  "bargainScore": 43.9,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -7451,12 +7422,12 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "probable",
    "kind": "injury",
-   "label": "Baja hasta la J9",
+   "label": "Baja prevista J9-J9",
    "untilRound": 9,
-   "detail": "DNP in Round 7 and in domestic league (back discomfort)",
-   "reported": "Out · Round 8-9",
+   "detail": "DNP in Rounds 7-8 (back discomfort)",
+   "reported": "Out · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 6.6,
@@ -7464,11 +7435,12 @@
   "outlook": {
    "breakEven": 7.1,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.226,
+   "sd": 6.28,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 7.6,
+   "p90": 11.5,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3861.webp?v=b95395da",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
@@ -8324,7 +8296,7 @@
   "valuePerCredit": 1.063,
   "valueProjected": 0.0,
   "valueMarket": 1.066,
-  "bargainScore": 13.7,
+  "bargainScore": 10.0,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -8553,7 +8525,7 @@
   "valuePerCredit": 0.743,
   "valueProjected": 0.17,
   "valueMarket": 0.743,
-  "bargainScore": 33.2,
+  "bargainScore": 29.0,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -9561,7 +9533,7 @@
   "valuePerCredit": 0.882,
   "valueProjected": 0.42,
   "valueMarket": 0.875,
-  "bargainScore": 42.3,
+  "bargainScore": 41.8,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -10101,18 +10073,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.13,
   "projectedIfPlays": 6.58,
-  "playProb": 0.0,
+  "playProb": 0.02,
   "expectedMinutes": 22.4,
   "matchup": {
    "opponentFactor": 0.982,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.023,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 22.2,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -10134,12 +10106,12 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "probable",
    "kind": "injury",
-   "label": "Baja hasta la J9",
+   "label": "Baja prevista J9-J9",
    "untilRound": 9,
-   "detail": "DNP in Rounds 1-7 (hamstring injury)",
-   "reported": "Out · Round 8-9",
+   "detail": "DNP in Rounds 1-8 (hamstring injury)",
+   "reported": "Out · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 5.7,
@@ -10147,11 +10119,12 @@
   "outlook": {
    "breakEven": 6.1,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.009,
+   "sd": 1.57,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 1.1,
+   "p90": 2.1,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3904.webp?v=f8b2efe4",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
@@ -10231,7 +10204,7 @@
   "valuePerCredit": 0.956,
   "valueProjected": 0.0,
   "valueMarket": 0.975,
-  "bargainScore": 24.4,
+  "bargainScore": 20.6,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -10462,7 +10435,7 @@
   "valuePerCredit": 0.727,
   "valueProjected": 0.322,
   "valueMarket": 0.727,
-  "bargainScore": 45.5,
+  "bargainScore": 44.9,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -10796,7 +10769,7 @@
   "valuePerCredit": 0.697,
   "valueProjected": 0.0,
   "valueMarket": 0.697,
-  "bargainScore": 20.7,
+  "bargainScore": 16.9,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -11025,7 +10998,7 @@
   "valuePerCredit": 0.934,
   "valueProjected": 0.502,
   "valueMarket": 0.927,
-  "bargainScore": 45.3,
+  "bargainScore": 44.7,
   "schedule": {
    "difficulty": 83.0,
    "next": {
@@ -11124,18 +11097,18 @@
    "plusMinusAvg": 3.2,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.35,
   "projectedIfPlays": 5.4,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 13.5,
   "matchup": {
    "opponentFactor": 0.973,
    "homeFactor": 0.947
   },
   "valuePerCredit": 1.128,
-  "valueProjected": 0.0,
+  "valueProjected": 0.201,
   "valueMarket": 1.132,
-  "bargainScore": 22.1,
+  "bargainScore": 32.4,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -11157,24 +11130,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
-   "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Undisclosed",
-   "reported": "Out · Round 8",
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 6.7,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 7.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.09,
+   "riseProb": 0.087,
+   "sd": 4.61,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 4.3,
+   "p90": 7.2,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3917.webp?v=58c9db28",
   "clubCrestThumb": "/escudos/MUN.webp?v=56f62c68"
@@ -11473,7 +11447,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.179,
   "valueMarket": 0.0,
-  "bargainScore": 33.0,
+  "bargainScore": 28.7,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -11591,7 +11565,7 @@
   "valuePerCredit": -0.863,
   "valueProjected": -2.196,
   "valueMarket": -0.863,
-  "bargainScore": 15.7,
+  "bargainScore": 15.2,
   "schedule": {
    "difficulty": 87.0,
    "next": {
@@ -12363,18 +12337,18 @@
    "plusMinusAvg": 10.7,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.58,
   "projectedIfPlays": 6.31,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 11.9,
   "matchup": {
    "opponentFactor": 1.04,
    "homeFactor": 0.947
   },
   "valuePerCredit": 2.32,
-  "valueProjected": 0.0,
+  "valueProjected": 0.329,
   "valueMarket": 2.327,
-  "bargainScore": 17.4,
+  "bargainScore": 34.7,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -12396,24 +12370,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Round 7 and in domestic league (hamstring discomfort).",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 7-8 (hamstring discomfort).",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 4.8,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 5.1,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.06,
+   "riseProb": 0.124,
+   "sd": 5.58,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 5.2,
+   "p90": 8.6,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3936.webp?v=d75f6d60",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
@@ -13047,7 +13022,7 @@
   "valuePerCredit": 0.714,
   "valueProjected": 0.247,
   "valueMarket": 0.714,
-  "bargainScore": 35.9,
+  "bargainScore": 33.5,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -13387,7 +13362,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -13727,7 +13702,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.334,
   "valueMarket": 0.0,
-  "bargainScore": 40.3,
+  "bargainScore": 39.8,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -13957,7 +13932,7 @@
   "valuePerCredit": 0.348,
   "valueProjected": 0.298,
   "valueMarket": 0.348,
-  "bargainScore": 31.1,
+  "bargainScore": 29.7,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -14177,7 +14152,7 @@
   "valuePerCredit": 0.75,
   "valueProjected": 0.725,
   "valueMarket": 0.75,
-  "bargainScore": 55.4,
+  "bargainScore": 55.3,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -14308,15 +14283,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "injury",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "DNP in Round 7 (physical discomfort).Played in the domestic league (10.24)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 5.4,
   "pricePendingSource": "juego",
   "outlook": {
@@ -14407,7 +14374,7 @@
   "valuePerCredit": 0.415,
   "valueProjected": 0.48,
   "valueMarket": 0.415,
-  "bargainScore": 40.9,
+  "bargainScore": 40.3,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -14517,7 +14484,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -14634,7 +14601,7 @@
   "valuePerCredit": 0.155,
   "valueProjected": 0.371,
   "valueMarket": 0.15,
-  "bargainScore": 32.5,
+  "bargainScore": 31.7,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -14735,18 +14702,18 @@
    "plusMinusAvg": 0.9,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 2.12,
   "projectedIfPlays": 8.47,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 24.4,
   "matchup": {
    "opponentFactor": 1.031,
    "homeFactor": 1.053
   },
   "valuePerCredit": 1.004,
-  "valueProjected": 0.0,
+  "valueProjected": 0.303,
   "valueMarket": 1.0,
-  "bargainScore": 25.1,
+  "bargainScore": 42.7,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -14768,24 +14735,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Didn't fly with the team to Munich (illness)",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (illness)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 7.0,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 7.6,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.07,
+   "riseProb": 0.12,
+   "sd": 4.88,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 5.3,
+   "p90": 8.3,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3973.webp?v=9d91d87c",
   "clubCrestThumb": "/escudos/BAR.webp?v=8e182a46"
@@ -15086,7 +15054,7 @@
   "valuePerCredit": 0.507,
   "valueProjected": 0.61,
   "valueMarket": 0.5,
-  "bargainScore": 37.3,
+  "bargainScore": 37.0,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -15185,18 +15153,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.49,
   "projectedIfPlays": 1.96,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 10.2,
   "matchup": {
    "opponentFactor": 0.923,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.122,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 24.7,
   "schedule": {
    "difficulty": 83.0,
    "next": {
@@ -15218,22 +15186,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 1-7 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.067,
+   "sd": 2.97,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.4,
+   "p90": 4.2,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3977.webp?v=93a876ce",
   "clubCrestThumb": "/escudos/MAD.webp?v=d607a47f"
@@ -15535,7 +15504,7 @@
   "valuePerCredit": 1.305,
   "valueProjected": 0.72,
   "valueMarket": 1.295,
-  "bargainScore": 49.0,
+  "bargainScore": 48.9,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -15645,7 +15614,7 @@
   "valuePerCredit": 0.788,
   "valueProjected": 0.673,
   "valueMarket": 0.786,
-  "bargainScore": 42.2,
+  "bargainScore": 42.0,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -15856,18 +15825,18 @@
    "plusMinusAvg": -1.7,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.45,
   "projectedIfPlays": 1.8,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 6.8,
   "matchup": {
    "opponentFactor": 0.996,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.25,
-  "valueProjected": 0.0,
+  "valueProjected": 0.113,
   "valueMarket": 0.25,
-  "bargainScore": 23.2,
+  "bargainScore": 26.5,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -15889,22 +15858,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
-   "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Undisclosed",
-   "reported": "Out · Round 8",
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.054,
+   "sd": 2.46,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.0,
+   "p90": 3.6,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3986.webp?v=8e644c46",
   "clubCrestThumb": "/escudos/MUN.webp?v=56f62c68"
@@ -15984,7 +15954,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.43,
   "valueMarket": 0.25,
-  "bargainScore": 37.4,
+  "bargainScore": 36.8,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -16428,7 +16398,7 @@
   "valuePerCredit": -0.775,
   "valueProjected": 0.326,
   "valueMarket": -0.775,
-  "bargainScore": 43.7,
+  "bargainScore": 42.7,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -16540,7 +16510,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.18,
   "valueMarket": 0.0,
-  "bargainScore": 31.6,
+  "bargainScore": 26.6,
   "schedule": {
    "difficulty": 87.0,
    "next": {
@@ -16561,15 +16531,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "DNP in Round 7 (Coach's decision). Played in the domestic league (10.25)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.09,
@@ -16658,7 +16620,7 @@
   "valuePerCredit": -0.188,
   "valueProjected": 0.0,
   "valueMarket": -0.2,
-  "bargainScore": 13.9,
+  "bargainScore": 10.1,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -16764,18 +16726,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.9,
   "projectedIfPlays": 3.61,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.7,
   "matchup": {
    "opponentFactor": 0.998,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.225,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 29.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -16797,22 +16759,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.085,
+   "sd": 2.76,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.7,
+   "p90": 4.4,
+   "certainty": 0.0
   },
   "thumb": "/fotos/4000.webp?v=66158296",
   "clubCrestThumb": "/escudos/ULK.webp?v=123f6590"
@@ -16892,7 +16855,7 @@
   "valuePerCredit": 3.182,
   "valueProjected": 0.557,
   "valueMarket": 3.182,
-  "bargainScore": 44.5,
+  "bargainScore": 44.1,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -17002,7 +16965,7 @@
   "valuePerCredit": 0.212,
   "valueProjected": 0.455,
   "valueMarket": 0.212,
-  "bargainScore": 48.7,
+  "bargainScore": 48.6,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -17112,7 +17075,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.087,
   "valueMarket": 0.0,
-  "bargainScore": 30.1,
+  "bargainScore": 23.1,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -17222,7 +17185,7 @@
   "valuePerCredit": 0.583,
   "valueProjected": 0.421,
   "valueMarket": 0.574,
-  "bargainScore": 32.9,
+  "bargainScore": 32.4,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -17332,7 +17295,7 @@
   "valuePerCredit": 1.375,
   "valueProjected": 0.293,
   "valueMarket": 1.375,
-  "bargainScore": 37.2,
+  "bargainScore": 35.8,
   "schedule": {
    "difficulty": 87.0,
    "next": {
@@ -17444,7 +17407,7 @@
   "valuePerCredit": 0.3,
   "valueProjected": 0.32,
   "valueMarket": 0.3,
-  "bargainScore": 29.8,
+  "bargainScore": 28.7,
   "schedule": {
    "difficulty": 87.0,
    "next": {
@@ -17543,18 +17506,18 @@
    "plusMinusAvg": 1.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.53,
   "projectedIfPlays": 2.12,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 8.0,
   "matchup": {
    "opponentFactor": 0.992,
    "homeFactor": 0.947
   },
   "valuePerCredit": -0.25,
-  "valueProjected": 0.0,
+  "valueProjected": 0.133,
   "valueMarket": -0.25,
-  "bargainScore": 20.7,
+  "bargainScore": 24.6,
   "schedule": {
    "difficulty": 87.0,
    "next": {
@@ -17576,22 +17539,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 2-7 (coach's decision)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.046,
+   "sd": 2.1,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 1.9,
+   "p90": 3.2,
+   "certainty": 0.0
   },
   "thumb": "/fotos/4013.webp?v=058acae1",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
@@ -17671,7 +17635,7 @@
   "valuePerCredit": -1.19,
   "valueProjected": 0.169,
   "valueMarket": -1.19,
-  "bargainScore": 36.6,
+  "bargainScore": 32.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -17770,18 +17734,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.72,
   "projectedIfPlays": 2.9,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 9.4,
   "matchup": {
    "opponentFactor": 0.955,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.18,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 27.5,
   "schedule": {
    "difficulty": 87.0,
    "next": {
@@ -17803,22 +17767,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 2-7 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.09,
+   "riseProb": 0.093,
+   "sd": 4.2,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.4,
+   "p90": 6.0,
+   "certainty": 0.0
   },
   "thumb": "/fotos/4016.webp?v=d58655af",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
@@ -17898,7 +17863,7 @@
   "valuePerCredit": 0.598,
   "valueProjected": 0.45,
   "valueMarket": 0.6,
-  "bargainScore": 31.8,
+  "bargainScore": 31.3,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -18008,7 +17973,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.223,
   "valueMarket": 0.0,
-  "bargainScore": 33.5,
+  "bargainScore": 29.3,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -18115,18 +18080,18 @@
    "plusMinusAvg": -4.3,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.37,
   "projectedIfPlays": 1.47,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 6.7,
   "matchup": {
    "opponentFactor": 0.994,
    "homeFactor": 0.947
   },
   "valuePerCredit": -0.225,
-  "valueProjected": 0.0,
+  "valueProjected": 0.092,
   "valueMarket": 0.0,
-  "bargainScore": 11.1,
+  "bargainScore": 13.5,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -18148,22 +18113,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
-   "kind": "roster",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not Included in 12-man roster.",
-   "reported": "Out · Round 8",
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.025,
+   "sd": 1.7,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 1.5,
+   "p90": 2.5,
+   "certainty": 0.0
   },
   "thumb": null,
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
@@ -18232,18 +18198,18 @@
    "plusMinusAvg": 5.3,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.21,
   "projectedIfPlays": 4.82,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.6,
   "matchup": {
    "opponentFactor": 1.04,
    "homeFactor": 0.947
   },
   "valuePerCredit": 1.49,
-  "valueProjected": 0.0,
+  "valueProjected": 0.257,
   "valueMarket": 1.5,
-  "bargainScore": 10.6,
+  "bargainScore": 24.1,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -18265,24 +18231,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Round 7 and in domestic league (Illness), participated in team's practice on Monday",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 7-8 and in domestic league (Illness), participated in team's practice on Monday",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 4.7,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 5.0,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.105,
+   "sd": 4.18,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.9,
+   "p90": 6.5,
+   "certainty": 0.0
   },
   "thumb": "/fotos/4061.webp?v=cdce454c",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
@@ -18801,7 +18768,7 @@
   "valuePerCredit": 0.582,
   "valueProjected": 0.85,
   "valueMarket": 0.575,
-  "bargainScore": 55.2,
+  "bargainScore": 55.1,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -18911,7 +18878,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -19364,7 +19331,7 @@
   "valuePerCredit": 0.481,
   "valueProjected": 0.422,
   "valueMarket": 0.487,
-  "bargainScore": 50.4,
+  "bargainScore": 49.4,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -19474,7 +19441,7 @@
   "valuePerCredit": 0.725,
   "valueProjected": 0.525,
   "valueMarket": 0.719,
-  "bargainScore": 46.8,
+  "bargainScore": 46.6,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -19584,7 +19551,7 @@
   "valuePerCredit": 0.432,
   "valueProjected": 0.654,
   "valueMarket": 0.434,
-  "bargainScore": 44.9,
+  "bargainScore": 44.8,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -19696,7 +19663,7 @@
   "valuePerCredit": 0.187,
   "valueProjected": 0.119,
   "valueMarket": 0.187,
-  "bargainScore": 30.4,
+  "bargainScore": 24.3,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -19803,18 +19770,18 @@
    "plusMinusAvg": -5.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.27,
   "projectedIfPlays": 5.09,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.3,
   "matchup": {
    "opponentFactor": 1.071,
    "homeFactor": 1.053
   },
   "valuePerCredit": -0.326,
-  "valueProjected": 0.0,
+  "valueProjected": 0.144,
   "valueMarket": -0.326,
-  "bargainScore": 11.1,
+  "bargainScore": 18.8,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -19836,24 +19803,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
-   "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Round 7 (Groin injury). Played in the domestic league (10.24)",
-   "reported": "Out · Round 8",
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 8.8,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 9.5,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.12,
+   "riseProb": 0.071,
+   "sd": 5.42,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 4.8,
+   "p90": 8.1,
+   "certainty": 0.0
   },
   "thumb": "/fotos/4164.webp?v=42960de9",
   "clubCrestThumb": "/escudos/RED.webp?v=d642c5fb"
@@ -19933,7 +19901,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.217,
   "valueMarket": 0.0,
-  "bargainScore": 33.2,
+  "bargainScore": 28.6,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -20271,7 +20239,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -20388,7 +20356,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -20938,18 +20906,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.41,
   "projectedIfPlays": 5.65,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 15.4,
   "matchup": {
    "opponentFactor": 0.922,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.227,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 32.8,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -20971,24 +20939,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Left knee injury",
-   "reported": "Out · Round 8",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 6.2,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 6.7,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.09,
+   "riseProb": 0.091,
+   "sd": 4.06,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 4.0,
+   "p90": 6.5,
+   "certainty": 0.0
   },
   "thumb": "/fotos/4212.webp?v=c7bca477",
   "clubCrestThumb": "/escudos/BAR.webp?v=8e182a46"
@@ -21068,7 +21037,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.237,
   "valueMarket": 0.0,
-  "bargainScore": 35.4,
+  "bargainScore": 32.9,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -21298,7 +21267,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -21415,7 +21384,7 @@
   "valuePerCredit": 0.458,
   "valueProjected": 0.165,
   "valueMarket": 0.458,
-  "bargainScore": 31.0,
+  "bargainScore": 25.6,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -21869,7 +21838,7 @@
   "valuePerCredit": 1.523,
   "valueProjected": 0.0,
   "valueMarket": 1.521,
-  "bargainScore": 29.5,
+  "bargainScore": 25.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -21986,7 +21955,7 @@
   "valuePerCredit": 1.506,
   "valueProjected": 0.496,
   "valueMarket": 1.506,
-  "bargainScore": 51.4,
+  "bargainScore": 51.2,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -22322,7 +22291,7 @@
   "valuePerCredit": 0.204,
   "valueProjected": 0.0,
   "valueMarket": 0.211,
-  "bargainScore": 12.4,
+  "bargainScore": 8.6,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -22549,7 +22518,7 @@
   "valuePerCredit": 0.929,
   "valueProjected": 0.0,
   "valueMarket": 0.933,
-  "bargainScore": 24.0,
+  "bargainScore": 20.3,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -22776,7 +22745,7 @@
   "valuePerCredit": 0.392,
   "valueProjected": 0.415,
   "valueMarket": 0.4,
-  "bargainScore": 36.0,
+  "bargainScore": 35.5,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -23000,7 +22969,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 35.6,
+  "bargainScore": 32.9,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -23338,7 +23307,7 @@
   "valuePerCredit": 0.385,
   "valueProjected": 0.231,
   "valueMarket": 0.385,
-  "bargainScore": 36.9,
+  "bargainScore": 34.9,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -23445,18 +23414,18 @@
    "plusMinusAvg": 0.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.53,
   "projectedIfPlays": 2.13,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 10.1,
   "matchup": {
    "opponentFactor": 0.912,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.126,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 24.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -23478,12 +23447,12 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 4.2,
@@ -23491,11 +23460,12 @@
   "outlook": {
    "breakEven": 4.5,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.069,
+   "sd": 3.14,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.5,
+   "p90": 4.5,
+   "certainty": 0.0
   },
   "thumb": "/fotos/4698.webp?v=bb608d04",
   "clubCrestThumb": "/escudos/ULK.webp?v=123f6590"
@@ -23687,7 +23657,7 @@
   "valuePerCredit": 0.828,
   "valueProjected": 0.0,
   "valueMarket": 0.831,
-  "bargainScore": 12.4,
+  "bargainScore": 8.7,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -24715,15 +24685,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "DNP in Round 7 (Coach's decision). Played in the domestic league (10.25)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 8.1,
   "pricePendingSource": "juego",
   "outlook": {
@@ -25057,15 +25019,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Not included in 12-man roster in Round 7 (coach's decision). DNP in the domestic league (10.25)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 7.4,
   "pricePendingSource": "juego",
   "outlook": {
@@ -25714,7 +25668,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 37.5,
+  "bargainScore": 36.4,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -26168,7 +26122,7 @@
   "valuePerCredit": 0.455,
   "valueProjected": 0.375,
   "valueMarket": 0.464,
-  "bargainScore": 33.5,
+  "bargainScore": 33.0,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -26381,18 +26335,18 @@
    "plusMinusAvg": 0.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.87,
   "projectedIfPlays": 3.48,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.8,
   "matchup": {
    "opponentFactor": 0.953,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.217,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 29.4,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -26414,22 +26368,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
-   "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 1-7 (back injury)",
-   "reported": "Out · Round 8",
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (coach's decision) after DNP in Rounds 1-7 (back injury)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.103,
+   "sd": 4.73,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.9,
+   "p90": 6.9,
+   "certainty": 0.0
   },
   "thumb": "/fotos/7228.webp?v=02366738",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
@@ -26621,7 +26576,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.269,
   "valueMarket": 0.0,
-  "bargainScore": 37.0,
+  "bargainScore": 35.7,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -26849,7 +26804,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 28.4,
+  "bargainScore": 20.9,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -26961,7 +26916,7 @@
   "valuePerCredit": 0.768,
   "valueProjected": 0.524,
   "valueMarket": 0.768,
-  "bargainScore": 51.9,
+  "bargainScore": 51.8,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -27073,7 +27028,7 @@
   "valuePerCredit": 0.898,
   "valueProjected": 0.0,
   "valueMarket": 0.897,
-  "bargainScore": 24.6,
+  "bargainScore": 20.9,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -27181,18 +27136,18 @@
    "plusMinusAvg": 1.6,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.59,
   "projectedIfPlays": 6.38,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 19.5,
   "matchup": {
    "opponentFactor": 1.034,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.984,
-  "valueProjected": 0.0,
+  "valueProjected": 0.261,
   "valueMarket": 0.984,
-  "bargainScore": 27.9,
+  "bargainScore": 42.8,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -27214,24 +27169,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (undisclosed injury)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 6.1,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 6.6,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.101,
+   "sd": 4.03,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 4.2,
+   "p90": 6.7,
+   "certainty": 0.0
   },
   "thumb": "/fotos/7238.webp?v=79c56968",
   "clubCrestThumb": "/escudos/BAS.webp?v=9ea920ed"
@@ -27300,18 +27256,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.92,
   "projectedIfPlays": 3.66,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 10.7,
   "matchup": {
    "opponentFactor": 1.064,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.23,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 30.8,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -27333,22 +27289,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 1-7 (undisclosed injury)",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (undisclosed injury)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.095,
+   "sd": 3.35,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.1,
+   "p90": 5.2,
+   "certainty": 0.0
   },
   "thumb": "/fotos/7241.webp?v=62679888",
   "clubCrestThumb": "/escudos/TEL.webp?v=ab1efd9a"
@@ -27538,7 +27495,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.193,
   "valueMarket": 0.0,
-  "bargainScore": 32.1,
+  "bargainScore": 27.1,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -27637,18 +27594,18 @@
    "plusMinusAvg": 2.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.4,
   "projectedIfPlays": 1.61,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 5.5,
   "matchup": {
    "opponentFactor": 0.995,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.018,
-  "valueProjected": 0.0,
+  "valueProjected": 0.1,
   "valueMarket": 0.025,
-  "bargainScore": 16.2,
+  "bargainScore": 19.0,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -27670,22 +27627,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 4-7 (ankle injury)",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 4-8 (ankle injury)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.037,
+   "sd": 1.99,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 1.7,
+   "p90": 2.9,
+   "certainty": 0.0
   },
   "thumb": "/fotos/7246.webp?v=12806825",
   "clubCrestThumb": "/escudos/RED.webp?v=d642c5fb"
@@ -27765,7 +27723,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.06,
   "valueMarket": 0.0,
-  "bargainScore": 29.4,
+  "bargainScore": 22.2,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -27875,7 +27833,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -27992,7 +27950,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.247,
   "valueMarket": 0.0,
-  "bargainScore": 35.3,
+  "bargainScore": 32.5,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -28110,7 +28068,7 @@
   "valuePerCredit": 0.5,
   "valueProjected": 0.282,
   "valueMarket": 0.5,
-  "bargainScore": 36.5,
+  "bargainScore": 34.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -28220,7 +28178,7 @@
   "valuePerCredit": 0.369,
   "valueProjected": 0.39,
   "valueMarket": 0.371,
-  "bargainScore": 43.9,
+  "bargainScore": 42.8,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -28552,7 +28510,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.02,
   "valueMarket": 0.0,
-  "bargainScore": 29.0,
+  "bargainScore": 21.6,
   "schedule": {
    "difficulty": 38.0,
    "next": {
@@ -28780,7 +28738,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.235,
   "valueMarket": 0.0,
-  "bargainScore": 34.3,
+  "bargainScore": 31.3,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -29008,7 +28966,7 @@
   "valuePerCredit": 1.263,
   "valueProjected": 0.318,
   "valueMarket": 1.263,
-  "bargainScore": 38.7,
+  "bargainScore": 38.1,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -29109,18 +29067,18 @@
    "plusMinusAvg": 11.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.2,
   "projectedIfPlays": 4.81,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 14.9,
   "matchup": {
    "opponentFactor": 0.973,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.705,
-  "valueProjected": 0.0,
+  "valueProjected": 0.2,
   "valueMarket": 0.705,
-  "bargainScore": 20.7,
+  "bargainScore": 29.2,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -29142,24 +29100,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 5-7 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 5-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 6.0,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 6.4,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.09,
+   "riseProb": 0.059,
+   "sd": 2.89,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.1,
+   "p90": 4.9,
+   "certainty": 0.0
   },
   "thumb": "/fotos/7390.webp?v=1bb9c8bb",
   "clubCrestThumb": "/escudos/MUN.webp?v=56f62c68"
@@ -29459,7 +29418,7 @@
   "valuePerCredit": 0.725,
   "valueProjected": 0.384,
   "valueMarket": 0.721,
-  "bargainScore": 32.4,
+  "bargainScore": 31.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -29905,7 +29864,7 @@
   "valuePerCredit": 0.516,
   "valueProjected": 0.461,
   "valueMarket": 0.512,
-  "bargainScore": 41.5,
+  "bargainScore": 40.9,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -30118,18 +30077,18 @@
    "plusMinusAvg": 0.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.94,
   "projectedIfPlays": 3.74,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.7,
   "matchup": {
    "opponentFactor": 1.034,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.235,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 31.3,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -30151,22 +30110,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 2-7 (coach's decision)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.085,
+   "sd": 2.67,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.7,
+   "p90": 4.3,
+   "certainty": 0.0
   },
   "thumb": "/fotos/8677.webp?v=daa7ff18",
   "clubCrestThumb": "/escudos/BAS.webp?v=9ea920ed"
@@ -30246,7 +30206,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -30384,15 +30344,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "injury",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "DNP in Round 7 and domestic league on Sunday (concussion)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "outlook": {
    "breakEven": 8.5,
    "expectedChange": -0.07,
@@ -30929,7 +30881,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.235,
   "valueMarket": 0.0,
-  "bargainScore": 34.3,
+  "bargainScore": 31.3,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -31047,7 +30999,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.215,
   "valueMarket": 0.0,
-  "bargainScore": 32.9,
+  "bargainScore": 28.2,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -31385,7 +31337,7 @@
   "valuePerCredit": 0.365,
   "valueProjected": 0.095,
   "valueMarket": 0.372,
-  "bargainScore": 26.3,
+  "bargainScore": 19.5,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -31503,7 +31455,7 @@
   "valuePerCredit": -0.182,
   "valueProjected": 0.19,
   "valueMarket": -0.185,
-  "bargainScore": 24.6,
+  "bargainScore": 20.4,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -31524,15 +31476,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Included in 12-man roster in Round 7 after DNP in Rounds 5-6 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 6.1,
   "pricePendingSource": "juego",
   "outlook": {
@@ -31623,7 +31567,7 @@
   "valuePerCredit": 1.572,
   "valueProjected": 0.0,
   "valueMarket": 1.57,
-  "bargainScore": 22.0,
+  "bargainScore": 18.2,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -31850,7 +31794,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 28.2,
+  "bargainScore": 20.7,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -31960,7 +31904,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.242,
   "valueMarket": 0.0,
-  "bargainScore": 34.6,
+  "bargainScore": 31.6,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -32067,18 +32011,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.9,
   "projectedIfPlays": 3.6,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.7,
   "matchup": {
    "opponentFactor": 0.996,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.225,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 29.8,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -32100,22 +32044,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 2-7 (coach's decision)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.082,
+   "sd": 2.63,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.6,
+   "p90": 4.2,
+   "certainty": 0.0
   },
   "thumb": null,
   "clubCrestThumb": "/escudos/MUN.webp?v=56f62c68"
@@ -32184,18 +32129,18 @@
    "plusMinusAvg": 0.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.06,
   "projectedIfPlays": 4.26,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.7,
   "matchup": {
    "opponentFactor": 1.06,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.265,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 34.0,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -32217,22 +32162,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 4-7 (coach's decision). Played in the domestic league (10.18)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 4-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.07,
+   "riseProb": 0.097,
+   "sd": 2.81,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.9,
+   "p90": 4.6,
+   "certainty": 0.0
   },
   "thumb": "/fotos/9063.webp?v=e34d588f",
   "clubCrestThumb": "/escudos/TEL.webp?v=ab1efd9a"
@@ -32532,7 +32478,7 @@
   "valuePerCredit": 0.351,
   "valueProjected": 0.483,
   "valueMarket": 0.347,
-  "bargainScore": 43.0,
+  "bargainScore": 42.8,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -32775,15 +32721,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "injury",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Missed domestic league game (10.25) due to tendon discomfort, but listed availabe in EL report",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 8.0,
   "pricePendingSource": "juego",
   "outlook": {
@@ -32874,7 +32812,7 @@
   "valuePerCredit": 0.132,
   "valueProjected": 0.331,
   "valueMarket": 0.136,
-  "bargainScore": 32.8,
+  "bargainScore": 31.6,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -33094,7 +33032,7 @@
   "valuePerCredit": 0.482,
   "valueProjected": 0.401,
   "valueMarket": 0.478,
-  "bargainScore": 40.0,
+  "bargainScore": 39.5,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -33206,7 +33144,7 @@
   "valuePerCredit": 1.084,
   "valueProjected": 0.493,
   "valueMarket": 1.091,
-  "bargainScore": 34.9,
+  "bargainScore": 34.4,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -33318,7 +33256,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.02,
   "valueMarket": 0.0,
-  "bargainScore": 28.8,
+  "bargainScore": 21.4,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -33428,7 +33366,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -33545,7 +33483,7 @@
   "valuePerCredit": 0.308,
   "valueProjected": 0.527,
   "valueMarket": 0.34,
-  "bargainScore": 35.3,
+  "bargainScore": 35.0,
   "schedule": {
    "difficulty": 76.0,
    "next": {
@@ -34105,7 +34043,7 @@
   "valuePerCredit": 0.524,
   "valueProjected": 0.61,
   "valueMarket": 0.52,
-  "bargainScore": 40.9,
+  "bargainScore": 40.8,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -34318,18 +34256,18 @@
    "plusMinusAvg": -1.2,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.03,
   "projectedIfPlays": 4.13,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 9.1,
   "matchup": {
    "opponentFactor": 0.912,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.588,
-  "valueProjected": 0.0,
+  "valueProjected": 0.117,
   "valueMarket": 0.584,
-  "bargainScore": 13.6,
+  "bargainScore": 18.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -34351,24 +34289,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not included in 12-man roster in Round 7(coach's decision). DNP in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 7-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 8.8,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 9.5,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.13,
+   "riseProb": 0.024,
+   "sd": 3.1,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.0,
+   "p90": 5.0,
+   "certainty": 0.0
   },
   "thumb": "/fotos/11505.webp?v=2c164731",
   "clubCrestThumb": "/escudos/ULK.webp?v=123f6590"
@@ -34780,7 +34719,7 @@
   "valuePerCredit": 0.191,
   "valueProjected": 0.337,
   "valueMarket": 0.185,
-  "bargainScore": 34.8,
+  "bargainScore": 33.7,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -34890,7 +34829,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.24,
   "valueMarket": 0.0,
-  "bargainScore": 35.1,
+  "bargainScore": 32.3,
   "schedule": {
    "difficulty": 46.0,
    "next": {
@@ -34997,18 +34936,18 @@
    "plusMinusAvg": 0.8,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 2.71,
   "projectedIfPlays": 10.86,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 19.6,
   "matchup": {
    "opponentFactor": 1.048,
    "homeFactor": 0.947
   },
   "valuePerCredit": 1.195,
-  "valueProjected": 0.0,
+  "valueProjected": 0.274,
   "valueMarket": 1.2,
-  "bargainScore": 17.0,
+  "bargainScore": 35.0,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -35030,24 +34969,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Round 7 and domestic league on Sunday (muscle injury)",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 7-8 (muscle injury)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 9.9,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 10.8,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.07,
+   "riseProb": 0.115,
+   "sd": 7.42,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 7.5,
+   "p90": 12.1,
+   "certainty": 0.0
   },
   "thumb": "/fotos/11511.webp?v=1d121e5c",
   "clubCrestThumb": "/escudos/BAS.webp?v=9ea920ed"
@@ -35791,7 +35731,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -36350,7 +36290,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.022,
   "valueMarket": 0.0,
-  "bargainScore": 29.4,
+  "bargainScore": 21.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -36462,7 +36402,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 16.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -36579,7 +36519,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.216,
   "valueMarket": 0.0,
-  "bargainScore": 34.3,
+  "bargainScore": 30.5,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -36798,18 +36738,18 @@
    "plusMinusAvg": -5.2,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 2.92,
   "projectedIfPlays": 11.66,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 20.9,
   "matchup": {
    "opponentFactor": 1.039,
    "homeFactor": 0.947
   },
   "valuePerCredit": 1.04,
-  "valueProjected": 0.0,
+  "valueProjected": 0.265,
   "valueMarket": 1.036,
-  "bargainScore": 30.1,
+  "bargainScore": 47.7,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -36831,24 +36771,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
-   "kind": "roster",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not included in 12-man roster in Round 7 after DNP in Round 6 (undisclosed). DNP in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "level": "doubt",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 6-8 (undisclosed)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 11.0,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 12.0,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.106,
+   "sd": 6.48,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 7.1,
+   "p90": 11.1,
+   "certainty": 0.0
   },
   "thumb": "/fotos/11527.webp?v=df8c3c99",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
@@ -36917,18 +36858,18 @@
    "plusMinusAvg": -1.3,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 2.85,
   "projectedIfPlays": 11.41,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 20.6,
   "matchup": {
    "opponentFactor": 1.036,
    "homeFactor": 0.947
   },
   "valuePerCredit": 1.034,
-  "valueProjected": 0.0,
+  "valueProjected": 0.261,
   "valueMarket": 1.036,
-  "bargainScore": 22.6,
+  "bargainScore": 39.8,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -36950,24 +36891,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Undisclosed",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (undisclosed)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 10.9,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 11.9,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.109,
+   "sd": 7.35,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 7.6,
+   "p90": 12.1,
+   "certainty": 0.0
   },
   "thumb": "/fotos/11528.webp?v=fef112f3",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
@@ -37047,7 +36989,7 @@
   "valuePerCredit": 0.606,
   "valueProjected": 0.586,
   "valueMarket": 0.609,
-  "bargainScore": 45.7,
+  "bargainScore": 45.6,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -37159,7 +37101,7 @@
   "valuePerCredit": 0.517,
   "valueProjected": 0.255,
   "valueMarket": 0.517,
-  "bargainScore": 37.3,
+  "bargainScore": 35.2,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -37271,7 +37213,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -37500,7 +37442,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.235,
   "valueMarket": 0.0,
-  "bargainScore": 33.7,
+  "bargainScore": 30.4,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -37607,18 +37549,18 @@
    "plusMinusAvg": -3.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.48,
   "projectedIfPlays": 5.9,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 11.0,
   "matchup": {
    "opponentFactor": 1.002,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.833,
-  "valueProjected": 0.0,
+  "valueProjected": 0.178,
   "valueMarket": 0.833,
-  "bargainScore": 20.7,
+  "bargainScore": 29.4,
   "schedule": {
    "difficulty": 83.0,
    "next": {
@@ -37640,24 +37582,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 1-7 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (coach's decision)",
+   "reported": "Uncertain · Round 8",
    "source": "BasketNews"
   },
   "pricePending": 8.3,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 9.0,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.11,
+   "riseProb": 0.051,
+   "sd": 3.65,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.8,
+   "p90": 6.1,
+   "certainty": 0.0
   },
   "thumb": "/fotos/11534.webp?v=ae2a75c6",
   "clubCrestThumb": "/escudos/MAD.webp?v=d607a47f"
@@ -37737,7 +37680,7 @@
   "valuePerCredit": -0.37,
   "valueProjected": 0.172,
   "valueMarket": -0.37,
-  "bargainScore": 32.3,
+  "bargainScore": 27.6,
   "schedule": {
    "difficulty": 83.0,
    "next": {
@@ -37758,15 +37701,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "DNP in Rounds 1-7 (coach's decision)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 6.9,
   "pricePendingSource": "juego",
   "outlook": {
@@ -38081,7 +38016,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.175,
   "valueMarket": 0.0,
-  "bargainScore": 33.0,
+  "bargainScore": 28.6,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -38102,15 +38037,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "coach",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "DNP in Rounds 1-7 (coach's decision). Played in the domestic league (10.25)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 7.7,
   "pricePendingSource": "juego",
   "outlook": {
@@ -38190,18 +38117,18 @@
    "plusMinusAvg": 3.4,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.57,
   "projectedIfPlays": 2.3,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 11.1,
   "matchup": {
    "opponentFactor": 0.968,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.32,
-  "valueProjected": 0.0,
+  "valueProjected": 0.142,
   "valueMarket": 0.325,
-  "bargainScore": 10.8,
+  "bargainScore": 15.2,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -38223,22 +38150,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Coach's decision",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.09,
+   "riseProb": 0.065,
+   "sd": 2.67,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.3,
+   "p90": 3.9,
+   "certainty": 0.0
   },
   "thumb": "/fotos/11540.webp?v=810687ed",
   "clubCrestThumb": "/escudos/PAM.webp?v=1b054be1"
@@ -38318,7 +38246,7 @@
   "valuePerCredit": 0.821,
   "valueProjected": 0.651,
   "valueMarket": 0.814,
-  "bargainScore": 45.8,
+  "bargainScore": 45.6,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -38419,18 +38347,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.88,
   "projectedIfPlays": 3.5,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.7,
   "matchup": {
    "opponentFactor": 0.968,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.22,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 28.9,
   "schedule": {
    "difficulty": 31.0,
    "next": {
@@ -38452,22 +38380,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not included in 12-man roster after in Round 7. DNP in Rounds 1-6 (coach's decision)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.08,
+   "sd": 2.61,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.6,
+   "p90": 4.2,
+   "certainty": 0.0
   },
   "thumb": null,
   "clubCrestThumb": "/escudos/PAM.webp?v=1b054be1"
@@ -38547,7 +38476,7 @@
   "valuePerCredit": 0.353,
   "valueProjected": 0.534,
   "valueMarket": 0.371,
-  "bargainScore": 43.5,
+  "bargainScore": 43.2,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -39097,7 +39026,7 @@
   "valuePerCredit": 1.11,
   "valueProjected": 0.0,
   "valueMarket": 1.119,
-  "bargainScore": 21.8,
+  "bargainScore": 18.1,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -39324,7 +39253,7 @@
   "valuePerCredit": 0.387,
   "valueProjected": 0.473,
   "valueMarket": 0.391,
-  "bargainScore": 33.5,
+  "bargainScore": 33.3,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -39425,18 +39354,18 @@
    "plusMinusAvg": -0.3,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.27,
   "projectedIfPlays": 5.09,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 13.2,
   "matchup": {
    "opponentFactor": 0.923,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.685,
-  "valueProjected": 0.0,
+  "valueProjected": 0.174,
   "valueMarket": 0.716,
-  "bargainScore": 18.5,
+  "bargainScore": 26.2,
   "schedule": {
    "difficulty": 83.0,
    "next": {
@@ -39458,12 +39387,12 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Felt discomfort in the sole of his right foot in domestic league game (10.25)",
-   "reported": "Out · Round 8",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 8 (right foot sole discomfort)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "pricePending": 7.3,
@@ -39471,11 +39400,12 @@
   "outlook": {
    "breakEven": 7.9,
    "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "riseProb": 0.037,
+   "sd": 2.94,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 3.2,
+   "p90": 5.0,
+   "certainty": 0.0
   },
   "thumb": "/fotos/12145.webp?v=e6a2b943",
   "clubCrestThumb": "/escudos/MAD.webp?v=d607a47f"
@@ -39555,7 +39485,7 @@
   "valuePerCredit": -0.423,
   "valueProjected": 0.0,
   "valueMarket": -0.423,
-  "bargainScore": 20.7,
+  "bargainScore": 16.9,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -39672,7 +39602,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.223,
   "valueMarket": 0.0,
-  "bargainScore": 33.5,
+  "bargainScore": 29.3,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -39790,7 +39720,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 35.6,
+  "bargainScore": 32.8,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -39908,7 +39838,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 28.2,
+  "bargainScore": 20.7,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -40018,7 +39948,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 28.2,
+  "bargainScore": 20.7,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -40128,7 +40058,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.19,
   "valueMarket": 0.0,
-  "bargainScore": 31.8,
+  "bargainScore": 26.9,
   "schedule": {
    "difficulty": 43.0,
    "next": {
@@ -40238,7 +40168,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.207,
   "valueMarket": 0.0,
-  "bargainScore": 32.5,
+  "bargainScore": 27.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -40345,18 +40275,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.9,
   "projectedIfPlays": 3.59,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.7,
   "matchup": {
    "opponentFactor": 0.994,
    "homeFactor": 0.947
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.225,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 29.8,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -40378,22 +40308,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-7 (coach's decision)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.082,
+   "sd": 2.63,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.6,
+   "p90": 4.2,
+   "certainty": 0.0
   },
   "thumb": "/fotos/12471.webp?v=e7b9e480",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
@@ -40462,18 +40393,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 0.93,
   "projectedIfPlays": 3.71,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 12.7,
   "matchup": {
    "opponentFactor": 0.922,
    "homeFactor": 1.053
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.0,
+  "valueProjected": 0.233,
   "valueMarket": 0.0,
-  "bargainScore": 20.7,
+  "bargainScore": 30.8,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -40495,22 +40426,23 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J8",
-   "untilRound": 8,
-   "detail": "DNP in Rounds 1-7 (coach's decision)",
-   "reported": "Out · Round 8",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-8 (coach's decision)",
+   "reported": "Uncertain · Round 9",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.084,
+   "sd": 2.66,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.6,
+   "p90": 4.3,
+   "certainty": 0.0
   },
   "thumb": null,
   "clubCrestThumb": "/escudos/BAR.webp?v=8e182a46"
@@ -40590,7 +40522,7 @@
   "valuePerCredit": 0.907,
   "valueProjected": 0.323,
   "valueMarket": 0.907,
-  "bargainScore": 40.7,
+  "bargainScore": 40.4,
   "schedule": {
    "difficulty": 77.0,
    "next": {
@@ -40611,15 +40543,7 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": {
-   "level": "probable",
-   "kind": "roster",
-   "label": "Se espera que juegue",
-   "untilRound": null,
-   "detail": "Registered to the EuroLeague roster, DNP in the domestic league on Saturday (new signing)",
-   "reported": "Ready · Round 8",
-   "source": "BasketNews"
-  },
+  "availability": null,
   "pricePending": 9.6,
   "pricePendingSource": "juego",
   "outlook": {
@@ -40710,7 +40634,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.021,
   "valueMarket": 0.0,
-  "bargainScore": 29.4,
+  "bargainScore": 22.0,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -40828,7 +40752,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.233,
   "valueMarket": 0.0,
-  "bargainScore": 36.1,
+  "bargainScore": 34.0,
   "schedule": {
    "difficulty": 20.0,
    "next": {

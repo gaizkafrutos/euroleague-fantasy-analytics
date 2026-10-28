@@ -30078,9 +30078,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OACA",
+   "name": "RYZHYK, BORYS",
+   "alias": "RYZHYK, B.",
+   "country": {
+    "code": "UKR",
+    "name": "Ukraine"
+   },
+   "images": {
+    "verticalSmall": "8868n7x43bynj5fi"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "QJLV",
+   "name": "VILIUS, GYTIS",
+   "alias": "VILIUS, G.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "images": {
+    "verticalSmall": "94qq99ojsab3pjud"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "013174",
+   "name": "CALIC, STEFAN",
+   "alias": "CALIC, S.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "MOVISTAR ARENA",
@@ -30179,9 +30215,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJGG",
+   "name": "CORTES, CARLOS",
+   "alias": "CORTES, C.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "87ytqfifoj5rk4lk"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJJA",
+   "name": "RADOJKOVIC, JOSIP ",
+   "alias": "RADOJKOVIC, J.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": "8863vxdxmjmnauvq"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMF",
+   "name": "KARDUM, LUKA",
+   "alias": "KARDUM, L.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": "awgpghekyaxank3l"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ALEKSANDAR NIKOLIC HALL",
@@ -30280,9 +30352,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJLL",
+   "name": "DIFALLAH, MEHDI",
+   "alias": "DIFALLAH, M.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": "87ytu4ivn6qtsqni"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "QJMQ",
+   "name": "BAENA, ALBERTO",
+   "alias": "BAENA, A.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMI",
+   "name": "BOUBERT, MAXIME",
+   "alias": "BOUBERT, M.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": "bugv8rk58e6ulyph"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "BELGRADE ARENA",
