@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-28T08:43:02.610224+00:00",
- "updatedAt": "2026-10-28T08:34:00",
+ "fetchedAt": "2026-10-28T16:43:40.500356+00:00",
+ "updatedAt": "2026-10-28T09:03:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -48,9 +48,9 @@
    "team": "Anadolu Efes Istanbul",
    "position": "C",
    "name": "Georgios Papagiannis",
-   "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Left knee ACL injury"
+   "status": "Game-time",
+   "round": "Round 8",
+   "comment": "Left knee ACL injury recovery"
   },
   {
    "team": "Armani Olimpia Milan",
@@ -83,6 +83,14 @@
    "status": "Doubtful",
    "round": "Round 8",
    "comment": "DNP in Rounds 1-7 (coach's decision)"
+  },
+  {
+   "team": "Besiktas Istanbul",
+   "position": "PG",
+   "name": "Devon Dotson",
+   "status": "Out",
+   "round": "Round 8",
+   "comment": "Undisclosed"
   },
   {
    "team": "Besiktas Istanbul",
@@ -392,7 +400,7 @@
    "team": "LDLC ASVEL Villeurbanne",
    "position": "SF",
    "name": "Juhann Begarin",
-   "status": "Doubtful",
+   "status": "Uncertain",
    "round": "Round 8",
    "comment": "Undisclosed injury"
   },
@@ -434,7 +442,7 @@
    "name": "Georgios Bourneles",
    "status": "Expected",
    "round": "Round 8",
-   "comment": "Included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)"
+   "comment": "Played in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -457,14 +465,14 @@
    "position": "SF",
    "name": "Evan Fournier",
    "status": "Out",
-   "round": "Round 8",
+   "round": "Round 8-10",
    "comment": "To miss approximately three weeks due to shoulder and knee injuries (10.20)"
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Antonios Karagiannidis",
-   "status": "Doubtful",
+   "status": "Uncertain",
    "round": "Round 8",
    "comment": "DNP in Rounds 1-7 (coach's decision). Played in the domestic league (10.25)"
   },
@@ -472,9 +480,9 @@
    "team": "Olympiacos Piraeus",
    "position": "SG",
    "name": "John Konchar",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 8",
-   "comment": "New signing (10.22). DNP in the domestic league (10.25)"
+   "comment": "Traveled with the team for Round 8 (new signing)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -490,7 +498,7 @@
    "name": "Jean Montero",
    "status": "Out",
    "round": "Round 8",
-   "comment": "Not included in 12-man roster in Round 7, DNP in domestic league. Dealing with ankle and knee injuries"
+   "comment": "Ankle and knee injuries"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -498,7 +506,7 @@
    "name": "George Papas",
    "status": "Doubtful",
    "round": "Round 8",
-   "comment": "Not included in 12-man roster in Round 7 after DNP in Rounds 1-6 (coach's decision). Played in the domestic league (10.25)"
+   "comment": "DNP in Rounds 1-7 (coach's decision). Played in the domestic league (10.25)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -610,7 +618,7 @@
    "name": "Robert Franks",
    "status": "Uncertain",
    "round": "Round 8",
-   "comment": "New signning (10.23). DNP in the domestic league (10.24)"
+   "comment": "Has been registered to EuroLeague roster (new signing)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -640,7 +648,7 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 8",
    "comment": "Ankle injury suffered in Round 1"
   },
@@ -709,10 +717,18 @@
    "comment": "DNP in Round 8 (coach's decision)"
   },
   {
+   "team": "Valencia Basket",
+   "position": "C",
+   "name": "Yankuba Sima",
+   "status": "Ready",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "Virtus Bologna",
    "position": "PG",
    "name": "Matteo Baiocchi",
-   "status": "Doubtful",
+   "status": "Uncertain",
    "round": "Round 8",
    "comment": "DNP in Rounds 1-7 (coach's decision)"
   },
@@ -722,7 +738,7 @@
    "name": "Tommaso Baldasso",
    "status": "Out",
    "round": "Round 8",
-   "comment": "Contusion his leg in the domestic game"
+   "comment": "Leg contusion"
   },
   {
    "team": "Virtus Bologna",

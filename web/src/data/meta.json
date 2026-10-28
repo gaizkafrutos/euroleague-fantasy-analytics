@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-28T08:43:51.337643+00:00",
+ "generatedAt": "2026-10-28T16:44:16.914848+00:00",
  "currentRound": 8,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 51,
  "lastPriceCapture": "2026-10-28T01:28:30.643664+00:00",
- "lastPriceCheck": "2026-10-28T08:43:04.116652+00:00",
+ "lastPriceCheck": "2026-10-28T16:43:42.165092+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.17
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-28T08:43:09.057601+00:00",
+  "generatedAt": "2026-10-28T16:43:47.088494+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -518,10 +518,10 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-10-28T08:34:00",
-  "fetchedAt": "2026-10-28T08:43:03.036943+00:00",
-  "rows": 132,
-  "matched": 91,
+  "updatedAt": "2026-10-28T09:03:00",
+  "fetchedAt": "2026-10-28T16:43:40.987920+00:00",
+  "rows": 134,
+  "matched": 93,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -538,17 +538,17 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-10-28T08:34:00",
-    "fetchedAt": "2026-10-28T08:43:02.610224+00:00",
-    "rows": 98,
-    "matched": 90,
-    "flagged": 90
+    "updatedAt": "2026-10-28T09:03:00",
+    "fetchedAt": "2026-10-28T16:43:40.500356+00:00",
+    "rows": 100,
+    "matched": 92,
+    "flagged": 92
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-28T08:43:03.036943+00:00",
+    "fetchedAt": "2026-10-28T16:43:40.987920+00:00",
     "rows": 34,
     "matched": 32,
     "flagged": 1
@@ -557,9 +557,9 @@
   "nextRound": 8,
   "unregistered": 7,
   "flagged": {
-   "out": 32,
+   "out": 33,
    "doubt": 60,
-   "probable": 6
+   "probable": 7
   }
  },
  "warnings": [
