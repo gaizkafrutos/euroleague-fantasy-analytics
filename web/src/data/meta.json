@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-29T13:19:38.960614+00:00",
+ "generatedAt": "2026-10-29T19:43:22.680393+00:00",
  "currentRound": 9,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 54,
- "lastPriceCapture": "2026-10-29T13:18:51.274007+00:00",
- "lastPriceCheck": "2026-10-29T13:18:51.274007+00:00",
+ "priceSnapshots": 55,
+ "lastPriceCapture": "2026-10-29T19:42:57.621793+00:00",
+ "lastPriceCheck": "2026-10-29T19:42:57.621793+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.22
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-29T13:18:56.412876+00:00",
+  "generatedAt": "2026-10-29T19:43:02.466955+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -571,10 +571,10 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-10-29T12:25:00",
-  "fetchedAt": "2026-10-29T13:18:50.210782+00:00",
-  "rows": 137,
-  "matched": 97,
+  "updatedAt": "2026-10-29T18:35:00",
+  "fetchedAt": "2026-10-29T19:42:56.538634+00:00",
+  "rows": 150,
+  "matched": 103,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -591,34 +591,34 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-10-29T12:25:00",
-    "fetchedAt": "2026-10-29T13:18:49.755306+00:00",
-    "rows": 104,
-    "matched": 96,
-    "flagged": 96
+    "updatedAt": "2026-10-29T18:35:00",
+    "fetchedAt": "2026-10-29T19:42:56.050143+00:00",
+    "rows": 110,
+    "matched": 102,
+    "flagged": 102
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-29T13:18:50.210782+00:00",
-    "rows": 33,
-    "matched": 31,
+    "fetchedAt": "2026-10-29T19:42:56.538634+00:00",
+    "rows": 40,
+    "matched": 38,
     "flagged": 1
    }
   ],
   "nextRound": 9,
-  "unregistered": 7,
+  "unregistered": 6,
   "flagged": {
-   "out": 33,
-   "doubt": 63,
-   "probable": 8
+   "out": 51,
+   "doubt": 41,
+   "probable": 17
   }
  },
  "warnings": [],
  "priceFreshness": {
   "stale": false,
-  "capturedAt": "2026-10-29T13:18:51.274007+00:00",
+  "capturedAt": "2026-10-29T19:42:57.621793+00:00",
   "lastGameAt": "2026-10-28T19:30:00+00:00",
   "round": 8,
   "reason": null,

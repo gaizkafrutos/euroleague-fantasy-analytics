@@ -11036,12 +11036,12 @@
   "roundAlias": "Round 28",
   "roundName": "Round 28",
   "played": false,
-  "date": "2027-02-10T19:00:00",
+  "date": "2027-02-10T19:45:00",
   "confirmedDate": true,
   "confirmedHour": true,
   "localTimeZone": 2,
-  "localDate": "2027-02-10T20:00:00",
-  "utcDate": "2027-02-10T18:00:00Z",
+  "localDate": "2027-02-10T20:45:00",
+  "utcDate": "2027-02-10T18:45:00Z",
   "local": {
    "club": {
     "code": "HTA",
@@ -15958,6 +15958,107 @@
   "winner": null
  },
  {
+  "id": "9970aca7-6fa8-4ef7-8086-3f61b7db6ce6",
+  "identifier": "E2026_221",
+  "gameCode": 221,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 23,
+  "roundAlias": "Round 23",
+  "roundName": "Round 23",
+  "played": false,
+  "date": "2027-01-14T19:45:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 2,
+  "localDate": "2027-01-14T20:45:00",
+  "utcDate": "2027-01-14T18:45:00Z",
+  "local": {
+   "club": {
+    "code": "HTA",
+    "name": "Hapoel IBI Tel Aviv",
+    "abbreviatedName": "Hapoel TLV",
+    "editorialName": "Hapoel",
+    "tvCode": "HTA",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "PAM",
+    "name": "Valencia Basket",
+    "abbreviatedName": "Valencia",
+    "editorialName": "Valencia",
+    "tvCode": "VBC",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "ARENA 8888 SOFIA",
+   "code": "AVK1",
+   "capacity": 12373,
+   "address": "",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
   "id": "320005cb-1366-44a5-b0f3-1de789fe7d15",
   "identifier": "E2026_222",
   "gameCode": 222,
@@ -16048,107 +16149,6 @@
    "code": "ATJ",
    "capacity": 15415,
    "address": "Karaliaus Mindaugo Av. 50, 44287 Kaunas",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
-  "id": "9970aca7-6fa8-4ef7-8086-3f61b7db6ce6",
-  "identifier": "E2026_221",
-  "gameCode": 221,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 23,
-  "roundAlias": "Round 23",
-  "roundName": "Round 23",
-  "played": false,
-  "date": "2027-01-14T19:00:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 2,
-  "localDate": "2027-01-14T20:00:00",
-  "utcDate": "2027-01-14T18:00:00Z",
-  "local": {
-   "club": {
-    "code": "HTA",
-    "name": "Hapoel IBI Tel Aviv",
-    "abbreviatedName": "Hapoel TLV",
-    "editorialName": "Hapoel",
-    "tvCode": "HTA",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "PAM",
-    "name": "Valencia Basket",
-    "abbreviatedName": "Valencia",
-    "editorialName": "Valencia",
-    "tvCode": "VBC",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "ARENA 8888 SOFIA",
-   "code": "AVK1",
-   "capacity": 12373,
-   "address": "",
    "images": {
     "medium": null
    },
@@ -20025,12 +20025,12 @@
   "roundAlias": "Round 19",
   "roundName": "Round 19",
   "played": false,
-  "date": "2026-12-22T19:00:00",
+  "date": "2026-12-22T19:45:00",
   "confirmedDate": true,
   "confirmedHour": true,
   "localTimeZone": 2,
-  "localDate": "2026-12-22T20:00:00",
-  "utcDate": "2026-12-22T18:00:00Z",
+  "localDate": "2026-12-22T20:45:00",
+  "utcDate": "2026-12-22T18:45:00Z",
   "local": {
    "club": {
     "code": "HTA",
@@ -23230,107 +23230,6 @@
   "winner": null
  },
  {
-  "id": "d865eab9-cf9c-45d5-a104-be5835abcdb1",
-  "identifier": "E2026_149",
-  "gameCode": 149,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 15,
-  "roundAlias": "Round 15",
-  "roundName": "Round 15",
-  "played": false,
-  "date": "2026-12-04T20:30:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 1,
-  "localDate": "2026-12-04T20:30:00",
-  "utcDate": "2026-12-04T19:30:00Z",
-  "local": {
-   "club": {
-    "code": "VIR",
-    "name": "Virtus Bologna",
-    "abbreviatedName": "Virtus Bologna",
-    "editorialName": "Virtus",
-    "tvCode": "VIR",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "PAR",
-    "name": "Partizan Mozzart Bet Belgrade",
-    "abbreviatedName": "Partizan",
-    "editorialName": "Partizan",
-    "tvCode": "PAR",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "PALADOZZA",
-   "code": "AIG",
-   "capacity": 5570,
-   "address": "Via Nannetti 1, 40122 Bologna - Italy",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
   "id": "73b53dc2-3cee-4df5-89cc-947a2af432d4",
   "identifier": "E2026_148",
   "gameCode": 148,
@@ -23735,6 +23634,107 @@
   "winner": null
  },
  {
+  "id": "d865eab9-cf9c-45d5-a104-be5835abcdb1",
+  "identifier": "E2026_149",
+  "gameCode": 149,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 15,
+  "roundAlias": "Round 15",
+  "roundName": "Round 15",
+  "played": false,
+  "date": "2026-12-03T21:00:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 1,
+  "localDate": "2026-12-03T21:00:00",
+  "utcDate": "2026-12-03T20:00:00Z",
+  "local": {
+   "club": {
+    "code": "VIR",
+    "name": "Virtus Bologna",
+    "abbreviatedName": "Virtus Bologna",
+    "editorialName": "Virtus",
+    "tvCode": "VIR",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "PAR",
+    "name": "Partizan Mozzart Bet Belgrade",
+    "abbreviatedName": "Partizan",
+    "editorialName": "Partizan",
+    "tvCode": "PAR",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "PALADOZZA",
+   "code": "AIG",
+   "capacity": 5570,
+   "address": "Via Nannetti 1, 40122 Bologna - Italy",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
   "id": "b53aada4-5fe6-49fb-80dd-ee3b34f3396f",
   "identifier": "E2026_145",
   "gameCode": 145,
@@ -23964,12 +23964,12 @@
   "roundAlias": "Round 15",
   "roundName": "Round 15",
   "played": false,
-  "date": "2026-12-03T19:00:00",
+  "date": "2026-12-03T19:45:00",
   "confirmedDate": true,
   "confirmedHour": true,
   "localTimeZone": 2,
-  "localDate": "2026-12-03T20:00:00",
-  "utcDate": "2026-12-03T18:00:00Z",
+  "localDate": "2026-12-03T20:45:00",
+  "utcDate": "2026-12-03T18:45:00Z",
   "local": {
    "club": {
     "code": "HTA",
@@ -28913,12 +28913,12 @@
   "roundAlias": "Round 10",
   "roundName": "Round 10",
   "played": false,
-  "date": "2026-11-05T19:00:00",
+  "date": "2026-11-05T19:45:00",
   "confirmedDate": true,
   "confirmedHour": true,
   "localTimeZone": 2,
-  "localDate": "2026-11-05T20:00:00",
-  "utcDate": "2026-11-05T18:00:00Z",
+  "localDate": "2026-11-05T20:45:00",
+  "utcDate": "2026-11-05T18:45:00Z",
   "local": {
    "club": {
     "code": "HTA",

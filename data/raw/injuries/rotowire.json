@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-29T13:18:50.210782+00:00",
+ "fetchedAt": "2026-10-29T19:42:56.538634+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -11,6 +11,14 @@
    "status": "Out",
    "round": "",
    "comment": "Hamstring"
+  },
+  {
+   "team": "VIR",
+   "position": "G",
+   "name": "Tommaso Baldasso",
+   "status": "Game time",
+   "round": "",
+   "comment": "Knee"
   },
   {
    "team": "HTA",
@@ -59,6 +67,14 @@
    "status": "Out",
    "round": "",
    "comment": "Back"
+  },
+  {
+   "team": "KBA",
+   "position": "F",
+   "name": "Chris Duarte",
+   "status": "Out",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "HTA",
@@ -133,6 +149,14 @@
    "comment": ""
   },
   {
+   "team": "KBA",
+   "position": "F",
+   "name": "Rodions Kurucs",
+   "status": "Out",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
@@ -168,7 +192,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   },
@@ -176,7 +200,7 @@
    "team": "OLY",
    "position": "C",
    "name": "Nikola Milutinov",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Toe"
   },
@@ -184,7 +208,7 @@
    "team": "VBC",
    "position": "F",
    "name": "Nikola Mirotic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -192,7 +216,7 @@
    "team": "OLY",
    "position": "G",
    "name": "Jean Montero",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -205,10 +229,18 @@
    "comment": ""
   },
   {
+   "team": "BAR",
+   "position": "F",
+   "name": "Joel Parra",
+   "status": "Game time",
+   "round": "",
+   "comment": "Illness"
+  },
+  {
    "team": "MIL",
    "position": "F",
    "name": "Alec Peters",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
   },
@@ -237,6 +269,14 @@
    "comment": "Hamstring"
   },
   {
+   "team": "KBA",
+   "position": "F",
+   "name": "Tadas Sedekerskis",
+   "status": "Out",
+   "round": "",
+   "comment": "Thigh"
+  },
+  {
    "team": "BJK",
    "position": "C",
    "name": "Mady Sissoko",
@@ -245,12 +285,28 @@
    "comment": ""
   },
   {
+   "team": "RMB",
+   "position": "F",
+   "name": "Nick Smith Jr",
+   "status": "Out",
+   "round": "",
+   "comment": "Foot"
+  },
+  {
    "team": "BJK",
    "position": "G",
    "name": "Lonnie Walker IV",
    "status": "Out",
    "round": "",
    "comment": ""
+  },
+  {
+   "team": "DUB",
+   "position": "G",
+   "name": "Thomas Walkup",
+   "status": "Out",
+   "round": "",
+   "comment": "Back"
   },
   {
    "team": "ZAL",
