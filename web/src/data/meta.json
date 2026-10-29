@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-28T22:43:24.629510+00:00",
+ "generatedAt": "2026-10-29T05:59:54.639330+00:00",
  "currentRound": 9,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 52,
- "lastPriceCapture": "2026-10-28T22:42:53.655752+00:00",
- "lastPriceCheck": "2026-10-28T22:42:53.655752+00:00",
+ "priceSnapshots": 53,
+ "lastPriceCapture": "2026-10-29T05:59:07.022674+00:00",
+ "lastPriceCheck": "2026-10-29T05:59:07.022674+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.22
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-28T22:42:58.606179+00:00",
+  "generatedAt": "2026-10-29T05:59:12.004255+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -568,9 +568,9 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-10-28T18:38:00",
-  "fetchedAt": "2026-10-28T22:42:52.578668+00:00",
-  "rows": 133,
-  "matched": 94,
+  "fetchedAt": "2026-10-29T05:59:05.993295+00:00",
+  "rows": 132,
+  "matched": 92,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -588,35 +588,35 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-10-28T18:38:00",
-    "fetchedAt": "2026-10-28T22:42:37.807006+00:00",
-    "rows": 100,
-    "matched": 92,
-    "flagged": 82
+    "fetchedAt": "2026-10-29T05:59:05.570316+00:00",
+    "rows": 99,
+    "matched": 91,
+    "flagged": 91
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-28T22:42:52.578668+00:00",
+    "fetchedAt": "2026-10-29T05:59:05.993295+00:00",
     "rows": 33,
     "matched": 31,
-    "flagged": 2
+    "flagged": 1
    }
   ],
   "nextRound": 9,
   "unregistered": 7,
   "flagged": {
-   "out": 27,
-   "doubt": 63,
-   "probable": 1
+   "out": 28,
+   "doubt": 62,
+   "probable": 9
   }
  },
  "warnings": [
-  "Precios capturados el 2026-10-28 22:42 UTC: el juego aún no ha aplicado la revalorización (J8). Se usa el precio pendiente de 285 jugadores hasta la próxima captura."
+  "Precios capturados el 2026-10-29 05:59 UTC: el juego aún no ha aplicado la revalorización (J8). Se usa el precio pendiente de 285 jugadores hasta la próxima captura."
  ],
  "priceFreshness": {
   "stale": true,
-  "capturedAt": "2026-10-28T22:42:53.655752+00:00",
+  "capturedAt": "2026-10-29T05:59:07.022674+00:00",
   "lastGameAt": "2026-10-28T19:30:00+00:00",
   "round": 8,
   "reason": "el juego aún no ha aplicado la revalorización",
