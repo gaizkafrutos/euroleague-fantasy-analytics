@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-29T05:59:05.570316+00:00",
- "updatedAt": "2026-10-28T18:38:00",
+ "fetchedAt": "2026-10-29T13:18:49.755306+00:00",
+ "updatedAt": "2026-10-29T12:25:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -262,6 +262,14 @@
   },
   {
    "team": "FC Barcelona",
+   "position": "PG",
+   "name": "Umoja Gibson",
+   "status": "Doubtful",
+   "round": "Round 9",
+   "comment": "Suffered hard hit to his knee in Round 8"
+  },
+  {
+   "team": "FC Barcelona",
    "position": "C",
    "name": "Abdu Kone",
    "status": "Uncertain",
@@ -272,9 +280,17 @@
    "team": "FC Barcelona",
    "position": "C",
    "name": "Yoan Makoundou",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 9",
    "comment": "Left knee injury"
+  },
+  {
+   "team": "FC Barcelona",
+   "position": "PG",
+   "name": "Juan Nunez",
+   "status": "Out",
+   "round": "Round 9",
+   "comment": "Right ankle sprain"
   },
   {
    "team": "FC Barcelona",
@@ -339,6 +355,14 @@
    "status": "Uncertain",
    "round": "Round 9",
    "comment": "DNP in Rounds 7-8. Played in the domestic league (10.25)"
+  },
+  {
+   "team": "Hapoel IBI Tel Aviv",
+   "position": "PG",
+   "name": "Vasilije Micic",
+   "status": "Uncertain",
+   "round": "Round 9",
+   "comment": "DNP in Round 8 (ankle discomfort)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -411,6 +435,14 @@
    "status": "Out",
    "round": "Round 1-9",
    "comment": "Adductor muscle injury (out until November)"
+  },
+  {
+   "team": "Maccabi Rapyd Tel Aviv",
+   "position": "PG",
+   "name": "John Dibartolomeo",
+   "status": "Out",
+   "round": "Round 9",
+   "comment": "Personal"
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
@@ -582,6 +614,14 @@
   },
   {
    "team": "Paris Basketball",
+   "position": "SF",
+   "name": "Daulton Hommes",
+   "status": "Uncertain",
+   "round": "Round 9",
+   "comment": "Left Round 8 with a concussion"
+  },
+  {
+   "team": "Paris Basketball",
    "position": "PG",
    "name": "Frank Ntilikina",
    "status": "Game-time",
@@ -688,9 +728,9 @@
    "team": "Real Madrid",
    "position": "SF",
    "name": "Nick Smith Jr.",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 9",
-   "comment": "DNP in Round 8 (right foot sole discomfort)"
+   "comment": "Right foot sole discomfort"
   },
   {
    "team": "Valencia Basket",
@@ -704,9 +744,9 @@
    "team": "Valencia Basket",
    "position": "SF",
    "name": "Nikola Mirotic",
-   "status": "Questionable",
+   "status": "Out",
    "round": "Round 9",
-   "comment": "\"Wanted to play after felt a tweak, but we chose to take him out\" said coach Xavi Albert after Round 8 game"
+   "comment": "Muscle injury (10.29)"
   },
   {
    "team": "Valencia Basket",
@@ -752,7 +792,7 @@
    "team": "Zalgiris Kaunas",
    "position": "C",
    "name": "Kaodirichi Akobundu-Ehiogu",
-   "status": "Ready",
+   "status": "Uncertain",
    "round": "Round 9",
    "comment": "Played in Round 8 after DNP in Rounds 1-7 (coach's decision)"
   },
