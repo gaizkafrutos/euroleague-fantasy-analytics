@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-10-29T19:42:56.050143+00:00",
- "updatedAt": "2026-10-29T18:35:00",
+ "fetchedAt": "2026-10-30T00:00:01.030622+00:00",
+ "updatedAt": "2026-10-29T19:44:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -678,6 +678,14 @@
   },
   {
    "team": "Paris Basketball",
+   "position": "PG",
+   "name": "Jared Rhoden",
+   "status": "Out",
+   "round": "Round 9",
+   "comment": "Not included in 12-man roster (coach's decision)"
+  },
+  {
+   "team": "Paris Basketball",
    "position": "SF",
    "name": "T.J. Warren",
    "status": "Out",
@@ -758,19 +766,35 @@
   },
   {
    "team": "Real Madrid",
+   "position": "SF",
+   "name": "Mikael Jantunen",
+   "status": "Uncertain",
+   "round": "Round 10",
+   "comment": "Injured in Round 9"
+  },
+  {
+   "team": "Real Madrid",
    "position": "PG",
    "name": "Sergio Llull",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 9",
-   "comment": "DNP in Rounds 1-8 (coach's decision)"
+   "comment": "Included in 12-man roster for Round 9 after DNP in Rounds 1-8 (coach's decision)"
   },
   {
    "team": "Real Madrid",
    "position": "C",
    "name": "Olivier Sarr",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 9",
    "comment": "DNP in Rounds 1-8 (coach's decision)"
+  },
+  {
+   "team": "Real Madrid",
+   "position": "SF",
+   "name": "Max Shulga",
+   "status": "Out",
+   "round": "Round 9",
+   "comment": "Not included in 12-man roster (coach's decision)"
   },
   {
    "team": "Real Madrid",
