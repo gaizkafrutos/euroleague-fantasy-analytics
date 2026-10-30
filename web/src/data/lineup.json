@@ -1,30 +1,30 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 118.42,
- "scoredProjection": 151.3,
+ "totalPrice": 99.9,
+ "totalProjection": 117.54,
+ "scoredProjection": 150.68,
  "captain": "3766",
  "starters": [
   "3766",
-  "4233",
   "3850",
   "7424",
+  "7221",
   "3851"
  ],
- "sixth": "3948",
+ "sixth": "11547",
  "bench": [
+  "3991",
+  "11521",
   "3867",
-  "8644",
-  "3886",
-  "4088"
+  "3984"
  ],
  "coach": {
-  "key": "3897",
-  "name": "JASIKEVICIUS, SARAS",
+  "key": "3885",
+  "name": "BARTZOKAS, GEORGIOS",
   "position": "E",
-  "club": "ULK",
-  "price": 8.3,
-  "projection": 15.7
+  "club": "OLY",
+  "price": 9.9,
+  "projection": 17.59
  },
  "players": [
   {
@@ -33,7 +33,7 @@
    "position": "G",
    "club": "MAD",
    "price": 13.1,
-   "projection": 19.01
+   "projection": 19.0
   },
   {
    "key": "3851",
@@ -44,20 +44,20 @@
    "projection": 12.56
   },
   {
-   "key": "3886",
-   "name": "HACKETT, DANIEL",
+   "key": "11547",
+   "name": "MOORE, WENDELL",
    "position": "G",
    "club": "VIR",
-   "price": 4.4,
-   "projection": 3.75
+   "price": 9.6,
+   "projection": 12.07
   },
   {
-   "key": "4088",
-   "name": "UGURLU, BERK",
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
    "position": "G",
-   "club": "BES",
-   "price": 4.0,
-   "projection": 2.75
+   "club": "ASV",
+   "price": 4.7,
+   "projection": 4.47
   },
   {
    "key": "3766",
@@ -65,15 +65,23 @@
    "position": "F",
    "club": "OLY",
    "price": 18.4,
-   "projection": 24.5
+   "projection": 24.48
   },
   {
-   "key": "3948",
-   "name": "NDIAYE, MBAYE",
+   "key": "7221",
+   "name": "TUBELIS, AZUOLAS",
    "position": "F",
-   "club": "OLY",
-   "price": 8.8,
-   "projection": 11.34
+   "club": "ZAL",
+   "price": 12.2,
+   "projection": 15.77
+  },
+  {
+   "key": "3991",
+   "name": "ABALDE, ALBERTO",
+   "position": "F",
+   "club": "MAD",
+   "price": 5.4,
+   "projection": 6.48
   },
   {
    "key": "3867",
@@ -84,28 +92,20 @@
    "projection": 4.17
   },
   {
-   "key": "8644",
-   "name": "JOKSIMOVIC, STEFAN",
-   "position": "F",
-   "club": "BAS",
-   "price": 4.5,
-   "projection": 3.98
-  },
-  {
-   "key": "4233",
-   "name": "KABENGELE, MFIONDU",
-   "position": "C",
-   "club": "DUB",
-   "price": 15.9,
-   "projection": 20.56
-  },
-  {
    "key": "7424",
    "name": "DIARRA, ALIOU",
    "position": "C",
    "club": "VIR",
    "price": 10.0,
    "projection": 15.8
+  },
+  {
+   "key": "3984",
+   "name": "SANLI, SERTAC",
+   "position": "C",
+   "club": "ULK",
+   "price": 4.0,
+   "projection": 2.74
   }
  ],
  "available": true,

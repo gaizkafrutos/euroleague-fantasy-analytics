@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-10-30T13:10:33.999703+00:00",
+ "fetchedAt": "2026-10-30T19:29:11.521417+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -16,7 +16,7 @@
    "team": "VIR",
    "position": "G",
    "name": "Tommaso Baldasso",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -117,6 +117,14 @@
    "comment": "Achilles"
   },
   {
+   "team": "RMB",
+   "position": "F",
+   "name": "Mikael Jantunen",
+   "status": "Out",
+   "round": "",
+   "comment": "Foot"
+  },
+  {
    "team": "BJK",
    "position": "F",
    "name": "DaQuan Jeffries",
@@ -131,14 +139,6 @@
    "status": "Out",
    "round": "",
    "comment": "Thigh"
-  },
-  {
-   "team": "OLY",
-   "position": "G",
-   "name": "John Konchar",
-   "status": "Game time",
-   "round": "",
-   "comment": "Not Injury Related"
   },
   {
    "team": "BJK",
@@ -181,6 +181,14 @@
    "comment": "Knee"
   },
   {
+   "team": "RMB",
+   "position": "G",
+   "name": "Theo Maledon",
+   "status": "Out",
+   "round": "",
+   "comment": "Knee"
+  },
+  {
    "team": "PAR",
    "position": "F",
    "name": "Vanja Marinkovic",
@@ -197,14 +205,6 @@
    "comment": "Ankle"
   },
   {
-   "team": "OLY",
-   "position": "C",
-   "name": "Nikola Milutinov",
-   "status": "Game time",
-   "round": "",
-   "comment": "Toe"
-  },
-  {
    "team": "VBC",
    "position": "F",
    "name": "Nikola Mirotic",
@@ -216,9 +216,9 @@
    "team": "OLY",
    "position": "G",
    "name": "Jean Montero",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
-   "comment": "Ankle"
+   "comment": "Knee"
   },
   {
    "team": "PBB",
@@ -229,28 +229,20 @@
    "comment": ""
   },
   {
-   "team": "BAR",
-   "position": "F",
-   "name": "Joel Parra",
-   "status": "Game time",
-   "round": "",
-   "comment": "Illness"
-  },
-  {
-   "team": "MIL",
-   "position": "F",
-   "name": "Alec Peters",
-   "status": "Game time",
-   "round": "",
-   "comment": "Knee"
-  },
-  {
    "team": "OLY",
    "position": "G",
    "name": "Nikolaos Plotas",
    "status": "Out",
    "round": "",
    "comment": "Elbow"
+  },
+  {
+   "team": "FBT",
+   "position": "C",
+   "name": "Dwight Powell",
+   "status": "Out",
+   "round": "",
+   "comment": "Not Injury Related"
   },
   {
    "team": "VBC",
@@ -267,6 +259,14 @@
    "status": "Out",
    "round": "",
    "comment": "Hamstring"
+  },
+  {
+   "team": "HTA",
+   "position": "G",
+   "name": "Tomas Satoransky",
+   "status": "Out",
+   "round": "",
+   "comment": "Concussion"
   },
   {
    "team": "KBA",
@@ -291,14 +291,6 @@
    "status": "Out",
    "round": "",
    "comment": "Foot"
-  },
-  {
-   "team": "BJK",
-   "position": "G",
-   "name": "Lonnie Walker IV",
-   "status": "Out",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "DUB",
