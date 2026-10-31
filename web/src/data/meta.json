@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-10-31T05:56:20.719918+00:00",
+ "generatedAt": "2026-10-31T12:47:24.533451+00:00",
  "currentRound": 10,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 58,
- "lastPriceCapture": "2026-10-30T23:54:50.392377+00:00",
- "lastPriceCheck": "2026-10-31T05:55:55.894561+00:00",
+ "priceSnapshots": 59,
+ "lastPriceCapture": "2026-10-31T12:46:35.042046+00:00",
+ "lastPriceCheck": "2026-10-31T12:46:35.042046+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.22
  },
  "modelBacktest": {
-  "generatedAt": "2026-10-31T05:56:00.724005+00:00",
+  "generatedAt": "2026-10-31T12:46:40.209919+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -540,6 +540,10 @@
      },
      "bandCoverage": 0.638,
      "aboveP90": 0.106,
+     "riseBrier": 0.1577,
+     "riseBrierConstant": 0.1784,
+     "changeMae": 0.169,
+     "changeMaeZero": 0.174,
      "generatedAt": "2026-10-29T13:19:44.756607+00:00"
     }
    ],
@@ -599,8 +603,8 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-10-30T19:11:00",
-  "fetchedAt": "2026-10-31T05:55:54.869682+00:00",
+  "updatedAt": "2026-10-31T08:03:00",
+  "fetchedAt": "2026-10-31T12:46:34.024114+00:00",
   "rows": 145,
   "matched": 100,
   "unmatched": [
@@ -620,8 +624,8 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-10-30T19:11:00",
-    "fetchedAt": "2026-10-31T05:55:54.417553+00:00",
+    "updatedAt": "2026-10-31T08:03:00",
+    "fetchedAt": "2026-10-31T12:46:33.627111+00:00",
     "rows": 106,
     "matched": 97,
     "flagged": 97
@@ -630,7 +634,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-10-31T05:55:54.869682+00:00",
+    "fetchedAt": "2026-10-31T12:46:34.024114+00:00",
     "rows": 39,
     "matched": 37,
     "flagged": 3
@@ -640,28 +644,26 @@
   "unregistered": 6,
   "flagged": {
    "out": 27,
-   "doubt": 73,
-   "probable": 6
+   "doubt": 72,
+   "probable": 7
   }
  },
- "warnings": [
-  "Precios capturados el 2026-10-30 23:54 UTC: el juego aún no ha aplicado la revalorización (J9). Se usa el precio pendiente de 278 jugadores hasta la próxima captura."
- ],
+ "warnings": [],
  "priceFreshness": {
-  "stale": true,
-  "capturedAt": "2026-10-30T23:54:50.392377+00:00",
+  "stale": false,
+  "capturedAt": "2026-10-31T12:46:35.042046+00:00",
   "lastGameAt": "2026-10-30T19:30:00+00:00",
   "round": 9,
-  "reason": "el juego aún no ha aplicado la revalorización",
-  "pending": 278
+  "reason": null,
+  "pending": 0
  },
  "priceModel": {
   "a": 0.0399,
-  "b": -0.0443,
-  "c": 0.0078,
+  "b": -0.0441,
+  "c": 0.0073,
   "r2": 0.991,
-  "n": 1761,
-  "source": "J1–J8"
+  "n": 1969,
+  "source": "J1–J9"
  },
  "league": {
   "zones": [
