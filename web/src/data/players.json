@@ -1001,10 +1001,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Muscle injury (10.29)",
-   "reported": "Out · Round 9",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 12.3,
@@ -1532,18 +1532,18 @@
    "plusMinusAvg": 14.0,
    "minutesPrior": null
   },
-  "projectedFp": 2.65,
+  "projectedFp": 2.9,
   "projectedIfPlays": 10.61,
-  "playProb": 0.25,
+  "playProb": 0.273,
   "expectedMinutes": 19.4,
   "matchup": {
    "opponentFactor": 0.992,
    "homeFactor": 0.945
   },
   "valuePerCredit": 0.673,
-  "valueProjected": 0.273,
+  "valueProjected": 0.299,
   "valueMarket": 0.673,
-  "bargainScore": 38.3,
+  "bargainScore": 39.9,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -1565,12 +1565,12 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "probable",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Precaution",
-   "reported": "Out · Round 9",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "DNP in Round 9, after played in Round 8 (precaution)",
+   "reported": "Expected · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 9.7,
@@ -1578,11 +1578,11 @@
   "outlook": {
    "breakEven": 10.6,
    "expectedChange": -0.07,
-   "riseProb": 0.116,
-   "sd": 7.79,
+   "riseProb": 0.126,
+   "sd": 8.1,
    "floor": 0.0,
-   "ceiling": 7.7,
-   "p90": 12.7,
+   "ceiling": 8.2,
+   "p90": 13.3,
    "certainty": 0.0
   },
   "thumb": "/fotos/3779.webp?v=f450d820",
@@ -1663,7 +1663,7 @@
   "valuePerCredit": 0.699,
   "valueProjected": 0.204,
   "valueMarket": 0.699,
-  "bargainScore": 32.8,
+  "bargainScore": 32.6,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -1686,11 +1686,11 @@
   "registered": true,
   "availability": {
    "level": "doubt",
-   "kind": "roster",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster in Round 9 after DNP in Round 8 (undisclosed)",
-   "reported": "Out · Round 9",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-9 (undisclosed)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 7.2,
@@ -1804,7 +1804,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "injury",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Played only 5 minutes in Round 9",
+   "reported": "Expected · Round 10",
+   "source": "BasketNews"
+  },
   "pricePending": 13.9,
   "pricePendingSource": "juego",
   "outlook": {
@@ -2117,7 +2125,7 @@
   "valuePerCredit": 1.006,
   "valueProjected": 0.332,
   "valueMarket": 1.012,
-  "bargainScore": 40.4,
+  "bargainScore": 40.3,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -2229,7 +2237,7 @@
   "valuePerCredit": 0.344,
   "valueProjected": 0.296,
   "valueMarket": 0.344,
-  "bargainScore": 40.7,
+  "bargainScore": 40.5,
   "schedule": {
    "difficulty": 66.0,
    "next": {
@@ -2899,7 +2907,7 @@
   "valuePerCredit": 0.632,
   "valueProjected": 0.319,
   "valueMarket": 0.639,
-  "bargainScore": 30.8,
+  "bargainScore": 30.7,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -5046,7 +5054,7 @@
   "valuePerCredit": 0.303,
   "valueProjected": 0.203,
   "valueMarket": 0.303,
-  "bargainScore": 28.9,
+  "bargainScore": 28.7,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -5067,7 +5075,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "coach",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Made debut in Round 8. Included in 12-man roster but DNP in Round 9 (coach's decision)",
+   "reported": "Expected · Round 10",
+   "source": "BasketNews"
+  },
   "pricePending": 6.5,
   "pricePendingSource": "juego",
   "outlook": {
@@ -5158,7 +5174,7 @@
   "valuePerCredit": 0.853,
   "valueProjected": 0.188,
   "valueMarket": 0.86,
-  "bargainScore": 21.8,
+  "bargainScore": 21.9,
   "schedule": {
    "difficulty": 20.0,
    "next": {
@@ -5182,10 +5198,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Round 7-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Rounds 8-9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 4.2,
@@ -5946,18 +5962,18 @@
    "plusMinusAvg": 0.2,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 2.23,
   "projectedIfPlays": 8.91,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 21.0,
   "matchup": {
    "opponentFactor": 0.968,
    "homeFactor": 1.055
   },
   "valuePerCredit": 0.902,
-  "valueProjected": 0.0,
+  "valueProjected": 0.248,
   "valueMarket": 0.901,
-  "bargainScore": 18.6,
+  "bargainScore": 37.2,
   "schedule": {
    "difficulty": 23.0,
    "next": {
@@ -5979,24 +5995,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10",
-   "untilRound": 10,
-   "detail": "Concussion",
-   "reported": "Out",
-   "source": "RotoWire"
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Suffering from a concussion In Round 9.",
+   "reported": "Uncertain · Round 10",
+   "source": "BasketNews"
   },
   "pricePending": 9.0,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 9.8,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.08,
+   "riseProb": 0.096,
+   "sd": 5.31,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 5.7,
+   "p90": 9.1,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3841.webp?v=36d36cf1",
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
@@ -6300,7 +6317,7 @@
   "valuePerCredit": -0.015,
   "valueProjected": 0.3,
   "valueMarket": -0.015,
-  "bargainScore": 29.9,
+  "bargainScore": 29.8,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -7430,7 +7447,7 @@
   "valuePerCredit": 0.292,
   "valueProjected": 0.162,
   "valueMarket": 0.288,
-  "bargainScore": 23.1,
+  "bargainScore": 23.0,
   "schedule": {
    "difficulty": 66.0,
    "next": {
@@ -7454,10 +7471,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "DNP in Rounds 7-8 (back discomfort)",
-   "reported": "Out · Round 9",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 7-9 (back discomfort)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 6.5,
@@ -8571,7 +8588,7 @@
   "valuePerCredit": 0.753,
   "valueProjected": 0.197,
   "valueMarket": 0.753,
-  "bargainScore": 29.8,
+  "bargainScore": 29.7,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -8595,10 +8612,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Ankle injury suffered in Round 1",
-   "reported": "Out · Round 9",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 7.2,
@@ -9585,7 +9602,7 @@
   "valuePerCredit": 0.882,
   "valueProjected": 0.182,
   "valueMarket": 0.875,
-  "bargainScore": 27.3,
+  "bargainScore": 27.4,
   "schedule": {
    "difficulty": 86.0,
    "next": {
@@ -9609,10 +9626,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Improbable",
+   "untilRound": null,
    "detail": "Right ankle sprain, expected to miss around 10 days (10.29)",
-   "reported": "Out · Round 9",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -10151,7 +10168,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.277,
   "valueMarket": 0.0,
-  "bargainScore": 37.0,
+  "bargainScore": 36.8,
   "schedule": {
    "difficulty": 66.0,
    "next": {
@@ -10175,10 +10192,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "DNP in Rounds 1-8 (hamstring injury)",
-   "reported": "Out · Round 9",
+   "label": "Improbable",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (hamstring injury)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 5.6,
@@ -11180,7 +11197,7 @@
   "valuePerCredit": 1.145,
   "valueProjected": 0.22,
   "valueMarket": 1.149,
-  "bargainScore": 32.5,
+  "bargainScore": 32.3,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -11547,11 +11564,11 @@
   "registered": true,
   "availability": {
    "level": "doubt",
-   "kind": "roster",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Round 8 (undisclosed injury)",
-   "reported": "Out · Round 9",
+   "kind": "injury",
+   "label": "Improbable",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-9 (undisclosed injury)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 5.6,
@@ -11979,7 +11996,7 @@
   "valuePerCredit": 0.637,
   "valueProjected": 0.179,
   "valueMarket": 0.63,
-  "bargainScore": 23.4,
+  "bargainScore": 23.5,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -12435,7 +12452,7 @@
   "valuePerCredit": 2.369,
   "valueProjected": 0.296,
   "valueMarket": 2.375,
-  "bargainScore": 33.3,
+  "bargainScore": 33.0,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -12459,10 +12476,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "DNP in Round 7-8 (hamstring discomfort).",
-   "reported": "Out · Round 9",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 7-9 (hamstring discomfort).",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 4.7,
@@ -13103,7 +13120,7 @@
    "plusMinusAvg": 6.0,
    "minutesPrior": null
   },
-  "projectedFp": 1.88,
+  "projectedFp": 1.89,
   "projectedIfPlays": 5.18,
   "playProb": 0.364,
   "expectedMinutes": 12.6,
@@ -13112,9 +13129,9 @@
    "homeFactor": 1.055
   },
   "valuePerCredit": 0.729,
-  "valueProjected": 0.4,
+  "valueProjected": 0.402,
   "valueMarket": 0.729,
-  "bargainScore": 40.3,
+  "bargainScore": 40.2,
   "schedule": {
    "difficulty": 59.0,
    "next": {
@@ -13135,7 +13152,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "roster",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Included in 12-man roster but DNP in Round 9",
+   "reported": "Expected · Round 10",
+   "source": "BasketNews"
+  },
   "pricePending": 4.7,
   "pricePendingSource": "juego",
   "outlook": {
@@ -13812,10 +13837,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 6.8,
@@ -14008,18 +14033,18 @@
    "plusMinusAvg": -5.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.69,
+  "projectedFp": 0.0,
   "projectedIfPlays": 2.76,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 8.4,
   "matchup": {
    "opponentFactor": 1.036,
    "homeFactor": 1.055
   },
   "valuePerCredit": 0.356,
-  "valueProjected": 0.157,
+  "valueProjected": 0.0,
   "valueMarket": 0.356,
-  "bargainScore": 16.4,
+  "bargainScore": 9.9,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -14041,25 +14066,24 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
-   "kind": "roster",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 5-6 (undisclosed). Played in the domestic league (10.18)",
-   "reported": "Out · Round 9",
+   "level": "out",
+   "kind": "coach",
+   "label": "Baja en la J10",
+   "untilRound": 10,
+   "detail": "Not included in 12-man roster in Round 9 (coach's decision)",
+   "reported": "Out · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 4.4,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 4.7,
-   "expectedChange": -0.09,
-   "riseProb": 0.055,
-   "sd": 2.37,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 2.2,
-   "p90": 3.7,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/3962.webp?v=a55ee36c",
   "clubCrestThumb": "/escudos/PAR.webp?v=ce613aaa"
@@ -14475,7 +14499,7 @@
   "valuePerCredit": 0.425,
   "valueProjected": 0.448,
   "valueMarket": 0.425,
-  "bargainScore": 39.8,
+  "bargainScore": 39.7,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -14704,7 +14728,7 @@
   "valuePerCredit": 0.124,
   "valueProjected": 0.383,
   "valueMarket": 0.119,
-  "bargainScore": 31.5,
+  "bargainScore": 31.3,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -15149,7 +15173,7 @@
   "valuePerCredit": 0.38,
   "valueProjected": 0.532,
   "valueMarket": 0.375,
-  "bargainScore": 34.2,
+  "bargainScore": 34.1,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -15935,7 +15959,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.307,
   "valueMarket": 0.25,
-  "bargainScore": 42.4,
+  "bargainScore": 42.3,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -16630,10 +16654,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -16748,10 +16772,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Round 8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Rounds 8-9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -16960,7 +16984,7 @@
   "valuePerCredit": 3.256,
   "valueProjected": 0.436,
   "valueMarket": 3.256,
-  "bargainScore": 40.8,
+  "bargainScore": 40.7,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -16984,10 +17008,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 4.2,
@@ -17414,7 +17438,7 @@
   "valuePerCredit": 0.793,
   "valueProjected": 0.37,
   "valueMarket": 0.786,
-  "bargainScore": 36.0,
+  "bargainScore": 35.9,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -17526,7 +17550,7 @@
   "valuePerCredit": 0.3,
   "valueProjected": 0.35,
   "valueMarket": 0.3,
-  "bargainScore": 29.8,
+  "bargainScore": 29.7,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -17636,7 +17660,7 @@
   "valuePerCredit": -0.25,
   "valueProjected": 0.15,
   "valueMarket": -0.25,
-  "bargainScore": 22.3,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -17660,10 +17684,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 2-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -17890,10 +17914,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 2-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -17984,7 +18008,7 @@
   "valuePerCredit": 0.522,
   "valueProjected": 0.355,
   "valueMarket": 0.525,
-  "bargainScore": 28.3,
+  "bargainScore": 28.1,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -18094,7 +18118,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.27,
   "valueMarket": 0.0,
-  "bargainScore": 33.8,
+  "bargainScore": 33.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -18236,10 +18260,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Didn't travel for Round 9 after DNP in Round 8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -18354,10 +18378,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 4.6,
@@ -18898,7 +18922,7 @@
   "valuePerCredit": 0.472,
   "valueProjected": 0.672,
   "valueMarket": 0.475,
-  "bargainScore": 46.3,
+  "bargainScore": 46.2,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -19575,7 +19599,7 @@
   "valuePerCredit": 0.737,
   "valueProjected": 0.176,
   "valueMarket": 0.73,
-  "bargainScore": 28.9,
+  "bargainScore": 28.8,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -19599,10 +19623,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 6.2,
@@ -19807,7 +19831,7 @@
   "valuePerCredit": 0.247,
   "valueProjected": 0.19,
   "valueMarket": 0.242,
-  "bargainScore": 22.4,
+  "bargainScore": 22.5,
   "schedule": {
    "difficulty": 23.0,
    "next": {
@@ -19919,7 +19943,7 @@
   "valuePerCredit": -0.349,
   "valueProjected": 0.219,
   "valueMarket": -0.352,
-  "bargainScore": 24.0,
+  "bargainScore": 23.8,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -20055,10 +20079,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 7-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9 after DNP in Rounds 7-8 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -20631,10 +20655,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Won't play in Round 9 after DNP in Round 8 (undisclosed)",
-   "reported": "Out · Round 9",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP ir Rounds 8-9 (undisclosed)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 10.2,
@@ -21063,7 +21087,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.226,
   "valueMarket": 0.0,
-  "bargainScore": 31.2,
+  "bargainScore": 31.0,
   "schedule": {
    "difficulty": 86.0,
    "next": {
@@ -21087,10 +21111,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Left knee injury",
-   "reported": "Out · Round 9",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 6.1,
@@ -21523,18 +21547,18 @@
    "plusMinusAvg": 0.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.89,
+  "projectedFp": 0.82,
   "projectedIfPlays": 3.28,
-  "playProb": 0.273,
+  "playProb": 0.25,
   "expectedMinutes": 9.6,
   "matchup": {
    "opponentFactor": 1.005,
    "homeFactor": 1.055
   },
   "valuePerCredit": 0.468,
-  "valueProjected": 0.193,
+  "valueProjected": 0.178,
   "valueMarket": 0.468,
-  "bargainScore": 25.7,
+  "bargainScore": 24.5,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -21555,17 +21579,25 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Included in 12-man roster but DNP in Round 9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
+   "source": "BasketNews"
+  },
   "pricePending": 4.6,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 4.9,
    "expectedChange": -0.09,
-   "riseProb": 0.062,
-   "sd": 2.49,
+   "riseProb": 0.057,
+   "sd": 2.4,
    "floor": 0.0,
-   "ceiling": 2.5,
-   "p90": 4.1,
+   "ceiling": 2.4,
+   "p90": 3.9,
    "certainty": 0.0
   },
   "thumb": "/fotos/4242.webp?v=92bcd000",
@@ -22459,10 +22491,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Round 8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Rounds 8-9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 7.4,
@@ -22694,7 +22726,7 @@
    "label": "Baja en la J10",
    "untilRound": 10,
    "detail": "To miss approximately three weeks due to shoulder and knee injuries (10.20)",
-   "reported": "Out · Round 8-10",
+   "reported": "Out · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 8.7,
@@ -22898,7 +22930,7 @@
   "valuePerCredit": 0.337,
   "valueProjected": 0.385,
   "valueMarket": 0.341,
-  "bargainScore": 35.8,
+  "bargainScore": 35.6,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -23120,7 +23152,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.247,
   "valueMarket": 0.0,
-  "bargainScore": 30.9,
+  "bargainScore": 30.8,
   "schedule": {
    "difficulty": 23.0,
    "next": {
@@ -23144,10 +23176,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 7-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9 after DNP in Rounds 7-8 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -23806,7 +23838,7 @@
   "valuePerCredit": 0.84,
   "valueProjected": 0.209,
   "valueMarket": 0.843,
-  "bargainScore": 22.3,
+  "bargainScore": 22.2,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -23830,10 +23862,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja hasta la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Suffered lower back injury in Round 6 (out for 2-3 weeks)",
-   "reported": "Out · Round 7-9",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 6.9,
@@ -25492,7 +25524,7 @@
   "valuePerCredit": 0.529,
   "valueProjected": 0.643,
   "valueMarket": 0.521,
-  "bargainScore": 46.8,
+  "bargainScore": 46.7,
   "schedule": {
    "difficulty": 66.0,
    "next": {
@@ -25828,7 +25860,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.275,
   "valueMarket": 0.0,
-  "bargainScore": 36.5,
+  "bargainScore": 36.4,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -25948,7 +25980,7 @@
   "valuePerCredit": 0.583,
   "valueProjected": 0.215,
   "valueMarket": 0.58,
-  "bargainScore": 29.5,
+  "bargainScore": 29.3,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -26540,10 +26572,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Round 8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9 after DNP in Round 8 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -26746,7 +26778,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.337,
   "valueMarket": 0.0,
-  "bargainScore": 38.7,
+  "bargainScore": 38.5,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -27191,18 +27223,18 @@
    "plusMinusAvg": 2.1,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 2.2,
   "projectedIfPlays": 8.79,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 16.1,
   "matchup": {
    "opponentFactor": 1.007,
    "homeFactor": 0.945
   },
   "valuePerCredit": 0.907,
-  "valueProjected": 0.0,
+  "valueProjected": 0.232,
   "valueMarket": 0.906,
-  "bargainScore": 20.7,
+  "bargainScore": 37.4,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -27224,24 +27256,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja indefinida",
+   "label": "Improbable",
    "untilRound": null,
    "detail": "Suffered foot bone injury ahead of domestic league game (10.25)",
-   "reported": "Out · Indefinitely",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 9.5,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 10.3,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.09,
+   "riseProb": 0.09,
+   "sd": 5.48,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 5.8,
+   "p90": 9.3,
+   "certainty": 0.0
   },
   "thumb": "/fotos/7237.webp?v=90fd6374",
   "clubCrestThumb": "/escudos/PAM.webp?v=1b054be1"
@@ -27321,7 +27354,7 @@
   "valuePerCredit": 1.0,
   "valueProjected": 0.238,
   "valueMarket": 1.0,
-  "bargainScore": 39.5,
+  "bargainScore": 39.4,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -27344,11 +27377,11 @@
   "registered": true,
   "availability": {
    "level": "doubt",
-   "kind": "roster",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Round 8 (undisclosed injury)",
-   "reported": "Out · Round 9",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-9 (undisclosed injury)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 6.0,
@@ -27441,7 +27474,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.198,
   "valueMarket": 0.0,
-  "bargainScore": 26.5,
+  "bargainScore": 26.4,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -27671,7 +27704,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.27,
   "valueMarket": 0.0,
-  "bargainScore": 33.2,
+  "bargainScore": 33.3,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -27695,10 +27728,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -27789,7 +27822,7 @@
   "valuePerCredit": 0.018,
   "valueProjected": 0.09,
   "valueMarket": 0.025,
-  "bargainScore": 16.5,
+  "bargainScore": 16.6,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -28719,7 +28752,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "coach",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Played in Rounds 8-9 after DNP in Rounds 1-7 (coach's decision)",
+   "reported": "Expected · Round 10",
+   "source": "BasketNews"
+  },
   "pricePending": 5.8,
   "pricePendingSource": "juego",
   "outlook": {
@@ -28944,10 +28985,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -29038,7 +29079,7 @@
   "valuePerCredit": 1.28,
   "valueProjected": 0.235,
   "valueMarket": 1.284,
-  "bargainScore": 38.3,
+  "bargainScore": 38.4,
   "schedule": {
    "difficulty": 86.0,
    "next": {
@@ -29064,8 +29105,8 @@
    "kind": "injury",
    "label": "Duda",
    "untilRound": null,
-   "detail": "Suffered hard hit to his knee in Round 8",
-   "reported": "Game-time · Round 9",
+   "detail": "DNP in Round 9 after hard hit to his knee in Round 8",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 10.8,
@@ -29158,7 +29199,7 @@
   "valuePerCredit": 1.316,
   "valueProjected": 0.363,
   "valueMarket": 1.321,
-  "bargainScore": 42.7,
+  "bargainScore": 42.5,
   "schedule": {
    "difficulty": 86.0,
    "next": {
@@ -29602,7 +29643,7 @@
   "valuePerCredit": 0.895,
   "valueProjected": 0.432,
   "valueMarket": 0.889,
-  "bargainScore": 42.0,
+  "bargainScore": 41.9,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -30048,7 +30089,7 @@
   "valuePerCredit": 0.585,
   "valueProjected": 0.444,
   "valueMarket": 0.585,
-  "bargainScore": 40.1,
+  "bargainScore": 39.9,
   "schedule": {
    "difficulty": 66.0,
    "next": {
@@ -30270,7 +30311,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.155,
   "valueMarket": 0.0,
-  "bargainScore": 22.7,
+  "bargainScore": 22.8,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -30291,7 +30332,15 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "probable",
+   "kind": "coach",
+   "label": "Se espera que juegue",
+   "untilRound": null,
+   "detail": "Included in 12-man roster but DNP in Round 9 after DNP in Rounds 2-8 (coach's decision)",
+   "reported": "Expected · Round 10",
+   "source": "BasketNews"
+  },
   "outlook": {
    "breakEven": 4.2,
    "expectedChange": -0.09,
@@ -30945,7 +30994,7 @@
   "valuePerCredit": 1.193,
   "valueProjected": 0.268,
   "valueMarket": 1.189,
-  "bargainScore": 42.7,
+  "bargainScore": 42.8,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -31089,10 +31138,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 2-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -31183,7 +31232,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.27,
   "valueMarket": 0.0,
-  "bargainScore": 33.7,
+  "bargainScore": 33.8,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -31207,10 +31256,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -31525,7 +31574,7 @@
   "valuePerCredit": 0.307,
   "valueProjected": 0.092,
   "valueMarket": 0.317,
-  "bargainScore": 18.5,
+  "bargainScore": 18.6,
   "schedule": {
    "difficulty": 70.0,
    "next": {
@@ -31549,10 +31598,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Not included in 12-man roster in Round 9.(coach's decision). Played in Round 8.",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 4.0,
@@ -31645,7 +31694,7 @@
   "valuePerCredit": -0.193,
   "valueProjected": 0.218,
   "valueMarket": -0.197,
-  "bargainScore": 20.9,
+  "bargainScore": 20.8,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -31781,10 +31830,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja hasta la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Will miss two weeks (adductor injury in Round 6)",
-   "reported": "Out · Round 7-9",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 9.1,
@@ -32123,10 +32172,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9(coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -33227,7 +33276,7 @@
   "valuePerCredit": 0.487,
   "valueProjected": 0.126,
   "valueMarket": 0.484,
-  "bargainScore": 21.9,
+  "bargainScore": 21.8,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -33254,7 +33303,7 @@
    "label": "Duda · decisión técnica",
    "untilRound": null,
    "detail": "DNP in Round 9 (coach's decision)",
-   "reported": "Uncertain · Round 9",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 9.0,
@@ -33347,7 +33396,7 @@
   "valuePerCredit": 1.109,
   "valueProjected": 0.226,
   "valueMarket": 1.116,
-  "bargainScore": 20.4,
+  "bargainScore": 20.3,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -34252,7 +34301,7 @@
   "valuePerCredit": 0.547,
   "valueProjected": 0.173,
   "valueMarket": 0.543,
-  "bargainScore": 19.1,
+  "bargainScore": 19.0,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -35170,7 +35219,7 @@
   "valuePerCredit": 1.207,
   "valueProjected": 0.244,
   "valueMarket": 1.212,
-  "bargainScore": 31.5,
+  "bargainScore": 31.7,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -35194,10 +35243,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "DNP in Rounds 7-8 (muscle injury)",
-   "reported": "Out · Round 9",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 7-9 (muscle injury)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 9.8,
@@ -35962,7 +36011,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.271,
   "valueMarket": 0.0,
-  "bargainScore": 37.6,
+  "bargainScore": 37.7,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -35986,10 +36035,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja hasta la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Adductor muscle injury (out until November)",
-   "reported": "Out · Round 1-9",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 8.5,
@@ -36634,18 +36683,18 @@
    "plusMinusAvg": -4.5,
    "minutesPrior": null
   },
-  "projectedFp": 1.17,
+  "projectedFp": 0.0,
   "projectedIfPlays": 3.21,
-  "playProb": 0.364,
+  "playProb": 0.0,
   "expectedMinutes": 12.2,
   "matchup": {
    "opponentFactor": 0.966,
    "homeFactor": 1.055
   },
   "valuePerCredit": 0.238,
-  "valueProjected": 0.292,
+  "valueProjected": 0.0,
   "valueMarket": 0.25,
-  "bargainScore": 35.4,
+  "bargainScore": 16.5,
   "schedule": {
    "difficulty": 59.0,
    "next": {
@@ -36666,16 +36715,23 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "out",
+   "kind": "injury",
+   "label": "Baja en la J10",
+   "untilRound": 10,
+   "detail": "Elbow",
+   "reported": "Out",
+   "source": "RotoWire"
+  },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.08,
-   "riseProb": 0.114,
-   "sd": 3.2,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 3.3,
-   "p90": 5.3,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/11524.webp?v=3821aadf",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
@@ -36755,7 +36811,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.239,
   "valueMarket": 0.0,
-  "bargainScore": 31.7,
+  "bargainScore": 31.6,
   "schedule": {
    "difficulty": 59.0,
    "next": {
@@ -36779,10 +36835,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 5.6,
@@ -36987,7 +37043,7 @@
   "valuePerCredit": 1.049,
   "valueProjected": 0.262,
   "valueMarket": 1.045,
-  "bargainScore": 47.1,
+  "bargainScore": 47.2,
   "schedule": {
    "difficulty": 67.0,
    "next": {
@@ -37674,7 +37730,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.265,
   "valueMarket": 0.0,
-  "bargainScore": 31.5,
+  "bargainScore": 31.6,
   "schedule": {
    "difficulty": 19.0,
    "next": {
@@ -37792,7 +37848,7 @@
   "valuePerCredit": 0.843,
   "valueProjected": 0.168,
   "valueMarket": 0.843,
-  "bargainScore": 26.9,
+  "bargainScore": 26.8,
   "schedule": {
    "difficulty": 88.0,
    "next": {
@@ -37912,7 +37968,7 @@
   "valuePerCredit": -0.391,
   "valueProjected": 0.151,
   "valueMarket": -0.391,
-  "bargainScore": 24.2,
+  "bargainScore": 24.3,
   "schedule": {
    "difficulty": 88.0,
    "next": {
@@ -38256,7 +38312,7 @@
   "valuePerCredit": 0.519,
   "valueProjected": 0.223,
   "valueMarket": 0.519,
-  "bargainScore": 31.0,
+  "bargainScore": 30.9,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -38366,7 +38422,7 @@
   "valuePerCredit": 0.432,
   "valueProjected": 0.477,
   "valueMarket": 0.425,
-  "bargainScore": 32.6,
+  "bargainScore": 32.5,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -38612,10 +38668,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -39284,10 +39340,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "DNP in Round 8 (leg contusion)",
-   "reported": "Out · Round 9",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-9 (leg contusion)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 4.0,
@@ -39604,7 +39660,7 @@
   "valuePerCredit": 0.695,
   "valueProjected": 0.194,
   "valueMarket": 0.726,
-  "bargainScore": 26.8,
+  "bargainScore": 26.7,
   "schedule": {
    "difficulty": 88.0,
    "next": {
@@ -39713,18 +39769,18 @@
    "plusMinusAvg": 1.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.0,
+  "projectedFp": 1.02,
   "projectedIfPlays": 4.07,
-  "playProb": 0.0,
+  "playProb": 0.25,
   "expectedMinutes": 10.9,
   "matchup": {
    "opponentFactor": 0.99,
    "homeFactor": 1.055
   },
   "valuePerCredit": -0.429,
-  "valueProjected": 0.0,
+  "valueProjected": 0.148,
   "valueMarket": -0.429,
-  "bargainScore": 16.5,
+  "bargainScore": 23.8,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -39746,24 +39802,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "out",
+   "level": "doubt",
    "kind": "injury",
-   "label": "Baja indefinida",
+   "label": "Duda",
    "untilRound": null,
    "detail": "Expected to rejoin the team at the beginning of November",
-   "reported": "Out · Indefinitely",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "pricePending": 6.9,
   "pricePendingSource": "juego",
   "outlook": {
    "breakEven": 7.5,
-   "expectedChange": -0.1,
-   "riseProb": 0.0,
-   "sd": 0.0,
+   "expectedChange": -0.11,
+   "riseProb": 0.029,
+   "sd": 2.62,
    "floor": 0.0,
-   "ceiling": 0.0,
-   "p90": 0.0
+   "ceiling": 2.7,
+   "p90": 4.4,
+   "certainty": 0.0
   },
   "thumb": "/fotos/12460.webp?v=e2d18ebc",
   "clubCrestThumb": "/escudos/BES.webp?v=bf512b30"
@@ -39843,7 +39900,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.27,
   "valueMarket": 0.0,
-  "bargainScore": 33.8,
+  "bargainScore": 33.9,
   "schedule": {
    "difficulty": 40.0,
    "next": {
@@ -39867,10 +39924,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -39961,7 +40018,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.245,
   "valueMarket": 0.0,
-  "bargainScore": 29.9,
+  "bargainScore": 30.0,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -39985,10 +40042,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Not included in 12-man roster in Round 9 after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Included in 12-man roster in Round 8. DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Uncertain · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -40299,7 +40356,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.168,
   "valueMarket": 0.0,
-  "bargainScore": 23.7,
+  "bargainScore": 23.8,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -40398,18 +40455,18 @@
    "plusMinusAvg": 0.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.99,
+  "projectedFp": 0.0,
   "projectedIfPlays": 3.95,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 12.9,
   "matchup": {
    "opponentFactor": 0.966,
    "homeFactor": 1.055
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.247,
+  "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 30.5,
+  "bargainScore": 16.5,
   "schedule": {
    "difficulty": 59.0,
    "next": {
@@ -40431,23 +40488,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
+   "label": "Baja en la J10",
+   "untilRound": 10,
    "detail": "Not included in 12-man roster in Round 9 (coach's decision)",
-   "reported": "Out · Round 9",
+   "reported": "Out · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 4.2,
-   "expectedChange": -0.08,
-   "riseProb": 0.09,
-   "sd": 2.72,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 2.8,
-   "p90": 4.5,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/12470.webp?v=f94c2bad",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
@@ -40527,7 +40583,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.228,
   "valueMarket": 0.0,
-  "bargainScore": 28.4,
+  "bargainScore": 28.3,
   "schedule": {
    "difficulty": 81.0,
    "next": {
@@ -40551,10 +40607,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J9; sin confirmar para la J10",
-   "untilRound": 9,
-   "detail": "Didn't travel for Round 9 after DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Out · Round 9",
+   "label": "Improbable · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -40645,7 +40701,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.23,
   "valueMarket": 0.0,
-  "bargainScore": 28.7,
+  "bargainScore": 28.6,
   "schedule": {
    "difficulty": 86.0,
    "next": {
@@ -40669,10 +40725,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Duda · decisión técnica",
+   "label": "Improbable · decisión técnica",
    "untilRound": null,
-   "detail": "DNP in Rounds 1-8 (coach's decision)",
-   "reported": "Uncertain · Round 9",
+   "detail": "DNP in Rounds 1-9 (coach's decision)",
+   "reported": "Doubtful · Round 10",
    "source": "BasketNews"
   },
   "outlook": {
@@ -40875,7 +40931,7 @@
   "valuePerCredit": 0.267,
   "valueProjected": 0.311,
   "valueMarket": 0.267,
-  "bargainScore": 38.4,
+  "bargainScore": 38.5,
   "schedule": {
    "difficulty": 19.0,
    "next": {
