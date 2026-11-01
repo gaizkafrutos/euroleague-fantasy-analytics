@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-01T06:24:32.876160+00:00",
+ "generatedAt": "2026-11-01T15:17:43.455410+00:00",
  "currentRound": 10,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 59,
  "lastPriceCapture": "2026-10-31T12:46:35.042046+00:00",
- "lastPriceCheck": "2026-11-01T06:23:43.509085+00:00",
+ "lastPriceCheck": "2026-11-01T15:17:08.942825+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.22
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-01T06:23:48.602748+00:00",
+  "generatedAt": "2026-11-01T15:17:14.117706+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -604,9 +604,9 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-10-31T08:03:00",
-  "fetchedAt": "2026-11-01T06:23:42.409611+00:00",
-  "rows": 147,
-  "matched": 101,
+  "fetchedAt": "2026-11-01T15:17:07.699714+00:00",
+  "rows": 146,
+  "matched": 100,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -626,16 +626,16 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-10-31T08:03:00",
-    "fetchedAt": "2026-11-01T06:23:41.988150+00:00",
-    "rows": 108,
-    "matched": 98,
-    "flagged": 98
+    "fetchedAt": "2026-11-01T15:17:07.226178+00:00",
+    "rows": 107,
+    "matched": 97,
+    "flagged": 97
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-01T06:23:42.409611+00:00",
+    "fetchedAt": "2026-11-01T15:17:07.699714+00:00",
     "rows": 39,
     "matched": 37,
     "flagged": 3
@@ -644,7 +644,7 @@
   "nextRound": 10,
   "unregistered": 6,
   "flagged": {
-   "out": 28,
+   "out": 27,
    "doubt": 72,
    "probable": 7
   }
