@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-02T09:38:25.424860+00:00",
- "updatedAt": "2026-11-01T18:03:00",
+ "fetchedAt": "2026-11-02T20:24:37.371788+00:00",
+ "updatedAt": "2026-11-02T16:52:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -67,6 +67,14 @@
    "status": "Doubtful",
    "round": "Round 10",
    "comment": "DNP in Rounds 2-9 (coach's decision)"
+  },
+  {
+   "team": "Armani Olimpia Milan",
+   "position": "C",
+   "name": "Devin Booker",
+   "status": "Out",
+   "round": "Indefinitely",
+   "comment": "Injury"
   },
   {
    "team": "Armani Olimpia Milan",
@@ -392,9 +400,9 @@
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "SF",
    "name": "Chris Duarte",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 10",
-   "comment": "DNP in Rounds 7-9 (muscle injury). DNP in the domestic league (11.01)"
+   "comment": "DNP in Rounds 7-9 (muscle injury). Rejoined training on Monday, expected to play in Round 10, per club announcement"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -710,6 +718,14 @@
   },
   {
    "team": "Real Madrid",
+   "position": "PG",
+   "name": "Facundo Campazzo",
+   "status": "Uncertain",
+   "round": "Round 10",
+   "comment": "Suffered muscle injury in domestic league game (11.01), awaiting medical test results"
+  },
+  {
+   "team": "Real Madrid",
    "position": "SF",
    "name": "Gabriel Deck",
    "status": "Out",
@@ -832,7 +848,7 @@
    "team": "Zalgiris Kaunas",
    "position": "C",
    "name": "Kaodirichi Akobundu-Ehiogu",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 10",
    "comment": "Played in Rounds 8-9 after DNP in Rounds 1-7 (coach's decision)"
   },
@@ -843,6 +859,14 @@
    "status": "Uncertain",
    "round": "Round 10",
    "comment": "Not included in 12-man roster in Rounds 8-9 (coach's decision)"
+  },
+  {
+   "team": "Zalgiris Kaunas",
+   "position": "SF",
+   "name": "Keenan Evans",
+   "status": "Ready",
+   "round": "Round 10",
+   "comment": "Missed domestic game on Monday (rest)"
   },
   {
    "team": "Zalgiris Kaunas",
@@ -859,6 +883,14 @@
    "status": "Uncertain",
    "round": "Round 10",
    "comment": "Not included in 12-man roster in Rounds 8-9 (coach's decision)"
+  },
+  {
+   "team": "Zalgiris Kaunas",
+   "position": "SF",
+   "name": "Ąžuolas Tubelis",
+   "status": "Ready",
+   "round": "Round 10",
+   "comment": "Missed domestic game on Monday (rest)"
   },
   {
    "team": "Zalgiris Kaunas",
