@@ -178,8 +178,8 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4165,T. Ginat,HTA,HTA,010550,"GINAT, TOMER",initial-club,99.0
 4167,I. Wainright,HTA,HTA,013284,"WAINRIGHT, ISH",initial-club,99.0
 4172,D. Itoudis,HTA,HTA,CAG,"ITOUDIS, DIMITRIS",initial-club,99.0
-4174,G. Palatin,HTA,HTA,013283,"PALATIN, GUY",initial-club,99.0
-4175,O. Blayzer,HTA,HTA,009877,"BLAYZER, OZ",initial-club,99.0
+4174,G. Palatin,HTA,HTA,013283,"PALATIN, GUY",prior-season,90.0
+4175,O. Blayzer,HTA,HTA,009877,"BLAYZER, OZ",prior-season,90.0
 4180,D. Dotson,BJK,BES,013285,"DOTSON, DEVON",initial-club,99.0
 4192,M. Santos,KBA,BAS,013289,"SANTOS, MARCIO",initial-club,99.0
 4195,J. Jessup,BAY,MUN,013290,"JESSUP, JUSTINIAN",initial-club,99.0
@@ -187,7 +187,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 4212,Y. Makoundou,BAR,BAR,011935,"MAKOUNDOU, YOAN",initial-club,99.0
 4215,M. Heidegger,HTA,HTA,012259,"HEIDEGGER, MAX",override,100.0
 4233,M. Kabengele,DUB,DUB,012796,"KABENGELE, MFIONDU",initial-club,99.0
-4234,T. Ennis,HTA,HTA,008858,"ENNIS, TYLER",initial-club,99.0
+4234,T. Ennis,HTA,HTA,,,unmatched,50.0
 4242,D. Casarin,VIR,VIR,009400,"CASARIN, DAVIDE",initial-club,99.0
 4246,S. Ojeleye,CZV,RED,011982,"OJELEYE, SEMI",initial-club,99.0
 4247,C. Jones,CZV,RED,010568,"JONES, CHRIS",initial-club,99.0
@@ -226,7 +226,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 7216,D. Bertans,DUB,DUB,003458,"BERTANS, DAVIS",initial-club,99.0
 7217,T. Carter,CZV,RED,011305,"CARTER, TYSON",initial-club,99.0
 7218,K. Taylor,VBC,PAM,011217,"TAYLOR, KAMERON",initial-club,99.0
-7219,A. M'baye,PBB,PRS,007993,"M'BAYE, AMATH",subset,95.0
+7219,A. M'baye,PBB,PRS,,,unmatched,50.0
 7220,E. Izundu,CZV,RED,014029,"IZUNDU, EBUKA",initial-club,99.0
 7221,A. Tubelis,ZAL,ZAL,008192,"TUBELIS, AZUOLAS",initial-club,99.0
 7223,C. Frisch,KBA,BAS,014026,"FRISCH, CLEMENT",initial-club,99.0
@@ -245,7 +245,7 @@ fantaking_id,fantaking_name,fantaking_team,club_code,person_code,official_name,m
 7245,D. Mutaf,EFS,IST,008176,"MUTAF, DAVID",initial-club,99.0
 7246,S. Miljenovic,CZV,RED,014094,"MILJENOVIC, STEFAN",initial-club,99.0
 7248,N. Dangubic,DUB,DUB,005942,"DANGUBIC, NEMANJA",initial-club,99.0
-7250,I. Kouzeloglou,PAO,PAN,004451,"KOUZELOGLOU, IOANNIS",initial-club,99.0
+7250,I. Kouzeloglou,PAO,PAN,004451,"KOUZELOGLOU, IOANNIS",prior-season,90.0
 7254,I. Segev,HTA,HTA,004161,"SEGEV, ITAY",prior-season,90.0
 7255,O. Netzipoglou,OLY,OLY,014122,"NETZIPOGLOU, OMIROS",initial-club,99.0
 7258,D. Russell,EFS,IST,013943,"RUSSELL, DARON",initial-club,99.0
