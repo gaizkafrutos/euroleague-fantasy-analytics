@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-02T20:25:14.016440+00:00",
+ "generatedAt": "2026-11-03T03:31:12.636189+00:00",
  "currentRound": 10,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 59,
  "lastPriceCapture": "2026-10-31T12:46:35.042046+00:00",
- "lastPriceCheck": "2026-11-02T20:24:39.081636+00:00",
+ "lastPriceCheck": "2026-11-03T03:30:22.533741+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.22
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-02T20:24:45.112602+00:00",
+  "generatedAt": "2026-11-03T03:30:28.229255+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -604,9 +604,9 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-02T16:52:00",
-  "fetchedAt": "2026-11-02T20:24:37.903178+00:00",
-  "rows": 151,
-  "matched": 105,
+  "fetchedAt": "2026-11-03T03:30:21.140559+00:00",
+  "rows": 148,
+  "matched": 102,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -626,16 +626,16 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-02T16:52:00",
-    "fetchedAt": "2026-11-02T20:24:37.371788+00:00",
-    "rows": 112,
-    "matched": 102,
-    "flagged": 102
+    "fetchedAt": "2026-11-03T03:30:18.364016+00:00",
+    "rows": 109,
+    "matched": 99,
+    "flagged": 99
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-02T20:24:37.903178+00:00",
+    "fetchedAt": "2026-11-03T03:30:21.140559+00:00",
     "rows": 39,
     "matched": 37,
     "flagged": 3
@@ -644,9 +644,9 @@
   "nextRound": 10,
   "unregistered": 6,
   "flagged": {
-   "out": 29,
-   "doubt": 71,
-   "probable": 11
+   "out": 26,
+   "doubt": 72,
+   "probable": 10
   }
  },
  "warnings": [],
