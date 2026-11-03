@@ -1,20 +1,20 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-03T03:30:18.364016+00:00",
- "updatedAt": "2026-11-02T16:52:00",
+ "fetchedAt": "2026-11-03T12:02:52.796919+00:00",
+ "updatedAt": "2026-11-03T11:43:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
-   "position": "PG",
+   "position": "SG",
    "name": "Isaia Cordinier",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Rehab after surgery"
+   "round": "Round 10",
+   "comment": "Out indefinitely (rehab after surgery)"
   },
   {
    "team": "Anadolu Efes Istanbul",
-   "position": "PG",
+   "position": "SG",
    "name": "P.J. Dozier",
    "status": "Uncertain",
    "round": "Round 10",
@@ -46,7 +46,7 @@
   },
   {
    "team": "Anadolu Efes Istanbul",
-   "position": "PG",
+   "position": "SG",
    "name": "David Mutaf",
    "status": "Doubtful",
    "round": "Round 10",
@@ -62,7 +62,7 @@
   },
   {
    "team": "Armani Olimpia Milan",
-   "position": "SF",
+   "position": "C",
    "name": "Nicola Akele",
    "status": "Doubtful",
    "round": "Round 10",
@@ -70,15 +70,23 @@
   },
   {
    "team": "Armani Olimpia Milan",
+   "position": "PG",
+   "name": "Leandro Bolmaro",
+   "status": "Questionable",
+   "round": "Round 10",
+   "comment": "Muscle strain"
+  },
+  {
+   "team": "Armani Olimpia Milan",
    "position": "C",
    "name": "Devin Booker",
    "status": "Out",
-   "round": "Indefinitely",
+   "round": "Round 10",
    "comment": "DNP in the domestic league (injured)(11.02)"
   },
   {
    "team": "Armani Olimpia Milan",
-   "position": "PG",
+   "position": "SG",
    "name": "Diego Flaccadori",
    "status": "Doubtful",
    "round": "Round 10",
@@ -86,7 +94,7 @@
   },
   {
    "team": "Armani Olimpia Milan",
-   "position": "PG",
+   "position": "SG",
    "name": "Stefano Tonut",
    "status": "Doubtful",
    "round": "Round 10",
@@ -118,7 +126,7 @@
   },
   {
    "team": "Besiktas Istanbul",
-   "position": "SF",
+   "position": "SG",
    "name": "Furkan Korkmaz",
    "status": "Expected",
    "round": "Round 10",
@@ -129,12 +137,12 @@
    "position": "C",
    "name": "Mady Sissoko",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Began individual strength training after an injury"
+   "round": "Round 10",
+   "comment": "Out indefinitely but began individual strength training after an injury"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
-   "position": "SF",
+   "position": "C",
    "name": "Patrick Baldwin Jr.",
    "status": "Uncertain",
    "round": "Round 10",
@@ -145,12 +153,12 @@
    "position": "SF",
    "name": "Jovan Bikic",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
-   "position": "PG",
+   "position": "SG",
    "name": "Nikola Djurisic",
    "status": "Uncertain",
    "round": "Round 10",
@@ -169,8 +177,8 @@
    "position": "C",
    "name": "Vojin Medarevic",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -178,31 +186,31 @@
    "name": "Stefan Miljenovic",
    "status": "Uncertain",
    "round": "Round 10",
-   "comment": "DNP in Round 9 (coach's decision) after DNP in Rounds 4-9 (ankle injury)"
+   "comment": "DNP in Round 9 (coach's decision) after DNP in Rounds 4-8 (ankle injury)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "SF",
    "name": "Aleksej Nedeljkovic",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "PG",
    "name": "Ognjen Simjanovski",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Dubai Basketball",
    "position": "SF",
    "name": "Awudu Abass",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in the EuroLeague roster."
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Dubai Basketball",
@@ -217,16 +225,16 @@
    "position": "C",
    "name": "Mouhammadou Jaiteh",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Continues rehab after Achilles injury."
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he continues rehab after Achilles injury."
   },
   {
    "team": "Dubai Basketball",
    "position": "C",
    "name": "Kenan Kamenjas",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Dubai Basketball",
@@ -241,8 +249,8 @@
    "position": "PG",
    "name": "Tomislav Vuckovic",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Dubai Basketball",
@@ -270,7 +278,7 @@
   },
   {
    "team": "FC Bayern Munich",
-   "position": "C",
+   "position": "SF",
    "name": "Kilian Fischer",
    "status": "Uncertain",
    "round": "Round 10",
@@ -294,7 +302,7 @@
   },
   {
    "team": "FC Barcelona",
-   "position": "C",
+   "position": "PF",
    "name": "Yoan Makoundou",
    "status": "Uncertain",
    "round": "Round 10",
@@ -310,7 +318,7 @@
   },
   {
    "team": "Fenerbahce Beko Istanbul",
-   "position": "SF",
+   "position": "SG",
    "name": "Onuralp Bitim",
    "status": "Uncertain",
    "round": "Round 10",
@@ -326,7 +334,7 @@
   },
   {
    "team": "Fenerbahce Beko Istanbul",
-   "position": "PG",
+   "position": "SG",
    "name": "Melih Mahmutoglu",
    "status": "Uncertain",
    "round": "Round 10",
@@ -342,11 +350,11 @@
   },
   {
    "team": "Hapoel IBI Tel Aviv",
-   "position": "SF",
+   "position": "PF",
    "name": "Oz Blayzer",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -361,12 +369,12 @@
    "position": "PG",
    "name": "Tyler Ennis",
    "status": "Out",
-   "round": "Long-term",
-   "comment": "Torn Achilles"
+   "round": "Round 10",
+   "comment": "Long-term injury suffered in January 2026 (torn Achilles)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
-   "position": "SF",
+   "position": "PF",
    "name": "Tomer Ginat",
    "status": "Uncertain",
    "round": "Round 10",
@@ -374,11 +382,11 @@
   },
   {
    "team": "Hapoel IBI Tel Aviv",
-   "position": "PG",
+   "position": "SG",
    "name": "Guy Palatin",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -398,7 +406,7 @@
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
-   "position": "SF",
+   "position": "SG",
    "name": "Chris Duarte",
    "status": "Expected",
    "round": "Round 10",
@@ -414,23 +422,23 @@
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
-   "position": "SF",
+   "position": "PF",
    "name": "Tadas Sedekerskis",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Suffered a right thigh muscle injury in Round 7"
+   "round": "Round 10",
+   "comment": "Out indefinitely after suffering a right thigh muscle injury in Round 7"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
-   "position": "SF",
+   "position": "PG",
    "name": "Pedro Souza",
-   "status": "Expected",
+   "status": "Uncertain",
    "round": "Round 10",
    "comment": "Included in 12-man roster but DNP in Round 9 after DNP in Rounds 2-8 (coach's decision). DNP in the domestic league (11.01)"
   },
   {
    "team": "LDLC ASVEL Villeurbanne",
-   "position": "SF",
+   "position": "SG",
    "name": "Juhann Begarin",
    "status": "Doubtful",
    "round": "Round 10",
@@ -454,7 +462,7 @@
   },
   {
    "team": "LDLC ASVEL Villeurbanne",
-   "position": "SF",
+   "position": "SG",
    "name": "Edwin Jackson",
    "status": "Uncertain",
    "round": "Round 10",
@@ -481,8 +489,8 @@
    "position": "C",
    "name": "Shane Hunter",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
@@ -497,8 +505,8 @@
    "position": "PG",
    "name": "Gabriel Lundberg",
    "status": "Out",
-   "round": "Round 7-14",
-   "comment": "Expected to miss 6-8 weeks after suffering a partial tear of his quadriceps tendon during a team practice (10.20)"
+   "round": "Round 10",
+   "comment": "Expected to miss 6-8 weeks and return for Round 15 after suffering a partial tear of his quadriceps tendon during a team practice (10.20)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -510,25 +518,25 @@
   },
   {
    "team": "Olympiacos Piraeus",
-   "position": "PG",
+   "position": "SG",
    "name": "Tyler Dorsey",
    "status": "Out",
-   "round": "Round 7-13",
-   "comment": "Received one-month suspension by the club (10.22)"
+   "round": "Round 10",
+   "comment": "Expected to be out until Round 14 after receiving one-month suspension by the club (10.22)"
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Bryant Dunston",
-   "status": "Expected",
+   "status": "Uncertain",
    "round": "Round 10",
    "comment": "Included in 12-man roster but DNP in Round 9. DNP in the domestic league (11.01)"
   },
   {
    "team": "Olympiacos Piraeus",
-   "position": "SF",
+   "position": "SG",
    "name": "Evan Fournier",
-   "status": "Expected",
+   "status": "Uncertain",
    "round": "Round 10",
    "comment": "To miss approximately three weeks due to shoulder and knee injuries (10.20). DNP in the domestic league (11.01)"
   },
@@ -544,7 +552,7 @@
    "team": "Olympiacos Piraeus",
    "position": "SG",
    "name": "John Konchar",
-   "status": "Expected",
+   "status": "Uncertain",
    "round": "Round 10",
    "comment": "Included in 12-man roster but DNP in Round 9 (new signing). DNP in the domestic league (11.01)"
   },
@@ -561,7 +569,7 @@
    "position": "PG",
    "name": "Jean Montero",
    "status": "Out",
-   "round": "Long-term",
+   "round": "Round 10",
    "comment": "Underwent a left knee meniscus injury, expected to be sidelined until the end of April."
   },
   {
@@ -577,8 +585,8 @@
    "position": "C",
    "name": "Ioannis Kouzeloglou",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -590,7 +598,7 @@
   },
   {
    "team": "Panathinaikos AKTOR Athens",
-   "position": "PG",
+   "position": "SG",
    "name": "Dimitris Moraitis",
    "status": "Uncertain",
    "round": "Round 10",
@@ -625,8 +633,8 @@
    "position": "SF",
    "name": "Nobel Boungou-Colo",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Paris Basketball",
@@ -638,7 +646,7 @@
   },
   {
    "team": "Paris Basketball",
-   "position": "SF",
+   "position": "PF",
    "name": "Amath M'Baye",
    "status": "Uncertain",
    "round": "Round 10",
@@ -646,7 +654,7 @@
   },
   {
    "team": "Paris Basketball",
-   "position": "PG",
+   "position": "SG",
    "name": "Jared Rhoden",
    "status": "Uncertain",
    "round": "Round 10",
@@ -665,12 +673,12 @@
    "position": "SG",
    "name": "Mitar Bosnjakovic",
    "status": "Out",
-   "round": "Indefinitely",
-   "comment": "Not included in official Euroleague roster"
+   "round": "Round 10",
+   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
-   "position": "SF",
+   "position": "PG",
    "name": "Uros Danilovic",
    "status": "Doubtful",
    "round": "Round 10",
@@ -686,7 +694,7 @@
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
-   "position": "SF",
+   "position": "SG",
    "name": "Vanja Marinkovic",
    "status": "Expected",
    "round": "Round 10",
@@ -702,7 +710,7 @@
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
-   "position": "C",
+   "position": "PF",
    "name": "Derek Willis",
    "status": "Out",
    "round": "Round 10",
@@ -721,20 +729,20 @@
    "position": "SF",
    "name": "Gabriel Deck",
    "status": "Out",
-   "round": "Long-term",
-   "comment": "Suffered an injury at the beginning of October, set to undergo surgery, expected to be out for 4-5 months (left shoulder injury)"
+   "round": "Round 10",
+   "comment": "Underwent left shoulder surgery on October 14, expected to be out until mid-February/mid-March."
   },
   {
    "team": "Real Madrid",
-   "position": "C",
+   "position": "PF",
    "name": "Usman Garuba",
    "status": "Out",
-   "round": "Long-term",
-   "comment": "Torn ACL"
+   "round": "Round 10",
+   "comment": "Out indefinitely with a torn ACL"
   },
   {
    "team": "Real Madrid",
-   "position": "SF",
+   "position": "PF",
    "name": "Mikael Jantunen",
    "status": "Out",
    "round": "Round 10",
@@ -766,7 +774,7 @@
   },
   {
    "team": "Real Madrid",
-   "position": "SF",
+   "position": "PG",
    "name": "Max Shulga",
    "status": "Uncertain",
    "round": "Round 10",
@@ -774,7 +782,7 @@
   },
   {
    "team": "Real Madrid",
-   "position": "SF",
+   "position": "PG",
    "name": "Nick Smith Jr.",
    "status": "Uncertain",
    "round": "Round 10",
@@ -790,7 +798,7 @@
   },
   {
    "team": "Valencia Basket",
-   "position": "SF",
+   "position": "PF",
    "name": "Nikola Mirotic",
    "status": "Uncertain",
    "round": "Round 10",
@@ -798,15 +806,15 @@
   },
   {
    "team": "Valencia Basket",
-   "position": "SF",
+   "position": "C",
    "name": "Nate Reuvers",
    "status": "Doubtful",
    "round": "Round 10",
-   "comment": "Suffered foot bone injury ahead of domestic league game (10.25). DNP in the domestic league (11.01)"
+   "comment": "Suffered foot bone injury (10.25). DNP in Rounds 8-9 and in the domestic league (11.01)"
   },
   {
    "team": "Virtus Bologna",
-   "position": "PG",
+   "position": "SG",
    "name": "Matteo Baiocchi",
    "status": "Doubtful",
    "round": "Round 10",
@@ -822,7 +830,7 @@
   },
   {
    "team": "Virtus Bologna",
-   "position": "PG",
+   "position": "SG",
    "name": "Davide Casarin",
    "status": "Uncertain",
    "round": "Round 10",
@@ -830,7 +838,7 @@
   },
   {
    "team": "Virtus Bologna",
-   "position": "SF",
+   "position": "PF",
    "name": "Francesco Ferrari",
    "status": "Uncertain",
    "round": "Round 10",
@@ -854,7 +862,7 @@
   },
   {
    "team": "Zalgiris Kaunas",
-   "position": "PG",
+   "position": "SG",
    "name": "Dovydas Giedraitis",
    "status": "Uncertain",
    "round": "Round 10",
@@ -862,7 +870,7 @@
   },
   {
    "team": "Zalgiris Kaunas",
-   "position": "PG",
+   "position": "SG",
    "name": "Deividas Sirvydis",
    "status": "Uncertain",
    "round": "Round 10",
@@ -873,8 +881,8 @@
    "position": "PG",
    "name": "Nigel Williams-Goss",
    "status": "Out",
-   "round": "Round 7-14",
-   "comment": "Aggravated previous hamstring injury in Round 6. Set to miss about 4 weeks. Will undergo further testing."
+   "round": "Round 10",
+   "comment": "Aggravated previous hamstring injury in Round 6. Expected to be out until Round 14."
   }
  ]
 }
