@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-04T09:28:03.746321+00:00",
+ "fetchedAt": "2026-11-04T18:04:24.638832+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "DUB",
    "position": "F",
    "name": "Justin Anderson",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Hamstring"
   },
@@ -16,23 +16,15 @@
    "team": "VIR",
    "position": "G",
    "name": "Tommaso Baldasso",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
-  },
-  {
-   "team": "HTA",
-   "position": "G",
-   "name": "Tamir Blatt",
-   "status": "Out",
-   "round": "",
-   "comment": "Coach's Decision"
   },
   {
    "team": "EFS",
    "position": "G",
    "name": "Isaia Cordinier",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
   },
@@ -56,7 +48,7 @@
    "team": "ASV",
    "position": "C",
    "name": "Mathis Dossou-Yovo",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
   },
@@ -64,7 +56,7 @@
    "team": "EFS",
    "position": "G",
    "name": "PJ Dozier",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -72,7 +64,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Chris Duarte",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -101,10 +93,18 @@
    "comment": "Leg"
   },
   {
+   "team": "BAR",
+   "position": "G",
+   "name": "Umoja Gibson",
+   "status": "Out",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Achilles"
   },
@@ -136,23 +136,15 @@
    "team": "PAR",
    "position": "C",
    "name": "Tonye Jekiri",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
-  },
-  {
-   "team": "BJK",
-   "position": "F",
-   "name": "Furkan Korkmaz",
-   "status": "Out",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "KBA",
    "position": "F",
    "name": "Rodions Kurucs",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -160,7 +152,7 @@
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -189,18 +181,18 @@
    "comment": "Knee"
   },
   {
-   "team": "PAR",
+   "team": "PAO",
    "position": "F",
-   "name": "Vanja Marinkovic",
+   "name": "Lefteris Mantzoukas",
    "status": "Out",
    "round": "",
-   "comment": "Achilles"
+   "comment": ""
   },
   {
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -208,7 +200,7 @@
    "team": "VBC",
    "position": "F",
    "name": "Nikola Mirotic",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -221,9 +213,9 @@
    "comment": "Knee"
   },
   {
-   "team": "PBB",
+   "team": "BAR",
    "position": "G",
-   "name": "Frank Ntilikina",
+   "name": "Juan Nunez",
    "status": "Out",
    "round": "",
    "comment": ""
@@ -240,7 +232,7 @@
    "team": "FBT",
    "position": "C",
    "name": "Dwight Powell",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -248,7 +240,7 @@
    "team": "VBC",
    "position": "F",
    "name": "Nate Reuvers",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Foot"
   },
@@ -272,7 +264,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Tadas Sedekerskis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
   },
@@ -296,7 +288,7 @@
    "team": "DUB",
    "position": "G",
    "name": "Thomas Walkup",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -312,7 +304,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   }

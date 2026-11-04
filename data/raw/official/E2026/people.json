@@ -140,9 +140,9 @@
     "code": "CAN",
     "name": "Canada"
    },
-   "twitterAccount": null,
-   "instagramAccount": null,
-   "facebookAccount": null,
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
    "isReferee": false,
    "images": {}
   },
@@ -1448,8 +1448,8 @@
   "startDate": "2026-09-28T15:49:50.382",
   "endDate": "2027-06-30T00:00:00",
   "order": 0,
-  "dorsal": "95",
-  "dorsalRaw": "95",
+  "dorsal": "",
+  "dorsalRaw": "",
   "position": 2,
   "positionName": "Forward",
   "lastTeam": "PARIS BASKETBALL",

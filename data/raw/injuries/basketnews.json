@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-04T09:28:03.193984+00:00",
- "updatedAt": "2026-11-04T08:21:00",
+ "fetchedAt": "2026-11-04T18:04:24.103192+00:00",
+ "updatedAt": "2026-11-04T12:53:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -82,7 +82,7 @@
    "name": "Devin Booker",
    "status": "Out",
    "round": "Round 10",
-   "comment": "DNP in the domestic league (injured)(11.02). Might miss a couple of months of action."
+   "comment": "Coach Poetta confirmed on November 2 that Booker suffered a serious injury and could miss months of action."
   },
   {
    "team": "Armani Olimpia Milan",
@@ -184,9 +184,9 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "PG",
    "name": "Stefan Miljenovic",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 10",
-   "comment": "DNP in Round 9 (coach's decision) after DNP in Rounds 4-8 (ankle injury)"
+   "comment": "Ruled out for Round 10 after DNP in Rounds 4-9 (ankle injury)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -286,11 +286,19 @@
   },
   {
    "team": "FC Barcelona",
+   "position": "C",
+   "name": "Aleksander Balcerowski",
+   "status": "Ready",
+   "round": "Round 10",
+   "comment": "Travels with the team, expected to play"
+  },
+  {
+   "team": "FC Barcelona",
    "position": "PG",
    "name": "Umoja Gibson",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 10",
-   "comment": "DNP in Round 9 after hard hit to his knee in Round 8. DNP in the domestic league (11.01)"
+   "comment": "Didn't travel with the team (knee soreness)"
   },
   {
    "team": "FC Barcelona",
@@ -304,7 +312,7 @@
    "team": "FC Barcelona",
    "position": "PF",
    "name": "Yoan Makoundou",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 10",
    "comment": "Left knee injury"
   },
@@ -312,7 +320,7 @@
    "team": "FC Barcelona",
    "position": "PG",
    "name": "Juan Nunez",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 10",
    "comment": "Right ankle sprain, expected to miss around 10 days (10.29). DNP in the domestic league (11.01)"
   },
@@ -344,9 +352,9 @@
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Dwight Powell",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 10",
-   "comment": "New signing (10.30). DNP in the domestic league (11.01)"
+   "comment": "Registered to the EuroLeague roster, DNP in the domestic league on Sunday (new signing)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -419,6 +427,14 @@
    "status": "Out",
    "round": "Round 10",
    "comment": "Ruled out for Round 10 after DNP in Rounds 8-9 (hip injury)"
+  },
+  {
+   "team": "Kosner Baskonia Vitoria-Gasteiz",
+   "position": "C",
+   "name": "Marcio Santos",
+   "status": "Out",
+   "round": "Round 10",
+   "comment": "Out indefinitely (left calf tear)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -703,6 +719,14 @@
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PF",
+   "name": "Bandja Sy",
+   "status": "Expected",
+   "round": "",
+   "comment": ""
+  },
+  {
+   "team": "Partizan Mozzart Bet Belgrade",
+   "position": "PF",
    "name": "Derek Willis",
    "status": "Out",
    "round": "Round 10",
@@ -792,9 +816,9 @@
    "team": "Valencia Basket",
    "position": "PF",
    "name": "Nikola Mirotic",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 10",
-   "comment": "Muscle injury (10.29). DNP in the domestic league (11.01)"
+   "comment": "Ruled out for Round 10 after DNP in Round 9, but might be in contention to play in Round 11 (muscle injury)"
   },
   {
    "team": "Valencia Basket",
@@ -802,7 +826,7 @@
    "name": "Nate Reuvers",
    "status": "Doubtful",
    "round": "Round 10",
-   "comment": "Suffered foot bone injury (10.25). DNP in Rounds 8-9 and in the domestic league (11.01)"
+   "comment": "Ruled out for Round 10 after DNP in Rounds 8-9 but might be in contention to play in Round 11 (foot bone injury)"
   },
   {
    "team": "Virtus Bologna",
