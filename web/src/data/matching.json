@@ -30,16 +30,6 @@
   "match_confidence": 59.3
  },
  {
-  "fantaking_id": 3960,
-  "fantaking_name": "T. Blatt",
-  "fantaking_team": "HTA",
-  "club_code": "HTA",
-  "person_code": "011193",
-  "official_name": "BLATT, TAMIR",
-  "match_method": "prior-season",
-  "match_confidence": 90.0
- },
- {
   "fantaking_id": 4026,
   "fantaking_name": "B. Yildizli",
   "fantaking_team": "EFS",
@@ -1356,6 +1346,16 @@
   "club_code": "MUN",
   "person_code": "011244",
   "official_name": "DA SILVA, OSCAR",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 3960,
+  "fantaking_name": "T. Blatt",
+  "fantaking_team": "HTA",
+  "club_code": "HTA",
+  "person_code": "011193",
+  "official_name": "BLATT, TAMIR",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -3546,6 +3546,26 @@
   "club_code": "PAR",
   "person_code": "015400",
   "official_name": "FRANKS, ROBERT",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 13947,
+  "fantaking_name": "J. Konchar",
+  "fantaking_team": "OLY",
+  "club_code": "OLY",
+  "person_code": "015402",
+  "official_name": "KONCHAR, JOHN",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 13948,
+  "fantaking_name": "D. Powell",
+  "fantaking_team": "FBT",
+  "club_code": "ULK",
+  "person_code": "015405",
+  "official_name": "POWELL, DWIGHT",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
