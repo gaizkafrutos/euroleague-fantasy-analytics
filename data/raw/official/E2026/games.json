@@ -29395,7 +29395,7 @@
   "round": 10,
   "roundAlias": "Round 10",
   "roundName": "Round 10",
-  "played": false,
+  "played": true,
   "date": "2026-11-04T20:45:00",
   "confirmedDate": true,
   "confirmedHour": true,
@@ -29414,14 +29414,16 @@
      "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 112,
+   "standingsScore": 101,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
+    "partials1": 18,
+    "partials2": 30,
+    "partials3": 25,
+    "partials4": 28,
+    "extraPeriods": {
+     "1": 11
+    }
    }
   },
   "road": {
@@ -29436,18 +29438,20 @@
      "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 115,
+   "standingsScore": 101,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
+    "partials1": 24,
+    "partials2": 27,
+    "partials3": 23,
+    "partials4": 27,
+    "extraPeriods": {
+     "1": 14
+    }
    }
   },
-  "audience": 0,
-  "audienceConfirmed": false,
+  "audience": 10164,
+  "audienceConfirmed": true,
   "socialFeed": "",
   "operationsCode": null,
   "referee1": {

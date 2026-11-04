@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-04T18:04:24.638832+00:00",
+ "fetchedAt": "2026-11-04T23:46:35.863505+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -19,6 +19,14 @@
    "status": "Game time",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "RMB",
+   "position": "G",
+   "name": "Facundo Campazzo",
+   "status": "Out",
+   "round": "",
+   "comment": "Hamstring"
   },
   {
    "team": "EFS",
@@ -275,14 +283,6 @@
    "status": "Out",
    "round": "",
    "comment": ""
-  },
-  {
-   "team": "RMB",
-   "position": "F",
-   "name": "Nick Smith Jr",
-   "status": "Out",
-   "round": "",
-   "comment": "Foot"
   },
   {
    "team": "DUB",
