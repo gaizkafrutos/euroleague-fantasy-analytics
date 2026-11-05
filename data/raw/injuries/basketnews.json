@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-04T18:04:24.103192+00:00",
- "updatedAt": "2026-11-04T12:53:00",
+ "fetchedAt": "2026-11-05T06:59:33.222818+00:00",
+ "updatedAt": "2026-11-04T19:08:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -598,6 +598,14 @@
   },
   {
    "team": "Panathinaikos AKTOR Athens",
+   "position": "SF",
+   "name": "Panagiotis Kalaitzakis",
+   "status": "Out",
+   "round": "Round 10",
+   "comment": "Not included in 12-man roster (coach's decision)"
+  },
+  {
+   "team": "Panathinaikos AKTOR Athens",
    "position": "C",
    "name": "Ioannis Kouzeloglou",
    "status": "Out",
@@ -632,9 +640,9 @@
    "team": "Panathinaikos AKTOR Athens",
    "position": "PG",
    "name": "Kostas Sloukas",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 10",
-   "comment": "Traveled for Round 10 after DNP in Round 9 (rest)"
+   "comment": "Included in 12-man roster after DNP in Round 9 (rest)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -719,14 +727,6 @@
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PF",
-   "name": "Bandja Sy",
-   "status": "Expected",
-   "round": "",
-   "comment": ""
-  },
-  {
-   "team": "Partizan Mozzart Bet Belgrade",
-   "position": "PF",
    "name": "Derek Willis",
    "status": "Out",
    "round": "Round 10",
@@ -768,9 +768,9 @@
    "team": "Real Madrid",
    "position": "PG",
    "name": "Sergio Llull",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 10",
-   "comment": "Was included in 12-man roster for Round 9 but DNP after DNP in Rounds 1-8 (coach's decision). Played in the domestic league (11.01)"
+   "comment": "Included in 12-man roster after DNP in Rounds 1-9 (coach's decision)"
   },
   {
    "team": "Real Madrid",
@@ -784,25 +784,33 @@
    "team": "Real Madrid",
    "position": "C",
    "name": "Olivier Sarr",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 10",
-   "comment": "DNP in Rounds 1-9 (coach's decision). Played in the domestic league (11.01)"
+   "comment": "Included in 12-man roster after DNP in Rounds 1-9 (coach's decision)"
   },
   {
    "team": "Real Madrid",
    "position": "PG",
    "name": "Max Shulga",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 10",
-   "comment": "Not included in 12-man roster in Round 9 (coach's decision). Played in the domestic league (11.01)"
+   "comment": "Included in 12-man roster after DNP in Round 9 (coach's decision)"
   },
   {
    "team": "Real Madrid",
    "position": "PG",
    "name": "Nick Smith Jr.",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 10",
-   "comment": "Will travel for Round 10 after DNP in Rounds 8-9 (right foot sole discomfort)"
+   "comment": "Included in 12-man roster after DNP in Rounds 8-9 (right foot sole discomfort)"
+  },
+  {
+   "team": "Valencia Basket",
+   "position": "PF",
+   "name": "Mouhamadou Gueye",
+   "status": "Out",
+   "round": "Round 10",
+   "comment": "Undisclosed"
   },
   {
    "team": "Valencia Basket",
