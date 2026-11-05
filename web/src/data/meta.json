@@ -1,23 +1,23 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-05T07:00:01.401190+00:00",
+ "generatedAt": "2026-11-05T16:33:19.186459+00:00",
  "currentRound": 10,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 61,
- "lastPriceCapture": "2026-11-04T23:46:37.040077+00:00",
- "lastPriceCheck": "2026-11-05T06:59:34.875428+00:00",
+ "priceSnapshots": 62,
+ "lastPriceCapture": "2026-11-05T16:32:45.382264+00:00",
+ "lastPriceCheck": "2026-11-05T16:32:45.382264+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
   "games": 91
  },
  "teamStrengthSource": "temporada en curso, encogida hacia la anterior",
- "players": 363,
- "matched": 360,
- "matchRate": 0.992,
+ "players": 360,
+ "matched": 358,
+ "matchRate": 0.994,
  "budget": 100.0,
  "coachGames": 182,
  "matchModel": {
@@ -25,7 +25,7 @@
   "marginSd": 12.21
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-05T06:59:39.759172+00:00",
+  "generatedAt": "2026-11-05T16:32:50.111307+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -610,18 +610,20 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-04T19:08:00",
-  "fetchedAt": "2026-11-05T06:59:33.717936+00:00",
-  "rows": 151,
-  "matched": 107,
+  "updatedAt": "2026-11-05T14:26:00",
+  "fetchedAt": "2026-11-05T16:32:44.435621+00:00",
+  "rows": 150,
+  "matched": 105,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
+   "Vojin Medarevic (Crvena Zvezda Meridianbet Belgrade)",
    "Ognjen Simjanovski (Crvena Zvezda Meridianbet Belgrade)",
    "Awudu Abass (Dubai Basketball)",
    "Tomislav Vuckovic (Dubai Basketball)",
    "Lorenz Sanz (LDLC ASVEL Villeurbanne)",
    "Gabriel Lundberg (Maccabi Rapyd Tel Aviv)",
+   "Nobel Boungou-Colo (Paris Basketball)",
    "Mitar Bosnjakovic (Partizan Mozzart Bet Belgrade)",
    "Lefteris Mantzoukas (PAO)",
    "Mady Sissoko (BJK)"
@@ -630,36 +632,36 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-04T19:08:00",
-    "fetchedAt": "2026-11-05T06:59:33.222818+00:00",
+    "updatedAt": "2026-11-05T14:26:00",
+    "fetchedAt": "2026-11-05T16:32:44.036557+00:00",
     "rows": 113,
-    "matched": 105,
-    "flagged": 105
+    "matched": 103,
+    "flagged": 103
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-05T06:59:33.717936+00:00",
-    "rows": 38,
-    "matched": 36,
+    "fetchedAt": "2026-11-05T16:32:44.435621+00:00",
+    "rows": 37,
+    "matched": 35,
     "flagged": 2
    }
   ],
   "nextRound": 10,
-  "unregistered": 7,
+  "unregistered": 6,
   "flagged": {
-   "out": 40,
+   "out": 32,
    "doubt": 59,
-   "probable": 15
+   "probable": 20
   }
  },
  "warnings": [
-  "Precios capturados el 2026-11-04 23:46 UTC: el juego aún no ha aplicado la revalorización (J10). Se usa el precio pendiente de 29 jugadores hasta la próxima captura."
+  "Precios capturados el 2026-11-05 16:32 UTC: el juego aún no ha aplicado la revalorización (J10). Se usa el precio pendiente de 29 jugadores hasta la próxima captura."
  ],
  "priceFreshness": {
   "stale": true,
-  "capturedAt": "2026-11-04T23:46:37.040077+00:00",
+  "capturedAt": "2026-11-05T16:32:45.382264+00:00",
   "lastGameAt": "2026-11-04T19:45:00+00:00",
   "round": 10,
   "reason": "el juego aún no ha aplicado la revalorización",

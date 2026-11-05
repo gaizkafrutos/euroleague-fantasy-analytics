@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-05T06:59:33.717936+00:00",
+ "fetchedAt": "2026-11-05T16:32:44.435621+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -32,7 +32,7 @@
    "team": "EFS",
    "position": "G",
    "name": "Isaia Cordinier",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -67,14 +67,6 @@
    "status": "Game time",
    "round": "",
    "comment": "Back"
-  },
-  {
-   "team": "KBA",
-   "position": "F",
-   "name": "Chris Duarte",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "HTA",
@@ -152,7 +144,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Rodions Kurucs",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -272,7 +264,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Tadas Sedekerskis",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Thigh"
   },
