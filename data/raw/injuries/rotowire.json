@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-06T16:00:04.110974+00:00",
+ "fetchedAt": "2026-11-06T21:36:51.808420+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "DUB",
    "position": "F",
    "name": "Justin Anderson",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Hamstring"
   },
@@ -16,9 +16,17 @@
    "team": "VIR",
    "position": "G",
    "name": "Tommaso Baldasso",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "MIL",
+   "position": "C",
+   "name": "Devin Booker",
+   "status": "Out",
+   "round": "",
+   "comment": "Thigh"
   },
   {
    "team": "RMB",
@@ -77,14 +85,6 @@
    "comment": "Achilles"
   },
   {
-   "team": "OLY",
-   "position": "F",
-   "name": "Evan Fournier",
-   "status": "Out",
-   "round": "",
-   "comment": "Shoulder"
-  },
-  {
    "team": "RMB",
    "position": "C",
    "name": "Usman Garuba",
@@ -101,10 +101,18 @@
    "comment": ""
   },
   {
+   "team": "PAR",
+   "position": "C",
+   "name": "Kevarrius Hayes",
+   "status": "Out",
+   "round": "",
+   "comment": "Shoulder"
+  },
+  {
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Achilles"
   },
@@ -136,7 +144,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Tonye Jekiri",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Thigh"
   },
@@ -152,7 +160,7 @@
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -192,7 +200,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   },
@@ -280,7 +288,7 @@
    "team": "DUB",
    "position": "G",
    "name": "Thomas Walkup",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Back"
   },
@@ -296,7 +304,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   }
