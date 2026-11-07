@@ -1,22 +1,22 @@
 {
  "method": "ilp",
- "totalPrice": 99.9,
- "totalProjection": 116.77,
- "scoredProjection": 149.4,
+ "totalPrice": 100.0,
+ "totalProjection": 114.18,
+ "scoredProjection": 148.32,
  "captain": "3766",
  "starters": [
   "3766",
   "3768",
-  "7424",
+  "3791",
   "3838",
   "3851"
  ],
- "sixth": "3824",
+ "sixth": "3991",
  "bench": [
-  "4258",
   "8644",
-  "3867",
-  "3886"
+  "11541",
+  "11521",
+  "4009"
  ],
  "coach": {
   "key": "4255",
@@ -24,9 +24,17 @@
   "position": "E",
   "club": "PAM",
   "price": 8.0,
-  "projection": 15.87
+  "projection": 15.89
  },
  "players": [
+  {
+   "key": "3791",
+   "name": "JONES, CARLIK",
+   "position": "G",
+   "club": "PAR",
+   "price": 13.7,
+   "projection": 17.58
+  },
   {
    "key": "3851",
    "name": "FELIZ, ANDRES",
@@ -36,28 +44,20 @@
    "projection": 13.9
   },
   {
-   "key": "3824",
-   "name": "VILDOZA, LUCA",
-   "position": "G",
-   "club": "PAR",
-   "price": 8.4,
-   "projection": 11.23
-  },
-  {
-   "key": "4258",
-   "name": "PUERTO, JOSEP",
+   "key": "11541",
+   "name": "CARDENAS, ALVARO",
    "position": "G",
    "club": "PAM",
-   "price": 5.0,
-   "projection": 4.98
+   "price": 4.3,
+   "projection": 3.59
   },
   {
-   "key": "3886",
-   "name": "HACKETT, DANIEL",
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
    "position": "G",
-   "club": "VIR",
-   "price": 4.6,
-   "projection": 3.82
+   "club": "ASV",
+   "price": 4.5,
+   "projection": 3.42
   },
   {
    "key": "3766",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "OLY",
    "price": 18.9,
-   "projection": 25.11
+   "projection": 25.12
   },
   {
    "key": "3838",
@@ -73,7 +73,15 @@
    "position": "F",
    "club": "IST",
    "price": 9.8,
-   "projection": 13.94
+   "projection": 13.95
+  },
+  {
+   "key": "3991",
+   "name": "ABALDE, ALBERTO",
+   "position": "F",
+   "club": "MAD",
+   "price": 6.1,
+   "projection": 8.08
   },
   {
    "key": "8644",
@@ -84,28 +92,20 @@
    "projection": 4.04
   },
   {
-   "key": "3867",
-   "name": "PAPANIKOLAOU, KOSTAS",
-   "position": "F",
-   "club": "OLY",
-   "price": 4.2,
-   "projection": 3.86
-  },
-  {
    "key": "3768",
    "name": "LESSORT, MATHIAS",
    "position": "C",
    "club": "PAN",
    "price": 16.7,
-   "projection": 21.8
+   "projection": 21.81
   },
   {
-   "key": "7424",
-   "name": "DIARRA, ALIOU",
+   "key": "4009",
+   "name": "DIOP, OUSMANE",
    "position": "C",
-   "club": "VIR",
-   "price": 10.8,
-   "projection": 14.09
+   "club": "MIL",
+   "price": 4.5,
+   "projection": 2.69
   }
  ],
  "available": true,
