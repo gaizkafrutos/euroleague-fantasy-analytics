@@ -74,7 +74,7 @@
   "valuePerCredit": 0.94,
   "valueProjected": 0.0,
   "valueMarket": 0.94,
-  "bargainScore": 15.2,
+  "bargainScore": 15.9,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -301,7 +301,7 @@
   "valuePerCredit": 0.583,
   "valueProjected": 0.503,
   "valueMarket": 0.583,
-  "bargainScore": 49.2,
+  "bargainScore": 49.4,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -521,7 +521,7 @@
   "valuePerCredit": 1.117,
   "valueProjected": 1.03,
   "valueMarket": 1.125,
-  "bargainScore": 82.8,
+  "bargainScore": 82.9,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -631,7 +631,7 @@
   "valuePerCredit": 0.977,
   "valueProjected": 0.82,
   "valueMarket": 0.979,
-  "bargainScore": 63.7,
+  "bargainScore": 63.9,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -741,7 +741,7 @@
   "valuePerCredit": 1.014,
   "valueProjected": 1.003,
   "valueMarket": 1.015,
-  "bargainScore": 83.4,
+  "bargainScore": 83.6,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -851,7 +851,7 @@
   "valuePerCredit": 1.061,
   "valueProjected": 0.0,
   "valueMarket": 1.059,
-  "bargainScore": 16.4,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -968,7 +968,7 @@
   "valuePerCredit": 1.32,
   "valueProjected": 0.316,
   "valueMarket": 1.32,
-  "bargainScore": 47.2,
+  "bargainScore": 47.6,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -1086,7 +1086,7 @@
   "valuePerCredit": 0.577,
   "valueProjected": 0.675,
   "valueMarket": 0.577,
-  "bargainScore": 53.0,
+  "bargainScore": 53.2,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -1196,7 +1196,7 @@
   "valuePerCredit": 1.129,
   "valueProjected": 1.026,
   "valueMarket": 1.132,
-  "bargainScore": 83.2,
+  "bargainScore": 83.3,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -1306,7 +1306,7 @@
   "valuePerCredit": 0.819,
   "valueProjected": 0.887,
   "valueMarket": 0.813,
-  "bargainScore": 60.4,
+  "bargainScore": 60.6,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -1416,7 +1416,7 @@
   "valuePerCredit": 0.926,
   "valueProjected": 0.95,
   "valueMarket": 0.93,
-  "bargainScore": 78.5,
+  "bargainScore": 78.7,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -1526,7 +1526,7 @@
   "valuePerCredit": 0.802,
   "valueProjected": 0.369,
   "valueMarket": 0.802,
-  "bargainScore": 42.1,
+  "bargainScore": 42.6,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -1636,7 +1636,7 @@
   "valuePerCredit": 0.718,
   "valueProjected": 0.192,
   "valueMarket": 0.718,
-  "bargainScore": 31.8,
+  "bargainScore": 32.7,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -1659,11 +1659,11 @@
   "registered": true,
   "availability": {
    "level": "doubt",
-   "kind": "roster",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Rounds 8-9 (undisclosed). Played in the domestic league (11.02)",
-   "reported": "Out · Round 10",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-10 (undisclosed)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -1754,7 +1754,7 @@
   "valuePerCredit": 0.709,
   "valueProjected": 0.658,
   "valueMarket": 0.707,
-  "bargainScore": 52.9,
+  "bargainScore": 53.1,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -1864,7 +1864,7 @@
   "valuePerCredit": 1.141,
   "valueProjected": 0.819,
   "valueMarket": 1.142,
-  "bargainScore": 74.0,
+  "bargainScore": 74.2,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -1974,7 +1974,7 @@
   "valuePerCredit": 0.912,
   "valueProjected": 0.841,
   "valueMarket": 0.909,
-  "bargainScore": 65.4,
+  "bargainScore": 65.5,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -2084,7 +2084,7 @@
   "valuePerCredit": 0.725,
   "valueProjected": 0.369,
   "valueMarket": 0.728,
-  "bargainScore": 36.5,
+  "bargainScore": 37.0,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -2194,7 +2194,7 @@
   "valuePerCredit": 0.777,
   "valueProjected": 0.379,
   "valueMarket": 0.777,
-  "bargainScore": 48.6,
+  "bargainScore": 49.0,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -2414,7 +2414,7 @@
   "valuePerCredit": 0.903,
   "valueProjected": 1.017,
   "valueMarket": 0.904,
-  "bargainScore": 72.2,
+  "bargainScore": 72.4,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -2524,7 +2524,7 @@
   "valuePerCredit": 1.164,
   "valueProjected": 0.948,
   "valueMarket": 1.165,
-  "bargainScore": 81.4,
+  "bargainScore": 81.5,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -2634,7 +2634,7 @@
   "valuePerCredit": 1.167,
   "valueProjected": 1.009,
   "valueMarket": 1.168,
-  "bargainScore": 80.0,
+  "bargainScore": 80.2,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -2744,7 +2744,7 @@
   "valuePerCredit": 1.301,
   "valueProjected": 1.105,
   "valueMarket": 1.304,
-  "bargainScore": 90.2,
+  "bargainScore": 90.3,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -2854,7 +2854,7 @@
   "valuePerCredit": 0.669,
   "valueProjected": 0.375,
   "valueMarket": 0.676,
-  "bargainScore": 32.7,
+  "bargainScore": 33.2,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -2964,7 +2964,7 @@
   "valuePerCredit": 1.107,
   "valueProjected": 1.074,
   "valueMarket": 1.106,
-  "bargainScore": 86.3,
+  "bargainScore": 86.4,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -3074,7 +3074,7 @@
   "valuePerCredit": 0.987,
   "valueProjected": 1.037,
   "valueMarket": 0.987,
-  "bargainScore": 79.4,
+  "bargainScore": 79.6,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -3184,7 +3184,7 @@
   "valuePerCredit": -0.141,
   "valueProjected": 0.0,
   "valueMarket": -0.141,
-  "bargainScore": 6.5,
+  "bargainScore": 7.1,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -3301,7 +3301,7 @@
   "valuePerCredit": 1.236,
   "valueProjected": 0.0,
   "valueMarket": 1.236,
-  "bargainScore": 26.7,
+  "bargainScore": 27.3,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -3418,7 +3418,7 @@
   "valuePerCredit": 1.377,
   "valueProjected": 0.605,
   "valueMarket": 1.378,
-  "bargainScore": 62.4,
+  "bargainScore": 62.6,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -3528,7 +3528,7 @@
   "valuePerCredit": 1.121,
   "valueProjected": 0.251,
   "valueMarket": 1.122,
-  "bargainScore": 33.7,
+  "bargainScore": 34.4,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -3646,7 +3646,7 @@
   "valuePerCredit": 1.153,
   "valueProjected": 0.957,
   "valueMarket": 1.15,
-  "bargainScore": 75.4,
+  "bargainScore": 75.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -3756,7 +3756,7 @@
   "valuePerCredit": 0.927,
   "valueProjected": 1.101,
   "valueMarket": 0.931,
-  "bargainScore": 84.0,
+  "bargainScore": 84.2,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -3866,7 +3866,7 @@
   "valuePerCredit": 1.045,
   "valueProjected": 1.053,
   "valueMarket": 1.062,
-  "bargainScore": 83.2,
+  "bargainScore": 83.4,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -3976,7 +3976,7 @@
   "valuePerCredit": 0.794,
   "valueProjected": 0.885,
   "valueMarket": 0.792,
-  "bargainScore": 68.4,
+  "bargainScore": 68.5,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -4086,7 +4086,7 @@
   "valuePerCredit": 0.506,
   "valueProjected": 0.753,
   "valueMarket": 0.506,
-  "bargainScore": 54.4,
+  "bargainScore": 54.6,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -4196,7 +4196,7 @@
   "valuePerCredit": 0.67,
   "valueProjected": 0.565,
   "valueMarket": 0.667,
-  "bargainScore": 43.9,
+  "bargainScore": 44.2,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -4306,7 +4306,7 @@
   "valuePerCredit": 0.95,
   "valueProjected": 0.886,
   "valueMarket": 0.953,
-  "bargainScore": 63.7,
+  "bargainScore": 63.9,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -4416,7 +4416,7 @@
   "valuePerCredit": 0.867,
   "valueProjected": 1.026,
   "valueMarket": 0.87,
-  "bargainScore": 74.8,
+  "bargainScore": 74.9,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -4526,7 +4526,7 @@
   "valuePerCredit": 0.925,
   "valueProjected": 1.033,
   "valueMarket": 0.928,
-  "bargainScore": 78.7,
+  "bargainScore": 78.9,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -4625,18 +4625,18 @@
    "plusMinusAvg": -0.8,
    "minutesPrior": null
   },
-  "projectedFp": 9.43,
+  "projectedFp": 2.48,
   "projectedIfPlays": 9.93,
-  "playProb": 0.95,
+  "playProb": 0.25,
   "expectedMinutes": 17.4,
   "matchup": {
    "opponentFactor": 1.063,
    "homeFactor": 1.052
   },
   "valuePerCredit": 1.209,
-  "valueProjected": 1.179,
+  "valueProjected": 0.31,
   "valueMarket": 1.212,
-  "bargainScore": 77.6,
+  "bargainScore": 37.3,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -4657,16 +4657,24 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Suffered a hand injury in Round 10, ruled out for domestic league game on Sunday",
+   "reported": "Uncertain · Round 11",
+   "source": "BasketNews"
+  },
   "outlook": {
    "breakEven": 8.7,
-   "expectedChange": 0.04,
-   "riseProb": 0.475,
-   "sd": 8.9,
-   "floor": 3.5,
-   "ceiling": 15.2,
-   "p90": 21.0,
-   "certainty": 0.056
+   "expectedChange": -0.06,
+   "riseProb": 0.125,
+   "sd": 6.17,
+   "floor": 0.0,
+   "ceiling": 6.5,
+   "p90": 10.5,
+   "certainty": 0.0
   },
   "thumb": "/fotos/3824.webp?v=97ceb10c",
   "clubCrestThumb": "/escudos/PAR.webp?v=ce613aaa"
@@ -4746,7 +4754,7 @@
   "valuePerCredit": 0.85,
   "valueProjected": 0.709,
   "valueMarket": 0.854,
-  "bargainScore": 58.6,
+  "bargainScore": 58.8,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -4856,7 +4864,7 @@
   "valuePerCredit": -0.371,
   "valueProjected": 0.052,
   "valueMarket": -0.371,
-  "bargainScore": 19.0,
+  "bargainScore": 20.2,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -4974,7 +4982,7 @@
   "valuePerCredit": 0.161,
   "valueProjected": 0.171,
   "valueMarket": 0.161,
-  "bargainScore": 26.0,
+  "bargainScore": 27.1,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -5084,7 +5092,7 @@
   "valuePerCredit": 0.895,
   "valueProjected": 0.2,
   "valueMarket": 0.902,
-  "bargainScore": 22.9,
+  "bargainScore": 24.0,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -5108,10 +5116,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Didn't travel for Round 10 after DNP in Rounds 8-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -5202,7 +5210,7 @@
   "valuePerCredit": 0.651,
   "valueProjected": 0.887,
   "valueMarket": 0.648,
-  "bargainScore": 59.2,
+  "bargainScore": 59.4,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -5312,7 +5320,7 @@
   "valuePerCredit": 1.28,
   "valueProjected": 1.178,
   "valueMarket": 1.283,
-  "bargainScore": 88.5,
+  "bargainScore": 88.6,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -5422,7 +5430,7 @@
   "valuePerCredit": 1.36,
   "valueProjected": 0.946,
   "valueMarket": 1.358,
-  "bargainScore": 76.5,
+  "bargainScore": 76.7,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -5532,7 +5540,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.8,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -5649,7 +5657,7 @@
   "valuePerCredit": 1.4,
   "valueProjected": 0.99,
   "valueMarket": 1.397,
-  "bargainScore": 66.0,
+  "bargainScore": 66.2,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -5869,7 +5877,7 @@
   "valuePerCredit": 0.922,
   "valueProjected": 0.24,
   "valueMarket": 0.921,
-  "bargainScore": 35.1,
+  "bargainScore": 36.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -5987,7 +5995,7 @@
   "valuePerCredit": 1.347,
   "valueProjected": 1.091,
   "valueMarket": 1.349,
-  "bargainScore": 73.6,
+  "bargainScore": 73.8,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -6097,7 +6105,7 @@
   "valuePerCredit": 1.077,
   "valueProjected": 1.062,
   "valueMarket": 1.08,
-  "bargainScore": 80.9,
+  "bargainScore": 81.1,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -6207,7 +6215,7 @@
   "valuePerCredit": 0.072,
   "valueProjected": 0.305,
   "valueMarket": 0.078,
-  "bargainScore": 29.1,
+  "bargainScore": 29.6,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -6427,7 +6435,7 @@
   "valuePerCredit": 1.672,
   "valueProjected": 0.0,
   "valueMarket": 1.669,
-  "bargainScore": 21.7,
+  "bargainScore": 22.3,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -6654,7 +6662,7 @@
   "valuePerCredit": 1.003,
   "valueProjected": 0.864,
   "valueMarket": 1.0,
-  "bargainScore": 61.2,
+  "bargainScore": 61.5,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -6764,7 +6772,7 @@
   "valuePerCredit": 0.988,
   "valueProjected": 0.81,
   "valueMarket": 0.988,
-  "bargainScore": 59.2,
+  "bargainScore": 59.4,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -6874,7 +6882,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.8,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -6991,7 +6999,7 @@
   "valuePerCredit": 1.066,
   "valueProjected": 1.027,
   "valueMarket": 1.071,
-  "bargainScore": 81.1,
+  "bargainScore": 81.2,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -7101,7 +7109,7 @@
   "valuePerCredit": 1.103,
   "valueProjected": 1.07,
   "valueMarket": 1.104,
-  "bargainScore": 75.9,
+  "bargainScore": 76.1,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -7211,7 +7219,7 @@
   "valuePerCredit": 0.786,
   "valueProjected": 0.0,
   "valueMarket": 0.783,
-  "bargainScore": 22.6,
+  "bargainScore": 23.3,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -7328,7 +7336,7 @@
   "valuePerCredit": 0.302,
   "valueProjected": 0.166,
   "valueMarket": 0.297,
-  "bargainScore": 23.8,
+  "bargainScore": 25.0,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -7446,7 +7454,7 @@
   "valuePerCredit": 1.012,
   "valueProjected": 1.126,
   "valueMarket": 1.014,
-  "bargainScore": 80.1,
+  "bargainScore": 80.3,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -7556,7 +7564,7 @@
   "valuePerCredit": 0.32,
   "valueProjected": 0.704,
   "valueMarket": 0.319,
-  "bargainScore": 48.0,
+  "bargainScore": 48.2,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -7666,7 +7674,7 @@
   "valuePerCredit": 1.081,
   "valueProjected": 0.919,
   "valueMarket": 1.071,
-  "bargainScore": 58.8,
+  "bargainScore": 59.1,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -7776,7 +7784,7 @@
   "valuePerCredit": 1.179,
   "valueProjected": 0.914,
   "valueMarket": 1.179,
-  "bargainScore": 68.3,
+  "bargainScore": 68.4,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -7886,7 +7894,7 @@
   "valuePerCredit": 1.276,
   "valueProjected": 0.0,
   "valueMarket": 1.274,
-  "bargainScore": 16.4,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -8003,7 +8011,7 @@
   "valuePerCredit": 0.73,
   "valueProjected": 0.855,
   "valueMarket": 0.733,
-  "bargainScore": 60.5,
+  "bargainScore": 60.7,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -8113,7 +8121,7 @@
   "valuePerCredit": 0.879,
   "valueProjected": 0.867,
   "valueMarket": 0.879,
-  "bargainScore": 66.0,
+  "bargainScore": 66.2,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -8212,18 +8220,18 @@
    "plusMinusAvg": 4.2,
    "minutesPrior": null
   },
-  "projectedFp": 3.0,
+  "projectedFp": 0.0,
   "projectedIfPlays": 11.99,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 17.8,
   "matchup": {
    "opponentFactor": 1.002,
    "homeFactor": 1.052
   },
   "valuePerCredit": 1.09,
-  "valueProjected": 0.254,
+  "valueProjected": 0.0,
   "valueMarket": 1.093,
-  "bargainScore": 30.3,
+  "bargainScore": 10.1,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -8245,23 +8253,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Baja en la J11",
+   "untilRound": 11,
    "detail": "Expected to be out until Round 14 after receiving one-month suspension by the club (10.22)",
-   "reported": "Out · Round 10",
+   "reported": "Out · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 12.9,
-   "expectedChange": -0.08,
-   "riseProb": 0.108,
-   "sd": 8.22,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 8.3,
-   "p90": 13.7,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/3874.webp?v=79e97000",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
@@ -8341,7 +8348,7 @@
   "valuePerCredit": 0.68,
   "valueProjected": 0.799,
   "valueMarket": 0.684,
-  "bargainScore": 48.1,
+  "bargainScore": 48.3,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -8451,7 +8458,7 @@
   "valuePerCredit": 0.775,
   "valueProjected": 0.201,
   "valueMarket": 0.775,
-  "bargainScore": 30.2,
+  "bargainScore": 31.1,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -8475,10 +8482,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Ankle injury suffered in Round 1, Willis was expected to rejoin the team during the second week of November",
-   "reported": "Out · Round 10",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -8569,7 +8576,7 @@
   "valuePerCredit": 0.929,
   "valueProjected": 1.013,
   "valueMarket": 0.927,
-  "bargainScore": 71.2,
+  "bargainScore": 71.4,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -8679,7 +8686,7 @@
   "valuePerCredit": 0.957,
   "valueProjected": 0.785,
   "valueMarket": 0.956,
-  "bargainScore": 54.9,
+  "bargainScore": 55.1,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -8789,7 +8796,7 @@
   "valuePerCredit": 1.15,
   "valueProjected": 1.166,
   "valueMarket": 1.163,
-  "bargainScore": 90.0,
+  "bargainScore": 90.1,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -8899,7 +8906,7 @@
   "valuePerCredit": 0.842,
   "valueProjected": 1.089,
   "valueMarket": 0.842,
-  "bargainScore": 76.7,
+  "bargainScore": 76.8,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -9009,7 +9016,7 @@
   "valuePerCredit": 0.865,
   "valueProjected": 0.83,
   "valueMarket": 0.87,
-  "bargainScore": 53.0,
+  "bargainScore": 53.3,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -9119,7 +9126,7 @@
   "valuePerCredit": 1.061,
   "valueProjected": 1.124,
   "valueMarket": 1.064,
-  "bargainScore": 88.0,
+  "bargainScore": 88.1,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -9229,7 +9236,7 @@
   "valuePerCredit": 1.064,
   "valueProjected": 0.939,
   "valueMarket": 1.067,
-  "bargainScore": 75.6,
+  "bargainScore": 75.7,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -9339,7 +9346,7 @@
   "valuePerCredit": 1.095,
   "valueProjected": 0.991,
   "valueMarket": 1.093,
-  "bargainScore": 75.1,
+  "bargainScore": 75.3,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -9449,7 +9456,7 @@
   "valuePerCredit": 0.882,
   "valueProjected": 0.195,
   "valueMarket": 0.875,
-  "bargainScore": 27.9,
+  "bargainScore": 29.0,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -9567,7 +9574,7 @@
   "valuePerCredit": 0.93,
   "valueProjected": 0.653,
   "valueMarket": 0.93,
-  "bargainScore": 57.0,
+  "bargainScore": 57.2,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -9677,7 +9684,7 @@
   "valuePerCredit": 1.072,
   "valueProjected": 0.84,
   "valueMarket": 1.07,
-  "bargainScore": 62.8,
+  "bargainScore": 62.9,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -9787,7 +9794,7 @@
   "valuePerCredit": 1.084,
   "valueProjected": 0.964,
   "valueMarket": 1.088,
-  "bargainScore": 75.8,
+  "bargainScore": 76.0,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -9897,7 +9904,7 @@
   "valuePerCredit": 1.337,
   "valueProjected": 1.147,
   "valueMarket": 1.339,
-  "bargainScore": 83.6,
+  "bargainScore": 83.7,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -10007,7 +10014,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.267,
   "valueMarket": 0.0,
-  "bargainScore": 35.4,
+  "bargainScore": 35.8,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -10031,10 +10038,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Out indefinitely after DNP in Rounds 1-9 (hamstring injury)",
-   "reported": "Out · Round 10",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -10125,7 +10132,7 @@
   "valuePerCredit": 0.993,
   "valueProjected": 0.0,
   "valueMarket": 1.013,
-  "bargainScore": 20.1,
+  "bargainScore": 20.8,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -10242,7 +10249,7 @@
   "valuePerCredit": 0.891,
   "valueProjected": 0.868,
   "valueMarket": 0.908,
-  "bargainScore": 67.1,
+  "bargainScore": 67.3,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -10352,7 +10359,7 @@
   "valuePerCredit": 0.812,
   "valueProjected": -0.389,
   "valueMarket": 0.812,
-  "bargainScore": 18.9,
+  "bargainScore": 19.0,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -10461,7 +10468,7 @@
   "valuePerCredit": 0.839,
   "valueProjected": 0.858,
   "valueMarket": 0.839,
-  "bargainScore": 67.7,
+  "bargainScore": 67.8,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -10571,7 +10578,7 @@
   "valuePerCredit": 1.34,
   "valueProjected": 0.345,
   "valueMarket": 1.337,
-  "bargainScore": 46.8,
+  "bargainScore": 47.3,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -10595,10 +10602,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Minor shoulder injury",
-   "reported": "Out · Round 10",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Round 10 (minor shoulder injury)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -10678,18 +10685,18 @@
    "plusMinusAvg": -6.0,
    "minutesPrior": null
   },
-  "projectedFp": 2.16,
+  "projectedFp": 0.0,
   "projectedIfPlays": 8.65,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 19.6,
   "matchup": {
    "opponentFactor": 1.055,
    "homeFactor": 0.948
   },
   "valuePerCredit": 0.721,
-  "valueProjected": 0.251,
+  "valueProjected": 0.0,
   "valueMarket": 0.721,
-  "bargainScore": 34.3,
+  "bargainScore": 16.0,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -10711,23 +10718,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Baja en la J11",
+   "untilRound": 11,
    "detail": "Aggravated previous hamstring injury in Round 6. Expected to be out until Round 14.",
-   "reported": "Out · Round 10",
+   "reported": "Out · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 9.3,
-   "expectedChange": -0.08,
-   "riseProb": 0.109,
-   "sd": 7.13,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 6.8,
-   "p90": 11.4,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/3914.webp?v=19b31c45",
   "clubCrestThumb": "/escudos/ZAL.webp?v=e452f9b4"
@@ -10807,7 +10813,7 @@
   "valuePerCredit": 0.627,
   "valueProjected": 0.81,
   "valueMarket": 0.635,
-  "bargainScore": 53.9,
+  "bargainScore": 54.2,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -10917,7 +10923,7 @@
   "valuePerCredit": 1.218,
   "valueProjected": 0.838,
   "valueMarket": 1.222,
-  "bargainScore": 61.4,
+  "bargainScore": 61.7,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -11027,7 +11033,7 @@
   "valuePerCredit": 0.946,
   "valueProjected": 0.454,
   "valueMarket": 0.952,
-  "bargainScore": 33.3,
+  "bargainScore": 33.7,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -11137,7 +11143,7 @@
   "valuePerCredit": 1.303,
   "valueProjected": 0.772,
   "valueMarket": 1.31,
-  "bargainScore": 57.0,
+  "bargainScore": 57.3,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -11357,7 +11363,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.191,
   "valueMarket": 0.0,
-  "bargainScore": 27.6,
+  "bargainScore": 28.7,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -11584,7 +11590,7 @@
   "valuePerCredit": 1.244,
   "valueProjected": 1.097,
   "valueMarket": 1.244,
-  "bargainScore": 78.3,
+  "bargainScore": 78.5,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -11694,7 +11700,7 @@
   "valuePerCredit": 0.935,
   "valueProjected": 0.813,
   "valueMarket": 0.933,
-  "bargainScore": 64.0,
+  "bargainScore": 64.1,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -11804,7 +11810,7 @@
   "valuePerCredit": 0.662,
   "valueProjected": 0.183,
   "valueMarket": 0.654,
-  "bargainScore": 23.9,
+  "bargainScore": 25.1,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -11922,7 +11928,7 @@
   "valuePerCredit": 1.407,
   "valueProjected": 1.093,
   "valueMarket": 1.41,
-  "bargainScore": 81.0,
+  "bargainScore": 81.2,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -12032,7 +12038,7 @@
   "valuePerCredit": 0.967,
   "valueProjected": 0.907,
   "valueMarket": 0.976,
-  "bargainScore": 56.5,
+  "bargainScore": 56.8,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -12142,7 +12148,7 @@
   "valuePerCredit": 0.472,
   "valueProjected": 0.663,
   "valueMarket": 0.478,
-  "bargainScore": 49.3,
+  "bargainScore": 49.5,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -12252,7 +12258,7 @@
   "valuePerCredit": 2.472,
   "valueProjected": 0.359,
   "valueMarket": 2.478,
-  "bargainScore": 35.7,
+  "bargainScore": 36.2,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -12479,7 +12485,7 @@
   "valuePerCredit": 0.609,
   "valueProjected": 0.667,
   "valueMarket": 0.61,
-  "bargainScore": 49.9,
+  "bargainScore": 50.2,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -12589,7 +12595,7 @@
   "valuePerCredit": 0.377,
   "valueProjected": 0.514,
   "valueMarket": 0.375,
-  "bargainScore": 36.9,
+  "bargainScore": 37.2,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -12809,7 +12815,7 @@
   "valuePerCredit": 0.861,
   "valueProjected": 0.877,
   "valueMarket": 0.867,
-  "bargainScore": 58.3,
+  "bargainScore": 58.5,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -12919,7 +12925,7 @@
   "valuePerCredit": 0.761,
   "valueProjected": 0.302,
   "valueMarket": 0.761,
-  "bargainScore": 36.0,
+  "bargainScore": 36.4,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -12943,10 +12949,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Round 9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 9-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -13037,7 +13043,7 @@
   "valuePerCredit": 1.32,
   "valueProjected": 1.166,
   "valueMarket": 1.325,
-  "bargainScore": 73.0,
+  "bargainScore": 73.1,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -13147,7 +13153,7 @@
   "valuePerCredit": 0.998,
   "valueProjected": 0.732,
   "valueMarket": 1.0,
-  "bargainScore": 44.3,
+  "bargainScore": 44.6,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -13246,18 +13252,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 1.18,
+  "projectedFp": 0.0,
   "projectedIfPlays": 4.7,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 15.2,
   "matchup": {
    "opponentFactor": 0.891,
    "homeFactor": 0.948
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.203,
+  "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 29.1,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -13279,23 +13285,22 @@
   },
   "registered": false,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Baja en la J11",
+   "untilRound": 11,
    "detail": "Out indefinitely, as he continues rehab after Achilles injury.",
-   "reported": "Out · Round 10",
+   "reported": "Out · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 6.2,
-   "expectedChange": -0.09,
-   "riseProb": 0.071,
-   "sd": 3.17,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 3.2,
-   "p90": 5.3,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": null,
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
@@ -13375,7 +13380,7 @@
   "valuePerCredit": -1.875,
   "valueProjected": -1.702,
   "valueMarket": -1.875,
-  "bargainScore": 16.9,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -13484,7 +13489,7 @@
   "valuePerCredit": 1.222,
   "valueProjected": 0.286,
   "valueMarket": 1.224,
-  "bargainScore": 41.5,
+  "bargainScore": 41.8,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -13602,7 +13607,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.33,
   "valueMarket": 0.0,
-  "bargainScore": 38.2,
+  "bargainScore": 38.6,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -13829,7 +13834,7 @@
   "valuePerCredit": 0.372,
   "valueProjected": 0.27,
   "valueMarket": 0.372,
-  "bargainScore": 27.7,
+  "bargainScore": 28.4,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -13939,7 +13944,7 @@
   "valuePerCredit": 0.986,
   "valueProjected": 1.052,
   "valueMarket": 0.986,
-  "bargainScore": 68.6,
+  "bargainScore": 68.8,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -14049,7 +14054,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": -0.135,
   "valueMarket": 0.0,
-  "bargainScore": 21.1,
+  "bargainScore": 21.2,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -14158,7 +14163,7 @@
   "valuePerCredit": 1.019,
   "valueProjected": 0.932,
   "valueMarket": 1.016,
-  "bargainScore": 57.1,
+  "bargainScore": 57.3,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -14268,7 +14273,7 @@
   "valuePerCredit": 0.425,
   "valueProjected": 0.417,
   "valueMarket": 0.425,
-  "bargainScore": 39.0,
+  "bargainScore": 39.3,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -14378,7 +14383,7 @@
   "valuePerCredit": 0.805,
   "valueProjected": 0.237,
   "valueMarket": 0.805,
-  "bargainScore": 29.2,
+  "bargainScore": 30.3,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -14488,7 +14493,7 @@
   "valuePerCredit": 0.13,
   "valueProjected": 0.333,
   "valueMarket": 0.125,
-  "bargainScore": 29.4,
+  "bargainScore": 29.9,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -14598,7 +14603,7 @@
   "valuePerCredit": 1.094,
   "valueProjected": 0.914,
   "valueMarket": 1.097,
-  "bargainScore": 55.9,
+  "bargainScore": 56.1,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -14817,7 +14822,7 @@
   "valuePerCredit": 1.312,
   "valueProjected": 1.153,
   "valueMarket": 1.305,
-  "bargainScore": 81.0,
+  "bargainScore": 81.2,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -14927,7 +14932,7 @@
   "valuePerCredit": 0.315,
   "valueProjected": 0.453,
   "valueMarket": 0.325,
-  "bargainScore": 31.6,
+  "bargainScore": 31.9,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -15037,7 +15042,7 @@
   "valuePerCredit": 2.143,
   "valueProjected": 0.219,
   "valueMarket": 2.143,
-  "bargainScore": 27.4,
+  "bargainScore": 28.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -15155,7 +15160,7 @@
   "valuePerCredit": 0.988,
   "valueProjected": 0.641,
   "valueMarket": 0.986,
-  "bargainScore": 45.7,
+  "bargainScore": 46.0,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -15265,7 +15270,7 @@
   "valuePerCredit": 0.71,
   "valueProjected": 0.647,
   "valueMarket": 0.705,
-  "bargainScore": 45.6,
+  "bargainScore": 45.9,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -15375,7 +15380,7 @@
   "valuePerCredit": 1.44,
   "valueProjected": 0.672,
   "valueMarket": 1.447,
-  "bargainScore": 50.8,
+  "bargainScore": 51.1,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -15485,7 +15490,7 @@
   "valuePerCredit": 0.542,
   "valueProjected": 0.172,
   "valueMarket": 0.55,
-  "bargainScore": 16.0,
+  "bargainScore": 17.0,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -15603,7 +15608,7 @@
   "valuePerCredit": 1.082,
   "valueProjected": 0.82,
   "valueMarket": 1.089,
-  "bargainScore": 49.5,
+  "bargainScore": 49.7,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -15713,7 +15718,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.14,
   "valueMarket": 0.25,
-  "bargainScore": 28.0,
+  "bargainScore": 29.1,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -15831,7 +15836,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.395,
   "valueMarket": 0.25,
-  "bargainScore": 37.8,
+  "bargainScore": 38.2,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -15941,7 +15946,7 @@
   "valuePerCredit": 1.448,
   "valueProjected": 1.325,
   "valueMarket": 1.443,
-  "bargainScore": 82.5,
+  "bargainScore": 82.6,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -16051,7 +16056,7 @@
   "valuePerCredit": 0.953,
   "valueProjected": 0.261,
   "valueMarket": 0.953,
-  "bargainScore": 37.8,
+  "bargainScore": 38.2,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -16169,7 +16174,7 @@
   "valuePerCredit": 1.119,
   "valueProjected": 1.117,
   "valueMarket": 1.117,
-  "bargainScore": 83.0,
+  "bargainScore": 83.1,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -16279,7 +16284,7 @@
   "valuePerCredit": -0.111,
   "valueProjected": 0.196,
   "valueMarket": -0.111,
-  "bargainScore": 32.7,
+  "bargainScore": 33.7,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -16389,7 +16394,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.165,
   "valueMarket": 0.0,
-  "bargainScore": 22.7,
+  "bargainScore": 23.8,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -16499,7 +16504,7 @@
   "valuePerCredit": -0.188,
   "valueProjected": 0.058,
   "valueMarket": -0.2,
-  "bargainScore": 12.3,
+  "bargainScore": 13.6,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -16523,10 +16528,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Didn't travel for Round 10 after DNP in Rounds 8-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -16617,7 +16622,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.245,
   "valueMarket": 0.0,
-  "bargainScore": 30.1,
+  "bargainScore": 31.2,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -16735,7 +16740,7 @@
   "valuePerCredit": 2.073,
   "valueProjected": 0.473,
   "valueMarket": 2.073,
-  "bargainScore": 41.1,
+  "bargainScore": 41.4,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -16845,7 +16850,7 @@
   "valuePerCredit": 0.822,
   "valueProjected": 1.263,
   "valueMarket": 0.822,
-  "bargainScore": 80.7,
+  "bargainScore": 80.8,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -16955,7 +16960,7 @@
   "valuePerCredit": 0.682,
   "valueProjected": 0.152,
   "valueMarket": 0.675,
-  "bargainScore": 14.3,
+  "bargainScore": 15.3,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -17065,7 +17070,7 @@
   "valuePerCredit": 0.763,
   "valueProjected": 0.683,
   "valueMarket": 0.761,
-  "bargainScore": 49.9,
+  "bargainScore": 50.2,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -17175,7 +17180,7 @@
   "valuePerCredit": 1.556,
   "valueProjected": 0.622,
   "valueMarket": 1.556,
-  "bargainScore": 46.1,
+  "bargainScore": 46.5,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -17285,7 +17290,7 @@
   "valuePerCredit": 0.488,
   "valueProjected": 0.461,
   "valueMarket": 0.488,
-  "bargainScore": 37.1,
+  "bargainScore": 37.5,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -17395,7 +17400,7 @@
   "valuePerCredit": -0.25,
   "valueProjected": 0.145,
   "valueMarket": -0.25,
-  "bargainScore": 21.2,
+  "bargainScore": 22.3,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -17513,7 +17518,7 @@
   "valuePerCredit": -0.217,
   "valueProjected": 0.539,
   "valueMarket": -0.217,
-  "bargainScore": 48.8,
+  "bargainScore": 49.1,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -17623,7 +17628,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.21,
   "valueMarket": 0.0,
-  "bargainScore": 27.8,
+  "bargainScore": 28.9,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -17741,7 +17746,7 @@
   "valuePerCredit": 0.522,
   "valueProjected": 0.105,
   "valueMarket": 0.525,
-  "bargainScore": 10.7,
+  "bargainScore": 11.9,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -17859,7 +17864,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.268,
   "valueMarket": 0.0,
-  "bargainScore": 33.7,
+  "bargainScore": 34.3,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -17977,7 +17982,7 @@
   "valuePerCredit": -0.225,
   "valueProjected": 0.102,
   "valueMarket": 0.0,
-  "bargainScore": 10.7,
+  "bargainScore": 11.9,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -18095,7 +18100,7 @@
   "valuePerCredit": 1.589,
   "valueProjected": 0.278,
   "valueMarket": 1.6,
-  "bargainScore": 25.6,
+  "bargainScore": 26.0,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -18213,7 +18218,7 @@
   "valuePerCredit": 0.983,
   "valueProjected": 0.743,
   "valueMarket": 0.984,
-  "bargainScore": 50.8,
+  "bargainScore": 51.1,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -18323,7 +18328,7 @@
   "valuePerCredit": 0.997,
   "valueProjected": 0.877,
   "valueMarket": 1.0,
-  "bargainScore": 59.5,
+  "bargainScore": 59.7,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -18433,7 +18438,7 @@
   "valuePerCredit": 0.997,
   "valueProjected": 0.958,
   "valueMarket": 1.0,
-  "bargainScore": 61.9,
+  "bargainScore": 62.1,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -18543,7 +18548,7 @@
   "valuePerCredit": 0.106,
   "valueProjected": 0.853,
   "valueMarket": 0.106,
-  "bargainScore": 60.0,
+  "bargainScore": 60.2,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -18653,7 +18658,7 @@
   "valuePerCredit": 0.472,
   "valueProjected": 0.603,
   "valueMarket": 0.475,
-  "bargainScore": 43.8,
+  "bargainScore": 44.1,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -18752,18 +18757,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 1.25,
+  "projectedFp": 0.0,
   "projectedIfPlays": 5.0,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 10.4,
   "matchup": {
    "opponentFactor": 0.891,
    "homeFactor": 0.948
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.255,
+  "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 33.7,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -18785,23 +18790,22 @@
   },
   "registered": false,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "roster",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Baja en la J11",
+   "untilRound": 11,
    "detail": "Out indefinitely, as he's not included in official Euroleague roster",
-   "reported": "Out · Round 10",
+   "reported": "Out · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 5.2,
-   "expectedChange": -0.08,
-   "riseProb": 0.114,
-   "sd": 7.28,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 5.9,
-   "p90": 10.7,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/4094.webp?v=9b610eae",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
@@ -18881,7 +18885,7 @@
   "valuePerCredit": 0.958,
   "valueProjected": 0.946,
   "valueMarket": 0.962,
-  "bargainScore": 79.7,
+  "bargainScore": 79.8,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -19101,7 +19105,7 @@
   "valuePerCredit": 1.001,
   "valueProjected": 0.963,
   "valueMarket": 1.0,
-  "bargainScore": 69.1,
+  "bargainScore": 69.3,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -19211,7 +19215,7 @@
   "valuePerCredit": 0.599,
   "valueProjected": 0.495,
   "valueMarket": 0.595,
-  "bargainScore": 46.6,
+  "bargainScore": 46.8,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -19321,7 +19325,7 @@
   "valuePerCredit": 0.761,
   "valueProjected": 0.18,
   "valueMarket": 0.754,
-  "bargainScore": 29.6,
+  "bargainScore": 30.8,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -19439,7 +19443,7 @@
   "valuePerCredit": 0.334,
   "valueProjected": 0.595,
   "valueMarket": 0.341,
-  "bargainScore": 40.1,
+  "bargainScore": 40.5,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -19549,7 +19553,7 @@
   "valuePerCredit": 0.255,
   "valueProjected": 0.17,
   "valueMarket": 0.25,
-  "bargainScore": 20.3,
+  "bargainScore": 21.5,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -19659,7 +19663,7 @@
   "valuePerCredit": -0.374,
   "valueProjected": 0.102,
   "valueMarket": -0.378,
-  "bargainScore": 13.1,
+  "bargainScore": 14.4,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -19683,10 +19687,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Did not travel to Piraeus (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -19777,7 +19781,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.198,
   "valueMarket": 0.0,
-  "bargainScore": 25.8,
+  "bargainScore": 26.8,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -19895,7 +19899,7 @@
   "valuePerCredit": 0.819,
   "valueProjected": 0.7,
   "valueMarket": 0.828,
-  "bargainScore": 48.1,
+  "bargainScore": 48.4,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -20005,7 +20009,7 @@
   "valuePerCredit": 0.696,
   "valueProjected": 1.125,
   "valueMarket": 0.696,
-  "bargainScore": 77.5,
+  "bargainScore": 77.7,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -20115,7 +20119,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.8,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -20232,7 +20236,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.8,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -20349,7 +20353,7 @@
   "valuePerCredit": 1.32,
   "valueProjected": 0.965,
   "valueMarket": 1.32,
-  "bargainScore": 72.5,
+  "bargainScore": 72.6,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -20459,7 +20463,7 @@
   "valuePerCredit": 1.205,
   "valueProjected": 0.0,
   "valueMarket": 1.111,
-  "bargainScore": 20.8,
+  "bargainScore": 21.4,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -20576,7 +20580,7 @@
   "valuePerCredit": 0.988,
   "valueProjected": 0.885,
   "valueMarket": 0.987,
-  "bargainScore": 68.1,
+  "bargainScore": 68.3,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -20686,7 +20690,7 @@
   "valuePerCredit": 1.028,
   "valueProjected": 0.984,
   "valueMarket": 1.032,
-  "bargainScore": 70.9,
+  "bargainScore": 71.1,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -20796,7 +20800,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.8,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -20913,7 +20917,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.237,
   "valueMarket": 0.0,
-  "bargainScore": 30.6,
+  "bargainScore": 31.6,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -21031,7 +21035,7 @@
   "valuePerCredit": 1.217,
   "valueProjected": 0.948,
   "valueMarket": 1.217,
-  "bargainScore": 79.0,
+  "bargainScore": 79.1,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -21141,7 +21145,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.8,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -21258,7 +21262,7 @@
   "valuePerCredit": 0.489,
   "valueProjected": 0.164,
   "valueMarket": 0.489,
-  "bargainScore": 22.6,
+  "bargainScore": 23.7,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -21282,10 +21286,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Round 9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 9-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -21376,7 +21380,7 @@
   "valuePerCredit": 1.312,
   "valueProjected": 0.923,
   "valueMarket": 1.313,
-  "bargainScore": 64.7,
+  "bargainScore": 64.9,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -21486,7 +21490,7 @@
   "valuePerCredit": 1.136,
   "valueProjected": 0.989,
   "valueMarket": 1.136,
-  "bargainScore": 81.7,
+  "bargainScore": 81.8,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -21596,7 +21600,7 @@
   "valuePerCredit": 0.775,
   "valueProjected": 0.884,
   "valueMarket": 0.781,
-  "bargainScore": 59.5,
+  "bargainScore": 59.7,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -21695,18 +21699,18 @@
    "plusMinusAvg": 8.8,
    "minutesPrior": null
   },
-  "projectedFp": 5.62,
+  "projectedFp": 0.0,
   "projectedIfPlays": 22.49,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 24.0,
   "matchup": {
    "opponentFactor": 1.002,
    "homeFactor": 1.052
   },
   "valuePerCredit": 1.555,
-  "valueProjected": 0.393,
+  "valueProjected": 0.0,
   "valueMarket": 1.552,
-  "bargainScore": 55.4,
+  "bargainScore": 25.5,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -21728,23 +21732,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Baja en la J11",
+   "untilRound": 11,
    "detail": "Underwent a left knee meniscus injury, expected to be sidelined until the end of April.",
-   "reported": "Out · Round 10",
+   "reported": "Out · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 15.6,
-   "expectedChange": -0.01,
-   "riseProb": 0.173,
-   "sd": 11.24,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 12.9,
-   "p90": 20.2,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/4252.webp?v=bc3220cb",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
@@ -21934,7 +21937,7 @@
   "valuePerCredit": 0.829,
   "valueProjected": 0.905,
   "valueMarket": 0.833,
-  "bargainScore": 65.1,
+  "bargainScore": 65.3,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -22044,7 +22047,7 @@
   "valuePerCredit": 1.034,
   "valueProjected": 0.998,
   "valueMarket": 1.04,
-  "bargainScore": 59.0,
+  "bargainScore": 59.3,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -22154,7 +22157,7 @@
   "valuePerCredit": 0.212,
   "valueProjected": 0.099,
   "valueMarket": 0.219,
-  "bargainScore": 12.3,
+  "bargainScore": 13.5,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -22178,10 +22181,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Didn't travel for Round 10 after DNP in Rounds 8-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -22272,7 +22275,7 @@
   "valuePerCredit": 0.467,
   "valueProjected": 0.167,
   "valueMarket": 0.474,
-  "bargainScore": 17.1,
+  "bargainScore": 18.0,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -22296,10 +22299,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -22390,7 +22393,7 @@
   "valuePerCredit": 0.861,
   "valueProjected": 0.824,
   "valueMarket": 0.857,
-  "bargainScore": 62.8,
+  "bargainScore": 63.0,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -22500,7 +22503,7 @@
   "valuePerCredit": 0.99,
   "valueProjected": 1.036,
   "valueMarket": 0.986,
-  "bargainScore": 79.1,
+  "bargainScore": 79.3,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -22610,7 +22613,7 @@
   "valuePerCredit": 0.25,
   "valueProjected": 0.338,
   "valueMarket": 0.25,
-  "bargainScore": 34.6,
+  "bargainScore": 35.1,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -22720,7 +22723,7 @@
   "valuePerCredit": 1.015,
   "valueProjected": 0.739,
   "valueMarket": 1.022,
-  "bargainScore": 51.1,
+  "bargainScore": 51.4,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -22830,7 +22833,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.242,
   "valueMarket": 0.0,
-  "bargainScore": 29.6,
+  "bargainScore": 30.7,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -22948,7 +22951,7 @@
   "valuePerCredit": 0.999,
   "valueProjected": 0.818,
   "valueMarket": 1.012,
-  "bargainScore": 65.2,
+  "bargainScore": 65.4,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -23058,7 +23061,7 @@
   "valuePerCredit": 1.182,
   "valueProjected": 1.061,
   "valueMarket": 1.192,
-  "bargainScore": 67.3,
+  "bargainScore": 67.4,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -23168,7 +23171,7 @@
   "valuePerCredit": 1.459,
   "valueProjected": 0.527,
   "valueMarket": 1.459,
-  "bargainScore": 46.3,
+  "bargainScore": 46.5,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -23278,7 +23281,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.155,
   "valueMarket": 0.0,
-  "bargainScore": 22.3,
+  "bargainScore": 23.3,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -23396,7 +23399,7 @@
   "valuePerCredit": 0.786,
   "valueProjected": 0.778,
   "valueMarket": 0.784,
-  "bargainScore": 50.7,
+  "bargainScore": 50.9,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -23506,7 +23509,7 @@
   "valuePerCredit": 0.865,
   "valueProjected": 0.2,
   "valueMarket": 0.868,
-  "bargainScore": 21.8,
+  "bargainScore": 22.7,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -23624,7 +23627,7 @@
   "valuePerCredit": 1.031,
   "valueProjected": 1.077,
   "valueMarket": 1.029,
-  "bargainScore": 75.8,
+  "bargainScore": 75.9,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -23734,7 +23737,7 @@
   "valuePerCredit": 0.981,
   "valueProjected": 0.855,
   "valueMarket": 0.982,
-  "bargainScore": 69.1,
+  "bargainScore": 69.2,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -23844,7 +23847,7 @@
   "valuePerCredit": 1.062,
   "valueProjected": 1.065,
   "valueMarket": 1.073,
-  "bargainScore": 82.7,
+  "bargainScore": 82.8,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -23954,7 +23957,7 @@
   "valuePerCredit": 1.085,
   "valueProjected": 0.969,
   "valueMarket": 1.083,
-  "bargainScore": 75.1,
+  "bargainScore": 75.2,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -24064,7 +24067,7 @@
   "valuePerCredit": 1.118,
   "valueProjected": 1.108,
   "valueMarket": 1.114,
-  "bargainScore": 86.2,
+  "bargainScore": 86.4,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -24174,7 +24177,7 @@
   "valuePerCredit": 1.132,
   "valueProjected": 1.084,
   "valueMarket": 1.132,
-  "bargainScore": 85.7,
+  "bargainScore": 85.9,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -24284,7 +24287,7 @@
   "valuePerCredit": 1.359,
   "valueProjected": 1.104,
   "valueMarket": 1.356,
-  "bargainScore": 87.1,
+  "bargainScore": 87.2,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -24394,7 +24397,7 @@
   "valuePerCredit": 1.14,
   "valueProjected": 1.093,
   "valueMarket": 1.141,
-  "bargainScore": 89.3,
+  "bargainScore": 89.4,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -24504,7 +24507,7 @@
   "valuePerCredit": 0.868,
   "valueProjected": 0.678,
   "valueMarket": 0.873,
-  "bargainScore": 48.9,
+  "bargainScore": 49.1,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -24614,7 +24617,7 @@
   "valuePerCredit": 0.352,
   "valueProjected": 0.683,
   "valueMarket": 0.354,
-  "bargainScore": 49.8,
+  "bargainScore": 50.1,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -24724,7 +24727,7 @@
   "valuePerCredit": 1.415,
   "valueProjected": 1.13,
   "valueMarket": 1.429,
-  "bargainScore": 84.0,
+  "bargainScore": 84.1,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -24834,7 +24837,7 @@
   "valuePerCredit": 0.657,
   "valueProjected": 0.654,
   "valueMarket": 0.657,
-  "bargainScore": 41.4,
+  "bargainScore": 41.7,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -24944,7 +24947,7 @@
   "valuePerCredit": 1.114,
   "valueProjected": 0.986,
   "valueMarket": 1.118,
-  "bargainScore": 66.7,
+  "bargainScore": 66.9,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -25054,7 +25057,7 @@
   "valuePerCredit": 0.899,
   "valueProjected": 1.044,
   "valueMarket": 0.901,
-  "bargainScore": 71.9,
+  "bargainScore": 72.1,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -25164,7 +25167,7 @@
   "valuePerCredit": 0.591,
   "valueProjected": 0.17,
   "valueMarket": 0.581,
-  "bargainScore": 22.5,
+  "bargainScore": 23.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -25188,10 +25191,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Out indefinitely (hamstring injury)",
-   "reported": "Out · Round 10",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -25282,7 +25285,7 @@
   "valuePerCredit": 1.211,
   "valueProjected": 0.869,
   "valueMarket": 1.216,
-  "bargainScore": 61.5,
+  "bargainScore": 61.7,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -25392,7 +25395,7 @@
   "valuePerCredit": 1.071,
   "valueProjected": 1.148,
   "valueMarket": 1.074,
-  "bargainScore": 84.4,
+  "bargainScore": 84.5,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -25502,7 +25505,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.039,
   "valueMarket": 0.0,
-  "bargainScore": 18.8,
+  "bargainScore": 20.1,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -25620,7 +25623,7 @@
   "valuePerCredit": 0.488,
   "valueProjected": 0.609,
   "valueMarket": 0.493,
-  "bargainScore": 40.5,
+  "bargainScore": 40.8,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -25730,7 +25733,7 @@
   "valuePerCredit": 1.345,
   "valueProjected": 1.061,
   "valueMarket": 1.349,
-  "bargainScore": 81.6,
+  "bargainScore": 81.7,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -25840,7 +25843,7 @@
   "valuePerCredit": 1.266,
   "valueProjected": 1.07,
   "valueMarket": 1.264,
-  "bargainScore": 77.6,
+  "bargainScore": 77.8,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -25950,7 +25953,7 @@
   "valuePerCredit": 0.732,
   "valueProjected": 0.452,
   "valueMarket": 0.732,
-  "bargainScore": 38.7,
+  "bargainScore": 39.0,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -26060,7 +26063,7 @@
   "valuePerCredit": 1.241,
   "valueProjected": 1.147,
   "valueMarket": 1.247,
-  "bargainScore": 80.3,
+  "bargainScore": 80.5,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -26159,18 +26162,18 @@
    "plusMinusAvg": 0.0,
    "minutesPrior": null
   },
-  "projectedFp": 0.55,
+  "projectedFp": 0.82,
   "projectedIfPlays": 3.3,
-  "playProb": 0.167,
+  "playProb": 0.25,
   "expectedMinutes": 12.9,
   "matchup": {
    "opponentFactor": 1.0,
    "homeFactor": 0.948
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.138,
+  "valueProjected": 0.205,
   "valueMarket": 0.0,
-  "bargainScore": 21.2,
+  "bargainScore": 28.1,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -26191,15 +26194,23 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "coach",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "Was included in 12-man roster but DNP in Rounds 8-10 (coach's decision)",
+   "reported": "Uncertain · Round 10",
+   "source": "BasketNews"
+  },
   "outlook": {
    "breakEven": 4.3,
-   "expectedChange": -0.09,
-   "riseProb": 0.067,
-   "sd": 3.87,
+   "expectedChange": -0.08,
+   "riseProb": 0.101,
+   "sd": 4.71,
    "floor": 0.0,
-   "ceiling": 3.0,
-   "p90": 5.6,
+   "ceiling": 3.9,
+   "p90": 6.9,
    "certainty": 0.0
   },
   "thumb": "/fotos/7228.webp?v=02366738",
@@ -26280,7 +26291,7 @@
   "valuePerCredit": 1.221,
   "valueProjected": 1.141,
   "valueMarket": 1.218,
-  "bargainScore": 81.2,
+  "bargainScore": 81.5,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -26390,7 +26401,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.322,
   "valueMarket": 0.0,
-  "bargainScore": 37.2,
+  "bargainScore": 37.7,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -26508,7 +26519,7 @@
   "valuePerCredit": 0.66,
   "valueProjected": 0.626,
   "valueMarket": 0.66,
-  "bargainScore": 38.6,
+  "bargainScore": 38.9,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -26618,7 +26629,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 18.6,
+  "bargainScore": 19.8,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -26728,7 +26739,7 @@
   "valuePerCredit": 1.059,
   "valueProjected": -0.441,
   "valueMarket": 1.059,
-  "bargainScore": 18.4,
+  "bargainScore": 18.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -26837,7 +26848,7 @@
   "valuePerCredit": 0.927,
   "valueProjected": 0.266,
   "valueMarket": 0.926,
-  "bargainScore": 41.0,
+  "bargainScore": 41.4,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -26955,7 +26966,7 @@
   "valuePerCredit": 1.034,
   "valueProjected": 0.268,
   "valueMarket": 1.034,
-  "bargainScore": 42.9,
+  "bargainScore": 43.3,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -27073,7 +27084,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.215,
   "valueMarket": 0.0,
-  "bargainScore": 27.7,
+  "bargainScore": 28.7,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -27096,11 +27107,11 @@
   "registered": true,
   "availability": {
    "level": "doubt",
-   "kind": "roster",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-9 (undisclosed injury)",
-   "reported": "Out · Round 10",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-10 (undisclosed injury)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -27191,7 +27202,7 @@
   "valuePerCredit": 0.674,
   "valueProjected": 0.565,
   "valueMarket": 0.682,
-  "bargainScore": 47.1,
+  "bargainScore": 47.4,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -27301,7 +27312,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 31.5,
+  "bargainScore": 32.1,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -27419,7 +27430,7 @@
   "valuePerCredit": 0.018,
   "valueProjected": 0.092,
   "valueMarket": 0.025,
-  "bargainScore": 15.0,
+  "bargainScore": 16.2,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -27443,10 +27454,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Ruled out for Round 10 after DNP in Rounds 4-9 (ankle injury)",
-   "reported": "Out · Round 10",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 4-9 (ankle injury)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -27537,7 +27548,7 @@
   "valuePerCredit": 0.092,
   "valueProjected": 0.062,
   "valueMarket": 0.1,
-  "bargainScore": 15.3,
+  "bargainScore": 16.5,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -27647,7 +27658,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.8,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -27764,7 +27775,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.24,
   "valueMarket": 0.0,
-  "bargainScore": 29.3,
+  "bargainScore": 30.3,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -27882,7 +27893,7 @@
   "valuePerCredit": 0.025,
   "valueProjected": 0.205,
   "valueMarket": 0.025,
-  "bargainScore": 25.8,
+  "bargainScore": 26.9,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -27992,7 +28003,7 @@
   "valuePerCredit": 0.345,
   "valueProjected": 0.364,
   "valueMarket": 0.345,
-  "bargainScore": 39.6,
+  "bargainScore": 40.1,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -28102,7 +28113,7 @@
   "valuePerCredit": 1.088,
   "valueProjected": 1.176,
   "valueMarket": 1.101,
-  "bargainScore": 87.4,
+  "bargainScore": 87.5,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -28212,7 +28223,7 @@
   "valuePerCredit": 0.969,
   "valueProjected": 0.797,
   "valueMarket": 0.971,
-  "bargainScore": 59.3,
+  "bargainScore": 59.5,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -28322,7 +28333,7 @@
   "valuePerCredit": 0.533,
   "valueProjected": 0.216,
   "valueMarket": 0.527,
-  "bargainScore": 26.5,
+  "bargainScore": 27.6,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -28542,7 +28553,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 32.3,
+  "bargainScore": 32.9,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -28566,10 +28577,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -28660,7 +28671,7 @@
   "valuePerCredit": 1.304,
   "valueProjected": 0.25,
   "valueMarket": 1.308,
-  "bargainScore": 39.3,
+  "bargainScore": 40.2,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -28778,7 +28789,7 @@
   "valuePerCredit": 1.005,
   "valueProjected": 0.364,
   "valueMarket": 1.0,
-  "bargainScore": 36.0,
+  "bargainScore": 36.4,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -28888,7 +28899,7 @@
   "valuePerCredit": 0.825,
   "valueProjected": 0.366,
   "valueMarket": 0.831,
-  "bargainScore": 48.2,
+  "bargainScore": 48.6,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -28998,7 +29009,7 @@
   "valuePerCredit": 0.375,
   "valueProjected": 0.564,
   "valueMarket": 0.377,
-  "bargainScore": 38.1,
+  "bargainScore": 38.4,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -29218,7 +29229,7 @@
   "valuePerCredit": 0.824,
   "valueProjected": 0.46,
   "valueMarket": 0.825,
-  "bargainScore": 39.8,
+  "bargainScore": 40.1,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -29328,7 +29339,7 @@
   "valuePerCredit": 0.712,
   "valueProjected": 0.49,
   "valueMarket": 0.714,
-  "bargainScore": 41.1,
+  "bargainScore": 41.4,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -29438,7 +29449,7 @@
   "valuePerCredit": 0.97,
   "valueProjected": 0.994,
   "valueMarket": 0.976,
-  "bargainScore": 77.9,
+  "bargainScore": 78.1,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -29548,7 +29559,7 @@
   "valuePerCredit": 1.071,
   "valueProjected": 0.988,
   "valueMarket": 1.073,
-  "bargainScore": 74.6,
+  "bargainScore": 74.8,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -29658,7 +29669,7 @@
   "valuePerCredit": 0.6,
   "valueProjected": 0.158,
   "valueMarket": 0.6,
-  "bargainScore": 21.6,
+  "bargainScore": 22.6,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -29682,10 +29693,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -29776,7 +29787,7 @@
   "valuePerCredit": 0.805,
   "valueProjected": 0.962,
   "valueMarket": 0.81,
-  "bargainScore": 62.2,
+  "bargainScore": 62.5,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -29886,7 +29897,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.16,
   "valueMarket": 0.0,
-  "bargainScore": 22.1,
+  "bargainScore": 23.2,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -29996,7 +30007,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.215,
   "valueMarket": 0.0,
-  "bargainScore": 27.2,
+  "bargainScore": 28.3,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -30114,7 +30125,7 @@
   "valuePerCredit": 0.613,
   "valueProjected": 0.8,
   "valueMarket": 0.608,
-  "bargainScore": 54.7,
+  "bargainScore": 54.9,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -30224,7 +30235,7 @@
   "valuePerCredit": 0.836,
   "valueProjected": 0.818,
   "valueMarket": 0.831,
-  "bargainScore": 55.9,
+  "bargainScore": 56.1,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -30334,7 +30345,7 @@
   "valuePerCredit": 1.162,
   "valueProjected": 1.054,
   "valueMarket": 1.167,
-  "bargainScore": 67.2,
+  "bargainScore": 67.4,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -30554,7 +30565,7 @@
   "valuePerCredit": 1.248,
   "valueProjected": 0.938,
   "valueMarket": 1.247,
-  "bargainScore": 74.2,
+  "bargainScore": 74.4,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -30664,7 +30675,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 34.3,
+  "bargainScore": 34.9,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -30688,10 +30699,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Rounds 2-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 2-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -30782,7 +30793,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 32.2,
+  "bargainScore": 32.9,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -30900,7 +30911,7 @@
   "valuePerCredit": 0.899,
   "valueProjected": 0.912,
   "valueMarket": 0.918,
-  "bargainScore": 68.5,
+  "bargainScore": 68.7,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -31010,7 +31021,7 @@
   "valuePerCredit": 1.411,
   "valueProjected": 1.067,
   "valueMarket": 1.412,
-  "bargainScore": 84.9,
+  "bargainScore": 85.1,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -31120,7 +31131,7 @@
   "valuePerCredit": 0.18,
   "valueProjected": 0.278,
   "valueMarket": 0.175,
-  "bargainScore": 32.8,
+  "bargainScore": 33.4,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -31230,7 +31241,7 @@
   "valuePerCredit": -0.2,
   "valueProjected": 0.098,
   "valueMarket": -0.203,
-  "bargainScore": 11.8,
+  "bargainScore": 13.0,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -31348,7 +31359,7 @@
   "valuePerCredit": 1.624,
   "valueProjected": 0.336,
   "valueMarket": 1.622,
-  "bargainScore": 41.7,
+  "bargainScore": 42.1,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -31372,10 +31383,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Adductor injury in Round 6",
-   "reported": "Out · Round 10",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Suffered an adductor injury in Round 6",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -31466,7 +31477,7 @@
   "valuePerCredit": 0.52,
   "valueProjected": 0.947,
   "valueMarket": 0.527,
-  "bargainScore": 62.9,
+  "bargainScore": 63.1,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -31576,7 +31587,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.015,
   "valueMarket": 0.0,
-  "bargainScore": 18.1,
+  "bargainScore": 19.3,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -31686,7 +31697,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.237,
   "valueMarket": 0.0,
-  "bargainScore": 28.4,
+  "bargainScore": 29.5,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -31710,10 +31721,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -31804,7 +31815,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.24,
   "valueMarket": 0.0,
-  "bargainScore": 29.3,
+  "bargainScore": 30.3,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -31922,7 +31933,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.25,
   "valueMarket": 0.0,
-  "bargainScore": 30.1,
+  "bargainScore": 31.2,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -31946,10 +31957,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -32040,7 +32051,7 @@
   "valuePerCredit": 0.852,
   "valueProjected": 0.82,
   "valueMarket": 0.851,
-  "bargainScore": 63.1,
+  "bargainScore": 63.3,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -32260,7 +32271,7 @@
   "valuePerCredit": 0.636,
   "valueProjected": 0.746,
   "valueMarket": 0.639,
-  "bargainScore": 53.1,
+  "bargainScore": 53.4,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -32370,7 +32381,7 @@
   "valuePerCredit": 0.868,
   "valueProjected": 0.91,
   "valueMarket": 0.866,
-  "bargainScore": 64.8,
+  "bargainScore": 65.0,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -32480,7 +32491,7 @@
   "valuePerCredit": 0.674,
   "valueProjected": 0.603,
   "valueMarket": 0.671,
-  "bargainScore": 39.8,
+  "bargainScore": 40.1,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -32590,7 +32601,7 @@
   "valuePerCredit": 0.623,
   "valueProjected": 0.645,
   "valueMarket": 0.627,
-  "bargainScore": 51.3,
+  "bargainScore": 51.6,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -32700,7 +32711,7 @@
   "valuePerCredit": 0.941,
   "valueProjected": 0.927,
   "valueMarket": 0.943,
-  "bargainScore": 65.4,
+  "bargainScore": 65.6,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -32810,7 +32821,7 @@
   "valuePerCredit": 0.498,
   "valueProjected": 0.127,
   "valueMarket": 0.494,
-  "bargainScore": 22.1,
+  "bargainScore": 23.4,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -32834,10 +32845,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Round 9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 9-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -32928,7 +32939,7 @@
   "valuePerCredit": 0.838,
   "valueProjected": 0.193,
   "valueMarket": 0.85,
-  "bargainScore": 16.4,
+  "bargainScore": 17.4,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -32952,10 +32963,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Round 9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 9-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -33046,7 +33057,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.015,
   "valueMarket": 0.0,
-  "bargainScore": 18.1,
+  "bargainScore": 19.3,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -33156,7 +33167,7 @@
   "valuePerCredit": 0.57,
   "valueProjected": 0.559,
   "valueMarket": 0.593,
-  "bargainScore": 36.7,
+  "bargainScore": 37.0,
   "schedule": {
    "difficulty": 50.0,
    "next": {
@@ -33266,7 +33277,7 @@
   "valuePerCredit": 0.796,
   "valueProjected": 0.612,
   "valueMarket": 0.798,
-  "bargainScore": 53.3,
+  "bargainScore": 53.6,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -33376,7 +33387,7 @@
   "valuePerCredit": 0.614,
   "valueProjected": 0.658,
   "valueMarket": 0.616,
-  "bargainScore": 50.9,
+  "bargainScore": 51.2,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -33486,7 +33497,7 @@
   "valuePerCredit": 0.994,
   "valueProjected": 0.943,
   "valueMarket": 1.0,
-  "bargainScore": 67.6,
+  "bargainScore": 67.8,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -33596,7 +33607,7 @@
   "valuePerCredit": 0.83,
   "valueProjected": 0.669,
   "valueMarket": 0.836,
-  "bargainScore": 49.0,
+  "bargainScore": 49.3,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -33706,7 +33717,7 @@
   "valuePerCredit": 0.593,
   "valueProjected": 0.597,
   "valueMarket": 0.598,
-  "bargainScore": 40.7,
+  "bargainScore": 41.0,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -33816,7 +33827,7 @@
   "valuePerCredit": 1.138,
   "valueProjected": 0.879,
   "valueMarket": 1.142,
-  "bargainScore": 65.4,
+  "bargainScore": 65.6,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -33926,7 +33937,7 @@
   "valuePerCredit": 0.595,
   "valueProjected": 0.322,
   "valueMarket": 0.6,
-  "bargainScore": 33.0,
+  "bargainScore": 33.6,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -34036,7 +34047,7 @@
   "valuePerCredit": 0.872,
   "valueProjected": 0.624,
   "valueMarket": 0.87,
-  "bargainScore": 40.4,
+  "bargainScore": 40.7,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -34146,7 +34157,7 @@
   "valuePerCredit": 0.676,
   "valueProjected": 0.551,
   "valueMarket": 0.676,
-  "bargainScore": 46.0,
+  "bargainScore": 46.2,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -34256,7 +34267,7 @@
   "valuePerCredit": 0.679,
   "valueProjected": 0.394,
   "valueMarket": 0.679,
-  "bargainScore": 36.0,
+  "bargainScore": 36.3,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -34366,7 +34377,7 @@
   "valuePerCredit": 0.526,
   "valueProjected": 0.532,
   "valueMarket": 0.523,
-  "bargainScore": 44.4,
+  "bargainScore": 44.7,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -34476,7 +34487,7 @@
   "valuePerCredit": 1.055,
   "valueProjected": 0.669,
   "valueMarket": 1.054,
-  "bargainScore": 44.9,
+  "bargainScore": 45.1,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -34586,7 +34597,7 @@
   "valuePerCredit": 1.14,
   "valueProjected": 1.056,
   "valueMarket": 1.146,
-  "bargainScore": 78.2,
+  "bargainScore": 78.4,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -34696,7 +34707,7 @@
   "valuePerCredit": 0.976,
   "valueProjected": 0.946,
   "valueMarket": 0.975,
-  "bargainScore": 75.4,
+  "bargainScore": 75.6,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -34806,7 +34817,7 @@
   "valuePerCredit": 1.162,
   "valueProjected": 1.135,
   "valueMarket": 1.165,
-  "bargainScore": 89.7,
+  "bargainScore": 89.8,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -34916,7 +34927,7 @@
   "valuePerCredit": 1.044,
   "valueProjected": 0.92,
   "valueMarket": 1.041,
-  "bargainScore": 62.1,
+  "bargainScore": 62.3,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -35026,7 +35037,7 @@
   "valuePerCredit": 1.196,
   "valueProjected": 1.146,
   "valueMarket": 1.196,
-  "bargainScore": 81.4,
+  "bargainScore": 81.6,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -35136,7 +35147,7 @@
   "valuePerCredit": 1.336,
   "valueProjected": 0.897,
   "valueMarket": 1.333,
-  "bargainScore": 66.9,
+  "bargainScore": 67.1,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -35246,7 +35257,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 37.3,
+  "bargainScore": 37.7,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -35474,7 +35485,7 @@
   "valuePerCredit": 0.626,
   "valueProjected": 0.806,
   "valueMarket": 0.629,
-  "bargainScore": 55.0,
+  "bargainScore": 55.3,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -35584,7 +35595,7 @@
   "valuePerCredit": 0.982,
   "valueProjected": 0.764,
   "valueMarket": 0.978,
-  "bargainScore": 43.1,
+  "bargainScore": 43.4,
   "schedule": {
    "difficulty": 52.0,
    "next": {
@@ -35694,7 +35705,7 @@
   "valuePerCredit": 0.279,
   "valueProjected": 0.522,
   "valueMarket": 0.276,
-  "bargainScore": 41.0,
+  "bargainScore": 41.3,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -35793,18 +35804,18 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 1.25,
+  "projectedFp": 0.0,
   "projectedIfPlays": 4.98,
-  "playProb": 0.25,
+  "playProb": 0.0,
   "expectedMinutes": 14.2,
   "matchup": {
    "opponentFactor": 1.002,
    "homeFactor": 1.052
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.255,
+  "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 33.2,
+  "bargainScore": 16.4,
   "schedule": {
    "difficulty": 94.0,
    "next": {
@@ -35826,23 +35837,22 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "roster",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Baja en la J11",
+   "untilRound": 11,
    "detail": "Out indefinitely, as he's not included in official Euroleague roster",
-   "reported": "Out · Round 10",
+   "reported": "Out · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 5.2,
-   "expectedChange": -0.08,
-   "riseProb": 0.096,
-   "sd": 3.35,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 0.0,
-   "ceiling": 3.4,
-   "p90": 5.6,
-   "certainty": 0.0
+   "ceiling": 0.0,
+   "p90": 0.0
   },
   "thumb": "/fotos/11523.webp?v=91517c37",
   "clubCrestThumb": "/escudos/TEL.webp?v=ab1efd9a"
@@ -35922,7 +35932,7 @@
   "valuePerCredit": 0.238,
   "valueProjected": 0.0,
   "valueMarket": 0.25,
-  "bargainScore": 15.4,
+  "bargainScore": 16.0,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -36039,7 +36049,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 34.0,
+  "bargainScore": 34.4,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -36063,10 +36073,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -36157,7 +36167,7 @@
   "valuePerCredit": 0.848,
   "valueProjected": 0.938,
   "valueMarket": 0.848,
-  "bargainScore": 79.9,
+  "bargainScore": 80.0,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -36267,7 +36277,7 @@
   "valuePerCredit": 1.067,
   "valueProjected": 0.667,
   "valueMarket": 1.064,
-  "bargainScore": 63.4,
+  "bargainScore": 63.6,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36377,7 +36387,7 @@
   "valuePerCredit": 0.942,
   "valueProjected": 0.891,
   "valueMarket": 0.942,
-  "bargainScore": 62.7,
+  "bargainScore": 62.9,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36487,7 +36497,7 @@
   "valuePerCredit": 0.867,
   "valueProjected": 0.744,
   "valueMarket": 0.867,
-  "bargainScore": 57.9,
+  "bargainScore": 58.1,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36597,7 +36607,7 @@
   "valuePerCredit": 1.017,
   "valueProjected": 0.402,
   "valueMarket": 1.023,
-  "bargainScore": 49.7,
+  "bargainScore": 50.0,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36707,7 +36717,7 @@
   "valuePerCredit": 0.824,
   "valueProjected": 1.098,
   "valueMarket": 0.824,
-  "bargainScore": 77.0,
+  "bargainScore": 77.2,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -36817,7 +36827,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 32.9,
+  "bargainScore": 33.6,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -36935,7 +36945,7 @@
   "valuePerCredit": 0.506,
   "valueProjected": 0.125,
   "valueMarket": 0.506,
-  "bargainScore": 22.6,
+  "bargainScore": 23.8,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -37053,7 +37063,7 @@
   "valuePerCredit": 0.316,
   "valueProjected": 0.126,
   "valueMarket": 0.324,
-  "bargainScore": 21.9,
+  "bargainScore": 23.1,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -37171,7 +37181,7 @@
   "valuePerCredit": 0.933,
   "valueProjected": 0.942,
   "valueMarket": 0.929,
-  "bargainScore": 68.7,
+  "bargainScore": 68.9,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -37281,7 +37291,7 @@
   "valuePerCredit": 0.512,
   "valueProjected": 0.617,
   "valueMarket": 0.514,
-  "bargainScore": 47.7,
+  "bargainScore": 48.0,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -37391,7 +37401,7 @@
   "valuePerCredit": 0.526,
   "valueProjected": 0.178,
   "valueMarket": 0.526,
-  "bargainScore": 27.3,
+  "bargainScore": 28.2,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -37509,7 +37519,7 @@
   "valuePerCredit": 0.528,
   "valueProjected": 0.583,
   "valueMarket": 0.525,
-  "bargainScore": 37.5,
+  "bargainScore": 37.8,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -37619,7 +37629,7 @@
   "valuePerCredit": 0.981,
   "valueProjected": 0.849,
   "valueMarket": 0.977,
-  "bargainScore": 57.7,
+  "bargainScore": 58.0,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -37729,7 +37739,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.175,
   "valueMarket": 0.0,
-  "bargainScore": 23.7,
+  "bargainScore": 24.7,
   "schedule": {
    "difficulty": 8.0,
    "next": {
@@ -37839,7 +37849,7 @@
   "valuePerCredit": 0.44,
   "valueProjected": 0.57,
   "valueMarket": 0.452,
-  "bargainScore": 45.6,
+  "bargainScore": 46.0,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -37949,7 +37959,7 @@
   "valuePerCredit": 0.814,
   "valueProjected": 0.855,
   "valueMarket": 0.817,
-  "bargainScore": 66.8,
+  "bargainScore": 67.0,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -38059,7 +38069,7 @@
   "valuePerCredit": 1.137,
   "valueProjected": 1.022,
   "valueMarket": 1.141,
-  "bargainScore": 71.1,
+  "bargainScore": 71.2,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -38169,7 +38179,7 @@
   "valuePerCredit": 0.727,
   "valueProjected": 0.696,
   "valueMarket": 0.741,
-  "bargainScore": 51.5,
+  "bargainScore": 51.7,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -38279,7 +38289,7 @@
   "valuePerCredit": 1.281,
   "valueProjected": 1.149,
   "valueMarket": 1.289,
-  "bargainScore": 83.6,
+  "bargainScore": 83.7,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -38389,7 +38399,7 @@
   "valuePerCredit": 1.165,
   "valueProjected": 0.235,
   "valueMarket": 1.175,
-  "bargainScore": 29.8,
+  "bargainScore": 30.9,
   "schedule": {
    "difficulty": 99.0,
    "next": {
@@ -38413,10 +38423,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Ruled out for Round 10 after DNP in Rounds 8-9 (leg contusion)",
-   "reported": "Out · Round 10",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "DNP in Rounds 8-10 (leg contusion)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -38507,7 +38517,7 @@
   "valuePerCredit": 1.243,
   "valueProjected": 1.102,
   "valueMarket": 1.243,
-  "bargainScore": 90.7,
+  "bargainScore": 90.8,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -38617,7 +38627,7 @@
   "valuePerCredit": 0.434,
   "valueProjected": 0.395,
   "valueMarket": 0.441,
-  "bargainScore": 30.2,
+  "bargainScore": 30.6,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -38727,7 +38737,7 @@
   "valuePerCredit": 0.597,
   "valueProjected": 0.478,
   "valueMarket": 0.618,
-  "bargainScore": 36.8,
+  "bargainScore": 37.1,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -38837,7 +38847,7 @@
   "valuePerCredit": -0.441,
   "valueProjected": 0.138,
   "valueMarket": -0.441,
-  "bargainScore": 22.4,
+  "bargainScore": 23.6,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -38861,10 +38871,10 @@
   "availability": {
    "level": "doubt",
    "kind": "injury",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
+   "label": "Duda",
+   "untilRound": null,
    "detail": "Out indefinitely after injury in Round 1 (wrist fracture), expected to rejoin the team at the beginning of November",
-   "reported": "Out · Round 10",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -38955,7 +38965,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.268,
   "valueMarket": 0.0,
-  "bargainScore": 33.7,
+  "bargainScore": 34.3,
   "schedule": {
    "difficulty": 25.0,
    "next": {
@@ -39073,7 +39083,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.245,
   "valueMarket": 0.0,
-  "bargainScore": 29.6,
+  "bargainScore": 30.7,
   "schedule": {
    "difficulty": 61.0,
    "next": {
@@ -39097,10 +39107,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Rounds 1-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Rounds 1-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -39191,7 +39201,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.015,
   "valueMarket": 0.0,
-  "bargainScore": 18.1,
+  "bargainScore": 19.3,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -39301,7 +39311,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.015,
   "valueMarket": 0.0,
-  "bargainScore": 18.1,
+  "bargainScore": 19.3,
   "schedule": {
    "difficulty": 65.0,
    "next": {
@@ -39411,7 +39421,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.165,
   "valueMarket": 0.0,
-  "bargainScore": 22.6,
+  "bargainScore": 23.6,
   "schedule": {
    "difficulty": 48.0,
    "next": {
@@ -39521,7 +39531,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 31.8,
+  "bargainScore": 32.5,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -39545,10 +39555,10 @@
   "availability": {
    "level": "doubt",
    "kind": "coach",
-   "label": "Baja en la J10; sin confirmar para la J11",
-   "untilRound": 10,
-   "detail": "Not included in 12-man roster after DNP in Round 1-9 (coach's decision)",
-   "reported": "Out · Round 10",
+   "label": "Duda · decisión técnica",
+   "untilRound": null,
+   "detail": "DNP in Round 1-10 (coach's decision)",
+   "reported": "Uncertain · Round 11",
    "source": "BasketNews"
   },
   "outlook": {
@@ -39639,7 +39649,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.253,
   "valueMarket": 0.0,
-  "bargainScore": 31.0,
+  "bargainScore": 32.0,
   "schedule": {
    "difficulty": 69.0,
    "next": {
@@ -39757,7 +39767,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.223,
   "valueMarket": 0.0,
-  "bargainScore": 27.8,
+  "bargainScore": 28.9,
   "schedule": {
    "difficulty": 91.0,
    "next": {
@@ -39875,7 +39885,7 @@
   "valuePerCredit": 1.26,
   "valueProjected": 0.382,
   "valueMarket": 1.263,
-  "bargainScore": 53.5,
+  "bargainScore": 53.9,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -39985,7 +39995,7 @@
   "valuePerCredit": 0.803,
   "valueProjected": 0.462,
   "valueMarket": 0.803,
-  "bargainScore": 47.4,
+  "bargainScore": 47.6,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -40095,7 +40105,7 @@
   "valuePerCredit": 1.506,
   "valueProjected": 0.554,
   "valueMarket": 1.506,
-  "bargainScore": 52.7,
+  "bargainScore": 53.0,
   "schedule": {
    "difficulty": 18.0,
    "next": {
@@ -40205,7 +40215,7 @@
   "valuePerCredit": 0.116,
   "valueProjected": 0.227,
   "valueMarket": 0.116,
-  "bargainScore": 31.7,
+  "bargainScore": 32.6,
   "schedule": {
    "difficulty": 62.0,
    "next": {
@@ -40315,7 +40325,7 @@
   "valuePerCredit": 1.644,
   "valueProjected": 0.255,
   "valueMarket": 1.644,
-  "bargainScore": 35.0,
+  "bargainScore": 35.4,
   "schedule": {
    "difficulty": 8.0,
    "next": {
