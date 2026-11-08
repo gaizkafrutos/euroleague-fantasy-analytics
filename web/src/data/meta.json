@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-08T01:31:09.523431+00:00",
+ "generatedAt": "2026-11-08T09:10:46.021445+00:00",
  "currentRound": 11,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 66,
  "lastPriceCapture": "2026-11-07T08:55:55.033823+00:00",
- "lastPriceCheck": "2026-11-08T01:30:24.800135+00:00",
+ "lastPriceCheck": "2026-11-08T09:10:06.097537+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.25
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-08T01:30:30.178386+00:00",
+  "generatedAt": "2026-11-08T09:10:11.374941+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -663,8 +663,8 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-07T14:02:00",
-  "fetchedAt": "2026-11-08T01:30:23.538316+00:00",
+  "updatedAt": "2026-11-08T07:02:00",
+  "fetchedAt": "2026-11-08T09:10:04.910707+00:00",
   "rows": 139,
   "matched": 93,
   "unmatched": [
@@ -685,8 +685,8 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-07T14:02:00",
-    "fetchedAt": "2026-11-08T01:30:23.033396+00:00",
+    "updatedAt": "2026-11-08T07:02:00",
+    "fetchedAt": "2026-11-08T09:10:04.493696+00:00",
     "rows": 101,
     "matched": 91,
     "flagged": 91
@@ -695,7 +695,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-08T01:30:23.538316+00:00",
+    "fetchedAt": "2026-11-08T09:10:04.910707+00:00",
     "rows": 38,
     "matched": 36,
     "flagged": 2
@@ -704,8 +704,8 @@
   "nextRound": 11,
   "unregistered": 6,
   "flagged": {
-   "out": 23,
-   "doubt": 76,
+   "out": 24,
+   "doubt": 75,
    "probable": 0
   }
  },
