@@ -1,22 +1,22 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 114.37,
- "scoredProjection": 148.42,
- "captain": "3766",
+ "totalPrice": 99.9,
+ "totalProjection": 119.17,
+ "scoredProjection": 146.88,
+ "captain": "3768",
  "starters": [
-  "3766",
   "3768",
-  "3791",
+  "3795",
   "3838",
+  "7424",
   "3851"
  ],
- "sixth": "3991",
+ "sixth": "11547",
  "bench": [
+  "3991",
   "8644",
   "11541",
-  "11521",
-  "4009"
+  "3933"
  ],
  "coach": {
   "key": "4255",
@@ -24,16 +24,16 @@
   "position": "E",
   "club": "PAM",
   "price": 8.0,
-  "projection": 15.89
+  "projection": 15.39
  },
  "players": [
   {
-   "key": "3791",
-   "name": "JONES, CARLIK",
+   "key": "3795",
+   "name": "SHORTS, TJ",
    "position": "G",
-   "club": "PAR",
-   "price": 13.7,
-   "projection": 17.58
+   "club": "PAM",
+   "price": 16.8,
+   "projection": 21.22
   },
   {
    "key": "3851",
@@ -41,7 +41,15 @@
    "position": "G",
    "club": "MAD",
    "price": 9.3,
-   "projection": 13.9
+   "projection": 13.6
+  },
+  {
+   "key": "11547",
+   "name": "MOORE, WENDELL",
+   "position": "G",
+   "club": "VIR",
+   "price": 9.7,
+   "projection": 12.26
   },
   {
    "key": "11541",
@@ -49,23 +57,7 @@
    "position": "G",
    "club": "PAM",
    "price": 4.3,
-   "projection": 3.65
-  },
-  {
-   "key": "11521",
-   "name": "FODZO DADA, MARC-OWEN",
-   "position": "G",
-   "club": "ASV",
-   "price": 4.5,
-   "projection": 3.44
-  },
-  {
-   "key": "3766",
-   "name": "VEZENKOV, SASHA",
-   "position": "F",
-   "club": "OLY",
-   "price": 18.9,
-   "projection": 25.12
+   "projection": 3.86
   },
   {
    "key": "3838",
@@ -73,7 +65,7 @@
    "position": "F",
    "club": "IST",
    "price": 9.8,
-   "projection": 13.95
+   "projection": 15.17
   },
   {
    "key": "3991",
@@ -81,7 +73,7 @@
    "position": "F",
    "club": "MAD",
    "price": 6.1,
-   "projection": 8.08
+   "projection": 8.67
   },
   {
    "key": "8644",
@@ -89,7 +81,15 @@
    "position": "F",
    "club": "BAS",
    "price": 4.2,
-   "projection": 4.04
+   "projection": 4.35
+  },
+  {
+   "key": "3933",
+   "name": "CAVALIERE, LEOPOLD",
+   "position": "F",
+   "club": "PRS",
+   "price": 4.2,
+   "projection": 3.65
   },
   {
    "key": "3768",
@@ -97,15 +97,15 @@
    "position": "C",
    "club": "PAN",
    "price": 16.7,
-   "projection": 21.81
+   "projection": 22.59
   },
   {
-   "key": "4009",
-   "name": "DIOP, OUSMANE",
+   "key": "7424",
+   "name": "DIARRA, ALIOU",
    "position": "C",
-   "club": "MIL",
-   "price": 4.5,
-   "projection": 2.8
+   "club": "VIR",
+   "price": 10.8,
+   "projection": 13.8
   }
  ],
  "available": true,

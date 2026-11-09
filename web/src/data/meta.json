@@ -1,31 +1,31 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-09T09:57:00.921810+00:00",
+ "generatedAt": "2026-11-09T11:36:41.888206+00:00",
  "currentRound": 11,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 66,
  "lastPriceCapture": "2026-11-07T08:55:55.033823+00:00",
- "lastPriceCheck": "2026-11-09T09:56:08.817048+00:00",
+ "lastPriceCheck": "2026-11-09T11:36:22.658114+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
   "games": 100
  },
- "teamStrengthSource": "temporada en curso, encogida hacia la anterior",
+ "teamStrengthSource": "temporada en curso",
  "players": 360,
  "matched": 358,
  "matchRate": 0.994,
  "budget": 100.0,
  "coachGames": 200,
  "matchModel": {
-  "homeAdvantage": 3.27,
-  "marginSd": 12.25
+  "homeAdvantage": 2.51,
+  "marginSd": 12.45
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-09T09:56:14.205691+00:00",
+  "generatedAt": "2026-11-09T11:36:27.678140+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -35,106 +35,51 @@
    "use_home": true,
    "league_minutes_scale": true
   },
-  "season": {
-   "code": "E2025",
-   "n": 7924,
-   "rounds": 37,
+  "current": {
+   "code": "E2026",
+   "n": 1971,
+   "rounds": 9,
    "v2": {
-    "mae": 5.949,
-    "rmse": 7.653,
-    "bias": 0.038
+    "mae": 6.016,
+    "rmse": 7.669,
+    "bias": 0.006
    },
    "legacy": {
-    "mae": 6.072,
-    "rmse": 7.89,
-    "bias": -0.072
+    "mae": 6.423,
+    "rmse": 8.261,
+    "bias": 0.051
    },
    "mean": {
-    "mae": 6.098,
-    "rmse": 7.918,
-    "bias": -0.16
+    "mae": 6.45,
+    "rmse": 8.274,
+    "bias": -0.043
    },
    "byGames": {
     "1-3": {
-     "n": 963,
-     "v2": 5.844,
-     "legacy": 6.504,
+     "n": 807,
+     "v2": 5.815,
+     "legacy": 6.525,
      "mean": 6.638
     },
     "4-8": {
-     "n": 1479,
-     "v2": 5.853,
-     "legacy": 5.954,
-     "mean": 5.937
+     "n": 1043,
+     "v2": 6.098,
+     "legacy": 6.32,
+     "mean": 6.285
     },
     "9-99": {
-     "n": 5482,
-     "v2": 5.993,
-     "legacy": 6.028,
-     "mean": 6.047
+     "n": 121,
+     "v2": 6.657,
+     "legacy": 6.633,
+     "mean": 6.623
     }
    },
    "zQuantiles": {
-    "p10": -1.154,
-    "p25": -0.67,
-    "p50": -0.123,
-    "p75": 0.578,
-    "p90": 1.325
-   }
-  },
-  "current": {
-   "code": "E2026",
-   "n": 1426,
-   "rounds": 9,
-   "v2": {
-    "mae": 6.094,
-    "rmse": 7.748,
-    "bias": -0.024
-   },
-   "legacy": {
-    "mae": 6.498,
-    "rmse": 8.343,
-    "bias": -0.074
-   },
-   "mean": {
-    "mae": 6.514,
-    "rmse": 8.345,
-    "bias": -0.168
-   },
-   "prior_mean": {
-    "mae": 6.524,
-    "rmse": 8.242,
-    "bias": 0.449
-   },
-   "byGames": {
-    "1-3": {
-     "n": 570,
-     "v2": 5.77,
-     "legacy": 6.523,
-     "mean": 6.623,
-     "prior_mean": 6.123
-    },
-    "4-8": {
-     "n": 763,
-     "v2": 6.246,
-     "legacy": 6.448,
-     "mean": 6.406,
-     "prior_mean": 6.674
-    },
-    "9-99": {
-     "n": 93,
-     "v2": 6.83,
-     "legacy": 6.751,
-     "mean": 6.729,
-     "prior_mean": 7.759
-    }
-   },
-   "zQuantiles": {
-    "p10": -1.185,
-    "p25": -0.671,
-    "p50": -0.071,
-    "p75": 0.644,
-    "p90": 1.298
+    "p10": -1.15,
+    "p25": -0.683,
+    "p50": -0.107,
+    "p75": 0.623,
+    "p90": 1.318
    }
   },
   "published": {
@@ -649,10 +594,10 @@
    }
   },
   "coach": {
-   "code": "E2025",
-   "n": 720,
-   "model": 9.818,
-   "mean": 10.764
+   "code": "E2026",
+   "n": 160,
+   "model": 9.617,
+   "mean": 10.375
   }
  },
  "schedule": {
@@ -664,7 +609,7 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-09T06:32:00",
-  "fetchedAt": "2026-11-09T09:56:07.446444+00:00",
+  "fetchedAt": "2026-11-09T11:36:02.167886+00:00",
   "rows": 141,
   "matched": 95,
   "unmatched": [
@@ -686,7 +631,7 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-09T06:32:00",
-    "fetchedAt": "2026-11-09T09:56:06.980020+00:00",
+    "fetchedAt": "2026-11-09T11:36:01.770149+00:00",
     "rows": 103,
     "matched": 93,
     "flagged": 93
@@ -695,7 +640,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-09T09:56:07.446444+00:00",
+    "fetchedAt": "2026-11-09T11:36:02.167886+00:00",
     "rows": 38,
     "matched": 36,
     "flagged": 2
@@ -803,8 +748,7 @@
    "E2026"
   ],
   "seasonLabels": {
-   "E2026": "2026-27",
-   "E2025": "2025-26"
+   "E2026": "2026-27"
   }
  }
 }
