@@ -7,23 +7,25 @@ con la media de lo que lleva hecho ignora a quién se enfrenta y dónde. Aquí:
   margen esperado = ventaja de campo + (fuerza del local − fuerza del visitante)
 
 con la fuerza de cada club como su margen medio ajustado por campo, encogido
-hacia el de la temporada anterior (k partidos), y el margen real repartido
-como una normal con la dispersión de la liga. Los puntos esperados del
-entrenador y la probabilidad de ganar salen de esa normal.
-
-Contrastado en la 2025-26 (724 partidos de entrenador, prediciendo cada
-jornada con las anteriores): error medio 9,69 frente a 10,68 de la media del
-entrenador.
+(k partidos) hacia la que corresponde al valor de mercado de su plantilla, y
+el margen real repartido como una normal con la dispersión de la liga. Los
+puntos esperados del entrenador y la probabilidad de ganar salen de esa normal.
 """
 from __future__ import annotations
 
 import math
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
-#: Partidos de colchón hacia la fuerza del año pasado (o hacia 0).
+from efa.optimizer import normalize_position
+
+#: Partidos de colchón hacia la fuerza de referencia (o hacia 0).
 PRIOR_GAMES = 6.0
-#: Ventaja de campo y dispersión por defecto (2025-26: 3,45 y 12,2 puntos).
+#: Jugadores más caros de cada club que cuentan para el valor de su plantilla:
+#: con 6 acierta más que con 8 o 10 (la rotación corta es la que decide).
+ROSTER_VALUE_TOP = 6
+#: Ventaja de campo y dispersión por defecto, hasta tener 40 partidos.
 DEFAULT_HOME = 3.45
 DEFAULT_SD = 12.2
 
@@ -107,8 +109,48 @@ def _raw_ratings(results: list[tuple[str, str, float]], home: float) -> dict[str
     return {club: (sum(values), len(values)) for club, values in acc.items()}
 
 
-def fit(games: list[dict[str, Any]], prior_games: list[dict[str, Any]] | None = None) -> MatchModel:
-    """Fuerza de cada club con los partidos jugados, encogida hacia el año pasado."""
+def roster_values(market: Any, top: int = ROSTER_VALUE_TOP) -> dict[str, float]:
+    """Club -> cotización media de sus `top` jugadores más caros (sin entrenador).
+
+    `market` necesita `club_code`, `position` y `quotation`.
+    """
+    if market is None or len(market) == 0:
+        return {}
+    players = market[market["position"].map(normalize_position).isin(["G", "F", "C"])]
+    players = players.dropna(subset=["club_code", "quotation"])
+    return {
+        str(club): float(group["quotation"].astype(float).nlargest(top).mean())
+        for club, group in players.groupby("club_code")
+    }
+
+
+def _value_ratings(raw: dict[str, tuple[float, int]], values: dict[str, float]) -> dict[str, float]:
+    """Fuerza que corresponde al valor de cada plantilla: recta ajustada con los
+    márgenes de esta temporada, centrada en la media."""
+    clubs = [club for club in raw if club in values and raw[club][1]]
+    if len(clubs) < 10:
+        return {}
+    mean = sum(values[c] for c in clubs) / len(clubs)
+    spread = sum((values[c] - mean) ** 2 for c in clubs)
+    if spread <= 0:
+        return {}
+    slope = sum((values[c] - mean) * raw[c][0] / raw[c][1] for c in clubs) / spread
+    return {club: slope * (value - mean) for club, value in values.items()}
+
+
+def fit(
+    games: list[dict[str, Any]],
+    prior_games: list[dict[str, Any]] | None = None,
+    *,
+    club_values: dict[str, float] | None = None,
+) -> MatchModel:
+    """Fuerza de cada club con los partidos jugados, encogida hacia una referencia.
+
+    La referencia es el año pasado si se pasa `prior_games` y, si no, la que
+    corresponde al valor de mercado de la plantilla (`club_values`). J7–J10 de
+    la 2026-27, 40 partidos: el margen se falla por 9,84 con el año pasado, 10,29
+    con el valor de plantilla y 10,45 encogiendo solo hacia 0.
+    """
     now = _results(games)
     before = _results(prior_games or [])
     pool = now + before
@@ -122,6 +164,8 @@ def fit(games: list[dict[str, Any]], prior_games: list[dict[str, Any]] | None = 
     prior_raw = _raw_ratings(before, home)
     prior_rating = {club: total / count for club, (total, count) in prior_raw.items() if count}
     now_raw = _raw_ratings(now, home)
+    if not prior_rating and club_values:
+        prior_rating = _value_ratings(now_raw, club_values)
     ratings: dict[str, float] = {}
     for club in set(prior_rating) | set(now_raw):
         total, count = now_raw.get(club, (0.0, 0))
@@ -140,7 +184,12 @@ def coach_points_actual(margin: float, overtime: bool) -> float:
     return -5.0 if size <= 10 else -10.0 if size <= 20 else -20.0
 
 
-def backtest(games: list[dict[str, Any]], prior_games: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+def backtest(
+    games: list[dict[str, Any]],
+    prior_games: list[dict[str, Any]] | None = None,
+    *,
+    values_for_round: Callable[[int], dict[str, float]] | None = None,
+) -> dict[str, Any]:
     """Cada jornada con las anteriores: modelo de partido frente a la media del entrenador."""
     played = sorted((g for g in games if g.get("played")), key=lambda g: g.get("utcDate") or "")
     rounds = sorted({int(g["round"]) for g in played if g.get("round")})
@@ -150,7 +199,7 @@ def backtest(games: list[dict[str, Any]], prior_games: list[dict[str, Any]] | No
         before = [g for g in played if int(g.get("round") or 0) < r]
         if len(before) < 20 and not prior_games:
             continue
-        model = fit(before, prior_games)
+        model = fit(before, prior_games, club_values=values_for_round(r) if values_for_round else None)
         history: dict[str, list[float]] = {}
         for g in before:
             ot = bool(((g.get("local") or {}).get("partials") or {}).get("extraPeriods"))

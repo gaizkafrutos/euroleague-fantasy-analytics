@@ -253,7 +253,7 @@ export default async function TeamPage({ params }: { params: Promise<{ code: str
           <p className="eq-foot-note">
             La muesca es la media de la liga ({num(meta.league?.allowed?.G)} a bases,{" "}
             {num(meta.league?.allowed?.F)} a aleros, {num(meta.league?.allowed?.C)} a pívots).
-            Con pocas jornadas se encoge hacia el año pasado.
+            Con pocas jornadas se encoge hacia la media de la liga.
           </p>
         </section>
       ) : null}
@@ -461,9 +461,8 @@ function pctOf(box: TeamBox, key: BoxKey, lowerIsBetter = false): number | null 
   return Math.round((lowerIsBetter ? 1 - rank : rank) * 100);
 }
 
-/** Desde el 26 sept la proyección se apoya en la temporada anterior (o en el
- *  precio) mientras no hay partidos: un 0,0 solo queda para quien de verdad
- *  no tiene nada detrás. */
+/** Sin partidos, la proyección se apoya en el precio: un 0,0 solo queda para
+ *  quien de verdad no tiene nada detrás. */
 function hasProjection(player: Player): boolean {
   if (typeof player.projectedFp !== "number") return false;
   return player.isCoach || player.projectedFp > 0;

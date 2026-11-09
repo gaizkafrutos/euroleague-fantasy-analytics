@@ -15,9 +15,9 @@ Añade, sin tocar lo que ya había:
                  `lineups`  quintetos más usados.
   meta.json      `priceModel`, `league` (medias de referencia).
 
-Regla de temporadas, en todas las piezas: la temporada en curso manda en
-cuanto tiene partidos suficientes; hasta entonces se completa con la anterior
-y la web dice de dónde sale cada cifra.
+Regla de temporadas, en todas las piezas: en las primeras jornadas se completa
+con la anterior y la web dice de dónde sale cada cifra; pasadas esas (ver
+config.PRIOR_SEASON_ROUNDS), todo sale solo de la temporada en curso.
 """
 from __future__ import annotations
 
@@ -45,7 +45,7 @@ from efa.advanced import (
     team_lineups,
     zone_table,
 )
-from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE, use_prior_player_stats
+from efa.config import PRIOR_SEASON_CODE, PRIOR_WEIGHT_GAMES, SEASON_CODE, use_prior_season
 from efa.context import player_positions, season_boxscores, season_gamelog, season_label
 from efa.ingest.official import load_player_stats, load_reference
 from efa.ingest.playbyplay import load_pbp, shots_frame
@@ -85,6 +85,10 @@ CURRENT_ENOUGH = 5
 #: la horquilla se ensancha por √(1 + k/(n + k)), ×1,22 con 2 partidos y ×1,05
 #: a final de temporada.
 SD_PRIOR_GAMES = 2.0
+#: La dispersión propia de cada jugador se queda corta frente al error real de
+#: la proyección. Con 1,15, en J7–J10 la horquilla p25–p75 de los titulares
+#: recoge el 49 % de los resultados (43 % sin él) y un 10 % supera el p90 (13 %).
+SD_SCALE = 1.15
 #: Desviación típica del entrenador: puntúa −20…+25 según el margen.
 COACH_SD = 11.0
 
@@ -175,7 +179,7 @@ def _projection_sd(
         # que con pocos partidos es grande: en J2–J3 la horquilla p25–p75
         # recogía el 41 % de los resultados en vez del 50 %.
         widen = math.sqrt(1 + SD_PRIOR_GAMES / (n_now.get(code, 0) + SD_PRIOR_GAMES))
-        out[int(record["id"])] = round(widen * math.sqrt(weight * cur**2 + (1 - weight) * base**2), 2)
+        out[int(record["id"])] = round(SD_SCALE * widen * math.sqrt(weight * cur**2 + (1 - weight) * base**2), 2)
     return out
 
 
@@ -528,11 +532,11 @@ def apply_advanced(
     prior_reference = load_reference(PRIOR_SEASON_CODE)
     box_now = season_boxscores(SEASON_CODE)
     log_now = season_gamelog(SEASON_CODE)
-    # Pasada la J5, ninguna cifra descriptiva de jugador sale ya de la
-    # temporada anterior (ver PRIOR_PLAYER_STATS_ROUNDS): ni tiros, ni en
-    # pista, ni mezcla, ni avanzadas, ni lo que concede cada club.
+    # Pasadas las primeras jornadas, nada sale ya de la temporada anterior (ver
+    # PRIOR_SEASON_ROUNDS): ni tiros, ni en pista, ni mezcla, ni avanzadas, ni lo
+    # que concede cada club, ni la dispersión de la horquilla.
     rounds_played = int(log_now["round"].nunique()) if not log_now.empty else 0
-    use_prior = use_prior_player_stats(rounds_played)
+    use_prior = use_prior_season(rounds_played)
     box_prior = season_boxscores(PRIOR_SEASON_CODE) if use_prior else {}
     log_prior = season_gamelog(PRIOR_SEASON_CODE) if use_prior else log_now.iloc[0:0]
     games_now = {str(k): int(v) for k, v in (log_now[log_now["played"]].groupby("person_code").size().items() if not log_now.empty else [])}
@@ -571,8 +575,7 @@ def apply_advanced(
             f"{freshness['reason']} (J{freshness['round']}). "
             f"Se usa el precio pendiente de {pending} jugadores hasta la próxima captura."
         )
-    # La horquilla acompaña a la proyección: también mira el año pasado.
-    sds = _projection_sd(records, log_now, season_gamelog(PRIOR_SEASON_CODE))
+    sds = _projection_sd(records, log_now, log_prior)
     #: σ de lo que hace SI juega, antes de mezclar con el riesgo de no jugar: es
     #: la que decide si supera el umbral cuando juega.
     sd_if_plays = dict(sds)
@@ -757,7 +760,7 @@ def apply_advanced(
         "zoneLabels": [label for _, label in ZONES],
         "allowed": allowed["league"],
         "shotSeasons": [s for s, frame in ((PRIOR_SEASON_CODE, shots_prior), (SEASON_CODE, shots_now)) if not frame.empty],
-        "seasonLabels": {SEASON_CODE: season_label(SEASON_CODE), PRIOR_SEASON_CODE: season_label(PRIOR_SEASON_CODE)},
+        "seasonLabels": {code: season_label(code) for code in (SEASON_CODE, *([PRIOR_SEASON_CODE] if use_prior else []))},
     }
     log.info(
         "Capa avanzada: modelo de precio %s (R² %.3f, n=%d) · %d tiros · on/off de %d jugadores",

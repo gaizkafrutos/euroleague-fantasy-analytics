@@ -470,7 +470,17 @@ export interface ModelBacktest {
     byGames?: Record<string, { n: number; v2: number; legacy?: number; mean?: number }>;
     zQuantiles?: Record<string, number>;
   };
-  current?: { code: string; n: number; rounds?: number; v2: BacktestScore; prior_mean?: BacktestScore };
+  current?: {
+    code: string;
+    n: number;
+    rounds?: number;
+    v2: BacktestScore;
+    legacy?: BacktestScore;
+    mean?: BacktestScore;
+    prior_mean?: BacktestScore;
+    byGames?: Record<string, { n: number; v2: number; legacy?: number; mean?: number }>;
+    zQuantiles?: Record<string, number>;
+  };
   coach?: { code: string; n: number; model: number; mean: number | null };
   /** Lo que publicó la web antes de cada jornada frente a lo que pasó. */
   published?: PublishedBacktest;

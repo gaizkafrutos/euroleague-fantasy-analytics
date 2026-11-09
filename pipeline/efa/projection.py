@@ -4,10 +4,13 @@ La proyección de antes era una media de puntos con retoques (forma, tendencia
 de minutos). Esta separa las dos cosas que se mueven a ritmos distintos:
 
   - los MINUTOS cambian rápido (rol, rotación, lesiones de compañeros): media
-    exponencial de los últimos partidos, encogida hacia los del año pasado;
+    exponencial de los últimos partidos;
   - la PRODUCCIÓN POR MINUTO es estable: suma de puntos entre suma de minutos,
-    encogida hacia la del año pasado (o la de su puesto) con un colchón en
-    minutos, no en partidos.
+    encogida hacia la que descuenta su precio y la de su puesto, con un colchón
+    en minutos, no en partidos.
+
+En las primeras jornadas de una temporada, la anterior hace de referencia de
+las dos cosas (ver `config.PRIOR_SEASON_ROUNDS`).
 
 Encima, dos ajustes de contexto medidos en los propios datos:
 
@@ -31,6 +34,7 @@ Spearman igual (0,608 → 0,610).
 from __future__ import annotations
 
 import logging
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
@@ -38,6 +42,11 @@ import numpy as np
 import pandas as pd
 
 log = logging.getLogger(__name__)
+
+#: Peso del precio (frente al puesto) en la producción de referencia.
+PRICE_RATE_WEIGHT = 0.75
+#: Minutos jugados esta temporada para entrar en las rectas de precio.
+PRICE_FIT_MIN_MINUTES = 60.0
 
 
 @dataclass(frozen=True)
@@ -209,7 +218,9 @@ def project(
         if n is not None:
             m0 = params.rate_prior_minutes
             rate = (n["fp_sum"] + m0 * ref_rate) / (n["min_sum"] + m0)
-            if ref_minutes is None:
+            # Sin año pasado, sus minutos son los suyos: encogerlos hacia los que
+            # descuenta su precio subía el sesgo (+0,12 frente a +0,03, J4–J10).
+            if ref_minutes is None or not has_prior:
                 minutes = float(n["min_ewm"])
             else:
                 k = params.minutes_prior_games
@@ -257,11 +268,14 @@ def backtest(
     *,
     min_games: int = 1,
     cache: dict[Any, pd.Series] | None = None,
+    references: Callable[[int, pd.DataFrame], dict[str, dict[str, float]]] | None = None,
 ) -> dict[str, Any]:
     """Predice cada partido de `gamelog` solo con los anteriores (por jornada).
 
     Devuelve el error medio del modelo v2, del de antes y de la media simple
     sobre los mismos partidos: los del jugador con `min_games` o más jugados.
+    `references(jornada, historial)` da la referencia de cada jugador con lo que
+    se sabía antes de esa jornada (ver `price_references`).
     """
     log_sorted = gamelog.sort_values(["utc_date", "game_code"])
     prior_mean = (
@@ -278,7 +292,8 @@ def backtest(
         targets = in_round[in_round["played"]]
         if targets.empty:
             continue
-        v2 = project(targets, history, prior, positions, params)
+        implied = references(int(r), history) if references else None
+        v2 = project(targets, history, prior, positions, params, implied_prior=implied)
         # El modelo de antes no depende de `params`: se calcula una vez por jornada.
         if cache is not None and r in cache:
             legacy = cache[r]
@@ -390,6 +405,47 @@ def implied_priors(table: pd.DataFrame, prior: pd.DataFrame | None) -> dict[str,
     return out
 
 
+def price_references(
+    table: pd.DataFrame,
+    history: pd.DataFrame,
+    positions: dict[str, str],
+    params: Params = PARAMS,
+) -> dict[str, dict[str, float]]:
+    """Referencia de cada jugador con datos de ESTA temporada, sin la anterior.
+
+    Rectas precio -> minutos y precio -> puntos/minuto ajustadas con quien ya ha
+    jugado `PRICE_FIT_MIN_MINUTES`. La producción de referencia mezcla la que
+    descuenta su precio con la de su puesto: solo el precio sobreestimaba a los
+    caros y solo el puesto los infravaloraba. Reconstruyendo lo publicado en
+    J4–J10 con el 75 % de precio, el sesgo de los de 13+ créditos es +0,11 (+0,39
+    con la temporada anterior) y el error medio de J7–J10, 4,50 (4,52).
+    """
+    if history is None or history.empty or "quotation" not in table.columns:
+        return {}
+    state = player_state(history, params.minutes_half_life)
+    state = state[state["min_sum"] >= PRICE_FIT_MIN_MINUTES]
+    frame = table[["person_code", "quotation"]].dropna().drop_duplicates("person_code")
+    frame = frame[frame["quotation"] > 0].assign(person_code=lambda f: f["person_code"].astype(str))
+    known = frame[frame["person_code"].isin(state.index)]
+    if len(known) < 30:
+        return {}
+    x = known["quotation"].to_numpy(dtype=float)
+    codes = known["person_code"]
+    fit_m = np.polyfit(x, state.loc[codes, "min_avg"].to_numpy(dtype=float), 1)
+    fit_r = np.polyfit(x, (state.loc[codes, "fp_sum"] / state.loc[codes, "min_sum"]).to_numpy(dtype=float), 1)
+    rates = position_rates(history, positions)
+    league = rates.get("all", 0.5)
+    out: dict[str, dict[str, float]] = {}
+    for code, price in frame.itertuples(index=False):
+        by_price = float(np.clip(np.polyval(fit_r, price), 0.3, 1.4))
+        by_position = rates.get(positions.get(code) or "all", league)
+        out[code] = {
+            "minutes": float(np.clip(np.polyval(fit_m, price), 5.0, 32.0)),
+            "rate": PRICE_RATE_WEIGHT * by_price + (1 - PRICE_RATE_WEIGHT) * by_position,
+        }
+    return out
+
+
 def production_projection(
     table: pd.DataFrame,
     history: pd.DataFrame,
@@ -411,7 +467,9 @@ def production_projection(
         opponent_code=rows["club_code"].map(lambda c: fixtures.get(str(c), (None, True))[0]),
         is_home=rows["club_code"].map(lambda c: fixtures.get(str(c), (None, True))[1]),
     )
-    result = project(rows, history, prior, positions, params, implied_prior=implied_priors(table, prior))
+    has_prior = prior is not None and not prior.empty
+    implied = implied_priors(table, prior) if has_prior else price_references(table, history, positions, params)
+    result = project(rows, history, prior, positions, params, implied_prior=implied)
     out = pd.DataFrame({
         "person_code": rows["person_code"].astype(str).to_numpy(),
         "v2_projection": result["projection"].round(2).to_numpy(),
@@ -423,22 +481,65 @@ def production_projection(
     return out
 
 
+def market_before_round(
+    snapshots: pd.DataFrame,
+    crosswalk: pd.DataFrame,
+    games: list[dict[str, Any]],
+    round_number: int,
+) -> pd.DataFrame:
+    """Mercado (`person_code`, `club_code`, `position`, `quotation`) justo antes
+    del primer partido de la jornada: lo que se sabía al proyectarla."""
+    empty = pd.DataFrame(columns=["person_code", "club_code", "position", "quotation"])
+    times = [
+        pd.to_datetime(g["utcDate"], utc=True)
+        for g in games
+        if int(g.get("round") or 0) == round_number and g.get("utcDate")
+    ]
+    if snapshots.empty or crosswalk.empty or not times:
+        return empty
+    stamps = pd.to_datetime(snapshots["captured_at"], utc=True)
+    before = stamps[stamps < min(times)]
+    if before.empty:
+        return empty
+    snap = snapshots[stamps == before.max()].merge(
+        crosswalk[["fantaking_id", "person_code", "club_code"]], on="fantaking_id"
+    )
+    return snap[["person_code", "club_code", "position", "quotation"]]
+
+
 def run_backtests() -> dict[str, Any]:
-    """Los backtests que publica la web: temporada anterior entera, temporada en
-    curso (con la anterior de referencia) y el modelo del entrenador."""
+    """Los backtests que publica la web: temporada en curso y modelo del
+    entrenador. Mientras la temporada anterior aún cuenta (ver
+    PRIOR_SEASON_ROUNDS), también ella entera, como única muestra amplia."""
     from dataclasses import asdict
     from datetime import datetime, timezone
 
     from efa import matchmodel
-    from efa.config import PRIOR_SEASON_CODE, SEASON_CODE
+    from efa.config import CROSSWALK_PATH, PRIOR_SEASON_CODE, SEASON_CODE, use_prior_season
     from efa.context import player_positions, season_gamelog
     from efa.ingest.official import load_reference
+    from efa.ingest.prices import load_snapshots
 
     ref_prior, ref_now = load_reference(PRIOR_SEASON_CODE), load_reference(SEASON_CODE)
     # La de esta temporada manda (por eso va primero).
     positions = player_positions([ref_now, ref_prior])
-    log_prior = season_gamelog(PRIOR_SEASON_CODE)
     log_now = season_gamelog(SEASON_CODE)
+    use_prior = use_prior_season(int(log_now["round"].nunique()) if not log_now.empty else 0)
+    log_prior = season_gamelog(PRIOR_SEASON_CODE) if use_prior else pd.DataFrame()
+
+    games_now = ref_now.get("games", [])
+    snapshots = load_snapshots()
+    crosswalk = (
+        pd.read_csv(CROSSWALK_PATH, dtype={"person_code": str})
+        if CROSSWALK_PATH.exists()
+        else pd.DataFrame(columns=["fantaking_id", "person_code", "club_code"])
+    )
+
+    def references(round_number: int, history: pd.DataFrame) -> dict[str, dict[str, float]]:
+        return price_references(market_before_round(snapshots, crosswalk, games_now, round_number), history, positions)
+
+    def values_for_round(round_number: int) -> dict[str, float]:
+        return matchmodel.roster_values(market_before_round(snapshots, crosswalk, games_now, round_number))
 
     out: dict[str, Any] = {"generatedAt": datetime.now(timezone.utc).isoformat(), "params": asdict(PARAMS)}
     if not log_prior.empty:
@@ -449,7 +550,11 @@ def run_backtests() -> dict[str, Any]:
         }
         out["season"] = {"code": PRIOR_SEASON_CODE, **season}
     if not log_now.empty and log_now["played"].any():
-        current = backtest(log_now, positions, prior=log_prior, min_games=0)
+        current = (
+            backtest(log_now, positions, prior=log_prior, min_games=0)
+            if use_prior
+            else backtest(log_now, positions, min_games=0, references=references)
+        )
         rmse = current.get("v2", {}).get("rmse") or 1.0
         current["zQuantiles"] = {
             f"p{int(q * 100)}": round(v / rmse, 3) for q, v in current.get("residualQuantiles", {}).items()
@@ -458,15 +563,18 @@ def run_backtests() -> dict[str, Any]:
     # Lo que la web publicó antes de cada jornada, frente a lo que pasó.
     from efa.context import season_boxscores
     from efa.gamelogs import build_coach_gamelog
-    from efa.ingest.prices import load_snapshots
     from efa.published import evaluate_published
 
-    coach_log = build_coach_gamelog(season_boxscores(SEASON_CODE), ref_now.get("games", []))
-    published = evaluate_published(log_now, ref_now.get("games", []), load_snapshots(), coach_log)
+    coach_log = build_coach_gamelog(season_boxscores(SEASON_CODE), games_now)
+    published = evaluate_published(log_now, games_now, snapshots, coach_log)
     if published:
         out["published"] = published
-    out["coach"] = {
-        "code": PRIOR_SEASON_CODE,
-        **matchmodel.backtest([g for g in ref_prior.get("games", []) if (g.get("phaseType") or {}).get("code") == "RS"]),
-    }
+    out["coach"] = (
+        {
+            "code": PRIOR_SEASON_CODE,
+            **matchmodel.backtest([g for g in ref_prior.get("games", []) if (g.get("phaseType") or {}).get("code") == "RS"]),
+        }
+        if use_prior
+        else {"code": SEASON_CODE, **matchmodel.backtest(games_now, values_for_round=values_for_round)}
+    )
     return out

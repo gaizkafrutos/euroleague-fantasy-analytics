@@ -137,10 +137,11 @@ Con un puñado de jornadas y 350 filas, un modelo no aprendería nada que no
 capture una suma de percentiles — y no se podría explicar. Los pesos están a la
 vista en `efa/metrics.py` y en la página de metodología, y se pueden discutir.
 
-**Por qué se ingiere la temporada anterior.**
-Hasta que la 2026-27 tenga jornadas, el rendimiento real de la 2025-26 es la
-mejor referencia disponible. La web lo indica explícitamente en vez de
-presentarlo como si fuera de la temporada en curso.
+**Por qué se guarda la temporada anterior.**
+Solo hace de referencia en las primeras jornadas, y la web lo indica cuando
+ocurre. Desde la sexta jugada (`PRIOR_SEASON_ROUNDS`), todas las estadísticas y
+proyecciones salen de la temporada en curso; de la anterior quedan únicamente
+identidades (censo y fotos).
 
 ## Verificación
 

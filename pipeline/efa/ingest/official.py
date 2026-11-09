@@ -382,7 +382,10 @@ def ingest_all(
         except Exception as exc:  # noqa: BLE001
             log.warning("Avanzadas oficiales de %s no disponibles: %s", season_code, exc)
 
-    if prior_season_code and prior_season_code != season_code:
+    # La temporada anterior ya no cambia: lo guardado (censo, fotos) se queda y
+    # no se vuelve a pedir en cada captura.
+    has_prior = bool(prior_season_code and load_reference(prior_season_code).get("games") and load_boxscores(prior_season_code))
+    if prior_season_code and prior_season_code != season_code and not has_prior:
         summary[prior_season_code] = ingest_reference(prior_season_code)
         if with_boxscores:
             summary[prior_season_code]["boxscores"] = ingest_boxscores(prior_season_code)
