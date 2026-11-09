@@ -132,22 +132,20 @@ ROLE_ALERT_MIN_DELTA = 4.0  # minutos de variación para lanzar alerta de rol
 PRIOR_WEIGHT_GAMES = 5.0
 #: Partidos mínimos el año pasado para que su media cuente como referencia.
 PRIOR_MIN_GAMES = 5
-#: Jornadas jugadas a partir de las cuales las cifras DESCRIPTIVAS de jugador
-#: salen solo de esta temporada: tiros, en pista, mezcla fantasy, avanzadas
-#: oficiales, cuartos y lo que concede cada club.
+#: Jornadas jugadas a partir de las cuales la temporada anterior deja de entrar
+#: en NADA: ni cifras descriptivas ni proyecciones, equipos o entrenadores. La
+#: anterior solo sigue dando identidades (censo y fotos), que no son estadística.
 #:
-#: Las PREDICCIONES siguen encogiéndose hacia la anterior, con un peso que cae
-#: solo con cada partido. Backtest de la 2026-27, J4–J5 (447 partidos): la
-#: proyección con la anterior falla 5,80 de media y la mejor sin ella 5,85; en
-#: los de 13+ créditos, 7,08 frente a 7,59 (a la media del puesto se les
-#: infravalora 2,1 puntos). Con los equipos pasa lo mismo: el margen se falla
-#: por 9,8 puntos con la anterior y por 11,1 sin ella.
-PRIOR_PLAYER_STATS_ROUNDS = 5
+#: Backtest de la 2026-27, J7–J10 (873 partidos): la proyección falla 6,21 con
+#: la anterior y 6,18 sin ella, anclada al precio. Los equipos sí pierden algo
+#: (margen 9,84 frente a 10,3 en 40 partidos, muestra corta), ver
+#: `matchmodel.fit`.
+PRIOR_SEASON_ROUNDS = 6
 
 
-def use_prior_player_stats(rounds_played: int) -> bool:
-    """¿Entra todavía la temporada anterior en las cifras de jugador?"""
-    return rounds_played < PRIOR_PLAYER_STATS_ROUNDS
+def use_prior_season(rounds_played: int) -> bool:
+    """¿Entra todavía la temporada anterior en los cálculos?"""
+    return rounds_played < PRIOR_SEASON_ROUNDS
 #: Previa de disponibilidad: quien no ha jugado ninguno de sus partidos de esta
 #: temporada no proyecta cero de golpe, sino (jugados + k) / (partidos + k).
 AVAILABILITY_PRIOR_GAMES = 2.0
@@ -155,9 +153,9 @@ AVAILABILITY_PRIOR_GAMES = 2.0
 #: parte de (0 + 2)/(partidos + 2), sino de (0 + 0,2)/(partidos + 2). En J2–J3
 #: a estos se les daba un 57 % y jugó el 5 % (64 casos).
 NEVER_DRESSED_PRIOR = 0.2
-#: Probabilidad de jugar según el parte de lesiones. "Duda" era 0,5 y en J2–J3
-#: jugaron 14 de 57 (25 %). "Probable" se queda en 0,9: 7 casos no bastan.
-PLAY_PROB_REPORT = {"out": 0.0, "doubt": 0.25, "probable": 0.9}
+#: Probabilidad de jugar según el parte de lesiones, medida en J4–J10: de las
+#: dudas jugó el 19 % (290 casos) y de los probables, el 75 % (49 casos).
+PLAY_PROB_REPORT = {"out": 0.0, "doubt": 0.2, "probable": 0.75}
 #: Tope de la probabilidad de jugar por historial (sin parte de lesiones). Un
 #: fijo que lo ha jugado todo salía con 1,0 y en J2–J6 jugó el 94,4 % (entre el
 #: 92 y el 97 % cada jornada, 981 casos): bajas de última hora, descansos.

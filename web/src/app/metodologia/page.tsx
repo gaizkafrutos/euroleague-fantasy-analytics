@@ -223,10 +223,9 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Horquilla y techo">
               Suelo, techo y p90 salen de los errores reales en jornadas pasadas, no de una normal: la
-              puntuación tiene la cola de arriba más larga que la de abajo (el percentil 75 queda
-              a +0,57 desviaciones y el 25 a −0,68). La dispersión se encoge hacia la del año
-              pasado, se ensancha con pocos partidos (la media del propio jugador aún es dudosa)
-              y, si puede no jugar, suma el riesgo de quedarse en cero. La del entrenador
+              puntuación tiene la cola de arriba más larga que la de abajo. La dispersión es la de
+              sus partidos de esta temporada, se ensancha con pocos partidos (la media del propio
+              jugador aún es dudosa) y, si puede no jugar, suma el riesgo de quedarse en cero. La del entrenador
               es exacta: solo puede sacar seis cifras. El p90 es el que importa para el capitán.
             </Definition>
             <Definition term="En pista, on/off y quintetos">
@@ -237,13 +236,11 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Mapa de tiro">
               Coordenadas de cada tiro de campo (API oficial), repartidas en diez zonas con las
-              medidas FIBA y comparadas con la media de la liga en esa zona. Hasta la jornada 5
-              se suman las dos temporadas (el tiro viaja con el jugador); desde ahí, solo esta.
+              medidas FIBA y comparadas con la media de la liga en esa zona, todo de esta temporada.
             </Definition>
             <Definition term="Lo que concede cada club">
               Puntos fantasy por partido de los rivales de cada puesto, encogidos hacia la media
-              de la liga con 5 partidos (y hacia el año pasado solo hasta la jornada 5). Es lo que
-              colorea el calendario fantasy.
+              de la liga con 5 partidos. Es lo que colorea el calendario fantasy.
             </Definition>
             <Definition term="Puntos por crédito">
               Proyección dividida entre precio. Es el ratio que decide casi todo: 18 puntos a
@@ -271,8 +268,7 @@ export default function MethodologyPage() {
             </Definition>
             <Definition term="Calendario">
               Diferencial medio de los tres próximos rivales, con penalización por jugar
-              fuera, normalizado a 0-100. El diferencial de cada club mezcla esta temporada con
-              la anterior: con n partidos pesa n/(n+6) lo de ahora.
+              fuera, normalizado a 0-100. El diferencial de cada club es el de esta temporada.
             </Definition>
             <Definition term="Plan de cambios (Mi equipo)">
               Desde tu plantilla, los fichajes (hasta 4, entrenador incluido, o ilimitados en
@@ -375,8 +371,9 @@ export default function MethodologyPage() {
                   .map((src) => `${src.source}${src.fetchedAt ? ` (${dateTime(src.fetchedAt)})` : ""}`)
                   .join(", ")}.`
               : "Ahora mismo no hay ninguno al día."}{" "}
-            Una baja proyecta 0 y el óptimo no la ficha; una duda cuenta un 25 % y un probable,
-            el 90 %. El 25 % sale de lo observado: en J2 y J3 jugaron 14 de las 57 dudas.
+            Una baja proyecta 0 y el óptimo no la ficha; una duda cuenta un 20 % y un probable,
+            el 75 %. Sale de lo observado de la J4 a la J10: jugó el 19 % de las 290 dudas y el
+            75 % de los 49 probables.
           </li>
           <li>
             La horquilla de la plantilla suma a los jugadores como si fueran independientes. Los
@@ -388,8 +385,8 @@ export default function MethodologyPage() {
             proyecta; no calcula el valor de esperar a ver el primer turno.
           </li>
           <li>
-            El rating de equipo de las primeras jornadas es poco fiable: por eso se encoge hacia
-            la temporada anterior, que manda hasta pasada media docena de partidos.
+            Sin la temporada anterior, la fuerza de cada equipo se apoya en sus partidos de este
+            año y en el valor de mercado de su plantilla. Con diez jornadas aún se mueve bastante.
           </li>
         </ul>
       </div>
@@ -408,7 +405,8 @@ export default function MethodologyPage() {
  *  `efa backtest` (meta.modelBacktest), no copiadas a mano. */
 function ProjectionModel() {
   const bt = meta.modelBacktest ?? null;
-  const season = bt?.season;
+  // La muestra de la tabla: esta temporada en cuanto la anterior deja de contar.
+  const season = bt?.season ?? bt?.current;
   const current = bt?.current;
   const published = bt?.published;
   const coach = bt?.coach;
@@ -423,26 +421,20 @@ function ProjectionModel() {
         </p>
         <ul style={{ margin: 0, display: "grid", gap: 4 }}>
           <li>
-            <strong>Minutos:</strong> media con más peso a los últimos partidos (vida media de 3),
-            encogida hacia sus minutos del año pasado con un colchón de{" "}
-            {num(bt?.params?.minutes_prior_games ?? 1, 0)}{" "}
-            {bt?.params?.minutes_prior_games === 1 ? "partido" : "partidos"}
-            {bt?.params?.league_minutes_scale
-              ? ". Los del año pasado se escalan antes por lo que ha cambiado el minuto medio de la liga: esta temporada las rotaciones son más largas y cada jugador juega algo menos"
-              : ""}
-            .
+            <strong>Minutos:</strong> media de sus partidos de esta temporada, con más peso a los
+            últimos (vida media de 3).
           </li>
           <li>
             <strong>Puntos por minuto:</strong> su ritmo de la temporada encogido con un colchón de
-            100 minutos hacia el del año pasado; si llega nuevo, hacia el que descuenta su precio,
-            y si no, hacia el de su puesto.
+            100 minutos hacia una referencia que mezcla lo que descuenta su precio (75 %) y la media
+            de su puesto (25 %).
           </li>
           <li>
             <strong>Rival:</strong> lo que concede ese rival a su puesto frente a la media, a medio
             peso y encogido con 8 partidos. <strong>Campo:</strong> lo que se puntúa de más en casa.
           </li>
           <li>
-            <strong>Probabilidad de jugar:</strong> si hay parte, 0 de baja, 25 % en duda y 90 %
+            <strong>Probabilidad de jugar:</strong> si hay parte, 0 de baja, 20 % en duda y 75 %
             probable; si no, la parte de partidos de su club que ha jugado, con colchón de 2 (y
             de solo 0,2 si no ha entrado en ninguna convocatoria: en J2–J3 jugó el 5 % de
             ellos) y un tope del 95 %: los fijos sin parte juegan el 94 %. La proyección que se enseña es lo que hace si juega por esa probabilidad; «si juega» va
@@ -450,7 +442,8 @@ function ProjectionModel() {
           </li>
           <li>
             <strong>Entrenador:</strong> solo puntúa por el marcador. Cada club tiene una fuerza
-            (margen medio ajustado por campo, encogido con 6 partidos hacia el año pasado), el
+            (margen medio ajustado por campo, encogido con 6 partidos hacia el que corresponde al
+            valor de mercado de su plantilla), el
             margen esperado es la diferencia más{" "}
             {match ? `${num(match.homeAdvantage)} puntos de ventaja de campo` : "la ventaja de campo"}, y
             el resultado se reparte como una normal

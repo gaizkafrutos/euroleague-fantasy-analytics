@@ -40,6 +40,7 @@ from efa.config import (
     UNMATCHED_REPORT_PATH,
     WEB_DATA_DIR,
     ensure_dirs,
+    use_prior_season,
 )
 from efa.context import player_positions, season_boxscores, season_gamelog, season_label
 from efa.demo import has_demo_data
@@ -592,17 +593,18 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     round_now = current_round(games)
     prior_reference = load_reference(PRIOR_SEASON_CODE)
     baseline = bool(gamelog_meta.get("isBaseline"))
+    # Pasadas las primeras jornadas, la temporada anterior ya no entra en ningún
+    # cálculo (ver PRIOR_SEASON_ROUNDS). Sus identidades siguen sirviendo.
+    use_prior = baseline or use_prior_season(int(gamelog["round"].nunique()) if not gamelog.empty else 0)
+    prior_games = prior_reference.get("games", []) if use_prior else []
 
-    # Proyección v2: minutos x producción por minuto x rival x cancha, con el
-    # año pasado como referencia (su peso cae con cada partido; ver
-    # PRIOR_PLAYER_STATS_ROUNDS). Solo con temporada en curso: en la línea
-    # base el "historial" ya es el año pasado.
+    # Proyección v2: minutos x producción por minuto x rival x cancha. Solo con
+    # temporada en curso: en la línea base el "historial" ya es el año pasado.
     v2 = None
+    pre = market.merge(crosswalk[["fantaking_id", "person_code", "club_code"]], on="fantaking_id", how="left")
     if not baseline:
-        prior_log = season_gamelog(PRIOR_SEASON_CODE)
-        pre = market.merge(crosswalk[["fantaking_id", "person_code", "club_code"]], on="fantaking_id", how="left")
         v2 = production_projection(
-            pre, gamelog, prior_log, games, round_now,
+            pre, gamelog, season_gamelog(PRIOR_SEASON_CODE) if use_prior else None, games, round_now,
             player_positions([reference, prior_reference], pre[["person_code", "position"]].itertuples(index=False)),
         )
 
@@ -614,13 +616,12 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         reference,
         images,
         baseline=bool(gamelog_meta.get("isBaseline")),
-        prior_performance=None if gamelog_meta.get("isBaseline") else prior_season_performance(),
+        prior_performance=prior_season_performance() if use_prior and not baseline else None,
         club_games=club_games_played(gamelog),
         v2=v2,
     )
 
-    prior_strength = team_strength(prior_reference.get("games", []))
-    strength = team_strength(games, prior=prior_strength)
+    strength = team_strength(games, prior=team_strength(prior_games))
     difficulty = schedule_difficulty(games, strength, from_round=round_now, horizon=3)
 
     clubs_index = {club["code"]: club for club in reference.get("clubs", [])}
@@ -629,12 +630,12 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         records, market, reference, next_round=round_now
     )
     _apply_play_probability(records)
-    match = matchmodel.fit(games, prior_reference.get("games", []))
+    match = matchmodel.fit(games, prior_games, club_values=matchmodel.roster_values(pre))
     schedule_meta = _apply_schedule(records, games, round_now, match)
 
     coach_log = build_coach_gamelog(season_boxscores(SEASON_CODE), games)
-    prior_coach_log = build_coach_gamelog(
-        season_boxscores(PRIOR_SEASON_CODE), prior_reference.get("games", [])
+    prior_coach_log = (
+        build_coach_gamelog(season_boxscores(PRIOR_SEASON_CODE), prior_games) if use_prior else None
     )
     if coach_log.empty:
         # Igual que con los jugadores: si la temporada en curso no tiene
@@ -855,9 +856,9 @@ def _apply_play_probability(records: list[dict[str, Any]]) -> None:
             if cond is None or (isinstance(cond, float) and math.isnan(cond)):
                 continue
             record["projectedIfPlays"] = cond
+        # El parte manda sobre el historial: quien vuelve de una lesión tiene
+        # poca parte de partidos jugados y, marcado "probable", juega igual.
         prob = PLAY_PROB[status]
-        if status == "probable":
-            prob = min(prob, record.get("playProb") or prob)
         record["playProb"] = prob
         record["projectedFp"] = round(float(cond) * prob, 2)
 
