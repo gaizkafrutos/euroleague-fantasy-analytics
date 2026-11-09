@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-09T11:36:02.167886+00:00",
+ "fetchedAt": "2026-11-09T20:50:43.609829+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -235,6 +235,14 @@
    "status": "Out",
    "round": "",
    "comment": "Elbow"
+  },
+  {
+   "team": "BAR",
+   "position": "G",
+   "name": "Kevin Punter",
+   "status": "Out",
+   "round": "",
+   "comment": "Ankle"
   },
   {
    "team": "VBC",
