@@ -28159,9 +28159,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OACA",
+   "name": "RYZHYK, BORYS",
+   "alias": "RYZHYK, B.",
+   "country": {
+    "code": "UKR",
+    "name": "Ukraine"
+   },
+   "images": {
+    "verticalSmall": "8868n7x43bynj5fi"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJDF",
+   "name": "LATISEVS, OLEGS",
+   "alias": "LATISEVS, O.",
+   "country": {
+    "code": "LAT",
+    "name": "Latvia"
+   },
+   "images": {
+    "verticalSmall": "8845j7vs5indngbw"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMI",
+   "name": "BOUBERT, MAXIME",
+   "alias": "BOUBERT, M.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": "bugv8rk58e6ulyph"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "BELGRADE ARENA",
@@ -28260,9 +28296,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OAEF",
+   "name": "GARCIA, JUAN CARLOS",
+   "alias": "GARCIA GONZALEZ, J.C.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "images": {
+    "verticalSmall": "883ghgjot7u5suil"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "QJLU",
+   "name": "UDYANSKYY, EDUARD",
+   "alias": "UDYANSKYY, E.",
+   "country": {
+    "code": "GBR",
+    "name": "United Kingdom"
+   },
+   "images": {
+    "verticalSmall": "94qqejbv9sckawws"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMS",
+   "name": "GRACIN, FRANKO",
+   "alias": "GRACIN, F.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ACCOR ARENA",
