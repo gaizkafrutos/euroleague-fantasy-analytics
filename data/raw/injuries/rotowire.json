@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-09T20:50:43.609829+00:00",
+ "fetchedAt": "2026-11-10T04:10:58.231550+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "DUB",
    "position": "F",
    "name": "Justin Anderson",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Hamstring"
   },
@@ -16,7 +16,7 @@
    "team": "VIR",
    "position": "G",
    "name": "Tommaso Baldasso",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
   },
@@ -72,7 +72,7 @@
    "team": "EFS",
    "position": "G",
    "name": "PJ Dozier",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -80,7 +80,7 @@
    "team": "HTA",
    "position": "G",
    "name": "Tyler Ennis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Achilles"
   },
@@ -96,7 +96,7 @@
    "team": "BAR",
    "position": "G",
    "name": "Umoja Gibson",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -104,7 +104,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Kevarrius Hayes",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Shoulder"
   },
@@ -112,7 +112,7 @@
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Achilles"
   },
@@ -136,7 +136,7 @@
    "team": "BJK",
    "position": "F",
    "name": "DaQuan Jeffries",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Wrist"
   },
@@ -144,7 +144,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Tonye Jekiri",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
   },
@@ -152,7 +152,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Rodions Kurucs",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -160,7 +160,7 @@
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -176,7 +176,7 @@
    "team": "BAR",
    "position": "C",
    "name": "Yoan Makoundou",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
   },
@@ -192,7 +192,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Lefteris Mantzoukas",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -200,7 +200,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   },
@@ -208,7 +208,7 @@
    "team": "VBC",
    "position": "F",
    "name": "Nikola Mirotic",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Groin"
   },
@@ -224,17 +224,9 @@
    "team": "BAR",
    "position": "G",
    "name": "Juan Nunez",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
-  },
-  {
-   "team": "OLY",
-   "position": "G",
-   "name": "Nikolaos Plotas",
-   "status": "Out",
-   "round": "",
-   "comment": "Elbow"
   },
   {
    "team": "BAR",
@@ -248,7 +240,7 @@
    "team": "VBC",
    "position": "F",
    "name": "Nate Reuvers",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Foot"
   },
@@ -256,7 +248,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Nikos Rogkavopoulos",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Hamstring"
   },
@@ -264,7 +256,7 @@
    "team": "KBA",
    "position": "C",
    "name": "Marcio Santos",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -272,7 +264,7 @@
    "team": "HTA",
    "position": "G",
    "name": "Tomas Satoransky",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Concussion"
   },
@@ -280,7 +272,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Tadas Sedekerskis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
   },
@@ -296,7 +288,7 @@
    "team": "DUB",
    "position": "G",
    "name": "Thomas Walkup",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -312,7 +304,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   }
