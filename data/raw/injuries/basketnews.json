@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-11T01:59:19.233569+00:00",
- "updatedAt": "2026-11-10T21:33:00",
+ "fetchedAt": "2026-11-11T09:34:32.166707+00:00",
+ "updatedAt": "2026-11-11T06:29:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -200,7 +200,7 @@
    "team": "Dubai Basketball",
    "position": "SF",
    "name": "Davis Bertans",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
    "comment": "Out indefinitely (hamstring injury). DNP in the domestic league (11.09)"
   },
@@ -360,7 +360,7 @@
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Chris Silva",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "Round 11",
    "comment": "DNP in Round 10 (coach's decision). DNP in the domestic league (11.07)"
   },
@@ -378,7 +378,7 @@
    "name": "Tamir Blatt",
    "status": "Uncertain",
    "round": "Round 11",
-   "comment": "Was included in 12-man squad in Round 10, but DNP (coach's decision).Played in the domestic league (11.09)"
+   "comment": "Was included in 12-man squad in Round 10, but DNP (coach's decision).Played in the domestic cup (11.09)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -394,7 +394,7 @@
    "name": "Tomer Ginat",
    "status": "Uncertain",
    "round": "Round 11",
-   "comment": "DNP in Rounds 7-10 (coach's decision).Played in the domestic league (11.09)"
+   "comment": "DNP in Rounds 7-10 (coach's decision).Played in the domestic cup (11.09)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -402,7 +402,7 @@
    "name": "Vasilije Micic",
    "status": "Expected",
    "round": "Round 11",
-   "comment": "Expected to play in Round 11 after DNP in domestic cup vs. Hapoel"
+   "comment": "Expected to play in Round 11 after DNP in domestic cup vs. Maccabi"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -426,7 +426,7 @@
    "name": "Bar Timor",
    "status": "Uncertain",
    "round": "Round 11",
-   "comment": "DNP in Rounds 7-10 (coach's decision).Played im the domestic league (11.09)"
+   "comment": "DNP in Rounds 7-10 (coach's decision).Played in the domestic cup (11.09)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -483,6 +483,14 @@
    "status": "Uncertain",
    "round": "Round 11",
    "comment": "DNP in Round 10 (coach's decision). Played in the domestic league (11.07)"
+  },
+  {
+   "team": "Maccabi Rapyd Tel Aviv",
+   "position": "PG",
+   "name": "Kamar Baldwin",
+   "status": "Uncertain",
+   "round": "Round 11",
+   "comment": "New signing from Bayern Munich (11.10)"
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
@@ -784,7 +792,7 @@
    "team": "Valencia Basket",
    "position": "PF",
    "name": "Nikola Mirotic",
-   "status": "Uncertain",
+   "status": "Questionable",
    "round": "Round 11",
    "comment": "DNP in Round 9-10, but might be in contention to play in Round 11 (muscle injury)"
   },
@@ -792,17 +800,9 @@
    "team": "Valencia Basket",
    "position": "C",
    "name": "Nate Reuvers",
-   "status": "Uncertain",
+   "status": "Questionable",
    "round": "Round 11",
    "comment": "DNP in Round 8-10, but might be in contention to play in Round 11 (foot bone injury)"
-  },
-  {
-   "team": "Valencia Basket",
-   "position": "C",
-   "name": "Yankuba Sima",
-   "status": "Ready",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "Virtus Bologna",
@@ -810,7 +810,7 @@
    "name": "Matteo Baiocchi",
    "status": "Uncertain",
    "round": "Round 11",
-   "comment": "DNP in Rounds 1-10 (coach's decision). Played in teh domestic league (11.09)"
+   "comment": "DNP in Rounds 1-10 (coach's decision). Played in the domestic league (11.09)"
   },
   {
    "team": "Virtus Bologna",
