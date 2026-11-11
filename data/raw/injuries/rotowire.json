@@ -1,17 +1,9 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-11T09:34:32.639901+00:00",
+ "fetchedAt": "2026-11-11T17:56:23.100111+00:00",
  "updatedAt": null,
  "rows": [
-  {
-   "team": "DUB",
-   "position": "F",
-   "name": "Justin Anderson",
-   "status": "Game time",
-   "round": "",
-   "comment": "Hamstring"
-  },
   {
    "team": "VIR",
    "position": "G",
@@ -19,6 +11,14 @@
    "status": "Game time",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "ASV",
+   "position": "F",
+   "name": "Juhann Begarin",
+   "status": "Game time",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "MIL",
@@ -35,6 +35,14 @@
    "status": "Out",
    "round": "",
    "comment": "Hamstring"
+  },
+  {
+   "team": "VIR",
+   "position": "G",
+   "name": "Davide Casarin",
+   "status": "Out",
+   "round": "",
+   "comment": "Knee"
   },
   {
    "team": "EFS",
@@ -80,9 +88,17 @@
    "team": "HTA",
    "position": "G",
    "name": "Tyler Ennis",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Achilles"
+  },
+  {
+   "team": "BAR",
+   "position": "F",
+   "name": "Tosan Evbuomwan",
+   "status": "Out",
+   "round": "",
+   "comment": "Abdomen"
   },
   {
    "team": "RMB",
@@ -101,6 +117,14 @@
    "comment": ""
   },
   {
+   "team": "VBC",
+   "position": "F",
+   "name": "Mo Gueye",
+   "status": "Game time",
+   "round": "",
+   "comment": "Foot"
+  },
+  {
    "team": "PAR",
    "position": "C",
    "name": "Kevarrius Hayes",
@@ -112,7 +136,7 @@
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Achilles"
   },
@@ -168,7 +192,7 @@
    "team": "BAR",
    "position": "C",
    "name": "Yoan Makoundou",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -192,7 +216,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Stefan Miljenovic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   },
@@ -211,6 +235,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "BJK",
+   "position": "G",
+   "name": "Jaylen Nowell",
+   "status": "Out",
+   "round": "",
+   "comment": "Nose"
   },
   {
    "team": "BAR",
@@ -275,6 +307,14 @@
    "status": "Out",
    "round": "",
    "comment": ""
+  },
+  {
+   "team": "KBA",
+   "position": "F",
+   "name": "Rolands Smits",
+   "status": "Out",
+   "round": "",
+   "comment": "Not Injury Related"
   },
   {
    "team": "DUB",

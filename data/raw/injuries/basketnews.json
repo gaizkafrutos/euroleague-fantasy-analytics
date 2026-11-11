@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-11T09:34:32.166707+00:00",
- "updatedAt": "2026-11-11T06:29:00",
+ "fetchedAt": "2026-11-11T17:56:22.542563+00:00",
+ "updatedAt": "2026-11-11T17:43:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -138,7 +138,15 @@
    "name": "Nikola Djurisic",
    "status": "Uncertain",
    "round": "Round 11",
-   "comment": "DNP in Round 9-10 (coach's decision).Played in the domestic league (11.09)"
+   "comment": "DNP in Round 9-10 (coach's decision). Played in the domestic league (11.09)"
+  },
+  {
+   "team": "Crvena Zvezda Meridianbet Belgrade",
+   "position": "C",
+   "name": "Christian Koloko",
+   "status": "Expected",
+   "round": "Round 11",
+   "comment": "Didn't travel with the team to Madrid, expected to join on game day (visa issues)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -162,7 +170,7 @@
    "name": "Johnathan Motley",
    "status": "Uncertain",
    "round": "Round 11",
-   "comment": "DNP in Round 10 (coach's decision).Played in the domestic league (11.09)"
+   "comment": "Carries an illness ahead of Round 11 after DNP in Round 10 (coach's decision). Played in the domestic league (11.09)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -214,19 +222,11 @@
   },
   {
    "team": "Dubai Basketball",
-   "position": "C",
-   "name": "Kenan Kamenjas",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
-  },
-  {
-   "team": "Dubai Basketball",
    "position": "PG",
    "name": "Kosta Kondic",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Round 10 (coach's decision). DNP in the domestic league (11.09)"
+   "comment": "Ruled out for Round 11 after DNP in Round 10 (hip/psoas muscle injury)"
   },
   {
    "team": "Dubai Basketball",
@@ -289,8 +289,8 @@
    "position": "SF",
    "name": "Tosan Evbuomwan",
    "status": "Out",
-   "round": "Round 11-14",
-   "comment": "Suffered oblique muscle tear (11.09), set to be out around three weeks"
+   "round": "Round 11",
+   "comment": "Suffered oblique muscle tear (11.09), set to be out for around three weeks until Round 14"
   },
   {
    "team": "FC Barcelona",
@@ -329,8 +329,8 @@
    "position": "SG",
    "name": "Kevin Punter",
    "status": "Out",
-   "round": "Round 11-16",
-   "comment": "Suffered ankle sprain in domestic league game (11.08), set to be out for six weeks"
+   "round": "Round 11",
+   "comment": "Suffered ankle sprain in domestic league game (11.08), set to be out for six weeks until Round 16"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
@@ -352,17 +352,17 @@
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Sertac Sanli",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 11",
-   "comment": "DNP in Round 10 (coach's decision).Played in the domestic leagie (11.07)"
+   "comment": "Ankle injury, DNP in Round 10 (coach's decision)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Chris Silva",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Round 10 (coach's decision). DNP in the domestic league (11.07)"
+   "comment": "Finalizes agreement to join Partizan after DNP in Round 10 and the domestic league (coach's decision)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -430,6 +430,14 @@
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
+   "position": "C",
+   "name": "Kenan Kamenjas",
+   "status": "Out",
+   "round": "Round 11",
+   "comment": "Out indefinitely, as he's on his way to Baskonia and not included in official Dubai's Euroleague roster"
+  },
+  {
+   "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "SF",
    "name": "Rodions Kurucs",
    "status": "Expected",
@@ -451,6 +459,14 @@
    "status": "Out",
    "round": "Round 11",
    "comment": "Out after suffering a right thigh muscle injury in Round 7. Expected return in late November."
+  },
+  {
+   "team": "Kosner Baskonia Vitoria-Gasteiz",
+   "position": "PF",
+   "name": "Rolands Smits",
+   "status": "Doubtful",
+   "round": "Round 11",
+   "comment": "New signing"
   },
   {
    "team": "LDLC ASVEL Villeurbanne",
@@ -483,14 +499,6 @@
    "status": "Uncertain",
    "round": "Round 11",
    "comment": "DNP in Round 10 (coach's decision). Played in the domestic league (11.07)"
-  },
-  {
-   "team": "Maccabi Rapyd Tel Aviv",
-   "position": "PG",
-   "name": "Kamar Baldwin",
-   "status": "Uncertain",
-   "round": "Round 11",
-   "comment": "New signing from Bayern Munich (11.10)"
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
@@ -538,7 +546,7 @@
    "name": "Tyler Dorsey",
    "status": "Out",
    "round": "Round 11",
-   "comment": "Expected to be out until Round 14 after receiving one-month suspension by the club (10.22)"
+   "comment": "Expected to be out until Round 12 after receiving one-month suspension by the club"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -568,7 +576,7 @@
    "team": "Olympiacos Piraeus",
    "position": "SF",
    "name": "Kostas Papanikolaou",
-   "status": "Doubtful",
+   "status": "Uncertain",
    "round": "Round 11",
    "comment": "Missed domestic league game due to tendonitis (11.08), likely to be out for a week"
   },
@@ -766,6 +774,14 @@
   },
   {
    "team": "Real Madrid",
+   "position": "PF",
+   "name": "Chuma Okeke",
+   "status": "Expected",
+   "round": "Round 11",
+   "comment": "Expected to play after DNP in domestic league on Sunday (undisclosed)"
+  },
+  {
+   "team": "Real Madrid",
    "position": "C",
    "name": "Olivier Sarr",
    "status": "Expected",
@@ -784,25 +800,25 @@
    "team": "Valencia Basket",
    "position": "PF",
    "name": "Mouhamadou Gueye",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 11",
-   "comment": "DNP in Round 10 (Undisclosed). DNP in the domestic league (11.08)"
+   "comment": "DNP in Round 10 and domestic league on Sunday (right foot injury)"
   },
   {
    "team": "Valencia Basket",
    "position": "PF",
    "name": "Nikola Mirotic",
-   "status": "Questionable",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Round 9-10, but might be in contention to play in Round 11 (muscle injury)"
+   "comment": "Ruled out for Round 11 after DNP in Round 9-10 (muscle injury)"
   },
   {
    "team": "Valencia Basket",
    "position": "C",
    "name": "Nate Reuvers",
-   "status": "Questionable",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Round 8-10, but might be in contention to play in Round 11 (foot bone injury)"
+   "comment": "Ruled out for Round 11 after DNP in Round 8-10 (foot bone injury)"
   },
   {
    "team": "Virtus Bologna",
@@ -824,33 +840,33 @@
    "team": "Virtus Bologna",
    "position": "SG",
    "name": "Davide Casarin",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Round 9-10 (coach's decision), sprained left knee in domestic league game (11.09)"
+   "comment": "Out for eight weeks with an intraspongious fracture (11.09)"
   },
   {
    "team": "Zalgiris Kaunas",
    "position": "C",
    "name": "Marek Blaževič",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 8-10 (coach's decision), played in domestic league (11.08)"
+   "comment": "Didn't travel for Round 11 after DNP in Rounds 8-10 (coach's decision)"
   },
   {
    "team": "Zalgiris Kaunas",
    "position": "SG",
    "name": "Dovydas Giedraitis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 8-10 (coach's decision), played in domestic league (11.08)"
+   "comment": "Didn't travel for Round 11 after DNP in Rounds 8-10 (coach's decision)"
   },
   {
    "team": "Zalgiris Kaunas",
    "position": "SG",
    "name": "Deividas Sirvydis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 8-10 (coach's decision), played in domestic league (11.08)"
+   "comment": "Didn't travel for Round 11 after DNP in Rounds 8-10 (coach's decision)"
   },
   {
    "team": "Zalgiris Kaunas",

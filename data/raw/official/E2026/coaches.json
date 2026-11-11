@@ -1,6 +1,66 @@
 [
  {
   "person": {
+   "code": "LMQ",
+   "name": "BANCHI, LUCA",
+   "alias": "BANCHI, LUCA",
+   "aliasRaw": "BANCHI, LUCA",
+   "passportName": "LUCA",
+   "passportSurname": "BANCHI",
+   "jerseyName": "",
+   "abbreviatedName": "Banchi, L.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 0,
+   "weight": 0,
+   "birthDate": "1965-08-01T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "E",
+  "typeName": "Coach",
+  "active": true,
+  "startDate": "2026-11-11T14:36:29.145",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "",
+  "dorsalRaw": "",
+  "position": 0,
+  "positionName": null,
+  "lastTeam": "",
+  "externalId": 57293,
+  "images": {},
+  "club": {
+   "code": "MIL",
+   "name": "Armani Olimpia Milan",
+   "abbreviatedName": "Milan",
+   "editorialName": "Milan",
+   "tvCode": "MIL",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/5c2f0ab6-f86a-4df0-b2f3-f9ab92f7267b.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "LAF",
    "name": "PERASOVIC, VELIMIR",
    "alias": "PERASOVIC, VELIMIR",
@@ -1168,9 +1228,9 @@
   },
   "type": "E",
   "typeName": "Coach",
-  "active": true,
+  "active": false,
   "startDate": "2026-09-09T15:44:58.091",
-  "endDate": "2027-06-30T00:00:00",
+  "endDate": "2026-11-11T14:36:17.554",
   "order": 0,
   "dorsal": "",
   "dorsalRaw": "",
