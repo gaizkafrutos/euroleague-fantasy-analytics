@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import SquadConsole from "@/components/team/SquadConsole";
 import { lineup, meta, players, pricedPlayers, rosterPlayers } from "@/lib/data";
+import { roundInPlay } from "@/lib/projection";
 import type { Player } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -28,6 +29,8 @@ export default function TeamPage() {
         }
       : null;
 
+  const inPlay = roundInPlay(meta.schedule);
+
   return (
     <section className="section shell">
       <header className="cancha-head">
@@ -36,6 +39,13 @@ export default function TeamPage() {
           Monta la plantilla para la jornada {meta.currentRound}: la consola la coloca, calcula lo
           que puntúa y te dice qué fichaje cabe.
         </p>
+        {inPlay ? (
+          <p className="card-note round-note">
+            La jornada {meta.currentRound} está en juego ({inPlay.played} de {inPlay.games}{" "}
+            partidos). Quien ya ha jugado sale con su partido de la jornada {meta.currentRound + 1},
+            marcado «J{meta.currentRound + 1}» en su ficha.
+          </p>
+        ) : null}
         <details className="explain">
           <summary>Cómo coloca a tus jugadores</summary>
           <p>
@@ -102,6 +112,8 @@ function squadRow(player: Player): Player {
             home: player.schedule.next.home,
             turn: player.schedule.next.turn,
             turns: player.schedule.next.turns,
+            round: player.schedule.next.round,
+            ahead: player.schedule.next.ahead,
           }
         : null,
     },

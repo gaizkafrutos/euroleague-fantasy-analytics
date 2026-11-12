@@ -7,6 +7,28 @@ function signedNum(value: number | null | undefined): string {
   return `${value > 0 ? "+" : value < 0 ? "−" : ""}${num(Math.abs(value), 2)}`;
 }
 
+/** La comprobación de la fórmula con los datos de hoy. La de la jornada 1 era
+ *  una foto: desde entonces el juego ha dejado de recoger alguna falta en
+ *  partidos sueltos, y la web seguía diciendo que cuadraba todo. */
+function FormulaCheckNote() {
+  const check = meta.formulaCheck;
+  if (!check || !check.players) return null;
+  const off = check.players - check.exact;
+  const gap = check.foulGap;
+  return (
+    <p className="card-note">
+      {check.checkedAt ? `Última comprobación, ${dateTime(check.checkedAt)}: ` : "Última comprobación: "}
+      la media calculada aquí cuadra al decimal con la del juego en {check.exact} de {check.players}{" "}
+      jugadores (diferencia media, {num(check.meanAbsoluteError, 2)} puntos)
+      {check.coaches ? ` y en los ${check.coaches.coaches} entrenadores` : ""}.
+      {off > 0 && gap && gap.players > 0
+        ? ` A ${gap.players} de los que no cuadran el juego les apuntó menos faltas que el acta oficial (${gap.fouls} en total): en algunos partidos no recogió las técnicas ni las antideportivas. No es una regla que se pueda reproducir, así que aquí manda el acta y esos jugadores salen con hasta dos décimas menos de media que en el juego.`
+        : ""}
+      {check.ok ? "" : " La comprobación de hoy NO pasa: puede haber cambiado el baremo."}
+    </p>
+  );
+}
+
 export const metadata = {
   title: "Metodología",
   description:
@@ -194,10 +216,11 @@ export default function MethodologyPage() {
           cambiado — y es mejor enterarse por ahí que por un fichaje.
         </p>
         <p className="card-note">
-          Contrastado en la jornada 1: cuadran al decimal los 159 jugadores y los 14
+          Contrastado en la jornada 1: cuadraban al decimal los 159 jugadores y los 14
           entrenadores de los partidos del 24 de septiembre. El bonus de victoria suma siempre:
           un −1 con victoria queda en −0,9, no en −1,1.
         </p>
+        <FormulaCheckNote />
       </div>
 
       <ProjectionModel />

@@ -20,8 +20,8 @@ un chollo.
 
 El Fantasy Challenge no publica API. Su frontend (una app Flutter) habla contra
 `fantaking-api.dunkest.com`, donde la EuroLiga es la competición 49. Ese
-endpoint, con un token de sesión propio, devuelve los 347 jugadores con su
-cotización. Ese fue el bloqueante del proyecto y es lo que resuelve el pipeline.
+endpoint, con un token de sesión propio, devuelve el mercado entero (unos 360
+jugadores y entrenadores) con su cotización. Ese fue el bloqueante del proyecto y es lo que resuelve el pipeline.
 
 El segundo hallazgo cambió el alcance: Fantaking **documenta su baremo de
 puntuación**. Reimplementarlo sobre los boxscores oficiales permite reconstruir
@@ -153,8 +153,12 @@ cd web && npm run typecheck && npm run build
 
 `efa verify` compara la media calculada aquí con la columna `fpt` del propio
 mercado de Fantaking, y también la media de cada una de las 11 acciones del
-baremo y la de los entrenadores. Si algo se desvía más que el redondeo, es que
-el baremo del juego ha cambiado — y conviene enterarse por ahí y no por un fichaje.
+baremo y la de los entrenadores. Cuenta cuántos jugadores cuadran al decimal
+(264 de 284 el 12-11-2026) y falla si el error medio o esa parte se salen de
+margen: es la señal de que el baremo ha cambiado, y conviene enterarse por ahí
+y no por un fichaje. El resultado sale en la metodología de la web. A unos
+pocos jugadores el juego les apunta menos faltas que el acta oficial (no
+recoge técnicas ni antideportivas en algunos partidos): se cuentan aparte.
 
 `efa backtest` publica además lo que la web proyectó antes de cada jornada
 frente a lo que pasó (`data/processed/predictions/`, ver `efa/published.py`):
@@ -179,7 +183,7 @@ Proyecto personal, sin ánimo comercial y sin relación con Euroleague Basketbal
 ni con Fantaking. Los [términos del
 juego](https://fantaking.gitbook.io/euroleague-fantasy-challenge-rules) no
 prohíben la automatización pero piden uso no comercial. El pipeline hace cuatro
-peticiones por snapshot, una vez al día. Los nombres, escudos y fotos son
+peticiones por captura, una cada dos horas. Los nombres, escudos y fotos son
 propiedad de sus titulares y se usan solo para identificar a jugadores y
 equipos.
 

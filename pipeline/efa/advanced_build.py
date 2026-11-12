@@ -287,7 +287,8 @@ def price_freshness(
          precios: los que tienen `plus` ≠ 0 siguen con la cotización de antes de
          la jornada.
     """
-    empty = {"stale": False, "capturedAt": None, "lastGameAt": None, "round": None, "reason": None}
+    empty = {"stale": False, "capturedAt": None, "lastGameAt": None, "round": None, "reason": None,
+             "roundGames": None, "roundPlayed": None}
     if history.empty or "quotation" not in history.columns:
         return empty
     captured = pd.to_datetime(history["captured_at"], utc=True).max()
@@ -296,10 +297,16 @@ def price_freshness(
     if not played:
         return out
 
+    from efa.fixtures import round_progress
+
     last_round = max(int(g.get("round") or 0) for g, _ in played)
     in_round = [t for g, t in played if int(g.get("round") or 0) == last_round]
     out["round"] = last_round
     out["lastGameAt"] = max(t for _, t in played).isoformat()
+    # Partidos de la jornada y cuántos van: "la jornada estaba cerrada" solo es
+    # verdad si se han jugado todos. Con dos de diez, la web decía que sí.
+    progress = round_progress(games, last_round)
+    out["roundGames"], out["roundPlayed"] = progress["games"], progress["played"]
 
     if any(t >= captured - GAME_DURATION for t in in_round):
         return {**out, "stale": True, "reason": "captura con la jornada a medias"}
@@ -321,6 +328,10 @@ def price_freshness(
     ).round(2)
     movers = merged[moved.ne(0)]
     if len(movers) >= 20 and float((movers["quotation"] != movers["quotation_base"]).mean()) < 0.5:
+        if out["roundPlayed"] < out["roundGames"]:
+            # Jornada en juego: el precio no se mueve hasta que acabe, pero la
+            # variación de quien ya ha jugado está publicada.
+            return {**out, "stale": True, "reason": "jornada en juego"}
         return {**out, "stale": True, "reason": "el juego aún no ha aplicado la revalorización"}
     return out
 
@@ -570,9 +581,14 @@ def apply_advanced(
     pending = pending_prices(records, market, log_now, calendar, model, freshness, history=history)
     meta["priceFreshness"] = {**freshness, "pending": pending}
     if freshness.get("stale"):
+        reason = (
+            f"la jornada sigue en juego ({freshness['roundPlayed']} de {freshness['roundGames']} partidos)"
+            if freshness["reason"] == "jornada en juego"
+            else freshness["reason"]
+        )
         meta.setdefault("warnings", []).append(
             f"Precios capturados el {freshness['capturedAt'][:16].replace('T', ' ')} UTC: "
-            f"{freshness['reason']} (J{freshness['round']}). "
+            f"{reason} (J{freshness['round']}). "
             f"Se usa el precio pendiente de {pending} jugadores hasta la próxima captura."
         )
     sds = _projection_sd(records, log_now, log_prior)
@@ -862,10 +878,13 @@ def _short_names(reference: dict[str, Any]) -> dict[str, str]:
 
 
 def _upcoming(games: list[dict[str, Any]], round_now: int, *, horizon: int) -> dict[str, list[dict[str, Any]]]:
+    from efa.fixtures import pending_games
+
     out: dict[str, list[dict[str, Any]]] = {}
-    rounds = sorted({int(g["round"]) for g in games if g.get("round") and not g.get("played") and int(g["round"]) >= round_now})[:horizon]
-    for game in sorted(games, key=lambda g: (int(g.get("round") or 0), str(g.get("utcDate") or ""))):
-        if not game.get("round") or int(game["round"]) not in rounds or game.get("played"):
+    pending = pending_games(games)
+    rounds = sorted({int(g["round"]) for g in pending if g.get("round") and int(g["round"]) >= round_now})[:horizon]
+    for game in pending:
+        if not game.get("round") or int(game["round"]) not in rounds:
             continue
         local = str(((game.get("local") or {}).get("club") or {}).get("code") or "")
         road = str(((game.get("road") or {}).get("club") or {}).get("code") or "")

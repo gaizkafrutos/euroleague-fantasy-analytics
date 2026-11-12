@@ -462,7 +462,9 @@ def player_records(
             {
                 "id": int(row["fantaking_id"]),
                 "personCode": str(person_code) if pd.notna(person_code) else None,
-                "name": row.get("official_name") or row.get("name"),
+                # Sin cruzar, `official_name` es NaN, y NaN es verdadero: el `or`
+                # se quedaba con él y el jugador salía sin nombre.
+                "name": row.get("official_name") if isinstance(row.get("official_name"), str) and row.get("official_name") else row.get("name"),
                 "marketName": row.get("name"),
                 "club": club_code,
                 "clubName": club.get("name"),
@@ -627,7 +629,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     clubs_index = {club["code"]: club for club in reference.get("clubs", [])}
     records = player_records(table, series, difficulty, clubs_index)
     injuries_meta = _apply_availability(
-        records, market, reference, next_round=round_now
+        records, market, reference, next_round=round_now, games=games
     )
     _apply_play_probability(records)
     match = matchmodel.fit(games, prior_games, club_values=matchmodel.roster_values(pre))
@@ -774,8 +776,10 @@ def _apply_availability(
     reference: dict[str, Any],
     *,
     next_round: int,
+    games: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    """Disponibilidad de cada jugador para la próxima jornada.
+    """Disponibilidad de cada jugador para SU próximo partido: el de la jornada
+    vigente o, si su club ya la ha jugado, el de la siguiente.
 
     Dos fuentes, en este orden de prioridad:
       1. El parte de lesiones de BasketNews (más correcciones manuales).
@@ -787,9 +791,18 @@ def _apply_availability(
     cambia es que el optimizador no ficha a quien está de baja y la web avisa.
     """
     from efa.ingest.injuries import availability_index
+    from efa.projection import next_games
 
     alias_map = build_club_alias_map(reference.get("clubs", []))
-    index, summary = availability_index(market, alias_map, next_round)
+    club_round = {
+        club: int(game.get("round") or next_round) for club, game in next_games(games or [], next_round).items()
+    }
+    round_by_id = {
+        int(record["id"]): club_round[str(record.get("club"))]
+        for record in records
+        if str(record.get("club")) in club_round
+    }
+    index, summary = availability_index(market, alias_map, next_round, round_by_id=round_by_id)
     registered = {
         str((entry.get("person") or {}).get("code"))
         for entry in reference.get("players", [])
@@ -917,6 +930,8 @@ def _apply_schedule(
         clubs[club] = {
             "date": stamp.isoformat(),
             "round": number,
+            # Su club ya ha jugado la jornada vigente: este partido es de la siguiente.
+            "ahead": number > round_now,
             "turn": game_days.index(stamp.date()) + 1,
             "turns": len(game_days),
             "opponent": rival,
@@ -930,7 +945,19 @@ def _apply_schedule(
         info = clubs.get(str(record.get("club")))
         if info:
             record.setdefault("schedule", {}).update({"next": info})
-    return {"round": round_now, "turns": len(days), "doubleWeekClubs": sorted(c for c, i in clubs.items() if i["doubleWeek"])}
+    from efa.fixtures import round_progress
+
+    progress = round_progress(games, round_now)
+    return {
+        "round": round_now,
+        "turns": len(days),
+        "doubleWeekClubs": sorted(c for c, i in clubs.items() if i["doubleWeek"]),
+        # Con la jornada a medias, quien ya ha jugado proyecta el partido de la
+        # siguiente: la web tiene que poder decirlo.
+        "roundGames": progress["games"],
+        "roundPlayed": progress["played"],
+        "aheadClubs": sorted(c for c, i in clubs.items() if i["round"] > round_now),
+    }
 
 
 def _apply_coach_match(

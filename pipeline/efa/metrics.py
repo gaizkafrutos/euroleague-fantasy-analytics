@@ -301,13 +301,16 @@ def schedule_difficulty(
     if strength.empty:
         return pd.DataFrame(columns=["club_code", "difficulty", "fixtures"])
 
+    from efa.fixtures import pending_games
+
     ratings = dict(zip(strength["club_code"], strength["net_rating"], strict=False))
     upcoming: dict[str, list[dict[str, Any]]] = {}
 
-    for game in sorted(games, key=lambda g: (g.get("round") or 0, g.get("utcDate") or "")):
+    # Con la jornada a medias, lo ya jugado no es "próximo rival"; un aplazado
+    # con la fecha pasada, tampoco.
+    for game in pending_games(games):
         round_number = game.get("round")
-        # Con la jornada a medias, lo ya jugado no es "próximo rival".
-        if round_number is None or int(round_number) < from_round or game.get("played"):
+        if round_number is None or int(round_number) < from_round:
             continue
         local = ((game.get("local") or {}).get("club") or {}).get("code")
         road = ((game.get("road") or {}).get("club") or {}).get("code")

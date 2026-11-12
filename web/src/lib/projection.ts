@@ -25,8 +25,23 @@ export function fixtureName(next: NextGame | null | undefined): string {
 /** "T1" si la jornada se juega en varios días; nada si es de un solo turno.
  *  Con `long`, "turno 1": donde hay sitio, sin abreviatura que aprenderse. */
 export function turnLabel(next: NextGame | null | undefined, long = false): string | null {
-  if (!next || next.turns <= 1) return null;
-  return long ? `turno ${next.turn}` : `T${next.turn}`;
+  if (!next) return null;
+  // Con la jornada a medias, quien ya ha jugado sale con su partido de la
+  // siguiente: se dice de cuál, o "T1" parecería el primer día de la vigente.
+  const round = next.ahead && next.round ? (long ? `jornada ${next.round}` : `J${next.round}`) : null;
+  const turn = next.turns > 1 ? (long ? `turno ${next.turn}` : `T${next.turn}`) : null;
+  const parts = [round, turn].filter(Boolean);
+  return parts.length ? parts.join(long ? ", " : " · ") : null;
+}
+
+/** Jornada en juego: se ha jugado algún partido y quedan otros. */
+export function roundInPlay(
+  schedule: { roundGames?: number; roundPlayed?: number } | null | undefined,
+): { played: number; games: number } | null {
+  const games = schedule?.roundGames;
+  const played = schedule?.roundPlayed;
+  if (typeof games !== "number" || typeof played !== "number") return null;
+  return played > 0 && played < games ? { played, games } : null;
 }
 
 /** Probabilidad de jugar por debajo de la cual se avisa. */

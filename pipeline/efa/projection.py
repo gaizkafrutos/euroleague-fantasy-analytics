@@ -355,10 +355,13 @@ def next_games(games: list[dict[str, Any]], round_now: int) -> dict[str, dict[st
     Con la jornada a medias, quien ya jugó la suya pasa a la siguiente: antes se
     le seguía proyectando (y enseñando como "próximo") el partido ya jugado.
     """
+    from efa.fixtures import pending_games
+
     out: dict[str, dict[str, Any]] = {}
-    ordered = sorted(games, key=lambda g: (int(g.get("round") or 0), str(g.get("utcDate") or "")))
-    for game in ordered:
-        if int(game.get("round") or 0) < round_now or game.get("played"):
+    # Sin los aplazados: un partido sin jugar con la fecha ya pasada no es "el
+    # próximo" de nadie.
+    for game in pending_games(games):
+        if int(game.get("round") or 0) < round_now:
             continue
         for side in ("local", "road"):
             club = ((game.get(side) or {}).get("club") or {}).get("code")

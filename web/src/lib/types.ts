@@ -171,6 +171,8 @@ export interface NextGame {
   date: string;
   /** Jornada del partido: la vigente o, si su club ya la jugó, la siguiente. */
   round?: number;
+  /** El partido es de una jornada posterior a la vigente (su club ya la jugó). */
+  ahead?: boolean;
   /** Turno de la jornada (día): entre turnos se puede cambiar quinteto y capitán. */
   turn: number;
   turns: number;
@@ -443,11 +445,34 @@ export interface Meta {
   warnings: string[];
   priceFreshness?: PriceFreshness;
   matchModel?: { homeAdvantage: number; marginSd: number };
-  schedule?: { round: number; turns: number; doubleWeekClubs: string[] };
+  schedule?: {
+    round: number;
+    turns: number;
+    doubleWeekClubs: string[];
+    /** Partidos de la jornada vigente y cuántos se han jugado. */
+    roundGames?: number;
+    roundPlayed?: number;
+    /** Clubes que ya han jugado la vigente: su próximo partido es de la siguiente. */
+    aheadClubs?: string[];
+  };
+  /** Último `efa verify`: cuántos jugadores cuadran al decimal con el juego. */
+  formulaCheck?: FormulaCheck | null;
   modelBacktest?: ModelBacktest | null;
   injuries?: InjuriesMeta;
   priceModel?: PriceModel;
   league?: LeagueRef;
+}
+
+export interface FormulaCheck {
+  ok: boolean;
+  checkedAt: string | null;
+  players: number;
+  exact: number;
+  exactShare: number;
+  meanAbsoluteError: number;
+  coaches: { coaches: number; maxAbsError: number } | null;
+  /** Jugadores a los que el juego apuntó menos faltas que el acta oficial. */
+  foulGap: { players: number; fouls: number } | null;
 }
 
 export interface BacktestScore {
@@ -527,6 +552,9 @@ export interface PriceFreshness {
   reason: string | null;
   /** Jugadores con precio pendiente distinto del del juego. */
   pending: number;
+  /** Partidos de esa jornada y cuántos se habían jugado al construir los datos. */
+  roundGames?: number | null;
+  roundPlayed?: number | null;
 }
 
 /** plus = a·puntos + b·precio + c, ajustado sobre el último snapshot. */

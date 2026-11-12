@@ -7,14 +7,22 @@ import { dateTime } from "@/lib/format";
 export default function PriceNotice() {
   const fresh = meta.priceFreshness;
   if (!fresh?.stale || !fresh.capturedAt) return null;
+  const round = fresh.round ? `la J${fresh.round}` : "la jornada";
+  // "Estaba cerrada" solo si se habían jugado todos sus partidos: con dos de
+  // diez la web lo decía igual.
+  const open =
+    fresh.reason === "jornada en juego" || fresh.reason === "captura con la jornada a medias";
+  const progress =
+    typeof fresh.roundPlayed === "number" && typeof fresh.roundGames === "number" && fresh.roundPlayed < fresh.roundGames
+      ? ` (${fresh.roundPlayed} de ${fresh.roundGames} partidos)`
+      : "";
   return (
     <div className="price-notice" role="status">
       <div className="shell">
         <strong>Precios en revisión.</strong> La última captura es del {dateTime(fresh.capturedAt)}
-        {fresh.round ? ` y la J${fresh.round} ` : " y la jornada "}
-        {fresh.reason === "captura con la jornada a medias"
-          ? "no había terminado."
-          : "estaba cerrada, pero el juego aún no había revalorizado."}{" "}
+        {open
+          ? `, con ${round} en juego${progress}: el juego no mueve los precios hasta que termina.`
+          : ` y ${round} estaba cerrada, pero el juego aún no había revalorizado.`}{" "}
         Enseñamos el precio que tendrá cada jugador al cerrarla
         {fresh.pending ? ` (${fresh.pending} cambian)` : ""}; se confirma con la próxima captura.
       </div>

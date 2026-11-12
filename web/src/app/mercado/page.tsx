@@ -13,6 +13,7 @@ import { BarCell, PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
 import { checkedLater, credits, dateTime, displayName, num, percent, positionLabel, positionShort } from "@/lib/format";
+import { roundInPlay } from "@/lib/projection";
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 import Explain from "@/components/ui/Explain";
@@ -45,6 +46,7 @@ export default function MercadoPage() {
   // Las señales se adaptan al punto de la temporada: con una jornada jugada no
   // hay "últimas cinco", y exigirlas dejaba las tres listas vacías hasta
   // octubre. Hasta la J5, el rol se mide contra la temporada anterior.
+  const inPlay = roundInPlay(meta.schedule);
   const roundsPlayed = Math.max(meta.currentRound - 1, 0);
   const early = roundsPlayed < 5;
   const minGames = Math.min(5, Math.max(1, roundsPlayed));
@@ -213,6 +215,9 @@ export default function MercadoPage() {
               <h2>El equipo óptimo con {credits(lineup.budget)}</h2>
               <p className="card-note" style={{ margin: "8px 0 0", maxWidth: "62ch" }}>
                 La mejor plantilla posible con todas las reglas del juego.
+                {inPlay
+                  ? ` Con la jornada ${meta.currentRound} en juego (${inPlay.played} de ${inPlay.games} partidos), quien ya ha jugado cuenta con su partido de la jornada ${meta.currentRound + 1}.`
+                  : ""}
               </p>
               <Explain summary="Cómo se calcula">
                 4 bases, 4 aleros, 2 pívots, un entrenador y máximo 6 del mismo club. Resuelto por
