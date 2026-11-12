@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-12T00:50:26.963079+00:00",
- "updatedAt": "2026-11-11T21:32:00",
+ "fetchedAt": "2026-11-12T09:56:30.355194+00:00",
+ "updatedAt": "2026-11-12T08:00:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -336,41 +336,33 @@
    "team": "Fenerbahce Beko Istanbul",
    "position": "SG",
    "name": "Onuralp Bitim",
-   "status": "Ready",
-   "round": "Round 11",
-   "comment": "DNP in Rounds 1-10 (coach's decision).Played in the domestic league (11.07)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Rounds 1-11 (coach's decision)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "SG",
    "name": "Melih Mahmutoglu",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "DNP in Rounds 1-10 (coach's decision). Played in the domestic league (11.07)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Rounds 1-11 (coach's decision)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Nicolo Melli",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Undisclosed injury"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Round 11 (undisclosed injury)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
    "position": "C",
    "name": "Sertac Sanli",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Ankle injury, DNP in Round 10 (coach's decision)"
-  },
-  {
-   "team": "Fenerbahce Beko Istanbul",
-   "position": "C",
-   "name": "Chris Silva",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Finalizes agreement to join Partizan after DNP in Round 10 and the domestic league (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Rounds 10-11 (ankle injury)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -440,24 +432,16 @@
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "C",
    "name": "Kenan Kamenjas",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Out indefinitely, as he's on his way to Baskonia and not included in official Dubai's Euroleague roster"
-  },
-  {
-   "team": "Kosner Baskonia Vitoria-Gasteiz",
-   "position": "SF",
-   "name": "Rodions Kurucs",
-   "status": "Ready",
-   "round": "Round 11",
-   "comment": "Returned to practice and expected to return for Round 11 after DNP in Rounds 8-10 (hip injury)"
+   "status": "Expected",
+   "round": "Round 12",
+   "comment": "DNP in Round 11 (new signing)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "C",
    "name": "Marcio Santos",
-   "status": "Out",
-   "round": "Round 11",
+   "status": "Uncertain",
+   "round": "Round 12",
    "comment": "Out indefinitely (left calf tear)"
   },
   {
@@ -465,16 +449,16 @@
    "position": "PF",
    "name": "Tadas Sedekerskis",
    "status": "Out",
-   "round": "Round 11",
+   "round": "Round 12",
    "comment": "Out after suffering a right thigh muscle injury in Round 7. Expected return in late November."
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "PF",
    "name": "Rolands Smits",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "New signing"
+   "status": "Expected",
+   "round": "Round 12",
+   "comment": "DNP in Round 11 (new signing)"
   },
   {
    "team": "LDLC ASVEL Villeurbanne",
@@ -648,113 +632,89 @@
    "team": "Paris Basketball",
    "position": "SG",
    "name": "Joel Ayayi",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Not included in 12-man roster in Round 11 (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Round 11 (coach's decision)"
   },
   {
    "team": "Paris Basketball",
    "position": "SF",
    "name": "Nobel Boungou-Colo",
    "status": "Out",
-   "round": "Round 11",
+   "round": "Round 12",
    "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Paris Basketball",
    "position": "SF",
    "name": "Daulton Hommes",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "DNP in Round 9-10 (concussion). Played in the domestic league (11.08)"
-  },
-  {
-   "team": "Paris Basketball",
-   "position": "PG",
-   "name": "Frank Ntilikina",
-   "status": "Ready",
-   "round": "Round 11",
-   "comment": "DNP in Round 10 (undisclosed). Played in the domestic league (11.08)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Round 11 (coach's decision)"
   },
   {
    "team": "Paris Basketball",
    "position": "SF",
    "name": "Maozinha Pereira",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Not included in 12-man roster in Round 11 (coach's decision)"
-  },
-  {
-   "team": "Paris Basketball",
-   "position": "SF",
-   "name": "Terry Tarpey",
-   "status": "Ready",
-   "round": "Round 11",
-   "comment": "DNP in Round 10 (undisclosed). Played in the domestic league (11.08)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Round 11 (coach's decision)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PG",
    "name": "Kyle Allman",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "DNP in Round 10 (coach's decision).Played in the domestic league (11.08)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Round 10-11 (coach's decision)."
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SG",
    "name": "Mitar Bosnjakovic",
    "status": "Out",
-   "round": "Round 11",
+   "round": "Round 12",
    "comment": "Out indefinitely, as he's not included in official Euroleague roster"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PG",
    "name": "Uros Danilovic",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "DNP in Rounds 2-10 (coach's decision)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Rounds 2-11 (coach's decision)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "C",
    "name": "Kevarrius Hayes",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "DNP in Round 10 (minor shoulder injury). DNP in the domestic league (11.08)"
-  },
-  {
-   "team": "Partizan Mozzart Bet Belgrade",
-   "position": "C",
-   "name": "Tonye Jekiri",
-   "status": "Ready",
-   "round": "Round 11",
-   "comment": "Will practice with the team ahead of Round 11 after suffering an adductor injury in Round 6"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Rounds 10-11 (minor shoulder injury)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SF",
    "name": "Lamar Stevens",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Not in 12-man roster in Round 11 (Illness)"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Round 11 (illness)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
-   "position": "PG",
-   "name": "Luca Vildoza",
-   "status": "Ready",
-   "round": "Round 11",
-   "comment": "Will practice with the team ahead of Round 11 after suffering a hand injury in Round 10"
+   "position": "SG",
+   "name": "Ethan Thompson",
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "Suffered a hip injury in Round 11"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PF",
    "name": "Derek Willis",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Will practice with the team ahead of Round 11 after suffering an ankle injury in Round 1"
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "DNP in Rounds 1-11, but returned to practices (ankle injury)"
   },
   {
    "team": "Real Madrid",
@@ -874,7 +834,7 @@
    "name": "Davide Casarin",
    "status": "Out",
    "round": "Round 11",
-   "comment": "Out for eight weeks with an intraspongious fracture (11.09)"
+   "comment": "Out for eight weeks and at least until Round 21 (bone bruise, 11.09)"
   },
   {
    "team": "Zalgiris Kaunas",
