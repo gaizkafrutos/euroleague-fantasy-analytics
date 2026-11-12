@@ -14,8 +14,10 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: pipeline/requirements.txt
-      - run: pip install -e "./pipeline[dev]"
+          cache-dependency-path: |
+            pipeline/requirements.txt
+            pipeline/constraints.txt
+      - run: pip install -e "./pipeline[dev]" -c pipeline/constraints.txt
       - name: Tests
         run: python -m pytest pipeline/tests -q
       - name: Lint
@@ -34,6 +36,9 @@ jobs:
         working-directory: web
       - name: Comprobación de tipos
         run: npm run typecheck
+        working-directory: web
+      - name: Tests de formato, jornada y escalas
+        run: npm test
         working-directory: web
       - name: Lógica de plantilla (roles, óptimo y plan de cambios)
         run: npm run verify:squad

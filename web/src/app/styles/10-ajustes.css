@@ -1,0 +1,1482 @@
+/* --------------------------------------------------------------------------
+   Mi equipo — horquilla de la jornada
+   -------------------------------------------------------------------------- */
+.cancha-range {
+  display: grid;
+  gap: 10px;
+  padding-block: 8px 4px;
+}
+
+.cancha-range h2 {
+  font-size: clamp(1.5rem, 1.15rem + 1.4vw, 2.25rem);
+  font-variation-settings: "wdth" 104, "wght" 720;
+}
+
+.srange {
+  display: grid;
+  gap: 8px;
+}
+
+.srange-track {
+  position: relative;
+  height: 30px;
+  margin-top: 34px;
+  border-radius: 999px;
+  background: var(--surface-3);
+}
+
+.srange-outer,
+.srange-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 999px;
+}
+
+.srange-outer {
+  background: color-mix(in srgb, var(--fantasy) 26%, transparent);
+}
+
+.srange-inner {
+  background: color-mix(in srgb, var(--fantasy) 58%, transparent);
+}
+
+.srange-dot {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 3px var(--surface);
+}
+
+.srange-opt {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--ink-muted);
+  border-radius: 2px;
+}
+
+.srange-opt i {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  translate: -50% 0;
+  white-space: nowrap;
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.srange-axis {
+  position: relative;
+  height: 52px;
+  margin-top: 6px;
+  font-size: 1.125rem;
+  color: var(--ink-2);
+}
+
+.srange-axis span {
+  position: absolute;
+  translate: -50% 0;
+}
+
+.srange-axis .is-mean {
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.srange-read {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+
+.srange-read b {
+  color: var(--ink);
+}
+
+.legend-line {
+  display: inline-block;
+  flex: none;
+  align-self: flex-start;
+  width: 16px;
+  margin: 0.62em 4px 0 0;
+  vertical-align: middle;
+  border-top: 1.5px dashed var(--ink-2);
+}
+
+.legend-line.is-dotted {
+  border-top-style: dotted;
+  border-top-color: var(--ink-3);
+}
+
+.chart-refs {
+  margin-top: 6px;
+  color: var(--ink-3);
+}
+
+@media (max-width: 420px) {
+  .mix-rows li {
+    grid-template-columns: minmax(0, 6.6rem) minmax(0, 1fr) 3rem;
+    gap: 8px;
+  }
+
+  .pstrip-rows li,
+  .pstrip-scale {
+    grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) 2.9rem;
+    gap: 8px;
+  }
+
+  .outlook-facts dd {
+    font-size: 0.9375rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Visibilidad por ancho
+
+   En vez de una tabla con scroll lateral, cada ancho tiene su propia forma:
+   tabla por encima de 760 px, fichas por debajo. Va al final del fichero a
+   propósito: los componentes que oculta declaran su propio `display`, y sin
+   estar después no ganarían la cascada.
+   -------------------------------------------------------------------------- */
+@media (min-width: 761px) {
+  .only-narrow {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .only-wide {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Medida de lectura: ninguna nota pasa de unos 70 caracteres por línea
+   -------------------------------------------------------------------------- */
+.eq-section-head p,
+.cancha-section-head p,
+.bench-head p,
+.section-head .card-note,
+.court-caption,
+.fxm-note,
+.mix-read,
+.qm-read {
+  max-width: 70ch;
+}
+
+/* ------------------------------------------------------------ auditoría 26-09 */
+
+/* Zonas táctiles: nombres de la plantilla, rivales y equipos de la matriz
+   medían 18-20 px de alto. WCAG 2.5.8 pide 24 como mínimo. */
+a.eq-grp-name,
+.eq-fx-rival,
+.fxm-team,
+.lineup-names a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+/* Precios desfasados: franja bajo la cabecera, en todas las páginas. */
+.price-notice {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.price-notice > summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 9px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.price-notice > summary::-webkit-details-marker {
+  display: none;
+}
+
+.price-notice-more {
+  flex: none;
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.price-notice[open] .price-notice-more {
+  display: none;
+}
+
+.price-notice-body {
+  padding-bottom: 10px;
+  max-width: 78ch;
+}
+
+.portada ~ .price-notice,
+:root:has(.portada) .price-notice {
+  display: none;
+}
+
+/* Fichar desde el mercado y la ficha. */
+.add-squad {
+  display: inline-flex;
+  align-items: center;
+  min-width: 32px;
+  min-height: 32px;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.add-squad.is-compact {
+  padding: 0;
+  width: 32px;
+  border-radius: 999px;
+}
+
+.add-squad.is-in {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.add-squad:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.player-cards > li {
+  position: relative;
+}
+
+.player-card-actions {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+}
+
+.player-card-actions .add-squad {
+  min-height: 30px;
+  padding: 0 11px;
+  font-size: var(--text-xs);
+}
+
+/* Hueco para el botón de fichar, que va fuera del enlace de la tarjeta: la
+   tarjeta crece por abajo y la barra del índice se acorta. */
+.player-cards .player-card {
+  padding-bottom: 50px;
+}
+
+.player-cards .player-card-bar {
+  position: absolute;
+  left: 14px;
+  right: 130px;
+  bottom: 17px;
+}
+
+.ficha-meta .add-squad {
+  min-height: 30px;
+}
+
+/* La tabla del explorador desbordaba a 1440: el ancho lo marcaban las
+   cabeceras (botón con 14 px de relleno y letras muy espaciadas), no los datos. */
+@media (min-width: 1024px) {
+  .only-wide table.data td:not(:first-child) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .only-wide table.data .th-sort {
+    padding-left: 7px;
+    padding-right: 7px;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Notas dentro de <dl>: antes eran <span>/<small> sueltos junto a dt y dd, que
+   el HTML no admite (axe "definition-list"). Ahora son <dd class="dl-note">. */
+dl dd.dl-note {
+  margin: 0;
+  font-family: var(--font);
+  font-variation-settings: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  color: var(--ink-muted);
+}
+
+.ficha-band-grid dd.dl-note {
+  font-size: 0.75rem;
+  color: var(--brand-ink);
+}
+
+.cancha-figures dd.dl-note,
+.cancha-figures .is-credit dd.dl-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-muted);
+}
+
+.eq-factor dd.eq-meter {
+  font-size: 0.75rem;
+}
+
+.table-wrap:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* La franja lila de la ficha: la tinta apagada no llegaba a 4,5 sobre el lila. */
+.ficha-band-grid dt,
+.ficha-band-grid dd em {
+  color: var(--ink-2);
+}
+
+.player-cell-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.lede a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Proyección con probabilidad de jugar
+
+   La cifra ya está multiplicada por la probabilidad de jugar; la etiqueta dice
+   cuánto, para que una duda de 8 no se lea como un jugador de 8.
+   -------------------------------------------------------------------------- */
+.projection-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.play-risk {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 5px;
+  border-radius: 999px;
+  color: var(--avail-doubt);
+  border: 1px solid color-mix(in srgb, var(--avail-doubt) 40%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+.play-risk.is-out {
+  color: var(--avail-out);
+  border-color: color-mix(in srgb, var(--avail-out) 40%, transparent);
+}
+
+.turn-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 4px;
+  border-radius: 4px;
+  color: var(--ink-muted);
+  border: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Mi equipo: caja y plan de cambios
+   -------------------------------------------------------------------------- */
+.squad-cash {
+  flex: 0 0 110px;
+}
+
+.squad-cash .input {
+  width: 100%;
+}
+
+.plan-limit {
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.plan-steps {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  border-top: 1px solid var(--line-strong);
+  counter-reset: plan;
+}
+
+.plan-steps > li {
+  counter-increment: plan;
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  gap: 10px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.plan-steps > li::before {
+  content: counter(plan);
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.plan-trade {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.plan-trade i {
+  font-style: normal;
+  font-size: var(--text-xs);
+}
+
+.plan-steps small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+}
+
+.plan-gain {
+  display: grid;
+  justify-items: end;
+  font-size: 1rem;
+}
+
+.plan-gain i {
+  font-style: normal;
+  font-size: 0.75rem;
+}
+
+.plan-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+}
+
+.tok-proj .play-risk {
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.tok-sub .turn-tag {
+  margin-left: 5px;
+}
+
+@media (max-width: 640px) {
+  .squad-cash {
+    flex: 1 1 100%;
+  }
+
+  .plan-steps > li {
+    grid-template-columns: 22px 1fr;
+  }
+
+  .plan-gain {
+    grid-column: 2;
+    justify-items: start;
+    justify-content: start;
+    align-items: baseline;
+    grid-auto-flow: column;
+    gap: 8px;
+  }
+
+  .plan-limit button {
+    padding: 6px 10px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Cabecera compacta en el móvil (auditoría D10)
+
+   Antes eran dos filas (logo y buscador debajo): unos 170 px fijos que, con la
+   barra de abajo, se comían una cuarta parte de la pantalla. Ahora es una sola
+   fila de 52 px: símbolo, buscador, jornada y tema. La jornada, que en el
+   móvil desaparecía, vuelve abreviada ("J2/38").
+   -------------------------------------------------------------------------- */
+.round-short {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .masthead-inner {
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding-block: 8px;
+  }
+
+  .search {
+    order: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .round-pill {
+    display: inline-flex;
+    gap: 2px;
+    padding: 5px 8px;
+  }
+
+  .round-word {
+    display: none;
+  }
+
+  .round-short {
+    display: inline;
+  }
+
+  .masthead-tools {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wordmark-text {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Comparador
+   -------------------------------------------------------------------------- */
+.compare-picker {
+  position: relative;
+  max-width: 420px;
+}
+
+.compare-results {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 4px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-float);
+}
+
+.compare-results button {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  text-align: left;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.compare-results button:focus-visible {
+  background: var(--surface-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .compare-results button:hover {
+    background: var(--surface-2);
+  }
+}
+
+.compare-table th[scope="row"] {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink-2);
+  white-space: nowrap;
+  position: sticky;
+  left: 0;
+  background: var(--bg);
+  z-index: 1;
+}
+
+.compare-table thead th {
+  vertical-align: top;
+  min-width: 128px;
+}
+
+.compare-sub,
+.compare-avail {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.compare-avail {
+  color: var(--avail-doubt);
+}
+
+.compare-remove {
+  margin-top: 6px;
+  min-height: 28px;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+}
+
+.compare-group th {
+  text-align: left;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  background: var(--surface-2);
+}
+
+.compare-table td.is-best {
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--accent-soft);
+}
+
+.not-found {
+  min-height: 50vh;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.not-found-actions .button-primary,
+.not-found-actions .button-ghost {
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.not-found-actions .text-button {
+  padding-inline: 0;
+}
+
+.compare-picker .control {
+  display: flex;
+}
+
+/* Comparador en el móvil: cabecera fija con las caras y una fila de valores
+   por métrica, en el mismo orden. */
+.compare-mobile {
+  display: none;
+}
+
+.compare-heads {
+  position: sticky;
+  top: calc(61px + env(safe-area-inset-top, 0px));
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: 8px;
+  padding: 12px 0 10px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.compare-head {
+  position: relative;
+  min-width: 0;
+}
+
+.compare-head-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+  text-align: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.compare-head .compare-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-position: 50% 0;
+  margin-bottom: 3px;
+}
+
+.compare-head-name {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.compare-head-sub {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.compare-head-remove {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg-raised);
+  color: var(--ink-3);
+  cursor: pointer;
+}
+
+.compare-head-remove::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+}
+
+.compare-head-remove svg {
+  width: 13px;
+  height: 13px;
+}
+
+.compare-sec {
+  margin-top: 26px;
+}
+
+.compare-sec-title {
+  margin: 0 0 6px;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.compare-sec dl {
+  margin: 0;
+}
+
+.compare-metric {
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+}
+
+.compare-metric dt {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.compare-vals {
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: 8px;
+  margin: 6px 0 0;
+  text-align: center;
+}
+
+.compare-vals span {
+  padding: 5px 2px;
+  border-radius: 6px;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+
+.compare-vals .is-best {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-variation-settings: "wdth" 90, "wght" 800;
+}
+
+@media (max-width: 599px) {
+  .compare-desktop {
+    display: none;
+  }
+
+  .compare-mobile {
+    display: block;
+  }
+}
+
+.budget-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.budget-row .slider {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.budget-input {
+  flex: 0 0 84px;
+  width: 84px;
+}
+
+/* --------------------------------------------------------------------------
+   Alineación a mano
+   -------------------------------------------------------------------------- */
+.lineup-tools {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.lineup-help,
+.lineup-error {
+  margin: 0 0 12px;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.lineup-help {
+  color: var(--ink-2);
+}
+
+.lineup-error {
+  color: var(--critical);
+  font-weight: 550;
+}
+
+.tok.is-editing {
+  cursor: pointer;
+}
+
+.tok-pick {
+  position: absolute;
+  inset: -4px;
+  z-index: 4;
+  border: 1px dashed var(--rule);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tok-pick:hover {
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+  }
+}
+
+.tok.is-picked .tok-pick {
+  border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.tok-cap {
+  position: absolute;
+  right: 2px;
+  top: -8px;
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-line);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+
+.tok-cap:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tok-cap:hover {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+}
+
+/* ------------------------------------------------------------ auditoría 17-10 */
+
+/* Los apellidos de un quinteto van en línea con su punto pegado: como
+   inline-flex, el navegador podía partir justo antes del punto. La zona
+   táctil se mantiene con relleno vertical. */
+.lineup-names a {
+  display: inline;
+  min-height: 0;
+  padding-block: 5px;
+}
+
+/* Índice de Metodología: chips de enlace, en varias líneas en el móvil. */
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.toc a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .toc a:hover {
+    border-color: var(--ink-3);
+    color: var(--ink);
+  }
+}
+
+/* Baremo en dos listas. */
+.score-rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 32px;
+  margin-top: 14px;
+  max-width: 640px;
+}
+
+.score-rules h3 {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.score-rules dl {
+  margin: 0;
+}
+
+.score-rules dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.9375rem;
+}
+
+.score-rules dd {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 700;
+}
+
+.score-rules-bonus {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+@media (max-width: 560px) {
+  .score-rules {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Tablas de cifras de Metodología: más justas en el móvil, para que quepan
+   sin desplazarse de lado, y con los títulos en varias líneas. */
+@media (max-width: 560px) {
+  table.data.is-compact th,
+  table.data.is-compact td {
+    padding: 9px 5px;
+    font-size: 0.8125rem;
+  }
+
+  table.data.is-compact thead th {
+    white-space: normal;
+    vertical-align: bottom;
+  }
+
+  table.data.is-compact td:first-child {
+    white-space: normal;
+  }
+}
+
+/* "Qué se usa de la Euroliga" en el móvil: un bloque por fuente. */
+.official-list {
+  margin: 12px 0 0;
+}
+
+.official-list > div {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.official-list dt {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.official-list dd {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.official-list .official-unused {
+  color: var(--ink-3);
+}
+
+.official-list .official-unused span {
+  font-weight: 600;
+}
+
+/* Las listas de las notas sangraban 40 px por defecto del navegador. */
+ul.card-note,
+.card-note ul {
+  padding-left: 20px;
+}
+
+.fxm-legend-away {
+  margin-left: 10px;
+}
+
+@media (max-width: 560px) {
+  .eq-hero h1.is-long {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    line-height: 1.08;
+  }
+}
+
+/* Pausar el vídeo de la portada: 44 px de zona táctil con el mismo botón. */
+.portada .clip-toggle::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+}
+
+/* Tabla de partidos de la ficha, bajo las barras. */
+.game-log {
+  margin-top: 16px;
+}
+
+.game-log table.data td:first-child,
+.game-log table.data th:first-child {
+  text-align: right;
+}
+
+/* El aspa de borrar de los campos de búsqueda, en el tono del sitio y no el
+   azul del navegador (ya se hacía en el buscador de la cabecera). */
+.input[type="search"]::-webkit-search-cancel-button {
+  filter: grayscale(1) opacity(0.6);
+  cursor: pointer;
+}
+
+/* Pie en dos líneas: el aviso y los datos con sus enlaces. */
+.footer-legal {
+  margin: 0;
+  max-width: 76ch;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 8px 0 0;
+}
+
+.footer-meta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+/* Lo que ya pasó, en gris: dos flechas verdes seguidas (precio y
+   revalorización) decían cosas distintas con el mismo color. */
+.cell-delta.is-past .delta-up,
+.cell-delta.is-past .delta-down {
+  color: var(--ink-3);
+}
+
+.compare-table thead .player-name {
+  display: inline-block;
+  padding-block: 4px;
+}
+
+/* Por cuartos con todo al mismo lado del cero: media altura, cero en el
+   borde. */
+.qm-plot.is-up .qm-area,
+.qm-plot.is-down .qm-area {
+  height: 72px;
+}
+
+.qm-plot.is-up .qm-zero {
+  top: 100%;
+}
+
+.qm-plot.is-down .qm-zero {
+  top: 0;
+}
+
+.qm-plot.is-up .qm-bar.is-up {
+  bottom: 0;
+}
+
+.qm-plot.is-down .qm-bar.is-down {
+  top: 0;
+}
+
+/* Auditoría 2 (medidas) ------------------------------------------------- */
+
+/* Enlaces sueltos en notas (p. ej. "Ver Panathinaikos" en la ficha del
+   entrenador): 32 px de alto táctil. */
+.card-note > a:only-child {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+/* Nombres de la tabla del mercado en escritorio: 18 px de alto → zona
+   táctil sin mover la fila. */
+table.data td a.player-name,
+table.data td .player-cell {
+  padding-block: 3px;
+}
+
+/* Listas de las notas de Metodología: los puntos iban a 3,5 px uno de otro. */
+ul.card-note li + li,
+.card-note ul li + li {
+  margin-top: 6px;
+}
+
+/* Auditoría 2 (diseño) --------------------------------------------------- */
+
+/* Texto con cifras dentro de una celda tabular: proporcional y en la letra
+   del texto ("6,1 %", no "6 , 1 %"; "sin proy.", no "sin proy ."). */
+.rank-detail,
+.eq-grp-proj.is-none {
+  font-family: var(--font);
+  font-variant-numeric: proportional-nums;
+  font-feature-settings: normal;
+}
+
+.eq-grp-proj.is-none {
+  white-space: nowrap;
+}
+
+/* Enlaces dentro de una frase: subrayados, como el resto (antes algunos eran
+   del mismo gris que el texto y no se sabía que eran enlaces). */
+main p a:not([class]),
+.card-note a:not([class]),
+.muted a:not([class]) {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main p a:not([class]):hover,
+  .card-note a:not([class]):hover {
+    color: var(--ink);
+    text-decoration-color: currentColor;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Las explicaciones de cada módulo, de 12 a 14 px en el móvil: es donde se
+     leen de pie y con una mano. */
+  .card-note,
+  .bench-head p,
+  .cancha-section-head p,
+  .eq-section-head p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* Filtros abiertos: aire antes de los resultados. */
+  .filter-panel.is-open {
+    margin-bottom: 8px;
+  }
+}
+
+/* Filas etiqueta–valor de la ficha: apiladas en estrecho, donde la etiqueta
+   y el valor partían los dos en dos líneas lado a lado. */
+@media (max-width: 480px) {
+  .fact-list > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}
+
+/* Colocar a mano en el móvil: los marcos discontinuos se solapaban 4 px y la
+   ficha del capitán era más alta que las demás. */
+@media (max-width: 559px) {
+  .court-grid .tok-pick {
+    inset: 0;
+  }
+
+  .court-grid > .tok {
+    min-height: 196px;
+  }
+}
+
+/* Escala de títulos de sección en Mi equipo: uno solo, como el resto. */
+.cancha-section-head h2,
+.bench-head h2,
+.cancha .card-title {
+  font-size: var(--text-lg);
+}
+
+/* Plantilla llena: no es un botón muerto, es un enlace a donde se hace sitio. */
+.add-squad.is-full {
+  color: var(--ink-3);
+  border-style: dashed;
+  text-decoration: none;
+}
+
+.button-primary:disabled {
+  filter: none;
+  background: var(--bg-sunken);
+  color: var(--ink-3);
+  cursor: default;
+}
+
+/* Pista de escritorio: 1.150 px para cinco jugadores se leía vacía. */
+@media (min-width: 761px) {
+  .court {
+    max-width: 880px;
+    margin-inline: auto;
+  }
+}
+
+/* Portada en el móvil: los pasos del relato a 70 % de pantalla (eran cuatro
+   pantallas enteras de una frase cada una). */
+@media (max-width: 760px) {
+  .portada .beat:not(.is-hero) {
+    min-height: 70svh;
+  }
+}
+
+/* Filtros en el móvil: a dos columnas donde caben (precio mínimo y partidos),
+   para que el panel no empuje la lista una pantalla entera hacia abajo. */
+@media (max-width: 760px) {
+  .filter-panel.is-open {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px 12px;
+  }
+
+  .filter-panel > * {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel > .filter-half {
+    grid-column: auto;
+  }
+
+  .filter-panel .filter-half .select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .filter-panel > .filter-reset {
+    justify-self: start;
+  }
+}
+
+/* Auditoría final ------------------------------------------------------- */
+
+/* Hueco del botón de fichar antes de leer la plantilla: mismo tamaño, sin
+   verse, para que nada se mueva al aparecer. */
+.add-squad.is-placeholder {
+  visibility: hidden;
+}
+
+.ficha-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Zonas táctiles que quedaban cortas en el móvil: los nombres de la pista
+   (30 px) y las filas de la plantilla y del calendario del equipo (24 px).
+   El relleno negativo agranda la zona sin mover nada de lo que se ve. */
+.tok-name a {
+  padding-block: 12px;
+  margin-block: -12px;
+}
+
+a.eq-grp-name {
+  padding-block: 9px;
+  margin-block: -9px;
+}
+
+.eq-fx-rival {
+  min-height: 40px;
+}
+
+/* Nada por debajo de 12 px: cabecera de la ficha y unidades de las cifras. */
+.ficha-eyebrow {
+  font-size: 0.75rem;
+}
+
+.orb-label,
+.orb-pct {
+  font-size: 0.75rem;
+}
+
+.ficha-price {
+  font-size: 0.875rem;
+}
+
+.cancha-figures dd em,
+.eq-factor dd em {
+  font-size: max(0.5em, 12px);
+}
+
+@media (max-width: 400px) {
+  .orb-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Portada en el móvil: las tres frases cortas del relato, a media pantalla
+   (el vídeo sigue detrás; eran casi tres pantallas para tres frases). */
+@media (max-width: 760px) {
+  .portada .beat:not(.is-hero):not(.is-lede) {
+    min-height: 50svh;
+  }
+
+  .portada .beat.is-lede {
+    min-height: 60svh;
+  }
+}
+
+/* Filtros de escritorio: "Precio máximo · sin límite" partía en dos líneas y
+   descuadraba la fila. */
+@media (min-width: 761px) {
+  .filter-price {
+    flex: 0 1 auto;
+  }
+
+  .filter-price .control-label {
+    white-space: nowrap;
+  }
+
+  .filter-price .slider {
+    min-width: 190px;
+  }
+}
+
+/* Equipos de la matriz de calendario: zona de 36 px sin ensanchar la fila. */
+.fxm-team {
+  padding-block: 6px;
+  margin-block: -6px;
+}
+
+/* Comparar: una pantalla de alto desde el principio, para que el pie no
+   salte cuando llegan los datos de los jugadores. */
+.compare-page {
+  min-height: 100svh;
+}
+
+/* Fichar y Comparar, el mismo alto y el mismo radio: en escritorio uno medía
+   36 px y el otro 44, y se leían como dos piezas de sitios distintos. */
+.ficha-actions .add-squad,
+.ficha-actions .ficha-compare {
+  min-height: 44px;
+  padding-block: 0;
+  padding-inline: 18px;
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+}
+
+/* --------------------------------------------------------------------------
+   Ficha — perfil de juego, plegado al final
+   -------------------------------------------------------------------------- */
+.profile-fold {
+  border-top: 1px solid var(--rule);
+}
+
+.profile-fold > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  padding-block: 18px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.profile-fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+.profile-fold > summary::after {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 8px;
+  margin-left: auto;
+  align-self: center;
+  background: var(--chevron) center / contain no-repeat;
+  transition: transform 160ms ease-out;
+}
+
+.profile-fold[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.profile-fold-title {
+  margin: 0;
+  font-size: var(--text-lg);
+}
+
+.profile-fold-note {
+  color: var(--ink-muted);
+  font-size: 0.875rem;
+}
+
+.profile-fold-body {
+  display: grid;
+  gap: 28px;
+  padding-bottom: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-fold > summary::after {
+    transition: none;
+  }
+}

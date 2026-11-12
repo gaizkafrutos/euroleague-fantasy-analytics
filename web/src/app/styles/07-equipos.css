@@ -1,0 +1,554 @@
+/* --------------------------------------------------------------------------
+   Mercado — reparto de roles del equipo óptimo
+   -------------------------------------------------------------------------- */
+.badge-half {
+  color: var(--ink-muted);
+}
+
+/* La fila del entrenador no lleva a ninguna parte: no hay ficha de entrenador,
+   así que es un <span> con la forma del enlace pero sin el comportamiento. */
+.lineup-list .lineup-static {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* --------------------------------------------------------------------------
+   Equipos — clasificación y ficha de club
+
+   Prefijo `eq-` en todo: `.row`, `.section` y `.eyebrow` ya existen en el
+   sistema con otro significado, y aquí no se pisa nada.
+   -------------------------------------------------------------------------- */
+.eq-head h1 {
+  max-width: 20ch;
+}
+
+.eq-head .lede {
+  margin-top: 14px;
+  max-width: 62ch;
+}
+
+
+
+/* ------------------------------------------------------------ clasificación */
+.eq-standings {
+  margin-top: 32px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.eq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eq-row {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 26px minmax(0, 1fr) 56px 62px;
+  gap: 10px;
+  padding: 11px 8px;
+  color: var(--ink);
+  border-top: 1px solid var(--hairline);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.eq-row:hover {
+    background: var(--surface-2);
+  }
+}
+
+a.eq-row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.eq-thead {
+  border-top: 0;
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.eq-row .num {
+  text-align: right;
+}
+
+.eq-pos {
+  color: var(--ink-muted);
+  font-size: 0.8125rem;
+}
+
+.eq-club-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.eq-club-text {
+  min-width: 0;
+}
+
+.eq-crest {
+  flex: none;
+  object-fit: contain;
+}
+
+.eq-crest-empty {
+  display: inline-block;
+  flex: none;
+  border-radius: 50%;
+  background: var(--surface-3);
+}
+
+.eq-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.eq-next-inline {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 3px;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.eq-net {
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 600;
+}
+
+.eq-net {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.eq-netbar {
+  position: relative;
+  width: 56px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-sunken);
+}
+
+.eq-netbar::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: var(--axis);
+}
+
+.eq-netbar i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: currentColor;
+  border-radius: 3px;
+}
+
+.eq-net.is-pos {
+  color: var(--good);
+}
+
+.eq-net.is-neg {
+  color: var(--critical);
+}
+
+.eq-nodata {
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+}
+
+.eq-wide {
+  display: none;
+}
+
+.eq-next {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.eq-next b {
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.eq-next i {
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+@media (min-width: 761px) {
+  .eq-row {
+    grid-template-columns: 30px minmax(0, 1fr) 64px 124px 66px 66px 60px 160px;
+  }
+
+  .eq-wide {
+    display: block;
+  }
+
+  .eq-next-inline {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------ ficha de club */
+.eq-club {
+  padding-block: 18px 8px;
+}
+
+.eq-hero {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: clamp(16px, 3vw, 28px);
+  align-items: center;
+  margin-top: 18px;
+}
+
+.eq-hero > * {
+  position: relative;
+}
+
+.eq-hero-crest {
+  grid-row: 1 / span 3;
+  display: block;
+  width: clamp(56px, 12vw, 96px);
+  height: auto;
+}
+
+.eq-hero h1 {
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+}
+
+.eq-hero-sub {
+  margin: 10px 0 0;
+  color: var(--ink-2);
+  font-size: 0.875rem;
+}
+
+.eq-pills {
+  display: flex;
+  gap: 4px 22px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.eq-pill {
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+.eq-pill b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.eq-section {
+  margin-top: clamp(44px, 6vw, 64px);
+}
+
+.eq-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.eq-section-head h2 {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-variation-settings: "wdth" 104, "wght" 700;
+}
+
+.eq-section-head p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.eq-foot-note {
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  max-width: 70ch;
+}
+
+/* Cuatro factores: número, barra de percentil en el color del club. */
+.eq-factors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px;
+  margin: 0;
+}
+
+.eq-factor {
+  padding-top: 12px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.eq-factor dt {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.eq-factor dd {
+  margin: 5px 0 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 700;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.eq-factor dd em {
+  font-style: normal;
+  font-size: 0.46em;
+  color: var(--ink-muted);
+  margin-left: 2px;
+}
+
+.eq-track {
+  position: relative;
+  margin-top: 10px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.eq-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--p) * 1%);
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+.eq-cap {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.eq-rows {
+  display: grid;
+  margin: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.eq-rows > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.eq-rows dt {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.eq-rows dd {
+  margin: 0;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 600;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.eq-rows dd small {
+  margin-left: 6px;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+/* Próximos cinco: el borde superior dice lo duro que es el rival. */
+.eq-fixtures {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px 24px;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+}
+
+.eq-fx {
+  display: grid;
+  gap: 7px;
+  padding-top: 10px;
+  border-top: 2px solid var(--rule);
+}
+
+/* Rojo y verde quedan para las variaciones: la dificultad del rival va en
+   el código divergente del sitio (pizarra = peor para ti, naranja = mejor). */
+.eq-fx.is-hard {
+  border-top-color: var(--slate);
+}
+
+.eq-fx.is-easy {
+  border-top-color: var(--brand);
+}
+
+.eq-fx-round {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.eq-fx-rival {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.eq-fx-rival b {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .eq-fx-rival:hover b {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.eq-fx-date {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+/* Plantilla por posición, con el color de serie de cada una en el borde. */
+.eq-squad {
+  display: grid;
+  gap: 32px 48px;
+  grid-template-columns: 1fr;
+  /* Sin esto, la columna de aleros se estira hasta la altura de la de bases
+     y deja una caja medio vacía. */
+  align-items: start;
+}
+
+.eq-grp h3 {
+  margin: 0;
+  padding: 0 0 9px;
+  border-bottom: 1px solid var(--line-strong);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.eq-grp ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eq-grp li,
+.eq-grp-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px 48px;
+  gap: 12px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.eq-grp li:first-child {
+  border-top: 0;
+}
+
+.eq-grp-name {
+  font-size: 0.875rem;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.eq-grp-name:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.eq-grp-price {
+  font-size: 0.75rem;
+  color: var(--credit);
+  text-align: right;
+}
+
+.eq-grp-head {
+  align-items: end;
+}
+
+.eq-grp-col {
+  text-align: right;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+
+.eq-grp-proj {
+  min-width: 44px;
+  text-align: right;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 90, "wght" 600;
+  font-size: 0.9375rem;
+}
+
+.eq-grp-proj.is-none {
+  font-family: var(--font);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+@media (min-width: 761px) {
+  .eq-factors {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .eq-squad {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

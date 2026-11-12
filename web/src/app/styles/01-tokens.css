@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Sistema de diseño — HoopIQ
+
+   Neutros y un solo color de marca: el naranja. Verde y rojo solo para
+   variaciones (sube / baja). Sin degradados en ningún sitio.
+
+   Los colores viven aquí, en tokens; los componentes no llevan colores
+   sueltos. Las paletas salen de un generador que comprueba contraste AA de
+   cada pareja texto/fondo y valida las rampas de datos (dataviz,
+   validate_palette.js) en claro y en oscuro.
+
+   Solo tema claro (la portada, con su vídeo, va siempre sobre oscuro).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Paleta: Parquet. Neutros cálidos y naranja de marca. Valores generados y
+   comprobados (contraste AA de cada pareja texto/fondo; rampa de datos con
+   texto legible en los cinco pasos). La portada usa la versión oscura.
+   -------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --bg: #faf9f7;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2efeb;
+  --line: #e6e1da;
+  --line-strong: #d3ccc2;
+  --ink: #1c1917;
+  --ink-2: #48423c;
+  --ink-3: #6b6259;
+  --brand: #e8590c;
+  --brand-ink: #b3440a;
+  --brand-fill: #c2410c;
+  --on-brand: #ffffff;
+  --brand-soft: #fcebdf;
+  --on-brand-mark: #000000;
+  --pos: #1a7f37;
+  --neg: #c0322b;
+  --slate: #5b6b7a;
+  --on-slate: #ffffff;
+  --seq-1: #fbe7d8;
+  --seq-2: #f8d0b3;
+  --seq-3: #f3b287;
+  --seq-4: #ec925b;
+  --seq-5: #e07030;
+  --seq-ink-1: var(--ink);
+  --seq-ink-2: var(--ink);
+  --seq-ink-3: var(--ink);
+  --seq-ink-4: var(--ink);
+  --seq-ink-5: var(--ink);
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236b6259' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+:root:has(.portada) {
+  color-scheme: dark;
+  --bg: #141210;
+  --bg-raised: #1d1a17;
+  --bg-sunken: #252120;
+  --line: #2e2a26;
+  --line-strong: #433d37;
+  --ink: #f4f1ed;
+  --ink-2: #cbc3ba;
+  --ink-3: #a1978c;
+  --brand: #f47a2e;
+  --brand-ink: #f7924f;
+  --brand-fill: #f47a2e;
+  --on-brand: #1c1512;
+  --brand-soft: #3a2415;
+  --on-brand-mark: #000000;
+  --pos: #4cc674;
+  --neg: #f0716a;
+  --slate: #8797a8;
+  --on-slate: #000000;
+  --seq-1: #2b1e16;
+  --seq-2: #45291a;
+  --seq-3: #62361d;
+  --seq-4: #834522;
+  --seq-5: #a15526;
+  --seq-ink-1: var(--ink);
+  --seq-ink-2: var(--ink);
+  --seq-ink-3: var(--ink);
+  --seq-ink-4: var(--ink);
+  --seq-ink-5: var(--ink);
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a1978c' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* --------------------------------------------------------------------------
+   Tokens derivados: no dependen de la paleta, se calculan de ella
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cromo de gráfico */
+  --grid: var(--line);
+  --axis: var(--line-strong);
+  --focus: var(--brand-ink);
+
+  /* Divergente "frente a la liga": pizarra = peor, gris = en la media,
+     naranja = mejor. La pizarra lee casi gris a propósito (sin azul); se
+     distingue por luminosidad y siempre va con la cifra escrita al lado. */
+  --div-m2: var(--slate);
+  --div-m1: color-mix(in srgb, var(--slate) 55%, var(--line-strong));
+  --div-0: var(--line-strong);
+  --div-p1: color-mix(in srgb, var(--brand) 55%, var(--line-strong));
+  --div-p2: var(--brand);
+  --div-ink-m2: var(--on-slate);
+  --div-ink-p2: var(--on-brand-mark);
+
+  /* Sombras: solo para lo que flota (menús, tooltips). */
+  --shadow-float: 0 6px 16px -8px color-mix(in srgb, var(--ink) 24%, transparent);
+
+  /* Alias de los nombres antiguos, para no reescribir cada regla de golpe.
+     Se irán retirando conforme se reescriben los componentes. */
+  --plane: var(--bg);
+  --surface: var(--bg-raised);
+  --surface-2: var(--bg-sunken);
+  --surface-3: var(--line);
+  --surface-hover: var(--bg-sunken);
+  --ink-muted: var(--ink-3);
+  --hairline: var(--line);
+  --rule: var(--line-strong);
+  --ring: var(--line);
+  --accent: var(--brand-ink);
+  --accent-ink: var(--on-brand);
+  --accent-soft: var(--brand-soft);
+  --accent-line: color-mix(in srgb, var(--brand) 45%, transparent);
+  --fantasy: var(--brand);
+  --credit: var(--ink);
+  --good: var(--pos);
+  --critical: var(--neg);
+  --warning: var(--ink-2);
+  --shadow: none;
+
+  /* Tipografía. Escala de 13 pasos; nada funcional por debajo de 12 px.
+     Texto corrido en Schibsted Grotesk; titulares y cifras en Archivo, que tiene cifras
+     tabulares de verdad (mismo ancho para 1111 y 0000) y un eje de anchura
+     para condensarlas en columnas estrechas. */
+  /* La escala de la web: 12, 13, 14 (0.875rem, sin token), 15, 16, 17, 18, 20
+     y 24 px. Un tamaño que no esté aquí tiene que tener un motivo escrito al
+     lado (los hay en la portada, en la cabecera de la ficha y en el texto de
+     los gráficos, que va en unidades del SVG). */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);
+  --text-3xl: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  --num-hero: clamp(2.5rem, 2rem + 2vw, 3.75rem);
+
+  /* Métrica */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font: var(--font-body), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-title: var(--font-display), var(--font-body), system-ui, sans-serif;
+  --font-num: var(--font-display), var(--font-body), system-ui, sans-serif;
+  --max-width: 1200px;
+  --header-height: 66px;
+}
+

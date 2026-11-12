@@ -148,8 +148,12 @@ identidades (censo y fotos).
 ```bash
 python -m pytest pipeline/tests -q   # fórmula, cruce de identidades, optimizador
 python -m efa verify                 # contrasta contra los datos reales del juego
-cd web && npm run typecheck && npm run build
+cd web && npm run typecheck && npm test && npm run build
+npx playwright test                  # páginas a 375 y 1280 px: consola, scroll y axe
 ```
+
+Las versiones de Python con las que se ha probado están en
+`pipeline/constraints.txt` (`pip install -e "./pipeline[dev]" -c pipeline/constraints.txt`).
 
 `efa verify` compara la media calculada aquí con la columna `fpt` del propio
 mercado de Fantaking, y también la media de cada una de las 11 acciones del
