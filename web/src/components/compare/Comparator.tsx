@@ -226,10 +226,10 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Calendario (3 próximos)",
-        title: "Dificultad de los tres próximos rivales: 100 es lo más duro",
+        label: "Dureza del calendario",
+        title: "Sus tres próximos rivales, por puesto entre los veinte clubes: 100 es el calendario más duro y 0 el más fácil",
         value: (r) => r.difficulty,
-        show: (r) => num(r.difficulty, 0),
+        show: (r) => (r.difficulty === null ? "—" : `${num(r.difficulty, 0)} de 100`),
       },
     ],
   },

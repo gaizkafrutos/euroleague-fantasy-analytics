@@ -42,7 +42,7 @@ export default function RoundBias({ rounds, values, height = 220 }: Props) {
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
-        role="img"
+        role="group"
         aria-label="Sesgo de la proyección publicada por jornada, en puntos"
         onPointerLeave={() => setActive(null)}
       >

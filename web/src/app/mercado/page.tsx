@@ -270,7 +270,7 @@ export default function MercadoPage() {
               <div className="tile-value" style={{ marginTop: 0 }}>
                 {num(lineup.scoredProjection ?? lineup.totalProjection)}
               </div>
-              <div className="muted num" style={{ fontSize: "0.78rem", marginTop: 4 }}>
+              <div className="muted num" style={{ fontSize: "0.75rem", marginTop: 4 }}>
                 pts con el baremo real · {credits(lineup.totalPrice)}
               </div>
             </div>
@@ -281,14 +281,15 @@ export default function MercadoPage() {
 
           <div className="table-wrap only-wide" tabIndex={0} role="region" aria-label="Equipo óptimo">
             <table className="data">
+              <caption className="sr-only">Equipo óptimo: jugador, rol, puesto, club, precio y proyección</caption>
               <thead>
                 <tr>
-                  <th>Jugador</th>
-                  <th className="is-text">Rol</th>
-                  <th className="is-text">Pos</th>
-                  <th className="is-text">Club</th>
-                  <th className="num">Precio</th>
-                  <th className="num">Proyección</th>
+                  <th scope="col">Jugador</th>
+                  <th scope="col" className="is-text">Rol</th>
+                  <th scope="col" className="is-text">Pos</th>
+                  <th scope="col" className="is-text">Club</th>
+                  <th scope="col" className="num">Precio</th>
+                  <th scope="col" className="num">Proyección</th>
                 </tr>
               </thead>
               <tbody>

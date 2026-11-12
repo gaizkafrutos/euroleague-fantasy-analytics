@@ -151,7 +151,7 @@ export default function AccuracyPage() {
           <h2 className="card-title">Error medio por jornada</h2>
           <p className="card-note">
             Puntos de diferencia, por jugador, entre lo proyectado y lo que hizo. Cuanto más bajo,
-            mejor.
+            mejor. El eje no empieza en cero: las líneas están más cerca de lo que parece.
           </p>
           <RoundLines
             rounds={numbers}
@@ -177,7 +177,7 @@ export default function AccuracyPage() {
           <h2 className="card-title">Orden del mercado</h2>
           <p className="card-note">
             Si quien sale arriba en la proyección es quien más puntúa luego. Para fichar importa
-            más el orden que la cifra exacta. Cuanto más alto, mejor.
+            más el orden que la cifra exacta. Cuanto más alto, mejor. El eje no empieza en cero.
           </p>
           <RoundLines
             rounds={numbers}
@@ -240,20 +240,21 @@ export default function AccuracyPage() {
         <summary>Ver los datos en tabla</summary>
         <div className="table-wrap" tabIndex={0} role="region" aria-label="Acierto por jornada">
           <table className="data">
+            <caption className="sr-only">Error, orden, sesgo y once óptimo de cada jornada evaluada</caption>
             <thead>
               <tr>
-                <th>Jornada</th>
-                <th className="num">Jugadores</th>
-                <th className="num">Error HoopIQ</th>
-                <th className="num">Error media</th>
-                <th className="num">Media con prob. de jugar</th>
-                <th className="num">Orden HoopIQ</th>
-                <th className="num">Orden media</th>
-                <th className="num">Sesgo</th>
-                <th className="num">Once proyectado</th>
-                <th className="num">Once real</th>
-                <th className="num">Once de la media</th>
-                <th className="num">Mejor posible</th>
+                <th scope="col">Jornada</th>
+                <th scope="col" className="num">Jugadores</th>
+                <th scope="col" className="num">Error HoopIQ</th>
+                <th scope="col" className="num">Error media</th>
+                <th scope="col" className="num">Media con prob. de jugar</th>
+                <th scope="col" className="num">Orden HoopIQ</th>
+                <th scope="col" className="num">Orden media</th>
+                <th scope="col" className="num">Sesgo</th>
+                <th scope="col" className="num">Once proyectado</th>
+                <th scope="col" className="num">Once real</th>
+                <th scope="col" className="num">Once de la media</th>
+                <th scope="col" className="num">Mejor posible</th>
               </tr>
             </thead>
             <tbody>
@@ -283,12 +284,13 @@ export default function AccuracyPage() {
         {calibration.length ? (
           <div className="table-wrap" tabIndex={0} role="region" aria-label="Probabilidad de jugar por estado del parte">
             <table className="data">
+              <caption className="sr-only">Probabilidad de jugar publicada frente a los que jugaron, por estado del parte</caption>
               <thead>
                 <tr>
-                  <th>Estado del parte</th>
-                  <th className="num">Casos</th>
-                  <th className="num">Dijo la web</th>
-                  <th className="num">Jugaron</th>
+                  <th scope="col">Estado del parte</th>
+                  <th scope="col" className="num">Casos</th>
+                  <th scope="col" className="num">Dijo la web</th>
+                  <th scope="col" className="num">Jugaron</th>
                 </tr>
               </thead>
               <tbody>

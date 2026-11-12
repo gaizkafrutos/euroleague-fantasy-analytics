@@ -135,7 +135,8 @@ export default function PriceHistory({ points, height = 220 }: Props) {
           strokeDasharray="4 4"
         />
 
-        <path className="series-line" d={path} stroke="var(--brand)" />
+        {/* La serie, en tinta; el naranja marca el precio de hoy. */}
+        <path className="series-line" d={path} stroke="var(--ink-2)" />
 
         {/* Con muchas capturas los puntos convertían la línea en un punteado:
             entonces solo el último y el que se señala. */}

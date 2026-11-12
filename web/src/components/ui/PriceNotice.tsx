@@ -16,16 +16,25 @@ export default function PriceNotice() {
     typeof fresh.roundPlayed === "number" && typeof fresh.roundGames === "number" && fresh.roundPlayed < fresh.roundGames
       ? ` (${fresh.roundPlayed} de ${fresh.roundGames} partidos)`
       : "";
+  // Una línea a la vista y el resto plegado: en el móvil el párrafo entero se
+  // comía un tercio de la primera pantalla de todas las páginas.
   return (
-    <div className="price-notice" role="status">
-      <div className="shell">
-        <strong>Precios en revisión.</strong> La última captura es del {dateTime(fresh.capturedAt)}
+    <details className="price-notice">
+      <summary className="shell">
+        <span role="status">
+          <strong>Precios en revisión.</strong>{" "}
+          {open ? `${round.replace(/^l/, "L")} está en juego${progress}.` : `${round.replace(/^l/, "L")} ya cerró y el juego aún no ha revalorizado.`}
+        </span>
+        <span className="price-notice-more">Detalles</span>
+      </summary>
+      <div className="shell price-notice-body">
+        La última captura es del {dateTime(fresh.capturedAt)}
         {open
-          ? `, con ${round} en juego${progress}: el juego no mueve los precios hasta que termina.`
-          : ` y ${round} estaba cerrada, pero el juego aún no había revalorizado.`}{" "}
+          ? ": el juego no mueve los precios hasta que termina la jornada."
+          : ", con la jornada ya cerrada, pero el juego aún no había aplicado la revalorización."}{" "}
         Enseñamos el precio que tendrá cada jugador al cerrarla
         {fresh.pending ? ` (${fresh.pending} cambian)` : ""}; se confirma con la próxima captura.
       </div>
-    </div>
+    </details>
   );
 }

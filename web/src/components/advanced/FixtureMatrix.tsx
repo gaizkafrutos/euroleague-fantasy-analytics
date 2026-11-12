@@ -107,9 +107,15 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
             {rows.map(({ team, cells, mean }) => (
               <tr key={team.code}>
                 <th scope="row">
-                  <Link href={`/equipos/${team.code}`} className="fxm-team">
+                  {/* El mismo código que en las celdas (VAL, MTA, EFE), no el de
+                      la API (PAM, TEL, IST): en una misma tabla había dos. */}
+                  <Link
+                    href={`/equipos/${team.code}`}
+                    className="fxm-team"
+                    title={team.short ?? team.name ?? team.code}
+                  >
                     {team.crest ? <Image src={team.crest} alt="" width={18} height={18} /> : null}
-                    <span>{team.code}</span>
+                    <span>{clubAbbr(team.code)}</span>
                   </Link>
                 </th>
                 {cells.map(({ round, fixture, opponent, index, value }) => (

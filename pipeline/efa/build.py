@@ -469,7 +469,7 @@ def player_records(
                 "marketName": row.get("name"),
                 "club": club_code,
                 "clubName": club.get("name"),
-                "clubShort": club.get("editorialName") or club.get("abbreviatedName"),
+                "clubShort": club_short(club) if club else None,
                 "clubCrest": (club.get("images") or {}).get("crest"),
                 "position": row.get("position_group"),
                 "positionLabel": row.get("official_position") or row.get("position"),
@@ -1149,6 +1149,16 @@ def _build_optimal_lineup(records: list[dict[str, Any]], *, budget: float) -> di
     return payload
 
 
+#: Nombre corto con el que se conoce a cada club cuando el de la API se queda a
+#: medias: "Real" y "Crvena" no los dice nadie, y a "Barca" le falta la cedilla.
+CLUB_SHORT_NAMES = {"MAD": "Real Madrid", "RED": "Crvena Zvezda", "BAR": "Barça"}
+
+
+def club_short(club: dict[str, Any]) -> str | None:
+    """Nombre corto de un club del censo oficial."""
+    return CLUB_SHORT_NAMES.get(str(club.get("code"))) or club.get("editorialName") or club.get("abbreviatedName")
+
+
 BOX_FIELDS = {
     "box_games": "games",
     "wins": "wins",
@@ -1220,7 +1230,7 @@ def _team_records(
             {
                 "code": code,
                 "name": club.get("name"),
-                "short": club.get("editorialName") or club.get("abbreviatedName"),
+                "short": club_short(club),
                 "country": (club.get("country") or {}).get("code"),
                 "crest": (club.get("images") or {}).get("crest"),
                 "offense": stats.get("offense"),

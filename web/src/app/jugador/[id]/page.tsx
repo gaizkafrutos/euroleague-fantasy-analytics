@@ -111,6 +111,16 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   ];
   const hasOrbs = [...left, ...right].some((spec) => usable(spec.value));
 
+  // Lo que va plegado al final: el perfil de juego del jugador.
+  const profileParts = [
+    detail.mix ? "de dónde salen sus puntos" : null,
+    detail.court ? "minutos en pista" : null,
+    detail.shots && meta.league ? "mapa de tiro" : null,
+    detail.official ? "eficiencia" : null,
+    player.isCoach ? null : "rol",
+  ].filter((part): part is string => Boolean(part));
+  const hasProfile = profileParts.length > 0;
+
   return (
     <>
       {/* ============================================================= stage */}
@@ -324,118 +334,12 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
           </div>
         </section>
       ) : null}
-
+      {/* Primero lo que sirve para decidir (calendario y de dónde sale la
+          cifra, junto al precio de arriba); luego lo que ha hecho; y al final,
+          plegado, el perfil de juego. Antes iban doce bloques seguidos con el
+          mismo peso y la proyección quedaba al fondo de la página. */}
       <section className="section shell">
         <div className="grid grid-2">
-          {player.isCoach ? (
-            <CoachTeamCard team={team} />
-          ) : (
-          <div className="card">
-            <div className="card-head">
-              <div>
-                <h2 className="card-title">Partido a partido</h2>
-                <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Puntuación fantasy calculada con el baremo oficial del juego sobre los
-                  boxscores reales.
-                </p>
-              </div>
-            </div>
-            <GameLogBars
-              games={detail.recent}
-              average={perf.fpAvg}
-              floor={perf.fpFloor}
-            />
-            <GameLogTable games={detail.recent} />
-          </div>
-          )}
-
-          <div className="card">
-            <div className="card-head">
-              <div>
-                <h2 className="card-title">Evolución del precio</h2>
-                <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Un punto por captura del mercado.
-                </p>
-              </div>
-            </div>
-            <PriceHistory points={detail.priceHistory} />
-          </div>
-        </div>
-      </section>
-
-      {detail.mix || detail.court ? (
-        <section className="section shell">
-          <div className="grid grid-2">
-            {detail.mix ? (
-              <div className="card">
-                <div className="card-head">
-                  <div>
-                    <h2 className="card-title">De dónde salen sus puntos</h2>
-                    <p className="card-note" style={{ margin: "4px 0 0" }}>
-                      Media por partido de cada acción del baremo · {seasonLabel(detail.mix.season)},{" "}
-                      {detail.mix.games} {detail.mix.games === 1 ? "partido" : "partidos"}.
-                    </p>
-                  </div>
-                </div>
-                <FantasyMix mix={detail.mix} />
-              </div>
-            ) : null}
-            {detail.court ? (
-              <div className="card">
-                <div className="card-head">
-                  <div>
-                    <h2 className="card-title">En pista</h2>
-                    <p className="card-note" style={{ margin: "4px 0 0" }}>
-                      Reconstruido cambio a cambio desde el jugada a jugada oficial.
-                    </p>
-                  </div>
-                </div>
-                <CourtRole court={detail.court} />
-              </div>
-            ) : null}
-          </div>
-        </section>
-      ) : null}
-
-      {detail.shots && meta.league ? (
-        <section className="section shell">
-          <div className="card">
-            <div className="card-head">
-              <div>
-                <h2 className="card-title">Mapa de tiro</h2>
-                <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Cada tiro fallado le resta un punto fantasy: dónde tira importa tanto como
-                  cuánto.
-                </p>
-              </div>
-            </div>
-            <ShotChart
-              uid={String(player.id)}
-              shots={detail.shots}
-              league={meta.league.zones}
-              keys={meta.league.zoneKeys}
-              labels={meta.league.zoneLabels}
-            />
-          </div>
-        </section>
-      ) : null}
-
-      <section className="section shell">
-        <div className="grid grid-2">
-          {detail.official ? (
-            <div className="card">
-              <div className="card-head">
-                <div>
-                  <h2 className="card-title">Eficiencia</h2>
-                  <p className="card-note" style={{ margin: "4px 0 0" }}>
-                    Avanzadas oficiales de la Euroliga, en percentil frente a su puesto.
-                  </p>
-                </div>
-              </div>
-              <PercentileStrip official={detail.official} />
-            </div>
-          ) : null}
-
           <div className="card">
             <div className="card-head">
               <div>
@@ -483,53 +387,168 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
               </p>
             )}
           </div>
+
+          <ProjectionBreakdown player={player} />
         </div>
       </section>
 
       <section className="section shell">
         <div className="grid grid-2">
-          {player.isCoach ? null : (
+          {player.isCoach ? (
+            <CoachTeamCard team={team} />
+          ) : (
           <div className="card">
             <div className="card-head">
-              <h2 className="card-title">Rol y recorrido</h2>
+              <div>
+                <h2 className="card-title">Partido a partido</h2>
+                <p className="card-note" style={{ margin: "4px 0 0" }}>
+                  Puntuación fantasy calculada con el baremo oficial del juego sobre los
+                  boxscores reales.
+                </p>
+              </div>
             </div>
-            <dl className="fact-list">
-              <Row
-                label="Minutos últimos 5"
-                value={
-                  typeof perf.minutesTrend === "number" && Math.abs(perf.minutesTrend) >= 0.05
-                    ? `${num(perf.minutesRecent)} (${signed(perf.minutesTrend)})`
-                    : num(perf.minutesRecent)
-                }
-              />
-              <Row
-                label="Cuota de minutos del equipo"
-                value={percent(perf.minutesShareRecent, 1)}
-              />
-              <Row label="Titularidades" value={percent(perf.startedRate)} />
-              <Row label="Partidos sin jugar" value={percent(perf.dnpRate)} />
-              <Row label="Puntos fantasy por minuto" value={num(perf.fpPerMin, 2)} />
-              {/* Con uno o dos partidos, el suelo es el techo y la dispersión es
-                  0: no es un jugador fiable, es que no hay muestra. */}
-              <Row
-                label="Suelo / techo"
-                value={
-                  (perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD
-                    ? `${num(perf.fpFloor)} — ${num(perf.fpCeiling)}`
-                    : "— (pocos partidos)"
-                }
-              />
-              <Row
-                label="Desviación típica"
-                value={(perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD ? `${num(perf.fpStd)} pts` : "—"}
-              />
-            </dl>
+            <GameLogBars
+              games={detail.recent}
+              average={perf.fpAvg}
+              floor={perf.fpFloor}
+            />
+            <GameLogTable games={detail.recent} />
           </div>
           )}
 
-          <ProjectionBreakdown player={player} />
+          <div className="card">
+            <div className="card-head">
+              <div>
+                <h2 className="card-title">Evolución del precio</h2>
+                <p className="card-note" style={{ margin: "4px 0 0" }}>
+                  Un punto por captura del mercado.
+                </p>
+              </div>
+            </div>
+            <PriceHistory points={detail.priceHistory} />
+          </div>
         </div>
       </section>
+
+      {hasProfile ? (
+        <section className="section shell">
+          <details className="profile-fold">
+            <summary>
+              <h2 className="profile-fold-title">Perfil de juego</h2>
+              <span className="profile-fold-note">{profileParts.join(" · ")}</span>
+            </summary>
+            <div className="profile-fold-body">
+              {detail.mix || detail.court ? (
+                <div className="grid grid-2">
+                  {detail.mix ? (
+                    <div className="card">
+                      <div className="card-head">
+                        <div>
+                          <h2 className="card-title">De dónde salen sus puntos</h2>
+                          <p className="card-note" style={{ margin: "4px 0 0" }}>
+                            Media por partido de cada acción del baremo · {seasonLabel(detail.mix.season)},{" "}
+                            {detail.mix.games} {detail.mix.games === 1 ? "partido" : "partidos"}.
+                          </p>
+                        </div>
+                      </div>
+                      <FantasyMix mix={detail.mix} />
+                    </div>
+                  ) : null}
+                  {detail.court ? (
+                    <div className="card">
+                      <div className="card-head">
+                        <div>
+                          <h2 className="card-title">En pista</h2>
+                          <p className="card-note" style={{ margin: "4px 0 0" }}>
+                            Reconstruido cambio a cambio desde el jugada a jugada oficial.
+                          </p>
+                        </div>
+                      </div>
+                      <CourtRole court={detail.court} />
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+
+              {detail.shots && meta.league ? (
+                <div className="card">
+                  <div className="card-head">
+                    <div>
+                      <h2 className="card-title">Mapa de tiro</h2>
+                      <p className="card-note" style={{ margin: "4px 0 0" }}>
+                        Cada tiro fallado le resta un punto fantasy: dónde tira importa tanto como
+                        cuánto.
+                      </p>
+                    </div>
+                  </div>
+                  <ShotChart
+                    uid={String(player.id)}
+                    shots={detail.shots}
+                    league={meta.league.zones}
+                    keys={meta.league.zoneKeys}
+                    labels={meta.league.zoneLabels}
+                  />
+                </div>
+              ) : null}
+
+              <div className="grid grid-2">
+                {detail.official ? (
+                  <div className="card">
+                    <div className="card-head">
+                      <div>
+                        <h2 className="card-title">Eficiencia</h2>
+                        <p className="card-note" style={{ margin: "4px 0 0" }}>
+                          Avanzadas oficiales de la Euroliga, en percentil frente a su puesto.
+                        </p>
+                      </div>
+                    </div>
+                    <PercentileStrip official={detail.official} />
+                  </div>
+                ) : null}
+
+                {player.isCoach ? null : (
+                <div className="card">
+                  <div className="card-head">
+                    <h2 className="card-title">Rol y recorrido</h2>
+                  </div>
+                  <dl className="fact-list">
+                    <Row
+                      label="Minutos últimos 5"
+                      value={
+                        typeof perf.minutesTrend === "number" && Math.abs(perf.minutesTrend) >= 0.05
+                          ? `${num(perf.minutesRecent)} (${signed(perf.minutesTrend)})`
+                          : num(perf.minutesRecent)
+                      }
+                    />
+                    <Row
+                      label="Cuota de minutos del equipo"
+                      value={percent(perf.minutesShareRecent, 1)}
+                    />
+                    <Row label="Titularidades" value={percent(perf.startedRate)} />
+                    <Row label="Partidos sin jugar" value={percent(perf.dnpRate)} />
+                    <Row label="Puntos fantasy por minuto" value={num(perf.fpPerMin, 2)} />
+                    {/* Con uno o dos partidos, el suelo es el techo y la dispersión es
+                        0: no es un jugador fiable, es que no hay muestra. */}
+                    <Row
+                      label="Suelo / techo"
+                      value={
+                        (perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD
+                          ? `${num(perf.fpFloor)} — ${num(perf.fpCeiling)}`
+                          : "— (pocos partidos)"
+                      }
+                    />
+                    <Row
+                      label="Desviación típica"
+                      value={(perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD ? `${num(perf.fpStd)} pts` : "—"}
+                    />
+                  </dl>
+                </div>
+                )}
+              </div>
+            </div>
+          </details>
+        </section>
+      ) : null}
 
       <section className="section shell">
         {/* La trazabilidad del cruce es una nota al pie, no una etiqueta de

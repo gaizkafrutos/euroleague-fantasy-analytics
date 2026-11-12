@@ -83,8 +83,8 @@ export default function PriceOutlook({ outlook, projection, price, out = false }
           <dd className="num">{out ? "—" : percent(riseProb)}</dd>
         </div>
         <div>
-          <dt>Umbral / precio</dt>
-          <dd className="num">{num(breakEven / price, 2)}×</dd>
+          <dt>Puntos por crédito para mantener</dt>
+          <dd className="num">{num(breakEven / price, 2)}</dd>
         </div>
       </dl>
     </div>

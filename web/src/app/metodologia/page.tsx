@@ -333,10 +333,11 @@ export default function MethodologyPage() {
           </p>
           <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Métodos de cruce">
             <table className="data is-compact">
+              <caption className="sr-only">Jugadores emparejados por cada método de cruce</caption>
               <thead>
                 <tr>
-                  <th>Método</th>
-                  <th className="num">Jugadores</th>
+                  <th scope="col">Método</th>
+                  <th scope="col" className="num">Jugadores</th>
                 </tr>
               </thead>
               <tbody>
@@ -494,13 +495,14 @@ function ProjectionModel() {
       {season ? (
         <div className="table-wrap" style={{ marginTop: 10, maxWidth: 620 }} tabIndex={0} role="region" aria-label="Backtest de la proyección">
           <table className="data is-compact">
+            <caption className="sr-only">Error medio del modelo, del anterior y de la media, según los partidos jugados antes</caption>
             <thead>
               <tr>
-                <th>Partidos jugados antes</th>
-                <th className="num">n</th>
-                <th className="num">Este modelo</th>
-                <th className="num">El anterior</th>
-                <th className="num">Su media</th>
+                <th scope="col">Partidos jugados antes</th>
+                <th scope="col" className="num">n</th>
+                <th scope="col" className="num">Este modelo</th>
+                <th scope="col" className="num">El anterior</th>
+                <th scope="col" className="num">Su media</th>
               </tr>
             </thead>
             <tbody>
@@ -673,11 +675,12 @@ function OfficialData() {
       </p>
       <div className="table-wrap only-wide" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Datos oficiales usados">
         <table className="data">
+          <caption className="sr-only">Qué se usa y qué no de cada fuente de la Euroliga</caption>
           <thead>
             <tr>
-              <th>Fuente</th>
-              <th>Se usa</th>
-              <th>Se descarga pero no se usa</th>
+              <th scope="col">Fuente</th>
+              <th scope="col">Se usa</th>
+              <th scope="col">Se descarga pero no se usa</th>
             </tr>
           </thead>
           <tbody>

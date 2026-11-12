@@ -27,6 +27,8 @@ export function credits(value: number | null | undefined): string {
 export function signed(value: number | null | undefined, digits = 1): string {
   if (value === null || value === undefined || Number.isNaN(value)) return "—";
   const formatted = digits === 2 ? decimal2.format(Math.abs(value)) : decimal.format(Math.abs(value));
+  // Un −0,04 redondeado es 0,0, no "−0,0": el signo va con lo que se enseña.
+  if (/^0([.,]0+)?$/.test(formatted)) return formatted;
   if (value > 0) return `+${formatted}`;
   if (value < 0) return `−${formatted}`;
   return formatted;

@@ -53,7 +53,7 @@ export default function PlayCalibration({ rows }: { rows: CalibrationRow[] }) {
           width={width}
           height={height}
           viewBox={`0 0 ${width} ${height}`}
-          role="img"
+          role="group"
           aria-label="Probabilidad de jugar publicada frente a la real, por estado del parte"
           onPointerLeave={() => setActive(null)}
         >
