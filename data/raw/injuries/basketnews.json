@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-12T18:24:56.288547+00:00",
- "updatedAt": "2026-11-12T14:18:00",
+ "fetchedAt": "2026-11-12T21:57:52.407916+00:00",
+ "updatedAt": "2026-11-12T19:50:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -128,7 +128,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "C",
    "name": "Patrick Baldwin Jr.",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "DNP in Round 9-10 (coach's decision). Played in the domestic league (11.09)"
   },
@@ -144,7 +144,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "SG",
    "name": "Nikola Djurisic",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
    "comment": "DNP in Round 9-10 (coach's decision). Played in the domestic league (11.09)"
   },
@@ -152,7 +152,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "C",
    "name": "Christian Koloko",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "Didn't travel with the team to Madrid, expected to join on game day (visa issues)"
   },
@@ -208,9 +208,9 @@
    "team": "Dubai Basketball",
    "position": "SF",
    "name": "Justin Anderson",
-   "status": "Expected",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "Played in domestic league on Monday after DNP in Rounds 1-9 (hamstring injury)"
+   "comment": "Not included in 12-man roster after playing in domestic league on Monday and DNP in Rounds 1-9 (hamstring)"
   },
   {
    "team": "Dubai Basketball",
@@ -240,9 +240,9 @@
    "team": "Dubai Basketball",
    "position": "PG",
    "name": "Klemen Prepelic",
-   "status": "Game-time",
+   "status": "Ready",
    "round": "Round 11",
-   "comment": "Healthy and played in the domestic league on Monday after DNP in Rounds 8-10 (coach's decision)"
+   "comment": "Included in 12-man roster after DNP in Rounds 8-10 (coach's decision)"
   },
   {
    "team": "Dubai Basketball",
@@ -256,7 +256,7 @@
    "team": "FC Bayern Munich",
    "position": "PF",
    "name": "Oscar da Silva",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "DNP in Round 10 (coach's decision). Played in the domestic league (11.08)"
   },
@@ -264,7 +264,7 @@
    "team": "FC Bayern Munich",
    "position": "SF",
    "name": "Kilian Fischer",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 11",
    "comment": "DNP in Rounds 2-10 (coach's decision)"
   },
@@ -272,15 +272,23 @@
    "team": "FC Bayern Munich",
    "position": "SF",
    "name": "Niels Giffey",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
    "comment": "DNP in Round 10 (coach's decision). Played in the domestic league (11.08)"
   },
   {
    "team": "FC Bayern Munich",
+   "position": "SG",
+   "name": "Tobias Jensen",
+   "status": "Out",
+   "round": "Round 11",
+   "comment": "Not included in 12-man roster in Round 11(coach's decision)"
+  },
+  {
+   "team": "FC Bayern Munich",
    "position": "PG",
    "name": "Duane Washington Jr.",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "DNP in Round 10 (undisclosed). Played in the domestic league (11.08)"
   },
@@ -384,17 +392,25 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Tamir Blatt",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "Was included in 12-man squad in Round 10, but DNP (coach's decision).Played in the domestic cup (11.09)"
+   "comment": "Not included in 12-man roster after DNP in Round 10 (coach's decision)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
    "position": "C",
    "name": "Bruno Caboclo",
-   "status": "Game-time",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "Might not make the 12-man roster (coach's decision)"
+   "comment": "Not included in 12-man roster (coach's decision)"
+  },
+  {
+   "team": "Hapoel IBI Tel Aviv",
+   "position": "PG",
+   "name": "Khadeen Carrington",
+   "status": "Out",
+   "round": "Round 11",
+   "comment": "Not included in 12-man roster (coach's decision)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -408,17 +424,17 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PF",
    "name": "Tomer Ginat",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 7-10 (coach's decision).Played in the domestic cup (11.09)"
+   "comment": "Not included in 12-man roster after DNP in Rounds 7-10 (coach's decision)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Vasilije Micic",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
-   "comment": "Expected to play in Round 11 after DNP in domestic cup vs. Maccabi"
+   "comment": "Included in 12-man roster"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -432,17 +448,17 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Tomas Satoransky",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
-   "comment": "Expected to return after DNP in Round 10 (concussion)"
+   "comment": "Included in 12-man roster after DNP in Round 10 (concussion)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Bar Timor",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
-   "comment": "Expected to return after DNP in Rounds 7-10 (coach's decision). Also played in the domestic cup (11.09)"
+   "comment": "Included in 12-man roster after DNP in Rounds 7-10 (coach's decision)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -512,7 +528,7 @@
    "team": "Maccabi Rapyd Tel Aviv",
    "position": "PG",
    "name": "Amit Ebo",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
    "comment": "DNP in Round 10 (coach's decision)"
   },
@@ -528,7 +544,7 @@
    "team": "Maccabi Rapyd Tel Aviv",
    "position": "SF",
    "name": "Gur Lavi",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
    "comment": "DNP in Rounds 1-10 (undisclosed injury)"
   },
@@ -768,7 +784,7 @@
    "team": "Real Madrid",
    "position": "PG",
    "name": "Sergio Llull",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "Made EuroLeague season debut after DNP in Rounds 1-9 (coach's decision). Played in the domestic league (11.08)"
   },
@@ -784,7 +800,7 @@
    "team": "Real Madrid",
    "position": "PF",
    "name": "Chuma Okeke",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "Expected to play after DNP in domestic league on Sunday (undisclosed)"
   },
@@ -792,7 +808,7 @@
    "team": "Real Madrid",
    "position": "C",
    "name": "Olivier Sarr",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "Played 2 minutes in Round 10 after DNP in Rounds 1-9 (coach's decision). Played in the domestic league (11.08)"
   },
@@ -800,7 +816,7 @@
    "team": "Real Madrid",
    "position": "PG",
    "name": "Max Shulga",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "Played 4 minutes in Round 10 after DNP in Round 9 (coach's decision). Played in the domestic league (11.08)"
   },
@@ -808,9 +824,17 @@
    "team": "Valencia Basket",
    "position": "PF",
    "name": "Mouhamadou Gueye",
-   "status": "Game-time",
+   "status": "Ready",
    "round": "Round 11",
    "comment": "DNP in Round 10 and domestic league on Sunday (right foot injury)"
+  },
+  {
+   "team": "Valencia Basket",
+   "position": "SG",
+   "name": "Lucas Mari",
+   "status": "Out",
+   "round": "Round 11",
+   "comment": "DNP in 12-man roster in Rounds 11 (coach's decision)."
   },
   {
    "team": "Valencia Basket",

@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-12T18:24:56.725249+00:00",
+ "fetchedAt": "2026-11-12T21:57:52.888598+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -107,14 +107,6 @@
    "status": "Out",
    "round": "",
    "comment": "Leg"
-  },
-  {
-   "team": "VBC",
-   "position": "F",
-   "name": "Mo Gueye",
-   "status": "Game time",
-   "round": "",
-   "comment": "Foot"
   },
   {
    "team": "VIR",
@@ -245,6 +237,14 @@
    "comment": ""
   },
   {
+   "team": "OLY",
+   "position": "F",
+   "name": "Kostas Papanikolaou",
+   "status": "Out",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "BAR",
    "position": "G",
    "name": "Kevin Punter",
@@ -275,14 +275,6 @@
    "status": "Out",
    "round": "",
    "comment": ""
-  },
-  {
-   "team": "HTA",
-   "position": "G",
-   "name": "Tomas Satoransky",
-   "status": "Game time",
-   "round": "",
-   "comment": "Concussion"
   },
   {
    "team": "KBA",
@@ -328,7 +320,7 @@
    "team": "DUB",
    "position": "G",
    "name": "Thomas Walkup",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Back"
   },

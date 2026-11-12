@@ -1,55 +1,47 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 120.35,
- "scoredProjection": 147.44,
- "captain": "3768",
+ "totalPrice": 99.4,
+ "totalProjection": 112.46,
+ "scoredProjection": 137.5,
+ "captain": "11549",
  "starters": [
+  "11549",
   "3768",
-  "3795",
+  "7201",
   "3838",
-  "7424",
   "3851"
  ],
- "sixth": "11547",
+ "sixth": "3991",
  "bench": [
-  "3991",
+  "4258",
   "3977",
   "8644",
-  "3985"
+  "11541"
  ],
  "coach": {
-  "key": "4255",
-  "name": "ALBERT, XAVIER",
+  "key": "4006",
+  "name": "MASIULIS, TOMAS",
   "position": "E",
-  "club": "PAM",
-  "price": 8.0,
-  "projection": 15.45
+  "club": "ZAL",
+  "price": 7.4,
+  "projection": 14.19
  },
  "players": [
-  {
-   "key": "3795",
-   "name": "SHORTS, TJ",
-   "position": "G",
-   "club": "PAM",
-   "price": 16.8,
-   "projection": 21.19
-  },
   {
    "key": "3851",
    "name": "FELIZ, ANDRES",
    "position": "G",
    "club": "MAD",
    "price": 9.3,
-   "projection": 13.59
+   "projection": 12.62
   },
   {
-   "key": "11547",
-   "name": "MOORE, WENDELL",
+   "key": "4258",
+   "name": "PUERTO, JOSEP",
    "position": "G",
-   "club": "VIR",
-   "price": 9.7,
-   "projection": 12.25
+   "club": "PAM",
+   "price": 5.0,
+   "projection": 5.4
   },
   {
    "key": "3977",
@@ -57,7 +49,23 @@
    "position": "G",
    "club": "MAD",
    "price": 4.2,
-   "projection": 5.01
+   "projection": 5.28
+  },
+  {
+   "key": "11541",
+   "name": "CARDENAS, ALVARO",
+   "position": "G",
+   "club": "PAM",
+   "price": 4.4,
+   "projection": 4.39
+  },
+  {
+   "key": "7201",
+   "name": "BACON, DWAYNE",
+   "position": "F",
+   "club": "DUB",
+   "price": 14.7,
+   "projection": 16.79
   },
   {
    "key": "3838",
@@ -65,7 +73,7 @@
    "position": "F",
    "club": "IST",
    "price": 9.8,
-   "projection": 15.22
+   "projection": 13.95
   },
   {
    "key": "3991",
@@ -73,7 +81,7 @@
    "position": "F",
    "club": "MAD",
    "price": 6.1,
-   "projection": 8.69
+   "projection": 8.63
   },
   {
    "key": "8644",
@@ -81,15 +89,15 @@
    "position": "F",
    "club": "BAS",
    "price": 4.1,
-   "projection": 4.05
+   "projection": 4.78
   },
   {
-   "key": "3985",
-   "name": "LIGHTY, DAVID",
-   "position": "F",
-   "club": "ASV",
-   "price": 4.5,
-   "projection": 4.04
+   "key": "11549",
+   "name": "VALANCIUNAS, JONAS",
+   "position": "C",
+   "club": "ZAL",
+   "price": 17.7,
+   "projection": 20.77
   },
   {
    "key": "3768",
@@ -97,15 +105,7 @@
    "position": "C",
    "club": "PAN",
    "price": 16.7,
-   "projection": 22.54
-  },
-  {
-   "key": "7424",
-   "name": "DIARRA, ALIOU",
-   "position": "C",
-   "club": "VIR",
-   "price": 10.8,
-   "projection": 13.77
+   "projection": 19.85
   }
  ],
  "available": true,
