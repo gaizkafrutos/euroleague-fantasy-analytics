@@ -3,14 +3,22 @@
  *  ser corta. `unsafe-inline` hace falta: Next incrusta el estado de cada
  *  página en scripts en línea y las páginas estáticas no pueden llevar nonce.
  *  En desarrollo no se aplica (la recarga en caliente usa eval y websockets). */
+/** En las previsualizaciones de Vercel (las de cada PR) la plataforma inyecta
+ *  su barra de comentarios desde vercel.live. Con la política de producción se
+ *  quedaba bloqueada y dejaba un error en la consola de cada página. Se le abre
+ *  la puerta solo ahí: en producción no se carga nada de terceros. */
+const PREVIEW = process.env.VERCEL_ENV === "preview";
+const allow = (...sources) => (PREVIEW ? ` ${sources.join(" ")}` : "");
+
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://media-cdn.incrowdsports.com https://media-cdn.cortextech.io",
+  `script-src 'self' 'unsafe-inline'${allow("https://vercel.live")}`,
+  `style-src 'self' 'unsafe-inline'${allow("https://vercel.live")}`,
+  `img-src 'self' data: blob: https://media-cdn.incrowdsports.com https://media-cdn.cortextech.io${allow("https://vercel.live", "https://vercel.com")}`,
   "media-src 'self'",
-  "font-src 'self'",
-  "connect-src 'self'",
+  `font-src 'self'${allow("https://vercel.live", "https://assets.vercel.com")}`,
+  `connect-src 'self'${allow("https://vercel.live", "wss://ws-us3.pusher.com")}`,
+  ...(PREVIEW ? ["frame-src https://vercel.live"] : []),
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
