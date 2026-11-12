@@ -51,6 +51,7 @@ from efa.ingest.official import load_player_stats, load_reference
 from efa.ingest.playbyplay import load_pbp, shots_frame
 from efa.matchmodel import coach_outcomes, coach_prob_above, coach_quantile, coach_sd
 from efa.optimizer import normalize_position
+from efa.projection import band_offsets
 
 log = logging.getLogger(__name__)
 
@@ -78,6 +79,23 @@ CURRENT_Z_MIN_N = 500
 
 
 Z_QUANTILES = _load_z_quantiles()
+
+
+def _load_bands() -> list[dict[str, float]]:
+    """Horquillas por nivel de proyección del último `efa backtest` (ver
+    `projection.residual_bands`). Vacío si aún no hay muestra: se usa entonces
+    la horquilla de antes, con la dispersión de cada jugador."""
+    from efa.config import PROCESSED_DIR
+
+    try:
+        data = json.loads((PROCESSED_DIR / "projection_backtest.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    current = data.get("current") or {}
+    return list(current.get("bands") or []) if (current.get("n") or 0) >= CURRENT_Z_MIN_N else []
+
+
+BANDS = _load_bands()
 
 #: Partidos de esta temporada a partir de los cuales ya no se mira la anterior.
 CURRENT_ENOUGH = 5
@@ -287,7 +305,8 @@ def price_freshness(
          precios: los que tienen `plus` ≠ 0 siguen con la cotización de antes de
          la jornada.
     """
-    empty = {"stale": False, "capturedAt": None, "lastGameAt": None, "round": None, "reason": None}
+    empty = {"stale": False, "capturedAt": None, "lastGameAt": None, "round": None, "reason": None,
+             "roundGames": None, "roundPlayed": None}
     if history.empty or "quotation" not in history.columns:
         return empty
     captured = pd.to_datetime(history["captured_at"], utc=True).max()
@@ -296,10 +315,16 @@ def price_freshness(
     if not played:
         return out
 
+    from efa.fixtures import round_progress
+
     last_round = max(int(g.get("round") or 0) for g, _ in played)
     in_round = [t for g, t in played if int(g.get("round") or 0) == last_round]
     out["round"] = last_round
     out["lastGameAt"] = max(t for _, t in played).isoformat()
+    # Partidos de la jornada y cuántos van: "la jornada estaba cerrada" solo es
+    # verdad si se han jugado todos. Con dos de diez, la web decía que sí.
+    progress = round_progress(games, last_round)
+    out["roundGames"], out["roundPlayed"] = progress["games"], progress["played"]
 
     if any(t >= captured - GAME_DURATION for t in in_round):
         return {**out, "stale": True, "reason": "captura con la jornada a medias"}
@@ -321,6 +346,10 @@ def price_freshness(
     ).round(2)
     movers = merged[moved.ne(0)]
     if len(movers) >= 20 and float((movers["quotation"] != movers["quotation_base"]).mean()) < 0.5:
+        if out["roundPlayed"] < out["roundGames"]:
+            # Jornada en juego: el precio no se mueve hasta que acabe, pero la
+            # variación de quien ya ha jugado está publicada.
+            return {**out, "stale": True, "reason": "jornada en juego"}
         return {**out, "stale": True, "reason": "el juego aún no ha aplicado la revalorización"}
     return out
 
@@ -457,49 +486,31 @@ def pending_prices(
     return changed
 
 
-#: Partidos a partir de los cuales hay regularidad propia que enseñar.
-RELIABILITY_MIN_GAMES = 3
-
-
-def _projection_certainty(records: list[dict[str, Any]]) -> None:
-    """Seguridad de la proyección: 1 − σ/proyección, acotada entre 0 y 1.
-
-    Es otra cosa que la regularidad (`perf.consistency`, que sale de lo que ya
-    puntuó): mide el margen de error de la cifra de la próxima jornada, con la
-    duda de si juega incluida. Antes las dos se llamaban "fiabilidad" y, con
-    menos de tres partidos, esta se colaba en el sitio de la otra.
-    """
-    for record in records:
-        outlook = record.get("outlook")
-        proj = _num(record.get("projectedFp")) or 0.0
-        if not outlook or proj <= 0 or outlook.get("sd") is None:
-            continue
-        outlook["certainty"] = round(max(0.0, min(1.0, 1 - float(outlook["sd"]) / proj)), 3)
+# La "seguridad de la proyección" (1 − σ/proyección, acotada en 0) se retiró en
+# noviembre de 2026: valía 0 % en 230 de 340 jugadores y un 28 % en el mejor
+# pívot de la liga. No distinguía a nadie. La incertidumbre se enseña con la
+# horquilla, que sí está contrastada.
 
 
 def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
-    """Recalcula el índice de chollo con la probabilidad de subir ya calculada."""
-    from efa.metrics import bargain_score
+    """Índice de chollo con las cifras finales: la proyección con la
+    disponibilidad dentro y el precio que se paga (el pendiente si lo hay)."""
+    from efa.metrics import bargain_score, value_over_price
 
     frame = pd.DataFrame(
         {
-            "value_projected": [_num(r.get("valueProjected")) for r in records],
             "projected_fp": [_num(r.get("projectedFp")) for r in records],
-            # Con menos de tres partidos la regularidad no existe (con uno es 0
-            # por definición): cuenta como neutra, no como un suspenso.
-            "consistency": [
-                _num((r.get("perf") or {}).get("consistency"))
-                if ((r.get("perf") or {}).get("gamesPlayed") or 0) >= RELIABILITY_MIN_GAMES
-                else None
-                for r in records
-            ],
-            "minutes_share_trend": [_num((r.get("perf") or {}).get("minutesShareTrend")) for r in records],
-            "rise_prob": [_num((r.get("outlook") or {}).get("riseProb")) for r in records],
+            "quotation": [_num(r.get("pricePending")) or _num(r.get("price")) for r in records],
+            "is_coach": [bool(r.get("isCoach")) for r in records],
+            "play_prob": [_num(r.get("playProb")) for r in records],
         }
     )
-    for record, score in zip(records, bargain_score(frame), strict=True):
+    surplus = value_over_price(frame)
+    for record, score, extra in zip(records, bargain_score(frame), surplus, strict=True):
         if record.get("bargainScore") is not None:
             record["bargainScore"] = float(score)
+        # Los puntos de más sobre lo normal a su precio: lo que mide el índice.
+        record["valueOverPrice"] = None if pd.isna(extra) else float(extra)
 
 
 # ---------------------------------------------------------------------------
@@ -570,9 +581,14 @@ def apply_advanced(
     pending = pending_prices(records, market, log_now, calendar, model, freshness, history=history)
     meta["priceFreshness"] = {**freshness, "pending": pending}
     if freshness.get("stale"):
+        reason = (
+            f"la jornada sigue en juego ({freshness['roundPlayed']} de {freshness['roundGames']} partidos)"
+            if freshness["reason"] == "jornada en juego"
+            else freshness["reason"]
+        )
         meta.setdefault("warnings", []).append(
             f"Precios capturados el {freshness['capturedAt'][:16].replace('T', ' ')} UTC: "
-            f"{freshness['reason']} (J{freshness['round']}). "
+            f"{reason} (J{freshness['round']}). "
             f"Se usa el precio pendiente de {pending} jugadores hasta la próxima captura."
         )
     sds = _projection_sd(records, log_now, log_prior)
@@ -627,19 +643,33 @@ def apply_advanced(
         sd_cond = sd_if_plays.get(int(record["id"])) or sd
         rise_at = threshold + RISE_STEP / model["a"]
         expected = prob * expected_change(model, cond, price) + (1 - prob) * DNP_PRICE_CHANGE
+        # Horquilla SI JUEGA, con los errores reales de su nivel de proyección.
+        # La de antes mezclaba en una sola normal lo que hace cuando juega con el
+        # riesgo de quedarse en cero: en J2–J10 recogía el 45 % de los
+        # resultados de los fijos, el 64 % de las dudas y el 97 % de las bajas,
+        # cuando tendría que ser la mitad en los tres. El riesgo de no jugar ya
+        # va aparte, en `playProb`.
+        offsets = band_offsets(BANDS, cond)
+        if offsets:
+            floor, ceiling, top = cond + offsets["p25"], cond + offsets["p75"], cond + offsets["p90"]
+        else:
+            # Sin muestra aún (primeras jornadas): cuantiles del backtest sobre
+            # la dispersión de cada jugador, como antes.
+            floor = proj + Z_QUANTILES["p25"] * sd
+            ceiling, top = proj + Z_QUANTILES["p75"] * sd, proj + Z_QUANTILES["p90"] * sd
         record["outlook"] = {
             "breakEven": round(threshold, 1),
             "expectedChange": round(max(-1.5, min(1.5, expected)), 2),
             "riseProb": round(prob * prob_above(rise_at, cond, sd_cond), 3),
             "sd": sd,
-            # Cuantiles empíricos del backtest, no ±0,674σ: la puntuación tiene
-            # la cola de arriba más larga que la de abajo.
-            "floor": round(max(0.0, proj + Z_QUANTILES["p25"] * sd), 1),
-            "ceiling": round(proj + Z_QUANTILES["p75"] * sd, 1),
-            "p90": round(proj + Z_QUANTILES["p90"] * sd, 1),
+            "floor": round(max(0.0, floor), 1),
+            "ceiling": round(ceiling, 1),
+            "p90": round(top, 1),
+            # La horquilla es de lo que hace si juega (no incluye el riesgo de
+            # que no juegue): la web y la evaluación tienen que saberlo.
+            "bandIfPlays": bool(offsets),
         }
     meta["priceModel"] = {**DEFAULT_PRICE_MODEL, **model}
-    _projection_certainty(records)
     _rebuild_bargain(records)
 
     # ------------------------------------------------------------ tiros
@@ -862,10 +892,13 @@ def _short_names(reference: dict[str, Any]) -> dict[str, str]:
 
 
 def _upcoming(games: list[dict[str, Any]], round_now: int, *, horizon: int) -> dict[str, list[dict[str, Any]]]:
+    from efa.fixtures import pending_games
+
     out: dict[str, list[dict[str, Any]]] = {}
-    rounds = sorted({int(g["round"]) for g in games if g.get("round") and not g.get("played") and int(g["round"]) >= round_now})[:horizon]
-    for game in sorted(games, key=lambda g: (int(g.get("round") or 0), str(g.get("utcDate") or ""))):
-        if not game.get("round") or int(game["round"]) not in rounds or game.get("played"):
+    pending = pending_games(games)
+    rounds = sorted({int(g["round"]) for g in pending if g.get("round") and int(g["round"]) >= round_now})[:horizon]
+    for game in pending:
+        if not game.get("round") or int(game["round"]) not in rounds:
             continue
         local = str(((game.get("local") or {}).get("club") or {}).get("code") or "")
         road = str(((game.get("road") or {}).get("club") or {}).get("code") or "")

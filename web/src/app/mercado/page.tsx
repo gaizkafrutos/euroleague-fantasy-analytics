@@ -13,6 +13,7 @@ import { BarCell, PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
 import { checkedLater, credits, dateTime, displayName, num, percent, positionLabel, positionShort } from "@/lib/format";
+import { optimalTrack, roundInPlay } from "@/lib/projection";
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 import Explain from "@/components/ui/Explain";
@@ -45,6 +46,8 @@ export default function MercadoPage() {
   // Las señales se adaptan al punto de la temporada: con una jornada jugada no
   // hay "últimas cinco", y exigirlas dejaba las tres listas vacías hasta
   // octubre. Hasta la J5, el rol se mide contra la temporada anterior.
+  const inPlay = roundInPlay(meta.schedule);
+  const track = optimalTrack(meta.modelBacktest?.published);
   const roundsPlayed = Math.max(meta.currentRound - 1, 0);
   const early = roundsPlayed < 5;
   const minGames = Math.min(5, Math.max(1, roundsPlayed));
@@ -85,11 +88,16 @@ export default function MercadoPage() {
         .sort((a, b) => (b.perf.minutesShareTrend ?? 0) - (a.perf.minutesShareTrend ?? 0))
         .slice(0, 5);
 
-  const certainty = (player: Player) => player.outlook?.certainty ?? 0;
+  // Primeras jornadas, sin regularidad propia todavía: quien tiene la horquilla
+  // más estrecha para lo que proyecta.
+  const spread = (player: Player) =>
+    player.outlook && (player.projectedFp ?? 0) > 0
+      ? (player.outlook.ceiling - player.outlook.floor) / (player.projectedFp as number)
+      : Number.POSITIVE_INFINITY;
   const mostConsistent = byCertainty
     ? [...universe]
         .filter((player) => (player.projectedFp ?? 0) >= 10 && isSignable(player))
-        .sort((a, b) => certainty(b) - certainty(a))
+        .sort((a, b) => spread(a) - spread(b))
         .slice(0, 5)
     : [...universe]
         .filter(
@@ -166,7 +174,12 @@ export default function MercadoPage() {
         <div className="grid grid-3 signals">
           <RankCard
             title="Mejores chollos"
-            note="Índice compuesto: valor por crédito, proyección, regularidad, rol y probabilidad de subir."
+            note="Los que más proyectan por encima de lo normal a su precio: debajo, cuántos puntos de más. El número es su percentil en el mercado."
+            detail={(player) =>
+              typeof player.valueOverPrice === "number"
+                ? `${signedNum(player.valueOverPrice)} pts de más`
+                : ""
+            }
             players={topBargains}
             render={(player) => num(player.bargainScore, 0)}
           />
@@ -196,11 +209,24 @@ export default function MercadoPage() {
             title={byCertainty ? "Proyección más segura" : "Los más regulares"}
             note={
               byCertainty
-                ? "Menor margen de error en lo que se espera de ellos. Sin tres jornadas aún no hay regularidad propia."
-                : "Menor dispersión en lo que ya han puntuado. Lo que se busca en un titular indiscutible."
+                ? "La horquilla más estrecha para lo que proyectan. Sin tres jornadas aún no hay regularidad propia."
+                : "Los que menos se mueven de su media. La cifra es entre qué puntos cae la mitad de sus partidos."
             }
             players={mostConsistent}
-            render={(player) => percent(byCertainty ? certainty(player) : player.perf.consistency)}
+            render={(player) =>
+              byCertainty
+                ? player.outlook
+                  ? `${num(player.outlook.floor, 0)}–${num(player.outlook.ceiling, 0)}`
+                  : "—"
+                : player.perf.fpFloor !== null && player.perf.fpCeiling !== null
+                  ? `${num(player.perf.fpFloor, 0)}–${num(player.perf.fpCeiling, 0)}`
+                  : percent(player.perf.consistency)
+            }
+            detail={
+              byCertainty
+                ? undefined
+                : (player) => `media ${num(player.perf.fpAvg)}`
+            }
           />
         </div>
       </section>
@@ -213,7 +239,18 @@ export default function MercadoPage() {
               <h2>El equipo óptimo con {credits(lineup.budget)}</h2>
               <p className="card-note" style={{ margin: "8px 0 0", maxWidth: "62ch" }}>
                 La mejor plantilla posible con todas las reglas del juego.
+                {inPlay
+                  ? ` Con la jornada ${meta.currentRound} en juego (${inPlay.played} de ${inPlay.games} partidos), quien ya ha jugado cuenta con su partido de la jornada ${meta.currentRound + 1}.`
+                  : ""}
               </p>
+              {track ? (
+                <p className="card-note" style={{ margin: "6px 0 0", maxWidth: "62ch" }}>
+                  Ojo con el total: en las {track.rounds} jornadas evaluadas, el óptimo publicado hizo{" "}
+                  {num(track.real, 0)} puntos de media donde proyectaba {num(track.projected, 0)}. Al
+                  elegir a los que más proyectan se eligen también los errores a favor.{" "}
+                  <Link href="/acierta">Jornada a jornada</Link>.
+                </p>
+              ) : null}
               <Explain summary="Cómo se calcula">
                 4 bases, 4 aleros, 2 pívots, un entrenador y máximo 6 del mismo club. Resuelto por
                 programación entera, así que es el óptimo, no una aproximación.
@@ -233,7 +270,7 @@ export default function MercadoPage() {
               <div className="tile-value" style={{ marginTop: 0 }}>
                 {num(lineup.scoredProjection ?? lineup.totalProjection)}
               </div>
-              <div className="muted num" style={{ fontSize: "0.78rem", marginTop: 4 }}>
+              <div className="muted num" style={{ fontSize: "0.75rem", marginTop: 4 }}>
                 pts con el baremo real · {credits(lineup.totalPrice)}
               </div>
             </div>
@@ -244,14 +281,15 @@ export default function MercadoPage() {
 
           <div className="table-wrap only-wide" tabIndex={0} role="region" aria-label="Equipo óptimo">
             <table className="data">
+              <caption className="sr-only">Equipo óptimo: jugador, rol, puesto, club, precio y proyección</caption>
               <thead>
                 <tr>
-                  <th>Jugador</th>
-                  <th className="is-text">Rol</th>
-                  <th className="is-text">Pos</th>
-                  <th className="is-text">Club</th>
-                  <th className="num">Precio</th>
-                  <th className="num">Proyección</th>
+                  <th scope="col">Jugador</th>
+                  <th scope="col" className="is-text">Rol</th>
+                  <th scope="col" className="is-text">Pos</th>
+                  <th scope="col" className="is-text">Club</th>
+                  <th scope="col" className="num">Precio</th>
+                  <th scope="col" className="num">Proyección</th>
                 </tr>
               </thead>
               <tbody>

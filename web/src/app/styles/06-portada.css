@@ -1,0 +1,586 @@
+/* --------------------------------------------------------------------------
+   Portada
+
+   DECISIÓN: esta pantalla es siempre oscura, aunque el resto del sitio tenga
+   los dos temas. La foto del balón está hecha sobre negro y en claro cantaría.
+   Por eso se vuelven a declarar los tokens oscuros mientras la portada está en
+   pantalla — cabecera y pie incluidos, que si no quedaría una franja blanca
+   sobre un plano negro. Va después del bloque de tema claro a propósito: misma
+   especificidad, gana el orden. El conmutador de tema se oculta en esta ruta
+   desde `Header.tsx`, porque un botón que no hace nada visible es peor que no
+   tenerlo.
+
+   Sin recuadros, sin títulos, todo en blanco. Cada frase aparece de la nada al
+   entrar en la franja central y se va al salir, subiendo o bajando.
+   `position: sticky` + `IntersectionObserver`. Cero dependencias.
+   -------------------------------------------------------------------------- */
+/* El vídeo llega hasta arriba: la cabecera flota encima en vez de cortarlo. */
+:root:has(.portada) .masthead {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Al bajar, opaca: el relato ya no pasa por debajo del logo y el buscador. */
+:root:has(.portada) .masthead.is-scrolled {
+  background: var(--bg);
+  border-bottom-color: var(--line);
+}
+
+:root:has(.portada) .footer {
+  border-top: 0;
+  margin-top: 0;
+}
+
+.portada {
+  --ink-soft: var(--ink-2);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  /* El vídeo sube por detrás de la cabecera, que ya es transparente aquí. */
+  margin-top: calc(-1 * (var(--header-height) + env(safe-area-inset-top, 0px)));
+}
+
+.portada .story {
+  position: relative;
+}
+
+/* ------------------------------------------------------------- el vídeo */
+.portada .stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  z-index: 0;
+  overflow: hidden;
+  /* Se saca del flujo tirando del margen: el texto pasa por delante en vez
+     de empezar una pantalla más abajo. */
+  margin-bottom: -100svh;
+  background: var(--plane);
+  /* El pabellón se enciende al llegar: sube desde negro con el titular. */
+  animation: stage-lights 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes stage-lights {
+  from {
+    opacity: 0;
+  }
+}
+
+/* En móvil el ambiente sobra: el plano ya llena la pantalla. */
+.portada .stage-ambient {
+  display: none;
+}
+
+.portada .stage-frame {
+  position: absolute;
+  inset: 0;
+  transform: scale(var(--s, 1));
+  transition: transform 1.2s cubic-bezier(0.22, 0.7, 0.3, 1);
+}
+
+.portada .stage-poster,
+.portada .stage-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* El jugador y el aro viven en la mitad de arriba del plano; el suelo, que
+     es donde va el rótulo, es lo que se sacrifica. */
+  object-position: 50% 30%;
+}
+
+/* El póster ya es el primer fotograma: el vídeo aparece encima sin salto. */
+.portada .stage-video {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.portada .stage[data-playing] .stage-video {
+  opacity: 1;
+}
+
+/* Dos capas: la fija (cabecera arriba, rótulo abajo) y la que apaga el plano
+   conforme avanza el relato (`--dim`, desde el componente). */
+.portada .stage-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--bg) 58%, transparent);
+}
+
+.portada .stage-scrim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--plane);
+  opacity: var(--dim, 0);
+  transition: opacity 0.9s ease;
+}
+
+@media (min-width: 900px) {
+  /* Vertical y entero: el plano no se estira a lo ancho. Vive en un panel a
+     la derecha, recortado en seco: sin fundidos ni ambiente desenfocado. */
+  .portada .stage-frame {
+    inset: 0 max(4vw, calc((100vw - var(--max-width)) / 2)) 0 auto;
+    height: 100%;
+    aspect-ratio: 496 / 864;
+    transform-origin: 50% 40%;
+    top: calc(var(--header-height) + 24px);
+    bottom: 24px;
+    height: auto;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .portada .stage-scrim {
+    background: none;
+  }
+}
+
+/* -------------------------------------------------- los tiempos del relato */
+.portada .beats {
+  position: relative;
+  z-index: 2;
+  padding-inline: 24px;
+}
+
+.portada .beat {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: 40px;
+}
+
+.portada .beat-inner {
+  max-width: 24ch;
+}
+
+.portada .beat.is-lede .beat-inner {
+  max-width: 28ch;
+}
+
+/* El estado oculto solo existe si el script ha arrancado: sin JS se lee todo. */
+.portada[data-anim="on"] .beat-inner {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(7px);
+  transition:
+    opacity 0.62s ease,
+    transform 0.62s cubic-bezier(0.22, 0.7, 0.3, 1),
+    filter 0.62s ease;
+}
+
+.portada[data-anim="on"] .beat.is-on .beat-inner {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.portada .beat p {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 108, "wght" 620;
+  font-size: clamp(1.7rem, 5.2vw, 2.7rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.portada .beat p + p {
+  margin-top: 0.7em;
+}
+
+.portada .beat .q {
+  font-variation-settings: "wdth" 88, "wght" 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.portada .beat p.small {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(0.98rem, 2.3vw, 1.1rem);
+  line-height: 1.6;
+  letter-spacing: 0;
+  margin-top: 1.1em;
+}
+
+/* ------------------------------------------------------------ el arranque */
+/* Rótulo de retransmisión: en el tercio de abajo, sobre el parqué, donde el
+   plano no tiene nada que contar. Deja sitio a la barra de pestañas. */
+.portada .beat.is-hero {
+  align-items: flex-end;
+  padding-top: calc(var(--header-height) + 40px);
+  padding-bottom: calc(28px + 54px + env(safe-area-inset-bottom, 0px));
+}
+
+.portada .beat.is-hero .beat-inner {
+  max-width: none;
+}
+
+.portada .beat.is-hero h1 {
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: clamp(2.6rem, 11.6vw, 5.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.portada .hl-line {
+  display: block;
+}
+
+/* La máscara: cada palabra sube desde debajo de su propia línea. El margen
+   negativo de abajo deja sitio a los descendentes sin separar las líneas. */
+.portada .hl-w {
+  display: inline-block;
+  overflow: clip;
+  overflow-clip-margin: 0.08em;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+  vertical-align: top;
+  font-variation-settings: "wdth" 114, "wght" 820;
+}
+
+.portada .hl-w > span {
+  display: inline-block;
+  /* El mismo gesto, más corto: la última palabra llegaba a 1,7 s. */
+  animation: hl-rise 0.75s var(--ease-out-expo) both;
+  animation-delay: calc(80ms + var(--i, 0) * 35ms);
+}
+
+/* La segunda línea baja el tono con peso, no con color: el acento es solo
+   para lo que se toca. */
+.portada .hl-w.is-soft {
+  font-variation-settings: "wdth" 100, "wght" 330;
+  letter-spacing: -0.02em;
+}
+
+@keyframes hl-rise {
+  from {
+    transform: translateY(105%);
+  }
+}
+
+.portada .beat.is-hero .sub,
+.portada .hero-foot {
+  animation: hero-in 0.9s var(--ease-out-expo) both;
+}
+
+.portada .beat.is-hero .sub {
+  animation-delay: 620ms;
+}
+
+.portada .hero-foot {
+  animation-delay: 800ms;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.portada .beat.is-hero .sub {
+  margin: 26px 0 0;
+  /* Hereda el "wght" 620 de las frases y a la fuente de texto también le afecta. */
+  font-variation-settings: normal;
+  max-width: 34ch;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(0.98rem, 2.2vw, 1.08rem);
+  line-height: 1.55;
+  letter-spacing: 0;
+  color: var(--ink-2);
+}
+
+.portada .hero-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.portada .hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+  animation: hero-in 0.9s var(--ease-out-expo) both;
+  animation-delay: 720ms;
+}
+
+.portada .hero-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 40%, transparent);
+  color: var(--ink);
+  font-weight: 560;
+  text-decoration: none;
+  transition:
+    border-color 0.16s ease,
+    background-color 0.16s ease,
+    transform 0.16s ease-out;
+}
+
+.portada .hero-cta.is-primary {
+  border-color: transparent;
+  background: var(--ink);
+  color: var(--plane);
+}
+
+.portada .hero-cta:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portada .hero-cta:hover {
+    border-color: var(--ink);
+  }
+  .portada .hero-cta.is-primary:hover {
+    background: var(--ink-2);
+  }
+}
+
+/* Pausa del vídeo: pequeña y a mano, sin pedir protagonismo. */
+.portada .clip-toggle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 40%, transparent);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    border-color 0.16s ease,
+    transform 0.16s ease-out;
+}
+
+.portada .clip-toggle:active {
+  transform: scale(0.94);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portada .clip-toggle:hover {
+    border-color: var(--ink);
+  }
+}
+
+/* --------------------------------------------------------------- progreso */
+.portada-pips {
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 3;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 1100px) {
+  .portada-pips {
+    display: flex;
+  }
+}
+
+.portada-pips i {
+  display: block;
+  width: 2px;
+  height: 32px;
+  border-radius: 1px;
+  background: var(--rule);
+  /* Escala y no altura: animar height recalculaba el layout (detector). */
+  transform: scaleY(0.625);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.portada-pips i.on {
+  background: var(--ink);
+  transform: none;
+}
+
+@media (min-width: 900px) {
+  .portada .beats {
+    padding-left: 64px;
+  }
+
+  .portada .beat-inner {
+    max-width: 26ch;
+  }
+
+  .portada .beat.is-lede .beat-inner {
+    max-width: 30ch;
+  }
+
+  /* En escritorio el rótulo vuelve al centro: el vídeo está a un lado y la
+     columna de texto tiene todo el alto para ella. */
+  .portada .beat.is-hero {
+    align-items: center;
+    padding-bottom: 40px;
+  }
+
+  .portada .beat.is-hero .beat-inner {
+    max-width: none;
+  }
+
+  .portada .beat.is-hero h1 {
+    font-size: clamp(3.6rem, 6.6vw, 6rem);
+  }
+
+  /* La pausa se va a la esquina del plano, donde se espera un control de
+     vídeo, en vez de flotar bajo el texto. */
+  .portada .beat.is-hero {
+    position: relative;
+  }
+
+  .portada .hero-foot {
+    position: absolute;
+    right: max(4vw, calc((100vw - var(--max-width)) / 2));
+    bottom: 32px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1300px) {
+  .portada .beats {
+    padding-left: max(64px, calc((100vw - var(--max-width)) / 2));
+  }
+}
+
+/* ----------------------------------------------------------------- cierre */
+.portada .outro {
+  position: relative;
+  z-index: 2;
+  padding-block: clamp(48px, 9vw, 86px) 64px;
+}
+
+.portada .outro-lead {
+  margin: 0 0 30px;
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 108, "wght" 620;
+  font-size: clamp(1.4rem, 3.6vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  max-width: 20ch;
+}
+
+.portada .outro-links {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  max-width: 640px;
+}
+
+.portada .outro-links a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 2px;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+}
+
+/* El empujón al pasar el ratón mueve el contenido, no la caja: animar el
+   relleno recalculaba el layout en cada fotograma. */
+.portada .outro-links a > * {
+  transition: transform 0.18s ease;
+}
+
+.portada .outro-links a:hover > * {
+  transform: translateX(6px);
+}
+
+.portada .outro-links .t {
+  font-family: var(--font-title);
+  font-variation-settings: "wdth" 104, "wght" 650;
+  font-size: 1.05rem;
+}
+
+.portada .outro-links .d {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  text-align: right;
+}
+
+.portada .outro-links .t {
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .portada .outro-links a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .portada .outro-links .d {
+    text-align: left;
+  }
+}
+
+.portada .outro-links .arrow {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.portada .outro-strip {
+  margin-bottom: 0;
+  line-height: 1.6;
+  margin-top: 30px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.portada .outro-strip .sep {
+  opacity: 0.5;
+}
+
+/* Dentro de una frase, el enlace se distingue por el subrayado y no solo
+   por el color (axe: link-in-text-block). */
+.portada .outro-strip a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--ink-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portada .stage-frame {
+    transform: none;
+  }
+
+  .portada .stage,
+  .portada .hl-w > span,
+  .portada .beat.is-hero .sub,
+  .portada .hero-ctas,
+  .portada .hero-foot {
+    animation: none;
+  }
+
+  .portada[data-anim="on"] .beat-inner {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .portada .beat {
+    min-height: 0;
+    padding-block: 30px;
+  }
+}
+

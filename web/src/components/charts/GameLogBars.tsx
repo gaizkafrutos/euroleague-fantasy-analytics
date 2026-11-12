@@ -129,7 +129,17 @@ export default function GameLogBars({ games, average, floor, height = 220 }: Pro
                 width={barWidth}
                 height={Math.max(barHeight, 1.5)}
                 rx={3}
-                fill={game.played ? (isActive ? "var(--brand-ink)" : "var(--brand)") : "var(--line)"}
+                // Los partidos, en tinta; el naranja se queda para el último,
+                // que es el que cuenta la forma de ahora.
+                fill={
+                  !game.played
+                    ? "var(--line)"
+                    : isActive
+                      ? "var(--ink)"
+                      : index === games.length - 1
+                        ? "var(--brand)"
+                        : "var(--ink-3)"
+                }
                 onMouseEnter={() => setActive(index)}
               />
               {index === games.length - 1 || game.fp === best ? (

@@ -96,11 +96,13 @@ def cmd_build(args: argparse.Namespace) -> int:
 
 
 def cmd_verify(args: argparse.Namespace) -> int:
-    from efa.verify import run_verification
+    from efa.verify import run_verification, save_report
 
     report = run_verification()
     print(json.dumps(report, indent=2, ensure_ascii=False))
-    return 0 if report.get("ok") else 1
+    save_report(report)
+    # Sin datos con los que comparar (pretemporada, sin captura) no es un fallo.
+    return 0 if report.get("ok") or report.get("skipped") else 1
 
 
 def cmd_backtest(args: argparse.Namespace) -> int:

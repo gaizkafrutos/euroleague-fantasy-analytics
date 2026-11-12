@@ -32,6 +32,10 @@ from efa.config import (
 
 log = logging.getLogger(__name__)
 
+#: Jornadas recientes cuyos boxscores se vuelven a pedir en cada ingesta, por
+#: si la Euroliga ha corregido el acta.
+REFRESH_ROUNDS = 2
+
 FILES = {
     "clubs": "clubs.json",
     "players": "people.json",
@@ -93,18 +97,37 @@ def ingest_boxscores(
     played = [g for g in games if g.get("played")]
     store = {} if force else load_boxscores(season_code)
     pending = [int(g["gameCode"]) for g in played if int(g["gameCode"]) not in store]
+    # La Euroliga corrige actas después del partido (un robo que cambia de
+    # dueño, una asistencia de más). Lo guardado no se volvía a pedir nunca: el
+    # 12-11-2026, 1 de 359 líneas revisadas ya no coincidía con la API. Se
+    # repasan las dos últimas jornadas con partidos, que es donde caen.
+    recent = sorted({int(g["round"]) for g in played if g.get("round") is not None})[-REFRESH_ROUNDS:]
+    refresh = [
+        int(g["gameCode"]) for g in played
+        if g.get("round") is not None and int(g["round"]) in recent and int(g["gameCode"]) in store
+    ]
+    pending += refresh
 
     log.info("%s | jugados: %d | por descargar: %d", season_code, len(played), len(pending))
 
-    downloaded = 0
+    downloaded = corrected = 0
     failed: list[int] = []
     for position, code in enumerate(pending, start=1):
         try:
-            store[code] = client.game_stats(code)
+            fresh = client.game_stats(code)
         except Exception as exc:  # noqa: BLE001 - se registra y se sigue
             log.warning("Boxscore %s no disponible: %s", code, str(exc)[:160])
-            failed.append(code)
+            # Un repaso que falla no es un partido que falte: lo guardado sirve.
+            if code not in store:
+                failed.append(code)
             continue
+        if code in store:
+            if fresh == store[code]:
+                time.sleep(client.polite_delay)
+                continue
+            corrected += 1
+            log.info("Boxscore %s corregido por la Euroliga: se actualiza.", code)
+        store[code] = fresh
         downloaded += 1
         # Se vuelca cada 25: si la API corta a mitad, lo descargado queda en
         # disco y la siguiente ejecución retoma donde se quedó.
@@ -124,8 +147,9 @@ def ingest_boxscores(
 
     return {
         "played": len(played),
-        "downloaded": downloaded,
-        "cached": len(played) - len(pending),
+        "downloaded": downloaded - corrected,
+        "corrected": corrected,
+        "cached": len(played) - (len(pending) - len(refresh)),
         "failed": len(failed),
     }
 

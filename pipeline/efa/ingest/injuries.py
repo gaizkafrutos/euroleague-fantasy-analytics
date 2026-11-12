@@ -423,7 +423,8 @@ def classify(status: str, round_text: str, comment: str, next_round: int) -> Ava
             span = f"en la J{end}" if start == end else f"hasta la J{end}"
             return Availability("doubt", kind, end, f"Baja {span}; sin confirmar para la J{next_round}")
         if start is not None and start > next_round:
-            return Availability("probable", kind, end, f"Baja prevista J{start}-J{end}")
+            span = f"la J{start}" if start == end else f"J{start}–J{end}"
+            return Availability("probable", kind, end, f"Baja prevista para {span}")
         until = end if end is not None else next_round
         label = f"Baja hasta la J{until}" if until > next_round else f"Baja en la J{next_round}"
         return Availability("out", kind, until, label)
@@ -528,8 +529,14 @@ def availability_index(
     next_round: int,
     report: dict[str, Any] | None = None,
     reports: list[dict[str, Any]] | None = None,
+    round_by_id: dict[int, int] | None = None,
 ) -> tuple[dict[int, dict[str, Any]], dict[str, Any]]:
     """fantaking_id -> disponibilidad, y un resumen para `meta.json`.
+
+    `round_by_id` es la jornada del próximo partido de cada jugador. Con la
+    jornada a medias no es la misma para todos: quien ya ha jugado la vigente
+    mira a la siguiente, y un "baja en la J12" es baja para él y solo un aviso
+    para quien aún tiene que jugar la J11.
 
     Con varios partes, manda el primero (en orden de prioridad) que menciona al
     jugador, aunque sea para decir que ya está bien: una fuente de menos
@@ -552,7 +559,9 @@ def availability_index(
             if pid in decided:
                 continue
             decided.add(pid)
-            status = classify(row["status"], row["round"], row["comment"], next_round)
+            status = classify(
+                row["status"], row["round"], row["comment"], (round_by_id or {}).get(pid, next_round)
+            )
             if status is None:
                 continue
             added += 1

@@ -18,6 +18,7 @@ const PAGES = [
   `/jugador/${player}`,
   "/comparar",
   "/metodologia",
+  "/acierta",
 ];
 
 const VIEWPORTS = [

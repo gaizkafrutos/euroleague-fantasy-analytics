@@ -58,7 +58,7 @@ export default function LineupRounds({ rows, height = 240 }: { rows: LineupRound
           width={width}
           height={height}
           viewBox={`0 0 ${width} ${height}`}
-          role="img"
+          role="group"
           aria-label="Puntos del once óptimo por jornada: proyectados, reales y el mejor posible"
           onPointerLeave={() => setActive(null)}
         >

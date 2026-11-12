@@ -93,7 +93,11 @@ const COLUMNS: Array<{ key: SortKey; label: string; title: string; optional?: bo
     title: "Próximo rival y dificultad de los 3 próximos (100 = lo más duro)",
     optional: true,
   },
-  { key: "bargainScore", label: "Índice", title: "Índice compuesto de chollo" },
+  {
+    key: "bargainScore",
+    label: "Índice",
+    title: "Índice de chollo: percentil de lo que proyecta por encima de lo normal a su precio",
+  },
 ];
 
 /** Las columnas que llevan barra proporcional. */

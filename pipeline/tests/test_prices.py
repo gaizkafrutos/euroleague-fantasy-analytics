@@ -190,3 +190,21 @@ def test_precio_pendiente_con_plus_del_juego_y_con_modelo():
     assert records[1]["pricePending"] == 14.5 and records[1]["pricePendingSource"] == "modelo"
     # No jugó y ya está en el mínimo: no baja de 4,0.
     assert "pricePending" not in records[2]
+
+
+def test_jornada_en_juego_no_se_anuncia_como_cerrada():
+    """Con partidos de la jornada aún por jugar, el aviso no puede decir que
+    estaba cerrada: el 12-11-2026 lo decía con dos de diez jugados."""
+    from efa.advanced_build import price_freshness
+
+    games = [*GAMES, {**GAMES[0], "gameCode": 99, "utcDate": "2026-09-27T18:00:00Z", "played": False}]
+    history = pd.concat([
+        _snap("2026-09-24T12:30Z", [(i, 10.0, 0.0) for i in range(30)]),
+        _snap("2026-09-26T00:30Z", [(i, 10.0, 0.5) for i in range(30)]),
+    ])
+    fresh = price_freshness(history, games)
+    assert fresh["stale"] and fresh["reason"] == "jornada en juego"
+    assert fresh["roundPlayed"] < fresh["roundGames"]
+    # Con todos jugados sí estaba cerrada, y lleva la cuenta igual.
+    closed = price_freshness(history, GAMES)
+    assert "aplicado" in closed["reason"] and closed["roundPlayed"] == closed["roundGames"]

@@ -71,7 +71,9 @@ export default function PercentileStrip({ official }: { official: OfficialDetail
       <p className="pstrip-source">
         Percentil entre {official.poolSize} {group} con 10+ minutos · Euroliga{" "}
         {seasonLabel(official.season)}, {official.games} {official.games === 1 ? "partido" : "partidos"}
-        {official.doubleDoubles ? ` · ${official.doubleDoubles} dobles-dobles` : ""}
+        {official.doubleDoubles
+          ? ` · ${official.doubleDoubles} ${official.doubleDoubles === 1 ? "doble-doble" : "dobles-dobles"}`
+          : ""}
       </p>
     </div>
   );

@@ -27,6 +27,8 @@ export function credits(value: number | null | undefined): string {
 export function signed(value: number | null | undefined, digits = 1): string {
   if (value === null || value === undefined || Number.isNaN(value)) return "—";
   const formatted = digits === 2 ? decimal2.format(Math.abs(value)) : decimal.format(Math.abs(value));
+  // Un −0,04 redondeado es 0,0, no "−0,0": el signo va con lo que se enseña.
+  if (/^0([.,]0+)?$/.test(formatted)) return formatted;
   if (value > 0) return `+${formatted}`;
   if (value < 0) return `−${formatted}`;
   return formatted;
@@ -37,11 +39,17 @@ export function percent(value: number | null | undefined, digits = 0): string {
   return `${new Intl.NumberFormat("es-ES", { maximumFractionDigits: digits }).format(value * 100)}%`;
 }
 
+/** Las páginas se generan en el build, en un servidor en UTC: sin zona fija,
+ *  "capturado a las 01:50" salía como "00:50" y un partido de última hora podía
+ *  caer en el día anterior. La web es en castellano y de la Euroliga: hora
+ *  peninsular. */
+export const TIME_ZONE = "Europe/Madrid";
+
 export function dateShort(value: string | null | undefined): string {
   if (!value) return "—";
   const parsed = new Date(value);
   if (Number.isNaN(parsed.getTime())) return "—";
-  return new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short" }).format(parsed);
+  return new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short", timeZone: TIME_ZONE }).format(parsed);
 }
 
 export function dateTime(value: string | null | undefined): string {
@@ -53,6 +61,7 @@ export function dateTime(value: string | null | undefined): string {
     month: "long",
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: TIME_ZONE,
   }).format(parsed);
 }
 
@@ -91,6 +100,12 @@ export function positionLabel(position: string | null | undefined): string {
 /** Sufijos que no se capitalizan como palabra normal. */
 const NAME_SUFFIXES = new Set(["II", "III", "IV", "JR", "SR"]);
 
+/** Nombre de pila que en realidad son dos iniciales: "TJ", "RJ", "AJ", "KC".
+ *  Dos letras sin vocal, o acabadas en J. "Bo", "Ty" u "Oz" son nombres. */
+function isInitials(word: string): boolean {
+  return /^[A-Z]{2}$/.test(word) && (word.endsWith("J") || !/[AEIOUY]/.test(word));
+}
+
 /** "VEZENKOV, SASHA" -> "Sasha Vezenkov" */
 export function prettyName(raw: string | null | undefined): string {
   if (!raw) return "—";
@@ -116,7 +131,13 @@ export function prettyName(raw: string | null | undefined): string {
 
   if (raw.includes(",")) {
     const [surname, given] = raw.split(",");
-    return `${capitalise(given.trim())} ${capitalise(surname.trim())}`.trim();
+    // Solo en el nombre de pila: "SHORTS, TJ" es TJ Shorts, no "Tj".
+    const first = given
+      .trim()
+      .split(" ")
+      .map((word) => (isInitials(word.toUpperCase()) ? word.toUpperCase() : capitalise(word)))
+      .join(" ");
+    return `${first} ${capitalise(surname.trim())}`.trim();
   }
   return capitalise(raw);
 }

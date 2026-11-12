@@ -208,3 +208,51 @@ def test_no_se_guarda_la_prediccion_con_la_jornada_empezada(tmp_path, monkeypatc
     assert published.archive_predictions([record], games, 4, now=before) == "R04.json"
     saved = json.loads((tmp_path / "R04.json").read_text(encoding="utf-8"))
     assert saved["round"] == 4 and saved["players"][0]["projectedFp"] == 3.0
+
+
+def test_diferencia_con_la_linea_base_con_su_intervalo():
+    """El intervalo de la diferencia de error sale de remuestrear por jugador y
+    es reproducible: mismos datos, mismo intervalo."""
+    import numpy as np
+    import pandas as pd
+
+    from efa.published import _versus
+
+    rng = np.random.default_rng(1)
+    real = rng.normal(10, 6, 600)
+    rows = pd.DataFrame({
+        "personCode": np.repeat([f"P{i}" for i in range(60)], 10),
+        "real": real,
+        # El modelo se equivoca menos que la media; la media "con probabilidad
+        # de jugar" se equivoca igual que el modelo.
+        "projectedFp": real + rng.normal(0, 3, 600),
+        "mean": real + rng.normal(0, 6, 600),
+        "meanPlay": real + rng.normal(0, 3, 600),
+    })
+    versus = _versus(rows)
+    assert versus["players"] == 60
+    clear = versus["mean"]["mae"]
+    assert clear["diff"] < 0 and clear["high"] < 0, "gana claro a la media: el intervalo no toca el cero"
+    tie = versus["meanPlay"]["mae"]
+    assert tie["low"] < 0 < tie["high"], "empate: el intervalo cruza el cero"
+    assert clear["low"] <= clear["diff"] <= clear["high"]
+    assert _versus(rows) == versus
+
+
+def test_el_once_de_la_linea_base_se_puntua_con_las_mismas_reglas():
+    import pandas as pd
+
+    from efa.published import _lineup_check
+
+    players = []
+    for i in range(12):
+        position = "G" if i < 5 else "F" if i < 10 else "C"
+        players.append({"id": i, "personCode": f"P{i}", "isCoach": False, "position": position,
+                        "club": f"C{i % 4}", "price": 8.0, "projectedFp": 10.0 + i})
+    scores = pd.Series({f"P{i}": float(20 - i) for i in range(12)})
+    # La línea base ordena al revés que el modelo: elige a los que luego puntúan más.
+    baseline = {str(i): float(20 - i) for i in range(12)}
+    out = _lineup_check({"players": players}, scores, None, 100.0, baseline=baseline)
+    assert out is not None and "baseline" in out
+    assert out["baseline"] >= out["real"]
+    assert out["best"] >= out["baseline"]

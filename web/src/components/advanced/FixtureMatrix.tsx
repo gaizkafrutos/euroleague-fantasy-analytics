@@ -77,7 +77,7 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
         <div className="fxm-legend" aria-hidden>
           <span>concede menos</span>
           {[1, 2, 3, 4, 5].map((step) => (
-            <i key={step} className={`seq-${step}`} />
+            <i key={step} className={`dv-${step}`} />
           ))}
           <span>concede más</span>
           <span className="fxm-legend-away">@ = fuera</span>
@@ -107,15 +107,21 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
             {rows.map(({ team, cells, mean }) => (
               <tr key={team.code}>
                 <th scope="row">
-                  <Link href={`/equipos/${team.code}`} className="fxm-team">
+                  {/* El mismo código que en las celdas (VAL, MTA, EFE), no el de
+                      la API (PAM, TEL, IST): en una misma tabla había dos. */}
+                  <Link
+                    href={`/equipos/${team.code}`}
+                    className="fxm-team"
+                    title={team.short ?? team.name ?? team.code}
+                  >
                     {team.crest ? <Image src={team.crest} alt="" width={18} height={18} /> : null}
-                    <span>{team.code}</span>
+                    <span>{clubAbbr(team.code)}</span>
                   </Link>
                 </th>
                 {cells.map(({ round, fixture, opponent, index, value }) => (
                   <td
                     key={round}
-                    className={fixture ? `seq-${sequentialClass(index)}` : "fxm-empty"}
+                    className={fixture ? `dv-${sequentialClass(index)}` : "fxm-empty"}
                     title={
                       fixture && opponent
                         ? `J${round} · ${fixture.home ? "en casa contra" : "en"} ${opponent.short ?? opponent.code}: concede ${num(value)} pts fantasy${pos === "all" ? "" : ` a ${word}`} por partido (${index ? `${Math.round((index - 1) * 100) >= 0 ? "+" : ""}${Math.round((index - 1) * 100)} %` : "—"} sobre la media) · ${dateShort(fixture.date)}`

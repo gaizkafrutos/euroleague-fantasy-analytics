@@ -7,6 +7,28 @@ function signedNum(value: number | null | undefined): string {
   return `${value > 0 ? "+" : value < 0 ? "−" : ""}${num(Math.abs(value), 2)}`;
 }
 
+/** La comprobación de la fórmula con los datos de hoy. La de la jornada 1 era
+ *  una foto: desde entonces el juego ha dejado de recoger alguna falta en
+ *  partidos sueltos, y la web seguía diciendo que cuadraba todo. */
+function FormulaCheckNote() {
+  const check = meta.formulaCheck;
+  if (!check || !check.players) return null;
+  const off = check.players - check.exact;
+  const gap = check.foulGap;
+  return (
+    <p className="card-note">
+      {check.checkedAt ? `Última comprobación, ${dateTime(check.checkedAt)}: ` : "Última comprobación: "}
+      la media calculada aquí cuadra al decimal con la del juego en {check.exact} de {check.players}{" "}
+      jugadores (diferencia media, {num(check.meanAbsoluteError, 2)} puntos)
+      {check.coaches ? ` y en los ${check.coaches.coaches} entrenadores` : ""}.
+      {off > 0 && gap && gap.players > 0
+        ? ` A ${gap.players} de los que no cuadran el juego les apuntó menos faltas que el acta oficial (${gap.fouls} en total): en algunos partidos no recogió las técnicas ni las antideportivas. No es una regla que se pueda reproducir, así que aquí manda el acta y esos jugadores salen con hasta dos décimas menos de media que en el juego.`
+        : ""}
+      {check.ok ? "" : " La comprobación de hoy NO pasa: puede haber cambiado el baremo."}
+    </p>
+  );
+}
+
 export const metadata = {
   title: "Metodología",
   description:
@@ -14,6 +36,7 @@ export const metadata = {
 };
 
 export default function MethodologyPage() {
+  const bandCheck = meta.modelBacktest?.current?.bandCheck;
   const byMethod = matching.reduce<Record<string, number>>((accumulator, row) => {
     accumulator[row.match_method] = (accumulator[row.match_method] ?? 0) + 1;
     return accumulator;
@@ -194,10 +217,11 @@ export default function MethodologyPage() {
           cambiado — y es mejor enterarse por ahí que por un fichaje.
         </p>
         <p className="card-note">
-          Contrastado en la jornada 1: cuadran al decimal los 159 jugadores y los 14
+          Contrastado en la jornada 1: cuadraban al decimal los 159 jugadores y los 14
           entrenadores de los partidos del 24 de septiembre. El bonus de victoria suma siempre:
           un −1 con victoria queda en −0,9, no en −1,1.
         </p>
+        <FormulaCheckNote />
       </div>
 
       <ProjectionModel />
@@ -222,11 +246,16 @@ export default function MethodologyPage() {
               , y queda en torno a 1,1 veces el precio: más alto cuanto más caro es el jugador.
             </Definition>
             <Definition term="Horquilla y techo">
-              Suelo, techo y p90 salen de los errores reales en jornadas pasadas, no de una normal: la
-              puntuación tiene la cola de arriba más larga que la de abajo. La dispersión es la de
-              sus partidos de esta temporada, se ensancha con pocos partidos (la media del propio
-              jugador aún es dudosa) y, si puede no jugar, suma el riesgo de quedarse en cero. La del entrenador
-              es exacta: solo puede sacar seis cifras. El p90 es el que importa para el capitán.
+              Lo que hace <strong>si juega</strong>: suelo y techo son los percentiles 25 y 75, y el
+              p90 es el techo que importa para el capitán. Salen de los errores reales de esta
+              temporada, por nivel de proyección: quien proyecta 20 puntos se aleja más de su
+              cifra que quien proyecta 5, y la cola de arriba es más larga que la de abajo. El
+              riesgo de que no juegue va aparte, en la probabilidad de jugar; antes iba mezclado
+              y la horquilla de una duda no significaba nada.
+              {bandCheck
+                ? ` Puesta a prueba hacia delante (cada jornada, solo con las anteriores; ${num(bandCheck.n, 0)} partidos), entre suelo y techo cae el ${percent(bandCheck.inside)} de los resultados, cuando tendría que ser la mitad, y el ${percent(bandCheck.aboveP90)} pasa del p90: se queda algo estrecha.`
+                : ""}{" "}
+              La del entrenador es exacta: solo puede sacar seis cifras.
             </Definition>
             <Definition term="En pista, on/off y quintetos">
               Se reconstruye quién está en pista cada segundo con los cambios del jugada a
@@ -246,16 +275,11 @@ export default function MethodologyPage() {
               Proyección dividida entre precio. Es el ratio que decide casi todo: 18 puntos a
               12 créditos rinden peor que 12 puntos a 7.
             </Definition>
-            <Definition term="Regularidad">
-              Uno menos el coeficiente de variación de lo que ya ha puntuado esta temporada,
-              acotado entre 0 y 1. Un 70% es un jugador que repite; un 30% es una lotería con la
-              misma media. Con menos de tres partidos no se da: con uno es 0 por definición.
-            </Definition>
-            <Definition term="Seguridad de la proyección">
-              Uno menos la desviación de la proyección entre la proyección. No mira lo jugado sino
-              lo que se espera: incluye la duda sobre su media y la de si juega, así que un
-              titular regular con parte de duda puede tener mucha regularidad y poca seguridad.
-              Está en la ficha, junto a la horquilla.
+            <Definition term="Regularidad (suele hacer)">
+              Se enseña en puntos: entre qué cifras ha caído la mitad de sus partidos (percentiles
+              25 y 75). Para ordenar a los jugadores se usa uno menos el coeficiente de variación
+              (desviación entre media), que no depende de cuánto puntúe cada uno: de ahí sale el
+              percentil. Con menos de tres partidos no se da.
             </Definition>
             <Definition term="Probabilidad de subir">
               La probabilidad de que juegue y, jugando, puntúe lo bastante para que el precio
@@ -267,8 +291,10 @@ export default function MethodologyPage() {
               los minutos absolutos, que se inflan con las prórrogas.
             </Definition>
             <Definition term="Calendario">
-              Diferencial medio de los tres próximos rivales, con penalización por jugar
-              fuera, normalizado a 0-100. El diferencial de cada club es el de esta temporada.
+              Diferencial medio (por 100 posesiones) de los tres próximos rivales, con
+              penalización por jugar fuera. Se enseña como puesto entre los veinte clubes: 100
+              es el calendario más duro, 0 el más fácil y 50 el del medio. El diferencial de
+              cada club es el de esta temporada.
             </Definition>
             <Definition term="Plan de cambios (Mi equipo)">
               Desde tu plantilla, los fichajes (hasta 4, entrenador incluido, o ilimitados en
@@ -285,8 +311,14 @@ export default function MethodologyPage() {
               valor de mercado.
             </Definition>
             <Definition term="Índice de chollo">
-              40% valor por crédito, 25% proyección, 15% regularidad, 10% tendencia de rol,
-              10% probabilidad de subir. Pesos a la vista y discutibles a propósito.
+              En qué percentil del mercado cae lo que proyecta cada uno <strong>por encima de lo
+              normal a su precio</strong>. «Lo normal» es la recta proyección–precio de los
+              jugadores disponibles: un 95 es alguien que da más puntos de más que el 95 % del
+              mercado. Con las plazas fijas, es la cuenta que hace el presupuesto. Hasta
+              noviembre de 2026 era una suma de cinco percentiles que en la práctica repetía la
+              columna de puntos por crédito y premiaba a los caros; la regularidad, el rol y la
+              probabilidad de subir tienen ahora su propia columna. Los entrenadores se ordenan
+              entre ellos.
             </Definition>
           </dl>
         </article>
@@ -301,10 +333,11 @@ export default function MethodologyPage() {
           </p>
           <div className="table-wrap" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Métodos de cruce">
             <table className="data is-compact">
+              <caption className="sr-only">Jugadores emparejados por cada método de cruce</caption>
               <thead>
                 <tr>
-                  <th>Método</th>
-                  <th className="num">Jugadores</th>
+                  <th scope="col">Método</th>
+                  <th scope="col" className="num">Jugadores</th>
                 </tr>
               </thead>
               <tbody>
@@ -462,13 +495,14 @@ function ProjectionModel() {
       {season ? (
         <div className="table-wrap" style={{ marginTop: 10, maxWidth: 620 }} tabIndex={0} role="region" aria-label="Backtest de la proyección">
           <table className="data is-compact">
+            <caption className="sr-only">Error medio del modelo, del anterior y de la media, según los partidos jugados antes</caption>
             <thead>
               <tr>
-                <th>Partidos jugados antes</th>
-                <th className="num">n</th>
-                <th className="num">Este modelo</th>
-                <th className="num">El anterior</th>
-                <th className="num">Su media</th>
+                <th scope="col">Partidos jugados antes</th>
+                <th scope="col" className="num">n</th>
+                <th scope="col" className="num">Este modelo</th>
+                <th scope="col" className="num">El anterior</th>
+                <th scope="col" className="num">Su media</th>
               </tr>
             </thead>
             <tbody>
@@ -504,6 +538,47 @@ function ProjectionModel() {
             Donde más gana es al principio, que es cuando la media propia no existe: con 1 a 3
             partidos se equivoca bastante menos que la media y que el modelo anterior. La forma
             de los últimos cinco no entra: probado en jornadas pasadas, darle peso empeoraba el error.
+          </p>
+        ) : null}
+        {current?.ablation && current.v2 ? (
+          <p style={{ margin: 0 }}>
+            <strong>Qué aporta cada pieza.</strong> Error medio con todo, {num(current.v2.mae, 2)}.
+            Sin el ajuste de rival, {num(current.ablation.noOpponent ?? null, 2)}; sin el de campo,{" "}
+            {num(current.ablation.noHome ?? null, 2)}; sin ninguno,{" "}
+            {num(current.ablation.plain ?? null, 2)}; con los minutos de toda la temporada en vez de
+            los recientes, {num(current.ablation.seasonMinutes ?? null, 2)}. Son diferencias de
+            centésimas: rival, campo y minutos recientes se enseñan en la ficha porque entran en la
+            cifra, pero lo que de verdad gana a la media es encoger hacia el precio y el puesto
+            cuando hay pocos partidos, y el parte de lesiones.
+          </p>
+        ) : null}
+        {current?.calibration ? (
+          <p style={{ margin: 0 }}>
+            <strong>Calibración.</strong> El modelo abre demasiado el abanico: lo real frente a lo
+            proyectado tiene pendiente {num(current.calibration.slope, 2)}, no 1 (
+            {num(current.calibration.n, 0)} partidos). Es regresión a la media sin terminar: a quien
+            proyecta mucho se le pasa y a quien proyecta poco se le queda corto. La cifra que se
+            publica lleva esa recta aplicada (real ≈ {num(current.calibration.intercept, 2)} +{" "}
+            {num(current.calibration.slope, 2)} × proyectado), ajustada en cada captura con el
+            backtest.
+            {current.topBias
+              ? ` En quien proyecta 15 o más (${num(current.topBias.n, 0)} casos), el exceso baja de ${num(current.topBias.raw, 2)} a ${num(current.topBias.calibrated, 2)} puntos, medido hacia delante.`
+              : ""}
+            {current.v2c
+              ? ` El error medio casi no cambia (${num(current.v2c.mae, 2)} frente a ${num(current.v2.mae, 2)}) y el orden de los jugadores, nada: lo que se corrige es la cifra de los candidatos a capitán y el total del once óptimo.`
+              : ""}
+          </p>
+        ) : null}
+        {current?.frozenFromRound ? (
+          <p style={{ margin: 0 }}>
+            <strong>Una advertencia sobre esta tabla.</strong> Los colchones, topes y pesos del
+            modelo se ajustaron mirando las jornadas anteriores a la {current.frozenFromRound}, así
+            que el error medido en ellas es optimista: el modelo ya había visto esos resultados.
+            Desde la jornada {current.frozenFromRound} no se ha tocado nada.{" "}
+            {current.afterFreeze
+              ? `En lo jugado desde entonces (${num(current.afterFreeze.n, 0)} partidos${current.afterFreeze.n < 400 ? ", muestra aún corta" : ""}), el error es ${num(current.afterFreeze.v2.mae, 2)}${current.afterFreeze.mean ? ` frente a ${num(current.afterFreeze.mean.mae, 2)} de la media` : ""}.`
+              : "Aún no hay partidos posteriores con los que medirlo."}{" "}
+            La prueba limpia es la de abajo: lo que se publicó antes de cada jornada.
           </p>
         ) : null}
         {published && published.rounds.length ? (
@@ -600,11 +675,12 @@ function OfficialData() {
       </p>
       <div className="table-wrap only-wide" style={{ marginTop: 10 }} tabIndex={0} role="region" aria-label="Datos oficiales usados">
         <table className="data">
+          <caption className="sr-only">Qué se usa y qué no de cada fuente de la Euroliga</caption>
           <thead>
             <tr>
-              <th>Fuente</th>
-              <th>Se usa</th>
-              <th>Se descarga pero no se usa</th>
+              <th scope="col">Fuente</th>
+              <th scope="col">Se usa</th>
+              <th scope="col">Se descarga pero no se usa</th>
             </tr>
           </thead>
           <tbody>

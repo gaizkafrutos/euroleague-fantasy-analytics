@@ -64,12 +64,16 @@ export function AvailabilityTag({
   const status = player.availability;
   if (!status) return null;
   const word = AVAILABILITY_WORD[status.level] ?? status.level;
-  const description = [status.label, status.detail].filter(Boolean).join(" · ");
+  // La nota del parte llega en inglés, tal cual la publica la fuente: va en el
+  // `title` y con su aviso, no pegada a la frase en castellano que se lee.
+  const title = status.detail
+    ? `${status.label}. Nota del parte (en inglés): ${status.detail}`
+    : status.label;
   return (
-    <span className={`avail avail-${status.level}`} title={description}>
+    <span className={`avail avail-${status.level}`} title={title}>
       <i aria-hidden />
       <span aria-hidden={full ? undefined : true}>{full ? status.label : word}</span>
-      {full ? null : <span className="sr-only">{description}</span>}
+      {full ? null : <span className="sr-only">{status.label}</span>}
     </span>
   );
 }

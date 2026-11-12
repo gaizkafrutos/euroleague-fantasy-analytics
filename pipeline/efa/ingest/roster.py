@@ -37,20 +37,16 @@ MATCHDAY_BASE_ROUND = int(os.environ.get("EFA_MATCHDAY_BASE_ROUND", "1"))
 def current_round(games: list[dict[str, Any]] | None = None, *, now: datetime | None = None) -> int:
     """Jornada vigente según el calendario oficial.
 
-    Vigente = la primera jornada que todavía tiene algún partido sin jugar.
+    Vigente = la primera jornada que todavía tiene algún partido por jugar,
+    sin contar los aplazados (ver `efa.fixtures`). `now` se conserva por
+    compatibilidad: la jornada sale del propio calendario, no del reloj.
     Antes del inicio de temporada devuelve 1.
     """
-    games = games if games is not None else load_reference().get("games", [])
-    if not games:
-        return 1
-    now = now or datetime.now(timezone.utc)
+    from efa.fixtures import current_round as vigente
 
-    pending_rounds = sorted(
-        {int(g["round"]) for g in games if not g.get("played") and g.get("round") is not None}
-    )
-    if not pending_rounds:
-        return max(int(g["round"]) for g in games if g.get("round") is not None)
-    return pending_rounds[0]
+    games = games if games is not None else load_reference().get("games", [])
+    # Un partido aplazado no congela la jornada: ver `efa.fixtures`.
+    return vigente(games)
 
 
 def estimate_matchday_id(round_number: int | None = None) -> int:

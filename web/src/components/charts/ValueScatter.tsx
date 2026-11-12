@@ -49,7 +49,7 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
   const labelCount = narrow ? Math.min(baseLabels, 4) : baseLabels;
   const radius = narrow ? 4 : 5;
 
-  const points = useMemo(
+  const priced = useMemo(
     () =>
       players.filter(
         (player) =>
@@ -59,6 +59,10 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
       ),
     [players],
   );
+  // Quien no va a jugar proyecta 0: eran unos treinta puntos pegados al eje
+  // que no dicen nada del precio y ensuciaban la nube. Se cuentan debajo.
+  const points = useMemo(() => priced.filter((player) => (player.projectedFp as number) > 0), [priced]);
+  const hidden = priced.length - points.length;
 
   const geometry = useMemo(() => {
     const xDomain = extent(points.map((p) => p.price as number));
@@ -287,6 +291,9 @@ export default function ValueScatter({ players, height: baseHeight = 380, labelC
         <span className="muted">
           <i className="legend-line" aria-hidden /> Por encima de la línea, sube de precio si rinde
           lo proyectado.
+          {hidden > 0
+            ? ` Sin ${hidden} ${hidden === 1 ? "jugador que proyecta" : "jugadores que proyectan"} 0 (bajas).`
+            : ""}
         </span>
       </div>
     </div>

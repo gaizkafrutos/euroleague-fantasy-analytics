@@ -61,7 +61,7 @@ from efa.metrics import (
     value_metrics,
 )
 from efa.optimizer import Candidate, normalize_position, optimize
-from efa.projection import production_projection
+from efa.projection import calibrate, production_projection
 from efa.published import archive_predictions
 from efa.thumbs import apply_thumbs
 
@@ -428,8 +428,9 @@ def _apply_v2(table: pd.DataFrame, v2: pd.DataFrame) -> pd.DataFrame:
     out["projected_if_plays"] = cond.where(usable).round(2)
     out["play_share"] = share.where(usable).round(3)
     out["projected_fp"] = (cond * share).where(usable, out["projected_fp"]).clip(lower=0).round(2)
-    for column in ("v2_minutes", "v2_rate", "v2_opp", "v2_home"):
-        out[column] = out[column].where(usable)
+    for column in ("v2_minutes", "v2_rate", "v2_opp", "v2_home", "v2_cal"):
+        if column in out.columns:
+            out[column] = out[column].where(usable)
     return out
 
 
@@ -462,11 +463,13 @@ def player_records(
             {
                 "id": int(row["fantaking_id"]),
                 "personCode": str(person_code) if pd.notna(person_code) else None,
-                "name": row.get("official_name") or row.get("name"),
+                # Sin cruzar, `official_name` es NaN, y NaN es verdadero: el `or`
+                # se quedaba con él y el jugador salía sin nombre.
+                "name": row.get("official_name") if isinstance(row.get("official_name"), str) and row.get("official_name") else row.get("name"),
                 "marketName": row.get("name"),
                 "club": club_code,
                 "clubName": club.get("name"),
-                "clubShort": club.get("editorialName") or club.get("abbreviatedName"),
+                "clubShort": club_short(club) if club else None,
                 "clubCrest": (club.get("images") or {}).get("crest"),
                 "position": row.get("position_group"),
                 "positionLabel": row.get("official_position") or row.get("position"),
@@ -515,6 +518,8 @@ def player_records(
                 "matchup": {
                     "opponentFactor": row.get("v2_opp"),
                     "homeFactor": row.get("v2_home"),
+                    # Lo que la calibración multiplica a la cifra "si juega".
+                    "calibration": row.get("v2_cal"),
                 },
                 "valuePerCredit": row.get("value_per_credit"),
                 "valueProjected": row.get("value_projected"),
@@ -608,6 +613,15 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
             player_positions([reference, prior_reference], pre[["person_code", "position"]].itertuples(index=False)),
         )
 
+    # Calibración del último backtest: encoge la proyección "si juega" hacia la
+    # media lo que los datos dicen que se pasa (ver projection.fit_calibration).
+    calibration = _load_calibration() if v2 is not None and not use_prior else None
+    if calibration and v2 is not None and not v2.empty:
+        raw = pd.to_numeric(v2["v2_projection"], errors="coerce")
+        v2["v2_projection"] = calibrate(raw, calibration).round(2)
+        # Cuánto cambia la cifra, para que la ficha lo enseñe como un paso más.
+        v2["v2_cal"] = (v2["v2_projection"] / raw).where(raw > 0).round(3)
+
     table = build_player_table(
         market,
         crosswalk,
@@ -622,12 +636,22 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     )
 
     strength = team_strength(games, prior=team_strength(prior_games))
+    # Un solo diferencial por club. Había dos: el de puntos por partido (el que
+    # movía el calendario) y el de puntos por 100 posesiones (el de la página de
+    # Equipos): Efes era −2,9 en un sitio y −4,5 en otro. Manda el de 100
+    # posesiones, que no premia a quien juega rápido. En las primeras jornadas,
+    # mientras la referencia es el año pasado, se queda el de antes.
+    if not use_prior and not strength.empty:
+        per100 = team_box_stats(season_boxscores(SEASON_CODE), games)
+        if not per100.empty:
+            by_club = dict(zip(per100["club_code"], per100["net_rating"], strict=False))
+            strength["net_rating"] = strength["club_code"].map(by_club).fillna(strength["net_rating"])
     difficulty = schedule_difficulty(games, strength, from_round=round_now, horizon=3)
 
     clubs_index = {club["code"]: club for club in reference.get("clubs", [])}
     records = player_records(table, series, difficulty, clubs_index)
     injuries_meta = _apply_availability(
-        records, market, reference, next_round=round_now
+        records, market, reference, next_round=round_now, games=games
     )
     _apply_play_probability(records)
     match = matchmodel.fit(games, prior_games, club_values=matchmodel.roster_values(pre))
@@ -668,6 +692,8 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         "coachGames": int(len(coach_log)),
         "matchModel": {"homeAdvantage": round(match.home, 2), "marginSd": round(match.sd, 2)},
         "modelBacktest": _load_backtest(),
+        "projectionCalibration": calibration,
+        "formulaCheck": _load_formula_check(),
         "schedule": schedule_meta,
         "injuries": injuries_meta,
         "warnings": _warnings(has_prices, gamelog_meta, matched, len(records)),
@@ -773,8 +799,10 @@ def _apply_availability(
     reference: dict[str, Any],
     *,
     next_round: int,
+    games: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    """Disponibilidad de cada jugador para la próxima jornada.
+    """Disponibilidad de cada jugador para SU próximo partido: el de la jornada
+    vigente o, si su club ya la ha jugado, el de la siguiente.
 
     Dos fuentes, en este orden de prioridad:
       1. El parte de lesiones de BasketNews (más correcciones manuales).
@@ -786,9 +814,18 @@ def _apply_availability(
     cambia es que el optimizador no ficha a quien está de baja y la web avisa.
     """
     from efa.ingest.injuries import availability_index
+    from efa.projection import next_games
 
     alias_map = build_club_alias_map(reference.get("clubs", []))
-    index, summary = availability_index(market, alias_map, next_round)
+    club_round = {
+        club: int(game.get("round") or next_round) for club, game in next_games(games or [], next_round).items()
+    }
+    round_by_id = {
+        int(record["id"]): club_round[str(record.get("club"))]
+        for record in records
+        if str(record.get("club")) in club_round
+    }
+    index, summary = availability_index(market, alias_map, next_round, round_by_id=round_by_id)
     registered = {
         str((entry.get("person") or {}).get("code"))
         for entry in reference.get("players", [])
@@ -916,6 +953,8 @@ def _apply_schedule(
         clubs[club] = {
             "date": stamp.isoformat(),
             "round": number,
+            # Su club ya ha jugado la jornada vigente: este partido es de la siguiente.
+            "ahead": number > round_now,
             "turn": game_days.index(stamp.date()) + 1,
             "turns": len(game_days),
             "opponent": rival,
@@ -929,7 +968,19 @@ def _apply_schedule(
         info = clubs.get(str(record.get("club")))
         if info:
             record.setdefault("schedule", {}).update({"next": info})
-    return {"round": round_now, "turns": len(days), "doubleWeekClubs": sorted(c for c, i in clubs.items() if i["doubleWeek"])}
+    from efa.fixtures import round_progress
+
+    progress = round_progress(games, round_now)
+    return {
+        "round": round_now,
+        "turns": len(days),
+        "doubleWeekClubs": sorted(c for c, i in clubs.items() if i["doubleWeek"]),
+        # Con la jornada a medias, quien ya ha jugado proyecta el partido de la
+        # siguiente: la web tiene que poder decirlo.
+        "roundGames": progress["games"],
+        "roundPlayed": progress["played"],
+        "aheadClubs": sorted(c for c, i in clubs.items() if i["round"] > round_now),
+    }
 
 
 def _apply_coach_match(
@@ -955,6 +1006,27 @@ def _apply_coach_match(
         record["playProb"] = 1.0
         applied += 1
     return applied
+
+
+def _load_calibration() -> dict[str, float] | None:
+    """La recta de calibración del último `efa backtest`, si la hay."""
+    from efa.config import PROCESSED_DIR
+
+    try:
+        data = json.loads((PROCESSED_DIR / "projection_backtest.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    calibration = (data.get("current") or {}).get("calibration")
+    if not isinstance(calibration, dict) or "slope" not in calibration or "intercept" not in calibration:
+        return None
+    return {key: float(calibration[key]) for key in ("slope", "intercept", "n") if key in calibration}
+
+
+def _load_formula_check() -> dict[str, Any] | None:
+    """El último `efa verify`: cuántos jugadores cuadran al decimal con el juego."""
+    from efa.verify import load_report  # aquí y no arriba: verify importa de build
+
+    return load_report()
 
 
 def _load_backtest() -> dict[str, Any] | None:
@@ -1077,6 +1149,16 @@ def _build_optimal_lineup(records: list[dict[str, Any]], *, budget: float) -> di
     return payload
 
 
+#: Nombre corto con el que se conoce a cada club cuando el de la API se queda a
+#: medias: "Real" y "Crvena" no los dice nadie, y a "Barca" le falta la cedilla.
+CLUB_SHORT_NAMES = {"MAD": "Real Madrid", "RED": "Crvena Zvezda", "BAR": "Barça"}
+
+
+def club_short(club: dict[str, Any]) -> str | None:
+    """Nombre corto de un club del censo oficial."""
+    return CLUB_SHORT_NAMES.get(str(club.get("code"))) or club.get("editorialName") or club.get("abbreviatedName")
+
+
 BOX_FIELDS = {
     "box_games": "games",
     "wins": "wins",
@@ -1148,7 +1230,7 @@ def _team_records(
             {
                 "code": code,
                 "name": club.get("name"),
-                "short": club.get("editorialName") or club.get("abbreviatedName"),
+                "short": club_short(club),
                 "country": (club.get("country") or {}).get("code"),
                 "crest": (club.get("images") or {}).get("crest"),
                 "offense": stats.get("offense"),

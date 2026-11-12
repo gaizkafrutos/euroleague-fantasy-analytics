@@ -111,6 +111,16 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
   ];
   const hasOrbs = [...left, ...right].some((spec) => usable(spec.value));
 
+  // Lo que va plegado al final: el perfil de juego del jugador.
+  const profileParts = [
+    detail.mix ? "de dónde salen sus puntos" : null,
+    detail.court ? "minutos en pista" : null,
+    detail.shots && meta.league ? "mapa de tiro" : null,
+    detail.official ? "eficiencia" : null,
+    player.isCoach ? null : "rol",
+  ].filter((part): part is string => Boolean(part));
+  const hasProfile = profileParts.length > 0;
+
   return (
     <>
       {/* ============================================================= stage */}
@@ -246,9 +256,18 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 />
               ) : (
                 <BandItem
-                  label="Regularidad"
-                  value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
-                  note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
+                  label="Suele hacer"
+                  value={
+                    (perf.gamesPlayed ?? 0) >= 3 && perf.fpFloor !== null && perf.fpCeiling !== null
+                      ? `${num(perf.fpFloor, 0)}–${num(perf.fpCeiling, 0)}`
+                      : "—"
+                  }
+                  unit={(perf.gamesPlayed ?? 0) >= 3 ? "pts" : undefined}
+                  note={
+                    (perf.gamesPlayed ?? 0) >= 3
+                      ? [pctNote(player, "consistency"), "en regularidad"].filter(Boolean).join(" ")
+                      : "3+ partidos"
+                  }
                 />
               )}
               <BandItem
@@ -315,6 +334,63 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
           </div>
         </section>
       ) : null}
+      {/* Primero lo que sirve para decidir (calendario y de dónde sale la
+          cifra, junto al precio de arriba); luego lo que ha hecho; y al final,
+          plegado, el perfil de juego. Antes iban doce bloques seguidos con el
+          mismo peso y la proyección quedaba al fondo de la página. */}
+      <section className="section shell">
+        <div className="grid grid-2">
+          <div className="card">
+            <div className="card-head">
+              <div>
+                <h2 className="card-title">Próximos partidos</h2>
+                <p className="card-note" style={{ margin: "4px 0 0" }}>
+                  Lo que concede cada rival a los{" "}
+                  {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()}, frente a
+                  la media de la liga.
+                </p>
+              </div>
+            </div>
+            {detail.fixtures.length ? (
+              <ul className="fixture-list">
+                {detail.fixtures.map((fixture) => {
+                  const rival = getTeam(fixture.opponent);
+                  const key = (player.position ?? "all") as "G" | "F" | "C" | "all";
+                  const index = rival?.allowed?.index?.[key] ?? null;
+                  return (
+                    <li key={`${fixture.round}-${fixture.opponent}`}>
+                      <span>
+                        <strong>J{fixture.round}</strong>{" "}
+                        <span className="muted">{fixture.home ? "vs" : "@"}</span>{" "}
+                        {rival?.short ?? fixture.opponent}
+                      </span>
+                      <span className="fixture-side">
+                        {index !== null ? (
+                          <span
+                            className={`fixture-allowed dv-${sequentialClass(index)}`}
+                            title={`Concede ${num(rival?.allowed?.[key] ?? null)} pts fantasy por partido a este puesto`}
+                          >
+                            {Math.round((index - 1) * 100) === 0
+                              ? "0 %"
+                              : `${index >= 1 ? "+" : "−"}${Math.abs(Math.round((index - 1) * 100))} %`}
+                          </span>
+                        ) : null}
+                        <span className="muted num">{dateShort(fixture.date)}</span>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="muted" style={{ margin: 0 }}>
+                Sin calendario disponible.
+              </p>
+            )}
+          </div>
+
+          <ProjectionBreakdown player={player} />
+        </div>
+      </section>
 
       <section className="section shell">
         <div className="grid grid-2">
@@ -354,173 +430,125 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
-      {detail.mix || detail.court ? (
+      {hasProfile ? (
         <section className="section shell">
-          <div className="grid grid-2">
-            {detail.mix ? (
-              <div className="card">
-                <div className="card-head">
-                  <div>
-                    <h2 className="card-title">De dónde salen sus puntos</h2>
-                    <p className="card-note" style={{ margin: "4px 0 0" }}>
-                      Media por partido de cada acción del baremo · {seasonLabel(detail.mix.season)},{" "}
-                      {detail.mix.games} {detail.mix.games === 1 ? "partido" : "partidos"}.
-                    </p>
-                  </div>
+          <details className="profile-fold">
+            <summary>
+              <h2 className="profile-fold-title">Perfil de juego</h2>
+              <span className="profile-fold-note">{profileParts.join(" · ")}</span>
+            </summary>
+            <div className="profile-fold-body">
+              {detail.mix || detail.court ? (
+                <div className="grid grid-2">
+                  {detail.mix ? (
+                    <div className="card">
+                      <div className="card-head">
+                        <div>
+                          <h2 className="card-title">De dónde salen sus puntos</h2>
+                          <p className="card-note" style={{ margin: "4px 0 0" }}>
+                            Media por partido de cada acción del baremo · {seasonLabel(detail.mix.season)},{" "}
+                            {detail.mix.games} {detail.mix.games === 1 ? "partido" : "partidos"}.
+                          </p>
+                        </div>
+                      </div>
+                      <FantasyMix mix={detail.mix} />
+                    </div>
+                  ) : null}
+                  {detail.court ? (
+                    <div className="card">
+                      <div className="card-head">
+                        <div>
+                          <h2 className="card-title">En pista</h2>
+                          <p className="card-note" style={{ margin: "4px 0 0" }}>
+                            Reconstruido cambio a cambio desde el jugada a jugada oficial.
+                          </p>
+                        </div>
+                      </div>
+                      <CourtRole court={detail.court} />
+                    </div>
+                  ) : null}
                 </div>
-                <FantasyMix mix={detail.mix} />
-              </div>
-            ) : null}
-            {detail.court ? (
-              <div className="card">
-                <div className="card-head">
-                  <div>
-                    <h2 className="card-title">En pista</h2>
-                    <p className="card-note" style={{ margin: "4px 0 0" }}>
-                      Reconstruido cambio a cambio desde el jugada a jugada oficial.
-                    </p>
+              ) : null}
+
+              {detail.shots && meta.league ? (
+                <div className="card">
+                  <div className="card-head">
+                    <div>
+                      <h2 className="card-title">Mapa de tiro</h2>
+                      <p className="card-note" style={{ margin: "4px 0 0" }}>
+                        Cada tiro fallado le resta un punto fantasy: dónde tira importa tanto como
+                        cuánto.
+                      </p>
+                    </div>
                   </div>
+                  <ShotChart
+                    uid={String(player.id)}
+                    shots={detail.shots}
+                    league={meta.league.zones}
+                    keys={meta.league.zoneKeys}
+                    labels={meta.league.zoneLabels}
+                  />
                 </div>
-                <CourtRole court={detail.court} />
+              ) : null}
+
+              <div className="grid grid-2">
+                {detail.official ? (
+                  <div className="card">
+                    <div className="card-head">
+                      <div>
+                        <h2 className="card-title">Eficiencia</h2>
+                        <p className="card-note" style={{ margin: "4px 0 0" }}>
+                          Avanzadas oficiales de la Euroliga, en percentil frente a su puesto.
+                        </p>
+                      </div>
+                    </div>
+                    <PercentileStrip official={detail.official} />
+                  </div>
+                ) : null}
+
+                {player.isCoach ? null : (
+                <div className="card">
+                  <div className="card-head">
+                    <h2 className="card-title">Rol y recorrido</h2>
+                  </div>
+                  <dl className="fact-list">
+                    <Row
+                      label="Minutos últimos 5"
+                      value={
+                        typeof perf.minutesTrend === "number" && Math.abs(perf.minutesTrend) >= 0.05
+                          ? `${num(perf.minutesRecent)} (${signed(perf.minutesTrend)})`
+                          : num(perf.minutesRecent)
+                      }
+                    />
+                    <Row
+                      label="Cuota de minutos del equipo"
+                      value={percent(perf.minutesShareRecent, 1)}
+                    />
+                    <Row label="Titularidades" value={percent(perf.startedRate)} />
+                    <Row label="Partidos sin jugar" value={percent(perf.dnpRate)} />
+                    <Row label="Puntos fantasy por minuto" value={num(perf.fpPerMin, 2)} />
+                    {/* Con uno o dos partidos, el suelo es el techo y la dispersión es
+                        0: no es un jugador fiable, es que no hay muestra. */}
+                    <Row
+                      label="Suelo / techo"
+                      value={
+                        (perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD
+                          ? `${num(perf.fpFloor)} — ${num(perf.fpCeiling)}`
+                          : "— (pocos partidos)"
+                      }
+                    />
+                    <Row
+                      label="Desviación típica"
+                      value={(perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD ? `${num(perf.fpStd)} pts` : "—"}
+                    />
+                  </dl>
+                </div>
+                )}
               </div>
-            ) : null}
-          </div>
+            </div>
+          </details>
         </section>
       ) : null}
-
-      {detail.shots && meta.league ? (
-        <section className="section shell">
-          <div className="card">
-            <div className="card-head">
-              <div>
-                <h2 className="card-title">Mapa de tiro</h2>
-                <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Cada tiro fallado le resta un punto fantasy: dónde tira importa tanto como
-                  cuánto.
-                </p>
-              </div>
-            </div>
-            <ShotChart
-              uid={String(player.id)}
-              shots={detail.shots}
-              league={meta.league.zones}
-              keys={meta.league.zoneKeys}
-              labels={meta.league.zoneLabels}
-            />
-          </div>
-        </section>
-      ) : null}
-
-      <section className="section shell">
-        <div className="grid grid-2">
-          {detail.official ? (
-            <div className="card">
-              <div className="card-head">
-                <div>
-                  <h2 className="card-title">Eficiencia</h2>
-                  <p className="card-note" style={{ margin: "4px 0 0" }}>
-                    Avanzadas oficiales de la Euroliga, en percentil frente a su puesto.
-                  </p>
-                </div>
-              </div>
-              <PercentileStrip official={detail.official} />
-            </div>
-          ) : null}
-
-          <div className="card">
-            <div className="card-head">
-              <div>
-                <h2 className="card-title">Próximos partidos</h2>
-                <p className="card-note" style={{ margin: "4px 0 0" }}>
-                  Lo que concede cada rival a los{" "}
-                  {(POSITION_PLURAL[player.position ?? ""] ?? "jugadores").toLowerCase()}, frente a
-                  la media de la liga.
-                </p>
-              </div>
-            </div>
-            {detail.fixtures.length ? (
-              <ul className="fixture-list">
-                {detail.fixtures.map((fixture) => {
-                  const rival = getTeam(fixture.opponent);
-                  const key = (player.position ?? "all") as "G" | "F" | "C" | "all";
-                  const index = rival?.allowed?.index?.[key] ?? null;
-                  return (
-                    <li key={`${fixture.round}-${fixture.opponent}`}>
-                      <span>
-                        <strong>J{fixture.round}</strong>{" "}
-                        <span className="muted">{fixture.home ? "vs" : "@"}</span>{" "}
-                        {rival?.short ?? fixture.opponent}
-                      </span>
-                      <span className="fixture-side">
-                        {index !== null ? (
-                          <span
-                            className={`fixture-allowed seq-${sequentialClass(index)}`}
-                            title={`Concede ${num(rival?.allowed?.[key] ?? null)} pts fantasy por partido a este puesto`}
-                          >
-                            {Math.round((index - 1) * 100) === 0
-                              ? "0 %"
-                              : `${index >= 1 ? "+" : "−"}${Math.abs(Math.round((index - 1) * 100))} %`}
-                          </span>
-                        ) : null}
-                        <span className="muted num">{dateShort(fixture.date)}</span>
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : (
-              <p className="muted" style={{ margin: 0 }}>
-                Sin calendario disponible.
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="section shell">
-        <div className="grid grid-2">
-          {player.isCoach ? null : (
-          <div className="card">
-            <div className="card-head">
-              <h2 className="card-title">Rol y recorrido</h2>
-            </div>
-            <dl className="fact-list">
-              <Row
-                label="Minutos últimos 5"
-                value={
-                  typeof perf.minutesTrend === "number" && Math.abs(perf.minutesTrend) >= 0.05
-                    ? `${num(perf.minutesRecent)} (${signed(perf.minutesTrend)})`
-                    : num(perf.minutesRecent)
-                }
-              />
-              <Row
-                label="Cuota de minutos del equipo"
-                value={percent(perf.minutesShareRecent, 1)}
-              />
-              <Row label="Titularidades" value={percent(perf.startedRate)} />
-              <Row label="Partidos sin jugar" value={percent(perf.dnpRate)} />
-              <Row label="Puntos fantasy por minuto" value={num(perf.fpPerMin, 2)} />
-              {/* Con uno o dos partidos, el suelo es el techo y la dispersión es
-                  0: no es un jugador fiable, es que no hay muestra. */}
-              <Row
-                label="Suelo / techo"
-                value={
-                  (perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD
-                    ? `${num(perf.fpFloor)} — ${num(perf.fpCeiling)}`
-                    : "— (pocos partidos)"
-                }
-              />
-              <Row
-                label="Desviación típica"
-                value={(perf.gamesPlayed ?? 0) >= MIN_GAMES_FOR_SPREAD ? `${num(perf.fpStd)} pts` : "—"}
-              />
-            </dl>
-          </div>
-          )}
-
-          <ProjectionBreakdown player={player} />
-        </div>
-      </section>
 
       <section className="section shell">
         {/* La trazabilidad del cruce es una nota al pie, no una etiqueta de
@@ -570,11 +598,24 @@ function ProjectionBreakdown({ player }: { player: Player }) {
   const minutes = player.expectedMinutes ?? null;
   const opp = player.matchup?.opponentFactor ?? null;
   const home = player.matchup?.homeFactor ?? null;
+  // La calibración encoge la cifra hacia la media (ver metodología): va como
+  // un paso más, no escondida dentro de los puntos por minuto.
+  const calibration = player.matchup?.calibration ?? null;
   const rate =
-    ifPlays !== null && minutes && opp && home ? ifPlays / (minutes * opp * home) : null;
+    ifPlays !== null && minutes && opp && home
+      ? ifPlays / (minutes * opp * home * (calibration ?? 1))
+      : null;
   const factor = (value: number | null) =>
     value === null ? "—" : Math.round((value - 1) * 100) === 0 ? "neutro" : `${signed((value - 1) * 100, 0)} %`;
   const source = player.availability?.level ? "según el parte" : "según su historial";
+  // Rival y campo se enseñan porque entran en la cifra, pero hay que decir lo
+  // que pesan: esta temporada, quitarlos apenas cambia el acierto.
+  const current = meta.modelBacktest?.current;
+  const smallAdjustments =
+    current?.ablation?.plain !== undefined && current.v2
+      ? `El rival y el campo son ajustes pequeños: en lo que va de temporada el error medio es ${num(current.v2.mae, 2)} con ellos y ${num(current.ablation.plain, 2)} sin ellos.`
+      : null;
+  const conditional = Boolean(outlook?.bandIfPlays);
   return (
     <div className="card">
       <div className="card-head">
@@ -585,6 +626,9 @@ function ProjectionBreakdown({ player }: { player: Player }) {
             multiplicado por la probabilidad de que juegue.{" "}
             <Link href="/metodologia#proyeccion">Detalles</Link>
           </p>
+          {smallAdjustments ? (
+            <p className="card-note" style={{ margin: "4px 0 0" }}>{smallAdjustments}</p>
+          ) : null}
         </div>
       </div>
       <dl className="fact-list">
@@ -592,17 +636,21 @@ function ProjectionBreakdown({ player }: { player: Player }) {
         <Row label="Puntos por minuto" value={num(rate, 2)} />
         <Row label={`Rival${next ? ` (${fixtureName(next)})` : ""}`} value={factor(opp)} />
         <Row label={next ? (next.home ? "En casa" : "Fuera") : "Campo"} value={factor(home)} />
+        {calibration !== null ? (
+          <Row label="Calibración (regresión a la media)" value={factor(calibration)} />
+        ) : null}
         <Row label="Si juega" value={ifPlays === null ? "—" : `${num(ifPlays)} pts`} />
         <Row label={`Probabilidad de jugar (${source})`} value={percent(player.playProb ?? null)} />
         <Row label="Proyección (esperada)" value={`${num(player.projectedFp)} pts`} />
         {outlook ? (
           <Row
-            label="La mitad de las veces · techo (1 de cada 10)"
+            label={
+              conditional
+                ? "Si juega, la mitad de las veces · techo (1 de cada 10)"
+                : "La mitad de las veces · techo (1 de cada 10)"
+            }
             value={`${num(outlook.floor)}–${num(outlook.ceiling)} · ${num(outlook.p90 ?? null)}`}
           />
-        ) : null}
-        {typeof outlook?.certainty === "number" ? (
-          <Row label="Seguridad de la proyección" value={percent(outlook.certainty)} />
         ) : null}
         <Row label="Último partido" value={`${num(player.perf.lastFp)} pts`} />
       </dl>

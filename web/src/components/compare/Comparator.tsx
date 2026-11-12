@@ -40,6 +40,8 @@ export interface CompareRow {
   difficulty: number | null;
   next: NextGame | null;
   bargainScore: number | null;
+  fpFloor: number | null;
+  fpCeiling: number | null;
   availability: string | null;
   out: boolean;
 }
@@ -103,15 +105,15 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Rango habitual",
-        title: "Entre qué cifras cae la mitad de las veces (percentiles 25 y 75)",
+        label: "Rango si juega",
+        title: "Entre qué cifras cae la mitad de las veces que juega (percentiles 25 y 75)",
         value: (r) => r.floor,
         show: (r) => (r.floor === null ? "—" : `${num(r.floor)}–${num(r.ceiling)}`),
         better: "high",
       },
       {
         label: "Techo",
-        title: "Lo que hace en una buena noche: lo que importa para el capitán",
+        title: "Lo que hace en una buena noche, una de cada diez que juega: lo que importa para el capitán",
         value: (r) => r.p90,
         show: (r) => num(r.p90),
         better: "high",
@@ -160,6 +162,7 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
       },
       {
         label: "Índice de chollo",
+        title: "En qué percentil del mercado cae lo que proyecta por encima de lo normal a su precio",
         value: (r) => r.bargainScore,
         show: (r) => num(r.bargainScore, 0),
         better: "high",
@@ -188,9 +191,14 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Regularidad",
+        label: "Suele hacer",
+        title:
+          "Entre qué cifras ha caído la mitad de sus partidos. Se marca al más regular: el de menor dispersión para su media.",
         value: (r) => r.consistency,
-        show: (r) => (r.consistency === null ? "—" : percent(r.consistency)),
+        show: (r) =>
+          r.consistency === null || r.fpFloor === null || r.fpCeiling === null
+            ? "—"
+            : `${num(r.fpFloor, 0)}–${num(r.fpCeiling, 0)}`,
         better: "high",
         playersOnly: true,
       },
@@ -218,10 +226,10 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Calendario (3 próximos)",
-        title: "Dificultad de los tres próximos rivales: 100 es lo más duro",
+        label: "Dureza del calendario",
+        title: "Sus tres próximos rivales, por puesto entre los veinte clubes: 100 es el calendario más duro y 0 el más fácil",
         value: (r) => r.difficulty,
-        show: (r) => num(r.difficulty, 0),
+        show: (r) => (r.difficulty === null ? "—" : `${num(r.difficulty, 0)} de 100`),
       },
     ],
   },

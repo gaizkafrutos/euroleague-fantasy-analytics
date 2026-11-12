@@ -156,19 +156,50 @@ def test_probabilidad_de_superar_el_umbral():
     assert prob_above(0, 10, 5) > 0.97
 
 
-def test_seguridad_de_la_proyeccion_no_pisa_la_regularidad():
-    """Son dos cifras distintas: la regularidad sale de lo jugado y la
-    seguridad, del margen de error de la proyección."""
-    from efa.advanced_build import _projection_certainty
+def test_horquilla_por_nivel_de_proyeccion():
+    """La horquilla sale de los errores reales de cada tramo de proyección:
+    más ancha cuanto más se espera del jugador, e interpolada entre tramos."""
+    import numpy as np
+    import pandas as pd
 
-    records = [
-        {"projectedFp": 20.0, "perf": {"gamesPlayed": 1, "consistency": 0.0}, "outlook": {"sd": 6.0}},
-        {"projectedFp": 20.0, "perf": {"gamesPlayed": 5, "consistency": 0.55}, "outlook": {"sd": 6.0}},
-        {"projectedFp": 0.0, "perf": {}, "outlook": {"sd": 6.0}},
-    ]
-    _projection_certainty(records)
-    assert records[0]["outlook"]["certainty"] == 0.7
-    assert records[0]["perf"]["consistency"] == 0.0
-    assert "consistencyEstimated" not in records[0]["perf"]
-    assert records[1]["perf"]["consistency"] == 0.55
-    assert "certainty" not in records[2]["outlook"]
+    from efa.projection import band_check, band_offsets, residual_bands
+
+    rng = np.random.default_rng(3)
+    v2 = np.repeat([4.0, 8.0, 12.0, 16.0, 20.0], 200)
+    # Dispersión proporcional a la proyección, como en los datos reales.
+    y = v2 + rng.normal(0, 1, len(v2)) * v2 / 2
+    rows = pd.DataFrame({"round": np.tile(np.arange(2, 12), 100), "v2": v2, "y": y})
+
+    bands = residual_bands(rows)
+    assert [band["center"] for band in bands] == [4.0, 8.0, 12.0, 16.0, 20.0]
+    widths = [band["p75"] - band["p25"] for band in bands]
+    assert widths == sorted(widths), "la horquilla crece con la proyección"
+
+    low, high = band_offsets(bands, 10.0), band_offsets(bands, 12.0)
+    assert low["p75"] < high["p75"] and low["p25"] > high["p25"]
+    # Por encima del último tramo sigue creciendo, con la raíz de la proyección:
+    # los candidatos a capitán proyectan más que el centro del último tramo.
+    top, beyond = band_offsets(bands, 20.0), band_offsets(bands, 40.0)
+    assert abs(beyond["p75"] / top["p75"] - 2 ** 0.5) < 1e-9
+    assert abs(beyond["p25"] / top["p25"] - 2 ** 0.5) < 1e-9
+    assert band_offsets([], 10.0) is None
+
+    # Con las propias filas, la mitad cae dentro y uno de cada diez pasa del p90.
+    inside = above = 0
+    for value, real in zip(v2, y, strict=True):
+        offsets = band_offsets(bands, value)
+        inside += offsets["p25"] <= real - value <= offsets["p75"]
+        above += real - value > offsets["p90"]
+    assert abs(inside / len(v2) - 0.5) < 0.02 and abs(above / len(v2) - 0.1) < 0.02
+    # Y hacia delante (cada jornada con las anteriores) se mantiene cerca.
+    check = band_check(rows)
+    assert check and abs(check["inside"] - 0.5) < 0.06
+
+
+def test_sin_muestra_no_hay_horquilla_por_nivel():
+    import pandas as pd
+
+    from efa.projection import residual_bands
+
+    assert residual_bands(pd.DataFrame({"round": [2], "v2": [10.0], "y": [12.0]})) == []
+    assert residual_bands(pd.DataFrame()) == []

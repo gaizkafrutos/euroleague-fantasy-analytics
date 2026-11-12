@@ -1,0 +1,16 @@
+# Versiones exactas con las que pasan los tests y se generan los datos.
+#
+# `requirements.txt` y `pyproject.toml` dicen qué hace falta (">="); este
+# fichero dice con qué se ha probado. La CI y la captura instalan con
+# `-c pipeline/constraints.txt`, así que un pandas nuevo no cambia los números
+# de la web de un día para otro sin que nadie lo decida. Para subir una
+# versión: cambiarla aquí, correr los tests y mirar el diff de los datos.
+numpy==2.4.6
+pandas==3.0.5
+pyarrow==25.0.1
+requests==2.34.2
+rapidfuzz==3.14.6
+PuLP==3.3.2
+pillow==13.0.0
+pytest==9.1.1
+ruff==0.16.7

@@ -74,6 +74,34 @@ class Params:
 
 PARAMS = Params()
 
+#: Primera jornada que el modelo predice con los parámetros ya fijados. Todo lo
+#: de arriba (y los topes y colchones de `config`) se ajustó mirando las
+#: jornadas 2 a 10 de la 2026-27, así que el error medido en ellas es optimista:
+#: el modelo ya "había visto" esos resultados. Desde esta jornada no se ha
+#: tocado nada, y el backtest la publica aparte (`afterFreeze`). Si se vuelve a
+#: ajustar un parámetro, hay que mover este número a la jornada siguiente.
+#: (Era 11; pasó a 12 al añadir la calibración con la J11 ya empezada.)
+PARAMS_FROZEN_ROUND = 12
+
+#: Calibración de la proyección "si juega". En J2–J10 de la 2026-27, lo real
+#: frente a lo proyectado tiene pendiente 0,80 (estable desde la J5): el modelo
+#: abre demasiado el abanico. A quien proyectaba 15–20 puntos se le pasaba en
+#: 0,9 y a quien proyectaba más de 20, en 4,2; a quien proyectaba menos de 5 se
+#: le quedaba corto en 0,8. Es regresión a la media sin terminar. La recta se
+#: ajusta con el backtest (cada jornada, solo con las anteriores) y se aplica a
+#: la proyección publicada. No cambia el orden de los jugadores ni apenas el
+#: error medio (6,06 frente a 6,05 hacia delante): quita el sesgo de arriba,
+#: que es donde se elige al capitán.
+CALIBRATION_MIN_ROWS = 500
+#: Fuera de este rango la recta no se aplica: por encima de 1 no habría nada
+#: que encoger, y por debajo de 0,6 algo más grave está pasando.
+CALIBRATION_SLOPE_RANGE = (0.6, 1.0)
+
+#: Tramos de proyección para las horquillas, y filas mínimas para fiarse.
+BAND_BINS = 5
+BAND_MIN_ROWS = 300
+BAND_QUANTILES = (0.1, 0.25, 0.75, 0.9)
+
 
 # ---------------------------------------------------------------------------
 # Piezas
@@ -246,6 +274,122 @@ def project(
 
 
 # ---------------------------------------------------------------------------
+# Calibración
+# ---------------------------------------------------------------------------
+def fit_calibration(rows: pd.DataFrame | None, *, min_rows: int = CALIBRATION_MIN_ROWS) -> dict[str, float] | None:
+    """Recta real ~ proyectado sobre las filas del backtest (`v2`, `y`).
+
+    Devuelve `{"slope", "intercept", "n"}` o None si no hay muestra o la
+    pendiente se sale de CALIBRATION_SLOPE_RANGE.
+    """
+    if rows is None or rows.empty or not {"v2", "y"} <= set(rows.columns):
+        return None
+    data = rows.dropna(subset=["v2", "y"])
+    if len(data) < min_rows or data["v2"].nunique() < 2:
+        return None
+    slope, intercept = np.polyfit(data["v2"].to_numpy(dtype=float), data["y"].to_numpy(dtype=float), 1)
+    low, high = CALIBRATION_SLOPE_RANGE
+    if not low <= slope <= high:
+        return None
+    return {"slope": round(float(slope), 4), "intercept": round(float(intercept), 3), "n": int(len(data))}
+
+
+def calibrate(value: Any, calibration: dict[str, float] | None) -> Any:
+    """Aplica la recta de calibración a una proyección (o a una serie). Sin
+    calibración devuelve lo mismo. Nunca baja de cero."""
+    if not calibration:
+        return value
+    out = calibration["intercept"] + calibration["slope"] * value
+    return out.clip(lower=0) if hasattr(out, "clip") else max(0.0, float(out))
+
+
+# ---------------------------------------------------------------------------
+# Horquillas
+# ---------------------------------------------------------------------------
+def residual_bands(rows: pd.DataFrame, *, bins: int = BAND_BINS, min_rows: int = BAND_MIN_ROWS) -> list[dict[str, float]]:
+    """Cuánto se aleja lo real de lo proyectado, por nivel de proyección.
+
+    `rows` son las filas de `backtest_rows` (`v2` proyectado si juega, `y` real).
+    Se parten en tramos con el mismo número de partidos y en cada uno se miden
+    los percentiles 10, 25, 75 y 90 del error (real − proyectado). La dispersión
+    crece con la proyección (5,6 puntos de desviación en quien proyecta menos de
+    5; 9,2 en quien pasa de 12), así que una sola horquilla para todos se queda
+    ancha abajo y corta arriba.
+
+    Devuelve una fila por tramo, con su proyección central; lista vacía si no
+    hay muestra.
+    """
+    if rows is None or rows.empty or not {"v2", "y"} <= set(rows.columns):
+        return []
+    data = rows.dropna(subset=["v2", "y"])
+    if len(data) < min_rows:
+        return []
+    cuts = pd.qcut(data["v2"], bins, duplicates="drop")
+    out: list[dict[str, float]] = []
+    for _, part in data.groupby(cuts, observed=True):
+        residual = part["y"] - part["v2"]
+        out.append({
+            "center": round(float(part["v2"].median()), 2),
+            "n": int(len(part)),
+            **{f"p{int(q * 100)}": round(float(residual.quantile(q)), 2) for q in BAND_QUANTILES},
+        })
+    return out
+
+
+def _band_arrays(bands: list[dict[str, float]], projection: Any) -> dict[str, np.ndarray]:
+    """p10, p25, p75 y p90 del error para una o varias proyecciones.
+
+    Entre tramos, interpolación lineal. Fuera de ellos la horquilla sigue
+    creciendo (o encogiendo) con la raíz de la proyección, que es como crece
+    la dispersión de una suma de aciertos: el último tramo se centra en unos 14
+    puntos y los candidatos a capitán proyectan 20 o más. Dejándola plana, en la
+    prueba hacia delante recogía el 41 % de sus resultados y el 16 % pasaba del
+    p90; así, el 45 % y el 14 %.
+    """
+    value = np.asarray(projection, dtype=float)
+    centers = np.array([band["center"] for band in bands], dtype=float)
+    low, high = max(centers[0], 1e-9), max(centers[-1], 1e-9)
+    scale = np.ones_like(value)
+    scale = np.where(value > high, np.sqrt(np.maximum(value, 0.0) / high), scale)
+    scale = np.where(value < low, np.sqrt(np.maximum(value, 0.5) / low), scale)
+    return {
+        key: np.interp(value, centers, [band[key] for band in bands]) * scale
+        for key in ("p10", "p25", "p75", "p90")
+    }
+
+
+def band_offsets(bands: list[dict[str, float]] | None, projection: float) -> dict[str, float] | None:
+    """Lo que hay que sumar a una proyección para tener su p10, p25, p75 y p90."""
+    if not bands:
+        return None
+    return {key: float(value) for key, value in _band_arrays(bands, projection).items()}
+
+
+def band_check(rows: pd.DataFrame) -> dict[str, float] | None:
+    """Las horquillas, puestas a prueba hacia delante: para cada jornada se
+    calculan solo con las anteriores y se mira cuántos resultados caen dentro.
+    Tendría que ser la mitad entre p25 y p75 y uno de cada diez por encima del
+    p90."""
+    if rows is None or rows.empty:
+        return None
+    data = rows.dropna(subset=["v2", "y"])
+    inside = above = total = 0
+    for number in sorted(data["round"].unique()):
+        bands = residual_bands(data[data["round"] < number])
+        test = data[data["round"] == number]
+        if not bands or test.empty:
+            continue
+        residual = (test["y"] - test["v2"]).to_numpy()
+        offsets = _band_arrays(bands, test["v2"].to_numpy())
+        inside += int(((residual >= offsets["p25"]) & (residual <= offsets["p75"])).sum())
+        above += int((residual > offsets["p90"]).sum())
+        total += len(test)
+    if not total:
+        return None
+    return {"n": total, "inside": round(inside / total, 3), "aboveP90": round(above / total, 3)}
+
+
+# ---------------------------------------------------------------------------
 # Backtest
 # ---------------------------------------------------------------------------
 def _legacy_projection(history: pd.DataFrame, targets: pd.DataFrame) -> pd.Series:
@@ -260,23 +404,19 @@ def _legacy_projection(history: pd.DataFrame, targets: pd.DataFrame) -> pd.Serie
     )
 
 
-def backtest(
+def backtest_rows(
     gamelog: pd.DataFrame,
     positions: dict[str, str],
     prior: pd.DataFrame | None = None,
     params: Params = PARAMS,
     *,
-    min_games: int = 1,
     cache: dict[Any, pd.Series] | None = None,
     references: Callable[[int, pd.DataFrame], dict[str, dict[str, float]]] | None = None,
-) -> dict[str, Any]:
-    """Predice cada partido de `gamelog` solo con los anteriores (por jornada).
-
-    Devuelve el error medio del modelo v2, del de antes y de la media simple
-    sobre los mismos partidos: los del jugador con `min_games` o más jugados.
-    `references(jornada, historial)` da la referencia de cada jugador con lo que
-    se sabía antes de esa jornada (ver `price_references`).
-    """
+) -> pd.DataFrame:
+    """Una fila por partido jugado, predicho solo con los anteriores (por
+    jornada): `round`, `y` (lo real), `v2`, `legacy`, `mean`, `prior_mean` y
+    `games` (partidos jugados antes). Es la materia prima de `backtest()` y de
+    las horquillas (`residual_bands`)."""
     log_sorted = gamelog.sort_values(["utc_date", "game_code"])
     prior_mean = (
         prior[prior["played"]].groupby("person_code")["fantasy_points"].mean()
@@ -303,23 +443,54 @@ def backtest(
                 cache[r] = legacy
         games = history[history["played"]].groupby("person_code").size()
         mean = history[history["played"]].groupby("person_code")["fantasy_points"].mean()
+        # Calibrada con lo que se sabía antes de esta jornada (las filas de las
+        # jornadas anteriores); sin muestra todavía, la proyección tal cual.
+        earlier = fit_calibration(pd.concat(rows, ignore_index=True)) if rows else None
         frame = pd.DataFrame({
             "round": r,
             "y": targets["fantasy_points"].to_numpy(),
             "v2": v2["projection"].to_numpy(),
+            "v2c": calibrate(v2["projection"], earlier).to_numpy(),
             "legacy": legacy.to_numpy(),
             "mean": targets["person_code"].map(mean).to_numpy(),
             "prior_mean": targets["person_code"].map(prior_mean).to_numpy(),
             "games": targets["person_code"].map(games).fillna(0).to_numpy(),
         })
         rows.append(frame)
-    data = pd.concat(rows, ignore_index=True) if rows else pd.DataFrame()
+    return pd.concat(rows, ignore_index=True) if rows else pd.DataFrame()
+
+
+def backtest(
+    gamelog: pd.DataFrame,
+    positions: dict[str, str],
+    prior: pd.DataFrame | None = None,
+    params: Params = PARAMS,
+    *,
+    min_games: int = 1,
+    cache: dict[Any, pd.Series] | None = None,
+    references: Callable[[int, pd.DataFrame], dict[str, dict[str, float]]] | None = None,
+    from_round: int | None = None,
+) -> dict[str, Any]:
+    """Predice cada partido de `gamelog` solo con los anteriores (por jornada).
+
+    Devuelve el error medio del modelo v2, del de antes y de la media simple
+    sobre los mismos partidos: los del jugador con `min_games` o más jugados.
+    `references(jornada, historial)` da la referencia de cada jugador con lo que
+    se sabía antes de esa jornada (ver `price_references`). Con `from_round`
+    solo se puntúan las jornadas desde esa (el historial sigue siendo todo).
+    """
+    data = backtest_rows(gamelog, positions, prior, params, cache=cache, references=references)
     if data.empty:
         return {"n": 0}
     data = data[data["games"] >= min_games]
+    every_round = data
+    if from_round is not None:
+        data = data[data["round"] >= from_round]
+        if data.empty:
+            return {"n": 0}
     # Se comparan los modelos que tienen predicción en al menos la mitad de los
     # partidos, sobre los partidos en los que TODOS la tienen.
-    models = [c for c in ("v2", "legacy", "mean", "prior_mean") if data[c].notna().mean() >= 0.5]
+    models = [c for c in ("v2", "v2c", "legacy", "mean", "prior_mean") if data[c].notna().mean() >= 0.5]
     common = data.dropna(subset=models)
     if common.empty:
         return {"n": 0}
@@ -343,6 +514,25 @@ def backtest(
     result["residualQuantiles"] = {
         q: round(float(np.quantile(resid, q)), 2) for q in (0.1, 0.25, 0.5, 0.75, 0.9)
     }
+    # Calibración que usará la próxima proyección (con todas las jornadas) y el
+    # sesgo de quien proyecta 15 o más, antes y después de calibrar hacia delante.
+    calibration = fit_calibration(every_round)
+    if calibration:
+        result["calibration"] = calibration
+    top = every_round[every_round["v2"] >= 15].dropna(subset=["v2", "v2c", "y"])
+    if len(top) >= 30:
+        result["topBias"] = {
+            "n": int(len(top)),
+            "raw": round(float((top["v2"] - top["y"]).mean()), 2),
+            "calibrated": round(float((top["v2c"] - top["y"]).mean()), 2),
+        }
+    # Horquillas por nivel de proyección, con todas las jornadas, y su prueba
+    # hacia delante. Sobre la proyección calibrada, que es a la que se suman.
+    as_published = every_round.assign(v2=every_round["v2c"]) if calibration else every_round
+    result["bands"] = residual_bands(as_published)
+    check = band_check(as_published)
+    if check:
+        result["bandCheck"] = check
     return result
 
 
@@ -355,10 +545,13 @@ def next_games(games: list[dict[str, Any]], round_now: int) -> dict[str, dict[st
     Con la jornada a medias, quien ya jugó la suya pasa a la siguiente: antes se
     le seguía proyectando (y enseñando como "próximo") el partido ya jugado.
     """
+    from efa.fixtures import pending_games
+
     out: dict[str, dict[str, Any]] = {}
-    ordered = sorted(games, key=lambda g: (int(g.get("round") or 0), str(g.get("utcDate") or "")))
-    for game in ordered:
-        if int(game.get("round") or 0) < round_now or game.get("played"):
+    # Sin los aplazados: un partido sin jugar con la fecha ya pasada no es "el
+    # próximo" de nadie.
+    for game in pending_games(games):
+        if int(game.get("round") or 0) < round_now:
             continue
         for side in ("local", "road"):
             club = ((game.get(side) or {}).get("club") or {}).get("code")
@@ -507,11 +700,43 @@ def market_before_round(
     return snap[["person_code", "club_code", "position", "quotation"]]
 
 
+def _honesty_checks(log_now, positions, references, replace) -> dict[str, Any]:
+    """Dos cosas que el backtest tiene que decir de sí mismo.
+
+    `ablation`: el error medio quitando cada pieza. Rival, cancha y minutos
+    recientes se enseñan en la ficha; si no bajan el error, hay que saberlo
+    (J2–J10 de la 2026-27: 6,02 con todo y 6,03 sin rival ni cancha).
+
+    `afterFreeze`: el error solo en las jornadas posteriores a la última vez
+    que se tocó un parámetro (ver PARAMS_FROZEN_ROUND). Es el único tramo en el
+    que el modelo no ha visto antes lo que predice.
+    """
+    cache: dict[Any, pd.Series] = {}
+    variants = {
+        "noOpponent": replace(PARAMS, opponent_weight=0.0),
+        "noHome": replace(PARAMS, use_home=False),
+        "plain": replace(PARAMS, opponent_weight=0.0, use_home=False),
+        "seasonMinutes": replace(PARAMS, minutes_half_life=50.0),
+    }
+    ablation: dict[str, float] = {}
+    for name, params in variants.items():
+        result = backtest(log_now, positions, params=params, min_games=0, references=references, cache=cache)
+        if result.get("v2"):
+            ablation[name] = result["v2"]["mae"]
+    out: dict[str, Any] = {"ablation": ablation, "frozenFromRound": PARAMS_FROZEN_ROUND}
+    after = backtest(
+        log_now, positions, min_games=0, references=references, cache=cache, from_round=PARAMS_FROZEN_ROUND
+    )
+    if after.get("n"):
+        out["afterFreeze"] = {key: after[key] for key in ("n", "rounds", "v2", "v2c", "mean") if key in after}
+    return out
+
+
 def run_backtests() -> dict[str, Any]:
     """Los backtests que publica la web: temporada en curso y modelo del
     entrenador. Mientras la temporada anterior aún cuenta (ver
     PRIOR_SEASON_ROUNDS), también ella entera, como única muestra amplia."""
-    from dataclasses import asdict
+    from dataclasses import asdict, replace
     from datetime import datetime, timezone
 
     from efa import matchmodel
@@ -559,6 +784,8 @@ def run_backtests() -> dict[str, Any]:
         current["zQuantiles"] = {
             f"p{int(q * 100)}": round(v / rmse, 3) for q, v in current.get("residualQuantiles", {}).items()
         }
+        if not use_prior and current.get("n"):
+            current.update(_honesty_checks(log_now, positions, references, replace))
         out["current"] = {"code": SEASON_CODE, **current}
     # Lo que la web publicó antes de cada jornada, frente a lo que pasó.
     from efa.context import season_boxscores

@@ -33,6 +33,7 @@ const STATES: Array<[string, string]> = [
 
 const MODEL_COLOR = "var(--brand)";
 const BASE_COLOR = "var(--ink-3)";
+const FAIR_COLOR = "var(--slate)";
 
 export default function AccuracyPage() {
   const backtest = meta.modelBacktest ?? null;
@@ -70,6 +71,16 @@ export default function AccuracyPage() {
   const lineupProjected = avg(lineups.map((l) => l.projected));
   const lineupBest = avg(lineups.flatMap((l) => (l.best !== null ? [l.best] : [])));
   const regulars = total.playProb?.["sin parte"];
+  // La línea base justa: la media de cada jugador con la MISMA probabilidad de
+  // jugar que usa el modelo. Sin eso, la ventaja mezcla proyectar mejor con
+  // saber quién está lesionado.
+  const fair = total.meanPlay;
+  const versus = total.versus;
+  const hasFair = rounds.every((r) => r.meanPlay);
+  const wins = total.lineupWins;
+  const gap = (g: { diff: number; low: number; high: number }) =>
+    `${signed(g.diff, 2)} (entre ${signed(g.low, 2)} y ${signed(g.high, 2)})`;
+  const conclusive = (g: { low: number; high: number }) => g.low * g.high > 0;
 
   return (
     <section className="section shell">
@@ -110,12 +121,37 @@ export default function AccuracyPage() {
         ) : null}
       </div>
 
+      {fair && versus?.mean && versus.meanPlay ? (
+        <div className="card ac-fair">
+          <h2 className="card-title">¿De dónde viene la ventaja?</h2>
+          <p className="card-note">
+            Contra la media de cada jugador a secas, el modelo se equivoca menos: {gap(versus.mean.mae)}{" "}
+            puntos de error medio, con el intervalo del 95 %. Pero una parte de eso es saber quién
+            no va a jugar, que sale del parte de lesiones y no del modelo.
+          </p>
+          <p className="card-note">
+            La comparación justa es darle a la media <strong>la misma probabilidad de jugar</strong>.
+            Así su error medio es {num(fair.mae ?? null, 2)}, casi el del modelo (
+            {num(total.model.mae ?? null, 2)}): la diferencia es {gap(versus.meanPlay.mae)}
+            {conclusive(versus.meanPlay.mae) ? "." : ", y el intervalo cruza el cero: no es concluyente."}{" "}
+            Donde sí gana es en los errores grandes (error cuadrático: {gap(versus.meanPlay.rmse)})
+            {wins
+              ? ` y en lo que importa para fichar: el once que sale de HoopIQ hizo ${num(wins.modelAvg, 0)} puntos de media y el que saldría de esa media, ${num(wins.baselineAvg, 0)}. Ganó en ${wins.model} de ${wins.rounds} jornadas.`
+              : "."}
+          </p>
+          <p className="card-note">
+            Con {rounds.length} jornadas son pocas muestras del once para dar nada por demostrado. Los
+            intervalos salen de remuestrear por jugador ({num(versus.players ?? null, 0)} jugadores).
+          </p>
+        </div>
+      ) : null}
+
       <div className="grid ac-charts">
         <div className="card ac-chart">
           <h2 className="card-title">Error medio por jornada</h2>
           <p className="card-note">
             Puntos de diferencia, por jugador, entre lo proyectado y lo que hizo. Cuanto más bajo,
-            mejor.
+            mejor. El eje no empieza en cero: las líneas están más cerca de lo que parece.
           </p>
           <RoundLines
             rounds={numbers}
@@ -123,6 +159,16 @@ export default function AccuracyPage() {
             series={[
               { key: "model", label: "HoopIQ", color: MODEL_COLOR, values: rounds.map((r) => r.model.mae) },
               { key: "mean", label: "Media de cada jugador", color: BASE_COLOR, values: rounds.map((r) => r.mean.mae) },
+              ...(hasFair
+                ? [
+                    {
+                      key: "meanPlay",
+                      label: "Media con la misma prob. de jugar",
+                      color: FAIR_COLOR,
+                      values: rounds.map((r) => r.meanPlay!.mae),
+                    },
+                  ]
+                : []),
             ]}
           />
         </div>
@@ -131,7 +177,7 @@ export default function AccuracyPage() {
           <h2 className="card-title">Orden del mercado</h2>
           <p className="card-note">
             Si quien sale arriba en la proyección es quien más puntúa luego. Para fichar importa
-            más el orden que la cifra exacta. Cuanto más alto, mejor.
+            más el orden que la cifra exacta. Cuanto más alto, mejor. El eje no empieza en cero.
           </p>
           <RoundLines
             rounds={numbers}
@@ -194,18 +240,21 @@ export default function AccuracyPage() {
         <summary>Ver los datos en tabla</summary>
         <div className="table-wrap" tabIndex={0} role="region" aria-label="Acierto por jornada">
           <table className="data">
+            <caption className="sr-only">Error, orden, sesgo y once óptimo de cada jornada evaluada</caption>
             <thead>
               <tr>
-                <th>Jornada</th>
-                <th className="num">Jugadores</th>
-                <th className="num">Error HoopIQ</th>
-                <th className="num">Error media</th>
-                <th className="num">Orden HoopIQ</th>
-                <th className="num">Orden media</th>
-                <th className="num">Sesgo</th>
-                <th className="num">Once proyectado</th>
-                <th className="num">Once real</th>
-                <th className="num">Mejor posible</th>
+                <th scope="col">Jornada</th>
+                <th scope="col" className="num">Jugadores</th>
+                <th scope="col" className="num">Error HoopIQ</th>
+                <th scope="col" className="num">Error media</th>
+                <th scope="col" className="num">Media con prob. de jugar</th>
+                <th scope="col" className="num">Orden HoopIQ</th>
+                <th scope="col" className="num">Orden media</th>
+                <th scope="col" className="num">Sesgo</th>
+                <th scope="col" className="num">Once proyectado</th>
+                <th scope="col" className="num">Once real</th>
+                <th scope="col" className="num">Once de la media</th>
+                <th scope="col" className="num">Mejor posible</th>
               </tr>
             </thead>
             <tbody>
@@ -217,6 +266,7 @@ export default function AccuracyPage() {
                     <strong>{num(r.model.mae, 2)}</strong>
                   </td>
                   <td className="num">{num(r.mean.mae, 2)}</td>
+                  <td className="num">{num(r.meanPlay?.mae ?? null, 2)}</td>
                   <td className="num">
                     <strong>{num(r.model.spearman, 2)}</strong>
                   </td>
@@ -224,6 +274,7 @@ export default function AccuracyPage() {
                   <td className="num">{signed(r.model.bias, 2)}</td>
                   <td className="num">{num(r.lineup?.projected ?? null)}</td>
                   <td className="num">{num(r.lineup?.real ?? null)}</td>
+                  <td className="num">{num(r.lineup?.baseline ?? null)}</td>
                   <td className="num">{num(r.lineup?.best ?? null)}</td>
                 </tr>
               ))}
@@ -233,12 +284,13 @@ export default function AccuracyPage() {
         {calibration.length ? (
           <div className="table-wrap" tabIndex={0} role="region" aria-label="Probabilidad de jugar por estado del parte">
             <table className="data">
+              <caption className="sr-only">Probabilidad de jugar publicada frente a los que jugaron, por estado del parte</caption>
               <thead>
                 <tr>
-                  <th>Estado del parte</th>
-                  <th className="num">Casos</th>
-                  <th className="num">Dijo la web</th>
-                  <th className="num">Jugaron</th>
+                  <th scope="col">Estado del parte</th>
+                  <th scope="col" className="num">Casos</th>
+                  <th scope="col" className="num">Dijo la web</th>
+                  <th scope="col" className="num">Jugaron</th>
                 </tr>
               </thead>
               <tbody>

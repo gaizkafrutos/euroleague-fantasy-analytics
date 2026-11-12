@@ -61,6 +61,8 @@ def prediction_row(record: dict[str, Any]) -> dict[str, Any]:
     outlook = record.get("outlook") or {}
     for key in ("riseProb", "expectedChange", "floor", "ceiling", "p90"):
         row[key] = outlook.get(key)
+    # Desde noviembre de 2026 la horquilla es de lo que hace SI juega.
+    row["bandIfPlays"] = bool(outlook.get("bandIfPlays"))
     return row
 
 
@@ -131,6 +133,8 @@ def _lineup_check(
     scores: pd.Series,
     coach_scores: dict[str, float] | None,
     budget: float,
+    baseline: dict[str, float] | None = None,
+    coach_baseline: dict[str, float] | None = None,
 ) -> dict[str, Any] | None:
     """El once óptimo de lo publicado: lo que proyectaba y lo que puntuó.
 
@@ -179,12 +183,25 @@ def _lineup_check(
         budget=budget,
         coaches=[replace(c, projection=real[c.key]) for c in coaches],
     )
-    return {
+    out = {
         "projected": round(scored(lineup, projected), 1),
         "real": round(scored(lineup, real), 1),
         "best": round(hindsight.scored_projection, 1) if hindsight else None,
         "withCoach": bool(coaches),
     }
+    # El once que habría salido de la línea base (la media de cada jugador por
+    # la misma probabilidad de jugar; el entrenador, con la media de su
+    # banquillo), con las mismas reglas y puntuado igual. Es la comparación que
+    # importa: no si el número se parece, sino si eligiendo con él se puntúa más.
+    if baseline is not None:
+        simple = optimize(
+            [replace(c, projection=float(baseline.get(c.key, 0.0))) for c in players],
+            budget=budget,
+            coaches=[replace(c, projection=float((coach_baseline or {}).get(c.club_code, 0.0))) for c in coaches],
+        )
+        if simple is not None:
+            out["baseline"] = round(scored(simple, real), 1)
+    return out
 
 
 def evaluate_round(
@@ -219,11 +236,19 @@ def evaluate_round(
     frame["real"] = frame["personCode"].map(scores).fillna(0.0)
     frame["mean"] = frame["personCode"].map(mean).fillna(0.0)
 
+    # Línea base justa: la media por la MISMA probabilidad de jugar que usa el
+    # modelo. Contra la media a secas, casi toda la ventaja en error medio era
+    # saber quién no iba a jugar (el parte de lesiones), no proyectar mejor.
+    prob = pd.to_numeric(frame["playProb"], errors="coerce").fillna(1.0)
+    frame["meanPlay"] = frame["mean"] * prob
+
     out: dict[str, Any] = {
         "round": number,
         "n": int(len(frame)),
         "model": _score(frame["projectedFp"], frame["real"]),
         "mean": _score(frame["mean"], frame["real"]),
+        "meanPlay": _score(frame["meanPlay"], frame["real"]),
+        "_rows": frame[["personCode", "projectedFp", "mean", "meanPlay", "real"]].assign(round=number),
     }
     # Sesgo "si juega" de los caros (≥12 cr): son los candidatos a capitán, y en
     # J2–J3 salían sobreproyectados (+1,5 y +2,5). Se vigila aquí.
@@ -253,12 +278,25 @@ def evaluate_round(
     if coach_log is not None and not coach_log.empty:
         rows = coach_log[coach_log["round"] == number]
         coach_scores = rows.groupby("club_code")["fantasy_points"].sum().to_dict()
-    lineup = _lineup_check(prediction, scores, coach_scores, budget)
+    coach_before = None
+    if coach_log is not None and not coach_log.empty:
+        earlier = coach_log[coach_log["round"] < number]
+        coach_before = earlier.groupby("club_code")["fantasy_points"].mean().to_dict()
+    lineup = _lineup_check(
+        prediction, scores, coach_scores, budget,
+        baseline={str(i): float(v) for i, v in zip(frame["id"], frame["meanPlay"], strict=False)},
+        coach_baseline=coach_before,
+    )
     if lineup:
         out["lineup"] = lineup
 
     # Horquilla publicada (p25–p75): debería recoger la mitad de los resultados.
+    # Las de "si juega" se miden solo con quien jugó.
     band = frame.dropna(subset=["floor", "ceiling"])
+    conditional = "bandIfPlays" in band.columns and bool(band["bandIfPlays"].fillna(False).astype(bool).any())
+    if conditional:
+        band = band[band["played"]]
+        out["bandIfPlays"] = True
     if len(band):
         inside = (band["real"] >= band["floor"]) & (band["real"] <= band["ceiling"])
         out["bandCoverage"] = round(float(inside.mean()), 3)
@@ -304,6 +342,7 @@ def evaluate_published(
             rounds.append(result)
     if not rounds:
         return None
+    rows = pd.concat([r.pop("_rows") for r in rounds], ignore_index=True)
 
     def pooled(key: str, metric: str) -> float | None:
         values = [(r[key].get(metric), r["n"]) for r in rounds if r.get(key) and r[key].get(metric) is not None]
@@ -329,12 +368,76 @@ def evaluate_published(
         for name, acc in play.items()
     }
 
+    lineups = [r["lineup"] for r in rounds if r.get("lineup") and r["lineup"].get("baseline") is not None]
     return {
         "rounds": rounds,
         "total": {
             "n": sum(r["n"] for r in rounds),
             "model": {m: pooled("model", m) for m in ("mae", "bias", "spearman")},
             "mean": {m: pooled("mean", m) for m in ("mae", "bias", "spearman")},
+            "meanPlay": {m: pooled("meanPlay", m) for m in ("mae", "bias", "spearman")},
+            "versus": _versus(rows),
+            "lineupWins": {
+                "rounds": len(lineups),
+                "model": sum(1 for item in lineups if item["real"] > item["baseline"]),
+                "modelAvg": round(sum(item["real"] for item in lineups) / len(lineups), 1),
+                "baselineAvg": round(sum(item["baseline"] for item in lineups) / len(lineups), 1),
+            } if lineups else None,
             "playProb": play_total,
         },
+    }
+
+
+#: Remuestreos del intervalo de la diferencia con la línea base. Semilla fija:
+#: con los mismos datos sale siempre el mismo intervalo y el fichero no cambia
+#: en cada captura.
+BOOTSTRAP_SAMPLES = 1000
+BOOTSTRAP_SEED = 20261112
+
+
+def _versus(rows: pd.DataFrame) -> dict[str, Any]:
+    """Diferencia de error entre el modelo y cada línea base, con su intervalo.
+
+    Remuestreo por JUGADOR (no por fila): los errores de un mismo jugador en
+    jornadas distintas no son independientes, y remuestrear filas sueltas daría
+    intervalos más estrechos de la cuenta. Negativo = el modelo se equivoca
+    menos. Si el intervalo cruza el cero, la diferencia no es concluyente.
+    """
+    data = rows.dropna(subset=["projectedFp", "mean", "meanPlay", "real"])
+    if data.empty:
+        return {}
+    groups = data["personCode"].astype(str).to_numpy()
+    unique, inverse = np.unique(groups, return_inverse=True)
+    index = [np.flatnonzero(inverse == i) for i in range(len(unique))]
+    errors = {
+        name: (data[name] - data["real"]).to_numpy()
+        for name in ("projectedFp", "mean", "meanPlay")
+    }
+
+    def mae(name: str, picked: np.ndarray) -> float:
+        return float(np.abs(errors[name][picked]).mean())
+
+    def rmse(name: str, picked: np.ndarray) -> float:
+        return float(np.sqrt((errors[name][picked] ** 2).mean()))
+
+    everything = np.arange(len(data))
+    rng = np.random.default_rng(BOOTSTRAP_SEED)
+    samples = [
+        np.concatenate([index[i] for i in rng.integers(0, len(unique), len(unique))])
+        for _ in range(BOOTSTRAP_SAMPLES)
+    ]
+
+    def interval(metric, base: str) -> dict[str, float]:
+        diffs = [metric("projectedFp", picked) - metric(base, picked) for picked in samples]
+        low, high = np.percentile(diffs, [2.5, 97.5])
+        return {
+            "diff": round(metric("projectedFp", everything) - metric(base, everything), 3),
+            "low": round(float(low), 3),
+            "high": round(float(high), 3),
+        }
+
+    return {
+        "players": int(len(unique)),
+        "mean": {"mae": interval(mae, "mean"), "rmse": interval(rmse, "mean")},
+        "meanPlay": {"mae": interval(mae, "meanPlay"), "rmse": interval(rmse, "meanPlay")},
     }

@@ -150,11 +150,18 @@ export interface Player {
   /** Minutos esperados si juega. */
   expectedMinutes?: number | null;
   /** Ajustes de contexto de la proyección: rival (1 = neutro) y campo. */
-  matchup?: { opponentFactor: number | null; homeFactor: number | null } | null;
+  matchup?: {
+    opponentFactor: number | null;
+    homeFactor: number | null;
+    /** Lo que la calibración multiplica a la cifra "si juega" (ver metodología). */
+    calibration?: number | null;
+  } | null;
   valuePerCredit: number | null;
   valueProjected: number | null;
   valueMarket: number | null;
   bargainScore: number | null;
+  /** Puntos que proyecta por encima de lo normal a su precio: lo que mide el índice. */
+  valueOverPrice?: number | null;
   schedule: { difficulty: number | null; next?: NextGame | null };
   match: { method: string | null; confidence: number | null };
   /** Qué pasa con su precio si rinde lo proyectado. Null en entrenadores sin
@@ -171,6 +178,8 @@ export interface NextGame {
   date: string;
   /** Jornada del partido: la vigente o, si su club ya la jugó, la siguiente. */
   round?: number;
+  /** El partido es de una jornada posterior a la vigente (su club ya la jugó). */
+  ahead?: boolean;
   /** Turno de la jornada (día): entre turnos se puede cambiar quinteto y capitán. */
   turn: number;
   turns: number;
@@ -192,12 +201,13 @@ export interface Outlook {
   /** Probabilidad de superar el umbral, con una normal (proyección, sd). */
   riseProb: number;
   sd: number;
-  /** Seguridad de la proyección: 1 − σ/proyección. No es la regularidad: mide
-   *  el margen de error de la cifra de la próxima jornada, no lo ya jugado. */
-  certainty?: number;
-  /** Percentiles 25 y 75 de su puntuación esperada (cuantiles empíricos). */
+  /** Percentiles 25 y 75 de su puntuación (errores reales de su nivel de proyección). */
   floor: number;
   ceiling: number;
+  /** La horquilla es de lo que hace SI juega: el riesgo de que no juegue va
+   *  aparte, en `playProb`. Sin esta marca (datos anteriores a nov. de 2026)
+   *  la horquilla lo llevaba mezclado. */
+  bandIfPlays?: boolean;
   /** Percentil 90: el techo que importa para elegir capitán. */
   p90?: number;
 }
@@ -443,11 +453,34 @@ export interface Meta {
   warnings: string[];
   priceFreshness?: PriceFreshness;
   matchModel?: { homeAdvantage: number; marginSd: number };
-  schedule?: { round: number; turns: number; doubleWeekClubs: string[] };
+  schedule?: {
+    round: number;
+    turns: number;
+    doubleWeekClubs: string[];
+    /** Partidos de la jornada vigente y cuántos se han jugado. */
+    roundGames?: number;
+    roundPlayed?: number;
+    /** Clubes que ya han jugado la vigente: su próximo partido es de la siguiente. */
+    aheadClubs?: string[];
+  };
+  /** Último `efa verify`: cuántos jugadores cuadran al decimal con el juego. */
+  formulaCheck?: FormulaCheck | null;
   modelBacktest?: ModelBacktest | null;
   injuries?: InjuriesMeta;
   priceModel?: PriceModel;
   league?: LeagueRef;
+}
+
+export interface FormulaCheck {
+  ok: boolean;
+  checkedAt: string | null;
+  players: number;
+  exact: number;
+  exactShare: number;
+  meanAbsoluteError: number;
+  coaches: { coaches: number; maxAbsError: number } | null;
+  /** Jugadores a los que el juego apuntó menos faltas que el acta oficial. */
+  foulGap: { players: number; fouls: number } | null;
 }
 
 export interface BacktestScore {
@@ -480,6 +513,22 @@ export interface ModelBacktest {
     prior_mean?: BacktestScore;
     byGames?: Record<string, { n: number; v2: number; legacy?: number; mean?: number }>;
     zQuantiles?: Record<string, number>;
+    /** Error medio quitando cada pieza del modelo: rival, campo, las dos, y
+     *  con los minutos de toda la temporada en vez de los recientes. */
+    ablation?: { noOpponent?: number; noHome?: number; plain?: number; seasonMinutes?: number };
+    /** Primera jornada predicha con los parámetros ya fijados. */
+    frozenFromRound?: number;
+    /** El error solo desde esa jornada: lo único que el modelo no había visto. */
+    afterFreeze?: { n: number; rounds?: number; v2: BacktestScore; mean?: BacktestScore };
+    /** Las horquillas, probadas hacia delante: parte de resultados dentro del
+     *  p25–p75 (tendría que ser 0,5) y por encima del p90 (0,1). */
+    bandCheck?: { n: number; inside: number; aboveP90: number };
+    /** El modelo con la calibración aplicada hacia delante. */
+    v2c?: BacktestScore;
+    /** Recta real ~ proyectado con la que se calibra la proyección publicada. */
+    calibration?: { slope: number; intercept: number; n: number };
+    /** Sesgo (proyectado − real) de quien proyecta 15 o más, sin y con calibración. */
+    topBias?: { n: number; raw: number; calibrated: number };
   };
   coach?: { code: string; n: number; model: number; mean: number | null };
   /** Lo que publicó la web antes de cada jornada frente a lo que pasó. */
@@ -493,12 +542,20 @@ export interface PublishedScore {
   spearman: number;
 }
 
+export interface ErrorGap {
+  diff: number;
+  low: number;
+  high: number;
+}
+
 export interface PublishedBacktest {
   rounds: Array<{
     round: number;
     n: number;
     model: PublishedScore;
     mean: PublishedScore;
+    /** La media de cada jugador por la misma probabilidad de jugar que el modelo. */
+    meanPlay?: PublishedScore;
     biasExpensiveIfPlays?: number | null;
     playProb?: Record<string, { n: number; predicted: number | null; real: number }>;
     bandCoverage?: number;
@@ -508,12 +565,28 @@ export interface PublishedBacktest {
     changeMaeZero?: number;
     /** El once óptimo de lo publicado: lo que proyectaba, lo que puntuó y el
      *  mejor posible sabiendo ya los resultados. */
-    lineup?: { projected: number; real: number; best: number | null; withCoach: boolean };
+    lineup?: {
+      projected: number;
+      real: number;
+      best: number | null;
+      withCoach: boolean;
+      /** Lo que puntuó el once que habría salido de la línea base. */
+      baseline?: number;
+    };
   }>;
   total: {
     n: number;
     model: Partial<PublishedScore>;
     mean: Partial<PublishedScore>;
+    meanPlay?: Partial<PublishedScore>;
+    /** Diferencia de error con cada línea base e intervalo del 95 %
+     *  (remuestreo por jugador). Negativo: el modelo se equivoca menos. */
+    versus?: {
+      players?: number;
+      mean?: { mae: ErrorGap; rmse: ErrorGap };
+      meanPlay?: { mae: ErrorGap; rmse: ErrorGap };
+    };
+    lineupWins?: { rounds: number; model: number; modelAvg: number; baselineAvg: number } | null;
     playProb?: Record<string, { n: number; predicted: number | null; real: number }>;
   };
 }
@@ -527,6 +600,9 @@ export interface PriceFreshness {
   reason: string | null;
   /** Jugadores con precio pendiente distinto del del juego. */
   pending: number;
+  /** Partidos de esa jornada y cuántos se habían jugado al construir los datos. */
+  roundGames?: number | null;
+  roundPlayed?: number | null;
 }
 
 /** plus = a·puntos + b·precio + c, ajustado sobre el último snapshot. */

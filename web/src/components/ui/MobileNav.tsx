@@ -16,11 +16,8 @@ export default function MobileNav() {
 
   return (
     <nav className="tabbar" aria-label="Navegación principal">
-      {NAV_ITEMS.filter((item) => !item.wideOnly).map((item) => {
-        // Sin icono propio en la barra: /acierta cuelga de Método.
-        const current =
-          isCurrent(item.href, pathname) ||
-          (item.href === "/metodologia" && pathname.startsWith("/acierta"));
+      {NAV_ITEMS.map((item) => {
+        const current = isCurrent(item.href, pathname);
         return (
           <Link
             key={item.href}
