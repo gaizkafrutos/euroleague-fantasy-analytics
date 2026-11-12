@@ -50,20 +50,29 @@ En **Settings → Domains**. Un subdominio de un dominio que ya tengas queda
 mejor en un perfil de LinkedIn que `algo-xyz123.vercel.app`, y no cuesta nada
 si ya pagas el dominio.
 
-## Qué pasa cada día
+## Qué pasa cada dos horas
 
 ```
-07:00 UTC  GitHub Action
-           ├─ ingiere datos oficiales de la EuroLeague
+Cada 2 h   GitHub Action "Captura de datos" (GitHub la arranca con retraso)
+           ├─ ingiere datos oficiales de la EuroLeague y repasa las dos
+           │  últimas jornadas por si se ha corregido algún acta
+           ├─ descarga los partes de lesiones
            ├─ captura el mercado de Fantaking (4 peticiones)
+           ├─ backtest del modelo (error, calibración y horquillas)
+           ├─ verifica la fórmula de puntuación contra el juego
            ├─ recalcula métricas y regenera web/src/data/*.json
-           ├─ verifica la fórmula de puntuación
            └─ commit + push si algo ha cambiado
                 └─ Vercel detecta el push y redespliega
 ```
 
-Si el token ha caducado, el paso de precios avisa pero no rompe la cadena: el
-resto se actualiza igual y la web sigue en pie con el último precio conocido.
+Dos cosas ponen la ejecución **en rojo** sin romper la cadena (los datos se
+commitean igual y la web sigue en pie):
+
+- el token ha caducado y no hay precios nuevos;
+- la fórmula de puntuación ya no cuadra con la del juego (puede haber cambiado
+  el baremo).
+
+Un rojo ahí es un aviso para mirar, no una web caída.
 
 ## Comprobación después de desplegar
 

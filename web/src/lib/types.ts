@@ -481,6 +481,8 @@ export interface FormulaCheck {
   coaches: { coaches: number; maxAbsError: number } | null;
   /** Jugadores a los que el juego apuntó menos faltas que el acta oficial. */
   foulGap: { players: number; fouls: number } | null;
+  /** Clubes que acababan de jugar al comprobar: se comparan en la siguiente. */
+  settlingClubs?: string[];
 }
 
 export interface BacktestScore {

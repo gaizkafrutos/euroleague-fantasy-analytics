@@ -52,3 +52,28 @@ def test_una_comprobacion_saltada_no_pisa_la_anterior(tmp_path, monkeypatch):
     verify.save_report({"ok": True, "skipped": False, "players": 10})
     verify.save_report({"ok": False, "skipped": True, "reason": "sin captura"})
     assert verify.load_report()["players"] == 10
+
+
+def test_los_clubes_que_acaban_de_jugar_se_dejan_para_la_siguiente_captura():
+    """El juego puntúa en directo y el acta oficial sale al acabar: con la
+    captura pegada a los partidos, las dos fuentes no hablan de lo mismo."""
+
+    def game(date, local, road, played=True):
+        return {"utcDate": date, "played": played, "local": {"club": {"code": local}}, "road": {"club": {"code": road}}}
+
+    games = [
+        game("2026-11-06T19:30:00Z", "VIR", "DUB"),
+        game("2026-11-11T19:45:00Z", "PAR", "BAS"),
+        game("2026-11-12T19:05:00Z", "TEL", "HTA"),
+        # En juego al capturar: la API aún no lo da por jugado, el juego ya puntúa.
+        game("2026-11-12T20:00:00Z", "MAD", "RED", played=False),
+        game("2026-11-13T19:30:00Z", "ASV", "BES", played=False),
+    ]
+    # A las 21:57 del 12: los de esta noche (acabado o en juego) no se comparan;
+    # los de ayer (26 h antes) sí, y los de mañana no han empezado.
+    assert verify.clubs_settling(games, "2026-11-12T21:57:54Z") == {"TEL", "HTA", "MAD", "RED"}
+    # A las 00:50 del 12, cinco horas después de los partidos del 11.
+    assert verify.clubs_settling(games, "2026-11-12T00:50:28Z") == {"PAR", "BAS"}
+    assert verify.clubs_settling(games, "2026-11-10T09:00:00Z") == set()
+    assert verify.clubs_settling([], "2026-11-12T21:57:54Z") == set()
+    assert verify.clubs_settling(games, None) == set()

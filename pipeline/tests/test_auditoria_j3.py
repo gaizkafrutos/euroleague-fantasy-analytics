@@ -189,6 +189,8 @@ def test_evaluacion_de_lo_publicado_cuenta_los_que_no_juegan_como_cero():
         "person_code": ["A", "A"], "round": [1, 2], "played": [True, True], "fantasy_points": [18.0, 22.0],
     })
     result = evaluate_round(prediction, log, games)
+    assert "_rows" not in result, "las filas del remuestreo son internas"
+    assert "meanPlay" in result
     assert result["n"] == 2
     assert result["model"]["mae"] == pytest.approx((2.0 + 5.0) / 2)
     assert result["playProb"]["doubt"] == {"n": 1, "predicted": 0.5, "real": 0.0}

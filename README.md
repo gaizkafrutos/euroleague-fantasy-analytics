@@ -31,13 +31,15 @@ cambios de rol — que es justo donde está la ventaja.
 
 ## Qué hace
 
-- **Explorador de mercado** — los ~350 jugadores con precio, proyección, valor
-  por crédito, fiabilidad y dificultad de calendario. Ordenable por todo,
-  filtrable por posición, equipo y presupuesto.
-- **Nube precio-rendimiento** — con la recta de "precio justo del mercado":
-  quien está por encima rinde más de lo que cuesta.
-- **Ficha de jugador** — puntuación partido a partido con media y suelo,
-  evolución del precio, rol en el equipo y próximos rivales.
+- **Explorador de mercado** — los ~360 jugadores y entrenadores con precio,
+  proyección, puntos por crédito, índice de chollo y revalorización esperada.
+  Ordenable por todo, filtrable por posición, equipo y presupuesto.
+- **Nube precio-rendimiento** — con la recta del umbral de revalorización:
+  quien está por encima sube de precio si rinde lo que proyecta.
+- **Ficha de jugador** — primero lo que sirve para decidir (si sube o baja de
+  precio, próximos rivales y de dónde sale su proyección, con la horquilla de
+  lo que hace si juega), luego lo que ha hecho partido a partido y, plegado, su
+  perfil de juego: mapa de tiro, minutos en pista y eficiencia.
 - **Consola de equipo** — valida las reglas del juego mientras montas la
   plantilla, señala a quién le estás pagando de más y propone el mejor
   recambio que cabe en tu presupuesto. Funciona con tu equipo real (si
@@ -45,8 +47,12 @@ cambios de rol — que es justo donde está la ventaja.
 - **Once óptimo** — la mejor plantilla posible con 100 créditos respetando
   4 bases / 4 aleros / 2 pívots y el máximo de 6 por club, resuelto por
   programación entera. Es el óptimo demostrable, no una aproximación.
-- **Metodología abierta** — cada métrica explicada, con sus pesos y sus
+- **Metodología abierta** — cada métrica explicada, con su fórmula y sus
   límites. Si una recomendación no se puede justificar, no sirve para decidir.
+- **¿Acierta?** — antes de cada jornada se guarda lo que publica la web y
+  después se compara con lo que pasó: error, orden, sesgo, calibración de la
+  probabilidad de jugar y lo que puntuó el once óptimo, frente a una línea
+  base y con intervalos. [Verlo](https://hoopiq-fantasy.vercel.app/acierta).
 
 ## Arquitectura
 
@@ -115,6 +121,8 @@ cd web && npm install && npm run dev
 | `efa discover` | Mapea qué endpoints de Fantaking responden | **sí** |
 | `efa build` | Genera los JSON que consume la web | no |
 | `efa verify` | Contrasta la fórmula con los datos del juego | no |
+| `efa backtest` | Mide el acierto del modelo y calibra proyección y horquillas | no |
+| `efa injuries` | Descarga los partes de lesiones | no |
 | `efa demo` | Precios de demostración para desarrollar sin token | no |
 | `efa refresh` | `ingest` + `snapshot` + `build` de una vez | opcional |
 
@@ -132,10 +140,26 @@ miente, en silencio. La cascada va de más fiable a menos, registra con qué
 método se emparejó cada jugador, y lo que no llega al umbral se deja sin cruzar
 y se reporta en `data/processed/unmatched_players.csv`.
 
-**Por qué el índice de chollo es una suma ponderada y no un modelo.**
-Con un puñado de jornadas y 350 filas, un modelo no aprendería nada que no
-capture una suma de percentiles — y no se podría explicar. Los pesos están a la
-vista en `efa/metrics.py` y en la página de metodología, y se pueden discutir.
+**Por qué el índice de chollo mide una sola cosa.**
+Es el percentil de los puntos que proyecta cada jugador por encima de lo normal
+a su precio (`metrics.value_over_price`). Empezó como una suma ponderada de
+cinco percentiles; al auditarla resultó ser la columna de puntos por crédito con
+otro nombre (correlación 0,97) y premiaba a los caros. Una cifra que se explica
+en una frase vale más que una que suena sofisticada.
+
+**Por qué la proyección va calibrada y con horquilla.**
+El modelo abría demasiado el abanico: lo real frente a lo proyectado tiene
+pendiente 0,8, no 1. La recta se ajusta con el propio backtest y se aplica a lo
+publicado; no mejora el error medio, pero quita el exceso de quien más proyecta,
+que es donde se elige al capitán. La horquilla sale de los errores reales por
+nivel de proyección y se prueba hacia delante: la metodología dice cuánto cubre
+de verdad, aunque no llegue al 50 % que promete.
+
+**Por qué el backtest desconfía de sí mismo.**
+Los parámetros se ajustaron mirando las primeras jornadas, así que el error
+medido en ellas es optimista. `PARAMS_FROZEN_ROUND` marca desde cuándo no se ha
+tocado nada y el error posterior se publica aparte. La prueba que cuenta es la
+de las predicciones archivadas antes de cada jornada (`efa/published.py`).
 
 **Por qué se guarda la temporada anterior.**
 Solo hace de referencia en las primeras jornadas, y la web lo indica cuando

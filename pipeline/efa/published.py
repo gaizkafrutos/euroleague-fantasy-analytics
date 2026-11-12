@@ -214,6 +214,24 @@ def evaluate_round(
     budget: float = ROSTER_BUDGET,
 ) -> dict[str, Any] | None:
     """Lo publicado antes de una jornada frente a lo que pasó en ella."""
+    result = _evaluate_round(prediction, gamelog, games, history, coach_log, budget=budget)
+    if result:
+        # Las filas por jugador solo sirven para el remuestreo de todas las
+        # jornadas juntas (`evaluate_published`): fuera de ahí no se devuelven.
+        result.pop("_rows", None)
+    return result
+
+
+def _evaluate_round(
+    prediction: dict[str, Any],
+    gamelog: pd.DataFrame,
+    games: list[dict[str, Any]],
+    history: pd.DataFrame | None = None,
+    coach_log: pd.DataFrame | None = None,
+    *,
+    budget: float = ROSTER_BUDGET,
+) -> dict[str, Any] | None:
+    """`evaluate_round` con las filas por jugador en `_rows`."""
     number = int(prediction["round"])
     in_round = [g for g in games if int(g.get("round") or 0) == number]
     if not in_round or not all(g.get("played") for g in in_round):
@@ -333,7 +351,7 @@ def evaluate_published(
     for path in sorted(PREDICTIONS_DIR.glob("R*.json")):
         try:
             prediction = json.loads(path.read_text(encoding="utf-8"))
-            result = evaluate_round(prediction, gamelog, games, history, coach_log)
+            result = _evaluate_round(prediction, gamelog, games, history, coach_log)
         except (OSError, ValueError, KeyError) as exc:
             log.warning("No se pudo evaluar %s: %s", path.name, exc)
             continue
