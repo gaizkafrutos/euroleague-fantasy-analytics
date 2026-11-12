@@ -10,8 +10,13 @@ export default function PriceNotice() {
   const round = fresh.round ? `la J${fresh.round}` : "la jornada";
   // "Estaba cerrada" solo si se habían jugado todos sus partidos: con dos de
   // diez la web lo decía igual.
+  // La jornada vigente es la primera con partidos por jugar: si es la misma de
+  // la que habla el aviso, sigue en juego. Sirve también con datos generados
+  // antes de que el pipeline distinguiera los dos casos.
   const open =
-    fresh.reason === "jornada en juego" || fresh.reason === "captura con la jornada a medias";
+    fresh.reason === "jornada en juego" ||
+    fresh.reason === "captura con la jornada a medias" ||
+    (fresh.round !== null && fresh.round === meta.currentRound);
   const progress =
     typeof fresh.roundPlayed === "number" && typeof fresh.roundGames === "number" && fresh.roundPlayed < fresh.roundGames
       ? ` (${fresh.roundPlayed} de ${fresh.roundGames} partidos)`
