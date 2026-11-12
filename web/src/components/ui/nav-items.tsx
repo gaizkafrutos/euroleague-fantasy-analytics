@@ -1,14 +1,12 @@
-/** Las cuatro secciones, en un solo sitio: las usan la cabecera y la barra
- *  inferior del móvil, y tienen que decir exactamente lo mismo. */
+/** Las secciones, en un solo sitio: las usan la cabecera y la barra inferior
+ *  del móvil, y tienen que decir exactamente lo mismo. */
 
 export interface NavItem {
   href: string;
   label: string;
   /** Etiqueta corta para la barra del móvil, donde no cabe "Metodología". */
   short: string;
-  icon: "market" | "squad" | "compare" | "teams" | "method";
-  /** Solo en la cabecera de escritorio. */
-  wideOnly?: boolean;
+  icon: "market" | "squad" | "compare" | "teams" | "method" | "accuracy";
 }
 
 export const NAV_ITEMS: NavItem[] = [
@@ -18,7 +16,9 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "/comparar", label: "Comparar", short: "Comparar", icon: "compare" },
   { href: "/equipos", label: "Equipos", short: "Equipos", icon: "teams" },
   { href: "/metodologia", label: "Metodología", short: "Método", icon: "method" },
-  { href: "/acierta", label: "Acierto", short: "Acierto", icon: "method", wideOnly: true },
+  // Lo publicado frente a lo que pasó. En el móvil solo se llegaba desde el
+  // pie de página, y es la prueba de que las cifras de la web valen algo.
+  { href: "/acierta", label: "Acierto", short: "Acierto", icon: "accuracy" },
 ];
 
 export function NavIcon({ name }: { name: NavItem["icon"] }) {
@@ -57,6 +57,13 @@ export function NavIcon({ name }: { name: NavItem["icon"] }) {
         <>
           <path d="M12 3.2 19 6v5.4c0 4.1-2.8 7.5-7 9.4-4.2-1.9-7-5.3-7-9.4V6z" />
           <path d="M9.4 12.1l1.8 1.8 3.4-3.6" />
+        </>
+      ) : null}
+      {name === "accuracy" ? (
+        <>
+          <circle cx="12" cy="12" r="8.4" />
+          <circle cx="12" cy="12" r="4.2" />
+          <path d="M12 12h.01" />
         </>
       ) : null}
       {name === "method" ? (

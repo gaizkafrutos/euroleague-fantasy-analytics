@@ -704,7 +704,9 @@ table.data td.num,
     z-index: 50;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    /* minmax(0, …): con seis pestañas, una etiqueta larga no puede ensanchar su
+       columna (ni la página). */
+    grid-auto-columns: minmax(0, 1fr);
     /* Opaca del todo: con cualquier transparencia, el contenido que pasa por
        debajo se lee a través de los iconos y la barra deja de parecer una
        barra. Aquí la legibilidad gana al efecto. */
@@ -722,11 +724,12 @@ table.data td.num,
     justify-content: center;
     gap: 4px;
     min-height: 54px;
-    padding: 8px 4px;
+    padding: 8px 2px;
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--ink-muted);
     -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
   }
 
   .tabbar-item svg {
@@ -2824,6 +2827,16 @@ table.data th.num {
 
   .tabbar-item {
     font-size: 0.75rem;
+  }
+}
+
+/* Por debajo de 360 px (iPhone SE de primera generación, 320 px) seis
+   etiquetas a 12 px se pisan: "Comparar" mide 57 px y la columna, 53. Es la
+   única excepción al mínimo de 12 px, y solo en esas pantallas. */
+@media (max-width: 359px) {
+  .tabbar-item {
+    font-size: 0.6875rem;
+    letter-spacing: -0.01em;
   }
 }
 
