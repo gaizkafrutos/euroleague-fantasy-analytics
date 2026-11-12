@@ -5797,6 +5797,16 @@ a.eq-grp-name:hover {
 .seq-4 { --seq: var(--seq-4); --seq-ink: var(--seq-ink-4); }
 .seq-5 { --seq: var(--seq-5); --seq-ink: var(--seq-ink-5); }
 
+/* La misma pieza con escala divergente, para medidas con signo ("concede un
+   12 % más que la media" o "un 25 % menos"): pizarra = por debajo, gris = en
+   la media, naranja = por encima. Con la rampa de un solo tono, un −25 % y un
+   0 % solo se distinguían por lo claro del naranja. */
+.dv-1 { --seq: var(--div-m2); --seq-ink: var(--div-ink-m2); }
+.dv-2 { --seq: var(--div-m1); --seq-ink: var(--ink); }
+.dv-3 { --seq: var(--div-0); --seq-ink: var(--ink); }
+.dv-4 { --seq: var(--div-p1); --seq-ink: var(--ink); }
+.dv-5 { --seq: var(--div-p2); --seq-ink: var(--div-ink-p2); }
+
 /* Encabezado de tarjeta como h2 real (antes eran div): mismo aspecto. */
 h2.card-title {
   margin: 0 0 6px;

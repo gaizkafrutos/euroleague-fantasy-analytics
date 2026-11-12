@@ -40,6 +40,8 @@ export interface CompareRow {
   difficulty: number | null;
   next: NextGame | null;
   bargainScore: number | null;
+  fpFloor: number | null;
+  fpCeiling: number | null;
   availability: string | null;
   out: boolean;
 }
@@ -160,6 +162,7 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
       },
       {
         label: "Índice de chollo",
+        title: "En qué percentil del mercado cae lo que proyecta por encima de lo normal a su precio",
         value: (r) => r.bargainScore,
         show: (r) => num(r.bargainScore, 0),
         better: "high",
@@ -188,9 +191,14 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Regularidad",
+        label: "Suele hacer",
+        title:
+          "Entre qué cifras ha caído la mitad de sus partidos. Se marca al más regular: el de menor dispersión para su media.",
         value: (r) => r.consistency,
-        show: (r) => (r.consistency === null ? "—" : percent(r.consistency)),
+        show: (r) =>
+          r.consistency === null || r.fpFloor === null || r.fpCeiling === null
+            ? "—"
+            : `${num(r.fpFloor, 0)}–${num(r.fpCeiling, 0)}`,
         better: "high",
         playersOnly: true,
       },

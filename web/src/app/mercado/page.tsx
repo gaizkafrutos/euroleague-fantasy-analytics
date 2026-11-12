@@ -174,7 +174,12 @@ export default function MercadoPage() {
         <div className="grid grid-3 signals">
           <RankCard
             title="Mejores chollos"
-            note="Índice compuesto: valor por crédito, proyección, regularidad, rol y probabilidad de subir."
+            note="Los que más proyectan por encima de lo normal a su precio. El número es su percentil en el mercado."
+            detail={(player) =>
+              typeof player.valueOverPrice === "number"
+                ? `${signedNum(player.valueOverPrice)} pts sobre su precio`
+                : ""
+            }
             players={topBargains}
             render={(player) => num(player.bargainScore, 0)}
           />
@@ -205,7 +210,7 @@ export default function MercadoPage() {
             note={
               byCertainty
                 ? "La horquilla más estrecha para lo que proyectan. Sin tres jornadas aún no hay regularidad propia."
-                : "Menor dispersión en lo que ya han puntuado. Lo que se busca en un titular indiscutible."
+                : "Los que menos se mueven de su media. La cifra es entre qué puntos cae la mitad de sus partidos."
             }
             players={mostConsistent}
             render={(player) =>
@@ -213,7 +218,14 @@ export default function MercadoPage() {
                 ? player.outlook
                   ? `${num(player.outlook.floor, 0)}–${num(player.outlook.ceiling, 0)}`
                   : "—"
-                : percent(player.perf.consistency)
+                : player.perf.fpFloor !== null && player.perf.fpCeiling !== null
+                  ? `${num(player.perf.fpFloor, 0)}–${num(player.perf.fpCeiling, 0)}`
+                  : percent(player.perf.consistency)
+            }
+            detail={
+              byCertainty
+                ? undefined
+                : (player) => `media ${num(player.perf.fpAvg)} · la mitad de sus partidos`
             }
           />
         </div>

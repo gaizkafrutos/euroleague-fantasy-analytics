@@ -246,9 +246,18 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                 />
               ) : (
                 <BandItem
-                  label="Regularidad"
-                  value={(perf.gamesPlayed ?? 0) >= 3 ? percent(perf.consistency) : "—"}
-                  note={(perf.gamesPlayed ?? 0) >= 3 ? pctNote(player, "consistency") : "3+ partidos"}
+                  label="Suele hacer"
+                  value={
+                    (perf.gamesPlayed ?? 0) >= 3 && perf.fpFloor !== null && perf.fpCeiling !== null
+                      ? `${num(perf.fpFloor, 0)}–${num(perf.fpCeiling, 0)}`
+                      : "—"
+                  }
+                  unit={(perf.gamesPlayed ?? 0) >= 3 ? "pts" : undefined}
+                  note={
+                    (perf.gamesPlayed ?? 0) >= 3
+                      ? [pctNote(player, "consistency"), "en regularidad"].filter(Boolean).join(" ")
+                      : "3+ partidos"
+                  }
                 />
               )}
               <BandItem
@@ -454,7 +463,7 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
                       <span className="fixture-side">
                         {index !== null ? (
                           <span
-                            className={`fixture-allowed seq-${sequentialClass(index)}`}
+                            className={`fixture-allowed dv-${sequentialClass(index)}`}
                             title={`Concede ${num(rival?.allowed?.[key] ?? null)} pts fantasy por partido a este puesto`}
                           >
                             {Math.round((index - 1) * 100) === 0
@@ -570,8 +579,13 @@ function ProjectionBreakdown({ player }: { player: Player }) {
   const minutes = player.expectedMinutes ?? null;
   const opp = player.matchup?.opponentFactor ?? null;
   const home = player.matchup?.homeFactor ?? null;
+  // La calibración encoge la cifra hacia la media (ver metodología): va como
+  // un paso más, no escondida dentro de los puntos por minuto.
+  const calibration = player.matchup?.calibration ?? null;
   const rate =
-    ifPlays !== null && minutes && opp && home ? ifPlays / (minutes * opp * home) : null;
+    ifPlays !== null && minutes && opp && home
+      ? ifPlays / (minutes * opp * home * (calibration ?? 1))
+      : null;
   const factor = (value: number | null) =>
     value === null ? "—" : Math.round((value - 1) * 100) === 0 ? "neutro" : `${signed((value - 1) * 100, 0)} %`;
   const source = player.availability?.level ? "según el parte" : "según su historial";
@@ -603,6 +617,9 @@ function ProjectionBreakdown({ player }: { player: Player }) {
         <Row label="Puntos por minuto" value={num(rate, 2)} />
         <Row label={`Rival${next ? ` (${fixtureName(next)})` : ""}`} value={factor(opp)} />
         <Row label={next ? (next.home ? "En casa" : "Fuera") : "Campo"} value={factor(home)} />
+        {calibration !== null ? (
+          <Row label="Calibración (regresión a la media)" value={factor(calibration)} />
+        ) : null}
         <Row label="Si juega" value={ifPlays === null ? "—" : `${num(ifPlays)} pts`} />
         <Row label={`Probabilidad de jugar (${source})`} value={percent(player.playProb ?? null)} />
         <Row label="Proyección (esperada)" value={`${num(player.projectedFp)} pts`} />

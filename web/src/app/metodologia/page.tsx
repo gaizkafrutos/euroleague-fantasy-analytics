@@ -275,10 +275,11 @@ export default function MethodologyPage() {
               Proyección dividida entre precio. Es el ratio que decide casi todo: 18 puntos a
               12 créditos rinden peor que 12 puntos a 7.
             </Definition>
-            <Definition term="Regularidad">
-              Uno menos el coeficiente de variación de lo que ya ha puntuado esta temporada,
-              acotado entre 0 y 1. Un 70% es un jugador que repite; un 30% es una lotería con la
-              misma media. Con menos de tres partidos no se da: con uno es 0 por definición.
+            <Definition term="Regularidad (suele hacer)">
+              Se enseña en puntos: entre qué cifras ha caído la mitad de sus partidos (percentiles
+              25 y 75). Para ordenar a los jugadores se usa uno menos el coeficiente de variación
+              (desviación entre media), que no depende de cuánto puntúe cada uno: de ahí sale el
+              percentil. Con menos de tres partidos no se da.
             </Definition>
             <Definition term="Probabilidad de subir">
               La probabilidad de que juegue y, jugando, puntúe lo bastante para que el precio
@@ -290,8 +291,10 @@ export default function MethodologyPage() {
               los minutos absolutos, que se inflan con las prórrogas.
             </Definition>
             <Definition term="Calendario">
-              Diferencial medio de los tres próximos rivales, con penalización por jugar
-              fuera, normalizado a 0-100. El diferencial de cada club es el de esta temporada.
+              Diferencial medio (por 100 posesiones) de los tres próximos rivales, con
+              penalización por jugar fuera. Se enseña como puesto entre los veinte clubes: 100
+              es el calendario más duro, 0 el más fácil y 50 el del medio. El diferencial de
+              cada club es el de esta temporada.
             </Definition>
             <Definition term="Plan de cambios (Mi equipo)">
               Desde tu plantilla, los fichajes (hasta 4, entrenador incluido, o ilimitados en
@@ -308,8 +311,14 @@ export default function MethodologyPage() {
               valor de mercado.
             </Definition>
             <Definition term="Índice de chollo">
-              40% valor por crédito, 25% proyección, 15% regularidad, 10% tendencia de rol,
-              10% probabilidad de subir. Pesos a la vista y discutibles a propósito.
+              En qué percentil del mercado cae lo que proyecta cada uno <strong>por encima de lo
+              normal a su precio</strong>. «Lo normal» es la recta proyección–precio de los
+              jugadores disponibles: un 95 es alguien que da más puntos de más que el 95 % del
+              mercado. Con las plazas fijas, es la cuenta que hace el presupuesto. Hasta
+              noviembre de 2026 era una suma de cinco percentiles que en la práctica repetía la
+              columna de puntos por crédito y premiaba a los caros; la regularidad, el rol y la
+              probabilidad de subir tienen ahora su propia columna. Los entrenadores se ordenan
+              entre ellos.
             </Definition>
           </dl>
         </article>
@@ -539,6 +548,23 @@ function ProjectionModel() {
             centésimas: rival, campo y minutos recientes se enseñan en la ficha porque entran en la
             cifra, pero lo que de verdad gana a la media es encoger hacia el precio y el puesto
             cuando hay pocos partidos, y el parte de lesiones.
+          </p>
+        ) : null}
+        {current?.calibration ? (
+          <p style={{ margin: 0 }}>
+            <strong>Calibración.</strong> El modelo abre demasiado el abanico: lo real frente a lo
+            proyectado tiene pendiente {num(current.calibration.slope, 2)}, no 1 (
+            {num(current.calibration.n, 0)} partidos). Es regresión a la media sin terminar: a quien
+            proyecta mucho se le pasa y a quien proyecta poco se le queda corto. La cifra que se
+            publica lleva esa recta aplicada (real ≈ {num(current.calibration.intercept, 2)} +{" "}
+            {num(current.calibration.slope, 2)} × proyectado), ajustada en cada captura con el
+            backtest.
+            {current.topBias
+              ? ` En quien proyecta 15 o más (${num(current.topBias.n, 0)} casos), el exceso baja de ${num(current.topBias.raw, 2)} a ${num(current.topBias.calibrated, 2)} puntos, medido hacia delante.`
+              : ""}
+            {current.v2c
+              ? ` El error medio casi no cambia (${num(current.v2c.mae, 2)} frente a ${num(current.v2.mae, 2)}) y el orden de los jugadores, nada: lo que se corrige es la cifra de los candidatos a capitán y el total del once óptimo.`
+              : ""}
           </p>
         ) : null}
         {current?.frozenFromRound ? (

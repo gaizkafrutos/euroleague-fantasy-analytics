@@ -486,10 +486,6 @@ def pending_prices(
     return changed
 
 
-#: Partidos a partir de los cuales hay regularidad propia que enseñar.
-RELIABILITY_MIN_GAMES = 3
-
-
 # La "seguridad de la proyección" (1 − σ/proyección, acotada en 0) se retiró en
 # noviembre de 2026: valía 0 % en 230 de 340 jugadores y un 28 % en el mejor
 # pívot de la liga. No distinguía a nadie. La incertidumbre se enseña con la
@@ -497,28 +493,24 @@ RELIABILITY_MIN_GAMES = 3
 
 
 def _rebuild_bargain(records: list[dict[str, Any]]) -> None:
-    """Recalcula el índice de chollo con la probabilidad de subir ya calculada."""
-    from efa.metrics import bargain_score
+    """Índice de chollo con las cifras finales: la proyección con la
+    disponibilidad dentro y el precio que se paga (el pendiente si lo hay)."""
+    from efa.metrics import bargain_score, value_over_price
 
     frame = pd.DataFrame(
         {
-            "value_projected": [_num(r.get("valueProjected")) for r in records],
             "projected_fp": [_num(r.get("projectedFp")) for r in records],
-            # Con menos de tres partidos la regularidad no existe (con uno es 0
-            # por definición): cuenta como neutra, no como un suspenso.
-            "consistency": [
-                _num((r.get("perf") or {}).get("consistency"))
-                if ((r.get("perf") or {}).get("gamesPlayed") or 0) >= RELIABILITY_MIN_GAMES
-                else None
-                for r in records
-            ],
-            "minutes_share_trend": [_num((r.get("perf") or {}).get("minutesShareTrend")) for r in records],
-            "rise_prob": [_num((r.get("outlook") or {}).get("riseProb")) for r in records],
+            "quotation": [_num(r.get("pricePending")) or _num(r.get("price")) for r in records],
+            "is_coach": [bool(r.get("isCoach")) for r in records],
+            "play_prob": [_num(r.get("playProb")) for r in records],
         }
     )
-    for record, score in zip(records, bargain_score(frame), strict=True):
+    surplus = value_over_price(frame)
+    for record, score, extra in zip(records, bargain_score(frame), surplus, strict=True):
         if record.get("bargainScore") is not None:
             record["bargainScore"] = float(score)
+        # Los puntos de más sobre lo normal a su precio: lo que mide el índice.
+        record["valueOverPrice"] = None if pd.isna(extra) else float(extra)
 
 
 # ---------------------------------------------------------------------------

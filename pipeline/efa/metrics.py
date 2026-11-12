@@ -290,8 +290,9 @@ def schedule_difficulty(
 ) -> pd.DataFrame:
     """Dificultad media de los próximos rivales, por club.
 
-    Escala 0-100 donde 100 = calendario más duro de la liga. Se pondera algo el
-    factor cancha: jugar fuera pesa más.
+    Escala 0-100 por puesto entre los clubes: 100 = el calendario más duro de
+    la liga, 0 = el más fácil, 50 = el del medio. Se pondera algo el factor
+    cancha: jugar fuera pesa más.
 
     Dos números que antes eran el mismo: `horizon` son los partidos con los que
     se CALCULA el índice, y `publish` cuántos se PUBLICAN en `fixtures`. La
@@ -342,9 +343,14 @@ def schedule_difficulty(
         return pd.DataFrame(columns=["club_code", "difficulty", "fixtures"])
 
     frame = pd.DataFrame(rows)
-    low, high = frame["raw_difficulty"].min(), frame["raw_difficulty"].max()
-    span = high - low
-    frame["difficulty"] = ((frame["raw_difficulty"] - low) / span * 100).round(0) if span else 50.0
+    # Puesto entre los clubes, de 0 (el más fácil) a 100 (el más duro). Antes era
+    # un min-max del valor bruto: un solo club con un calendario extremo
+    # apretaba a los otros diecinueve en media escala. El valor bruto (el
+    # diferencial medio de los rivales, con el recargo por jugar fuera) sigue
+    # publicándose aparte.
+    count = len(frame)
+    rank = frame["raw_difficulty"].rank(method="average")
+    frame["difficulty"] = ((rank - 1) / (count - 1) * 100).round(0) if count > 1 else 50.0
     return frame[["club_code", "difficulty", "fixtures", "raw_difficulty"]]
 
 
@@ -550,31 +556,86 @@ def value_metrics(table: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
-def bargain_score(table: pd.DataFrame) -> pd.Series:
-    """Índice compuesto de 'chollo': valor + consistencia + rol al alza + subida.
+#: Jugadores mínimos para ajustar la recta "lo normal a ese precio".
+VALUE_FIT_MIN = 30
+#: Probabilidad de jugar desde la que un jugador cuenta para esa recta: lo
+#: normal a un precio se mide con quien está disponible.
+VALUE_FIT_MIN_PLAY = 0.9
 
-    El último 10 % era la "presión de precio" (residuo de una curva
-    forma~precio). Desde que el modelo de precio se ajusta a la variación real
-    del juego, se usa su probabilidad de subir: responde a la misma pregunta, y
-    mejor. Sin esa columna (antes de la capa avanzada) cuenta como un 50.
 
-    Deliberadamente simple y explicable: cada componente es un percentil, los
-    pesos están a la vista y se pueden discutir. Un modelo opaco aquí no
-    aportaría nada que no aporte esto, y no se podría justificar un fichaje.
+def value_over_price(table: pd.DataFrame) -> pd.Series:
+    """Puntos que proyecta cada uno POR ENCIMA de lo normal a su precio.
+
+    "Lo normal" es la recta proyección ~ precio ajustada con los jugadores
+    disponibles; los entrenadores van aparte, con la suya (su precio va de 5 a
+    10 y puntúan por el marcador). Es la cuenta que hace el presupuesto: con
+    las plazas fijas, lo que importa no son los puntos por crédito sino cuántos
+    puntos de más te da alguien frente a lo que comprarías con esos créditos.
+
+    `table` necesita `projected_fp` y `quotation`; `is_coach` y `play_prob`
+    son opcionales. Sin muestra para ajustar, devuelve NaN.
     """
-    def percentile(name: str, default: float = 50.0) -> pd.Series:
-        if name not in table.columns:
-            return pd.Series(default, index=table.index, dtype=float)
-        series = pd.to_numeric(table[name], errors="coerce")
-        if series.notna().sum() == 0:
-            return pd.Series(default, index=table.index, dtype=float)
-        return (series.rank(pct=True) * 100).fillna(default)
-
-    score = (
-        0.40 * percentile("value_projected")
-        + 0.25 * percentile("projected_fp")
-        + 0.15 * percentile("consistency")
-        + 0.10 * percentile("minutes_share_trend")
-        + 0.10 * percentile("rise_prob")
+    projection = pd.to_numeric(table.get("projected_fp"), errors="coerce")
+    price = pd.to_numeric(table.get("quotation"), errors="coerce")
+    if projection is None or price is None:
+        return pd.Series(np.nan, index=table.index, dtype=float)
+    coach = (
+        table["is_coach"].fillna(False).astype(bool)
+        if "is_coach" in table.columns
+        else pd.Series(False, index=table.index)
     )
+    play = (
+        pd.to_numeric(table["play_prob"], errors="coerce").fillna(1.0)
+        if "play_prob" in table.columns
+        else pd.Series(1.0, index=table.index)
+    )
+    usable = projection.notna() & price.gt(0)
+    out = pd.Series(np.nan, index=table.index, dtype=float)
+
+    def fit(mask: pd.Series, minimum: int) -> tuple[float, float] | None:
+        if int(mask.sum()) < minimum or price[mask].nunique() < 2:
+            return None
+        slope, intercept = np.polyfit(price[mask].to_numpy(dtype=float), projection[mask].to_numpy(dtype=float), 1)
+        return float(slope), float(intercept)
+
+    players = usable & ~coach
+    line = fit(players & play.ge(VALUE_FIT_MIN_PLAY) & projection.gt(0), VALUE_FIT_MIN) or fit(
+        players & projection.gt(0), VALUE_FIT_MIN
+    )
+    if line:
+        out[players] = projection[players] - (line[0] * price[players] + line[1])
+    coaches = usable & coach
+    coach_line = fit(coaches, 8)
+    if coach_line:
+        out[coaches] = projection[coaches] - (coach_line[0] * price[coaches] + coach_line[1])
+    elif coaches.any():
+        out[coaches] = projection[coaches] - float(projection[coaches].mean())
+    return out.round(2)
+
+
+def bargain_score(table: pd.DataFrame) -> pd.Series:
+    """Índice de chollo: en qué percentil del mercado cae lo que proyecta cada
+    uno por encima de lo normal a su precio (ver `value_over_price`).
+
+    Hasta noviembre de 2026 era una suma de cinco percentiles (40 % puntos por
+    crédito, 25 % proyección, 15 % regularidad, 10 % rol, 10 % probabilidad de
+    subir). En la práctica era la columna de puntos por crédito con otro nombre
+    (correlación 0,97), contaba la proyección dos veces y metía a entrenadores
+    y bajas en el mismo saco. Ahora mide una sola cosa y se puede decir en una
+    frase; la regularidad, el rol y la probabilidad de subir tienen su columna.
+
+    Jugadores y entrenadores se ordenan por separado. Sin precio o sin
+    proyección, 50.
+    """
+    surplus = value_over_price(table)
+    coach = (
+        table["is_coach"].fillna(False).astype(bool)
+        if "is_coach" in table.columns
+        else pd.Series(False, index=table.index)
+    )
+    score = pd.Series(50.0, index=table.index, dtype=float)
+    for mask in (~coach, coach):
+        part = surplus[mask]
+        if part.notna().sum():
+            score[mask] = (part.rank(pct=True) * 100).fillna(50.0)
     return score.round(1)

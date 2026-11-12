@@ -209,19 +209,62 @@ def test_historial_de_precios_calcula_variaciones():
     assert history["snapshots"] == 3
 
 
-def test_indice_de_chollo_entre_cero_y_cien():
-    table = pd.DataFrame(
-        {
-            "value_projected": [0.5, 1.5, 2.5],
-            "projected_fp": [5.0, 12.0, 20.0],
-            "consistency": [0.2, 0.6, 0.9],
-            "minutes_share_trend": [-0.01, 0.0, 0.03],
-            "rise_prob": [0.1, 0.3, 0.6],
-        }
-    )
+def _market(rows):
+    return pd.DataFrame(rows, columns=["projected_fp", "quotation", "is_coach", "play_prob"])
+
+
+def test_indice_de_chollo_mide_puntos_sobre_lo_normal_a_su_precio():
+    from efa.metrics import value_over_price
+
+    # Cuarenta jugadores sobre la recta "un punto por crédito", y tres más.
+    rows = [(float(price), float(price), False, 0.95) for price in range(4, 24)] * 2
+    rows += [
+        (16.0, 10.0, False, 0.95),  # 6 puntos de más a 10 créditos: un chollo
+        (10.0, 16.0, False, 0.95),  # 6 de menos a 16 créditos: caro
+        (0.0, 12.0, False, 0.0),    # de baja: proyecta 0
+    ]
+    table = _market(rows)
+    surplus = value_over_price(table)
+    assert surplus.iloc[40] == pytest.approx(6.0, abs=0.6)
+    assert surplus.iloc[41] == pytest.approx(-6.0, abs=0.6)
     scores = bargain_score(table)
     assert scores.between(0, 100).all()
-    assert scores.iloc[2] > scores.iloc[0]
+    assert scores.iloc[40] == scores.max()
+    # El de baja queda al fondo: proyecta 0 y lo normal a 12 créditos es 12.
+    assert scores.iloc[42] == scores.min()
+    # Quien está sobre la recta no tiene puntos de más, cueste 4 o 23: no es
+    # "puntos por crédito" ni premia al caro por serlo.
+    assert abs(surplus.iloc[0]) < 0.6 and abs(surplus.iloc[19]) < 0.6
+
+
+def test_los_entrenadores_se_ordenan_entre_ellos():
+    rows = [(float(price), float(price), False, 0.95) for price in range(4, 24)] * 2
+    rows += [(float(points), 8.0, True, 1.0) for points in (-6, -2, 0, 3, 5, 8, 10, 12, 15)]
+    scores = bargain_score(_market(rows))
+    coaches = scores.iloc[40:]
+    assert coaches.is_monotonic_increasing
+    assert coaches.iloc[-1] == 100.0
+
+
+def test_sin_muestra_el_indice_es_neutro():
+    scores = bargain_score(_market([(10.0, 8.0, False, 0.95), (5.0, 6.0, False, 0.95)]))
+    assert (scores == 50.0).all()
+
+
+def test_dificultad_de_calendario_es_el_puesto_entre_clubes():
+    from efa.metrics import schedule_difficulty
+
+    def fixture(code, rnd, local, road):
+        return {"gameCode": code, "round": rnd, "utcDate": f"2026-10-{rnd:02d}T18:00:00Z", "played": False,
+                "local": {"club": {"code": local}}, "road": {"club": {"code": road}}}
+
+    strength = pd.DataFrame({"club_code": ["A", "B", "C", "D"], "net_rating": [30.0, 5.0, 1.0, -4.0]})
+    # A recibe a B y C recibe a D: B visita al mejor (30 + 2,5 por jugar fuera).
+    games = [fixture(1, 5, "A", "B"), fixture(2, 5, "C", "D")]
+    table = schedule_difficulty(games, strength, from_round=5).set_index("club_code")
+    # Un rival fuera de escala (A, +30) ya no aplasta a los demás contra el cero:
+    # con el min-max de antes salían 0, 21, 25 y 100.
+    assert table["difficulty"].to_dict() == {"C": 0.0, "D": 33.0, "A": 67.0, "B": 100.0}
 
 
 def _row(**overrides):

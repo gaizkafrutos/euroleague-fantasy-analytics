@@ -61,7 +61,7 @@ from efa.metrics import (
     value_metrics,
 )
 from efa.optimizer import Candidate, normalize_position, optimize
-from efa.projection import production_projection
+from efa.projection import calibrate, production_projection
 from efa.published import archive_predictions
 from efa.thumbs import apply_thumbs
 
@@ -428,8 +428,9 @@ def _apply_v2(table: pd.DataFrame, v2: pd.DataFrame) -> pd.DataFrame:
     out["projected_if_plays"] = cond.where(usable).round(2)
     out["play_share"] = share.where(usable).round(3)
     out["projected_fp"] = (cond * share).where(usable, out["projected_fp"]).clip(lower=0).round(2)
-    for column in ("v2_minutes", "v2_rate", "v2_opp", "v2_home"):
-        out[column] = out[column].where(usable)
+    for column in ("v2_minutes", "v2_rate", "v2_opp", "v2_home", "v2_cal"):
+        if column in out.columns:
+            out[column] = out[column].where(usable)
     return out
 
 
@@ -517,6 +518,8 @@ def player_records(
                 "matchup": {
                     "opponentFactor": row.get("v2_opp"),
                     "homeFactor": row.get("v2_home"),
+                    # Lo que la calibración multiplica a la cifra "si juega".
+                    "calibration": row.get("v2_cal"),
                 },
                 "valuePerCredit": row.get("value_per_credit"),
                 "valueProjected": row.get("value_projected"),
@@ -610,6 +613,15 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
             player_positions([reference, prior_reference], pre[["person_code", "position"]].itertuples(index=False)),
         )
 
+    # Calibración del último backtest: encoge la proyección "si juega" hacia la
+    # media lo que los datos dicen que se pasa (ver projection.fit_calibration).
+    calibration = _load_calibration() if v2 is not None and not use_prior else None
+    if calibration and v2 is not None and not v2.empty:
+        raw = pd.to_numeric(v2["v2_projection"], errors="coerce")
+        v2["v2_projection"] = calibrate(raw, calibration).round(2)
+        # Cuánto cambia la cifra, para que la ficha lo enseñe como un paso más.
+        v2["v2_cal"] = (v2["v2_projection"] / raw).where(raw > 0).round(3)
+
     table = build_player_table(
         market,
         crosswalk,
@@ -680,6 +692,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         "coachGames": int(len(coach_log)),
         "matchModel": {"homeAdvantage": round(match.home, 2), "marginSd": round(match.sd, 2)},
         "modelBacktest": _load_backtest(),
+        "projectionCalibration": calibration,
         "formulaCheck": _load_formula_check(),
         "schedule": schedule_meta,
         "injuries": injuries_meta,
@@ -993,6 +1006,20 @@ def _apply_coach_match(
         record["playProb"] = 1.0
         applied += 1
     return applied
+
+
+def _load_calibration() -> dict[str, float] | None:
+    """La recta de calibración del último `efa backtest`, si la hay."""
+    from efa.config import PROCESSED_DIR
+
+    try:
+        data = json.loads((PROCESSED_DIR / "projection_backtest.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    calibration = (data.get("current") or {}).get("calibration")
+    if not isinstance(calibration, dict) or "slope" not in calibration or "intercept" not in calibration:
+        return None
+    return {key: float(calibration[key]) for key in ("slope", "intercept", "n") if key in calibration}
 
 
 def _load_formula_check() -> dict[str, Any] | None:

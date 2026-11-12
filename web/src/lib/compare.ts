@@ -43,6 +43,8 @@ export function compareRows(): CompareRow[] {
     lastFp: player.perf.lastFp,
     form: player.perf.form,
     consistency: player.perf.consistency,
+    fpFloor: player.perf.fpFloor ?? null,
+    fpCeiling: player.perf.fpCeiling ?? null,
     gamesPlayed: player.perf.gamesPlayed,
     startedRate: player.perf.startedRate,
     ptsAvg: player.perf.ptsAvg ?? null,

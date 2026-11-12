@@ -77,7 +77,7 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
         <div className="fxm-legend" aria-hidden>
           <span>concede menos</span>
           {[1, 2, 3, 4, 5].map((step) => (
-            <i key={step} className={`seq-${step}`} />
+            <i key={step} className={`dv-${step}`} />
           ))}
           <span>concede más</span>
           <span className="fxm-legend-away">@ = fuera</span>
@@ -115,7 +115,7 @@ export default function FixtureMatrix({ teams, league }: { teams: Team[]; league
                 {cells.map(({ round, fixture, opponent, index, value }) => (
                   <td
                     key={round}
-                    className={fixture ? `seq-${sequentialClass(index)}` : "fxm-empty"}
+                    className={fixture ? `dv-${sequentialClass(index)}` : "fxm-empty"}
                     title={
                       fixture && opponent
                         ? `J${round} · ${fixture.home ? "en casa contra" : "en"} ${opponent.short ?? opponent.code}: concede ${num(value)} pts fantasy${pos === "all" ? "" : ` a ${word}`} por partido (${index ? `${Math.round((index - 1) * 100) >= 0 ? "+" : ""}${Math.round((index - 1) * 100)} %` : "—"} sobre la media) · ${dateShort(fixture.date)}`

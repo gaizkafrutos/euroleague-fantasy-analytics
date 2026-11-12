@@ -150,11 +150,18 @@ export interface Player {
   /** Minutos esperados si juega. */
   expectedMinutes?: number | null;
   /** Ajustes de contexto de la proyección: rival (1 = neutro) y campo. */
-  matchup?: { opponentFactor: number | null; homeFactor: number | null } | null;
+  matchup?: {
+    opponentFactor: number | null;
+    homeFactor: number | null;
+    /** Lo que la calibración multiplica a la cifra "si juega" (ver metodología). */
+    calibration?: number | null;
+  } | null;
   valuePerCredit: number | null;
   valueProjected: number | null;
   valueMarket: number | null;
   bargainScore: number | null;
+  /** Puntos que proyecta por encima de lo normal a su precio: lo que mide el índice. */
+  valueOverPrice?: number | null;
   schedule: { difficulty: number | null; next?: NextGame | null };
   match: { method: string | null; confidence: number | null };
   /** Qué pasa con su precio si rinde lo proyectado. Null en entrenadores sin
@@ -516,6 +523,12 @@ export interface ModelBacktest {
     /** Las horquillas, probadas hacia delante: parte de resultados dentro del
      *  p25–p75 (tendría que ser 0,5) y por encima del p90 (0,1). */
     bandCheck?: { n: number; inside: number; aboveP90: number };
+    /** El modelo con la calibración aplicada hacia delante. */
+    v2c?: BacktestScore;
+    /** Recta real ~ proyectado con la que se calibra la proyección publicada. */
+    calibration?: { slope: number; intercept: number; n: number };
+    /** Sesgo (proyectado − real) de quien proyecta 15 o más, sin y con calibración. */
+    topBias?: { n: number; raw: number; calibrated: number };
   };
   coach?: { code: string; n: number; model: number; mean: number | null };
   /** Lo que publicó la web antes de cada jornada frente a lo que pasó. */

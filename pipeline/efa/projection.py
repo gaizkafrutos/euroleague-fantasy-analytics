@@ -80,7 +80,22 @@ PARAMS = Params()
 #: el modelo ya "había visto" esos resultados. Desde esta jornada no se ha
 #: tocado nada, y el backtest la publica aparte (`afterFreeze`). Si se vuelve a
 #: ajustar un parámetro, hay que mover este número a la jornada siguiente.
-PARAMS_FROZEN_ROUND = 11
+#: (Era 11; pasó a 12 al añadir la calibración con la J11 ya empezada.)
+PARAMS_FROZEN_ROUND = 12
+
+#: Calibración de la proyección "si juega". En J2–J10 de la 2026-27, lo real
+#: frente a lo proyectado tiene pendiente 0,80 (estable desde la J5): el modelo
+#: abre demasiado el abanico. A quien proyectaba 15–20 puntos se le pasaba en
+#: 0,9 y a quien proyectaba más de 20, en 4,2; a quien proyectaba menos de 5 se
+#: le quedaba corto en 0,8. Es regresión a la media sin terminar. La recta se
+#: ajusta con el backtest (cada jornada, solo con las anteriores) y se aplica a
+#: la proyección publicada. No cambia el orden de los jugadores ni apenas el
+#: error medio (6,06 frente a 6,05 hacia delante): quita el sesgo de arriba,
+#: que es donde se elige al capitán.
+CALIBRATION_MIN_ROWS = 500
+#: Fuera de este rango la recta no se aplica: por encima de 1 no habría nada
+#: que encoger, y por debajo de 0,6 algo más grave está pasando.
+CALIBRATION_SLOPE_RANGE = (0.6, 1.0)
 
 #: Tramos de proyección para las horquillas, y filas mínimas para fiarse.
 BAND_BINS = 5
@@ -259,6 +274,36 @@ def project(
 
 
 # ---------------------------------------------------------------------------
+# Calibración
+# ---------------------------------------------------------------------------
+def fit_calibration(rows: pd.DataFrame | None, *, min_rows: int = CALIBRATION_MIN_ROWS) -> dict[str, float] | None:
+    """Recta real ~ proyectado sobre las filas del backtest (`v2`, `y`).
+
+    Devuelve `{"slope", "intercept", "n"}` o None si no hay muestra o la
+    pendiente se sale de CALIBRATION_SLOPE_RANGE.
+    """
+    if rows is None or rows.empty or not {"v2", "y"} <= set(rows.columns):
+        return None
+    data = rows.dropna(subset=["v2", "y"])
+    if len(data) < min_rows or data["v2"].nunique() < 2:
+        return None
+    slope, intercept = np.polyfit(data["v2"].to_numpy(dtype=float), data["y"].to_numpy(dtype=float), 1)
+    low, high = CALIBRATION_SLOPE_RANGE
+    if not low <= slope <= high:
+        return None
+    return {"slope": round(float(slope), 4), "intercept": round(float(intercept), 3), "n": int(len(data))}
+
+
+def calibrate(value: Any, calibration: dict[str, float] | None) -> Any:
+    """Aplica la recta de calibración a una proyección (o a una serie). Sin
+    calibración devuelve lo mismo. Nunca baja de cero."""
+    if not calibration:
+        return value
+    out = calibration["intercept"] + calibration["slope"] * value
+    return out.clip(lower=0) if hasattr(out, "clip") else max(0.0, float(out))
+
+
+# ---------------------------------------------------------------------------
 # Horquillas
 # ---------------------------------------------------------------------------
 def residual_bands(rows: pd.DataFrame, *, bins: int = BAND_BINS, min_rows: int = BAND_MIN_ROWS) -> list[dict[str, float]]:
@@ -398,10 +443,14 @@ def backtest_rows(
                 cache[r] = legacy
         games = history[history["played"]].groupby("person_code").size()
         mean = history[history["played"]].groupby("person_code")["fantasy_points"].mean()
+        # Calibrada con lo que se sabía antes de esta jornada (las filas de las
+        # jornadas anteriores); sin muestra todavía, la proyección tal cual.
+        earlier = fit_calibration(pd.concat(rows, ignore_index=True)) if rows else None
         frame = pd.DataFrame({
             "round": r,
             "y": targets["fantasy_points"].to_numpy(),
             "v2": v2["projection"].to_numpy(),
+            "v2c": calibrate(v2["projection"], earlier).to_numpy(),
             "legacy": legacy.to_numpy(),
             "mean": targets["person_code"].map(mean).to_numpy(),
             "prior_mean": targets["person_code"].map(prior_mean).to_numpy(),
@@ -441,7 +490,7 @@ def backtest(
             return {"n": 0}
     # Se comparan los modelos que tienen predicción en al menos la mitad de los
     # partidos, sobre los partidos en los que TODOS la tienen.
-    models = [c for c in ("v2", "legacy", "mean", "prior_mean") if data[c].notna().mean() >= 0.5]
+    models = [c for c in ("v2", "v2c", "legacy", "mean", "prior_mean") if data[c].notna().mean() >= 0.5]
     common = data.dropna(subset=models)
     if common.empty:
         return {"n": 0}
@@ -465,10 +514,23 @@ def backtest(
     result["residualQuantiles"] = {
         q: round(float(np.quantile(resid, q)), 2) for q in (0.1, 0.25, 0.5, 0.75, 0.9)
     }
+    # Calibración que usará la próxima proyección (con todas las jornadas) y el
+    # sesgo de quien proyecta 15 o más, antes y después de calibrar hacia delante.
+    calibration = fit_calibration(every_round)
+    if calibration:
+        result["calibration"] = calibration
+    top = every_round[every_round["v2"] >= 15].dropna(subset=["v2", "v2c", "y"])
+    if len(top) >= 30:
+        result["topBias"] = {
+            "n": int(len(top)),
+            "raw": round(float((top["v2"] - top["y"]).mean()), 2),
+            "calibrated": round(float((top["v2c"] - top["y"]).mean()), 2),
+        }
     # Horquillas por nivel de proyección, con todas las jornadas, y su prueba
-    # hacia delante.
-    result["bands"] = residual_bands(every_round)
-    check = band_check(every_round)
+    # hacia delante. Sobre la proyección calibrada, que es a la que se suman.
+    as_published = every_round.assign(v2=every_round["v2c"]) if calibration else every_round
+    result["bands"] = residual_bands(as_published)
+    check = band_check(as_published)
     if check:
         result["bandCheck"] = check
     return result
@@ -666,7 +728,7 @@ def _honesty_checks(log_now, positions, references, replace) -> dict[str, Any]:
         log_now, positions, min_games=0, references=references, cache=cache, from_round=PARAMS_FROZEN_ROUND
     )
     if after.get("n"):
-        out["afterFreeze"] = {key: after[key] for key in ("n", "rounds", "v2", "mean") if key in after}
+        out["afterFreeze"] = {key: after[key] for key in ("n", "rounds", "v2", "v2c", "mean") if key in after}
     return out
 
 
