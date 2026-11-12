@@ -103,15 +103,15 @@ const METRICS: Array<{ group: string; rows: Metric[] }> = [
         playersOnly: true,
       },
       {
-        label: "Rango habitual",
-        title: "Entre qué cifras cae la mitad de las veces (percentiles 25 y 75)",
+        label: "Rango si juega",
+        title: "Entre qué cifras cae la mitad de las veces que juega (percentiles 25 y 75)",
         value: (r) => r.floor,
         show: (r) => (r.floor === null ? "—" : `${num(r.floor)}–${num(r.ceiling)}`),
         better: "high",
       },
       {
         label: "Techo",
-        title: "Lo que hace en una buena noche: lo que importa para el capitán",
+        title: "Lo que hace en una buena noche, una de cada diez que juega: lo que importa para el capitán",
         value: (r) => r.p90,
         show: (r) => num(r.p90),
         better: "high",

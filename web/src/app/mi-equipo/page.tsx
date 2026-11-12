@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import SquadConsole from "@/components/team/SquadConsole";
 import { lineup, meta, players, pricedPlayers, rosterPlayers } from "@/lib/data";
-import { roundInPlay } from "@/lib/projection";
+import { optimalTrack, roundInPlay } from "@/lib/projection";
 import type { Player } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -30,6 +30,7 @@ export default function TeamPage() {
       : null;
 
   const inPlay = roundInPlay(meta.schedule);
+  const track = optimalTrack(meta.modelBacktest?.published);
 
   return (
     <section className="section shell">
@@ -39,6 +40,12 @@ export default function TeamPage() {
           Monta la plantilla para la jornada {meta.currentRound}: la consola la coloca, calcula lo
           que puntúa y te dice qué fichaje cabe.
         </p>
+        {track ? (
+          <p className="card-note round-note">
+            El total es una media, y la del óptimo sale algo alta: en {track.rounds} jornadas hizo{" "}
+            {Math.round(track.real)} puntos de media donde proyectaba {Math.round(track.projected)}.
+          </p>
+        ) : null}
         {inPlay ? (
           <p className="card-note round-note">
             La jornada {meta.currentRound} está en juego ({inPlay.played} de {inPlay.games}{" "}

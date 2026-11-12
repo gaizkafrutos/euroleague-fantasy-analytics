@@ -1590,6 +1590,24 @@ table.data th.num {
   grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
 }
 
+/* "¿De dónde viene la ventaja?": texto corrido, a ancho de lectura. */
+.ac-fair {
+  margin-top: 28px;
+}
+
+.ac-fair h2 {
+  margin: 0 0 6px;
+}
+
+.ac-fair > .card-note {
+  margin: 0 0 8px;
+  max-width: 76ch;
+}
+
+.ac-fair > .card-note:last-child {
+  margin-bottom: 0;
+}
+
 .ac-chart h2 {
   margin: 0;
 }

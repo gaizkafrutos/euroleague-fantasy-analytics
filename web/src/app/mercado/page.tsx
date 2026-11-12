@@ -13,7 +13,7 @@ import { BarCell, PlayerCell, prettyName } from "@/components/ui/primitives";
 import detailsJson from "@/data/details.json";
 import { getPlayer, getTeam, lineup, meta, pricedPlayers, rosterPlayers, teams } from "@/lib/data";
 import { checkedLater, credits, dateTime, displayName, num, percent, positionLabel, positionShort } from "@/lib/format";
-import { roundInPlay } from "@/lib/projection";
+import { optimalTrack, roundInPlay } from "@/lib/projection";
 import { isSignable } from "@/lib/squad";
 import type { Player } from "@/lib/types";
 import Explain from "@/components/ui/Explain";
@@ -47,6 +47,7 @@ export default function MercadoPage() {
   // hay "últimas cinco", y exigirlas dejaba las tres listas vacías hasta
   // octubre. Hasta la J5, el rol se mide contra la temporada anterior.
   const inPlay = roundInPlay(meta.schedule);
+  const track = optimalTrack(meta.modelBacktest?.published);
   const roundsPlayed = Math.max(meta.currentRound - 1, 0);
   const early = roundsPlayed < 5;
   const minGames = Math.min(5, Math.max(1, roundsPlayed));
@@ -87,11 +88,16 @@ export default function MercadoPage() {
         .sort((a, b) => (b.perf.minutesShareTrend ?? 0) - (a.perf.minutesShareTrend ?? 0))
         .slice(0, 5);
 
-  const certainty = (player: Player) => player.outlook?.certainty ?? 0;
+  // Primeras jornadas, sin regularidad propia todavía: quien tiene la horquilla
+  // más estrecha para lo que proyecta.
+  const spread = (player: Player) =>
+    player.outlook && (player.projectedFp ?? 0) > 0
+      ? (player.outlook.ceiling - player.outlook.floor) / (player.projectedFp as number)
+      : Number.POSITIVE_INFINITY;
   const mostConsistent = byCertainty
     ? [...universe]
         .filter((player) => (player.projectedFp ?? 0) >= 10 && isSignable(player))
-        .sort((a, b) => certainty(b) - certainty(a))
+        .sort((a, b) => spread(a) - spread(b))
         .slice(0, 5)
     : [...universe]
         .filter(
@@ -198,11 +204,17 @@ export default function MercadoPage() {
             title={byCertainty ? "Proyección más segura" : "Los más regulares"}
             note={
               byCertainty
-                ? "Menor margen de error en lo que se espera de ellos. Sin tres jornadas aún no hay regularidad propia."
+                ? "La horquilla más estrecha para lo que proyectan. Sin tres jornadas aún no hay regularidad propia."
                 : "Menor dispersión en lo que ya han puntuado. Lo que se busca en un titular indiscutible."
             }
             players={mostConsistent}
-            render={(player) => percent(byCertainty ? certainty(player) : player.perf.consistency)}
+            render={(player) =>
+              byCertainty
+                ? player.outlook
+                  ? `${num(player.outlook.floor, 0)}–${num(player.outlook.ceiling, 0)}`
+                  : "—"
+                : percent(player.perf.consistency)
+            }
           />
         </div>
       </section>
@@ -219,6 +231,14 @@ export default function MercadoPage() {
                   ? ` Con la jornada ${meta.currentRound} en juego (${inPlay.played} de ${inPlay.games} partidos), quien ya ha jugado cuenta con su partido de la jornada ${meta.currentRound + 1}.`
                   : ""}
               </p>
+              {track ? (
+                <p className="card-note" style={{ margin: "6px 0 0", maxWidth: "62ch" }}>
+                  Ojo con el total: en las {track.rounds} jornadas evaluadas, el óptimo publicado hizo{" "}
+                  {num(track.real, 0)} puntos de media donde proyectaba {num(track.projected, 0)}. Al
+                  elegir a los que más proyectan se eligen también los errores a favor.{" "}
+                  <Link href="/acierta">Jornada a jornada</Link>.
+                </p>
+              ) : null}
               <Explain summary="Cómo se calcula">
                 4 bases, 4 aleros, 2 pívots, un entrenador y máximo 6 del mismo club. Resuelto por
                 programación entera, así que es el óptimo, no una aproximación.

@@ -34,6 +34,22 @@ export function turnLabel(next: NextGame | null | undefined, long = false): stri
   return parts.length ? parts.join(long ? ", " : " · ") : null;
 }
 
+/** Lo que ha hecho el once óptimo publicado frente a lo que proyectaba, de
+ *  media. El óptimo elige a quien más proyecta, y con eso elige también los
+ *  errores a favor: su total sale siempre algo por encima de lo que luego hace. */
+export function optimalTrack(
+  published: { rounds: Array<{ lineup?: { projected: number; real: number } }> } | null | undefined,
+): { rounds: number; projected: number; real: number } | null {
+  const lineups = (published?.rounds ?? []).flatMap((round) => (round.lineup ? [round.lineup] : []));
+  if (lineups.length < 3) return null;
+  const mean = (values: number[]) => values.reduce((a, b) => a + b, 0) / values.length;
+  return {
+    rounds: lineups.length,
+    projected: mean(lineups.map((lineup) => lineup.projected)),
+    real: mean(lineups.map((lineup) => lineup.real)),
+  };
+}
+
 /** Jornada en juego: se ha jugado algún partido y quedan otros. */
 export function roundInPlay(
   schedule: { roundGames?: number; roundPlayed?: number } | null | undefined,

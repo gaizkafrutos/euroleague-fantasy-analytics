@@ -624,6 +624,16 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
     )
 
     strength = team_strength(games, prior=team_strength(prior_games))
+    # Un solo diferencial por club. Había dos: el de puntos por partido (el que
+    # movía el calendario) y el de puntos por 100 posesiones (el de la página de
+    # Equipos): Efes era −2,9 en un sitio y −4,5 en otro. Manda el de 100
+    # posesiones, que no premia a quien juega rápido. En las primeras jornadas,
+    # mientras la referencia es el año pasado, se queda el de antes.
+    if not use_prior and not strength.empty:
+        per100 = team_box_stats(season_boxscores(SEASON_CODE), games)
+        if not per100.empty:
+            by_club = dict(zip(per100["club_code"], per100["net_rating"], strict=False))
+            strength["net_rating"] = strength["club_code"].map(by_club).fillna(strength["net_rating"])
     difficulty = schedule_difficulty(games, strength, from_round=round_now, horizon=3)
 
     clubs_index = {club["code"]: club for club in reference.get("clubs", [])}

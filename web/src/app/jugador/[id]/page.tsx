@@ -575,6 +575,14 @@ function ProjectionBreakdown({ player }: { player: Player }) {
   const factor = (value: number | null) =>
     value === null ? "—" : Math.round((value - 1) * 100) === 0 ? "neutro" : `${signed((value - 1) * 100, 0)} %`;
   const source = player.availability?.level ? "según el parte" : "según su historial";
+  // Rival y campo se enseñan porque entran en la cifra, pero hay que decir lo
+  // que pesan: esta temporada, quitarlos apenas cambia el acierto.
+  const current = meta.modelBacktest?.current;
+  const smallAdjustments =
+    current?.ablation?.plain !== undefined && current.v2
+      ? `El rival y el campo son ajustes pequeños: en lo que va de temporada el error medio es ${num(current.v2.mae, 2)} con ellos y ${num(current.ablation.plain, 2)} sin ellos.`
+      : null;
+  const conditional = Boolean(outlook?.bandIfPlays);
   return (
     <div className="card">
       <div className="card-head">
@@ -585,6 +593,9 @@ function ProjectionBreakdown({ player }: { player: Player }) {
             multiplicado por la probabilidad de que juegue.{" "}
             <Link href="/metodologia#proyeccion">Detalles</Link>
           </p>
+          {smallAdjustments ? (
+            <p className="card-note" style={{ margin: "4px 0 0" }}>{smallAdjustments}</p>
+          ) : null}
         </div>
       </div>
       <dl className="fact-list">
@@ -597,12 +608,13 @@ function ProjectionBreakdown({ player }: { player: Player }) {
         <Row label="Proyección (esperada)" value={`${num(player.projectedFp)} pts`} />
         {outlook ? (
           <Row
-            label="La mitad de las veces · techo (1 de cada 10)"
+            label={
+              conditional
+                ? "Si juega, la mitad de las veces · techo (1 de cada 10)"
+                : "La mitad de las veces · techo (1 de cada 10)"
+            }
             value={`${num(outlook.floor)}–${num(outlook.ceiling)} · ${num(outlook.p90 ?? null)}`}
           />
-        ) : null}
-        {typeof outlook?.certainty === "number" ? (
-          <Row label="Seguridad de la proyección" value={percent(outlook.certainty)} />
         ) : null}
         <Row label="Último partido" value={`${num(player.perf.lastFp)} pts`} />
       </dl>

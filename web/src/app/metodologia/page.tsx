@@ -36,6 +36,7 @@ export const metadata = {
 };
 
 export default function MethodologyPage() {
+  const bandCheck = meta.modelBacktest?.current?.bandCheck;
   const byMethod = matching.reduce<Record<string, number>>((accumulator, row) => {
     accumulator[row.match_method] = (accumulator[row.match_method] ?? 0) + 1;
     return accumulator;
@@ -245,11 +246,16 @@ export default function MethodologyPage() {
               , y queda en torno a 1,1 veces el precio: más alto cuanto más caro es el jugador.
             </Definition>
             <Definition term="Horquilla y techo">
-              Suelo, techo y p90 salen de los errores reales en jornadas pasadas, no de una normal: la
-              puntuación tiene la cola de arriba más larga que la de abajo. La dispersión es la de
-              sus partidos de esta temporada, se ensancha con pocos partidos (la media del propio
-              jugador aún es dudosa) y, si puede no jugar, suma el riesgo de quedarse en cero. La del entrenador
-              es exacta: solo puede sacar seis cifras. El p90 es el que importa para el capitán.
+              Lo que hace <strong>si juega</strong>: suelo y techo son los percentiles 25 y 75, y el
+              p90 es el techo que importa para el capitán. Salen de los errores reales de esta
+              temporada, por nivel de proyección: quien proyecta 20 puntos se aleja más de su
+              cifra que quien proyecta 5, y la cola de arriba es más larga que la de abajo. El
+              riesgo de que no juegue va aparte, en la probabilidad de jugar; antes iba mezclado
+              y la horquilla de una duda no significaba nada.
+              {bandCheck
+                ? ` Puesta a prueba hacia delante (cada jornada, solo con las anteriores; ${num(bandCheck.n, 0)} partidos), entre suelo y techo cae el ${percent(bandCheck.inside)} de los resultados, cuando tendría que ser la mitad, y el ${percent(bandCheck.aboveP90)} pasa del p90: se queda algo estrecha.`
+                : ""}{" "}
+              La del entrenador es exacta: solo puede sacar seis cifras.
             </Definition>
             <Definition term="En pista, on/off y quintetos">
               Se reconstruye quién está en pista cada segundo con los cambios del jugada a
@@ -273,12 +279,6 @@ export default function MethodologyPage() {
               Uno menos el coeficiente de variación de lo que ya ha puntuado esta temporada,
               acotado entre 0 y 1. Un 70% es un jugador que repite; un 30% es una lotería con la
               misma media. Con menos de tres partidos no se da: con uno es 0 por definición.
-            </Definition>
-            <Definition term="Seguridad de la proyección">
-              Uno menos la desviación de la proyección entre la proyección. No mira lo jugado sino
-              lo que se espera: incluye la duda sobre su media y la de si juega, así que un
-              titular regular con parte de duda puede tener mucha regularidad y poca seguridad.
-              Está en la ficha, junto a la horquilla.
             </Definition>
             <Definition term="Probabilidad de subir">
               La probabilidad de que juegue y, jugando, puntúe lo bastante para que el precio
@@ -527,6 +527,30 @@ function ProjectionModel() {
             Donde más gana es al principio, que es cuando la media propia no existe: con 1 a 3
             partidos se equivoca bastante menos que la media y que el modelo anterior. La forma
             de los últimos cinco no entra: probado en jornadas pasadas, darle peso empeoraba el error.
+          </p>
+        ) : null}
+        {current?.ablation && current.v2 ? (
+          <p style={{ margin: 0 }}>
+            <strong>Qué aporta cada pieza.</strong> Error medio con todo, {num(current.v2.mae, 2)}.
+            Sin el ajuste de rival, {num(current.ablation.noOpponent ?? null, 2)}; sin el de campo,{" "}
+            {num(current.ablation.noHome ?? null, 2)}; sin ninguno,{" "}
+            {num(current.ablation.plain ?? null, 2)}; con los minutos de toda la temporada en vez de
+            los recientes, {num(current.ablation.seasonMinutes ?? null, 2)}. Son diferencias de
+            centésimas: rival, campo y minutos recientes se enseñan en la ficha porque entran en la
+            cifra, pero lo que de verdad gana a la media es encoger hacia el precio y el puesto
+            cuando hay pocos partidos, y el parte de lesiones.
+          </p>
+        ) : null}
+        {current?.frozenFromRound ? (
+          <p style={{ margin: 0 }}>
+            <strong>Una advertencia sobre esta tabla.</strong> Los colchones, topes y pesos del
+            modelo se ajustaron mirando las jornadas anteriores a la {current.frozenFromRound}, así
+            que el error medido en ellas es optimista: el modelo ya había visto esos resultados.
+            Desde la jornada {current.frozenFromRound} no se ha tocado nada.{" "}
+            {current.afterFreeze
+              ? `En lo jugado desde entonces (${num(current.afterFreeze.n, 0)} partidos${current.afterFreeze.n < 400 ? ", muestra aún corta" : ""}), el error es ${num(current.afterFreeze.v2.mae, 2)}${current.afterFreeze.mean ? ` frente a ${num(current.afterFreeze.mean.mae, 2)} de la media` : ""}.`
+              : "Aún no hay partidos posteriores con los que medirlo."}{" "}
+            La prueba limpia es la de abajo: lo que se publicó antes de cada jornada.
           </p>
         ) : null}
         {published && published.rounds.length ? (
