@@ -174,10 +174,10 @@ export default function MercadoPage() {
         <div className="grid grid-3 signals">
           <RankCard
             title="Mejores chollos"
-            note="Los que más proyectan por encima de lo normal a su precio. El número es su percentil en el mercado."
+            note="Los que más proyectan por encima de lo normal a su precio: debajo, cuántos puntos de más. El número es su percentil en el mercado."
             detail={(player) =>
               typeof player.valueOverPrice === "number"
-                ? `${signedNum(player.valueOverPrice)} pts sobre su precio`
+                ? `${signedNum(player.valueOverPrice)} pts de más`
                 : ""
             }
             players={topBargains}
@@ -225,7 +225,7 @@ export default function MercadoPage() {
             detail={
               byCertainty
                 ? undefined
-                : (player) => `media ${num(player.perf.fpAvg)} · la mitad de sus partidos`
+                : (player) => `media ${num(player.perf.fpAvg)}`
             }
           />
         </div>
