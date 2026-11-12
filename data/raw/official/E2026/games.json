@@ -28284,7 +28284,7 @@
   "round": 11,
   "roundAlias": "Round 11",
   "roundName": "Round 11",
-  "played": false,
+  "played": true,
   "date": "2026-11-11T20:45:00",
   "confirmedDate": true,
   "confirmedHour": true,
@@ -28303,13 +28303,13 @@
      "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 80,
+   "standingsScore": 80,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 23,
+    "partials2": 19,
+    "partials3": 23,
+    "partials4": 15,
     "extraPeriods": {}
    }
   },
@@ -28325,18 +28325,18 @@
      "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 66,
+   "standingsScore": 66,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 18,
+    "partials2": 20,
+    "partials3": 22,
+    "partials4": 6,
     "extraPeriods": {}
    }
   },
-  "audience": 0,
-  "audienceConfirmed": false,
+  "audience": 13706,
+  "audienceConfirmed": true,
   "socialFeed": "",
   "operationsCode": null,
   "referee1": {
@@ -28421,7 +28421,7 @@
   "round": 11,
   "roundAlias": "Round 11",
   "roundName": "Round 11",
-  "played": false,
+  "played": true,
   "date": "2026-11-11T20:45:00",
   "confirmedDate": true,
   "confirmedHour": true,
@@ -28440,14 +28440,16 @@
      "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 111,
+   "standingsScore": 92,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
+    "partials1": 23,
+    "partials2": 27,
+    "partials3": 22,
+    "partials4": 20,
+    "extraPeriods": {
+     "1": 19
+    }
    }
   },
   "road": {
@@ -28462,18 +28464,20 @@
      "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 109,
+   "standingsScore": 92,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
+    "partials1": 14,
+    "partials2": 29,
+    "partials3": 29,
+    "partials4": 20,
+    "extraPeriods": {
+     "1": 17
+    }
    }
   },
-  "audience": 0,
-  "audienceConfirmed": false,
+  "audience": 11774,
+  "audienceConfirmed": true,
   "socialFeed": "",
   "operationsCode": null,
   "referee1": {

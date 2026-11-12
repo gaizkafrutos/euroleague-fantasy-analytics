@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-11T17:56:23.100111+00:00",
+ "fetchedAt": "2026-11-12T00:50:27.426139+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -163,14 +163,6 @@
    "status": "Game time",
    "round": "",
    "comment": "Wrist"
-  },
-  {
-   "team": "PAR",
-   "position": "C",
-   "name": "Tonye Jekiri",
-   "status": "Game time",
-   "round": "",
-   "comment": "Thigh"
   },
   {
    "team": "MTA",
@@ -336,7 +328,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   }

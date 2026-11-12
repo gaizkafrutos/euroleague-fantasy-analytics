@@ -1,8 +1,8 @@
 {
  "method": "ilp",
- "totalPrice": 99.8,
- "totalProjection": 120.33,
- "scoredProjection": 147.46,
+ "totalPrice": 100.0,
+ "totalProjection": 120.35,
+ "scoredProjection": 147.44,
  "captain": "3768",
  "starters": [
   "3768",
@@ -16,7 +16,7 @@
   "3991",
   "3977",
   "8644",
-  "3933"
+  "3985"
  ],
  "coach": {
   "key": "4255",
@@ -24,7 +24,7 @@
   "position": "E",
   "club": "PAM",
   "price": 8.0,
-  "projection": 15.39
+  "projection": 15.45
  },
  "players": [
   {
@@ -33,7 +33,7 @@
    "position": "G",
    "club": "PAM",
    "price": 16.8,
-   "projection": 21.22
+   "projection": 21.19
   },
   {
    "key": "3851",
@@ -41,7 +41,7 @@
    "position": "G",
    "club": "MAD",
    "price": 9.3,
-   "projection": 13.6
+   "projection": 13.59
   },
   {
    "key": "11547",
@@ -49,7 +49,7 @@
    "position": "G",
    "club": "VIR",
    "price": 9.7,
-   "projection": 12.26
+   "projection": 12.25
   },
   {
    "key": "3977",
@@ -57,7 +57,7 @@
    "position": "G",
    "club": "MAD",
    "price": 4.2,
-   "projection": 5.02
+   "projection": 5.01
   },
   {
    "key": "3838",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "IST",
    "price": 9.8,
-   "projection": 15.17
+   "projection": 15.22
   },
   {
    "key": "3991",
@@ -73,23 +73,23 @@
    "position": "F",
    "club": "MAD",
    "price": 6.1,
-   "projection": 8.67
+   "projection": 8.69
   },
   {
    "key": "8644",
    "name": "JOKSIMOVIC, STEFAN",
    "position": "F",
    "club": "BAS",
-   "price": 4.2,
-   "projection": 4.35
+   "price": 4.1,
+   "projection": 4.05
   },
   {
-   "key": "3933",
-   "name": "CAVALIERE, LEOPOLD",
+   "key": "3985",
+   "name": "LIGHTY, DAVID",
    "position": "F",
-   "club": "PRS",
-   "price": 4.2,
-   "projection": 3.65
+   "club": "ASV",
+   "price": 4.5,
+   "projection": 4.04
   },
   {
    "key": "3768",
@@ -97,7 +97,7 @@
    "position": "C",
    "club": "PAN",
    "price": 16.7,
-   "projection": 22.59
+   "projection": 22.54
   },
   {
    "key": "7424",
@@ -105,7 +105,7 @@
    "position": "C",
    "club": "VIR",
    "price": 10.8,
-   "projection": 13.8
+   "projection": 13.77
   }
  ],
  "available": true,
