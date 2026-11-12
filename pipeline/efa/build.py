@@ -668,6 +668,7 @@ def build(*, budget: float = ROSTER_BUDGET) -> dict[str, Any]:
         "coachGames": int(len(coach_log)),
         "matchModel": {"homeAdvantage": round(match.home, 2), "marginSd": round(match.sd, 2)},
         "modelBacktest": _load_backtest(),
+        "formulaCheck": _load_formula_check(),
         "schedule": schedule_meta,
         "injuries": injuries_meta,
         "warnings": _warnings(has_prices, gamelog_meta, matched, len(records)),
@@ -955,6 +956,13 @@ def _apply_coach_match(
         record["playProb"] = 1.0
         applied += 1
     return applied
+
+
+def _load_formula_check() -> dict[str, Any] | None:
+    """El último `efa verify`: cuántos jugadores cuadran al decimal con el juego."""
+    from efa.verify import load_report  # aquí y no arriba: verify importa de build
+
+    return load_report()
 
 
 def _load_backtest() -> dict[str, Any] | None:

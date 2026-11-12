@@ -37,6 +37,15 @@ export async function GET(request: Request) {
 
   const url = new URL(request.url);
   const matchdayId = url.searchParams.get("matchday") ?? process.env.EFA_MATCHDAY_ID;
+  // El identificador va dentro de la ruta de una API ajena y con mi token:
+  // solo dígitos. Con `../` o un `?` se podía pedir cualquier otro endpoint de
+  // Fantaking y devolver aquí su respuesta.
+  if (matchdayId && !/^\d{1,10}$/.test(matchdayId)) {
+    return NextResponse.json(
+      { configured: true, ok: false, message: "El identificador de jornada tiene que ser un número." },
+      { status: 400 },
+    );
+  }
   if (!matchdayId) {
     return NextResponse.json(
       {

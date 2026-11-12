@@ -89,11 +89,21 @@ jobs:
         run: python -m efa backtest
         continue-on-error: true
 
+      # Contrasta la puntuación calculada aquí con la media que da el propio
+      # juego. Va antes del build, que publica el resultado en la metodología.
+      # Antes terminaba en `|| true` y llevaba semanas fallando sin que se viera.
+      - name: Verificar la fórmula de puntuación
+        id: verify
+        run: python -m efa verify
+        continue-on-error: true
+
+      - name: Avisar si la fórmula no cuadra
+        if: steps.verify.outcome == 'failure'
+        run: |
+          echo "::error title=La fórmula de puntuación no cuadra::La media calculada desde los boxscores se aleja de la del juego."                "Puede haber cambiado el baremo o haberse cruzado mal un jugador. Detalle en el paso anterior."
+
       - name: Reconstruir los datos de la web
         run: python -m efa build
-
-      - name: Verificar la fórmula de puntuación
-        run: python -m efa verify || true
 
       - name: Commitear los cambios
         run: |
@@ -116,6 +126,10 @@ jobs:
       # aviso amarillo no lo ve nadie y la web se quedaba con precios viejos.
       - name: Fallar si no hubo precios nuevos
         if: steps.snapshot.outcome == 'failure'
+        run: exit 1
+
+      - name: Fallar si la fórmula no cuadra
+        if: steps.verify.outcome == 'failure'
         run: exit 1
 
       - name: Avisar si el parte de lesiones no se actualizó
