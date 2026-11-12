@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-12T09:56:30.762122+00:00",
+ "fetchedAt": "2026-11-12T18:24:56.725249+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -109,20 +109,20 @@
    "comment": "Leg"
   },
   {
-   "team": "BAR",
-   "position": "G",
-   "name": "Umoja Gibson",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
-  },
-  {
    "team": "VBC",
    "position": "F",
    "name": "Mo Gueye",
    "status": "Game time",
    "round": "",
    "comment": "Foot"
+  },
+  {
+   "team": "VIR",
+   "position": "G",
+   "name": "Daniel Hackett",
+   "status": "Out",
+   "round": "",
+   "comment": "Illness"
   },
   {
    "team": "PAR",
@@ -168,7 +168,7 @@
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -216,7 +216,7 @@
    "team": "VBC",
    "position": "F",
    "name": "Nikola Mirotic",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Groin"
   },
@@ -256,7 +256,7 @@
    "team": "VBC",
    "position": "F",
    "name": "Nate Reuvers",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Foot"
   },
@@ -307,6 +307,22 @@
    "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
+  },
+  {
+   "team": "PAR",
+   "position": "F",
+   "name": "Ethan Thompson",
+   "status": "Game time",
+   "round": "",
+   "comment": "Back"
+  },
+  {
+   "team": "BAR",
+   "position": "G",
+   "name": "Agustin Ubal",
+   "status": "Game time",
+   "round": "",
+   "comment": "Back"
   },
   {
    "team": "DUB",

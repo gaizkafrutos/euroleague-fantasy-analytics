@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-12T09:56:30.355194+00:00",
- "updatedAt": "2026-11-12T08:00:00",
+ "fetchedAt": "2026-11-12T18:24:56.288547+00:00",
+ "updatedAt": "2026-11-12T14:18:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -56,9 +56,9 @@
    "team": "Armani Olimpia Milan",
    "position": "C",
    "name": "Nicola Akele",
-   "status": "Doubtful",
+   "status": "Ready",
    "round": "Round 11",
-   "comment": "DNP in Rounds 2-10 (coach's decision).Played in the domestic league (11.08)"
+   "comment": "Included in 12-man roster after DNP in Rounds 2-10 (coach's decision)"
   },
   {
    "team": "Armani Olimpia Milan",
@@ -72,9 +72,17 @@
    "team": "Armani Olimpia Milan",
    "position": "SG",
    "name": "Diego Flaccadori",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 2-10 (coach's decision).Played in the domestic league (11.08)"
+   "comment": "Not included in 12-man roster after DNP in Rounds 2-10 (coach's decision)"
+  },
+  {
+   "team": "Armani Olimpia Milan",
+   "position": "SG",
+   "name": "Stefano Tonut",
+   "status": "Out",
+   "round": "Round 11",
+   "comment": "Not included in 12-man roster (undisclosed)"
   },
   {
    "team": "Besiktas Istanbul",
@@ -234,15 +242,7 @@
    "name": "Klemen Prepelic",
    "status": "Game-time",
    "round": "Round 11",
-   "comment": "Played in the domestic league on Monday after DNP in Rounds 8-10 (coach's decision)"
-  },
-  {
-   "team": "Dubai Basketball",
-   "position": "PG",
-   "name": "Tomislav Vuckovic",
-   "status": "Out",
-   "round": "Round 11",
-   "comment": "Out indefinitely, as he's not included in official Euroleague roster"
+   "comment": "Healthy and played in the domestic league on Monday after DNP in Rounds 8-10 (coach's decision)"
   },
   {
    "team": "Dubai Basketball",
@@ -296,9 +296,9 @@
    "team": "FC Barcelona",
    "position": "PG",
    "name": "Umoja Gibson",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 11",
-   "comment": "DNP in Round 10 (knee soreness). DNP in the dometic league (11.08)"
+   "comment": "Expected to play despite DNP in Round 10 (knee soreness)"
   },
   {
    "team": "FC Barcelona",
@@ -320,7 +320,7 @@
    "team": "FC Barcelona",
    "position": "PG",
    "name": "Juan Nunez",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 11",
    "comment": "DNP in Round 9-10 (right ankle sprain), expected to miss around 10 days (10.29). DNP in the domestic league (11.08)"
   },
@@ -331,6 +331,14 @@
    "status": "Out",
    "round": "Round 11",
    "comment": "Suffered ankle sprain in domestic league game (11.08), set to be out for six weeks until Round 16"
+  },
+  {
+   "team": "FC Barcelona",
+   "position": "SG",
+   "name": "Agustin Ubal",
+   "status": "Game-time",
+   "round": "Round 11",
+   "comment": "Didn't practice but will travel with the team (back discomfort)"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
@@ -382,6 +390,14 @@
   },
   {
    "team": "Hapoel IBI Tel Aviv",
+   "position": "C",
+   "name": "Bruno Caboclo",
+   "status": "Game-time",
+   "round": "Round 11",
+   "comment": "Might not make the 12-man roster (coach's decision)"
+  },
+  {
+   "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Tyler Ennis",
    "status": "Out",
@@ -416,17 +432,17 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Tomas Satoransky",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 11",
-   "comment": "DNP in Round 10 (concussion)"
+   "comment": "Expected to return after DNP in Round 10 (concussion)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Bar Timor",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 11",
-   "comment": "DNP in Rounds 7-10 (coach's decision).Played in the domestic cup (11.09)"
+   "comment": "Expected to return after DNP in Rounds 7-10 (coach's decision). Also played in the domestic cup (11.09)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -528,9 +544,9 @@
    "team": "Olympiacos Piraeus",
    "position": "PG",
    "name": "Georgios Bourneles",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Round 1-10 (coach's decision)"
+   "comment": "Not included in 12-man roster after DNP in Rounds 1-10 (coach's decision)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -544,17 +560,17 @@
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Bryant Dunston",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Round 9-10 (coach's decision). DNP in the domestic league (11.08)"
+   "comment": "Not included in 12-man roster after DNP in Round 9-10 (coach's decision)"
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Antonios Karagiannidis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 1-10 (coach's decision). Played in the domestic league (11.08)"
+   "comment": "Not included in 12-man roster after DNP in Rounds 1-10 (coach's decision)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -568,17 +584,17 @@
    "team": "Olympiacos Piraeus",
    "position": "SF",
    "name": "Kostas Papanikolaou",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "Missed domestic league game due to tendonitis (11.08), likely to be out for a week"
+   "comment": "Ruled out for Round 11 (tendonitis)"
   },
   {
    "team": "Olympiacos Piraeus",
    "position": "SG",
    "name": "George Papas",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 1-10 (coach's decision)"
+   "comment": "Not included in 12-man roster after DNP in Rounds 1-10 (coach's decision)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -600,9 +616,9 @@
    "team": "Panathinaikos AKTOR Athens",
    "position": "SF",
    "name": "Eleftherios Mantzoukas",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "Round 11",
-   "comment": "DNP in Rounds 9-10 (coach's decision). DNP in the domestic league (11.08)"
+   "comment": "Didn't practice ahead of Round 11 after DNP in Rounds 9-10 (coach's decision) and DNP in the domestic league (11.08)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -616,9 +632,9 @@
    "team": "Panathinaikos AKTOR Athens",
    "position": "SF",
    "name": "Nikos Rogkavopoulos",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 11",
-   "comment": "DNP in Rounds 7-10 (hamstring injury). DNP in the domestic league (11.08)"
+   "comment": "Practiced ahead of Round 11 after DNP in Rounds 7-10 (hamstring injury) and DNP in the domestic league (11.08)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -824,9 +840,9 @@
    "team": "Virtus Bologna",
    "position": "PG",
    "name": "Tommaso Baldasso",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "DNP in Rounds 8-10 (leg contusion). DNP in the domestic league (11.09)"
+   "comment": "Ruled out for Round 11 after DNP in Rounds 8-10 (leg contusion)"
   },
   {
    "team": "Virtus Bologna",
@@ -835,6 +851,14 @@
    "status": "Out",
    "round": "Round 11",
    "comment": "Out for eight weeks and at least until Round 21 (bone bruise, 11.09)"
+  },
+  {
+   "team": "Virtus Bologna",
+   "position": "PG",
+   "name": "Daniel Hackett",
+   "status": "Out",
+   "round": "Round 11",
+   "comment": "Ruled out for Round 11 (undisclosed)"
   },
   {
    "team": "Zalgiris Kaunas",
