@@ -1,21 +1,21 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 111.92,
- "scoredProjection": 137.52,
- "captain": "11549",
+ "totalProjection": 110.9,
+ "scoredProjection": 135.65,
+ "captain": "3766",
  "starters": [
+  "3766",
   "11549",
-  "3768",
-  "7201",
-  "3838",
-  "3851"
+  "7424",
+  "3851",
+  "3838"
  ],
  "sixth": "3991",
  "bench": [
-  "7223",
+  "3975",
+  "8644",
   "11541",
-  "9061",
   "4551"
  ],
  "coach": {
@@ -24,7 +24,7 @@
   "position": "E",
   "club": "ZAL",
   "price": 7.4,
-  "projection": 14.3
+  "projection": 14.28
  },
  "players": [
   {
@@ -33,7 +33,15 @@
    "position": "G",
    "club": "MAD",
    "price": 9.7,
-   "projection": 13.24
+   "projection": 13.26
+  },
+  {
+   "key": "3975",
+   "name": "HERRERA, SEBASTIAN",
+   "position": "G",
+   "club": "PRS",
+   "price": 6.3,
+   "projection": 7.76
   },
   {
    "key": "11541",
@@ -41,15 +49,7 @@
    "position": "G",
    "club": "PAM",
    "price": 4.4,
-   "projection": 4.42
-  },
-  {
-   "key": "9061",
-   "name": "BAIOCCHI, MATTEO",
-   "position": "G",
-   "club": "VIR",
-   "price": 4.0,
-   "projection": 4.14
+   "projection": 4.45
   },
   {
    "key": "4551",
@@ -57,23 +57,23 @@
    "position": "G",
    "club": "HTA",
    "price": 4.0,
-   "projection": 4.06
+   "projection": 4.08
   },
   {
-   "key": "7201",
-   "name": "BACON, DWAYNE",
+   "key": "3766",
+   "name": "VEZENKOV, SASHA",
    "position": "F",
-   "club": "DUB",
-   "price": 14.7,
-   "projection": 16.76
+   "club": "OLY",
+   "price": 19.2,
+   "projection": 21.04
   },
   {
    "key": "3838",
    "name": "MALCOLM, COLLIN",
    "position": "F",
    "club": "IST",
-   "price": 9.8,
-   "projection": 13.94
+   "price": 10.3,
+   "projection": 12.16
   },
   {
    "key": "3991",
@@ -81,15 +81,15 @@
    "position": "F",
    "club": "MAD",
    "price": 6.1,
-   "projection": 8.57
+   "projection": 8.56
   },
   {
-   "key": "7223",
-   "name": "FRISCH, CLEMENT",
+   "key": "8644",
+   "name": "JOKSIMOVIC, STEFAN",
    "position": "F",
    "club": "BAS",
-   "price": 5.5,
-   "projection": 6.24
+   "price": 4.1,
+   "projection": 4.85
   },
   {
    "key": "11549",
@@ -97,15 +97,15 @@
    "position": "C",
    "club": "ZAL",
    "price": 17.7,
-   "projection": 20.73
+   "projection": 20.62
   },
   {
-   "key": "3768",
-   "name": "LESSORT, MATHIAS",
+   "key": "7424",
+   "name": "DIARRA, ALIOU",
    "position": "C",
-   "club": "PAN",
-   "price": 16.7,
-   "projection": 19.82
+   "club": "VIR",
+   "price": 10.8,
+   "projection": 14.12
   }
  ],
  "available": true,
