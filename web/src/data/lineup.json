@@ -1,8 +1,8 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 111.32,
- "scoredProjection": 137.22,
+ "totalPrice": 99.6,
+ "totalProjection": 111.78,
+ "scoredProjection": 137.45,
  "captain": "11549",
  "starters": [
   "11549",
@@ -14,9 +14,9 @@
  "sixth": "3991",
  "bench": [
   "4258",
+  "8644",
   "11541",
-  "11521",
-  "3933"
+  "4551"
  ],
  "coach": {
   "key": "4006",
@@ -52,12 +52,12 @@
    "projection": 4.42
   },
   {
-   "key": "11521",
-   "name": "FODZO DADA, MARC-OWEN",
+   "key": "4551",
+   "name": "TIMOR, BAR",
    "position": "G",
-   "club": "ASV",
-   "price": 4.5,
-   "projection": 4.23
+   "club": "HTA",
+   "price": 4.0,
+   "projection": 4.06
   },
   {
    "key": "7201",
@@ -84,12 +84,12 @@
    "projection": 8.57
   },
   {
-   "key": "3933",
-   "name": "CAVALIERE, LEOPOLD",
+   "key": "8644",
+   "name": "JOKSIMOVIC, STEFAN",
    "position": "F",
-   "club": "PRS",
-   "price": 4.0,
-   "projection": 4.19
+   "club": "BAS",
+   "price": 4.1,
+   "projection": 4.82
   },
   {
    "key": "11549",
