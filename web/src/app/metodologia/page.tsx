@@ -24,6 +24,9 @@ function FormulaCheckNote() {
       {off > 0 && gap && gap.players > 0
         ? ` A ${gap.players} de los que no cuadran el juego les apuntó menos faltas que el acta oficial (${gap.fouls} en total): en algunos partidos no recogió las técnicas ni las antideportivas. No es una regla que se pueda reproducir, así que aquí manda el acta y esos jugadores salen con hasta dos décimas menos de media que en el juego.`
         : ""}
+      {check.settlingClubs?.length
+        ? ` Quedan fuera ${check.settlingClubs.length} clubes que acababan de jugar: el juego tarda unas horas en sumar el partido a sus medias, y se comparan en la captura siguiente.`
+        : ""}
       {check.ok ? "" : " La comprobación de hoy NO pasa: puede haber cambiado el baremo."}
     </p>
   );
@@ -233,8 +236,8 @@ export default function MethodologyPage() {
           <h2 className="card-title">Las métricas, una a una</h2>
           <dl className="card-note" style={{ display: "grid", gap: 10, margin: 0 }}>
             <Definition term="Proyección">
-              Minutos esperados × puntos por minuto × rival × campo × probabilidad de jugar. El
-              detalle y cuánto acierta, en{" "}
+              Minutos esperados × puntos por minuto × rival × campo, calibrado, × probabilidad de
+              jugar. El detalle y cuánto acierta, en{" "}
               <a href="#proyeccion">el modelo de proyección</a>.
             </Definition>
             <Definition term="Umbral de revalorización">
@@ -450,7 +453,8 @@ function ProjectionModel() {
       <h2 className="card-title">El modelo de proyección</h2>
       <div className="card-note" style={{ maxWidth: "76ch", display: "grid", gap: 8 }}>
         <p style={{ margin: 0 }}>
-          <strong>Si juega:</strong> minutos esperados × puntos por minuto × rival × campo.
+          <strong>Si juega:</strong> minutos esperados × puntos por minuto × rival × campo, y el
+          resultado, calibrado (más abajo).
         </p>
         <ul style={{ margin: 0, display: "grid", gap: 4 }}>
           <li>

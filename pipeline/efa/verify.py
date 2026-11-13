@@ -42,6 +42,13 @@ MIN_EXACT_SHARE = 0.85
 COACH_ROUNDING = 0.06
 #: Donde se guarda el resultado para que la web lo enseñe (ver `build`).
 REPORT_NAME = "formula_check.json"
+#: Horas que se deja asentar un partido antes de comparar a sus dos clubes. El
+#: juego puntúa en directo y la API oficial publica el acta al acabar: durante
+#: unas horas las dos fuentes no hablan de los mismos partidos. La captura de
+#: las 21:57 UTC del 12-11-2026 pilló cuatro partidos recién acabados y uno en
+#: juego: uno de cada seis jugadores "no cuadraba" y la comprobación dio una
+#: falsa alarma. Esos clubes se comparan en la captura siguiente.
+SETTLE_HOURS = 12
 
 #: Media por acción del mercado -> columna del game log. Si la media total
 #: cuadra pero una acción no, el baremo ha cambiado justo en esa acción.
@@ -63,6 +70,30 @@ def _totals(market, crosswalk, gamelog):
     return market.merge(crosswalk[["fantaking_id", "person_code"]], on="fantaking_id").merge(
         totals, left_on="person_code", right_index=True
     )
+
+
+def clubs_settling(games, captured_at, hours: float = SETTLE_HOURS) -> set[str]:
+    """Clubes con un partido empezado en las últimas `hours` antes de la captura.
+
+    Sale del CALENDARIO, no de los boxscores: el desfase va en los dos
+    sentidos. El juego puntúa en directo un partido que la API oficial aún no
+    da por jugado, y tarda en asentar uno que la API ya ha publicado.
+    """
+    import pandas as pd
+
+    captured = pd.to_datetime(captured_at, utc=True, errors="coerce")
+    if pd.isna(captured):
+        return set()
+    out: set[str] = set()
+    for game in games or []:
+        start = pd.to_datetime(game.get("utcDate"), utc=True, errors="coerce")
+        if pd.isna(start) or not captured - pd.Timedelta(hours=hours) < start <= captured:
+            continue
+        for side in ("local", "road"):
+            club = ((game.get(side) or {}).get("club") or {}).get("code")
+            if club:
+                out.add(str(club))
+    return out
 
 
 def _margin(games):
@@ -158,6 +189,10 @@ def run_verification() -> dict[str, Any]:
 
     performance = player_performance(gamelog)
     crosswalk = build_crosswalk(market, reference)
+    # Quien acaba de jugar se compara en la próxima captura (ver SETTLE_HOURS).
+    settling = clubs_settling(reference.get("games", []), market["captured_at"].max())
+    if settling:
+        crosswalk = crosswalk[~crosswalk["club_code"].isin(settling)]
 
     merged = (
         market.merge(crosswalk[["fantaking_id", "person_code"]], on="fantaking_id", how="left")
@@ -207,6 +242,8 @@ def run_verification() -> dict[str, Any]:
         "actions": actions,
         "coaches": coaches,
         "foulGap": foul_gap,
+        # Clubes que acaban de jugar y se han dejado para la próxima captura.
+        "settlingClubs": sorted(settling),
         "skipped": False,
         "players": int(len(comparable)),
         "exact": int(exact.sum()),
@@ -239,7 +276,7 @@ def save_report(report: dict[str, Any]) -> None:
         return
     keep = (
         "ok", "checkedAt", "capturedAt", "players", "exact", "exactShare",
-        "meanAbsoluteError", "correlation", "coaches", "foulGap",
+        "meanAbsoluteError", "correlation", "coaches", "foulGap", "settlingClubs",
     )
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     (PROCESSED_DIR / REPORT_NAME).write_text(

@@ -40,28 +40,37 @@ que la media no te cuenta y ahí sí se ven: la gráfica de barras (si alterna
 30 y 4, es una lotería aunque promedie bien) y la tendencia de minutos (si está
 perdiendo rol, la media de las últimas semanas ya no vale).
 
-**Y el calendario.** En **Equipos** está la dificultad de los tres próximos
-rivales de cada club. Importa más de lo que parece: el bonus de victoria suma un
-10% a la puntuación de todos los jugadores del equipo que gana.
+**Y el calendario.** En **Equipos** está lo que concede cada rival en las
+próximas cinco jornadas. Importa más de lo que parece: el bonus de victoria suma
+un 10% a la puntuación de todos los jugadores del equipo que gana.
+
+**¿Y me puedo fiar?** En **Acierto** está lo que la web publicó antes de cada
+jornada frente a lo que pasó después, comparado con usar la media de cada
+jugador. Las proyecciones son medias: la ficha de cada jugador da también la
+horquilla de lo que suele hacer si juega.
 
 ---
 
 ## 3. Lo que se mantiene solo
 
-Cada mañana a las 07:00 UTC (09:00 en Madrid en horario de verano) GitHub
-Actions ejecuta por su cuenta:
+Cada dos horas GitHub Actions ejecuta por su cuenta (GitHub arranca estas
+tareas con retraso, a veces de horas; por eso son tantas):
 
 1. Reingiere los datos oficiales de la EuroLiga: censo, calendario y los
-   boxscores de los partidos nuevos.
-2. Captura el mercado de precios (4 peticiones).
-3. Recalcula todas las métricas y regenera los datos de la web.
-4. Contrasta la fórmula de puntuación con los datos reales del juego.
+   boxscores de los partidos nuevos, y repasa los de las dos últimas jornadas.
+2. Descarga los partes de lesiones y captura el mercado de precios (4 peticiones).
+3. Mide cuánto acierta el modelo y contrasta la fórmula de puntuación con los
+   datos reales del juego.
+4. Recalcula todas las métricas y regenera los datos de la web.
 5. Commitea los cambios, y Vercel redespliega con el push.
 
-Tú no tienes que hacer nada. La web amanece actualizada.
+Tú no tienes que hacer nada. La web se actualiza sola.
 
 Si quieres comprobar que corrió bien, en el repo: pestaña **Actions** →
-workflow **Captura de datos**. Verde es que todo fue bien.
+workflow **Captura de datos**. Verde es que todo fue bien. Rojo quiere decir
+una de dos cosas, y en las dos la web sigue funcionando: el token ha caducado
+(sección 4) o la fórmula de puntuación ya no cuadra con la del juego, que es
+la señal de que han cambiado el baremo.
 
 Si necesitas una captura fuera de horario (por ejemplo, justo después de que
 cierre una jornada): **Actions** → **Captura de datos** → **Run workflow**.
@@ -77,9 +86,9 @@ de sesión y no se sabe cuánto duran.
 
 **Cómo te enteras:**
 
-- El workflow diario sale con un aviso amarillo `Token caducado`. **No falla**:
-  sigue actualizando las estadísticas oficiales y la web se mantiene en pie con
-  el último precio conocido.
+- La captura sale **en rojo** con el aviso `Sin precios nuevos`. La web no se
+  cae: las estadísticas oficiales se siguen actualizando y los precios se
+  quedan en el último conocido.
 - Si lo ejecutas en local, `python -m efa snapshot` corta con un `401` y un
   mensaje explícito.
 
@@ -95,7 +104,7 @@ de sesión y no se sabe cuánto duran.
    `FANTAKING_TOKEN` pulsa el lápiz → pega el nuevo → **Update secret**.
 6. Si lo tienes también en Vercel, actualízalo allí y redespliega.
 
-Ya está. La siguiente ejecución diaria vuelve a capturar precios.
+Ya está. La siguiente captura vuelve a traer precios.
 
 > El token es tu credencial personal, equivalente a tu contraseña. No lo pegues
 > en un chat, en un issue, en un commit ni en una captura de pantalla. Si se te
@@ -132,7 +141,8 @@ tampoco tu equipo real.
 
 Si lo enseñas a alguien que valora el trabajo técnico, mándale también el repo
 y dile que mire la página de **Metodología**. Ahí está lo que diferencia esto de
-un dashboard cualquiera: cada métrica explicada, con sus pesos y sus límites.
+un dashboard cualquiera: cada métrica explicada, con su fórmula y sus límites.
+Y la de **Acierto**, donde la web se examina a sí misma jornada a jornada.
 
 ---
 
@@ -155,7 +165,9 @@ Si el prompt no empieza por `(.venv)`, los comandos `efa` no existen.
 | Todo seguido | `python -m efa refresh` |
 | Comprobar la fórmula de puntuación | `python -m efa verify` |
 | Ver la web en local | `cd web` y `npm run dev` |
-| Pasar los tests | `python -m pytest pipeline\tests -q` |
+| Pasar los tests del pipeline | `python -m pytest pipeline\tests -q` |
+| Pasar los tests de la web | `cd web` y `npm test` |
+| Medir cuánto acierta el modelo | `python -m efa backtest` |
 
 Después de cualquier cambio en local, para que llegue a la web:
 
@@ -191,7 +203,9 @@ versión anterior. Eso es bueno — nunca se queda a medias.
 
 **Números que no te cuadran.** Antes de dudar del cálculo, mira la
 [metodología](https://hoopiq-fantasy.vercel.app/metodologia).
-Hay dos cosas que sorprenden y son correctas: las medias excluyen los partidos
+Hay tres cosas que sorprenden y son correctas: las medias excluyen los partidos
 sin jugar (un cero por no estar convocado hundiría la media y mentiría sobre el
-jugador), y la "presión de precio" es una aproximación razonada, no la fórmula
-real de Fantaking, que no es pública.
+jugador); la proyección suele quedar por debajo de la media de los mejores,
+porque va calibrada (a quien proyecta mucho se le pasaba de largo); y la
+revalorización esperada es una aproximación, no la fórmula real de Fantaking,
+que no es pública.
