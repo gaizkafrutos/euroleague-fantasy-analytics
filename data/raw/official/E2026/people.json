@@ -1,6 +1,126 @@
 [
  {
   "person": {
+   "code": "008325",
+   "name": "KAMENJAS, KENAN",
+   "alias": "KAMENJAS, KENAN",
+   "aliasRaw": "KAMENJAS, KENAN",
+   "passportName": "KENAN",
+   "passportSurname": "KAMENJAS",
+   "jerseyName": "KAMENJAS",
+   "abbreviatedName": "Kamenjas, K.",
+   "country": {
+    "code": "BIH",
+    "name": "Bosnia and Herzegovina"
+   },
+   "height": 207,
+   "weight": 110,
+   "birthDate": "2000-01-17T00:00:00",
+   "birthCountry": {
+    "code": "BIH",
+    "name": "Bosnia and Herzegovina"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-13T11:03:35.242",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "34",
+  "dorsalRaw": "34",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "DUBAI BASKET",
+  "externalId": 57295,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "007109",
+   "name": "SMITS, ROLANDS",
+   "alias": "SMITS, ROLANDS",
+   "aliasRaw": "SMITS, ROLANDS",
+   "passportName": "ROLANDS",
+   "passportSurname": "SMITS",
+   "jerseyName": "SMITS",
+   "abbreviatedName": "Smits, R.",
+   "country": {
+    "code": "LAT",
+    "name": "Latvia"
+   },
+   "height": 208,
+   "weight": 107,
+   "birthDate": "1995-06-25T00:00:00",
+   "birthCountry": {
+    "code": "LAT",
+    "name": "Latvia"
+   },
+   "twitterAccount": "Rolands_Smits",
+   "instagramAccount": "rolands_smits/",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-13T11:03:34.815",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "11",
+  "dorsalRaw": "11",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "NINGBO ROCKETS",
+  "externalId": 57294,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "011193",
    "name": "BLATT, TAMIR",
    "alias": "BLATT, TAMIR",

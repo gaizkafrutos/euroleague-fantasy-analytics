@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-13T09:43:32.781921+00:00",
- "updatedAt": "2026-11-13T09:31:00",
+ "fetchedAt": "2026-11-13T17:52:10.854091+00:00",
+ "updatedAt": "2026-11-13T16:58:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -16,17 +16,17 @@
    "team": "Anadolu Efes Istanbul",
    "position": "SG",
    "name": "P.J. Dozier",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 11",
-   "comment": "Expected to return in Round 11 after a back injury in Round 6."
+   "comment": "Included in 12-man lineup for Round 11 after a back injury in Round 6"
   },
   {
    "team": "Anadolu Efes Istanbul",
    "position": "PG",
    "name": "Ruzgar Fenemen",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "Not included in 12-man roster for Round 10 after DNP in Rounds 1-9 (coach's decision)"
+   "comment": "Not included in 12-man roster for Round 11 after DNP in Rounds 1-10 (coach's decision)"
   },
   {
    "team": "Anadolu Efes Istanbul",
@@ -40,17 +40,17 @@
    "team": "Anadolu Efes Istanbul",
    "position": "SF",
    "name": "D. Karutasu",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "Not included in 12-man roster for Round 10 after DNP in Rounds 1-9 (coach's decision). Played oin the domestic league (11.08)"
+   "comment": "Not included in 12-man roster for Round 11 after DNP in Rounds 1-10 (coach's decision). Played oin the domestic league (11.08)"
   },
   {
    "team": "Anadolu Efes Istanbul",
    "position": "SG",
    "name": "David Mutaf",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 11",
-   "comment": "Not included in 12-man roster for Round 10 after DNP in Rounds 1-9 (coach's decision). Played in the domestic league (11.08)"
+   "comment": "Not included in 12-man roster for Round 11 after DNP in Rounds 1-10 (coach's decision). Played in the domestic league (11.08)"
   },
   {
    "team": "Armani Olimpia Milan",
@@ -431,6 +431,14 @@
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "C",
+   "name": "Kenneth Faried",
+   "status": "Out",
+   "round": "Round 12",
+   "comment": "Out indefinitely with a left thigh injury"
+  },
+  {
+   "team": "Kosner Baskonia Vitoria-Gasteiz",
+   "position": "C",
    "name": "Kenan Kamenjas",
    "status": "Expected",
    "round": "Round 12",
@@ -494,6 +502,14 @@
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
+   "position": "SF",
+   "name": "Oshae Brissett",
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "Back injury in Round 11"
+  },
+  {
+   "team": "Maccabi Rapyd Tel Aviv",
    "position": "PG",
    "name": "Amit Ebo",
    "status": "Uncertain",
@@ -525,6 +541,14 @@
    "comment": "Expected to miss 6-8 weeks and return for Round 15 after suffering a partial tear of his quadriceps tendon during a team practice (10.20)"
   },
   {
+   "team": "Maccabi Rapyd Tel Aviv",
+   "position": "PG",
+   "name": "Yam Madar",
+   "status": "Uncertain",
+   "round": "Round 12",
+   "comment": "Broken nose in Round 11"
+  },
+  {
    "team": "Olympiacos Piraeus",
    "position": "PG",
    "name": "Georgios Bourneles",
@@ -536,7 +560,7 @@
    "team": "Olympiacos Piraeus",
    "position": "SG",
    "name": "Tyler Dorsey",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 12",
    "comment": "DNP in Rounds 6-11 (suspension), TBD if he'll play after suspension"
   },
@@ -784,9 +808,9 @@
    "team": "Virtus Bologna",
    "position": "SG",
    "name": "Matteo Baiocchi",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 11",
-   "comment": "DNP in Rounds 1-10 (coach's decision). Played in the domestic league (11.09)"
+   "comment": "Included in 12-man lineup for Round 11 after DNP in Rounds 1-10 (coach's decision). Played in the domestic league (11.09)"
   },
   {
    "team": "Virtus Bologna",

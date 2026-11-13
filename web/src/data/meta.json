@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-13T09:44:00.476538+00:00",
+ "generatedAt": "2026-11-13T17:52:44.752247+00:00",
  "currentRound": 11,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 69,
- "lastPriceCapture": "2026-11-13T01:12:42.222530+00:00",
- "lastPriceCheck": "2026-11-13T09:43:34.893975+00:00",
+ "priceSnapshots": 70,
+ "lastPriceCapture": "2026-11-13T17:52:12.437049+00:00",
+ "lastPriceCheck": "2026-11-13T17:52:12.437049+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.55
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-13T09:43:39.835716+00:00",
+  "generatedAt": "2026-11-13T17:52:17.471571+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -780,33 +780,25 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-13T09:43:57.860259+00:00",
-  "capturedAt": "2026-11-13T01:12:42.222530+00:00",
-  "players": 141,
-  "exact": 133,
-  "exactShare": 0.943,
-  "meanAbsoluteError": 0.039,
-  "correlation": 0.9997,
+  "checkedAt": "2026-11-13T17:52:41.411568+00:00",
+  "capturedAt": "2026-11-13T17:52:12.437049+00:00",
+  "players": 259,
+  "exact": 243,
+  "exactShare": 0.938,
+  "meanAbsoluteError": 0.035,
+  "correlation": 0.9999,
   "coaches": {
-   "coaches": 10,
+   "coaches": 18,
    "maxAbsError": 0.0,
    "overtimeGames": 10
   },
   "foulGap": {
-   "players": 7,
-   "fouls": 7
+   "players": 14,
+   "fouls": 15
   },
   "settlingClubs": [
-   "DUB",
-   "HTA",
-   "MAD",
-   "MIL",
-   "MUN",
-   "OLY",
-   "PAM",
-   "RED",
-   "TEL",
-   "ZAL"
+   "IST",
+   "VIR"
   ]
  },
  "schedule": {
@@ -850,10 +842,10 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-13T09:31:00",
-  "fetchedAt": "2026-11-13T09:43:33.344014+00:00",
-  "rows": 147,
-  "matched": 96,
+  "updatedAt": "2026-11-13T16:58:00",
+  "fetchedAt": "2026-11-13T17:52:11.302852+00:00",
+  "rows": 149,
+  "matched": 99,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -873,36 +865,36 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-13T09:31:00",
-    "fetchedAt": "2026-11-13T09:43:32.781921+00:00",
-    "rows": 105,
-    "matched": 95,
-    "flagged": 95
+    "updatedAt": "2026-11-13T16:58:00",
+    "fetchedAt": "2026-11-13T17:52:10.854091+00:00",
+    "rows": 108,
+    "matched": 98,
+    "flagged": 98
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-13T09:43:33.344014+00:00",
-    "rows": 42,
-    "matched": 39,
+    "fetchedAt": "2026-11-13T17:52:11.302852+00:00",
+    "rows": 41,
+    "matched": 38,
     "flagged": 1
    }
   ],
   "nextRound": 11,
   "unregistered": 7,
   "flagged": {
-   "out": 31,
-   "doubt": 67,
-   "probable": 5
+   "out": 36,
+   "doubt": 64,
+   "probable": 6
   }
  },
  "warnings": [
-  "Precios capturados el 2026-11-13 01:12 UTC: la jornada sigue en juego (7 de 10 partidos) (J11). Se usa el precio pendiente de 202 jugadores hasta la próxima captura."
+  "Precios capturados el 2026-11-13 17:52 UTC: la jornada sigue en juego (7 de 10 partidos) (J11). Se usa el precio pendiente de 202 jugadores hasta la próxima captura."
  ],
  "priceFreshness": {
   "stale": true,
-  "capturedAt": "2026-11-13T01:12:42.222530+00:00",
+  "capturedAt": "2026-11-13T17:52:12.437049+00:00",
   "lastGameAt": "2026-11-12T20:00:00+00:00",
   "round": 11,
   "reason": "jornada en juego",

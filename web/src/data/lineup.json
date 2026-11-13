@@ -1,8 +1,8 @@
 {
  "method": "ilp",
- "totalPrice": 99.6,
- "totalProjection": 111.78,
- "scoredProjection": 137.45,
+ "totalPrice": 100.0,
+ "totalProjection": 111.92,
+ "scoredProjection": 137.52,
  "captain": "11549",
  "starters": [
   "11549",
@@ -13,9 +13,9 @@
  ],
  "sixth": "3991",
  "bench": [
-  "4258",
-  "8644",
+  "7223",
   "11541",
+  "9061",
   "4551"
  ],
  "coach": {
@@ -36,20 +36,20 @@
    "projection": 13.24
   },
   {
-   "key": "4258",
-   "name": "PUERTO, JOSEP",
-   "position": "G",
-   "club": "PAM",
-   "price": 5.0,
-   "projection": 5.42
-  },
-  {
    "key": "11541",
    "name": "CARDENAS, ALVARO",
    "position": "G",
    "club": "PAM",
    "price": 4.4,
    "projection": 4.42
+  },
+  {
+   "key": "9061",
+   "name": "BAIOCCHI, MATTEO",
+   "position": "G",
+   "club": "VIR",
+   "price": 4.0,
+   "projection": 4.14
   },
   {
    "key": "4551",
@@ -84,12 +84,12 @@
    "projection": 8.57
   },
   {
-   "key": "8644",
-   "name": "JOKSIMOVIC, STEFAN",
+   "key": "7223",
+   "name": "FRISCH, CLEMENT",
    "position": "F",
    "club": "BAS",
-   "price": 4.1,
-   "projection": 4.82
+   "price": 5.5,
+   "projection": 6.24
   },
   {
    "key": "11549",
