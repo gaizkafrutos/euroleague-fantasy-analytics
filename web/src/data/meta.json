@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-13T23:42:09.127440+00:00",
+ "generatedAt": "2026-11-14T06:43:49.914782+00:00",
  "currentRound": 12,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 71,
  "lastPriceCapture": "2026-11-13T23:41:22.550941+00:00",
- "lastPriceCheck": "2026-11-13T23:41:22.550941+00:00",
+ "lastPriceCheck": "2026-11-14T06:43:17.030845+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.43
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-13T23:41:27.733540+00:00",
+  "generatedAt": "2026-11-14T06:43:22.339676+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -836,7 +836,7 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-13T23:42:04.515989+00:00",
+  "checkedAt": "2026-11-14T06:43:46.721729+00:00",
   "capturedAt": "2026-11-13T23:41:22.550941+00:00",
   "players": 202,
   "exact": 188,
@@ -894,9 +894,9 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-13T16:58:00",
-  "fetchedAt": "2026-11-13T23:41:21.353363+00:00",
-  "rows": 150,
-  "matched": 100,
+  "fetchedAt": "2026-11-14T06:43:15.780116+00:00",
+  "rows": 146,
+  "matched": 97,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -917,27 +917,27 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-13T16:58:00",
-    "fetchedAt": "2026-11-13T23:41:20.854266+00:00",
-    "rows": 109,
-    "matched": 99,
-    "flagged": 93
+    "fetchedAt": "2026-11-14T06:43:15.167252+00:00",
+    "rows": 105,
+    "matched": 95,
+    "flagged": 95
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-13T23:41:21.353363+00:00",
+    "fetchedAt": "2026-11-14T06:43:15.780116+00:00",
     "rows": 41,
     "matched": 38,
-    "flagged": 1
+    "flagged": 2
    }
   ],
   "nextRound": 12,
   "unregistered": 7,
   "flagged": {
-   "out": 24,
-   "doubt": 74,
-   "probable": 3
+   "out": 29,
+   "doubt": 70,
+   "probable": 5
   }
  },
  "warnings": [
