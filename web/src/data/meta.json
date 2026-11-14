@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-14T15:12:06.309172+00:00",
+ "generatedAt": "2026-11-14T20:48:07.568389+00:00",
  "currentRound": 12,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 72,
  "lastPriceCapture": "2026-11-14T15:11:40.970928+00:00",
- "lastPriceCheck": "2026-11-14T15:11:40.970928+00:00",
+ "lastPriceCheck": "2026-11-14T20:47:41.482330+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.43
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-14T15:11:45.986614+00:00",
+  "generatedAt": "2026-11-14T20:47:46.547321+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -840,7 +840,7 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-14T15:12:03.885350+00:00",
+  "checkedAt": "2026-11-14T20:48:05.006430+00:00",
   "capturedAt": "2026-11-14T15:11:40.970928+00:00",
   "players": 287,
   "exact": 267,
@@ -891,7 +891,7 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-14T13:49:00",
-  "fetchedAt": "2026-11-14T15:11:39.794304+00:00",
+  "fetchedAt": "2026-11-14T20:47:40.447962+00:00",
   "rows": 147,
   "matched": 98,
   "unmatched": [
@@ -914,7 +914,7 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-14T13:49:00",
-    "fetchedAt": "2026-11-14T15:11:39.367819+00:00",
+    "fetchedAt": "2026-11-14T20:47:39.973730+00:00",
     "rows": 106,
     "matched": 96,
     "flagged": 96
@@ -923,7 +923,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-14T15:11:39.794304+00:00",
+    "fetchedAt": "2026-11-14T20:47:40.447962+00:00",
     "rows": 41,
     "matched": 38,
     "flagged": 2
