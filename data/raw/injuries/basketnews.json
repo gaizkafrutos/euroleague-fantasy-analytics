@@ -1,7 +1,7 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-14T20:47:39.973730+00:00",
+ "fetchedAt": "2026-11-15T01:59:33.510024+00:00",
  "updatedAt": "2026-11-14T13:49:00",
  "rows": [
   {
@@ -346,7 +346,7 @@
    "name": "Tamir Blatt",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 10-11 (coach's decision)"
+   "comment": "DNP in Round 10-11 (coach's decision). Played in the domestic league (11.14)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -354,7 +354,7 @@
    "name": "Bruno Caboclo",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 11 (coach's decision)"
+   "comment": "DNP in Round 11 (coach's decision). DNP in the domestic league (11.14)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -362,7 +362,7 @@
    "name": "Khadeen Carrington",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 11 (coach's decision)"
+   "comment": "DNP in Round 11 (coach's decision), Played in the domestic league (11.14)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -376,9 +376,9 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PF",
    "name": "Tomer Ginat",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 12",
-   "comment": "DNP in Rounds 7-11 (coach's decision)"
+   "comment": "Played in Round 11 after DNP in Rounds 7-10 (coach's decision) . Played in the domestic league (11.14)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -392,9 +392,9 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Bar Timor",
-   "status": "Ready",
+   "status": "Uncertain",
    "round": "Round 12",
-   "comment": "Played in Round 11 after DNP in Rounds 7-10 (coach's decision)"
+   "comment": "DNP in Rounds 7-11 (coach's decision). Played in the domestic league (11.14)"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -402,7 +402,7 @@
    "name": "Jacob Toppin",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 11 (coach's decision)"
+   "comment": "DNP in Round 11 (coach's decision). DNP in the domestic league (11.14)"
   },
   {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
@@ -474,7 +474,7 @@
    "name": "Oshae Brissett",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "Back injury in Round 11"
+   "comment": "Back injury in Round 11. DNP in the domestic league (11.14)"
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
@@ -498,7 +498,7 @@
    "name": "Gur Lavi",
    "status": "Out",
    "round": "Round 12",
-   "comment": "DNP in Rounds 1-11 (undisclosed injury)"
+   "comment": "DNP in Rounds 1-11 (undisclosed injury). DNP in the domestic league (11.14)"
   },
   {
    "team": "Maccabi Rapyd Tel Aviv",
@@ -512,9 +512,9 @@
    "team": "Maccabi Rapyd Tel Aviv",
    "position": "PG",
    "name": "Yam Madar",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 12",
-   "comment": "Broken nose in Round 11"
+   "comment": "Broken nose in Round 11. Played in the domestic league (11.14)"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -634,7 +634,7 @@
    "name": "Joel Ayayi",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 11 (coach's decision)"
+   "comment": "DNP in Round 11 (coach's decision). Played in the domestic league (11.14)"
   },
   {
    "team": "Paris Basketball",
@@ -650,7 +650,7 @@
    "name": "Daulton Hommes",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 11 (coach's decision)"
+   "comment": "DNP in Round 11 (coach's decision). Played in the domestic league (11.14)"
   },
   {
    "team": "Paris Basketball",
@@ -658,7 +658,7 @@
    "name": "Maozinha Pereira",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 11 (coach's decision)"
+   "comment": "DNP in Round 11 (coach's decision). DNP in the domestic league (11.14)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -666,7 +666,7 @@
    "name": "Kyle Allman",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 10-11 (coach's decision)."
+   "comment": "DNP in Round 10-11 (coach's decision). Played in the domestic league (11.14)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -680,7 +680,7 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PG",
    "name": "Uros Danilovic",
-   "status": "Uncertain",
+   "status": "Doubtful",
    "round": "Round 12",
    "comment": "DNP in Rounds 2-11 (coach's decision)"
   },
@@ -690,7 +690,7 @@
    "name": "Kevarrius Hayes",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Rounds 10-11 (minor shoulder injury)"
+   "comment": "DNP in Rounds 10-11 (minor shoulder injury). DNP in the domestic league (11.14)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -698,7 +698,7 @@
    "name": "Chris Silva",
    "status": "Expected",
    "round": "Round 12",
-   "comment": "New signing from Fenerbahce Istanbul (11.13)"
+   "comment": "New signing from Fenerbahce. Played in the domestic league (11.14)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -706,7 +706,7 @@
    "name": "Lamar Stevens",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Round 11 (illness)"
+   "comment": "DNP in Round 11 (illness). DNP in the domestic league (11.14)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -714,7 +714,7 @@
    "name": "Ethan Thompson",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "Suffered a hip injury in Round 11"
+   "comment": "Suffered a hip injury in Round 11. DNP in the domestic league (11.14)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -722,7 +722,7 @@
    "name": "Derek Willis",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Rounds 1-11, but returned to practices (ankle injury)"
+   "comment": "DNP in Rounds 1-11, but returned to practices (ankle injury). DNP in the domestic league (11.14)"
   },
   {
    "team": "Real Madrid",

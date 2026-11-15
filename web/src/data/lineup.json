@@ -1,22 +1,22 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 111.45,
- "scoredProjection": 136.41,
+ "totalProjection": 111.75,
+ "scoredProjection": 135.61,
  "captain": "3766",
  "starters": [
   "3766",
   "11549",
   "7424",
   "3851",
-  "3838"
+  "3842"
  ],
  "sixth": "3991",
  "bench": [
   "3975",
+  "7223",
   "8644",
-  "11541",
-  "4551"
+  "11541"
  ],
  "coach": {
   "key": "4006",
@@ -36,6 +36,14 @@
    "projection": 13.34
   },
   {
+   "key": "3842",
+   "name": "WILBEKIN, SCOTTIE",
+   "position": "G",
+   "club": "BES",
+   "price": 8.8,
+   "projection": 10.36
+  },
+  {
    "key": "3975",
    "name": "HERRERA, SEBASTIAN",
    "position": "G",
@@ -52,14 +60,6 @@
    "projection": 4.45
   },
   {
-   "key": "4551",
-   "name": "TIMOR, BAR",
-   "position": "G",
-   "club": "HTA",
-   "price": 4.0,
-   "projection": 4.08
-  },
-  {
    "key": "3766",
    "name": "VEZENKOV, SASHA",
    "position": "F",
@@ -68,20 +68,20 @@
    "projection": 21.15
   },
   {
-   "key": "3838",
-   "name": "MALCOLM, COLLIN",
-   "position": "F",
-   "club": "IST",
-   "price": 10.3,
-   "projection": 12.26
-  },
-  {
    "key": "3991",
    "name": "ABALDE, ALBERTO",
    "position": "F",
    "club": "MAD",
    "price": 6.1,
    "projection": 8.55
+  },
+  {
+   "key": "7223",
+   "name": "FRISCH, CLEMENT",
+   "position": "F",
+   "club": "BAS",
+   "price": 5.5,
+   "projection": 6.28
   },
   {
    "key": "8644",
