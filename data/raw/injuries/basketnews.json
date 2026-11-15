@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-15T09:36:31.685821+00:00",
- "updatedAt": "2026-11-14T13:49:00",
+ "fetchedAt": "2026-11-15T17:17:03.915946+00:00",
+ "updatedAt": "2026-11-15T15:23:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -186,7 +186,7 @@
    "name": "Justin Anderson",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Rounds 1-11 but played in domestic league on November 9 (hamstring)"
+   "comment": "DNP in Rounds 1-11 but played in domestic league on November 9 (hamstring). Was not registered for ABA League game (11.15)"
   },
   {
    "team": "Dubai Basketball",
@@ -218,15 +218,15 @@
    "name": "Klemen Prepelic",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "Was included in 12-man roster in Round 11 but DNP after DNP in Rounds 8-10 (coach's decision)"
+   "comment": "Was included in 12-man roster in Round 11 but did not play after DNP in Rounds 8-10 (coach's decision)"
   },
   {
    "team": "Dubai Basketball",
    "position": "PG",
    "name": "Thomas Walkup",
-   "status": "Out",
+   "status": "Ready",
    "round": "Round 12",
-   "comment": "Out indefinitely after DNP in Rounds 7-11 (back injury)"
+   "comment": "DNP in Rounds 7-11 (back injury); returned to action in ABA League on Sunday (11.15)"
   },
   {
    "team": "FC Bayern Munich",
@@ -262,6 +262,14 @@
   },
   {
    "team": "FC Barcelona",
+   "position": "PG",
+   "name": "Umoja Gibson",
+   "status": "Out",
+   "round": "Round 12",
+   "comment": "Suffered muscle strain of his left abdominal wall in Round 11. Out for around three weeks"
+  },
+  {
+   "team": "FC Barcelona",
    "position": "C",
    "name": "Abdu Kone",
    "status": "Expected",
@@ -280,9 +288,9 @@
    "team": "FC Barcelona",
    "position": "PG",
    "name": "Juan Nunez",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 12",
-   "comment": "DNP in Rounds 9-11 (right ankle sprain), expected to miss around 10 days (10.29). DNP in the domestic league (11.08)"
+   "comment": "Played in domestic league game (11.15) after DNP in Rounds 9-11 (right ankle sprain)"
   },
   {
    "team": "FC Barcelona",
@@ -616,9 +624,9 @@
    "team": "Panathinaikos AKTOR Athens",
    "position": "SF",
    "name": "Nikos Rogkavopoulos",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 12",
-   "comment": "Practiced ahead of Round 11, but DNP in Rounds 7-11 (hamstring injury).DNP in the domestic league (11.08)"
+   "comment": "Practiced ahead of Round 11, but DNP in Rounds 7-11 (hamstring injury). Returned to action in the domestic league (11.15)"
   },
   {
    "team": "Panathinaikos AKTOR Athens",
@@ -826,7 +834,7 @@
    "name": "Marek Blaževič",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Rounds 8-11 (coach's decision)"
+   "comment": "DNP in Rounds 8-11 (coach's decision).Played in the domestic league (11.15)"
   },
   {
    "team": "Zalgiris Kaunas",
@@ -834,7 +842,7 @@
    "name": "Dovydas Giedraitis",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Rounds 8-11 (coach's decision)"
+   "comment": "DNP in Rounds 8-11 (coach's decision). Played in the domestic league (11.15)"
   },
   {
    "team": "Zalgiris Kaunas",
@@ -842,7 +850,7 @@
    "name": "Deividas Sirvydis",
    "status": "Uncertain",
    "round": "Round 12",
-   "comment": "DNP in Rounds 8-11 (coach's decision)"
+   "comment": "DNP in Rounds 8-11 (coach's decision). Played in the domestic league (11.15)"
   },
   {
    "team": "Zalgiris Kaunas",
