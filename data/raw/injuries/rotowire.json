@@ -1,24 +1,24 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-16T06:47:04.612502+00:00",
+ "fetchedAt": "2026-11-16T18:41:37.086833+00:00",
  "updatedAt": null,
  "rows": [
-  {
-   "team": "VIR",
-   "position": "G",
-   "name": "Tommaso Baldasso",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
-  },
   {
    "team": "ASV",
    "position": "F",
    "name": "Juhann Begarin",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
+  },
+  {
+   "team": "ASV",
+   "position": "C",
+   "name": "Joel Bolomboy",
+   "status": "Out",
+   "round": "",
+   "comment": "Face"
   },
   {
    "team": "MIL",
@@ -69,14 +69,6 @@
    "comment": "Not Injury Related"
   },
   {
-   "team": "ASV",
-   "position": "C",
-   "name": "Mathis Dossou-Yovo",
-   "status": "Out",
-   "round": "",
-   "comment": "Thigh"
-  },
-  {
    "team": "HTA",
    "position": "G",
    "name": "Tyler Ennis",
@@ -104,7 +96,7 @@
    "team": "EFS",
    "position": "C",
    "name": "Bruno Fernando",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Calf"
   },
@@ -117,18 +109,10 @@
    "comment": "Leg"
   },
   {
-   "team": "VIR",
-   "position": "G",
-   "name": "Daniel Hackett",
-   "status": "Out",
-   "round": "",
-   "comment": "Illness"
-  },
-  {
    "team": "PAR",
    "position": "C",
    "name": "Kevarrius Hayes",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Shoulder"
   },
@@ -157,6 +141,14 @@
    "comment": "Foot"
   },
   {
+   "team": "FBT",
+   "position": "F",
+   "name": "Braxton Key",
+   "status": "Out",
+   "round": "",
+   "comment": "Finger"
+  },
+  {
    "team": "MTA",
    "position": "F",
    "name": "Gur Lavi",
@@ -176,15 +168,7 @@
    "team": "BAR",
    "position": "C",
    "name": "Yoan Makoundou",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
-  },
-  {
-   "team": "RMB",
-   "position": "G",
-   "name": "Theo Maledon",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Knee"
   },
@@ -192,9 +176,17 @@
    "team": "PAO",
    "position": "F",
    "name": "Lefteris Mantzoukas",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
+  },
+  {
+   "team": "FBT",
+   "position": "F",
+   "name": "Nicolo Melli",
+   "status": "Out",
+   "round": "",
+   "comment": "Knee"
   },
   {
    "team": "CZV",
@@ -232,15 +224,7 @@
    "team": "BAR",
    "position": "G",
    "name": "Juan Nunez",
-   "status": "Out",
-   "round": "",
-   "comment": ""
-  },
-  {
-   "team": "OLY",
-   "position": "F",
-   "name": "Kostas Papanikolaou",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -261,18 +245,10 @@
    "comment": "Foot"
   },
   {
-   "team": "PAO",
-   "position": "F",
-   "name": "Nikos Rogkavopoulos",
-   "status": "Out",
-   "round": "",
-   "comment": "Hamstring"
-  },
-  {
    "team": "KBA",
    "position": "C",
    "name": "Marcio Santos",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -280,7 +256,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Tadas Sedekerskis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
   },
@@ -293,26 +269,10 @@
    "comment": ""
   },
   {
-   "team": "KBA",
-   "position": "F",
-   "name": "Rolands Smits",
-   "status": "Out",
-   "round": "",
-   "comment": "Not Injury Related"
-  },
-  {
    "team": "PAR",
    "position": "F",
    "name": "Ethan Thompson",
    "status": "Game time",
-   "round": "",
-   "comment": "Back"
-  },
-  {
-   "team": "DUB",
-   "position": "G",
-   "name": "Thomas Walkup",
-   "status": "Out",
    "round": "",
    "comment": "Back"
   },
@@ -328,7 +288,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   }

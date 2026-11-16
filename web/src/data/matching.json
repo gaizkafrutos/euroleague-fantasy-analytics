@@ -90,16 +90,6 @@
   "match_confidence": 90.0
  },
  {
-  "fantaking_id": 4094,
-  "fantaking_name": "K. Kamenjas",
-  "fantaking_team": "DUB",
-  "club_code": "DUB",
-  "person_code": "008325",
-  "official_name": "KAMENJAS, KENAN",
-  "match_method": "initial-open",
-  "match_confidence": 93.0
- },
- {
   "fantaking_id": 3961,
   "fantaking_name": "O. Kattash",
   "fantaking_team": "MTA",
@@ -900,6 +890,16 @@
   "match_confidence": 99.0
  },
  {
+  "fantaking_id": 3878,
+  "fantaking_name": "R. Smits",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "007109",
+  "official_name": "SMITS, ROLANDS",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
   "fantaking_id": 3880,
   "fantaking_name": "D. Willis",
   "fantaking_team": "PAR",
@@ -1132,8 +1132,8 @@
  {
   "fantaking_id": 3917,
   "fantaking_name": "K. Baldwin",
-  "fantaking_team": "BAY",
-  "club_code": "MUN",
+  "fantaking_team": "MTA",
+  "club_code": "TEL",
   "person_code": "012597",
   "official_name": "BALDWIN, KAMAR",
   "match_method": "initial-club",
@@ -1766,6 +1766,16 @@
   "club_code": "BES",
   "person_code": "003783",
   "official_name": "UGURLU, BERK",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 4094,
+  "fantaking_name": "K. Kamenjas",
+  "fantaking_team": "KBA",
+  "club_code": "BAS",
+  "person_code": "008325",
+  "official_name": "KAMENJAS, KENAN",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
@@ -2782,8 +2792,8 @@
  {
   "fantaking_id": 8834,
   "fantaking_name": "C. Silva",
-  "fantaking_team": "FBT",
-  "club_code": "ULK",
+  "fantaking_team": "PAR",
+  "club_code": "PAR",
   "person_code": "014220",
   "official_name": "SILVA, CHRIS",
   "match_method": "initial-club",
@@ -2856,6 +2866,16 @@
   "club_code": "VIR",
   "person_code": "014416",
   "official_name": "EDWARDS, KESSLER",
+  "match_method": "initial-club",
+  "match_confidence": 99.0
+ },
+ {
+  "fantaking_id": 10947,
+  "fantaking_name": "M. Huertas",
+  "fantaking_team": "DUB",
+  "club_code": "DUB",
+  "person_code": "JUJ",
+  "official_name": "HUERTAS, MARCELINHO",
   "match_method": "initial-club",
   "match_confidence": 99.0
  },
