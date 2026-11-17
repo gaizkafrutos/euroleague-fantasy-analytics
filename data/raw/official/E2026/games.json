@@ -26341,9 +26341,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OACA",
+   "name": "RYZHYK, BORYS",
+   "alias": "RYZHYK, B.",
+   "country": {
+    "code": "UKR",
+    "name": "Ukraine"
+   },
+   "images": {
+    "verticalSmall": "8868n7x43bynj5fi"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJCI",
+   "name": "KOWALSKI, MARCIN",
+   "alias": "KOWALSKI, M.",
+   "country": {
+    "code": "POL",
+    "name": "Poland"
+   },
+   "images": {
+    "verticalSmall": "88458wn9bg4cds6q"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMS",
+   "name": "GRACIN, FRANKO",
+   "alias": "GRACIN, F.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "TURKCELL BASKETBALL DEVELOPMENT CENTER",
