@@ -1,14 +1,14 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-17T13:37:39.751705+00:00",
+ "fetchedAt": "2026-11-17T22:29:36.159389+00:00",
  "updatedAt": null,
  "rows": [
   {
    "team": "ASV",
    "position": "F",
    "name": "Juhann Begarin",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -27,6 +27,14 @@
    "status": "Out",
    "round": "",
    "comment": "Thigh"
+  },
+  {
+   "team": "CZV",
+   "position": "G",
+   "name": "Jared Butler",
+   "status": "Out",
+   "round": "",
+   "comment": "Illness"
   },
   {
    "team": "RMB",
@@ -96,7 +104,7 @@
    "team": "EFS",
    "position": "C",
    "name": "Bruno Fernando",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Calf"
   },
@@ -112,7 +120,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Kevarrius Hayes",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Shoulder"
   },
@@ -157,6 +165,14 @@
    "comment": ""
   },
   {
+   "team": "BAY",
+   "position": "F",
+   "name": "Vladimir Lucic",
+   "status": "Out",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "MTA",
    "position": "G",
    "name": "Iffe Lundberg",
@@ -168,7 +184,7 @@
    "team": "BAR",
    "position": "C",
    "name": "Yoan Makoundou",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Knee"
   },
@@ -176,7 +192,7 @@
    "team": "PAO",
    "position": "F",
    "name": "Lefteris Mantzoukas",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -256,7 +272,7 @@
    "team": "KBA",
    "position": "C",
    "name": "Marcio Santos",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": ""
   },
@@ -264,7 +280,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Tadas Sedekerskis",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Thigh"
   },
@@ -280,7 +296,7 @@
    "team": "PAR",
    "position": "F",
    "name": "Ethan Thompson",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Back"
   },
@@ -296,7 +312,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Ankle"
   }

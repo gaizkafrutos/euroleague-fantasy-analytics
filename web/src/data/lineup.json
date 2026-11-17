@@ -1,30 +1,30 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 110.94,
- "scoredProjection": 136.16,
+ "totalProjection": 110.54,
+ "scoredProjection": 139.61,
  "captain": "3766",
  "starters": [
   "3766",
-  "11549",
-  "7424",
-  "3851",
-  "3838"
+  "7201",
+  "11504",
+  "3838",
+  "3851"
  ],
- "sixth": "3991",
+ "sixth": "3842",
  "bench": [
-  "3975",
-  "8644",
+  "3985",
   "11541",
-  "11548"
+  "12517",
+  "11540"
  ],
  "coach": {
-  "key": "4006",
-  "name": "MASIULIS, TOMAS",
+  "key": "4255",
+  "name": "ALBERT, XAVIER",
   "position": "E",
-  "club": "ZAL",
-  "price": 7.4,
-  "projection": 14.42
+  "club": "PAM",
+  "price": 8.6,
+  "projection": 15.27
  },
  "players": [
   {
@@ -33,79 +33,79 @@
    "position": "G",
    "club": "MAD",
    "price": 9.7,
-   "projection": 13.34
+   "projection": 13.53
   },
   {
-   "key": "3975",
-   "name": "HERRERA, SEBASTIAN",
+   "key": "3842",
+   "name": "WILBEKIN, SCOTTIE",
    "position": "G",
-   "club": "PRS",
-   "price": 6.3,
-   "projection": 7.83
+   "club": "BES",
+   "price": 8.8,
+   "projection": 10.53
   },
   {
    "key": "11541",
    "name": "CARDENAS, ALVARO",
    "position": "G",
    "club": "PAM",
-   "price": 4.4,
-   "projection": 4.45
+   "price": 4.3,
+   "projection": 4.78
   },
   {
-   "key": "11548",
-   "name": "BALDASSO, TOMMASO",
+   "key": "11540",
+   "name": "SAINT-SUPERY, MARIO",
    "position": "G",
-   "club": "VIR",
+   "club": "PAM",
    "price": 4.0,
-   "projection": 3.57
+   "projection": 3.72
   },
   {
    "key": "3766",
    "name": "VEZENKOV, SASHA",
    "position": "F",
    "club": "OLY",
-   "price": 19.2,
-   "projection": 21.15
+   "price": 20.2,
+   "projection": 22.77
+  },
+  {
+   "key": "7201",
+   "name": "BACON, DWAYNE",
+   "position": "F",
+   "club": "DUB",
+   "price": 14.5,
+   "projection": 17.23
   },
   {
    "key": "3838",
    "name": "MALCOLM, COLLIN",
    "position": "F",
    "club": "IST",
-   "price": 10.3,
-   "projection": 12.26
+   "price": 10.1,
+   "projection": 14.14
   },
   {
-   "key": "3991",
-   "name": "ABALDE, ALBERTO",
+   "key": "3985",
+   "name": "LIGHTY, DAVID",
    "position": "F",
-   "club": "MAD",
-   "price": 6.1,
-   "projection": 8.55
+   "club": "ASV",
+   "price": 4.3,
+   "projection": 4.93
   },
   {
-   "key": "8644",
-   "name": "JOKSIMOVIC, STEFAN",
-   "position": "F",
-   "club": "BAS",
-   "price": 4.1,
-   "projection": 4.85
-  },
-  {
-   "key": "11549",
-   "name": "VALANCIUNAS, JONAS",
+   "key": "11504",
+   "name": "THIEMANN, JOHANNES",
    "position": "C",
-   "club": "ZAL",
-   "price": 17.7,
-   "projection": 20.81
+   "club": "MUN",
+   "price": 11.5,
+   "projection": 14.4
   },
   {
-   "key": "7424",
-   "name": "DIARRA, ALIOU",
+   "key": "12517",
+   "name": "KONE, ABDU",
    "position": "C",
-   "club": "VIR",
-   "price": 10.8,
-   "projection": 14.13
+   "club": "BAR",
+   "price": 4.0,
+   "projection": 4.51
   }
  ],
  "available": true,
