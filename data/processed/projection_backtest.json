@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-18T07:42:00.081497+00:00",
+ "generatedAt": "2026-11-18T17:21:15.573972+00:00",
  "params": {
   "rate_prior_minutes": 100.0,
   "minutes_half_life": 3.0,
@@ -14,18 +14,18 @@
   "n": 2384,
   "rounds": 11,
   "v2": {
-   "mae": 6.005,
+   "mae": 6.006,
    "rmse": 7.664,
    "bias": -0.043
   },
   "v2c": {
-   "mae": 6.0,
-   "rmse": 7.63,
+   "mae": 6.001,
+   "rmse": 7.631,
    "bias": -0.105
   },
   "legacy": {
-   "mae": 6.359,
-   "rmse": 8.182,
+   "mae": 6.36,
+   "rmse": 8.183,
    "bias": -0.008
   },
   "mean": {
@@ -50,10 +50,10 @@
    },
    "9-99": {
     "n": 408,
-    "v2": 6.156,
-    "v2c": 6.165,
-    "legacy": 6.155,
-    "mean": 6.154
+    "v2": 6.161,
+    "v2c": 6.17,
+    "legacy": 6.161,
+    "mean": 6.159
    }
   },
   "residualQuantiles": {
@@ -61,16 +61,16 @@
    "0.25": -5.19,
    "0.5": -0.86,
    "0.75": 4.76,
-   "0.9": 10.05
+   "0.9": 10.06
   },
   "calibration": {
-   "slope": 0.8143,
-   "intercept": 1.63,
+   "slope": 0.8145,
+   "intercept": 1.629,
    "n": 2428
   },
   "topBias": {
    "n": 211,
-   "raw": 1.26,
+   "raw": 1.25,
    "calibrated": -0.13
   },
   "bands": [
@@ -112,44 +112,44 @@
     "p10": -12.29,
     "p25": -6.77,
     "p75": 5.62,
-    "p90": 11.38
+    "p90": 11.46
    }
   ],
   "bandCheck": {
    "n": 2001,
    "inside": 0.483,
-   "aboveP90": 0.113
+   "aboveP90": 0.114
   },
   "zQuantiles": {
    "p10": -1.14,
    "p25": -0.677,
    "p50": -0.112,
    "p75": 0.621,
-   "p90": 1.311
+   "p90": 1.313
   },
   "ablation": {
-   "noOpponent": 6.019,
-   "noHome": 6.006,
-   "plain": 6.02,
-   "seasonMinutes": 5.994
+   "noOpponent": 6.02,
+   "noHome": 6.007,
+   "plain": 6.021,
+   "seasonMinutes": 5.995
   },
   "frozenFromRound": 12,
   "afterFreeze": {
    "n": 197,
    "rounds": 1,
    "v2": {
-    "mae": 5.763,
-    "rmse": 7.49,
+    "mae": 5.774,
+    "rmse": 7.499,
     "bias": -0.291
    },
    "v2c": {
-    "mae": 5.794,
-    "rmse": 7.505,
+    "mae": 5.805,
+    "rmse": 7.516,
     "bias": -0.293
    },
    "mean": {
-    "mae": 5.789,
-    "rmse": 7.516,
+    "mae": 5.8,
+    "rmse": 7.523,
     "bias": -0.396
    }
   }

@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-18T07:41:55.387107+00:00",
+ "fetchedAt": "2026-11-18T17:21:10.658658+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -125,6 +125,14 @@
    "comment": "Shoulder"
   },
   {
+   "team": "BAR",
+   "position": "G",
+   "name": "Killian Hayes",
+   "status": "Out",
+   "round": "",
+   "comment": "Not Injury Related"
+  },
+  {
    "team": "DUB",
    "position": "C",
    "name": "Mam Jaiteh",
@@ -178,7 +186,7 @@
    "name": "Iffe Lundberg",
    "status": "Out",
    "round": "",
-   "comment": "Quadriceps"
+   "comment": "Knee"
   },
   {
    "team": "BAR",

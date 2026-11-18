@@ -1,6 +1,126 @@
 [
  {
   "person": {
+   "code": "009661",
+   "name": "HAYES, KILLIAN",
+   "alias": "HAYES, KILLIAN",
+   "aliasRaw": "HAYES, KILLIAN",
+   "passportName": "KILLIAN DERON ANTRON",
+   "passportSurname": "HAYES",
+   "jerseyName": "HAYES",
+   "abbreviatedName": "Hayes, K.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 196,
+   "weight": 98,
+   "birthDate": "2001-07-27T00:00:00",
+   "birthCountry": {
+    "code": "USA",
+    "name": "United States of America"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-18T11:45:06.285",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "9",
+  "dorsalRaw": "9",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "SACRAMENTO KINGS",
+  "externalId": 57308,
+  "images": {},
+  "club": {
+   "code": "BAR",
+   "name": "FC Barcelona",
+   "abbreviatedName": "FC Barcelona",
+   "editorialName": "Barca",
+   "tvCode": "BAR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/35dfa503-e417-481f-963a-bdf6f013763e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "009213",
+   "name": "NDIAYE, ELI",
+   "alias": "NDIAYE, ELI",
+   "aliasRaw": "NDIAYE, ELI",
+   "passportName": "ELI JOHN",
+   "passportSurname": "NDIAYE",
+   "jerseyName": "NDIAYE",
+   "abbreviatedName": "Ndiaye, E.",
+   "country": {
+    "code": "ESP",
+    "name": "Spain"
+   },
+   "height": 204,
+   "weight": 95,
+   "birthDate": "2004-06-26T00:00:00",
+   "birthCountry": {
+    "code": "SEN",
+    "name": "Senegal"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-18T10:13:28.517",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "44",
+  "dorsalRaw": "44",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "JOVENTUT BADALONA",
+  "externalId": 57307,
+  "images": {},
+  "club": {
+   "code": "MAD",
+   "name": "Real Madrid",
+   "abbreviatedName": "Real Madrid",
+   "editorialName": "Real",
+   "tvCode": "RMB",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "JUJ",
    "name": "HUERTAS, MARCELINHO",
    "alias": "Huertas",
