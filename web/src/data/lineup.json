@@ -1,8 +1,8 @@
 {
  "method": "ilp",
  "totalPrice": 100.0,
- "totalProjection": 110.54,
- "scoredProjection": 139.61,
+ "totalProjection": 110.35,
+ "scoredProjection": 139.5,
  "captain": "3766",
  "starters": [
   "3766",
@@ -11,11 +11,11 @@
   "3838",
   "3851"
  ],
- "sixth": "3842",
+ "sixth": "7229",
  "bench": [
-  "3985",
   "11541",
-  "12517",
+  "3867",
+  "11521",
   "11540"
  ],
  "coach": {
@@ -24,7 +24,7 @@
   "position": "E",
   "club": "PAM",
   "price": 8.6,
-  "projection": 15.27
+  "projection": 15.24
  },
  "players": [
   {
@@ -36,14 +36,6 @@
    "projection": 13.53
   },
   {
-   "key": "3842",
-   "name": "WILBEKIN, SCOTTIE",
-   "position": "G",
-   "club": "BES",
-   "price": 8.8,
-   "projection": 10.53
-  },
-  {
    "key": "11541",
    "name": "CARDENAS, ALVARO",
    "position": "G",
@@ -52,12 +44,20 @@
    "projection": 4.78
   },
   {
+   "key": "11521",
+   "name": "FODZO DADA, MARC-OWEN",
+   "position": "G",
+   "club": "ASV",
+   "price": 4.6,
+   "projection": 4.53
+  },
+  {
    "key": "11540",
    "name": "SAINT-SUPERY, MARIO",
    "position": "G",
    "club": "PAM",
    "price": 4.0,
-   "projection": 3.72
+   "projection": 3.71
   },
   {
    "key": "3766",
@@ -65,7 +65,7 @@
    "position": "F",
    "club": "OLY",
    "price": 20.2,
-   "projection": 22.77
+   "projection": 22.78
   },
   {
    "key": "7201",
@@ -73,7 +73,7 @@
    "position": "F",
    "club": "DUB",
    "price": 14.5,
-   "projection": 17.23
+   "projection": 17.24
   },
   {
    "key": "3838",
@@ -81,15 +81,15 @@
    "position": "F",
    "club": "IST",
    "price": 10.1,
-   "projection": 14.14
+   "projection": 14.15
   },
   {
-   "key": "3985",
-   "name": "LIGHTY, DAVID",
+   "key": "3867",
+   "name": "PAPANIKOLAOU, KOSTAS",
    "position": "F",
-   "club": "ASV",
-   "price": 4.3,
-   "projection": 4.93
+   "club": "OLY",
+   "price": 4.0,
+   "projection": 4.72
   },
   {
    "key": "11504",
@@ -97,15 +97,15 @@
    "position": "C",
    "club": "MUN",
    "price": 11.5,
-   "projection": 14.4
+   "projection": 14.38
   },
   {
-   "key": "12517",
-   "name": "KONE, ABDU",
+   "key": "7229",
+   "name": "FAYE, MOUHAMED",
    "position": "C",
-   "club": "BAR",
-   "price": 4.0,
-   "projection": 4.51
+   "club": "PRS",
+   "price": 8.5,
+   "projection": 10.53
   }
  ],
  "available": true,
