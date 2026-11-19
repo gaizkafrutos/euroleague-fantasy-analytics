@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-19T10:29:43.032960+00:00",
+ "fetchedAt": "2026-11-19T20:48:24.855050+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -32,7 +32,7 @@
    "team": "CZV",
    "position": "G",
    "name": "Jared Butler",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Illness"
   },
@@ -120,7 +120,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Kevarrius Hayes",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Shoulder"
   },
@@ -128,7 +128,7 @@
    "team": "BAR",
    "position": "G",
    "name": "Killian Hayes",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -173,14 +173,6 @@
    "comment": ""
   },
   {
-   "team": "BAY",
-   "position": "F",
-   "name": "Vladimir Lucic",
-   "status": "Out",
-   "round": "",
-   "comment": ""
-  },
-  {
    "team": "MTA",
    "position": "G",
    "name": "Iffe Lundberg",
@@ -195,14 +187,6 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
-  },
-  {
-   "team": "PAO",
-   "position": "F",
-   "name": "Lefteris Mantzoukas",
-   "status": "Out",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "FBT",
@@ -224,17 +208,9 @@
    "team": "OLY",
    "position": "C",
    "name": "Nikola Milutinov",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Finger"
-  },
-  {
-   "team": "VBC",
-   "position": "F",
-   "name": "Nikola Mirotic",
-   "status": "Out",
-   "round": "",
-   "comment": "Groin"
   },
   {
    "team": "OLY",
@@ -251,14 +227,6 @@
    "status": "Out",
    "round": "",
    "comment": "Nose"
-  },
-  {
-   "team": "BAR",
-   "position": "G",
-   "name": "Juan Nunez",
-   "status": "Game time",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "BAR",
@@ -307,6 +275,14 @@
    "status": "Out",
    "round": "",
    "comment": "Back"
+  },
+  {
+   "team": "BAY",
+   "position": "C",
+   "name": "Austin Wiley",
+   "status": "Out",
+   "round": "",
+   "comment": "Hip"
   },
   {
    "team": "ZAL",

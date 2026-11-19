@@ -1,22 +1,22 @@
 {
  "method": "ilp",
- "totalPrice": 100.0,
- "totalProjection": 110.15,
- "scoredProjection": 139.59,
+ "totalPrice": 99.8,
+ "totalProjection": 109.81,
+ "scoredProjection": 138.18,
  "captain": "3766",
  "starters": [
   "3766",
-  "7201",
   "11504",
   "3838",
+  "7424",
   "3851"
  ],
- "sixth": "7229",
+ "sixth": "3930",
  "bench": [
-  "11541",
+  "4258",
   "3867",
-  "3886",
-  "11540"
+  "8644",
+  "3997"
  ],
  "coach": {
   "key": "4255",
@@ -24,7 +24,7 @@
   "position": "E",
   "club": "PAM",
   "price": 8.6,
-  "projection": 15.19
+  "projection": 15.06
  },
  "players": [
   {
@@ -33,31 +33,31 @@
    "position": "G",
    "club": "MAD",
    "price": 9.9,
-   "projection": 12.96
+   "projection": 12.94
   },
   {
-   "key": "11541",
-   "name": "CARDENAS, ALVARO",
+   "key": "3930",
+   "name": "MADAR, YAM",
+   "position": "G",
+   "club": "TEL",
+   "price": 11.0,
+   "projection": 12.68
+  },
+  {
+   "key": "4258",
+   "name": "PUERTO, JOSEP",
    "position": "G",
    "club": "PAM",
-   "price": 4.3,
-   "projection": 4.77
+   "price": 5.2,
+   "projection": 6.03
   },
   {
-   "key": "3886",
-   "name": "HACKETT, DANIEL",
+   "key": "3997",
+   "name": "TONUT, STEFANO",
    "position": "G",
-   "club": "VIR",
-   "price": 4.4,
-   "projection": 4.44
-  },
-  {
-   "key": "11540",
-   "name": "SAINT-SUPERY, MARIO",
-   "position": "G",
-   "club": "PAM",
+   "club": "MIL",
    "price": 4.0,
-   "projection": 3.72
+   "projection": 3.92
   },
   {
    "key": "3766",
@@ -65,15 +65,7 @@
    "position": "F",
    "club": "OLY",
    "price": 20.2,
-   "projection": 23.09
-  },
-  {
-   "key": "7201",
-   "name": "BACON, DWAYNE",
-   "position": "F",
-   "club": "DUB",
-   "price": 14.5,
-   "projection": 17.2
+   "projection": 22.87
   },
   {
    "key": "3838",
@@ -81,7 +73,7 @@
    "position": "F",
    "club": "IST",
    "price": 10.1,
-   "projection": 14.12
+   "projection": 13.98
   },
   {
    "key": "3867",
@@ -89,7 +81,15 @@
    "position": "F",
    "club": "OLY",
    "price": 4.0,
-   "projection": 4.74
+   "projection": 4.72
+  },
+  {
+   "key": "8644",
+   "name": "JOKSIMOVIC, STEFAN",
+   "position": "F",
+   "club": "BAS",
+   "price": 4.0,
+   "projection": 4.45
   },
   {
    "key": "11504",
@@ -97,15 +97,15 @@
    "position": "C",
    "club": "MUN",
    "price": 11.5,
-   "projection": 14.56
+   "projection": 14.48
   },
   {
-   "key": "7229",
-   "name": "FAYE, MOUHAMED",
+   "key": "7424",
+   "name": "DIARRA, ALIOU",
    "position": "C",
-   "club": "PRS",
-   "price": 8.5,
-   "projection": 10.55
+   "club": "VIR",
+   "price": 11.3,
+   "projection": 13.74
   }
  ],
  "available": true,
