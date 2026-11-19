@@ -25331,9 +25331,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "QJLV",
+   "name": "VILIUS, GYTIS",
+   "alias": "VILIUS, G.",
+   "country": {
+    "code": "LTU",
+    "name": "Lithuania"
+   },
+   "images": {
+    "verticalSmall": "94qq99ojsab3pjud"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "QJMD",
+   "name": "KONSTANTINOVS, KRISTAPS",
+   "alias": "KONSTANTINOVS, K.",
+   "country": {
+    "code": "LAT",
+    "name": "Latvia"
+   },
+   "images": {
+    "verticalSmall": "awmiu6ag6kvhaq4c"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJFA",
+   "name": "BISSANG, JOSEPH",
+   "alias": "BISSANG, J.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": "ayroh3wgvpblrcdk"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "ALEKSANDAR NIKOLIC HALL",
@@ -25432,9 +25468,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJDL",
+   "name": "MOGULKOC, EMIN",
+   "alias": "MOGULKOC, E.",
+   "country": {
+    "code": "TUR",
+    "name": "Turkiye"
+   },
+   "images": {
+    "verticalSmall": "885ubsvbyuo7gpso"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJFQ",
+   "name": "FOUFIS, IOANNIS",
+   "alias": "FOUFIS, I.",
+   "country": {
+    "code": "GRE",
+    "name": "Greece"
+   },
+   "images": {
+    "verticalSmall": "87yuyhwl9wgoi74r"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "013180",
+   "name": "THEIS, CHRISTIAN",
+   "alias": "THEIS, C.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "images": {
+    "verticalSmall": null
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "PALAU BLAUGRANA",
@@ -25533,9 +25605,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OACI",
+   "name": "BELOSEVIC, ILIJA",
+   "alias": "BELOSEVIC, I.",
+   "country": {
+    "code": "SRB",
+    "name": "Serbia"
+   },
+   "images": {
+    "verticalSmall": "ayrnxwrdng99dusy"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJLL",
+   "name": "DIFALLAH, MEHDI",
+   "alias": "DIFALLAH, M.",
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "images": {
+    "verticalSmall": "87ytu4ivn6qtsqni"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "QJMF",
+   "name": "KARDUM, LUKA",
+   "alias": "KARDUM, L.",
+   "country": {
+    "code": "CRO",
+    "name": "Croatia"
+   },
+   "images": {
+    "verticalSmall": "awgpghekyaxank3l"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "SUNEL ARENA",
@@ -25634,9 +25742,45 @@
   "audienceConfirmed": false,
   "socialFeed": "",
   "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
+  "referee1": {
+   "code": "OJCL",
+   "name": "LOTTERMOSER, ROBERT",
+   "alias": "LOTTERMOSER, R.",
+   "country": {
+    "code": "GER",
+    "name": "Germany"
+   },
+   "images": {
+    "verticalSmall": "8845rp7o4ifpg9kf"
+   },
+   "active": true
+  },
+  "referee2": {
+   "code": "OJFC",
+   "name": "JAVOR, DAMIR",
+   "alias": "JAVOR, D.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "883i7yokjhfy7pih"
+   },
+   "active": true
+  },
+  "referee3": {
+   "code": "OJIU",
+   "name": "MAJKIC, MARIO ",
+   "alias": "MAJKIC, M.",
+   "country": {
+    "code": "SLO",
+    "name": "Slovenia"
+   },
+   "images": {
+    "verticalSmall": "8845wax66b8ru3x7"
+   },
+   "active": true
+  },
   "referee4": null,
   "venue": {
    "name": "TURKCELL BASKETBALL DEVELOPMENT CENTER",

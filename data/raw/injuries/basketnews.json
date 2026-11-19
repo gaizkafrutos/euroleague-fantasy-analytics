@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-19T00:31:25.795438+00:00",
- "updatedAt": "2026-11-18T16:44:00",
+ "fetchedAt": "2026-11-19T10:29:42.568859+00:00",
+ "updatedAt": "2026-11-19T10:09:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -96,16 +96,16 @@
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Yagiz Aksu",
-   "status": "Out",
-   "round": "Round 12",
-   "comment": "Not included in 12-man roster after DNP in Rounds 1-11 (coach's decision). DNP in the domestic league (11.15)"
+   "status": "Doubtful",
+   "round": "Round 13",
+   "comment": "DNP in Rounds 1-12 (coach's decision). DNP in the domestic league (11.15)"
   },
   {
    "team": "Besiktas Istanbul",
    "position": "SG",
    "name": "Jaylen Nowell",
    "status": "Out",
-   "round": "Round 12",
+   "round": "Round 13",
    "comment": "Out indefinitely after undergoing surgery on his broken nose (11.10)"
   },
   {
@@ -113,16 +113,16 @@
    "position": "C",
    "name": "Mady Sissoko",
    "status": "Out",
-   "round": "Round 12",
+   "round": "Round 13",
    "comment": "Out indefinitely but began individual strength training after an injury"
   },
   {
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Berk Ugurlu",
-   "status": "Out",
-   "round": "Round 12",
-   "comment": "Not included in 12-man roster after being ruled out for Round 11 (undisclosed). Played in the domestic league (11.15)"
+   "status": "Uncertain",
+   "round": "Round 13",
+   "comment": "Not included in 12-man roster in Round 12 after being ruled out for Round 11 (undisclosed). Played in the domestic league (11.15)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -131,6 +131,14 @@
    "status": "Out",
    "round": "Round 13",
    "comment": "Out indefinitely, as he's not included in official Euroleague roster"
+  },
+  {
+   "team": "Crvena Zvezda Meridianbet Belgrade",
+   "position": "PG",
+   "name": "Jared Butler",
+   "status": "Uncertain",
+   "round": "Round 13",
+   "comment": "DNP in Round 12 (illness)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -256,25 +264,25 @@
    "team": "FC Bayern Munich",
    "position": "SG",
    "name": "Justus Hollatz",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 13",
-   "comment": "DNP in Round 12 (undisclosed)"
+   "comment": "Practiced with the team ahead of Round 13 after DNP in Round 12 (undisclosed)"
   },
   {
    "team": "FC Bayern Munich",
    "position": "SF",
    "name": "Vladimir Lucic",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 13",
-   "comment": "DNP in Round 12 (undisclosed)"
+   "comment": "Practiced with the team ahead of Round 13 after DNP in Round 12 (undisclosed)"
   },
   {
    "team": "FC Bayern Munich",
    "position": "C",
    "name": "Austin Wiley",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 13",
-   "comment": "DNP in Round 12 (undisclosed injury)"
+   "comment": "Practiced with the team ahead of Round 13 after DNP in Round 12 (undisclosed injury)"
   },
   {
    "team": "FC Barcelona",
@@ -346,7 +354,7 @@
    "name": "Braxton Key",
    "status": "Out",
    "round": "Round 13",
-   "comment": "Ruled out for Round 12 after suffering a dislocated finger and a tear in domestic league (11.15)"
+   "comment": "Expected to be out for 6-8 weeks after undergoing surgery because of a dislocated finger and a tear. Estimated return is Round 19-21"
   },
   {
    "team": "Fenerbahce Beko Istanbul",
@@ -362,7 +370,7 @@
    "name": "Nicolo Melli",
    "status": "Out",
    "round": "Round 13",
-   "comment": "Out indefinitely after DNP in Round 11 (meniscus injury). Might require surgery, the extent of the injury will be confirmed after additional tests"
+   "comment": "Expected to be out for 6-8 weeks after undergoing surgery because of a meniscus. Estimated return is Round 19-21"
   },
   {
    "team": "Hapoel IBI Tel Aviv",
@@ -421,18 +429,10 @@
    "comment": "DNP in Rounds 7-12 (coach's decision)"
   },
   {
-   "team": "Hapoel IBI Tel Aviv",
-   "position": "SF",
-   "name": "Jacob Toppin",
-   "status": "Ready",
-   "round": "Round 12",
-   "comment": "Played in Round 12 after DNP in Round 11 (coach's decision)"
-  },
-  {
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "C",
    "name": "Kenneth Faried",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 13",
    "comment": "Out indefinitely with a left thigh injury"
   },
@@ -672,8 +672,8 @@
    "team": "Paris Basketball",
    "position": "SF",
    "name": "Maozinha Pereira",
-   "status": "Ready",
-   "round": "Round 12",
+   "status": "Expected",
+   "round": "Round 13",
    "comment": "Played 1 minute in Round 12 after DNP in Round 11 (coach's decision)"
   },
   {
@@ -745,7 +745,7 @@
    "position": "PG",
    "name": "Facundo Campazzo",
    "status": "Out",
-   "round": "Round 12",
+   "round": "Round 13",
    "comment": "Out indefinitely after suffering a left hamstring injury in a domestic league game (11.01)"
   },
   {
@@ -753,7 +753,7 @@
    "position": "SF",
    "name": "Gabriel Deck",
    "status": "Out",
-   "round": "Round 12",
+   "round": "Round 13",
    "comment": "Underwent left shoulder surgery on October 14, expected to be out until mid-February/mid-March."
   },
   {
@@ -761,7 +761,7 @@
    "position": "PF",
    "name": "Usman Garuba",
    "status": "Out",
-   "round": "Round 12",
+   "round": "Round 13",
    "comment": "Out indefinitely with a torn ACL"
   },
   {
@@ -769,31 +769,23 @@
    "position": "PF",
    "name": "Mikael Jantunen",
    "status": "Out",
-   "round": "Round 12",
+   "round": "Round 13",
    "comment": "Out indefinitely after a complete rupture of the plantar fascia in left foot (10.30)"
   },
   {
    "team": "Real Madrid",
    "position": "PG",
    "name": "Sergio Llull",
-   "status": "Out",
-   "round": "Round 12",
-   "comment": "Not included in 12-man roster (coach's decision)"
-  },
-  {
-   "team": "Real Madrid",
-   "position": "PG",
-   "name": "Theo Maledon",
-   "status": "Ready",
-   "round": "Round 12",
-   "comment": "Included in 12-man roster after being out due to a right knee sprain (10.30)"
+   "status": "Uncertain",
+   "round": "Round 13",
+   "comment": "Not included in 12-man roster in Round 12 (coach's decision)"
   },
   {
    "team": "Real Madrid",
    "position": "PF",
    "name": "Eli Ndiaye",
-   "status": "Out",
-   "round": "Round 12",
+   "status": "Uncertain",
+   "round": "Round 13",
    "comment": "Not included in 12-man roster as he recently returned from a loan at Badalona Joventut"
   },
   {
@@ -808,17 +800,17 @@
    "team": "Valencia Basket",
    "position": "PF",
    "name": "Nikola Mirotic",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 13",
-   "comment": "DNP in Rounds 9-12 (muscle injury)"
+   "comment": "Returned to team practices ahead of Round 13 after DNP in Rounds 9-12 (muscle injury)"
   },
   {
    "team": "Valencia Basket",
    "position": "C",
    "name": "Nate Reuvers",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 13",
-   "comment": "DNP in Rounds 8-12 (foot bone injury)"
+   "comment": "Ruled out for Round 13 after DNP in Rounds 8-12 (foot bone injury)"
   },
   {
    "team": "Virtus Bologna",
