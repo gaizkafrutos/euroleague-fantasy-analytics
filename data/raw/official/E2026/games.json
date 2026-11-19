@@ -26502,7 +26502,7 @@
   "round": 12,
   "roundAlias": "Round 12",
   "roundName": "Round 12",
-  "played": false,
+  "played": true,
   "date": "2026-11-18T18:00:00",
   "confirmedDate": true,
   "confirmedHour": true,
@@ -26521,13 +26521,13 @@
      "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHH/b05e3c54-e672-4b31-9f86-c91e9de7715c.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 83,
+   "standingsScore": 83,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 18,
+    "partials2": 27,
+    "partials3": 19,
+    "partials4": 19,
     "extraPeriods": {}
    }
   },
@@ -26543,18 +26543,18 @@
      "crest": "https://media-cdn.incrowdsports.com/371b0d9b-9250-4c09-bda7-0686cf024657.png"
     }
    },
-   "score": 0,
-   "standingsScore": 0,
+   "score": 79,
+   "standingsScore": 79,
    "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
+    "partials1": 15,
+    "partials2": 22,
+    "partials3": 17,
+    "partials4": 25,
     "extraPeriods": {}
    }
   },
-  "audience": 0,
-  "audienceConfirmed": false,
+  "audience": 8086,
+  "audienceConfirmed": true,
   "socialFeed": "",
   "operationsCode": null,
   "referee1": {

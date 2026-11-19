@@ -1,31 +1,31 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-18T17:21:44.177645+00:00",
- "currentRound": 12,
+ "generatedAt": "2026-11-19T00:31:53.690856+00:00",
+ "currentRound": 13,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 76,
- "lastPriceCapture": "2026-11-18T17:21:11.810298+00:00",
- "lastPriceCheck": "2026-11-18T17:21:11.810298+00:00",
+ "priceSnapshots": 77,
+ "lastPriceCapture": "2026-11-19T00:31:27.591047+00:00",
+ "lastPriceCheck": "2026-11-19T00:31:27.591047+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
-  "games": 119
+  "games": 120
  },
  "teamStrengthSource": "temporada en curso",
  "players": 362,
  "matched": 360,
  "matchRate": 0.994,
  "budget": 100.0,
- "coachGames": 238,
+ "coachGames": 240,
  "matchModel": {
-  "homeAdvantage": 3.22,
-  "marginSd": 12.44
+  "homeAdvantage": 3.23,
+  "marginSd": 12.39
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-18T17:21:15.573972+00:00",
+  "generatedAt": "2026-11-19T00:31:31.619129+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -37,139 +37,139 @@
   },
   "current": {
    "code": "E2026",
-   "n": 2384,
+   "n": 2406,
    "rounds": 11,
    "v2": {
-    "mae": 6.006,
-    "rmse": 7.664,
-    "bias": -0.043
+    "mae": 6.012,
+    "rmse": 7.667,
+    "bias": -0.032
    },
    "v2c": {
-    "mae": 6.001,
-    "rmse": 7.631,
-    "bias": -0.105
+    "mae": 6.006,
+    "rmse": 7.634,
+    "bias": -0.094
    },
    "legacy": {
-    "mae": 6.36,
-    "rmse": 8.183,
-    "bias": -0.008
+    "mae": 6.365,
+    "rmse": 8.187,
+    "bias": 0.007
    },
    "mean": {
-    "mae": 6.379,
-    "rmse": 8.194,
-    "bias": -0.102
+    "mae": 6.382,
+    "rmse": 8.197,
+    "bias": -0.09
    },
    "byGames": {
     "1-3": {
-     "n": 839,
-     "v2": 5.824,
-     "v2c": 5.831,
-     "legacy": 6.531,
-     "mean": 6.639
+     "n": 841,
+     "v2": 5.846,
+     "v2c": 5.853,
+     "legacy": 6.559,
+     "mean": 6.664
     },
     "4-8": {
-     "n": 1137,
-     "v2": 6.086,
-     "v2c": 6.065,
-     "legacy": 6.305,
-     "mean": 6.267
+     "n": 1142,
+     "v2": 6.089,
+     "v2c": 6.069,
+     "legacy": 6.308,
+     "mean": 6.266
     },
     "9-99": {
-     "n": 408,
-     "v2": 6.161,
-     "v2c": 6.17,
-     "legacy": 6.161,
-     "mean": 6.159
+     "n": 423,
+     "v2": 6.134,
+     "v2c": 6.143,
+     "legacy": 6.136,
+     "mean": 6.132
     }
    },
    "calibration": {
-    "slope": 0.8145,
-    "intercept": 1.629,
-    "n": 2428
+    "slope": 0.8138,
+    "intercept": 1.625,
+    "n": 2450
    },
    "topBias": {
-    "n": 211,
-    "raw": 1.25,
-    "calibrated": -0.13
+    "n": 213,
+    "raw": 1.21,
+    "calibrated": -0.18
    },
    "bands": [
     {
-     "center": 4.5,
-     "n": 486,
-     "p10": -6.11,
+     "center": 4.51,
+     "n": 490,
+     "p10": -6.13,
      "p25": -4.22,
      "p75": 3.74,
-     "p90": 8.25
+     "p90": 8.39
     },
     {
-     "center": 6.45,
-     "n": 485,
-     "p10": -7.63,
-     "p25": -4.98,
-     "p75": 4.3,
-     "p90": 9.89
-    },
-    {
-     "center": 8.25,
-     "n": 486,
-     "p10": -8.5,
-     "p25": -5.68,
-     "p75": 4.59,
+     "center": 6.46,
+     "n": 490,
+     "p10": -7.64,
+     "p25": -5.04,
+     "p75": 4.34,
      "p90": 9.82
     },
     {
-     "center": 10.36,
-     "n": 485,
-     "p10": -9.65,
-     "p25": -5.32,
-     "p75": 5.22,
-     "p90": 11.42
+     "center": 8.26,
+     "n": 490,
+     "p10": -8.58,
+     "p25": -5.68,
+     "p75": 4.48,
+     "p90": 9.8
+    },
+    {
+     "center": 10.35,
+     "n": 490,
+     "p10": -9.62,
+     "p25": -5.49,
+     "p75": 5.19,
+     "p90": 11.4
     },
     {
      "center": 13.66,
-     "n": 486,
-     "p10": -12.29,
-     "p25": -6.77,
-     "p75": 5.62,
-     "p90": 11.46
+     "n": 490,
+     "p10": -12.26,
+     "p25": -6.68,
+     "p75": 5.65,
+     "p90": 11.42
     }
    ],
    "bandCheck": {
-    "n": 2001,
-    "inside": 0.483,
-    "aboveP90": 0.114
+    "n": 2023,
+    "inside": 0.482,
+    "aboveP90": 0.113
    },
    "zQuantiles": {
     "p10": -1.14,
-    "p25": -0.677,
-    "p50": -0.112,
+    "p25": -0.68,
+    "p50": -0.115,
     "p75": 0.621,
-    "p90": 1.313
+    "p90": 1.311
    },
    "ablation": {
-    "noOpponent": 6.02,
-    "noHome": 6.007,
-    "plain": 6.021,
-    "seasonMinutes": 5.995
+    "noOpponent": 6.025,
+    "noHome": 6.013,
+    "plain": 6.027,
+    "seasonMinutes": 6.0
    },
    "frozenFromRound": 12,
    "afterFreeze": {
-    "n": 197,
+    "n": 219,
     "rounds": 1,
     "v2": {
-     "mae": 5.774,
-     "rmse": 7.499,
-     "bias": -0.291
+     "mae": 5.857,
+     "rmse": 7.55,
+     "bias": -0.137
     },
     "v2c": {
-     "mae": 5.805,
-     "rmse": 7.516,
-     "bias": -0.293
+     "mae": 5.886,
+     "rmse": 7.557,
+     "bias": -0.151
     },
     "mean": {
-     "mae": 5.8,
-     "rmse": 7.523,
-     "bias": -0.396
+     "mae": 5.883,
+     "rmse": 7.623,
+     "bias": -0.231
     }
    }
   },
@@ -764,63 +764,120 @@
      "changeMae": 0.174,
      "changeMaeZero": 0.179,
      "generatedAt": "2026-11-11T17:56:40.344781+00:00"
+    },
+    {
+     "round": 12,
+     "n": 340,
+     "model": {
+      "mae": 4.277,
+      "rmse": 6.551,
+      "bias": -0.626,
+      "spearman": 0.585
+     },
+     "mean": {
+      "mae": 5.234,
+      "rmse": 7.232,
+      "bias": 1.029,
+      "spearman": 0.445
+     },
+     "meanPlay": {
+      "mae": 4.171,
+      "rmse": 6.586,
+      "bias": -0.808,
+      "spearman": 0.566
+     },
+     "biasExpensiveIfPlays": -1.096,
+     "expensiveN": 30,
+     "playProb": {
+      "doubt": {
+       "n": 44,
+       "predicted": 0.2,
+       "real": 0.25
+      },
+      "out": {
+       "n": 51,
+       "predicted": 0.0,
+       "real": 0.0
+      },
+      "probable": {
+       "n": 17,
+       "predicted": 0.75,
+       "real": 0.824
+      },
+      "sin parte": {
+       "n": 228,
+       "predicted": 0.806,
+       "real": 0.868
+      }
+     },
+     "lineup": {
+      "projected": 136.2,
+      "real": 179.8,
+      "best": 303.7,
+      "withCoach": true,
+      "baseline": 181.3
+     },
+     "bandIfPlays": true,
+     "bandCoverage": 0.538,
+     "aboveP90": 0.085,
+     "generatedAt": "2026-11-17T13:38:17.386912+00:00"
     }
    ],
    "total": {
-    "n": 3333,
+    "n": 3673,
     "model": {
-     "mae": 4.55,
-     "bias": 0.122,
-     "spearman": 0.6
+     "mae": 4.525,
+     "bias": 0.053,
+     "spearman": 0.599
     },
     "mean": {
-     "mae": 5.121,
-     "bias": 0.547,
-     "spearman": 0.501
+     "mae": 5.131,
+     "bias": 0.592,
+     "spearman": 0.496
     },
     "meanPlay": {
-     "mae": 4.584,
-     "bias": -0.354,
+     "mae": 4.546,
+     "bias": -0.396,
      "spearman": 0.568
     },
     "versus": {
-     "players": 343,
+     "players": 345,
      "mean": {
       "mae": {
-       "diff": -0.57,
-       "low": -0.757,
-       "high": -0.393
+       "diff": -0.606,
+       "low": -0.794,
+       "high": -0.431
       },
       "rmse": {
-       "diff": -0.802,
-       "low": -0.985,
-       "high": -0.604
+       "diff": -0.791,
+       "low": -0.986,
+       "high": -0.605
       }
      },
      "meanPlay": {
       "mae": {
-       "diff": -0.034,
-       "low": -0.116,
-       "high": 0.051
+       "diff": -0.021,
+       "low": -0.096,
+       "high": 0.058
       },
       "rmse": {
-       "diff": -0.392,
-       "low": -0.485,
-       "high": -0.296
+       "diff": -0.36,
+       "low": -0.44,
+       "high": -0.27
       }
      }
     },
     "lineupWins": {
-     "rounds": 10,
+     "rounds": 11,
      "model": 7,
-     "modelAvg": 142.2,
-     "baselineAvg": 119.3
+     "modelAvg": 145.6,
+     "baselineAvg": 125.0
     },
     "playProb": {
      "doubt": {
-      "n": 401,
-      "predicted": 0.279,
-      "real": 0.202
+      "n": 445,
+      "predicted": 0.271,
+      "real": 0.207
      },
      "nunca convocado": {
       "n": 64,
@@ -828,39 +885,39 @@
       "real": 0.047
      },
      "out": {
-      "n": 282,
+      "n": 333,
       "predicted": 0.0,
-      "real": 0.028
+      "real": 0.024
      },
      "probable": {
-      "n": 69,
-      "predicted": 0.579,
-      "real": 0.739
+      "n": 86,
+      "predicted": 0.613,
+      "real": 0.756
      },
      "sin parte": {
-      "n": 2517,
-      "predicted": 0.85,
-      "real": 0.838
+      "n": 2745,
+      "predicted": 0.847,
+      "real": 0.841
      }
     }
    }
   },
   "coach": {
    "code": "E2026",
-   "n": 198,
-   "model": 9.704,
-   "mean": 10.497
+   "n": 200,
+   "model": 9.736,
+   "mean": 10.508
   }
  },
  "projectionCalibration": {
-  "slope": 0.8145,
-  "intercept": 1.629,
-  "n": 2428.0
+  "slope": 0.8138,
+  "intercept": 1.625,
+  "n": 2450.0
  },
  "formulaCheck": {
   "ok": false,
-  "checkedAt": "2026-11-18T17:21:40.914506+00:00",
-  "capturedAt": "2026-11-18T17:21:11.810298+00:00",
+  "checkedAt": "2026-11-19T00:31:51.261644+00:00",
+  "capturedAt": "2026-11-19T00:31:27.591047+00:00",
   "players": 259,
   "exact": 243,
   "exactShare": 0.938,
@@ -881,7 +938,7 @@
   ]
  },
  "schedule": {
-  "round": 12,
+  "round": 13,
   "turns": 2,
   "doubleWeekClubs": [
    "ASV",
@@ -906,34 +963,15 @@
    "ZAL"
   ],
   "roundGames": 10,
-  "roundPlayed": 9,
-  "aheadClubs": [
-   "ASV",
-   "BAR",
-   "BAS",
-   "DUB",
-   "HTA",
-   "IST",
-   "MIL",
-   "MUN",
-   "OLY",
-   "PAM",
-   "PAN",
-   "PAR",
-   "PRS",
-   "RED",
-   "TEL",
-   "ULK",
-   "VIR",
-   "ZAL"
-  ]
+  "roundPlayed": 0,
+  "aheadClubs": []
  },
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-18T16:44:00",
-  "fetchedAt": "2026-11-18T17:21:10.658658+00:00",
-  "rows": 149,
+  "fetchedAt": "2026-11-19T00:31:26.419063+00:00",
+  "rows": 150,
   "matched": 101,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
@@ -954,41 +992,41 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-18T16:44:00",
-    "fetchedAt": "2026-11-18T17:21:10.220207+00:00",
-    "rows": 109,
-    "matched": 99,
-    "flagged": 97
+    "fetchedAt": "2026-11-19T00:31:25.795438+00:00",
+    "rows": 110,
+    "matched": 100,
+    "flagged": 96
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-18T17:21:10.658658+00:00",
+    "fetchedAt": "2026-11-19T00:31:26.419063+00:00",
     "rows": 40,
     "matched": 38,
     "flagged": 2
    }
   ],
-  "nextRound": 12,
+  "nextRound": 13,
   "unregistered": 7,
   "flagged": {
-   "out": 42,
-   "doubt": 56,
-   "probable": 8
+   "out": 34,
+   "doubt": 64,
+   "probable": 7
   }
  },
  "warnings": [
-  "Precios capturados el 2026-11-18 17:21 UTC: la jornada sigue en juego (9 de 10 partidos) (J12). Se usa el precio pendiente de 248 jugadores hasta la próxima captura."
+  "Precios capturados el 2026-11-19 00:31 UTC: el juego aún no ha aplicado la revalorización (J12). Se usa el precio pendiente de 280 jugadores hasta la próxima captura."
  ],
  "priceFreshness": {
   "stale": true,
-  "capturedAt": "2026-11-18T17:21:11.810298+00:00",
-  "lastGameAt": "2026-11-17T20:00:00+00:00",
+  "capturedAt": "2026-11-19T00:31:27.591047+00:00",
+  "lastGameAt": "2026-11-18T17:00:00+00:00",
   "round": 12,
-  "reason": "jornada en juego",
+  "reason": "el juego aún no ha aplicado la revalorización",
   "roundGames": 10,
-  "roundPlayed": 9,
-  "pending": 248
+  "roundPlayed": 10,
+  "pending": 280
  },
  "priceModel": {
   "a": 0.0399,
@@ -1001,44 +1039,44 @@
  "league": {
   "zones": [
    [
-    2647,
-    2082
+    2670,
+    2098
    ],
    [
-    4861,
-    2293
+    4900,
+    2307
    ],
    [
-    683,
-    288
+    696,
+    292
    ],
    [
     255,
     103
    ],
    [
-    725,
+    727,
     304
    ],
    [
-    438,
-    176
+    442,
+    177
    ],
    [
-    2093,
-    713
+    2110,
+    721
    ],
    [
-    1374,
-    479
+    1384,
+    482
    ],
    [
-    2191,
-    791
+    2211,
+    798
    ],
    [
-    432,
-    174
+    442,
+    175
    ]
   ],
   "zoneKeys": [
@@ -1067,9 +1105,9 @@
   ],
   "allowed": {
    "G": 42.95,
-   "F": 33.7,
-   "C": 21.69,
-   "all": 98.35
+   "F": 33.62,
+   "C": 21.66,
+   "all": 98.23
   },
   "shotSeasons": [
    "E2026"
