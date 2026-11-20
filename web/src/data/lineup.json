@@ -1,30 +1,30 @@
 {
  "method": "ilp",
- "totalPrice": 99.8,
- "totalProjection": 109.81,
- "scoredProjection": 138.18,
+ "totalPrice": 100.0,
+ "totalProjection": 109.41,
+ "scoredProjection": 135.62,
  "captain": "3766",
  "starters": [
   "3766",
-  "11504",
+  "7201",
   "3838",
   "7424",
   "3851"
  ],
  "sixth": "3930",
  "bench": [
-  "4258",
   "3867",
-  "8644",
-  "3997"
+  "11541",
+  "3947",
+  "11540"
  ],
  "coach": {
-  "key": "4255",
-  "name": "ALBERT, XAVIER",
+  "key": "3921",
+  "name": "LASO, PABLO",
   "position": "E",
-  "club": "PAM",
-  "price": 8.6,
-  "projection": 15.06
+  "club": "IST",
+  "price": 6.0,
+  "projection": 11.62
  },
  "players": [
   {
@@ -33,7 +33,7 @@
    "position": "G",
    "club": "MAD",
    "price": 9.9,
-   "projection": 12.94
+   "projection": 12.91
   },
   {
    "key": "3930",
@@ -41,23 +41,23 @@
    "position": "G",
    "club": "TEL",
    "price": 11.0,
-   "projection": 12.68
+   "projection": 12.66
   },
   {
-   "key": "4258",
-   "name": "PUERTO, JOSEP",
+   "key": "11541",
+   "name": "CARDENAS, ALVARO",
    "position": "G",
    "club": "PAM",
-   "price": 5.2,
-   "projection": 6.03
+   "price": 4.4,
+   "projection": 4.65
   },
   {
-   "key": "3997",
-   "name": "TONUT, STEFANO",
+   "key": "11540",
+   "name": "SAINT-SUPERY, MARIO",
    "position": "G",
-   "club": "MIL",
+   "club": "PAM",
    "price": 4.0,
-   "projection": 3.92
+   "projection": 3.43
   },
   {
    "key": "3766",
@@ -65,7 +65,15 @@
    "position": "F",
    "club": "OLY",
    "price": 20.2,
-   "projection": 22.87
+   "projection": 22.99
+  },
+  {
+   "key": "7201",
+   "name": "BACON, DWAYNE",
+   "position": "F",
+   "club": "DUB",
+   "price": 14.6,
+   "projection": 16.48
   },
   {
    "key": "3838",
@@ -73,7 +81,7 @@
    "position": "F",
    "club": "IST",
    "price": 10.1,
-   "projection": 13.98
+   "projection": 14.09
   },
   {
    "key": "3867",
@@ -84,28 +92,20 @@
    "projection": 4.72
   },
   {
-   "key": "8644",
-   "name": "JOKSIMOVIC, STEFAN",
-   "position": "F",
-   "club": "BAS",
-   "price": 4.0,
-   "projection": 4.45
-  },
-  {
-   "key": "11504",
-   "name": "THIEMANN, JOHANNES",
-   "position": "C",
-   "club": "MUN",
-   "price": 11.5,
-   "projection": 14.48
-  },
-  {
    "key": "7424",
    "name": "DIARRA, ALIOU",
    "position": "C",
    "club": "VIR",
-   "price": 11.3,
-   "projection": 13.74
+   "price": 11.4,
+   "projection": 13.48
+  },
+  {
+   "key": "3947",
+   "name": "DUNSTON, BRYANT",
+   "position": "C",
+   "club": "OLY",
+   "price": 4.4,
+   "projection": 4.0
   }
  ],
  "available": true,
