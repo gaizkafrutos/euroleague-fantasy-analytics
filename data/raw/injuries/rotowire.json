@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-20T13:10:41.295012+00:00",
+ "fetchedAt": "2026-11-20T21:53:09.001783+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -27,14 +27,6 @@
    "status": "Out",
    "round": "",
    "comment": "Thigh"
-  },
-  {
-   "team": "CZV",
-   "position": "G",
-   "name": "Jared Butler",
-   "status": "Game time",
-   "round": "",
-   "comment": "Illness"
   },
   {
    "team": "RMB",
@@ -117,18 +109,10 @@
    "comment": "Leg"
   },
   {
-   "team": "PAR",
-   "position": "C",
-   "name": "Kevarrius Hayes",
-   "status": "Game time",
-   "round": "",
-   "comment": "Shoulder"
-  },
-  {
    "team": "BAR",
    "position": "G",
    "name": "Killian Hayes",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -208,7 +192,7 @@
    "team": "OLY",
    "position": "C",
    "name": "Nikola Milutinov",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
    "comment": "Finger"
   },
@@ -271,10 +255,26 @@
   {
    "team": "PAR",
    "position": "F",
+   "name": "Lamar Stevens",
+   "status": "Out",
+   "round": "",
+   "comment": "Calf"
+  },
+  {
+   "team": "PAR",
+   "position": "F",
    "name": "Ethan Thompson",
    "status": "Out",
    "round": "",
    "comment": "Back"
+  },
+  {
+   "team": "PAR",
+   "position": "G",
+   "name": "Luca Vildoza",
+   "status": "Out",
+   "round": "",
+   "comment": "Ankle"
   },
   {
    "team": "BAY",
