@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-20T21:53:14.312267+00:00",
+ "generatedAt": "2026-11-21T03:17:31.115156+00:00",
  "params": {
   "rate_prior_minutes": 100.0,
   "minutes_half_life": 3.0,
@@ -11,146 +11,146 @@
  },
  "current": {
   "code": "E2026",
-  "n": 2582,
+  "n": 2627,
   "rounds": 12,
   "v2": {
-   "mae": 6.029,
-   "rmse": 7.685,
-   "bias": 0.001
+   "mae": 6.046,
+   "rmse": 7.712,
+   "bias": -0.022
   },
   "v2c": {
-   "mae": 6.021,
-   "rmse": 7.647,
-   "bias": -0.064
+   "mae": 6.039,
+   "rmse": 7.675,
+   "bias": -0.084
   },
   "legacy": {
-   "mae": 6.368,
-   "rmse": 8.186,
-   "bias": 0.037
+   "mae": 6.381,
+   "rmse": 8.206,
+   "bias": 0.017
   },
   "mean": {
-   "mae": 6.379,
-   "rmse": 8.189,
-   "bias": -0.064
+   "mae": 6.391,
+   "rmse": 8.209,
+   "bias": -0.084
   },
   "byGames": {
    "1-3": {
-    "n": 850,
-    "v2": 5.835,
-    "v2c": 5.846,
-    "legacy": 6.544,
-    "mean": 6.649
+    "n": 853,
+    "v2": 5.819,
+    "v2c": 5.831,
+    "legacy": 6.529,
+    "mean": 6.63
    },
    "4-8": {
-    "n": 1168,
-    "v2": 6.063,
+    "n": 1178,
+    "v2": 6.061,
     "v2c": 6.044,
-    "legacy": 6.282,
-    "mean": 6.24
+    "legacy": 6.276,
+    "mean": 6.237
    },
    "9-99": {
-    "n": 564,
-    "v2": 6.25,
-    "v2c": 6.237,
-    "legacy": 6.282,
-    "mean": 6.26
+    "n": 596,
+    "v2": 6.339,
+    "v2c": 6.328,
+    "legacy": 6.374,
+    "mean": 6.354
    }
   },
   "residualQuantiles": {
-   "0.1": -8.89,
+   "0.1": -8.87,
    "0.25": -5.24,
-   "0.5": -0.91,
-   "0.75": 4.7,
-   "0.9": 10.11
+   "0.5": -0.92,
+   "0.75": 4.72,
+   "0.9": 10.26
   },
   "calibration": {
-   "slope": 0.808,
-   "intercept": 1.652,
-   "n": 2626
+   "slope": 0.8092,
+   "intercept": 1.66,
+   "n": 2672
   },
   "topBias": {
-   "n": 229,
-   "raw": 1.31,
-   "calibrated": -0.12
+   "n": 231,
+   "raw": 1.29,
+   "calibrated": -0.14
   },
   "bands": [
    {
     "center": 4.52,
-    "n": 526,
+    "n": 535,
     "p10": -6.15,
-    "p25": -4.28,
-    "p75": 3.77,
-    "p90": 8.75
+    "p25": -4.27,
+    "p75": 3.72,
+    "p90": 8.77
    },
    {
     "center": 6.48,
-    "n": 525,
-    "p10": -7.62,
-    "p25": -4.97,
-    "p75": 4.3,
-    "p90": 9.76
+    "n": 534,
+    "p10": -7.63,
+    "p25": -5.04,
+    "p75": 4.33,
+    "p90": 9.9
    },
    {
-    "center": 8.29,
-    "n": 525,
-    "p10": -8.87,
-    "p25": -5.71,
-    "p75": 4.27,
-    "p90": 9.83
+    "center": 8.26,
+    "n": 534,
+    "p10": -8.82,
+    "p25": -5.68,
+    "p75": 4.34,
+    "p90": 10.05
    },
    {
-    "center": 10.39,
-    "n": 525,
-    "p10": -9.76,
-    "p25": -5.63,
-    "p75": 4.89,
-    "p90": 11.33
+    "center": 10.37,
+    "n": 534,
+    "p10": -9.77,
+    "p25": -5.91,
+    "p75": 4.96,
+    "p90": 11.39
    },
    {
-    "center": 13.66,
-    "n": 525,
-    "p10": -12.07,
-    "p25": -6.85,
-    "p75": 5.66,
-    "p90": 11.57
+    "center": 13.64,
+    "n": 535,
+    "p10": -11.99,
+    "p25": -6.76,
+    "p75": 5.67,
+    "p90": 11.47
    }
   ],
   "bandCheck": {
-   "n": 2199,
+   "n": 2245,
    "inside": 0.482,
-   "aboveP90": 0.113
+   "aboveP90": 0.114
   },
   "zQuantiles": {
-   "p10": -1.157,
-   "p25": -0.682,
-   "p50": -0.118,
+   "p10": -1.15,
+   "p25": -0.679,
+   "p50": -0.119,
    "p75": 0.612,
-   "p90": 1.316
+   "p90": 1.33
   },
   "ablation": {
-   "noOpponent": 6.043,
-   "noHome": 6.032,
-   "plain": 6.046,
-   "seasonMinutes": 6.012
+   "noOpponent": 6.059,
+   "noHome": 6.048,
+   "plain": 6.062,
+   "seasonMinutes": 6.029
   },
   "frozenFromRound": 12,
   "afterFreeze": {
-   "n": 395,
+   "n": 440,
    "rounds": 2,
    "v2": {
-    "mae": 6.037,
-    "rmse": 7.715,
-    "bias": 0.116
+    "mae": 6.135,
+    "rmse": 7.874,
+    "bias": -0.033
    },
    "v2c": {
-    "mae": 6.032,
-    "rmse": 7.678,
-    "bias": 0.07
+    "mae": 6.141,
+    "rmse": 7.842,
+    "bias": -0.063
    },
    "mean": {
-    "mae": 6.089,
-    "rmse": 7.832,
-    "bias": -0.001
+    "mae": 6.19,
+    "rmse": 7.99,
+    "bias": -0.126
    }
   }
  },
@@ -806,62 +806,119 @@
     "changeMae": 0.166,
     "changeMaeZero": 0.175,
     "generatedAt": "2026-11-17T13:38:17.386912+00:00"
+   },
+   {
+    "round": 13,
+    "n": 340,
+    "model": {
+     "mae": 4.645,
+     "rmse": 7.005,
+     "bias": -0.504,
+     "spearman": 0.584
+    },
+    "mean": {
+     "mae": 5.507,
+     "rmse": 7.587,
+     "bias": 1.234,
+     "spearman": 0.489
+    },
+    "meanPlay": {
+     "mae": 4.543,
+     "rmse": 7.09,
+     "bias": -0.67,
+     "spearman": 0.593
+    },
+    "biasExpensiveIfPlays": 1.372,
+    "expensiveN": 35,
+    "playProb": {
+     "doubt": {
+      "n": 57,
+      "predicted": 0.2,
+      "real": 0.211
+     },
+     "out": {
+      "n": 39,
+      "predicted": 0.0,
+      "real": 0.0
+     },
+     "probable": {
+      "n": 8,
+      "predicted": 0.75,
+      "real": 0.125
+     },
+     "sin parte": {
+      "n": 236,
+      "predicted": 0.8,
+      "real": 0.881
+     }
+    },
+    "lineup": {
+     "projected": 139.6,
+     "real": 111.1,
+     "best": 308.4,
+     "withCoach": true,
+     "baseline": 127.9
+    },
+    "bandIfPlays": true,
+    "bandCoverage": 0.498,
+    "aboveP90": 0.131,
+    "generatedAt": "2026-11-19T10:30:23.969454+00:00"
    }
   ],
   "total": {
-   "n": 3673,
+   "n": 4013,
    "model": {
-    "mae": 4.525,
-    "bias": 0.053,
-    "spearman": 0.599
+    "mae": 4.535,
+    "bias": 0.005,
+    "spearman": 0.598
    },
    "mean": {
-    "mae": 5.131,
-    "bias": 0.592,
-    "spearman": 0.496
+    "mae": 5.163,
+    "bias": 0.646,
+    "spearman": 0.495
    },
    "meanPlay": {
-    "mae": 4.546,
-    "bias": -0.396,
-    "spearman": 0.568
+    "mae": 4.545,
+    "bias": -0.419,
+    "spearman": 0.57
    },
    "versus": {
     "players": 345,
     "mean": {
      "mae": {
-      "diff": -0.606,
-      "low": -0.794,
-      "high": -0.431
+      "diff": -0.628,
+      "low": -0.823,
+      "high": -0.447
      },
      "rmse": {
-      "diff": -0.791,
-      "low": -0.986,
-      "high": -0.605
+      "diff": -0.772,
+      "low": -0.979,
+      "high": -0.572
      }
     },
     "meanPlay": {
      "mae": {
-      "diff": -0.021,
-      "low": -0.096,
-      "high": 0.058
+      "diff": -0.01,
+      "low": -0.087,
+      "high": 0.063
      },
      "rmse": {
-      "diff": -0.36,
-      "low": -0.44,
-      "high": -0.27
+      "diff": -0.335,
+      "low": -0.411,
+      "high": -0.253
      }
     }
    },
    "lineupWins": {
-    "rounds": 11,
+    "rounds": 12,
     "model": 7,
-    "modelAvg": 145.6,
-    "baselineAvg": 125.0
+    "modelAvg": 142.8,
+    "baselineAvg": 125.2
    },
    "playProb": {
     "doubt": {
-     "n": 445,
-     "predicted": 0.271,
+     "n": 502,
+     "predicted": 0.263,
      "real": 0.207
     },
     "nunca convocado": {
@@ -870,27 +927,27 @@
      "real": 0.047
     },
     "out": {
-     "n": 333,
+     "n": 372,
      "predicted": 0.0,
-     "real": 0.024
+     "real": 0.021
     },
     "probable": {
-     "n": 86,
-     "predicted": 0.613,
-     "real": 0.756
+     "n": 94,
+     "predicted": 0.625,
+     "real": 0.702
     },
     "sin parte": {
-     "n": 2745,
-     "predicted": 0.847,
-     "real": 0.841
+     "n": 2981,
+     "predicted": 0.843,
+     "real": 0.844
     }
    }
   }
  },
  "coach": {
   "code": "E2026",
-  "n": 216,
-  "model": 9.768,
-  "mean": 10.561
+  "n": 220,
+  "model": 9.699,
+  "mean": 10.492
  }
 }
