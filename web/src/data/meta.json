@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-21T03:18:18.550169+00:00",
+ "generatedAt": "2026-11-21T12:49:14.258870+00:00",
  "currentRound": 14,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 82,
- "lastPriceCapture": "2026-11-21T03:17:27.154608+00:00",
- "lastPriceCheck": "2026-11-21T03:17:27.154608+00:00",
+ "priceSnapshots": 83,
+ "lastPriceCapture": "2026-11-21T12:48:38.793694+00:00",
+ "lastPriceCheck": "2026-11-21T12:48:38.793694+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.35
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-21T03:17:31.115156+00:00",
+  "generatedAt": "2026-11-21T12:48:42.425761+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -881,6 +881,10 @@
      "bandIfPlays": true,
      "bandCoverage": 0.498,
      "aboveP90": 0.131,
+     "riseBrier": 0.1554,
+     "riseBrierConstant": 0.1818,
+     "changeMae": 0.179,
+     "changeMaeZero": 0.19,
      "generatedAt": "2026-11-19T10:30:23.969454+00:00"
     }
    ],
@@ -977,32 +981,23 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-21T03:18:14.095498+00:00",
-  "capturedAt": "2026-11-21T03:17:27.154608+00:00",
-  "players": 169,
-  "exact": 153,
-  "exactShare": 0.905,
-  "meanAbsoluteError": 0.043,
-  "correlation": 0.9998,
+  "checkedAt": "2026-11-21T12:49:11.069728+00:00",
+  "capturedAt": "2026-11-21T12:48:38.793694+00:00",
+  "players": 290,
+  "exact": 270,
+  "exactShare": 0.931,
+  "meanAbsoluteError": 0.037,
+  "correlation": 0.9999,
   "coaches": {
-   "coaches": 12,
+   "coaches": 20,
    "maxAbsError": 0.0,
    "overtimeGames": 18
   },
   "foulGap": {
-   "players": 13,
-   "fouls": 14
+   "players": 16,
+   "fouls": 18
   },
-  "settlingClubs": [
-   "ASV",
-   "BAR",
-   "BES",
-   "IST",
-   "MAD",
-   "OLY",
-   "PAR",
-   "RED"
-  ]
+  "settlingClubs": []
  },
  "schedule": {
   "round": 14,
@@ -1015,8 +1010,8 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-20T19:20:00",
-  "fetchedAt": "2026-11-21T03:17:26.118672+00:00",
+  "updatedAt": "2026-11-21T12:40:00",
+  "fetchedAt": "2026-11-21T12:48:37.826582+00:00",
   "rows": 137,
   "matched": 92,
   "unmatched": [
@@ -1035,8 +1030,8 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-20T19:20:00",
-    "fetchedAt": "2026-11-21T03:17:25.663573+00:00",
+    "updatedAt": "2026-11-21T12:40:00",
+    "fetchedAt": "2026-11-21T12:48:37.452463+00:00",
     "rows": 100,
     "matched": 91,
     "flagged": 91
@@ -1045,7 +1040,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-21T03:17:26.118672+00:00",
+    "fetchedAt": "2026-11-21T12:48:37.826582+00:00",
     "rows": 37,
     "matched": 36,
     "flagged": 1
@@ -1059,26 +1054,24 @@
    "probable": 4
   }
  },
- "warnings": [
-  "Precios capturados el 2026-11-21 03:17 UTC: el juego aún no ha aplicado la revalorización (J13). Se usa el precio pendiente de 280 jugadores hasta la próxima captura."
- ],
+ "warnings": [],
  "priceFreshness": {
-  "stale": true,
-  "capturedAt": "2026-11-21T03:17:27.154608+00:00",
+  "stale": false,
+  "capturedAt": "2026-11-21T12:48:38.793694+00:00",
   "lastGameAt": "2026-11-20T19:45:00+00:00",
   "round": 13,
-  "reason": "el juego aún no ha aplicado la revalorización",
+  "reason": null,
   "roundGames": 10,
   "roundPlayed": 10,
-  "pending": 280
+  "pending": 0
  },
  "priceModel": {
   "a": 0.04,
-  "b": -0.0442,
-  "c": 0.0067,
+  "b": -0.0441,
+  "c": 0.0063,
   "r2": 0.991,
-  "n": 2600,
-  "source": "J1–J12"
+  "n": 2809,
+  "source": "J1–J13"
  },
  "league": {
   "zones": [
