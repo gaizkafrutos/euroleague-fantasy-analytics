@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-22T09:57:37.875832+00:00",
+ "generatedAt": "2026-11-22T17:54:24.034773+00:00",
  "currentRound": 14,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 83,
  "lastPriceCapture": "2026-11-21T12:48:38.793694+00:00",
- "lastPriceCheck": "2026-11-22T09:56:46.491394+00:00",
+ "lastPriceCheck": "2026-11-22T17:53:51.792392+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.35
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-22T09:56:50.596231+00:00",
+  "generatedAt": "2026-11-22T17:53:55.773220+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -981,7 +981,7 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-22T09:57:33.347620+00:00",
+  "checkedAt": "2026-11-22T17:54:21.189992+00:00",
   "capturedAt": "2026-11-21T12:48:38.793694+00:00",
   "players": 290,
   "exact": 270,
@@ -1010,10 +1010,10 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-21T12:40:00",
-  "fetchedAt": "2026-11-22T09:56:45.363027+00:00",
-  "rows": 136,
-  "matched": 92,
+  "updatedAt": "2026-11-22T15:48:00",
+  "fetchedAt": "2026-11-22T17:53:50.694891+00:00",
+  "rows": 139,
+  "matched": 95,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -1029,17 +1029,17 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-21T12:40:00",
-    "fetchedAt": "2026-11-22T09:56:44.966700+00:00",
-    "rows": 99,
-    "matched": 91,
-    "flagged": 91
+    "updatedAt": "2026-11-22T15:48:00",
+    "fetchedAt": "2026-11-22T17:53:50.270527+00:00",
+    "rows": 102,
+    "matched": 94,
+    "flagged": 94
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-22T09:56:45.363027+00:00",
+    "fetchedAt": "2026-11-22T17:53:50.694891+00:00",
     "rows": 37,
     "matched": 36,
     "flagged": 1
@@ -1049,8 +1049,8 @@
   "unregistered": 7,
   "flagged": {
    "out": 30,
-   "doubt": 65,
-   "probable": 4
+   "doubt": 64,
+   "probable": 8
   }
  },
  "warnings": [],
