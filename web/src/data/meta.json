@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-22T02:21:32.252907+00:00",
+ "generatedAt": "2026-11-22T09:57:37.875832+00:00",
  "currentRound": 14,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 83,
  "lastPriceCapture": "2026-11-21T12:48:38.793694+00:00",
- "lastPriceCheck": "2026-11-22T02:21:00.581077+00:00",
+ "lastPriceCheck": "2026-11-22T09:56:46.491394+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.35
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-22T02:21:04.583129+00:00",
+  "generatedAt": "2026-11-22T09:56:50.596231+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -981,7 +981,7 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-22T02:21:29.506980+00:00",
+  "checkedAt": "2026-11-22T09:57:33.347620+00:00",
   "capturedAt": "2026-11-21T12:48:38.793694+00:00",
   "players": 290,
   "exact": 270,
@@ -1011,8 +1011,8 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-21T12:40:00",
-  "fetchedAt": "2026-11-22T02:20:59.291634+00:00",
-  "rows": 137,
+  "fetchedAt": "2026-11-22T09:56:45.363027+00:00",
+  "rows": 136,
   "matched": 92,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
@@ -1023,7 +1023,6 @@
    "Gabriel Lundberg (Maccabi Rapyd Tel Aviv)",
    "Nobel Boungou-Colo (Paris Basketball)",
    "Mitar Bosnjakovic (Partizan Mozzart Bet Belgrade)",
-   "Awudu Abass (Virtus Bologna)",
    "Mady Sissoko (BJK)"
   ],
   "sources": [
@@ -1031,8 +1030,8 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-21T12:40:00",
-    "fetchedAt": "2026-11-21T12:48:37.452463+00:00",
-    "rows": 100,
+    "fetchedAt": "2026-11-22T09:56:44.966700+00:00",
+    "rows": 99,
     "matched": 91,
     "flagged": 91
    },
@@ -1040,7 +1039,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-22T02:20:59.291634+00:00",
+    "fetchedAt": "2026-11-22T09:56:45.363027+00:00",
     "rows": 37,
     "matched": 36,
     "flagged": 1
