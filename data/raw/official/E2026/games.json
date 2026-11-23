@@ -2222,6 +2222,107 @@
   "winner": null
  },
  {
+  "id": "3f0c1761-b0e2-45a0-9258-8f8e393570d7",
+  "identifier": "E2026_357",
+  "gameCode": 357,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 36,
+  "roundAlias": "Round 36",
+  "roundName": "Round 36",
+  "played": false,
+  "date": "2027-04-06T21:00:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 2,
+  "localDate": "2027-04-06T21:00:00",
+  "utcDate": "2027-04-06T19:00:00Z",
+  "local": {
+   "club": {
+    "code": "PRS",
+    "name": "Paris Basketball",
+    "abbreviatedName": "Paris",
+    "editorialName": "Paris",
+    "tvCode": "PBB",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "IST",
+    "name": "Anadolu Efes Istanbul",
+    "abbreviatedName": "Anadolu Efes",
+    "editorialName": "Efes",
+    "tvCode": "EFS",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "ADIDAS ARENA",
+   "code": "AVB11",
+   "capacity": 8000,
+   "address": "56 Boulevard Ney, 75018 Paris, France",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
   "id": "529be7b2-e2ce-4b24-8185-b0fd5bf251ef",
   "identifier": "E2026_358",
   "gameCode": 358,
@@ -2312,107 +2413,6 @@
    "code": "ATI7",
    "capacity": 13109,
    "address": "Avenida de Felipe II 1, 28009, Madrid",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
-  "id": "3f0c1761-b0e2-45a0-9258-8f8e393570d7",
-  "identifier": "E2026_357",
-  "gameCode": 357,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 36,
-  "roundAlias": "Round 36",
-  "roundName": "Round 36",
-  "played": false,
-  "date": "2027-04-06T20:45:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 2,
-  "localDate": "2027-04-06T20:45:00",
-  "utcDate": "2027-04-06T18:45:00Z",
-  "local": {
-   "club": {
-    "code": "PRS",
-    "name": "Paris Basketball",
-    "abbreviatedName": "Paris",
-    "editorialName": "Paris",
-    "tvCode": "PBB",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "IST",
-    "name": "Anadolu Efes Istanbul",
-    "abbreviatedName": "Anadolu Efes",
-    "editorialName": "Efes",
-    "tvCode": "EFS",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "ADIDAS ARENA",
-   "code": "AVB11",
-   "capacity": 8000,
-   "address": "56 Boulevard Ney, 75018 Paris, France",
    "images": {
     "medium": null
    },
@@ -2855,12 +2855,12 @@
   "roundAlias": "Round 36",
   "roundName": "Round 36",
   "played": false,
-  "date": "2027-04-06T19:45:00",
+  "date": "2027-04-06T19:30:00",
   "confirmedDate": true,
   "confirmedHour": true,
   "localTimeZone": 3,
-  "localDate": "2027-04-06T20:45:00",
-  "utcDate": "2027-04-06T17:45:00Z",
+  "localDate": "2027-04-06T20:30:00",
+  "utcDate": "2027-04-06T17:30:00Z",
   "local": {
    "club": {
     "code": "ULK",
@@ -14140,6 +14140,107 @@
   "winner": null
  },
  {
+  "id": "ebcc4234-1467-45d3-be1c-68e297eb925c",
+  "identifier": "E2026_230",
+  "gameCode": 230,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 23,
+  "roundAlias": "Round 23",
+  "roundName": "Round 23",
+  "played": false,
+  "date": "2027-01-26T20:15:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 2,
+  "localDate": "2027-01-26T21:15:00",
+  "utcDate": "2027-01-26T19:15:00Z",
+  "local": {
+   "club": {
+    "code": "OLY",
+    "name": "Olympiacos Piraeus",
+    "abbreviatedName": "Olympiacos",
+    "editorialName": "Olympiacos",
+    "tvCode": "OLY",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "PRS",
+    "name": "Paris Basketball",
+    "abbreviatedName": "Paris",
+    "editorialName": "Paris",
+    "tvCode": "PBB",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "PEACE AND FRIENDSHIP STADIUM",
+   "code": "ASF6",
+   "capacity": 12700,
+   "address": "Ethnarchou Makariou Av., Piraeus",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
   "id": "80b016f7-b5a0-486c-8125-cd6bc2a196ce",
   "identifier": "E2026_237",
   "gameCode": 237,
@@ -15341,107 +15442,6 @@
    "code": "AUK3",
    "capacity": 9800,
    "address": "Viale della Fiera, 40128, Bologna",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
-  "id": "ebcc4234-1467-45d3-be1c-68e297eb925c",
-  "identifier": "E2026_230",
-  "gameCode": 230,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 23,
-  "roundAlias": "Round 23",
-  "roundName": "Round 23",
-  "played": false,
-  "date": "2027-01-15T20:15:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 2,
-  "localDate": "2027-01-15T21:15:00",
-  "utcDate": "2027-01-15T19:15:00Z",
-  "local": {
-   "club": {
-    "code": "OLY",
-    "name": "Olympiacos Piraeus",
-    "abbreviatedName": "Olympiacos",
-    "editorialName": "Olympiacos",
-    "tvCode": "OLY",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "PRS",
-    "name": "Paris Basketball",
-    "abbreviatedName": "Paris",
-    "editorialName": "Paris",
-    "tvCode": "PBB",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "PEACE AND FRIENDSHIP STADIUM",
-   "code": "ASF6",
-   "capacity": 12700,
-   "address": "Ethnarchou Makariou Av., Piraeus",
    "images": {
     "medium": null
    },
@@ -19015,12 +19015,12 @@
   "roundAlias": "Round 20",
   "roundName": "Round 20",
   "played": false,
-  "date": "2026-12-29T19:00:00",
+  "date": "2026-12-29T20:00:00",
   "confirmedDate": true,
   "confirmedHour": true,
   "localTimeZone": 2,
-  "localDate": "2026-12-29T20:00:00",
-  "utcDate": "2026-12-29T18:00:00Z",
+  "localDate": "2026-12-29T21:00:00",
+  "utcDate": "2026-12-29T19:00:00Z",
   "local": {
    "club": {
     "code": "HTA",
@@ -21513,107 +21513,6 @@
   "winner": null
  },
  {
-  "id": "02e9b9e0-13e4-4414-8812-f1ca322829a6",
-  "identifier": "E2026_161",
-  "gameCode": 161,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 17,
-  "roundAlias": "Round 17",
-  "roundName": "Round 17",
-  "played": false,
-  "date": "2026-12-15T21:00:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 2,
-  "localDate": "2026-12-15T22:00:00",
-  "utcDate": "2026-12-15T20:00:00Z",
-  "local": {
-   "club": {
-    "code": "TEL",
-    "name": "Maccabi Rapyd Tel Aviv",
-    "abbreviatedName": "Maccabi",
-    "editorialName": "Maccabi",
-    "tvCode": "MTA",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "ZAL",
-    "name": "Zalgiris Kaunas",
-    "abbreviatedName": "Zalgiris",
-    "editorialName": "Zalgiris",
-    "tvCode": "ZAL",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "SPYROS KYPRIANOU ATHLETIC CENTER",
-   "code": "AVU1",
-   "capacity": 6552,
-   "address": "",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
   "id": "7e43b4f6-c79d-4cee-b3fc-0b51263f598e",
   "identifier": "E2026_166",
   "gameCode": 166,
@@ -22209,6 +22108,107 @@
    "code": "AVG2",
    "capacity": 10000,
    "address": "Kazliçesme Mah. 10. Yil Caddesi No: 2/1 Zeytinburnu / Turkiye",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
+  "id": "02e9b9e0-13e4-4414-8812-f1ca322829a6",
+  "identifier": "E2026_161",
+  "gameCode": 161,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 17,
+  "roundAlias": "Round 17",
+  "roundName": "Round 17",
+  "played": false,
+  "date": "2026-12-15T18:00:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 2,
+  "localDate": "2026-12-15T19:00:00",
+  "utcDate": "2026-12-15T17:00:00Z",
+  "local": {
+   "club": {
+    "code": "TEL",
+    "name": "Maccabi Rapyd Tel Aviv",
+    "abbreviatedName": "Maccabi",
+    "editorialName": "Maccabi",
+    "tvCode": "MTA",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "ZAL",
+    "name": "Zalgiris Kaunas",
+    "abbreviatedName": "Zalgiris",
+    "editorialName": "Zalgiris",
+    "tvCode": "ZAL",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.incrowdsports.com/0aa09358-3847-4c4e-b228-3582ee4e536d.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "SPYROS KYPRIANOU ATHLETIC CENTER",
+   "code": "AVU1",
+   "capacity": 6552,
+   "address": "",
    "images": {
     "medium": null
    },
@@ -23230,107 +23230,6 @@
   "winner": null
  },
  {
-  "id": "73b53dc2-3cee-4df5-89cc-947a2af432d4",
-  "identifier": "E2026_148",
-  "gameCode": 148,
-  "season": {
-   "name": "EuroLeague 2026-27",
-   "code": "E2026",
-   "alias": "2026-27",
-   "competitionCode": "E",
-   "year": 2026,
-   "startDate": "2026-07-01T00:00:00"
-  },
-  "group": {
-   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
-   "order": 1,
-   "name": "Group Regular Season",
-   "rawName": "Regular Season"
-  },
-  "phaseType": {
-   "code": "RS",
-   "alias": "REGULAR SEASON",
-   "name": "Regular Season",
-   "isGroupPhase": true
-  },
-  "round": 15,
-  "roundAlias": "Round 15",
-  "roundName": "Round 15",
-  "played": false,
-  "date": "2026-12-04T20:30:00",
-  "confirmedDate": true,
-  "confirmedHour": true,
-  "localTimeZone": 1,
-  "localDate": "2026-12-04T20:30:00",
-  "utcDate": "2026-12-04T19:30:00Z",
-  "local": {
-   "club": {
-    "code": "BAS",
-    "name": "Kosner Baskonia Vitoria-Gasteiz",
-    "abbreviatedName": "Baskonia",
-    "editorialName": "Baskonia",
-    "tvCode": "KBA",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "road": {
-   "club": {
-    "code": "TEL",
-    "name": "Maccabi Rapyd Tel Aviv",
-    "abbreviatedName": "Maccabi",
-    "editorialName": "Maccabi",
-    "tvCode": "MTA",
-    "isVirtual": false,
-    "images": {
-     "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
-    }
-   },
-   "score": 0,
-   "standingsScore": 0,
-   "partials": {
-    "partials1": 0,
-    "partials2": 0,
-    "partials3": 0,
-    "partials4": 0,
-    "extraPeriods": {}
-   }
-  },
-  "audience": 0,
-  "audienceConfirmed": false,
-  "socialFeed": "",
-  "operationsCode": null,
-  "referee1": null,
-  "referee2": null,
-  "referee3": null,
-  "referee4": null,
-  "venue": {
-   "name": "BUESA ARENA",
-   "code": "AUC",
-   "capacity": 15431,
-   "address": "Ctra.  Zurbano s/n, 01013 Vitoria",
-   "images": {
-    "medium": null
-   },
-   "active": true,
-   "notes": ""
-  },
-  "isNeutralVenue": false,
-  "gameStatus": "Confirmed",
-  "winner": null
- },
- {
   "id": "3e29fa44-f1c0-4069-ac99-6e7d559cf1f2",
   "identifier": "E2026_150",
   "gameCode": 150,
@@ -23724,6 +23623,107 @@
    "code": "AIG",
    "capacity": 5570,
    "address": "Via Nannetti 1, 40122 Bologna - Italy",
+   "images": {
+    "medium": null
+   },
+   "active": true,
+   "notes": ""
+  },
+  "isNeutralVenue": false,
+  "gameStatus": "Confirmed",
+  "winner": null
+ },
+ {
+  "id": "73b53dc2-3cee-4df5-89cc-947a2af432d4",
+  "identifier": "E2026_148",
+  "gameCode": 148,
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  },
+  "group": {
+   "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+   "order": 1,
+   "name": "Group Regular Season",
+   "rawName": "Regular Season"
+  },
+  "phaseType": {
+   "code": "RS",
+   "alias": "REGULAR SEASON",
+   "name": "Regular Season",
+   "isGroupPhase": true
+  },
+  "round": 15,
+  "roundAlias": "Round 15",
+  "roundName": "Round 15",
+  "played": false,
+  "date": "2026-12-03T21:00:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 1,
+  "localDate": "2026-12-03T21:00:00",
+  "utcDate": "2026-12-03T20:00:00Z",
+  "local": {
+   "club": {
+    "code": "BAS",
+    "name": "Kosner Baskonia Vitoria-Gasteiz",
+    "abbreviatedName": "Baskonia",
+    "editorialName": "Baskonia",
+    "tvCode": "KBA",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "road": {
+   "club": {
+    "code": "TEL",
+    "name": "Maccabi Rapyd Tel Aviv",
+    "abbreviatedName": "Maccabi",
+    "editorialName": "Maccabi",
+    "tvCode": "MTA",
+    "isVirtual": false,
+    "images": {
+     "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+    }
+   },
+   "score": 0,
+   "standingsScore": 0,
+   "partials": {
+    "partials1": 0,
+    "partials2": 0,
+    "partials3": 0,
+    "partials4": 0,
+    "extraPeriods": {}
+   }
+  },
+  "audience": 0,
+  "audienceConfirmed": false,
+  "socialFeed": "",
+  "operationsCode": null,
+  "referee1": null,
+  "referee2": null,
+  "referee3": null,
+  "referee4": null,
+  "venue": {
+   "name": "BUESA ARENA",
+   "code": "AUC",
+   "capacity": 15431,
+   "address": "Ctra.  Zurbano s/n, 01013 Vitoria",
    "images": {
     "medium": null
    },

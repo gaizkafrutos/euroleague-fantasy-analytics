@@ -1,6 +1,246 @@
 [
  {
   "person": {
+   "code": "003527",
+   "name": "ABASS, AWUDU",
+   "alias": "Abass",
+   "aliasRaw": "Abass",
+   "passportName": "AWUDU ABASS",
+   "passportSurname": "ABASS",
+   "jerseyName": "ABASS",
+   "abbreviatedName": "Abass, A.",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 200,
+   "weight": 100,
+   "birthDate": "1993-01-27T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "abibass23",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-23T16:21:40.785",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "50",
+  "dorsalRaw": "50",
+  "position": 2,
+  "positionName": "Forward",
+  "lastTeam": "DUBAI BASKETBALL",
+  "externalId": 57461,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus Bologna",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "012113",
+   "name": "LONATI, ACHILLE",
+   "alias": "LONATI, A.",
+   "aliasRaw": "LONATI, A.",
+   "passportName": "ACHILLE",
+   "passportSurname": "LONATI",
+   "jerseyName": "LONATI",
+   "abbreviatedName": "",
+   "country": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "height": 195,
+   "weight": 85,
+   "birthDate": "2007-01-22T00:00:00",
+   "birthCountry": {
+    "code": "ITA",
+    "name": "Italy"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-23T16:21:40.509",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "22",
+  "dorsalRaw": "22",
+  "position": 1,
+  "positionName": "Guard",
+  "lastTeam": "ST. BONAVENTURE",
+  "externalId": 57460,
+  "images": {},
+  "club": {
+   "code": "VIR",
+   "name": "Virtus Bologna",
+   "abbreviatedName": "Virtus Bologna",
+   "editorialName": "Virtus",
+   "tvCode": "VIR",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezvk/a92d4c3b-9f9c-4163-8a10-bcf8fc15893e.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "015550",
+   "name": "SISSOKO, MADY",
+   "alias": "SISSOKO, MADY",
+   "aliasRaw": "SISSOKO, MADY",
+   "passportName": "MADY GOUNDO",
+   "passportSurname": "SISSOKO",
+   "jerseyName": "SISSOKO",
+   "abbreviatedName": null,
+   "country": {
+    "code": "MLI",
+    "name": "Mali"
+   },
+   "height": 206,
+   "weight": 113,
+   "birthDate": "2000-12-20T00:00:00",
+   "birthCountry": {
+    "code": "MLI",
+    "name": "Mali"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-23T13:37:37.962",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "44",
+  "dorsalRaw": "44",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "REAL MADRID",
+  "externalId": 57459,
+  "images": {},
+  "club": {
+   "code": "BES",
+   "name": "Besiktas Fuzul Istanbul",
+   "abbreviatedName": "Besiktas",
+   "editorialName": "Besiktas",
+   "tvCode": "BJK",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjHHNTU0/07707827-9461-400d-8acc-355150011194.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
+   "code": "011579",
+   "name": "PERRIN, ZACHARIE",
+   "alias": "PERRIN, ZACHARIE",
+   "aliasRaw": "PERRIN, ZACHARIE",
+   "passportName": "ZACHARIE MARIE AIME",
+   "passportSurname": "PERRIN",
+   "jerseyName": "Perrin",
+   "abbreviatedName": null,
+   "country": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "height": 208,
+   "weight": 109,
+   "birthDate": "2004-08-30T00:00:00",
+   "birthCountry": {
+    "code": "FRA",
+    "name": "France"
+   },
+   "twitterAccount": "",
+   "instagramAccount": "",
+   "facebookAccount": "",
+   "isReferee": false,
+   "images": {}
+  },
+  "type": "J",
+  "typeName": "Player",
+  "active": true,
+  "startDate": "2026-11-23T13:37:00.962",
+  "endDate": "2027-06-30T00:00:00",
+  "order": 0,
+  "dorsal": "52",
+  "dorsalRaw": "52",
+  "position": 3,
+  "positionName": "Center",
+  "lastTeam": "LLEIDA BASQUET",
+  "externalId": 57458,
+  "images": {},
+  "club": {
+   "code": "BAS",
+   "name": "Kosner Baskonia Vitoria-Gasteiz",
+   "abbreviatedName": "Baskonia",
+   "editorialName": "Baskonia",
+   "tvCode": "KBA",
+   "isVirtual": false,
+   "images": {
+    "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+   }
+  },
+  "season": {
+   "name": "EuroLeague 2026-27",
+   "code": "E2026",
+   "alias": "2026-27",
+   "competitionCode": "E",
+   "year": 2026,
+   "startDate": "2026-07-01T00:00:00"
+  }
+ },
+ {
+  "person": {
    "code": "009661",
    "name": "HAYES, KILLIAN",
    "alias": "HAYES, KILLIAN",

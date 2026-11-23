@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-23T07:52:57.804371+00:00",
- "updatedAt": "2026-11-23T06:55:00",
+ "fetchedAt": "2026-11-23T20:20:44.163715+00:00",
+ "updatedAt": "2026-11-23T13:27:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -86,6 +86,14 @@
   },
   {
    "team": "Besiktas Istanbul",
+   "position": "C",
+   "name": "Wenyen Gabriel",
+   "status": "Out",
+   "round": "Round 14",
+   "comment": "Out indefinitely with undisclosed longterm injury (11.22)"
+  },
+  {
+   "team": "Besiktas Istanbul",
    "position": "SG",
    "name": "Jaylen Nowell",
    "status": "Uncertain",
@@ -126,6 +134,14 @@
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
+   "position": "PG",
+   "name": "Chris Jones",
+   "status": "Game-time",
+   "round": "Round 14",
+   "comment": "DNP in domestic league, Navarro said he's not 100% (undisclosed injury)"
+  },
+  {
+   "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "C",
    "name": "Vojin Medarevic",
    "status": "Out",
@@ -146,7 +162,7 @@
    "name": "Chima Moneke",
    "status": "Ready",
    "round": "Round 14",
-   "comment": "Returned to domestic action (11.22) after DNP in Rounds 12-13 (coach's decision)"
+   "comment": "Returned to action in the domestic league (11.22) after DNP in Rounds 12-13 (coach's decision)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -512,9 +528,9 @@
    "team": "Olympiacos Piraeus",
    "position": "SG",
    "name": "Tyler Dorsey",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "DNP in Rounds 6-13 (suspension). DNP in the domesic league (11.22)"
+   "comment": "Ruled out for Round 14 (national team duties) after DNP in Rounds 6-13."
   },
   {
    "team": "Olympiacos Piraeus",
@@ -664,7 +680,7 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SF",
    "name": "Lamar Stevens",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Round 13 and in the domestic league (11.22) (calf strain)"
   },
@@ -672,7 +688,7 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "SG",
    "name": "Ethan Thompson",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 12-13 (hip injury). DNP in the domestic league (11.22)"
   },
@@ -680,15 +696,15 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PG",
    "name": "Luca Vildoza",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 14",
-   "comment": "DNP in Round 13 and in the domestic league (11.22) (ankle issue)"
+   "comment": "DNP in Round 13 and in the domestic league (11.22) (ankle issue), but traveled with the team."
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PF",
    "name": "Derek Willis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (ankle injury). DNP in the domestic league (11.22)"
   },
@@ -696,9 +712,9 @@
    "team": "Real Madrid",
    "position": "PG",
    "name": "Facundo Campazzo",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "Out indefinitely after suffering a left hamstring injury in a domestic league game (11.01). DNP in the domestic league (11.22)"
+   "comment": "Ruled out for Round 14 but is reportedly expected to return for Round 15 (left hamstring injury)"
   },
   {
    "team": "Real Madrid",
