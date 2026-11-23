@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-22T23:40:59.109616+00:00",
+ "generatedAt": "2026-11-23T07:53:52.258616+00:00",
  "currentRound": 14,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 83,
  "lastPriceCapture": "2026-11-21T12:48:38.793694+00:00",
- "lastPriceCheck": "2026-11-22T23:40:03.945646+00:00",
+ "lastPriceCheck": "2026-11-23T07:53:00.203971+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.35
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-22T23:40:08.293584+00:00",
+  "generatedAt": "2026-11-23T07:53:04.088374+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -981,7 +981,7 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-22T23:40:54.203181+00:00",
+  "checkedAt": "2026-11-23T07:53:47.683630+00:00",
   "capturedAt": "2026-11-21T12:48:38.793694+00:00",
   "players": 290,
   "exact": 270,
@@ -1010,8 +1010,8 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-22T15:48:00",
-  "fetchedAt": "2026-11-22T23:40:02.513623+00:00",
+  "updatedAt": "2026-11-23T06:55:00",
+  "fetchedAt": "2026-11-23T07:52:58.263656+00:00",
   "rows": 139,
   "matched": 95,
   "unmatched": [
@@ -1029,8 +1029,8 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-22T15:48:00",
-    "fetchedAt": "2026-11-22T23:40:01.989694+00:00",
+    "updatedAt": "2026-11-23T06:55:00",
+    "fetchedAt": "2026-11-23T07:52:57.804371+00:00",
     "rows": 102,
     "matched": 94,
     "flagged": 94
@@ -1039,7 +1039,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-22T23:40:02.513623+00:00",
+    "fetchedAt": "2026-11-23T07:52:58.263656+00:00",
     "rows": 37,
     "matched": 36,
     "flagged": 1
@@ -1048,9 +1048,9 @@
   "nextRound": 14,
   "unregistered": 7,
   "flagged": {
-   "out": 30,
-   "doubt": 64,
-   "probable": 8
+   "out": 31,
+   "doubt": 61,
+   "probable": 10
   }
  },
  "warnings": [],
