@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-23T20:20:44.615193+00:00",
+ "fetchedAt": "2026-11-24T04:51:57.754515+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -11,6 +11,22 @@
    "status": "Out",
    "round": "",
    "comment": ""
+  },
+  {
+   "team": "DUB",
+   "position": "F",
+   "name": "Davis Bertans",
+   "status": "Out",
+   "round": "",
+   "comment": "Hamstring"
+  },
+  {
+   "team": "MIL",
+   "position": "G",
+   "name": "Leandro Bolmaro",
+   "status": "Game time",
+   "round": "",
+   "comment": "Groin"
   },
   {
    "team": "ASV",
@@ -64,7 +80,7 @@
    "team": "OLY",
    "position": "G",
    "name": "Tyler Dorsey",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -101,6 +117,14 @@
    "comment": "Calf"
   },
   {
+   "team": "BJK",
+   "position": "C",
+   "name": "Wenyen Gabriel",
+   "status": "Out",
+   "round": "",
+   "comment": ""
+  },
+  {
    "team": "RMB",
    "position": "C",
    "name": "Usman Garuba",
@@ -112,7 +136,7 @@
    "team": "BAR",
    "position": "G",
    "name": "Killian Hayes",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Not Injury Related"
   },
@@ -141,20 +165,20 @@
    "comment": "Foot"
   },
   {
+   "team": "CZV",
+   "position": "G",
+   "name": "Chris Jones",
+   "status": "Game time",
+   "round": "",
+   "comment": "Illness"
+  },
+  {
    "team": "FBT",
    "position": "F",
    "name": "Braxton Key",
    "status": "Out",
    "round": "",
    "comment": "Finger"
-  },
-  {
-   "team": "MTA",
-   "position": "F",
-   "name": "Gur Lavi",
-   "status": "Out",
-   "round": "",
-   "comment": ""
   },
   {
    "team": "MTA",
@@ -171,6 +195,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "BAR",
+   "position": "F",
+   "name": "Tyrese Martin",
+   "status": "Game time",
+   "round": "",
+   "comment": "Ankle"
   },
   {
    "team": "FBT",
@@ -192,7 +224,7 @@
    "team": "OLY",
    "position": "C",
    "name": "Nikola Milutinov",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Finger"
   },
@@ -200,6 +232,14 @@
    "team": "OLY",
    "position": "G",
    "name": "Jean Montero",
+   "status": "Out",
+   "round": "",
+   "comment": "Knee"
+  },
+  {
+   "team": "BAR",
+   "position": "C",
+   "name": "Josh Nebo",
    "status": "Out",
    "round": "",
    "comment": "Knee"
@@ -232,7 +272,7 @@
    "team": "KBA",
    "position": "C",
    "name": "Marcio Santos",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": ""
   },
@@ -240,7 +280,7 @@
    "team": "KBA",
    "position": "F",
    "name": "Tadas Sedekerskis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Thigh"
   },
@@ -256,7 +296,7 @@
    "team": "PAR",
    "position": "F",
    "name": "Lamar Stevens",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Calf"
   },
@@ -264,7 +304,7 @@
    "team": "PAR",
    "position": "F",
    "name": "Ethan Thompson",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Back"
   },
@@ -272,17 +312,9 @@
    "team": "PAR",
    "position": "G",
    "name": "Luca Vildoza",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
-  },
-  {
-   "team": "BAY",
-   "position": "C",
-   "name": "Austin Wiley",
-   "status": "Out",
-   "round": "",
-   "comment": "Hip"
   },
   {
    "team": "ZAL",
@@ -296,7 +328,7 @@
    "team": "PAR",
    "position": "C",
    "name": "Derek Willis",
-   "status": "Out",
+   "status": "Game time",
    "round": "",
    "comment": "Ankle"
   }

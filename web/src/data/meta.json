@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-23T20:21:31.527867+00:00",
+ "generatedAt": "2026-11-24T04:52:51.275930+00:00",
  "currentRound": 14,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 83,
  "lastPriceCapture": "2026-11-21T12:48:38.793694+00:00",
- "lastPriceCheck": "2026-11-23T20:20:45.794409+00:00",
+ "lastPriceCheck": "2026-11-24T04:51:59.154578+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.35
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-23T20:20:49.830469+00:00",
+  "generatedAt": "2026-11-24T04:52:03.524141+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -981,7 +981,7 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-23T20:21:27.346889+00:00",
+  "checkedAt": "2026-11-24T04:52:46.692357+00:00",
   "capturedAt": "2026-11-21T12:48:38.793694+00:00",
   "players": 290,
   "exact": 270,
@@ -1010,46 +1010,48 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-23T13:27:00",
-  "fetchedAt": "2026-11-23T20:20:44.615193+00:00",
-  "rows": 141,
-  "matched": 97,
+  "updatedAt": "2026-11-23T22:02:00",
+  "fetchedAt": "2026-11-24T04:51:57.754515+00:00",
+  "rows": 154,
+  "matched": 104,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
    "Vojin Medarevic (Crvena Zvezda Meridianbet Belgrade)",
    "Ognjen Simjanovski (Crvena Zvezda Meridianbet Belgrade)",
+   "Zacharie Perrin (Kosner Baskonia Vitoria-Gasteiz)",
    "Lorenz Sanz (LDLC ASVEL Villeurbanne)",
    "Gabriel Lundberg (Maccabi Rapyd Tel Aviv)",
    "Nobel Boungou-Colo (Paris Basketball)",
    "Mitar Bosnjakovic (Partizan Mozzart Bet Belgrade)",
+   "Awudu Abass (Virtus Bologna)",
    "Mady Sissoko (BJK)"
   ],
   "sources": [
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-23T13:27:00",
-    "fetchedAt": "2026-11-23T20:20:44.163715+00:00",
-    "rows": 104,
-    "matched": 96,
-    "flagged": 96
+    "updatedAt": "2026-11-23T22:02:00",
+    "fetchedAt": "2026-11-24T04:51:57.245539+00:00",
+    "rows": 113,
+    "matched": 103,
+    "flagged": 103
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-23T20:20:44.615193+00:00",
-    "rows": 37,
-    "matched": 36,
+    "fetchedAt": "2026-11-24T04:51:57.754515+00:00",
+    "rows": 41,
+    "matched": 40,
     "flagged": 1
    }
   ],
   "nextRound": 14,
   "unregistered": 7,
   "flagged": {
-   "out": 37,
-   "doubt": 56,
+   "out": 46,
+   "doubt": 54,
    "probable": 11
   }
  },
