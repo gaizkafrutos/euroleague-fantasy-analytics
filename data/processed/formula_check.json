@@ -1,20 +1,23 @@
 {
  "ok": true,
- "checkedAt": "2026-11-24T04:52:46.692357+00:00",
- "capturedAt": "2026-11-21T12:48:38.793694+00:00",
- "players": 290,
- "exact": 270,
+ "checkedAt": "2026-11-24T17:57:26.163721+00:00",
+ "capturedAt": "2026-11-24T17:56:53.773048+00:00",
+ "players": 260,
+ "exact": 242,
  "exactShare": 0.931,
  "meanAbsoluteError": 0.037,
  "correlation": 0.9999,
  "coaches": {
-  "coaches": 20,
+  "coaches": 18,
   "maxAbsError": 0.0,
   "overtimeGames": 18
  },
  "foulGap": {
-  "players": 16,
-  "fouls": 18
+  "players": 14,
+  "fouls": 15
  },
- "settlingClubs": []
+ "settlingClubs": [
+  "BES",
+  "PRS"
+ ]
 }

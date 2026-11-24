@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-24T04:51:57.754515+00:00",
+ "fetchedAt": "2026-11-24T17:56:52.602852+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -67,6 +67,14 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
+  },
+  {
+   "team": "BAY",
+   "position": "F",
+   "name": "Oscar da Silva",
+   "status": "Game time",
+   "round": "",
+   "comment": "Illness"
   },
   {
    "team": "RMB",
@@ -135,6 +143,14 @@
   {
    "team": "BAR",
    "position": "G",
+   "name": "Umoja Gibson",
+   "status": "Out",
+   "round": "",
+   "comment": "Abdomen"
+  },
+  {
+   "team": "BAR",
+   "position": "G",
    "name": "Killian Hayes",
    "status": "Game time",
    "round": "",
@@ -163,14 +179,6 @@
    "status": "Out",
    "round": "",
    "comment": "Foot"
-  },
-  {
-   "team": "CZV",
-   "position": "G",
-   "name": "Chris Jones",
-   "status": "Game time",
-   "round": "",
-   "comment": "Illness"
   },
   {
    "team": "FBT",
@@ -253,6 +261,14 @@
    "comment": "Nose"
   },
   {
+   "team": "BJK",
+   "position": "C",
+   "name": "Eugene Omoruyi",
+   "status": "Out",
+   "round": "",
+   "comment": "Foot"
+  },
+  {
    "team": "BAR",
    "position": "G",
    "name": "Kevin Punter",
@@ -264,6 +280,14 @@
    "team": "VBC",
    "position": "F",
    "name": "Nate Reuvers",
+   "status": "Out",
+   "round": "",
+   "comment": "Foot"
+  },
+  {
+   "team": "VBC",
+   "position": "F",
+   "name": "Jasiel Rivero",
    "status": "Out",
    "round": "",
    "comment": "Foot"
@@ -285,12 +309,12 @@
    "comment": "Thigh"
   },
   {
-   "team": "BJK",
-   "position": "C",
-   "name": "Mady Sissoko",
+   "team": "PAO",
+   "position": "G",
+   "name": "Kostas Sloukas",
    "status": "Out",
    "round": "",
-   "comment": ""
+   "comment": "Knee"
   },
   {
    "team": "PAR",
@@ -315,6 +339,14 @@
    "status": "Game time",
    "round": "",
    "comment": "Ankle"
+  },
+  {
+   "team": "PBB",
+   "position": "F",
+   "name": "TJ Warren",
+   "status": "Out",
+   "round": "",
+   "comment": ""
   },
   {
    "team": "ZAL",

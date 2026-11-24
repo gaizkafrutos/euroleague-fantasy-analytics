@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-24T04:51:57.245539+00:00",
- "updatedAt": "2026-11-23T22:02:00",
+ "fetchedAt": "2026-11-24T17:56:52.124824+00:00",
+ "updatedAt": "2026-11-24T16:36:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -96,7 +96,7 @@
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Yagiz Aksu",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision). DNP in the domestic league (11.22)"
   },
@@ -119,18 +119,26 @@
   {
    "team": "Besiktas Istanbul",
    "position": "C",
-   "name": "Mady Sissoko",
-   "status": "Uncertain",
+   "name": "Eugene Omoruyi",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "Out indefinitely but began individual strength training after an injury"
+   "comment": "Undisclosed"
+  },
+  {
+   "team": "Besiktas Istanbul",
+   "position": "C",
+   "name": "Mady Sissoko",
+   "status": "Ready",
+   "round": "Round 14",
+   "comment": "Included in 12-man roster for Round 14"
   },
   {
    "team": "Besiktas Istanbul",
    "position": "PG",
    "name": "Berk Ugurlu",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 14",
-   "comment": "DNP in Rounds 11-13 (undisclosed). Played in the domestic league (11.22)"
+   "comment": "Included in 12-man roster for Round 14 after DNP in Rounds 11-13 (undisclosed). Played in the domestic league (11.22)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -144,7 +152,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "SG",
    "name": "Nikola Djurisic",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "Not included in 12-man lineup for Round 13 (coach's decision). Played in the domestic league (11.22)"
   },
@@ -152,9 +160,9 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "PG",
    "name": "Chris Jones",
-   "status": "Game-time",
+   "status": "Ready",
    "round": "Round 14",
-   "comment": "DNP in domestic league, Navarro said he's not 100% (undisclosed injury)"
+   "comment": "Included in 12-man roster for Round 14 after DNP in domestic league, Navarro said he's not 100% (undisclosed injury)"
   },
   {
    "team": "Crvena Zvezda Meridianbet Belgrade",
@@ -184,7 +192,7 @@
    "team": "Crvena Zvezda Meridianbet Belgrade",
    "position": "C",
    "name": "Johnathan Motley",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "DNP in Rounds 11-13 (illness). Played in the domestic league (11.22)"
   },
@@ -262,6 +270,14 @@
   },
   {
    "team": "FC Bayern Munich",
+   "position": "PF",
+   "name": "Oscar da Silva",
+   "status": "Game-time",
+   "round": "Round 14",
+   "comment": "Illness"
+  },
+  {
+   "team": "FC Bayern Munich",
    "position": "SF",
    "name": "Kilian Fischer",
    "status": "Out",
@@ -270,11 +286,19 @@
   },
   {
    "team": "FC Bayern Munich",
+   "position": "SG",
+   "name": "Justus Hollatz",
+   "status": "Game-time",
+   "round": "Round 14",
+   "comment": "Practiced ahead of Round 14 after DNP in Rounds 12-13 (undisclosed)"
+  },
+  {
+   "team": "FC Bayern Munich",
    "position": "PF",
    "name": "Miles Norris",
-   "status": "Uncertain",
+   "status": "Game-time",
    "round": "Round 14",
-   "comment": "DNP in Round 13 (coach's decision). DNP in the domestic league (11.22)"
+   "comment": "DNP in Round 13 (coach's decision)"
   },
   {
    "team": "FC Bayern Munich",
@@ -576,7 +600,7 @@
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Nikola Milutinov",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "Expected to return in Round 14 after DNP in Rounds 12-13 (fractured index finger, 11.14) DNP in the domestic league (11.22)"
   },
@@ -664,7 +688,7 @@
    "team": "Paris Basketball",
    "position": "SF",
    "name": "Daulton Hommes",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 11-13 (coach's decision). Played in the domestic league (11.22)"
   },
@@ -672,15 +696,15 @@
    "team": "Paris Basketball",
    "position": "SF",
    "name": "Maozinha Pereira",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 14",
-   "comment": "DNP in Round 13 (coach's decision). DNP in the domestic league (11.22)"
+   "comment": "Included in 12-man roster for Round 14 after DNP in Round 13 (coach's decision). DNP in the domestic league (11.22)"
   },
   {
    "team": "Paris Basketball",
    "position": "SF",
    "name": "Terry Tarpey",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Round 13 and in the domestic league (11.22)"
   },
@@ -736,9 +760,9 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PG",
    "name": "Luca Vildoza",
-   "status": "Expected",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "DNP in Round 13 and in the domestic league (11.22) (ankle issue), but traveled with the team."
+   "comment": "DNP in Round 13 and in the domestic league (11.22) (ankle issue), didn't travel with the team."
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -824,7 +848,7 @@
    "team": "Virtus Bologna",
    "position": "SF",
    "name": "Awudu Abass",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "New signing from Dubai (11.20). Played in the domestic league (11.22)"
   },
@@ -832,7 +856,7 @@
    "team": "Virtus Bologna",
    "position": "SG",
    "name": "Matteo Baiocchi",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision). Played in the domestic league (11.22)"
   },
@@ -848,9 +872,9 @@
    "team": "Virtus Bologna",
    "position": "PF",
    "name": "Francesco Ferrari",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "DNP in Round 13 (coach's decision). Played in the domestic league (11.22)"
+   "comment": "Out for Round 14 (national team duties) after DNP in Round 13 (coach's decision). Played in the domestic league (11.22)"
   },
   {
    "team": "Virtus Bologna",
@@ -858,7 +882,7 @@
    "name": "Bobi Klintman",
    "status": "Out",
    "round": "Round 14",
-   "comment": "Out for Round 14 (undisclosed)"
+   "comment": "Out for Round 14 (left ankle sprain)"
   },
   {
    "team": "Zalgiris Kaunas",
@@ -888,9 +912,9 @@
    "team": "Zalgiris Kaunas",
    "position": "PG",
    "name": "Maodo Lo",
-   "status": "Uncertain",
+   "status": "Expected",
    "round": "Round 14",
-   "comment": "DNP in Rounds 12-13 (coach's decision). DNP in the domestic league (ankle injury)(11.22)"
+   "comment": "Expected to be ready for Round 14 after DNP in Rounds 12-13 (coach's decision). DNP in the domestic league (ankle injury)(11.22)"
   },
   {
    "team": "Zalgiris Kaunas",
@@ -904,9 +928,9 @@
    "team": "Zalgiris Kaunas",
    "position": "PG",
    "name": "Nigel Williams-Goss",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "Aggravated previous hamstring injury in Round 6. Expected to be out until Round 14."
+   "comment": "Ruled out for Round 14 (Aggravated previous hamstring injury in Round 6)"
   }
  ]
 }
