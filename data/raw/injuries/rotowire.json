@@ -1,7 +1,7 @@
 {
  "source": "RotoWire",
  "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
- "fetchedAt": "2026-11-24T17:56:52.602852+00:00",
+ "fetchedAt": "2026-11-25T02:36:10.809196+00:00",
  "updatedAt": null,
  "rows": [
   {
@@ -24,17 +24,9 @@
    "team": "MIL",
    "position": "G",
    "name": "Leandro Bolmaro",
-   "status": "Game time",
-   "round": "",
-   "comment": "Groin"
-  },
-  {
-   "team": "ASV",
-   "position": "C",
-   "name": "Joel Bolomboy",
    "status": "Out",
    "round": "",
-   "comment": "Face"
+   "comment": "Groin"
   },
   {
    "team": "MIL",
@@ -67,14 +59,6 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
-  },
-  {
-   "team": "BAY",
-   "position": "F",
-   "name": "Oscar da Silva",
-   "status": "Game time",
-   "round": "",
-   "comment": "Illness"
   },
   {
    "team": "RMB",
@@ -152,9 +136,9 @@
    "team": "BAR",
    "position": "G",
    "name": "Killian Hayes",
-   "status": "Game time",
+   "status": "Out",
    "round": "",
-   "comment": "Not Injury Related"
+   "comment": ""
   },
   {
    "team": "DUB",
@@ -195,22 +179,6 @@
    "status": "Out",
    "round": "",
    "comment": "Knee"
-  },
-  {
-   "team": "BAR",
-   "position": "C",
-   "name": "Yoan Makoundou",
-   "status": "Out",
-   "round": "",
-   "comment": "Knee"
-  },
-  {
-   "team": "BAR",
-   "position": "F",
-   "name": "Tyrese Martin",
-   "status": "Game time",
-   "round": "",
-   "comment": "Ankle"
   },
   {
    "team": "FBT",

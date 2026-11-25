@@ -1,30 +1,30 @@
 {
  "method": "ilp",
  "totalPrice": 99.8,
- "totalProjection": 113.43,
- "scoredProjection": 136.66,
+ "totalProjection": 109.12,
+ "scoredProjection": 131.91,
  "captain": "3766",
  "starters": [
   "3766",
+  "7201",
   "3850",
   "7424",
-  "3851",
-  "3842"
+  "3851"
  ],
- "sixth": "7217",
+ "sixth": "3991",
  "bench": [
-  "3991",
-  "7223",
+  "11541",
   "3867",
+  "3886",
   "3947"
  ],
  "coach": {
-  "key": "3938",
-  "name": "NAVARRO, IBON",
+  "key": "3921",
+  "name": "LASO, PABLO",
   "position": "E",
-  "club": "RED",
-  "price": 6.8,
-  "projection": 12.94
+  "club": "IST",
+  "price": 6.5,
+  "projection": 10.48
  },
  "players": [
   {
@@ -33,7 +33,7 @@
    "position": "G",
    "club": "MAD",
    "price": 13.8,
-   "projection": 16.41
+   "projection": 16.2
   },
   {
    "key": "3851",
@@ -41,23 +41,23 @@
    "position": "G",
    "club": "MAD",
    "price": 9.6,
-   "projection": 13.23
+   "projection": 13.1
   },
   {
-   "key": "3842",
-   "name": "WILBEKIN, SCOTTIE",
+   "key": "11541",
+   "name": "CARDENAS, ALVARO",
    "position": "G",
-   "club": "BES",
-   "price": 9.6,
-   "projection": 12.9
+   "club": "PAM",
+   "price": 4.4,
+   "projection": 4.96
   },
   {
-   "key": "7217",
-   "name": "CARTER, TYSON",
+   "key": "3886",
+   "name": "HACKETT, DANIEL",
    "position": "G",
-   "club": "RED",
-   "price": 8.9,
-   "projection": 11.88
+   "club": "VIR",
+   "price": 4.5,
+   "projection": 4.71
   },
   {
    "key": "3766",
@@ -65,7 +65,15 @@
    "position": "F",
    "club": "OLY",
    "price": 20.0,
-   "projection": 22.03
+   "projection": 21.71
+  },
+  {
+   "key": "7201",
+   "name": "BACON, DWAYNE",
+   "position": "F",
+   "club": "DUB",
+   "price": 14.6,
+   "projection": 16.45
   },
   {
    "key": "3991",
@@ -73,15 +81,7 @@
    "position": "F",
    "club": "MAD",
    "price": 5.9,
-   "projection": 8.17
-  },
-  {
-   "key": "7223",
-   "name": "FRISCH, CLEMENT",
-   "position": "F",
-   "club": "BAS",
-   "price": 5.4,
-   "projection": 6.16
+   "projection": 8.14
   },
   {
    "key": "3867",
@@ -96,8 +96,8 @@
    "name": "DIARRA, ALIOU",
    "position": "C",
    "club": "VIR",
-   "price": 11.4,
-   "projection": 13.51
+   "price": 12.1,
+   "projection": 14.71
   },
   {
    "key": "3947",
