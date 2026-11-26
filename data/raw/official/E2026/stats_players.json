@@ -674,6 +674,38 @@
   },
   {
    "playerRanking": 22,
+   "gamesPlayed": 13.0,
+   "gamesStarted": 3.0,
+   "minutesPlayed": 15.375641025641025,
+   "pointsScored": 3.1,
+   "twoPointersMade": 0.6,
+   "twoPointersAttempted": 1.3,
+   "twoPointersPercentage": "47.1%",
+   "threePointersMade": 0.6,
+   "threePointersAttempted": 1.8,
+   "threePointersPercentage": "33.3%",
+   "freeThrowsMade": 0.0,
+   "freeThrowsAttempted": 0.2,
+   "freeThrowsPercentage": "0%",
+   "offensiveRebounds": 0.6,
+   "defensiveRebounds": 1.5,
+   "totalRebounds": 2.2,
+   "assists": 1.1,
+   "steals": 0.8,
+   "turnovers": 0.9,
+   "blocks": 0.2,
+   "blocksAgainst": 0.1,
+   "foulsCommited": 1.3,
+   "foulsDrawn": 0.5,
+   "pir": 3.3,
+   "player": {
+    "code": "001255",
+    "name": "PAPANIKOLAOU, KOSTAS",
+    "team": "OLY"
+   }
+  },
+  {
+   "playerRanking": 23,
    "gamesPlayed": 8.0,
    "gamesStarted": 2.0,
    "minutesPlayed": 13.204166666666667,
@@ -702,38 +734,6 @@
     "code": "011949",
     "name": "HOMMES, DAULTON",
     "team": "PRS"
-   }
-  },
-  {
-   "playerRanking": 23,
-   "gamesPlayed": 13.0,
-   "gamesStarted": 3.0,
-   "minutesPlayed": 15.375641025641025,
-   "pointsScored": 3.1,
-   "twoPointersMade": 0.6,
-   "twoPointersAttempted": 1.3,
-   "twoPointersPercentage": "47.1%",
-   "threePointersMade": 0.6,
-   "threePointersAttempted": 1.8,
-   "threePointersPercentage": "33.3%",
-   "freeThrowsMade": 0.0,
-   "freeThrowsAttempted": 0.2,
-   "freeThrowsPercentage": "0%",
-   "offensiveRebounds": 0.6,
-   "defensiveRebounds": 1.5,
-   "totalRebounds": 2.2,
-   "assists": 1.1,
-   "steals": 0.8,
-   "turnovers": 0.8,
-   "blocks": 0.2,
-   "blocksAgainst": 0.1,
-   "foulsCommited": 1.3,
-   "foulsDrawn": 0.5,
-   "pir": 3.4,
-   "player": {
-    "code": "001255",
-    "name": "PAPANIKOLAOU, KOSTAS",
-    "team": "OLY"
    }
   },
   {
@@ -6145,7 +6145,7 @@
    }
   },
   {
-   "playerRanking": 192,
+   "playerRanking": 193,
    "gamesPlayed": 14.0,
    "gamesStarted": 12.0,
    "minutesPlayed": 20.89166666666667,
@@ -6164,12 +6164,12 @@
    "totalRebounds": 4.6,
    "assists": 0.8,
    "steals": 0.4,
-   "turnovers": 1.0,
+   "turnovers": 0.9,
    "blocks": 0.2,
    "blocksAgainst": 0.3,
    "foulsCommited": 1.6,
    "foulsDrawn": 3.6,
-   "pir": 12.2,
+   "pir": 12.3,
    "player": {
     "code": "008987",
     "name": "LEDAY, ZACH",
@@ -7207,8 +7207,8 @@
    "minutesPlayed": 23.417857142857144,
    "pointsScored": 16.4,
    "twoPointersMade": 5.7,
-   "twoPointersAttempted": 10.6,
-   "twoPointersPercentage": "53.7%",
+   "twoPointersAttempted": 10.7,
+   "twoPointersPercentage": "53.3%",
    "threePointersMade": 0.6,
    "threePointersAttempted": 1.5,
    "threePointersPercentage": "42.9%",
@@ -7225,7 +7225,7 @@
    "blocksAgainst": 0.7,
    "foulsCommited": 2.1,
    "foulsDrawn": 5.9,
-   "pir": 19.9,
+   "pir": 19.8,
    "player": {
     "code": "012608",
     "name": "SHORTS, TJ",
@@ -7762,6 +7762,28 @@
   },
   {
    "playerRanking": 22,
+   "gamesPlayed": 13.0,
+   "minutesPlayed": 15.375641025641025,
+   "effectiveFieldGoalPercentage": "48.8%",
+   "trueShootingPercentage": "47.3%",
+   "offensiveReboundsPercentage": "4.7%",
+   "defensiveReboundsPercentage": "11.3%",
+   "reboundsPercentage": "8%",
+   "assistsToTurnoversRatio": 1.2,
+   "assistsRatio": "20.5%",
+   "turnoversRatio": "17.6%",
+   "twoPointAttemptsRatio": "24.9%",
+   "threePointAttemptsRatio": "35.1%",
+   "freeThrowsRate": "7.3%",
+   "possesions": 5.3,
+   "player": {
+    "code": "001255",
+    "name": "PAPANIKOLAOU, KOSTAS",
+    "team": "OLY"
+   }
+  },
+  {
+   "playerRanking": 23,
    "gamesPlayed": 8.0,
    "minutesPlayed": 13.204166666666667,
    "effectiveFieldGoalPercentage": "30.4%",
@@ -7780,28 +7802,6 @@
     "code": "011949",
     "name": "HOMMES, DAULTON",
     "team": "PRS"
-   }
-  },
-  {
-   "playerRanking": 23,
-   "gamesPlayed": 13.0,
-   "minutesPlayed": 15.375641025641025,
-   "effectiveFieldGoalPercentage": "48.8%",
-   "trueShootingPercentage": "47.3%",
-   "offensiveReboundsPercentage": "4.7%",
-   "defensiveReboundsPercentage": "11.3%",
-   "reboundsPercentage": "8%",
-   "assistsToTurnoversRatio": 1.3,
-   "assistsRatio": "20.8%",
-   "turnoversRatio": "16.3%",
-   "twoPointAttemptsRatio": "25.3%",
-   "threePointAttemptsRatio": "35.7%",
-   "freeThrowsRate": "7.3%",
-   "possesions": 5.2,
-   "player": {
-    "code": "001255",
-    "name": "PAPANIKOLAOU, KOSTAS",
-    "team": "OLY"
    }
   },
   {
@@ -11523,7 +11523,7 @@
    }
   },
   {
-   "playerRanking": 192,
+   "playerRanking": 193,
    "gamesPlayed": 14.0,
    "minutesPlayed": 20.89166666666667,
    "effectiveFieldGoalPercentage": "51.6%",
@@ -11532,12 +11532,12 @@
    "defensiveReboundsPercentage": "16.6%",
    "reboundsPercentage": "12.4%",
    "assistsToTurnoversRatio": 0.8,
-   "assistsRatio": "8.2%",
-   "turnoversRatio": "10.5%",
-   "twoPointAttemptsRatio": "47.1%",
-   "threePointAttemptsRatio": "21.7%",
+   "assistsRatio": "8.3%",
+   "turnoversRatio": "9.8%",
+   "twoPointAttemptsRatio": "47.5%",
+   "threePointAttemptsRatio": "21.9%",
    "freeThrowsRate": "41.3%",
-   "possesions": 9.6,
+   "possesions": 9.5,
    "player": {
     "code": "008987",
     "name": "LEDAY, ZACH",
@@ -12252,18 +12252,18 @@
    "playerRanking": 226,
    "gamesPlayed": 14.0,
    "minutesPlayed": 23.417857142857144,
-   "effectiveFieldGoalPercentage": "55%",
-   "trueShootingPercentage": "58.8%",
+   "effectiveFieldGoalPercentage": "54.7%",
+   "trueShootingPercentage": "58.5%",
    "offensiveReboundsPercentage": "1.8%",
    "defensiveReboundsPercentage": "7.6%",
    "reboundsPercentage": "4.5%",
    "assistsToTurnoversRatio": 3.3,
    "assistsRatio": "27.3%",
    "turnoversRatio": "8.2%",
-   "twoPointAttemptsRatio": "49.1%",
+   "twoPointAttemptsRatio": "49.3%",
    "threePointAttemptsRatio": "6.9%",
-   "freeThrowsRate": "34.1%",
-   "possesions": 21.7,
+   "freeThrowsRate": "33.9%",
+   "possesions": 21.8,
    "player": {
     "code": "012608",
     "name": "SHORTS, TJ",
@@ -12633,21 +12633,6 @@
   },
   {
    "playerRanking": 22,
-   "gamesPlayed": 8.0,
-   "gamesStarted": 2.0,
-   "wins": 2.0,
-   "losses": 6.0,
-   "minutesPlayed": 13.204166666666667,
-   "doubleDoubles": 0.0,
-   "tripleDoubles": 0.0,
-   "player": {
-    "code": "011949",
-    "name": "HOMMES, DAULTON",
-    "team": "PRS"
-   }
-  },
-  {
-   "playerRanking": 23,
    "gamesPlayed": 13.0,
    "gamesStarted": 3.0,
    "wins": 10.0,
@@ -12659,6 +12644,21 @@
     "code": "001255",
     "name": "PAPANIKOLAOU, KOSTAS",
     "team": "OLY"
+   }
+  },
+  {
+   "playerRanking": 23,
+   "gamesPlayed": 8.0,
+   "gamesStarted": 2.0,
+   "wins": 2.0,
+   "losses": 6.0,
+   "minutesPlayed": 13.204166666666667,
+   "doubleDoubles": 0.0,
+   "tripleDoubles": 0.0,
+   "player": {
+    "code": "011949",
+    "name": "HOMMES, DAULTON",
+    "team": "PRS"
    }
   },
   {
@@ -15197,7 +15197,7 @@
    }
   },
   {
-   "playerRanking": 192,
+   "playerRanking": 193,
    "gamesPlayed": 14.0,
    "gamesStarted": 12.0,
    "wins": 7.0,
@@ -16181,27 +16181,6 @@
   },
   {
    "playerRanking": 22,
-   "gamesPlayed": 8.0,
-   "gamesStarted": 2.0,
-   "twoPointAttemptsShare": "2.4%",
-   "threePointAttemptsShare": "7.6%",
-   "freeThrowsAttemptsShare": "8%",
-   "twoPointersMadeShare": "0.6%",
-   "threePointersMadeShare": "5.4%",
-   "freeThrowsMadeShare": "9.1%",
-   "twoPointRate": "25%",
-   "threePointRate": "75%",
-   "pointsFromTwoPointersPercentage": "8.3%",
-   "pointsFromThreePointersPercentage": "62.5%",
-   "pointsFromFreeThrowsPercentage": "29.2%",
-   "player": {
-    "code": "011949",
-    "name": "HOMMES, DAULTON",
-    "team": "PRS"
-   }
-  },
-  {
-   "playerRanking": 23,
    "gamesPlayed": 13.0,
    "gamesStarted": 3.0,
    "twoPointAttemptsShare": "3.3%",
@@ -16219,6 +16198,27 @@
     "code": "001255",
     "name": "PAPANIKOLAOU, KOSTAS",
     "team": "OLY"
+   }
+  },
+  {
+   "playerRanking": 23,
+   "gamesPlayed": 8.0,
+   "gamesStarted": 2.0,
+   "twoPointAttemptsShare": "2.4%",
+   "threePointAttemptsShare": "7.6%",
+   "freeThrowsAttemptsShare": "8%",
+   "twoPointersMadeShare": "0.6%",
+   "threePointersMadeShare": "5.4%",
+   "freeThrowsMadeShare": "9.1%",
+   "twoPointRate": "25%",
+   "threePointRate": "75%",
+   "pointsFromTwoPointersPercentage": "8.3%",
+   "pointsFromThreePointersPercentage": "62.5%",
+   "pointsFromFreeThrowsPercentage": "29.2%",
+   "player": {
+    "code": "011949",
+    "name": "HOMMES, DAULTON",
+    "team": "PRS"
    }
   },
   {
@@ -19501,7 +19501,7 @@
    "playerRanking": 180,
    "gamesPlayed": 14.0,
    "gamesStarted": 14.0,
-   "twoPointAttemptsShare": "11.7%",
+   "twoPointAttemptsShare": "11.6%",
    "threePointAttemptsShare": "12.8%",
    "freeThrowsAttemptsShare": "9%",
    "twoPointersMadeShare": "12%",
@@ -19753,7 +19753,7 @@
    "playerRanking": 192,
    "gamesPlayed": 14.0,
    "gamesStarted": 11.0,
-   "twoPointAttemptsShare": "11.7%",
+   "twoPointAttemptsShare": "11.6%",
    "threePointAttemptsShare": "0.2%",
    "freeThrowsAttemptsShare": "12.9%",
    "twoPointersMadeShare": "14.2%",
@@ -19771,7 +19771,7 @@
    }
   },
   {
-   "playerRanking": 192,
+   "playerRanking": 193,
    "gamesPlayed": 14.0,
    "gamesStarted": 12.0,
    "twoPointAttemptsShare": "11.6%",
@@ -20467,14 +20467,14 @@
    "playerRanking": 226,
    "gamesPlayed": 14.0,
    "gamesStarted": 14.0,
-   "twoPointAttemptsShare": "24.1%",
+   "twoPointAttemptsShare": "24.2%",
    "threePointAttemptsShare": "5.2%",
    "freeThrowsAttemptsShare": "20.8%",
    "twoPointersMadeShare": "24.6%",
    "threePointersMadeShare": "5.9%",
    "freeThrowsMadeShare": "21%",
-   "twoPointRate": "87.6%",
-   "threePointRate": "12.4%",
+   "twoPointRate": "87.7%",
+   "threePointRate": "12.3%",
    "pointsFromTwoPointersPercentage": "69.6%",
    "pointsFromThreePointersPercentage": "11.7%",
    "pointsFromFreeThrowsPercentage": "18.7%",

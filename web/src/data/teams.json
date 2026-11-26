@@ -18,7 +18,7 @@
     "opponent": "PAM",
     "home": true,
     "date": "2026-12-03T17:30:00Z",
-    "opponent_rating": 8.6
+    "opponent_rating": 8.5
    },
    {
     "round": 16,
@@ -73,12 +73,12 @@
   },
   "allowed": {
    "games": 14,
-   "G": 47.31,
+   "G": 47.3,
    "F": 30.37,
    "C": 19.21,
    "all": 96.89,
    "index": {
-    "G": 1.095,
+    "G": 1.094,
     "F": 0.907,
     "C": 0.895,
     "all": 0.987
@@ -333,7 +333,7 @@
     "opponent": "HTA",
     "home": false,
     "date": "2026-12-03T18:45:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 2.2
    },
    {
     "round": 16,
@@ -648,7 +648,7 @@
     "opponent": "PAN",
     "home": true,
     "date": "2026-12-04T17:00:00Z",
-    "opponent_rating": 9.6
+    "opponent_rating": 9.7
    },
    {
     "round": 16,
@@ -703,7 +703,7 @@
   },
   "allowed": {
    "games": 14,
-   "G": 47.2,
+   "G": 47.19,
    "F": 35.1,
    "C": 22.96,
    "all": 105.26,
@@ -970,14 +970,14 @@
     "opponent": "PAM",
     "home": false,
     "date": "2026-12-10T19:30:00Z",
-    "opponent_rating": 8.6
+    "opponent_rating": 8.5
    },
    {
     "round": 17,
     "opponent": "PAN",
     "home": false,
     "date": "2026-12-16T19:15:00Z",
-    "opponent_rating": 9.6
+    "opponent_rating": 9.7
    },
    {
     "round": 18,
@@ -1026,7 +1026,7 @@
     "G": 0.866,
     "F": 1.051,
     "C": 0.979,
-    "all": 0.953
+    "all": 0.954
    }
   },
   "upcoming": [
@@ -1292,7 +1292,7 @@
     "opponent": "PAM",
     "home": false,
     "date": "2026-12-15T19:30:00Z",
-    "opponent_rating": 8.6
+    "opponent_rating": 8.5
    },
    {
     "round": 18,
@@ -1306,7 +1306,7 @@
     "opponent": "PAN",
     "home": true,
     "date": "2026-12-23T16:00:00Z",
-    "opponent_rating": 9.6
+    "opponent_rating": 9.7
    }
   ],
   "box": {
@@ -1333,7 +1333,7 @@
   },
   "allowed": {
    "games": 14,
-   "G": 43.31,
+   "G": 43.3,
    "F": 25.77,
    "C": 22.61,
    "all": 91.68,
@@ -1653,7 +1653,7 @@
    "C": 20.39,
    "all": 97.55,
    "index": {
-    "G": 0.975,
+    "G": 0.976,
     "F": 1.046,
     "C": 0.95,
     "all": 0.994
@@ -1929,14 +1929,14 @@
     "opponent": "PAN",
     "home": true,
     "date": "2026-12-18T19:00:00Z",
-    "opponent_rating": 9.6
+    "opponent_rating": 9.7
    },
    {
     "round": 19,
     "opponent": "OLY",
     "home": true,
     "date": "2026-12-22T19:00:00Z",
-    "opponent_rating": 12.2
+    "opponent_rating": 12.0
    }
   ],
   "box": {
@@ -2237,7 +2237,7 @@
     "opponent": "HTA",
     "home": true,
     "date": "2026-12-15T19:15:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 2.2
    },
    {
     "round": 18,
@@ -2278,7 +2278,7 @@
   },
   "allowed": {
    "games": 14,
-   "G": 36.3,
+   "G": 36.29,
    "F": 28.35,
    "C": 22.48,
    "all": 87.13,
@@ -2527,7 +2527,7 @@
   "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png",
   "offense": 89.6,
   "defense": 88.7,
-  "netRating": 2.0,
+  "netRating": 2.2,
   "winRate": 0.5,
   "games": 14,
   "ratingSource": "temporada en curso",
@@ -2575,12 +2575,12 @@
    "losses": 7.0,
    "ppg": 89.6,
    "papg": 88.7,
-   "offRating": 118.5,
-   "defRating": 116.5,
-   "netRating": 2.0,
-   "pace": 75.6,
+   "offRating": 118.6,
+   "defRating": 116.4,
+   "netRating": 2.2,
+   "pace": 75.5,
    "efg": 57.1,
-   "tovRate": 15.1,
+   "tovRate": 15.0,
    "orbRate": 26.9,
    "ftRate": 30.8,
    "astPerGame": 17.1,
@@ -2594,14 +2594,14 @@
   "allowed": {
    "games": 14,
    "G": 43.09,
-   "F": 30.82,
+   "F": 30.77,
    "C": 23.22,
-   "all": 97.14,
+   "all": 97.08,
    "index": {
     "G": 0.997,
-    "F": 0.921,
+    "F": 0.919,
     "C": 1.081,
-    "all": 0.99
+    "all": 0.989
    }
   },
   "upcoming": [
@@ -3168,14 +3168,14 @@
     "opponent": "OLY",
     "home": false,
     "date": "2026-12-04T19:15:00Z",
-    "opponent_rating": 12.2
+    "opponent_rating": 12.0
    },
    {
     "round": 16,
     "opponent": "HTA",
     "home": false,
     "date": "2026-12-10T18:45:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 2.2
    },
    {
     "round": 17,
@@ -3787,7 +3787,7 @@
   "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png",
   "offense": 90.4,
   "defense": 81.3,
-  "netRating": 12.2,
+  "netRating": 12.0,
   "winRate": 0.786,
   "games": 14,
   "ratingSource": "temporada en curso",
@@ -3805,7 +3805,7 @@
     "opponent": "PAN",
     "home": false,
     "date": "2026-12-11T19:15:00Z",
-    "opponent_rating": 9.6
+    "opponent_rating": 9.7
    },
    {
     "round": 17,
@@ -3835,12 +3835,12 @@
    "losses": 3.0,
    "ppg": 90.4,
    "papg": 81.3,
-   "offRating": 119.4,
-   "defRating": 107.1,
-   "netRating": 12.2,
+   "offRating": 119.3,
+   "defRating": 107.2,
+   "netRating": 12.0,
    "pace": 75.8,
    "efg": 56.5,
-   "tovRate": 17.0,
+   "tovRate": 17.1,
    "orbRate": 35.9,
    "ftRate": 29.3,
    "astPerGame": 20.6,
@@ -3854,12 +3854,12 @@
   "allowed": {
    "games": 14,
    "G": 39.09,
-   "F": 30.6,
+   "F": 30.65,
    "C": 16.36,
-   "all": 86.05,
+   "all": 86.1,
    "index": {
     "G": 0.904,
-    "F": 0.914,
+    "F": 0.916,
     "C": 0.762,
     "all": 0.877
    }
@@ -4102,7 +4102,7 @@
   "crest": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png",
   "offense": 85.9,
   "defense": 78.7,
-  "netRating": 9.6,
+  "netRating": 9.7,
   "winRate": 0.714,
   "games": 14,
   "ratingSource": "temporada en curso",
@@ -4120,7 +4120,7 @@
     "opponent": "OLY",
     "home": true,
     "date": "2026-12-11T19:15:00Z",
-    "opponent_rating": 12.2
+    "opponent_rating": 12.0
    },
    {
     "round": 17,
@@ -4151,8 +4151,8 @@
    "ppg": 85.9,
    "papg": 78.7,
    "offRating": 115.0,
-   "defRating": 105.4,
-   "netRating": 9.6,
+   "defRating": 105.3,
+   "netRating": 9.7,
    "pace": 74.6,
    "efg": 55.2,
    "tovRate": 18.4,
@@ -4168,12 +4168,12 @@
   },
   "allowed": {
    "games": 14,
-   "G": 33.78,
+   "G": 33.73,
    "F": 29.68,
    "C": 21.6,
-   "all": 85.06,
+   "all": 85.01,
    "index": {
-    "G": 0.782,
+    "G": 0.78,
     "F": 0.887,
     "C": 1.006,
     "all": 0.866
@@ -4442,7 +4442,7 @@
     "opponent": "OLY",
     "home": true,
     "date": "2026-12-15T19:45:00Z",
-    "opponent_rating": 12.2
+    "opponent_rating": 12.0
    },
    {
     "round": 18,
@@ -4483,10 +4483,10 @@
   },
   "allowed": {
    "games": 14,
-   "G": 48.1,
+   "G": 48.09,
    "F": 34.99,
    "C": 23.19,
-   "all": 106.28,
+   "all": 106.27,
    "index": {
     "G": 1.113,
     "F": 1.045,
@@ -4764,14 +4764,14 @@
     "opponent": "OLY",
     "home": false,
     "date": "2026-12-18T18:30:00Z",
-    "opponent_rating": 12.2
+    "opponent_rating": 12.0
    },
    {
     "round": 19,
     "opponent": "HTA",
     "home": false,
     "date": "2026-12-22T18:45:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 2.2
    }
   ],
   "box": {
@@ -4801,12 +4801,12 @@
    "G": 38.63,
    "F": 32.58,
    "C": 18.47,
-   "all": 89.68,
+   "all": 89.67,
    "index": {
     "G": 0.894,
     "F": 0.973,
     "C": 0.86,
-    "all": 0.914
+    "all": 0.913
    }
   },
   "upcoming": [
@@ -5079,7 +5079,7 @@
     "opponent": "PAM",
     "home": true,
     "date": "2026-12-17T19:45:00Z",
-    "opponent_rating": 8.6
+    "opponent_rating": 8.5
    },
    {
     "round": 19,
@@ -5362,7 +5362,7 @@
   "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbHL/bc3e00b2-fea4-40be-a7ec-1e633129bde3.png",
   "offense": 93.6,
   "defense": 86.8,
-  "netRating": 8.6,
+  "netRating": 8.5,
   "winRate": 0.714,
   "games": 14,
   "ratingSource": "temporada en curso",
@@ -5410,11 +5410,11 @@
    "losses": 4.0,
    "ppg": 93.6,
    "papg": 86.8,
-   "offRating": 121.2,
+   "offRating": 121.1,
    "defRating": 112.5,
-   "netRating": 8.6,
+   "netRating": 8.5,
    "pace": 77.3,
-   "efg": 54.0,
+   "efg": 53.9,
    "tovRate": 13.6,
    "orbRate": 37.4,
    "ftRate": 27.2,
@@ -5436,7 +5436,7 @@
     "G": 0.993,
     "F": 0.982,
     "C": 0.93,
-    "all": 0.975
+    "all": 0.976
    }
   },
   "upcoming": [
@@ -6024,14 +6024,14 @@
     "opponent": "HTA",
     "home": false,
     "date": "2026-12-17T18:00:00Z",
-    "opponent_rating": 2.0
+    "opponent_rating": 2.2
    },
    {
     "round": 19,
     "opponent": "PAM",
     "home": true,
     "date": "2026-12-23T18:00:00Z",
-    "opponent_rating": 8.6
+    "opponent_rating": 8.5
    }
   ],
   "box": {
@@ -6058,7 +6058,7 @@
   },
   "allowed": {
    "games": 14,
-   "G": 43.9,
+   "G": 43.89,
    "F": 34.86,
    "C": 17.29,
    "all": 96.04,

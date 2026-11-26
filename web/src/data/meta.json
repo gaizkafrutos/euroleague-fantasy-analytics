@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-26T11:04:30.381573+00:00",
+ "generatedAt": "2026-11-26T21:43:57.791907+00:00",
  "currentRound": 15,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 87,
  "lastPriceCapture": "2026-11-26T11:04:02.567121+00:00",
- "lastPriceCheck": "2026-11-26T11:04:02.567121+00:00",
+ "lastPriceCheck": "2026-11-26T21:43:18.932147+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.53
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-26T11:04:06.234412+00:00",
+  "generatedAt": "2026-11-26T21:43:22.798140+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -47,7 +47,7 @@
    "v2c": {
     "mae": 6.032,
     "rmse": 7.67,
-    "bias": -0.076
+    "bias": -0.075
    },
    "legacy": {
     "mae": 6.366,
@@ -55,7 +55,7 @@
     "bias": 0.025
    },
    "mean": {
-    "mae": 6.374,
+    "mae": 6.375,
     "rmse": 8.184,
     "bias": -0.077
    },
@@ -76,14 +76,14 @@
     },
     "9-99": {
      "n": 773,
-     "v2": 6.327,
-     "v2c": 6.289,
-     "legacy": 6.373,
-     "mean": 6.356
+     "v2": 6.328,
+     "v2c": 6.29,
+     "legacy": 6.375,
+     "mean": 6.357
     }
    },
    "calibration": {
-    "slope": 0.7954,
+    "slope": 0.7953,
     "intercept": 1.783,
     "n": 2888
    },
@@ -149,7 +149,7 @@
    "ablation": {
     "noOpponent": 6.063,
     "noHome": 6.046,
-    "plain": 6.063,
+    "plain": 6.064,
     "seasonMinutes": 6.028
    },
    "frozenFromRound": 12,
@@ -157,19 +157,19 @@
     "n": 655,
     "rounds": 3,
     "v2": {
-     "mae": 6.107,
-     "rmse": 7.83,
-     "bias": -0.002
+     "mae": 6.109,
+     "rmse": 7.829,
+     "bias": -0.0
     },
     "v2c": {
-     "mae": 6.077,
+     "mae": 6.078,
      "rmse": 7.763,
-     "bias": -0.035
+     "bias": -0.033
     },
     "mean": {
-     "mae": 6.183,
+     "mae": 6.185,
      "rmse": 7.955,
-     "bias": -0.084
+     "bias": -0.082
     }
    }
   },
@@ -892,20 +892,20 @@
      "n": 340,
      "model": {
       "mae": 4.198,
-      "rmse": 6.313,
-      "bias": -0.439,
+      "rmse": 6.311,
+      "bias": -0.436,
       "spearman": 0.64
      },
      "mean": {
-      "mae": 5.327,
-      "rmse": 7.241,
-      "bias": 1.357,
-      "spearman": 0.499
+      "mae": 5.33,
+      "rmse": 7.24,
+      "bias": 1.36,
+      "spearman": 0.5
      },
      "meanPlay": {
-      "mae": 4.108,
-      "rmse": 6.385,
-      "bias": -0.587,
+      "mae": 4.111,
+      "rmse": 6.384,
+      "bias": -0.584,
       "spearman": 0.649
      },
      "biasExpensiveIfPlays": 1.062,
@@ -934,10 +934,10 @@
      },
      "lineup": {
       "projected": 136.7,
-      "real": 117.2,
+      "real": 116.6,
       "best": 305.6,
       "withCoach": true,
-      "baseline": 154.3
+      "baseline": 153.7
      },
      "bandIfPlays": true,
      "bandCoverage": 0.502,
@@ -959,7 +959,7 @@
     "mean": {
      "mae": 5.176,
      "bias": 0.702,
-     "spearman": 0.495
+     "spearman": 0.496
     },
     "meanPlay": {
      "mae": 4.511,
@@ -971,8 +971,8 @@
      "mean": {
       "mae": {
        "diff": -0.667,
-       "low": -0.863,
-       "high": -0.472
+       "low": -0.864,
+       "high": -0.473
       },
       "rmse": {
        "diff": -0.784,
@@ -982,7 +982,7 @@
      },
      "meanPlay": {
       "mae": {
-       "diff": -0.002,
+       "diff": -0.003,
        "low": -0.073,
        "high": 0.07
       },
@@ -996,7 +996,7 @@
     "lineupWins": {
      "rounds": 13,
      "model": 7,
-     "modelAvg": 140.8,
+     "modelAvg": 140.7,
      "baselineAvg": 127.4
     },
     "playProb": {
@@ -1036,18 +1036,18 @@
   }
  },
  "projectionCalibration": {
-  "slope": 0.7954,
+  "slope": 0.7953,
   "intercept": 1.783,
   "n": 2888.0
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-26T11:04:27.937574+00:00",
+  "checkedAt": "2026-11-26T21:43:54.482565+00:00",
   "capturedAt": "2026-11-26T11:04:02.567121+00:00",
   "players": 290,
-  "exact": 251,
-  "exactShare": 0.866,
-  "meanAbsoluteError": 0.043,
+  "exact": 249,
+  "exactShare": 0.859,
+  "meanAbsoluteError": 0.044,
   "correlation": 0.9998,
   "coaches": {
    "coaches": 20,
@@ -1072,9 +1072,9 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-26T07:42:00",
-  "fetchedAt": "2026-11-26T11:04:01.669510+00:00",
-  "rows": 144,
-  "matched": 98,
+  "fetchedAt": "2026-11-26T21:43:17.848266+00:00",
+  "rows": 145,
+  "matched": 99,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -1090,16 +1090,16 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-26T07:42:00",
-    "fetchedAt": "2026-11-26T11:04:01.274735+00:00",
-    "rows": 105,
-    "matched": 97,
-    "flagged": 97
+    "fetchedAt": "2026-11-26T21:43:17.388309+00:00",
+    "rows": 106,
+    "matched": 98,
+    "flagged": 98
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-26T11:04:01.669510+00:00",
+    "fetchedAt": "2026-11-26T21:43:17.848266+00:00",
     "rows": 39,
     "matched": 39,
     "flagged": 1
@@ -1108,7 +1108,7 @@
   "nextRound": 15,
   "unregistered": 7,
   "flagged": {
-   "out": 27,
+   "out": 28,
    "doubt": 74,
    "probable": 4
   }
@@ -1203,7 +1203,7 @@
    "G": 43.22,
    "F": 33.47,
    "C": 21.47,
-   "all": 98.17
+   "all": 98.16
   },
   "shotSeasons": [
    "E2026"

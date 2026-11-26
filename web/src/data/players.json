@@ -64,7 +64,7 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 15.08,
+  "projectedIfPlays": 15.07,
   "playProb": 0.0,
   "expectedMinutes": 27.8,
   "matchup": {
@@ -184,17 +184,17 @@
    "plusMinusAvg": 7.1,
    "minutesPrior": null
   },
-  "projectedFp": 24.5,
-  "projectedIfPlays": 25.79,
+  "projectedFp": 24.49,
+  "projectedIfPlays": 25.78,
   "playProb": 0.95,
   "expectedMinutes": 29.6,
   "matchup": {
    "opponentFactor": 1.093,
    "homeFactor": 1.029,
-   "calibration": 0.855
+   "calibration": 0.854
   },
   "valuePerCredit": 1.281,
-  "valueProjected": 1.219,
+  "valueProjected": 1.218,
   "valueMarket": 1.279,
   "bargainScore": 100.0,
   "schedule": {
@@ -223,13 +223,13 @@
    "breakEven": 22.0,
    "expectedChange": 0.14,
    "riseProb": 0.534,
-   "sd": 16.85,
+   "sd": 16.83,
    "floor": 16.2,
    "ceiling": 33.5,
-   "p90": 41.7,
+   "p90": 41.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": 4.41,
+  "valueOverPrice": 4.4,
   "thumb": "/fotos/3766.webp?v=a3142b53",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
  },
@@ -309,7 +309,7 @@
   "valuePerCredit": 0.853,
   "valueProjected": 0.671,
   "valueMarket": 0.857,
-  "bargainScore": 20.6,
+  "bargainScore": 21.2,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -336,7 +336,7 @@
    "breakEven": 13.0,
    "expectedChange": -0.09,
    "riseProb": 0.276,
-   "sd": 10.26,
+   "sd": 10.25,
    "floor": 4.7,
    "ceiling": 15.6,
    "p90": 21.9,
@@ -410,19 +410,19 @@
    "plusMinusAvg": 5.6,
    "minutesPrior": null
   },
-  "projectedFp": 14.53,
-  "projectedIfPlays": 15.29,
+  "projectedFp": 14.54,
+  "projectedIfPlays": 15.3,
   "playProb": 0.95,
   "expectedMinutes": 21.1,
   "matchup": {
    "opponentFactor": 1.027,
    "homeFactor": 0.971,
-   "calibration": 0.9
+   "calibration": 0.901
   },
   "valuePerCredit": 1.222,
   "valueProjected": 0.95,
   "valueMarket": 1.222,
-  "bargainScore": 67.7,
+  "bargainScore": 68.0,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -449,13 +449,13 @@
    "breakEven": 16.7,
    "expectedChange": -0.06,
    "riseProb": 0.398,
-   "sd": 13.17,
+   "sd": 13.16,
    "floor": 7.9,
    "ceiling": 21.2,
    "p90": 27.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.69,
+  "valueOverPrice": -0.68,
   "thumb": "/fotos/3768.webp?v=45747456",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
  },
@@ -535,7 +535,7 @@
   "valuePerCredit": 1.07,
   "valueProjected": 0.897,
   "valueMarket": 1.076,
-  "bargainScore": 57.4,
+  "bargainScore": 57.7,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -648,7 +648,7 @@
   "valuePerCredit": 0.991,
   "valueProjected": 0.749,
   "valueMarket": 0.993,
-  "bargainScore": 27.3,
+  "bargainScore": 27.6,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -674,7 +674,7 @@
   "outlook": {
    "breakEven": 15.4,
    "expectedChange": -0.13,
-   "riseProb": 0.316,
+   "riseProb": 0.315,
    "sd": 12.62,
    "floor": 5.7,
    "ceiling": 17.3,
@@ -761,7 +761,7 @@
   "valuePerCredit": 1.03,
   "valueProjected": 0.927,
   "valueMarket": 1.03,
-  "bargainScore": 64.8,
+  "bargainScore": 65.1,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -788,7 +788,7 @@
    "breakEven": 14.5,
    "expectedChange": -0.06,
    "riseProb": 0.367,
-   "sd": 9.8,
+   "sd": 9.79,
    "floor": 6.2,
    "ceiling": 18.4,
    "p90": 24.5,
@@ -874,7 +874,7 @@
   "valuePerCredit": 1.093,
   "valueProjected": 0.724,
   "valueMarket": 1.092,
-  "bargainScore": 26.5,
+  "bargainScore": 26.7,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -909,7 +909,7 @@
    "breakEven": 14.3,
    "expectedChange": -0.07,
    "riseProb": 0.305,
-   "sd": 11.95,
+   "sd": 11.94,
    "floor": 6.0,
    "ceiling": 18.0,
    "p90": 24.1,
@@ -995,7 +995,7 @@
   "valuePerCredit": 1.247,
   "valueProjected": 0.728,
   "valueMarket": 1.25,
-  "bargainScore": 33.0,
+  "bargainScore": 33.1,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -1108,7 +1108,7 @@
   "valuePerCredit": 0.565,
   "valueProjected": 0.672,
   "valueMarket": 0.566,
-  "bargainScore": 31.4,
+  "bargainScore": 31.7,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -1134,8 +1134,8 @@
   "outlook": {
    "breakEven": 10.8,
    "expectedChange": -0.14,
-   "riseProb": 0.251,
-   "sd": 7.86,
+   "riseProb": 0.25,
+   "sd": 7.85,
    "floor": 1.9,
    "ceiling": 11.6,
    "p90": 17.3,
@@ -1323,7 +1323,7 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 9.62,
+  "projectedIfPlays": 9.61,
   "playProb": 0.0,
   "expectedMinutes": 20.8,
   "matchup": {
@@ -1334,7 +1334,7 @@
   "valuePerCredit": 0.978,
   "valueProjected": 0.0,
   "valueMarket": 0.975,
-  "bargainScore": 3.5,
+  "bargainScore": 3.6,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -1375,7 +1375,7 @@
    "p90": 20.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -7.82,
+  "valueOverPrice": -7.81,
   "thumb": "/fotos/3776.webp?v=a31593be",
   "clubCrestThumb": "/escudos/BES.webp?v=d0e21f12"
  },
@@ -1443,8 +1443,8 @@
    "plusMinusAvg": 1.0,
    "minutesPrior": null
   },
-  "projectedFp": 9.48,
-  "projectedIfPlays": 9.98,
+  "projectedFp": 9.47,
+  "projectedIfPlays": 9.97,
   "playProb": 0.95,
   "expectedMinutes": 20.1,
   "matchup": {
@@ -1453,7 +1453,7 @@
    "calibration": 0.969
   },
   "valuePerCredit": 0.932,
-  "valueProjected": 0.894,
+  "valueProjected": 0.893,
   "valueMarket": 0.934,
   "bargainScore": 63.4,
   "schedule": {
@@ -1481,14 +1481,14 @@
   "outlook": {
    "breakEven": 11.5,
    "expectedChange": -0.06,
-   "riseProb": 0.322,
-   "sd": 6.94,
+   "riseProb": 0.321,
+   "sd": 6.93,
    "floor": 4.2,
    "ceiling": 14.8,
    "p90": 21.0,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.97,
+  "valueOverPrice": -0.98,
   "thumb": "/fotos/3777.webp?v=e28b9735",
   "clubCrestThumb": "/escudos/ULK.webp?v=123f6590"
  },
@@ -1689,7 +1689,7 @@
   "valuePerCredit": 0.698,
   "valueProjected": 0.544,
   "valueMarket": 0.697,
-  "bargainScore": 36.6,
+  "bargainScore": 36.9,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -1722,7 +1722,7 @@
    "p90": 15.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": -2.81,
+  "valueOverPrice": -2.8,
   "thumb": "/fotos/3780.webp?v=82b671fd",
   "clubCrestThumb": "/escudos/BES.webp?v=d0e21f12"
  },
@@ -2036,7 +2036,7 @@
   "valuePerCredit": 1.024,
   "valueProjected": 0.894,
   "valueMarket": 1.024,
-  "bargainScore": 60.6,
+  "bargainScore": 60.9,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -2062,7 +2062,7 @@
   "outlook": {
    "breakEven": 13.6,
    "expectedChange": -0.04,
-   "riseProb": 0.375,
+   "riseProb": 0.374,
    "sd": 11.6,
    "floor": 6.1,
    "ceiling": 18.2,
@@ -2149,7 +2149,7 @@
   "valuePerCredit": 0.779,
   "valueProjected": 0.54,
   "valueMarket": 0.779,
-  "bargainScore": 28.5,
+  "bargainScore": 28.8,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -2250,8 +2250,8 @@
    "plusMinusAvg": -5.7,
    "minutesPrior": null
   },
-  "projectedFp": 5.89,
-  "projectedIfPlays": 10.47,
+  "projectedFp": 5.9,
+  "projectedIfPlays": 10.48,
   "playProb": 0.562,
   "expectedMinutes": 19.4,
   "matchup": {
@@ -2260,7 +2260,7 @@
    "calibration": 0.959
   },
   "valuePerCredit": 0.913,
-  "valueProjected": 0.495,
+  "valueProjected": 0.496,
   "valueMarket": 0.924,
   "bargainScore": 11.6,
   "schedule": {
@@ -2295,7 +2295,7 @@
    "p90": 21.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -5.88,
+  "valueOverPrice": -5.87,
   "thumb": "/fotos/3790.webp?v=b0600a9f",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
  },
@@ -2515,7 +2515,7 @@
    "breakEven": 12.1,
    "expectedChange": -0.0,
    "riseProb": 0.442,
-   "sd": 13.0,
+   "sd": 12.99,
    "floor": 5.7,
    "ceiling": 17.5,
    "p90": 23.6,
@@ -2601,7 +2601,7 @@
   "valuePerCredit": 1.144,
   "valueProjected": 0.907,
   "valueMarket": 1.143,
-  "bargainScore": 60.6,
+  "bargainScore": 60.9,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -2628,7 +2628,7 @@
    "breakEven": 15.3,
    "expectedChange": -0.08,
    "riseProb": 0.334,
-   "sd": 8.61,
+   "sd": 8.6,
    "floor": 6.5,
    "ceiling": 18.9,
    "p90": 24.9,
@@ -2703,7 +2703,7 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 14.06,
+  "projectedIfPlays": 14.05,
   "playProb": 0.0,
   "expectedMinutes": 24.2,
   "matchup": {
@@ -2804,27 +2804,27 @@
    "minutesTrend": 0.4,
    "minutesShareRecent": 0.1187,
    "minutesShareTrend": 0.0037,
-   "fpAvg": 21.3,
+   "fpAvg": 21.23,
    "fpMedian": 20.9,
-   "fpStd": 6.07,
+   "fpStd": 6.12,
    "fpFloor": 17.25,
    "fpCeiling": 25.02,
-   "fpPerMin": 0.907,
-   "consistency": 0.715,
-   "form": 19.9,
-   "formDelta": -1.4,
-   "lastFp": 17.0,
+   "fpPerMin": 0.904,
+   "consistency": 0.712,
+   "form": 19.7,
+   "formDelta": -1.53,
+   "lastFp": 16.0,
    "startedRate": 1.0,
    "dnpRate": 0.0,
    "ptsAvg": 16.4,
    "rebAvg": 2.0,
    "astAvg": 5.9,
-   "pirAvg": 19.8,
+   "pirAvg": 19.7,
    "plusMinusAvg": 9.0,
    "minutesPrior": null
   },
-  "projectedFp": 17.6,
-  "projectedIfPlays": 18.53,
+  "projectedFp": 17.56,
+  "projectedIfPlays": 18.48,
   "playProb": 0.95,
   "expectedMinutes": 24.0,
   "matchup": {
@@ -2832,10 +2832,10 @@
    "homeFactor": 0.971,
    "calibration": 0.88
   },
-  "valuePerCredit": 1.246,
-  "valueProjected": 1.029,
+  "valuePerCredit": 1.242,
+  "valueProjected": 1.027,
   "valueMarket": 1.251,
-  "bargainScore": 84.3,
+  "bargainScore": 83.7,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -2861,14 +2861,14 @@
   "outlook": {
    "breakEven": 18.7,
    "expectedChange": -0.01,
-   "riseProb": 0.428,
+   "riseProb": 0.426,
    "sd": 11.68,
    "floor": 10.4,
-   "ceiling": 25.1,
-   "p90": 32.0,
+   "ceiling": 25.0,
+   "p90": 31.9,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.56,
+  "valueOverPrice": 0.52,
   "thumb": "/fotos/3795.webp?v=dd6bec07",
   "clubCrestThumb": "/escudos/PAM.webp?v=1b054be1"
  },
@@ -2948,7 +2948,7 @@
   "valuePerCredit": 0.705,
   "valueProjected": 0.572,
   "valueMarket": 0.734,
-  "bargainScore": 44.2,
+  "bargainScore": 44.5,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -2975,7 +2975,7 @@
    "breakEven": 6.9,
    "expectedChange": -0.06,
    "riseProb": 0.222,
-   "sd": 5.68,
+   "sd": 5.67,
    "floor": 1.1,
    "ceiling": 10.0,
    "p90": 15.5,
@@ -3030,27 +3030,27 @@
    "minutesTrend": -0.7,
    "minutesShareRecent": 0.1023,
    "minutesShareTrend": -0.0034,
-   "fpAvg": 13.12,
+   "fpAvg": 13.19,
    "fpMedian": 13.65,
-   "fpStd": 9.82,
-   "fpFloor": 3.75,
+   "fpStd": 9.75,
+   "fpFloor": 4.5,
    "fpCeiling": 17.6,
-   "fpPerMin": 0.628,
-   "consistency": 0.252,
-   "form": 8.72,
-   "formDelta": -4.4,
-   "lastFp": 3.0,
+   "fpPerMin": 0.632,
+   "consistency": 0.261,
+   "form": 8.92,
+   "formDelta": -4.27,
+   "lastFp": 4.0,
    "startedRate": 0.857,
    "dnpRate": 0.0,
    "ptsAvg": 9.4,
    "rebAvg": 4.6,
    "astAvg": 0.8,
-   "pirAvg": 12.2,
+   "pirAvg": 12.3,
    "plusMinusAvg": 5.1,
    "minutesPrior": null
   },
-  "projectedFp": 11.67,
-  "projectedIfPlays": 12.28,
+  "projectedFp": 11.7,
+  "projectedIfPlays": 12.32,
   "playProb": 0.95,
   "expectedMinutes": 20.5,
   "matchup": {
@@ -3058,10 +3058,10 @@
    "homeFactor": 1.029,
    "calibration": 0.93
   },
-  "valuePerCredit": 1.05,
-  "valueProjected": 0.934,
+  "valuePerCredit": 1.055,
+  "valueProjected": 0.936,
   "valueMarket": 1.048,
-  "bargainScore": 67.0,
+  "bargainScore": 68.0,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -3086,15 +3086,15 @@
   "availability": null,
   "outlook": {
    "breakEven": 13.6,
-   "expectedChange": -0.06,
-   "riseProb": 0.395,
-   "sd": 12.17,
+   "expectedChange": -0.05,
+   "riseProb": 0.396,
+   "sd": 12.11,
    "floor": 5.8,
    "ceiling": 17.6,
    "p90": 23.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.71,
+  "valueOverPrice": -0.68,
   "thumb": "/fotos/3799.webp?v=4b0710ff",
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
  },
@@ -3537,7 +3537,7 @@
   "valuePerCredit": 1.274,
   "valueProjected": 0.684,
   "valueMarket": 1.275,
-  "bargainScore": 17.2,
+  "bargainScore": 17.4,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -3564,7 +3564,7 @@
    "breakEven": 16.3,
    "expectedChange": -0.04,
    "riseProb": 0.291,
-   "sd": 13.48,
+   "sd": 13.47,
    "floor": 8.7,
    "ceiling": 22.5,
    "p90": 28.9,
@@ -3638,8 +3638,8 @@
    "plusMinusAvg": -2.5,
    "minutesPrior": null
   },
-  "projectedFp": 11.2,
-  "projectedIfPlays": 12.8,
+  "projectedFp": 11.19,
+  "projectedIfPlays": 12.79,
   "playProb": 0.875,
   "expectedMinutes": 21.2,
   "matchup": {
@@ -3648,9 +3648,9 @@
    "calibration": 0.924
   },
   "valuePerCredit": 1.213,
-  "valueProjected": 1.037,
+  "valueProjected": 1.036,
   "valueMarket": 1.213,
-  "bargainScore": 83.7,
+  "bargainScore": 84.0,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -3677,7 +3677,7 @@
    "breakEven": 11.8,
    "expectedChange": 0.02,
    "riseProb": 0.432,
-   "sd": 13.08,
+   "sd": 13.07,
    "floor": 6.1,
    "ceiling": 18.2,
    "p90": 24.3,
@@ -3763,7 +3763,7 @@
   "valuePerCredit": 1.056,
   "valueProjected": 0.907,
   "valueMarket": 1.06,
-  "bargainScore": 64.0,
+  "bargainScore": 64.1,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -3864,19 +3864,19 @@
    "plusMinusAvg": 2.5,
    "minutesPrior": null
   },
-  "projectedFp": 8.04,
-  "projectedIfPlays": 10.72,
+  "projectedFp": 8.03,
+  "projectedIfPlays": 10.71,
   "playProb": 0.75,
   "expectedMinutes": 24.0,
   "matchup": {
    "opponentFactor": 1.027,
    "homeFactor": 1.029,
-   "calibration": 0.955
+   "calibration": 0.954
   },
   "valuePerCredit": 0.958,
-  "valueProjected": 0.812,
+  "valueProjected": 0.811,
   "valueMarket": 0.96,
-  "bargainScore": 51.5,
+  "bargainScore": 51.6,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -3917,7 +3917,7 @@
    "p90": 22.0,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.7,
+  "valueOverPrice": -1.71,
   "thumb": "/fotos/3808.webp?v=9ea25939",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
  },
@@ -3997,7 +3997,7 @@
   "valuePerCredit": 1.024,
   "valueProjected": 0.872,
   "valueMarket": 1.037,
-  "bargainScore": 60.2,
+  "bargainScore": 60.5,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -4023,8 +4023,8 @@
   "outlook": {
    "breakEven": 11.6,
    "expectedChange": -0.07,
-   "riseProb": 0.343,
-   "sd": 8.67,
+   "riseProb": 0.342,
+   "sd": 8.66,
    "floor": 4.1,
    "ceiling": 14.6,
    "p90": 20.8,
@@ -4110,7 +4110,7 @@
   "valuePerCredit": 0.849,
   "valueProjected": 0.829,
   "valueMarket": 0.856,
-  "bargainScore": 47.7,
+  "bargainScore": 48.0,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -4136,7 +4136,7 @@
   "outlook": {
    "breakEven": 13.6,
    "expectedChange": -0.11,
-   "riseProb": 0.312,
+   "riseProb": 0.311,
    "sd": 9.01,
    "floor": 4.9,
    "ceiling": 15.9,
@@ -4332,17 +4332,17 @@
    "plusMinusAvg": -3.8,
    "minutesPrior": null
   },
-  "projectedFp": 0.93,
-  "projectedIfPlays": 4.63,
+  "projectedFp": 0.92,
+  "projectedIfPlays": 4.62,
   "playProb": 0.2,
   "expectedMinutes": 6.9,
   "matchup": {
    "opponentFactor": 1.009,
    "homeFactor": 1.029,
-   "calibration": 1.293
+   "calibration": 1.294
   },
   "valuePerCredit": 0.713,
-  "valueProjected": 0.15,
+  "valueProjected": 0.148,
   "valueMarket": 0.71,
   "bargainScore": 15.4,
   "schedule": {
@@ -4379,13 +4379,13 @@
    "breakEven": 6.7,
    "expectedChange": -0.1,
    "riseProb": 0.064,
-   "sd": 3.69,
+   "sd": 3.68,
    "floor": 0.3,
    "ceiling": 8.1,
    "p90": 13.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": -5.06,
+  "valueOverPrice": -5.07,
   "thumb": "/fotos/3818.webp?v=787743cf",
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
  },
@@ -4458,7 +4458,7 @@
   "playProb": 0.2,
   "expectedMinutes": 21.6,
   "matchup": {
-   "opponentFactor": 0.966,
+   "opponentFactor": 0.965,
    "homeFactor": 0.971,
    "calibration": 0.999
   },
@@ -4574,19 +4574,19 @@
    "plusMinusAvg": 3.9,
    "minutesPrior": null
   },
-  "projectedFp": 9.32,
-  "projectedIfPlays": 9.94,
+  "projectedFp": 9.31,
+  "projectedIfPlays": 9.93,
   "playProb": 0.938,
   "expectedMinutes": 15.0,
   "matchup": {
    "opponentFactor": 1.085,
    "homeFactor": 1.029,
-   "calibration": 0.97
+   "calibration": 0.969
   },
   "valuePerCredit": 0.922,
-  "valueProjected": 0.932,
+  "valueProjected": 0.931,
   "valueMarket": 0.92,
-  "bargainScore": 70.9,
+  "bargainScore": 71.2,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -4613,13 +4613,13 @@
    "breakEven": 10.9,
    "expectedChange": -0.04,
    "riseProb": 0.384,
-   "sd": 9.56,
+   "sd": 9.55,
    "floor": 4.2,
-   "ceiling": 14.8,
+   "ceiling": 14.7,
    "p90": 21.0,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.52,
+  "valueOverPrice": -0.53,
   "thumb": "/fotos/3821.webp?v=47bfcde1",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
  },
@@ -4688,7 +4688,7 @@
    "minutesPrior": null
   },
   "projectedFp": 7.17,
-  "projectedIfPlays": 8.19,
+  "projectedIfPlays": 8.2,
   "playProb": 0.875,
   "expectedMinutes": 18.8,
   "matchup": {
@@ -4699,7 +4699,7 @@
   "valuePerCredit": 0.954,
   "valueProjected": 0.763,
   "valueMarket": 0.957,
-  "bargainScore": 47.4,
+  "bargainScore": 47.7,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -4725,14 +4725,14 @@
   "outlook": {
    "breakEven": 10.2,
    "expectedChange": -0.08,
-   "riseProb": 0.274,
+   "riseProb": 0.275,
    "sd": 6.85,
    "floor": 2.7,
    "ceiling": 12.7,
-   "p90": 18.4,
+   "p90": 18.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -2.07,
+  "valueOverPrice": -2.06,
   "thumb": "/fotos/3822.webp?v=8e11ac44",
   "clubCrestThumb": "/escudos/ASV.webp?v=db62ba9d"
  },
@@ -4933,7 +4933,7 @@
   "valuePerCredit": 0.836,
   "valueProjected": 0.641,
   "valueMarket": 0.835,
-  "bargainScore": 28.8,
+  "bargainScore": 29.1,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -5046,7 +5046,7 @@
   "valuePerCredit": 1.007,
   "valueProjected": 0.558,
   "valueMarket": 1.014,
-  "bargainScore": 34.3,
+  "bargainScore": 34.6,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -5147,19 +5147,19 @@
    "plusMinusAvg": 1.3,
    "minutesPrior": null
   },
-  "projectedFp": 2.95,
-  "projectedIfPlays": 5.9,
+  "projectedFp": 2.94,
+  "projectedIfPlays": 5.89,
   "playProb": 0.5,
   "expectedMinutes": 15.1,
   "matchup": {
    "opponentFactor": 0.968,
    "homeFactor": 1.029,
-   "calibration": 1.141
+   "calibration": 1.139
   },
   "valuePerCredit": 0.585,
-  "valueProjected": 0.5,
+  "valueProjected": 0.498,
   "valueMarket": 0.593,
-  "bargainScore": 37.5,
+  "bargainScore": 37.8,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -5186,9 +5186,9 @@
    "breakEven": 6.4,
    "expectedChange": -0.06,
    "riseProb": 0.186,
-   "sd": 4.74,
+   "sd": 4.73,
    "floor": 1.1,
-   "ceiling": 10.1,
+   "ceiling": 10.0,
    "p90": 15.6,
    "bandIfPlays": true
   },
@@ -5261,18 +5261,18 @@
    "minutesPrior": null
   },
   "projectedFp": 0.9,
-  "projectedIfPlays": 4.5,
+  "projectedIfPlays": 4.49,
   "playProb": 0.2,
   "expectedMinutes": 9.3,
   "matchup": {
    "opponentFactor": 1.001,
    "homeFactor": 1.029,
-   "calibration": 1.316
+   "calibration": 1.317
   },
   "valuePerCredit": 0.918,
   "valueProjected": 0.225,
   "valueMarket": 0.925,
-  "bargainScore": 36.2,
+  "bargainScore": 36.5,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -5306,11 +5306,11 @@
   "outlook": {
    "breakEven": 4.3,
    "expectedChange": -0.08,
-   "riseProb": 0.085,
+   "riseProb": 0.084,
    "sd": 2.94,
    "floor": 0.2,
    "ceiling": 7.9,
-   "p90": 13.1,
+   "p90": 13.0,
    "bandIfPlays": true
   },
   "valueOverPrice": -2.86,
@@ -5393,7 +5393,7 @@
   "valuePerCredit": 0.876,
   "valueProjected": 0.946,
   "valueMarket": 0.872,
-  "bargainScore": 74.1,
+  "bargainScore": 74.0,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -5417,7 +5417,7 @@
   "registered": true,
   "availability": null,
   "outlook": {
-   "breakEven": 8.4,
+   "breakEven": 8.5,
    "expectedChange": -0.03,
    "riseProb": 0.395,
    "sd": 8.99,
@@ -5506,7 +5506,7 @@
   "valuePerCredit": 1.196,
   "valueProjected": 1.05,
   "valueMarket": 1.193,
-  "bargainScore": 87.8,
+  "bargainScore": 87.6,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -5607,8 +5607,8 @@
    "plusMinusAvg": 5.9,
    "minutesPrior": null
   },
-  "projectedFp": 15.44,
-  "projectedIfPlays": 19.0,
+  "projectedFp": 15.45,
+  "projectedIfPlays": 19.01,
   "playProb": 0.812,
   "expectedMinutes": 25.7,
   "matchup": {
@@ -5617,9 +5617,9 @@
    "calibration": 0.878
   },
   "valuePerCredit": 1.278,
-  "valueProjected": 0.93,
+  "valueProjected": 0.931,
   "valueMarket": 1.277,
-  "bargainScore": 61.3,
+  "bargainScore": 61.6,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -5652,7 +5652,7 @@
    "p90": 32.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.1,
+  "valueOverPrice": -1.09,
   "thumb": "/fotos/3834.webp?v=d671fb54",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
  },
@@ -5732,7 +5732,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 17.7,
+  "bargainScore": 18.0,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -5841,9 +5841,9 @@
    "plusMinusAvg": 3.1,
    "minutesPrior": null
   },
-  "projectedFp": 5.42,
+  "projectedFp": 1.24,
   "projectedIfPlays": 6.2,
-  "playProb": 0.875,
+  "playProb": 0.2,
   "expectedMinutes": 10.6,
   "matchup": {
    "opponentFactor": 1.021,
@@ -5851,9 +5851,9 @@
    "calibration": 1.117
   },
   "valuePerCredit": 1.298,
-  "valueProjected": 0.919,
+  "valueProjected": 0.21,
   "valueMarket": 1.305,
-  "bargainScore": 73.3,
+  "bargainScore": 18.3,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -5875,18 +5875,26 @@
    "confidence": 99.0
   },
   "registered": true,
-  "availability": null,
+  "availability": {
+   "level": "doubt",
+   "kind": "injury",
+   "label": "Duda",
+   "untilRound": null,
+   "detail": "Injured in game vs. Georgia (11.26)",
+   "reported": "Uncertain · Round 15",
+   "source": "BasketNews"
+  },
   "outlook": {
    "breakEven": 6.4,
-   "expectedChange": -0.02,
-   "riseProb": 0.361,
-   "sd": 6.29,
+   "expectedChange": -0.08,
+   "riseProb": 0.082,
+   "sd": 3.77,
    "floor": 1.3,
    "ceiling": 10.5,
    "p90": 16.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.27,
+  "valueOverPrice": -4.44,
   "thumb": "/fotos/3836.webp?v=ffeb3261",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
  },
@@ -6067,17 +6075,17 @@
    "plusMinusAvg": -0.4,
    "minutesPrior": null
   },
-  "projectedFp": 9.1,
-  "projectedIfPlays": 9.71,
+  "projectedFp": 9.09,
+  "projectedIfPlays": 9.7,
   "playProb": 0.938,
   "expectedMinutes": 20.9,
   "matchup": {
    "opponentFactor": 1.021,
    "homeFactor": 1.029,
-   "calibration": 0.975
+   "calibration": 0.974
   },
   "valuePerCredit": 0.998,
-  "valueProjected": 0.968,
+  "valueProjected": 0.967,
   "valueMarket": 1.0,
   "bargainScore": 74.6,
   "schedule": {
@@ -6104,7 +6112,7 @@
   "availability": null,
   "outlook": {
    "breakEven": 10.2,
-   "expectedChange": -0.02,
+   "expectedChange": -0.03,
    "riseProb": 0.381,
    "sd": 7.55,
    "floor": 4.0,
@@ -6180,17 +6188,17 @@
    "plusMinusAvg": -1.2,
    "minutesPrior": null
   },
-  "projectedFp": 10.62,
-  "projectedIfPlays": 11.18,
+  "projectedFp": 10.61,
+  "projectedIfPlays": 11.17,
   "playProb": 0.95,
   "expectedMinutes": 23.7,
   "matchup": {
-   "opponentFactor": 0.906,
+   "opponentFactor": 0.905,
    "homeFactor": 1.029,
    "calibration": 0.947
   },
   "valuePerCredit": 1.341,
-  "valueProjected": 1.118,
+  "valueProjected": 1.117,
   "valueMarket": 1.337,
   "bargainScore": 96.2,
   "schedule": {
@@ -6218,14 +6226,14 @@
   "outlook": {
    "breakEven": 10.3,
    "expectedChange": 0.03,
-   "riseProb": 0.461,
+   "riseProb": 0.46,
    "sd": 10.3,
    "floor": 5.1,
    "ceiling": 16.2,
    "p90": 22.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": 1.28,
+  "valueOverPrice": 1.27,
   "thumb": "/fotos/3842.webp?v=1ff7c2e4",
   "clubCrestThumb": "/escudos/BES.webp?v=d0e21f12"
  },
@@ -6641,7 +6649,7 @@
    "minutesPrior": null
   },
   "projectedFp": 15.64,
-  "projectedIfPlays": 17.88,
+  "projectedIfPlays": 17.87,
   "playProb": 0.875,
   "expectedMinutes": 22.8,
   "matchup": {
@@ -6679,7 +6687,7 @@
    "breakEven": 15.2,
    "expectedChange": 0.08,
    "riseProb": 0.473,
-   "sd": 14.63,
+   "sd": 14.62,
    "floor": 9.9,
    "ceiling": 24.3,
    "p90": 31.1,
@@ -6798,7 +6806,7 @@
    "p90": 25.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": 3.23,
+  "valueOverPrice": 3.24,
   "thumb": "/fotos/3851.webp?v=b9f44719",
   "clubCrestThumb": "/escudos/MAD.webp?v=d607a47f"
  },
@@ -6904,14 +6912,14 @@
   "outlook": {
    "breakEven": 6.4,
    "expectedChange": -0.01,
-   "riseProb": 0.36,
-   "sd": 4.37,
+   "riseProb": 0.359,
+   "sd": 4.36,
    "floor": 1.4,
    "ceiling": 10.6,
    "p90": 16.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.29,
+  "valueOverPrice": 0.3,
   "thumb": "/fotos/3852.webp?v=908e6180",
   "clubCrestThumb": "/escudos/ZAL.webp?v=e452f9b4"
  },
@@ -6979,8 +6987,8 @@
    "plusMinusAvg": 3.2,
    "minutesPrior": null
   },
-  "projectedFp": 6.57,
-  "projectedIfPlays": 7.51,
+  "projectedFp": 6.58,
+  "projectedIfPlays": 7.52,
   "playProb": 0.875,
   "expectedMinutes": 15.4,
   "matchup": {
@@ -6989,9 +6997,9 @@
    "calibration": 1.043
   },
   "valuePerCredit": 0.961,
-  "valueProjected": 0.876,
+  "valueProjected": 0.877,
   "valueMarket": 0.96,
-  "bargainScore": 66.6,
+  "bargainScore": 66.9,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -7017,14 +7025,14 @@
   "outlook": {
    "breakEven": 8.1,
    "expectedChange": -0.03,
-   "riseProb": 0.349,
+   "riseProb": 0.35,
    "sd": 7.26,
    "floor": 2.2,
    "ceiling": 12.0,
    "p90": 17.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.74,
+  "valueOverPrice": -0.73,
   "thumb": "/fotos/3853.webp?v=94a7e50d",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
  },
@@ -7093,13 +7101,13 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 7.96,
+  "projectedIfPlays": 7.95,
   "playProb": 0.0,
   "expectedMinutes": 17.2,
   "matchup": {
    "opponentFactor": 0.997,
    "homeFactor": 1.029,
-   "calibration": 1.026
+   "calibration": 1.024
   },
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
@@ -7140,7 +7148,7 @@
    "expectedChange": -0.1,
    "riseProb": 0.0,
    "sd": 0.0,
-   "floor": 2.6,
+   "floor": 2.5,
    "ceiling": 12.5,
    "p90": 18.2,
    "bandIfPlays": true
@@ -7225,7 +7233,7 @@
   "valuePerCredit": 1.046,
   "valueProjected": 0.925,
   "valueMarket": 1.053,
-  "bargainScore": 64.5,
+  "bargainScore": 64.8,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -7326,19 +7334,19 @@
    "plusMinusAvg": -1.8,
    "minutesPrior": null
   },
-  "projectedFp": 8.77,
-  "projectedIfPlays": 10.02,
+  "projectedFp": 8.76,
+  "projectedIfPlays": 10.01,
   "playProb": 0.875,
   "expectedMinutes": 19.5,
   "matchup": {
    "opponentFactor": 1.02,
    "homeFactor": 1.029,
-   "calibration": 0.968
+   "calibration": 0.967
   },
   "valuePerCredit": 1.067,
-  "valueProjected": 0.985,
+  "valueProjected": 0.984,
   "valueMarket": 1.067,
-  "bargainScore": 78.3,
+  "bargainScore": 78.2,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -7363,15 +7371,15 @@
   "availability": null,
   "outlook": {
    "breakEven": 9.7,
-   "expectedChange": 0.0,
-   "riseProb": 0.413,
+   "expectedChange": -0.0,
+   "riseProb": 0.412,
    "sd": 12.2,
    "floor": 4.3,
    "ceiling": 14.8,
    "p90": 21.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.04,
+  "valueOverPrice": 0.03,
   "thumb": "/fotos/3859.webp?v=6b0bf86a",
   "clubCrestThumb": "/escudos/MUN.webp?v=56f62c68"
  },
@@ -7440,13 +7448,13 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 7.26,
+  "projectedIfPlays": 7.25,
   "playProb": 0.0,
   "expectedMinutes": 15.5,
   "matchup": {
    "opponentFactor": 1.033,
    "homeFactor": 0.971,
-   "calibration": 1.055
+   "calibration": 1.054
   },
   "valuePerCredit": 0.825,
   "valueProjected": 0.0,
@@ -7489,10 +7497,10 @@
    "sd": 0.0,
    "floor": 2.1,
    "ceiling": 11.7,
-   "p90": 17.5,
+   "p90": 17.4,
    "bandIfPlays": true
   },
-  "valueOverPrice": -7.72,
+  "valueOverPrice": -7.71,
   "thumb": "/fotos/3860.webp?v=aa332429",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
  },
@@ -7802,8 +7810,8 @@
    "plusMinusAvg": -0.4,
    "minutesPrior": null
   },
-  "projectedFp": 7.37,
-  "projectedIfPlays": 7.76,
+  "projectedFp": 7.36,
+  "projectedIfPlays": 7.75,
   "playProb": 0.95,
   "expectedMinutes": 20.8,
   "matchup": {
@@ -7812,9 +7820,9 @@
    "calibration": 1.033
   },
   "valuePerCredit": 0.584,
-  "valueProjected": 0.784,
+  "valueProjected": 0.783,
   "valueMarket": 0.585,
-  "bargainScore": 49.4,
+  "bargainScore": 49.7,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -7896,38 +7904,38 @@
    "minutesTrend": -3.8,
    "minutesShareRecent": 0.0638,
    "minutesShareTrend": -0.0179,
-   "fpAvg": 3.82,
+   "fpAvg": 3.74,
    "fpMedian": 3.3,
-   "fpStd": 5.11,
+   "fpStd": 5.14,
    "fpFloor": 0.0,
    "fpCeiling": 5.5,
-   "fpPerMin": 0.249,
+   "fpPerMin": 0.243,
    "consistency": 0.0,
-   "form": 3.08,
-   "formDelta": -0.74,
-   "lastFp": 2.2,
+   "form": 2.86,
+   "formDelta": -0.88,
+   "lastFp": 1.1,
    "startedRate": 0.231,
    "dnpRate": 0.071,
    "ptsAvg": 3.1,
    "rebAvg": 2.2,
    "astAvg": 1.1,
-   "pirAvg": 3.4,
+   "pirAvg": 3.3,
    "plusMinusAvg": -0.1,
    "minutesPrior": null
   },
-  "projectedFp": 5.0,
-  "projectedIfPlays": 5.33,
+  "projectedFp": 4.95,
+  "projectedIfPlays": 5.28,
   "playProb": 0.938,
   "expectedMinutes": 14.2,
   "matchup": {
    "opponentFactor": 1.093,
    "homeFactor": 1.029,
-   "calibration": 1.195
+   "calibration": 1.2
   },
-  "valuePerCredit": 0.955,
-  "valueProjected": 1.25,
+  "valuePerCredit": 0.935,
+  "valueProjected": 1.238,
   "valueMarket": 0.95,
-  "bargainScore": 95.6,
+  "bargainScore": 94.6,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -7953,14 +7961,14 @@
   "outlook": {
    "breakEven": 4.3,
    "expectedChange": 0.03,
-   "riseProb": 0.458,
-   "sd": 6.06,
-   "floor": 0.8,
-   "ceiling": 9.2,
-   "p90": 14.6,
+   "riseProb": 0.455,
+   "sd": 6.07,
+   "floor": 0.7,
+   "ceiling": 9.1,
+   "p90": 14.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": 1.24,
+  "valueOverPrice": 1.19,
   "thumb": "/fotos/3867.webp?v=1862a6c5",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
  },
@@ -8193,7 +8201,7 @@
    "p90": 17.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -5.59,
+  "valueOverPrice": -5.58,
   "thumb": "/fotos/3869.webp?v=82fc7617",
   "clubCrestThumb": "/escudos/MAD.webp?v=d607a47f"
  },
@@ -8273,7 +8281,7 @@
   "valuePerCredit": 0.867,
   "valueProjected": 0.92,
   "valueMarket": 0.877,
-  "bargainScore": 67.4,
+  "bargainScore": 67.3,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -8607,8 +8615,8 @@
    "plusMinusAvg": -2.8,
    "minutesPrior": null
   },
-  "projectedFp": 8.02,
-  "projectedIfPlays": 8.56,
+  "projectedFp": 8.03,
+  "projectedIfPlays": 8.57,
   "playProb": 0.938,
   "expectedMinutes": 22.2,
   "matchup": {
@@ -8617,9 +8625,9 @@
    "calibration": 1.005
   },
   "valuePerCredit": 0.901,
-  "valueProjected": 0.933,
+  "valueProjected": 0.934,
   "valueMarket": 0.895,
-  "bargainScore": 72.4,
+  "bargainScore": 72.7,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -8644,15 +8652,15 @@
   "availability": null,
   "outlook": {
    "breakEven": 9.3,
-   "expectedChange": -0.04,
-   "riseProb": 0.383,
+   "expectedChange": -0.03,
+   "riseProb": 0.384,
    "sd": 8.71,
    "floor": 3.0,
-   "ceiling": 13.1,
+   "ceiling": 13.2,
    "p90": 19.0,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.4,
+  "valueOverPrice": -0.39,
   "thumb": "/fotos/3875.webp?v=ffa10da7",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
  },
@@ -8759,7 +8767,7 @@
    "breakEven": 10.1,
    "expectedChange": -0.07,
    "riseProb": 0.119,
-   "sd": 7.24,
+   "sd": 7.23,
    "floor": 4.8,
    "ceiling": 15.7,
    "p90": 22.0,
@@ -9113,8 +9121,8 @@
   "outlook": {
    "breakEven": 7.3,
    "expectedChange": 0.01,
-   "riseProb": 0.425,
-   "sd": 7.78,
+   "riseProb": 0.424,
+   "sd": 7.77,
    "floor": 2.3,
    "ceiling": 12.2,
    "p90": 17.9,
@@ -9452,7 +9460,7 @@
    "breakEven": 4.8,
    "expectedChange": 0.01,
    "riseProb": 0.396,
-   "sd": 5.64,
+   "sd": 5.63,
    "floor": 0.8,
    "ceiling": 9.3,
    "p90": 14.7,
@@ -9538,7 +9546,7 @@
   "valuePerCredit": 0.998,
   "valueProjected": 0.878,
   "valueMarket": 1.008,
-  "bargainScore": 56.0,
+  "bargainScore": 56.2,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -9565,7 +9573,7 @@
    "breakEven": 14.2,
    "expectedChange": -0.09,
    "riseProb": 0.356,
-   "sd": 10.78,
+   "sd": 10.77,
    "floor": 5.6,
    "ceiling": 17.3,
    "p90": 23.4,
@@ -9651,7 +9659,7 @@
   "valuePerCredit": 1.016,
   "valueProjected": 0.848,
   "valueMarket": 1.021,
-  "bargainScore": 59.3,
+  "bargainScore": 59.6,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -9752,8 +9760,8 @@
    "plusMinusAvg": -5.4,
    "minutesPrior": null
   },
-  "projectedFp": 9.28,
-  "projectedIfPlays": 9.9,
+  "projectedFp": 9.27,
+  "projectedIfPlays": 9.89,
   "playProb": 0.938,
   "expectedMinutes": 20.4,
   "matchup": {
@@ -9762,7 +9770,7 @@
    "calibration": 0.971
   },
   "valuePerCredit": 1.067,
-  "valueProjected": 1.118,
+  "valueProjected": 1.117,
   "valueMarket": 1.072,
   "bargainScore": 94.2,
   "schedule": {
@@ -9790,14 +9798,14 @@
   "outlook": {
    "breakEven": 9.0,
    "expectedChange": 0.03,
-   "riseProb": 0.454,
-   "sd": 8.64,
+   "riseProb": 0.453,
+   "sd": 8.63,
    "floor": 4.2,
    "ceiling": 14.7,
    "p90": 20.9,
    "bandIfPlays": true
   },
-  "valueOverPrice": 1.16,
+  "valueOverPrice": 1.15,
   "thumb": "/fotos/3892.webp?v=f8234387",
   "clubCrestThumb": "/escudos/MUN.webp?v=56f62c68"
  },
@@ -9877,7 +9885,7 @@
   "valuePerCredit": 1.098,
   "valueProjected": 0.495,
   "valueMarket": 1.14,
-  "bargainScore": 48.7,
+  "bargainScore": 49.0,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -10102,7 +10110,7 @@
   "valuePerCredit": 0.982,
   "valueProjected": 0.829,
   "valueMarket": 0.981,
-  "bargainScore": 52.6,
+  "bargainScore": 52.9,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -10242,7 +10250,7 @@
    "breakEven": 12.2,
    "expectedChange": -0.01,
    "riseProb": 0.419,
-   "sd": 9.44,
+   "sd": 9.43,
    "floor": 5.7,
    "ceiling": 17.3,
    "p90": 23.5,
@@ -10328,7 +10336,7 @@
   "valuePerCredit": 1.228,
   "valueProjected": 1.068,
   "valueMarket": 1.235,
-  "bargainScore": 95.1,
+  "bargainScore": 95.3,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -10429,9 +10437,9 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 1.16,
+  "projectedFp": 0.0,
   "projectedIfPlays": 5.78,
-  "playProb": 0.2,
+  "playProb": 0.0,
   "expectedMinutes": 14.5,
   "matchup": {
    "opponentFactor": 1.018,
@@ -10439,9 +10447,9 @@
    "calibration": 1.149
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.227,
+  "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 23.0,
+  "bargainScore": 15.8,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -10464,25 +10472,25 @@
   },
   "registered": true,
   "availability": {
-   "level": "doubt",
+   "level": "out",
    "kind": "injury",
-   "label": "Improbable",
-   "untilRound": null,
+   "label": "Baja en la J15",
+   "untilRound": 15,
    "detail": "Ruled out for Round 14 after DNP in Rounds 1-13 (hamstring, might leave the team)",
-   "reported": "Doubtful · Round 15",
+   "reported": "Out · Round 15",
    "source": "BasketNews"
   },
   "outlook": {
    "breakEven": 5.5,
-   "expectedChange": -0.08,
-   "riseProb": 0.09,
-   "sd": 3.97,
+   "expectedChange": -0.1,
+   "riseProb": 0.0,
+   "sd": 0.0,
    "floor": 1.1,
    "ceiling": 9.9,
    "p90": 15.4,
    "bandIfPlays": true
   },
-  "valueOverPrice": -3.72,
+  "valueOverPrice": -4.87,
   "thumb": "/fotos/3904.webp?v=f8b2efe4",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
  },
@@ -10551,7 +10559,7 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 8.9,
+  "projectedIfPlays": 8.91,
   "playProb": 0.0,
   "expectedMinutes": 24.1,
   "matchup": {
@@ -10562,7 +10570,7 @@
   "valuePerCredit": 1.049,
   "valueProjected": 0.0,
   "valueMarket": 1.069,
-  "bargainScore": 6.7,
+  "bargainScore": 6.8,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -10599,11 +10607,11 @@
    "riseProb": 0.0,
    "sd": 0.0,
    "floor": 3.3,
-   "ceiling": 13.5,
+   "ceiling": 13.6,
    "p90": 19.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -7.01,
+  "valueOverPrice": -7.0,
   "thumb": "/fotos/3905.webp?v=378bb8c4",
   "clubCrestThumb": "/escudos/TEL.webp?v=ab1efd9a"
  },
@@ -10683,7 +10691,7 @@
   "valuePerCredit": 0.905,
   "valueProjected": 0.902,
   "valueMarket": 0.918,
-  "bargainScore": 68.3,
+  "bargainScore": 68.6,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -10710,7 +10718,7 @@
    "breakEven": 9.2,
    "expectedChange": -0.05,
    "riseProb": 0.35,
-   "sd": 7.21,
+   "sd": 7.2,
    "floor": 2.6,
    "ceiling": 12.6,
    "p90": 18.3,
@@ -10908,7 +10916,7 @@
   "valuePerCredit": 0.862,
   "valueProjected": 0.893,
   "valueMarket": 0.866,
-  "bargainScore": 62.1,
+  "bargainScore": 62.5,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -11010,13 +11018,13 @@
    "minutesPrior": null
   },
   "projectedFp": 9.21,
-  "projectedIfPlays": 11.34,
+  "projectedIfPlays": 11.33,
   "playProb": 0.812,
   "expectedMinutes": 22.4,
   "matchup": {
    "opponentFactor": 0.977,
    "homeFactor": 0.971,
-   "calibration": 0.944
+   "calibration": 0.943
   },
   "valuePerCredit": 1.398,
   "valueProjected": 1.047,
@@ -11048,7 +11056,7 @@
    "breakEven": 9.6,
    "expectedChange": 0.04,
    "riseProb": 0.423,
-   "sd": 10.03,
+   "sd": 10.02,
    "floor": 5.2,
    "ceiling": 16.4,
    "p90": 22.7,
@@ -11255,7 +11263,7 @@
   "valuePerCredit": 0.737,
   "valueProjected": 0.939,
   "valueMarket": 0.745,
-  "bargainScore": 76.3,
+  "bargainScore": 76.5,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -11288,7 +11296,7 @@
    "p90": 14.2,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.09,
+  "valueOverPrice": -0.08,
   "thumb": "/fotos/3915.webp?v=ba68bed2",
   "clubCrestThumb": "/escudos/BAS.webp?v=9ea920ed"
  },
@@ -11368,7 +11376,7 @@
   "valuePerCredit": 1.302,
   "valueProjected": 1.057,
   "valueMarket": 1.306,
-  "bargainScore": 83.3,
+  "bargainScore": 83.4,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -11481,7 +11489,7 @@
   "valuePerCredit": 1.04,
   "valueProjected": 0.743,
   "valueMarket": 1.048,
-  "bargainScore": 56.7,
+  "bargainScore": 57.0,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -11507,8 +11515,8 @@
   "outlook": {
    "breakEven": 6.8,
    "expectedChange": -0.02,
-   "riseProb": 0.293,
-   "sd": 6.67,
+   "riseProb": 0.292,
+   "sd": 6.66,
    "floor": 2.2,
    "ceiling": 12.0,
    "p90": 17.7,
@@ -11582,17 +11590,17 @@
    "plusMinusAvg": 3.9,
    "minutesPrior": null
   },
-  "projectedFp": 9.48,
-  "projectedIfPlays": 9.98,
+  "projectedFp": 9.47,
+  "projectedIfPlays": 9.97,
   "playProb": 0.95,
   "expectedMinutes": 20.7,
   "matchup": {
    "opponentFactor": 0.901,
    "homeFactor": 1.029,
-   "calibration": 0.969
+   "calibration": 0.968
   },
   "valuePerCredit": 1.339,
-  "valueProjected": 1.185,
+  "valueProjected": 1.184,
   "valueMarket": 1.338,
   "bargainScore": 97.1,
   "schedule": {
@@ -11620,8 +11628,8 @@
   "outlook": {
    "breakEven": 8.7,
    "expectedChange": 0.04,
-   "riseProb": 0.478,
-   "sd": 8.97,
+   "riseProb": 0.477,
+   "sd": 8.96,
    "floor": 4.2,
    "ceiling": 14.8,
    "p90": 21.0,
@@ -11812,14 +11820,14 @@
   "playProb": 0.2,
   "expectedMinutes": 14.5,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
    "calibration": 1.17
   },
   "valuePerCredit": 0.0,
   "valueProjected": 0.218,
   "valueMarket": 0.0,
-  "bargainScore": 20.9,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -11854,13 +11862,13 @@
    "breakEven": 5.5,
    "expectedChange": -0.08,
    "riseProb": 0.087,
-   "sd": 3.83,
+   "sd": 3.82,
    "floor": 0.9,
    "ceiling": 9.6,
    "p90": 15.0,
    "bandIfPlays": true
   },
-  "valueOverPrice": -3.77,
+  "valueOverPrice": -3.76,
   "thumb": "/fotos/3922.webp?v=dc8b5e83",
   "clubCrestThumb": "/escudos/ASV.webp?v=db62ba9d"
  },
@@ -12052,7 +12060,7 @@
   "valuePerCredit": 1.21,
   "valueProjected": 1.071,
   "valueMarket": 1.209,
-  "bargainScore": 90.6,
+  "bargainScore": 90.3,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -12079,7 +12087,7 @@
    "breakEven": 9.3,
    "expectedChange": 0.01,
    "riseProb": 0.424,
-   "sd": 6.82,
+   "sd": 6.81,
    "floor": 4.0,
    "ceiling": 14.5,
    "p90": 20.6,
@@ -12165,7 +12173,7 @@
   "valuePerCredit": 0.965,
   "valueProjected": 0.821,
   "valueMarket": 0.966,
-  "bargainScore": 48.0,
+  "bargainScore": 48.3,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -12191,8 +12199,8 @@
   "outlook": {
    "breakEven": 12.9,
    "expectedChange": -0.1,
-   "riseProb": 0.325,
-   "sd": 9.54,
+   "riseProb": 0.324,
+   "sd": 9.53,
    "floor": 4.5,
    "ceiling": 15.2,
    "p90": 21.6,
@@ -12267,18 +12275,18 @@
    "minutesPrior": null
   },
   "projectedFp": 0.98,
-  "projectedIfPlays": 4.89,
+  "projectedIfPlays": 4.88,
   "playProb": 0.2,
   "expectedMinutes": 13.3,
   "matchup": {
    "opponentFactor": 1.012,
    "homeFactor": 0.971,
-   "calibration": 1.254
+   "calibration": 1.251
   },
   "valuePerCredit": 0.717,
   "valueProjected": 0.204,
   "valueMarket": 0.708,
-  "bargainScore": 25.6,
+  "bargainScore": 25.9,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -12313,7 +12321,7 @@
    "breakEven": 5.1,
    "expectedChange": -0.08,
    "riseProb": 0.075,
-   "sd": 2.89,
+   "sd": 2.88,
    "floor": 0.5,
    "ceiling": 8.5,
    "p90": 13.8,
@@ -12399,7 +12407,7 @@
   "valuePerCredit": 1.366,
   "valueProjected": 1.095,
   "valueMarket": 1.36,
-  "bargainScore": 94.6,
+  "bargainScore": 95.1,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -12426,7 +12434,7 @@
    "breakEven": 12.1,
    "expectedChange": 0.02,
    "riseProb": 0.456,
-   "sd": 10.56,
+   "sd": 10.55,
    "floor": 6.1,
    "ceiling": 18.2,
    "p90": 24.3,
@@ -12539,7 +12547,7 @@
    "breakEven": 4.5,
    "expectedChange": 0.02,
    "riseProb": 0.43,
-   "sd": 5.46,
+   "sd": 5.45,
    "floor": 0.7,
    "ceiling": 8.9,
    "p90": 14.3,
@@ -12625,7 +12633,7 @@
   "valuePerCredit": 0.62,
   "valueProjected": 0.638,
   "valueMarket": 0.616,
-  "bargainScore": 34.7,
+  "bargainScore": 35.0,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -12738,7 +12746,7 @@
   "valuePerCredit": 2.111,
   "valueProjected": 0.628,
   "valueMarket": 2.106,
-  "bargainScore": 55.2,
+  "bargainScore": 55.5,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -12963,7 +12971,7 @@
   "valuePerCredit": 0.595,
   "valueProjected": 0.709,
   "valueMarket": 0.595,
-  "bargainScore": 48.3,
+  "bargainScore": 48.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -13076,7 +13084,7 @@
   "valuePerCredit": 0.32,
   "valueProjected": 0.472,
   "valueMarket": 0.32,
-  "bargainScore": 44.5,
+  "bargainScore": 44.8,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -13301,7 +13309,7 @@
   "valuePerCredit": 0.936,
   "valueProjected": 1.068,
   "valueMarket": 0.933,
-  "bargainScore": 89.8,
+  "bargainScore": 89.7,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -13403,18 +13411,18 @@
    "minutesPrior": null
   },
   "projectedFp": 1.83,
-  "projectedIfPlays": 5.86,
+  "projectedIfPlays": 5.85,
   "playProb": 0.312,
   "expectedMinutes": 14.1,
   "matchup": {
    "opponentFactor": 1.085,
    "homeFactor": 1.029,
-   "calibration": 1.145
+   "calibration": 1.143
   },
   "valuePerCredit": 0.731,
   "valueProjected": 0.436,
   "valueMarket": 0.738,
-  "bargainScore": 46.9,
+  "bargainScore": 47.2,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -13440,8 +13448,8 @@
   "outlook": {
    "breakEven": 4.5,
    "expectedChange": -0.05,
-   "riseProb": 0.159,
-   "sd": 4.23,
+   "riseProb": 0.158,
+   "sd": 4.22,
    "floor": 1.1,
    "ceiling": 10.0,
    "p90": 15.5,
@@ -13554,7 +13562,7 @@
    "breakEven": 9.0,
    "expectedChange": 0.01,
    "riseProb": 0.444,
-   "sd": 11.28,
+   "sd": 11.27,
    "floor": 3.7,
    "ceiling": 14.0,
    "p90": 20.1,
@@ -14013,7 +14021,7 @@
    "breakEven": 8.9,
    "expectedChange": 0.04,
    "riseProb": 0.442,
-   "sd": 9.44,
+   "sd": 9.43,
    "floor": 4.5,
    "ceiling": 15.1,
    "p90": 21.5,
@@ -14099,7 +14107,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.221,
   "valueMarket": 0.0,
-  "bargainScore": 16.6,
+  "bargainScore": 16.9,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -14332,7 +14340,7 @@
   "valuePerCredit": 0.13,
   "valueProjected": 0.3,
   "valueMarket": 0.125,
-  "bargainScore": 43.9,
+  "bargainScore": 44.2,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -14472,7 +14480,7 @@
    "breakEven": 8.2,
    "expectedChange": 0.02,
    "riseProb": 0.447,
-   "sd": 8.12,
+   "sd": 8.11,
    "floor": 3.3,
    "ceiling": 13.5,
    "p90": 19.4,
@@ -14658,19 +14666,19 @@
    "plusMinusAvg": 0.9,
    "minutesPrior": null
   },
-  "projectedFp": 7.83,
-  "projectedIfPlays": 8.35,
+  "projectedFp": 7.82,
+  "projectedIfPlays": 8.34,
   "playProb": 0.938,
   "expectedMinutes": 21.2,
   "matchup": {
    "opponentFactor": 1.008,
    "homeFactor": 0.971,
-   "calibration": 1.012
+   "calibration": 1.011
   },
   "valuePerCredit": 1.113,
-  "valueProjected": 1.135,
+  "valueProjected": 1.133,
   "valueMarket": 1.116,
-  "bargainScore": 93.9,
+  "bargainScore": 93.8,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -14697,13 +14705,13 @@
    "breakEven": 7.5,
    "expectedChange": 0.03,
    "riseProb": 0.458,
-   "sd": 11.87,
+   "sd": 11.86,
    "floor": 2.8,
    "ceiling": 12.9,
    "p90": 18.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": 1.13,
+  "valueOverPrice": 1.12,
   "thumb": "/fotos/3967.webp?v=f757da75",
   "clubCrestThumb": "/escudos/BAR.webp?v=8e182a46"
  },
@@ -14783,7 +14791,7 @@
   "valuePerCredit": 1.098,
   "valueProjected": 0.619,
   "valueMarket": 1.14,
-  "bargainScore": 57.4,
+  "bargainScore": 57.7,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -14896,7 +14904,7 @@
   "valuePerCredit": 0.13,
   "valueProjected": 0.185,
   "valueMarket": 0.125,
-  "bargainScore": 33.0,
+  "bargainScore": 33.1,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -15275,7 +15283,7 @@
    "p90": 19.2,
    "bandIfPlays": true
   },
-  "valueOverPrice": 1.99,
+  "valueOverPrice": 2.0,
   "thumb": "/fotos/3975.webp?v=1e9750ab",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
  },
@@ -15355,7 +15363,7 @@
   "valuePerCredit": 0.402,
   "valueProjected": 0.805,
   "valueMarket": 0.415,
-  "bargainScore": 69.9,
+  "bargainScore": 70.2,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -15468,7 +15476,7 @@
   "valuePerCredit": 1.402,
   "valueProjected": 0.541,
   "valueMarket": 1.415,
-  "bargainScore": 52.3,
+  "bargainScore": 52.6,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -15495,7 +15503,7 @@
    "breakEven": 4.4,
    "expectedChange": -0.04,
    "riseProb": 0.196,
-   "sd": 4.31,
+   "sd": 4.3,
    "floor": 1.2,
    "ceiling": 10.1,
    "p90": 15.6,
@@ -15694,7 +15702,7 @@
   "valuePerCredit": 0.934,
   "valueProjected": 0.926,
   "valueMarket": 0.931,
-  "bargainScore": 71.5,
+  "bargainScore": 72.1,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -15721,13 +15729,13 @@
    "breakEven": 9.4,
    "expectedChange": -0.04,
    "riseProb": 0.377,
-   "sd": 8.44,
+   "sd": 8.43,
    "floor": 3.0,
    "ceiling": 13.1,
    "p90": 18.8,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.47,
+  "valueOverPrice": -0.46,
   "thumb": "/fotos/3981.webp?v=357393bc",
   "clubCrestThumb": "/escudos/VIR.webp?v=0bbbfd14"
  },
@@ -15807,7 +15815,7 @@
   "valuePerCredit": 1.382,
   "valueProjected": 0.962,
   "valueMarket": 1.38,
-  "bargainScore": 78.3,
+  "bargainScore": 78.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -15920,7 +15928,7 @@
   "valuePerCredit": 0.325,
   "valueProjected": 0.795,
   "valueMarket": 0.325,
-  "bargainScore": 69.2,
+  "bargainScore": 69.5,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -16026,7 +16034,7 @@
   "playProb": 0.875,
   "expectedMinutes": 11.4,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
    "calibration": 1.262
   },
@@ -16059,8 +16067,8 @@
   "outlook": {
    "breakEven": 4.4,
    "expectedChange": 0.0,
-   "riseProb": 0.384,
-   "sd": 5.11,
+   "riseProb": 0.383,
+   "sd": 5.1,
    "floor": 0.4,
    "ceiling": 8.4,
    "p90": 13.6,
@@ -16146,7 +16154,7 @@
   "valuePerCredit": 0.255,
   "valueProjected": 0.195,
   "valueMarket": 0.25,
-  "bargainScore": 33.7,
+  "bargainScore": 34.0,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -16267,7 +16275,7 @@
   "valuePerCredit": 0.37,
   "valueProjected": 0.547,
   "valueMarket": 0.375,
-  "bargainScore": 53.5,
+  "bargainScore": 53.8,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -16368,17 +16376,17 @@
    "plusMinusAvg": 7.4,
    "minutesPrior": null
   },
-  "projectedFp": 8.52,
-  "projectedIfPlays": 8.97,
+  "projectedFp": 8.51,
+  "projectedIfPlays": 8.96,
   "playProb": 0.95,
   "expectedMinutes": 20.7,
   "matchup": {
    "opponentFactor": 1.02,
    "homeFactor": 1.029,
-   "calibration": 0.993
+   "calibration": 0.992
   },
   "valuePerCredit": 1.357,
-  "valueProjected": 1.42,
+  "valueProjected": 1.418,
   "valueMarket": 1.35,
   "bargainScore": 99.4,
   "schedule": {
@@ -16407,13 +16415,13 @@
    "breakEven": 6.5,
    "expectedChange": 0.09,
    "riseProb": 0.53,
-   "sd": 8.54,
+   "sd": 8.53,
    "floor": 3.4,
    "ceiling": 13.6,
-   "p90": 19.6,
+   "p90": 19.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": 2.73,
+  "valueOverPrice": 2.72,
   "thumb": "/fotos/3991.webp?v=d5c8c177",
   "clubCrestThumb": "/escudos/MAD.webp?v=d607a47f"
  },
@@ -16493,7 +16501,7 @@
   "valuePerCredit": 0.924,
   "valueProjected": 0.219,
   "valueMarket": 0.932,
-  "bargainScore": 18.3,
+  "bargainScore": 18.9,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -16534,7 +16542,7 @@
    "p90": 16.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -4.4,
+  "valueOverPrice": -4.39,
   "thumb": "/fotos/3992.webp?v=701103ee",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
  },
@@ -16602,17 +16610,17 @@
    "plusMinusAvg": -0.8,
    "minutesPrior": null
   },
-  "projectedFp": 13.1,
-  "projectedIfPlays": 13.79,
+  "projectedFp": 13.09,
+  "projectedIfPlays": 13.78,
   "playProb": 0.95,
   "expectedMinutes": 24.6,
   "matchup": {
    "opponentFactor": 0.997,
    "homeFactor": 1.029,
-   "calibration": 0.914
+   "calibration": 0.913
   },
   "valuePerCredit": 1.215,
-  "valueProjected": 1.12,
+  "valueProjected": 1.119,
   "valueMarket": 1.214,
   "bargainScore": 96.8,
   "schedule": {
@@ -16640,14 +16648,14 @@
   "outlook": {
    "breakEven": 12.7,
    "expectedChange": 0.03,
-   "riseProb": 0.468,
-   "sd": 10.61,
+   "riseProb": 0.467,
+   "sd": 10.6,
    "floor": 6.8,
    "ceiling": 19.4,
    "p90": 25.4,
    "bandIfPlays": true
   },
-  "valueOverPrice": 1.53,
+  "valueOverPrice": 1.52,
   "thumb": "/fotos/3993.webp?v=916dd539",
   "clubCrestThumb": "/escudos/IST.webp?v=0924bbee"
  },
@@ -16827,8 +16835,8 @@
    "plusMinusAvg": 11.0,
    "minutesPrior": null
   },
-  "projectedFp": 1.03,
-  "projectedIfPlays": 5.52,
+  "projectedFp": 1.04,
+  "projectedIfPlays": 5.53,
   "playProb": 0.188,
   "expectedMinutes": 15.4,
   "matchup": {
@@ -16837,9 +16845,9 @@
    "calibration": 1.174
   },
   "valuePerCredit": 0.55,
-  "valueProjected": 0.258,
+  "valueProjected": 0.26,
   "valueMarket": 0.55,
-  "bargainScore": 37.8,
+  "bargainScore": 38.4,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -16872,7 +16880,7 @@
    "p90": 14.9,
    "bandIfPlays": true
   },
-  "valueOverPrice": -2.73,
+  "valueOverPrice": -2.72,
   "thumb": "/fotos/3997.webp?v=0fb9ef1b",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
  },
@@ -16952,7 +16960,7 @@
   "valuePerCredit": -0.15,
   "valueProjected": 0.152,
   "valueMarket": -0.15,
-  "bargainScore": 30.7,
+  "bargainScore": 31.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -17062,18 +17070,18 @@
    "minutesPrior": null
   },
   "projectedFp": 0.9,
-  "projectedIfPlays": 4.5,
+  "projectedIfPlays": 4.49,
   "playProb": 0.2,
   "expectedMinutes": 10.0,
   "matchup": {
    "opponentFactor": 0.942,
    "homeFactor": 1.029,
-   "calibration": 1.32
+   "calibration": 1.317
   },
   "valuePerCredit": 1.1,
   "valueProjected": 0.225,
   "valueMarket": 1.1,
-  "bargainScore": 36.2,
+  "bargainScore": 36.5,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -17108,10 +17116,10 @@
    "breakEven": 4.3,
    "expectedChange": -0.08,
    "riseProb": 0.084,
-   "sd": 2.92,
+   "sd": 2.91,
    "floor": 0.2,
    "ceiling": 7.9,
-   "p90": 13.1,
+   "p90": 13.0,
    "bandIfPlays": true
   },
   "valueOverPrice": -2.86,
@@ -17183,18 +17191,18 @@
    "minutesPrior": null
   },
   "projectedFp": 2.53,
-  "projectedIfPlays": 6.74,
+  "projectedIfPlays": 6.75,
   "playProb": 0.375,
   "expectedMinutes": 17.0,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
    "calibration": 1.082
   },
   "valuePerCredit": 2.012,
   "valueProjected": 0.617,
   "valueMarket": 2.024,
-  "bargainScore": 59.0,
+  "bargainScore": 59.2,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -17419,7 +17427,7 @@
   "valuePerCredit": 0.58,
   "valueProjected": 0.28,
   "valueMarket": 0.575,
-  "bargainScore": 42.2,
+  "bargainScore": 42.4,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -17532,7 +17540,7 @@
   "valuePerCredit": 0.739,
   "valueProjected": 0.92,
   "valueMarket": 0.732,
-  "bargainScore": 76.3,
+  "bargainScore": 76.2,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -17558,7 +17566,7 @@
   "outlook": {
    "breakEven": 4.4,
    "expectedChange": -0.01,
-   "riseProb": 0.35,
+   "riseProb": 0.349,
    "sd": 5.38,
    "floor": 0.3,
    "ceiling": 8.1,
@@ -17645,7 +17653,7 @@
   "valuePerCredit": 1.569,
   "valueProjected": 0.804,
   "valueMarket": 1.577,
-  "bargainScore": 65.7,
+  "bargainScore": 66.0,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -17671,14 +17679,14 @@
   "outlook": {
    "breakEven": 5.6,
    "expectedChange": -0.01,
-   "riseProb": 0.308,
+   "riseProb": 0.307,
    "sd": 6.65,
    "floor": 1.7,
    "ceiling": 11.2,
    "p90": 16.9,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.8,
+  "valueOverPrice": -0.79,
   "thumb": "/fotos/4009.webp?v=eca34ed2",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
  },
@@ -17751,14 +17759,14 @@
   "playProb": 0.75,
   "expectedMinutes": 14.0,
   "matchup": {
-   "opponentFactor": 0.966,
+   "opponentFactor": 0.965,
    "homeFactor": 0.971,
    "calibration": 1.313
   },
   "valuePerCredit": 0.532,
   "valueProjected": 0.829,
   "valueMarket": 0.537,
-  "bargainScore": 71.9,
+  "bargainScore": 72.1,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -17785,7 +17793,7 @@
    "breakEven": 4.4,
    "expectedChange": -0.02,
    "riseProb": 0.298,
-   "sd": 4.14,
+   "sd": 4.13,
    "floor": 0.2,
    "ceiling": 8.0,
    "p90": 13.1,
@@ -17871,7 +17879,7 @@
   "valuePerCredit": -0.25,
   "valueProjected": 0.13,
   "valueMarket": -0.25,
-  "bargainScore": 29.4,
+  "bargainScore": 29.7,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -18097,14 +18105,14 @@
   "playProb": 0.2,
   "expectedMinutes": 0.3,
   "matchup": {
-   "opponentFactor": 0.966,
+   "opponentFactor": 0.965,
    "homeFactor": 0.971,
    "calibration": 20.556
   },
   "valuePerCredit": 0.0,
   "valueProjected": 0.092,
   "valueMarket": 0.0,
-  "bargainScore": 28.1,
+  "bargainScore": 28.3,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -18225,7 +18233,7 @@
   "valuePerCredit": 0.465,
   "valueProjected": 0.16,
   "valueMarket": 0.475,
-  "bargainScore": 31.1,
+  "bargainScore": 31.4,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -18346,7 +18354,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 40.0,
+  "bargainScore": 40.3,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -18467,7 +18475,7 @@
   "valuePerCredit": -0.225,
   "valueProjected": 0.14,
   "valueMarket": 0.0,
-  "bargainScore": 29.9,
+  "bargainScore": 30.2,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -18588,7 +18596,7 @@
   "valuePerCredit": 1.744,
   "valueProjected": 0.278,
   "valueMarket": 1.756,
-  "bargainScore": 38.2,
+  "bargainScore": 38.4,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -18736,7 +18744,7 @@
    "breakEven": 7.7,
    "expectedChange": 0.02,
    "riseProb": 0.448,
-   "sd": 7.79,
+   "sd": 7.78,
    "floor": 3.0,
    "ceiling": 13.1,
    "p90": 18.8,
@@ -18822,7 +18830,7 @@
   "valuePerCredit": 0.99,
   "valueProjected": 0.896,
   "valueMarket": 0.987,
-  "bargainScore": 68.9,
+  "bargainScore": 69.2,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -18849,7 +18857,7 @@
    "breakEven": 8.3,
    "expectedChange": -0.05,
    "riseProb": 0.355,
-   "sd": 7.25,
+   "sd": 7.24,
    "floor": 2.1,
    "ceiling": 11.7,
    "p90": 17.5,
@@ -18923,19 +18931,19 @@
    "plusMinusAvg": 0.9,
    "minutesPrior": null
   },
-  "projectedFp": 6.6,
-  "projectedIfPlays": 6.95,
+  "projectedFp": 6.59,
+  "projectedIfPlays": 6.94,
   "playProb": 0.95,
   "expectedMinutes": 18.4,
   "matchup": {
    "opponentFactor": 0.901,
    "homeFactor": 1.029,
-   "calibration": 1.071
+   "calibration": 1.069
   },
   "valuePerCredit": 1.071,
-  "valueProjected": 1.048,
+  "valueProjected": 1.046,
   "valueMarket": 1.079,
-  "bargainScore": 83.3,
+  "bargainScore": 83.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -18962,13 +18970,13 @@
    "breakEven": 6.8,
    "expectedChange": 0.0,
    "riseProb": 0.417,
-   "sd": 7.18,
+   "sd": 7.17,
    "floor": 1.8,
    "ceiling": 11.4,
    "p90": 17.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.51,
+  "valueOverPrice": 0.5,
   "thumb": "/fotos/4084.webp?v=8f39df31",
   "clubCrestThumb": "/escudos/ZAL.webp?v=e452f9b4"
  },
@@ -19153,14 +19161,14 @@
   "playProb": 0.2,
   "expectedMinutes": 13.1,
   "matchup": {
-   "opponentFactor": 0.906,
+   "opponentFactor": 0.905,
    "homeFactor": 1.029,
    "calibration": 1.393
   },
   "valuePerCredit": 0.472,
   "valueProjected": 0.207,
   "valueMarket": 0.475,
-  "bargainScore": 34.7,
+  "bargainScore": 35.0,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -19281,7 +19289,7 @@
   "valuePerCredit": 2.661,
   "valueProjected": 0.585,
   "valueMarket": 2.661,
-  "bargainScore": 44.8,
+  "bargainScore": 45.1,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -19394,7 +19402,7 @@
   "valuePerCredit": 0.837,
   "valueProjected": 0.82,
   "valueMarket": 0.847,
-  "bargainScore": 49.9,
+  "bargainScore": 50.1,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -19420,8 +19428,8 @@
   "outlook": {
    "breakEven": 12.1,
    "expectedChange": -0.1,
-   "riseProb": 0.334,
-   "sd": 9.8,
+   "riseProb": 0.333,
+   "sd": 9.79,
    "floor": 3.9,
    "ceiling": 14.3,
    "p90": 20.5,
@@ -19534,7 +19542,7 @@
    "breakEven": 8.9,
    "expectedChange": 0.0,
    "riseProb": 0.428,
-   "sd": 8.54,
+   "sd": 8.53,
    "floor": 3.5,
    "ceiling": 13.8,
    "p90": 19.7,
@@ -19620,7 +19628,7 @@
   "valuePerCredit": 1.045,
   "valueProjected": 1.054,
   "valueMarket": 1.046,
-  "bargainScore": 86.5,
+  "bargainScore": 86.9,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -19653,7 +19661,7 @@
    "p90": 20.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.64,
+  "valueOverPrice": 0.65,
   "thumb": "/fotos/4108.webp?v=4e0c2eba",
   "clubCrestThumb": "/escudos/BAS.webp?v=9ea920ed"
  },
@@ -19733,7 +19741,7 @@
   "valuePerCredit": 0.64,
   "valueProjected": 0.682,
   "valueMarket": 0.642,
-  "bargainScore": 48.7,
+  "bargainScore": 49.0,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -19846,7 +19854,7 @@
   "valuePerCredit": 0.814,
   "valueProjected": 0.454,
   "valueMarket": 0.807,
-  "bargainScore": 35.5,
+  "bargainScore": 35.8,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -19873,7 +19881,7 @@
    "breakEven": 6.1,
    "expectedChange": -0.06,
    "riseProb": 0.176,
-   "sd": 4.86,
+   "sd": 4.85,
    "floor": 1.2,
    "ceiling": 10.1,
    "p90": 15.6,
@@ -20072,7 +20080,7 @@
   "valuePerCredit": 0.273,
   "valueProjected": 0.104,
   "valueMarket": 0.268,
-  "bargainScore": 16.0,
+  "bargainScore": 16.3,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -20306,7 +20314,7 @@
   "valuePerCredit": 0.375,
   "valueProjected": 0.185,
   "valueMarket": 0.375,
-  "bargainScore": 33.0,
+  "bargainScore": 33.1,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -20446,7 +20454,7 @@
    "breakEven": 6.6,
    "expectedChange": 0.01,
    "riseProb": 0.426,
-   "sd": 6.72,
+   "sd": 6.71,
    "floor": 1.8,
    "ceiling": 11.4,
    "p90": 17.1,
@@ -20644,7 +20652,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 21.9,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -20765,7 +20773,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 21.9,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -20879,14 +20887,14 @@
   "playProb": 0.875,
   "expectedMinutes": 18.5,
   "matchup": {
-   "opponentFactor": 0.906,
+   "opponentFactor": 0.905,
    "homeFactor": 1.029,
    "calibration": 1.012
   },
   "valuePerCredit": 1.094,
   "valueProjected": 0.827,
   "valueMarket": 1.091,
-  "bargainScore": 58.4,
+  "bargainScore": 58.7,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -21108,17 +21116,17 @@
    "plusMinusAvg": 2.2,
    "minutesPrior": null
   },
-  "projectedFp": 8.37,
-  "projectedIfPlays": 8.93,
+  "projectedFp": 8.36,
+  "projectedIfPlays": 8.92,
   "playProb": 0.938,
   "expectedMinutes": 17.7,
   "matchup": {
    "opponentFactor": 1.049,
    "homeFactor": 1.029,
-   "calibration": 0.994
+   "calibration": 0.993
   },
   "valuePerCredit": 1.029,
-  "valueProjected": 1.101,
+  "valueProjected": 1.1,
   "valueMarket": 1.026,
   "bargainScore": 92.2,
   "schedule": {
@@ -21147,13 +21155,13 @@
    "breakEven": 8.2,
    "expectedChange": 0.02,
    "riseProb": 0.442,
-   "sd": 7.77,
+   "sd": 7.76,
    "floor": 3.3,
    "ceiling": 13.6,
    "p90": 19.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.96,
+  "valueOverPrice": 0.95,
   "thumb": "/fotos/4195.webp?v=82af46e4",
   "clubCrestThumb": "/escudos/MUN.webp?v=56f62c68"
  },
@@ -21221,19 +21229,19 @@
    "plusMinusAvg": -2.0,
    "minutesPrior": null
   },
-  "projectedFp": 7.06,
-  "projectedIfPlays": 7.43,
+  "projectedFp": 7.05,
+  "projectedIfPlays": 7.42,
   "playProb": 0.95,
   "expectedMinutes": 19.0,
   "matchup": {
    "opponentFactor": 0.951,
    "homeFactor": 1.029,
-   "calibration": 1.046
+   "calibration": 1.047
   },
   "valuePerCredit": 0.92,
-  "valueProjected": 0.851,
+  "valueProjected": 0.849,
   "valueMarket": 0.916,
-  "bargainScore": 62.1,
+  "bargainScore": 62.2,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -21258,15 +21266,15 @@
   "availability": null,
   "outlook": {
    "breakEven": 9.0,
-   "expectedChange": -0.06,
-   "riseProb": 0.359,
-   "sd": 8.99,
+   "expectedChange": -0.07,
+   "riseProb": 0.358,
+   "sd": 8.98,
    "floor": 2.2,
    "ceiling": 11.9,
    "p90": 17.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.06,
+  "valueOverPrice": -1.07,
   "thumb": "/fotos/4210.webp?v=7b2abe1e",
   "clubCrestThumb": "/escudos/BES.webp?v=d0e21f12"
  },
@@ -21346,7 +21354,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.227,
   "valueMarket": 0.0,
-  "bargainScore": 19.2,
+  "bargainScore": 19.8,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -21381,7 +21389,7 @@
    "breakEven": 6.0,
    "expectedChange": -0.08,
    "riseProb": 0.091,
-   "sd": 4.36,
+   "sd": 4.35,
    "floor": 1.4,
    "ceiling": 10.7,
    "p90": 16.4,
@@ -21462,12 +21470,12 @@
   "matchup": {
    "opponentFactor": 1.021,
    "homeFactor": 1.029,
-   "calibration": 1.153
+   "calibration": 1.155
   },
   "valuePerCredit": 0.0,
   "valueProjected": 0.261,
   "valueMarket": 0.0,
-  "bargainScore": 33.0,
+  "bargainScore": 33.7,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -21508,7 +21516,7 @@
    "p90": 15.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": -3.02,
+  "valueOverPrice": -3.01,
   "thumb": null,
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
  },
@@ -21576,8 +21584,8 @@
    "plusMinusAvg": 2.1,
    "minutesPrior": null
   },
-  "projectedFp": 14.58,
-  "projectedIfPlays": 15.35,
+  "projectedFp": 14.59,
+  "projectedIfPlays": 15.36,
   "playProb": 0.95,
   "expectedMinutes": 24.9,
   "matchup": {
@@ -21586,9 +21594,9 @@
    "calibration": 0.9
   },
   "valuePerCredit": 1.191,
-  "valueProjected": 0.917,
+  "valueProjected": 0.918,
   "valueMarket": 1.195,
-  "bargainScore": 59.9,
+  "bargainScore": 60.2,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -21616,12 +21624,12 @@
    "expectedChange": -0.08,
    "riseProb": 0.363,
    "sd": 11.1,
-   "floor": 7.9,
+   "floor": 8.0,
    "ceiling": 21.3,
    "p90": 27.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.25,
+  "valueOverPrice": -1.24,
   "thumb": "/fotos/4233.webp?v=705180d4",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
  },
@@ -21701,7 +21709,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 19.5,
+  "bargainScore": 20.1,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -21822,7 +21830,7 @@
   "valuePerCredit": 0.537,
   "valueProjected": 0.0,
   "valueMarket": 0.537,
-  "bargainScore": 20.1,
+  "bargainScore": 20.6,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -21970,7 +21978,7 @@
    "breakEven": 8.1,
    "expectedChange": -0.01,
    "riseProb": 0.404,
-   "sd": 7.99,
+   "sd": 7.98,
    "floor": 2.5,
    "ceiling": 12.4,
    "p90": 18.1,
@@ -22056,7 +22064,7 @@
   "valuePerCredit": 1.084,
   "valueProjected": 0.861,
   "valueMarket": 1.086,
-  "bargainScore": 56.0,
+  "bargainScore": 56.2,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -22169,7 +22177,7 @@
   "valuePerCredit": 0.664,
   "valueProjected": 0.757,
   "valueMarket": 0.656,
-  "bargainScore": 59.6,
+  "bargainScore": 59.9,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -22548,7 +22556,7 @@
    "p90": 18.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.08,
+  "valueOverPrice": -0.07,
   "thumb": "/fotos/4257.webp?v=1bf43fa1",
   "clubCrestThumb": "/escudos/MAD.webp?v=d607a47f"
  },
@@ -22628,7 +22636,7 @@
   "valuePerCredit": 1.038,
   "valueProjected": 1.082,
   "valueMarket": 1.04,
-  "bargainScore": 86.5,
+  "bargainScore": 86.3,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -22862,7 +22870,7 @@
   "valuePerCredit": 0.816,
   "valueProjected": 0.704,
   "valueMarket": 0.817,
-  "bargainScore": 45.6,
+  "bargainScore": 45.9,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -23076,19 +23084,19 @@
    "plusMinusAvg": -2.3,
    "minutesPrior": null
   },
-  "projectedFp": 6.9,
-  "projectedIfPlays": 7.26,
+  "projectedFp": 6.89,
+  "projectedIfPlays": 7.25,
   "playProb": 0.95,
   "expectedMinutes": 22.1,
   "matchup": {
    "opponentFactor": 0.901,
    "homeFactor": 1.029,
-   "calibration": 1.055
+   "calibration": 1.054
   },
   "valuePerCredit": 0.968,
-  "valueProjected": 1.045,
+  "valueProjected": 1.044,
   "valueMarket": 0.97,
-  "bargainScore": 82.8,
+  "bargainScore": 83.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -23113,12 +23121,12 @@
   "availability": null,
   "outlook": {
    "breakEven": 7.1,
-   "expectedChange": 0.0,
-   "riseProb": 0.394,
+   "expectedChange": -0.0,
+   "riseProb": 0.393,
    "sd": 5.31,
    "floor": 2.1,
    "ceiling": 11.7,
-   "p90": 17.5,
+   "p90": 17.4,
    "bandIfPlays": true
   },
   "valueOverPrice": 0.5,
@@ -23201,7 +23209,7 @@
   "valuePerCredit": 0.225,
   "valueProjected": 0.147,
   "valueMarket": 0.225,
-  "bargainScore": 30.2,
+  "bargainScore": 30.5,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -23311,13 +23319,13 @@
    "minutesPrior": null
   },
   "projectedFp": 4.16,
-  "projectedIfPlays": 5.55,
+  "projectedIfPlays": 5.54,
   "playProb": 0.75,
   "expectedMinutes": 14.4,
   "matchup": {
    "opponentFactor": 1.076,
    "homeFactor": 0.971,
-   "calibration": 1.173
+   "calibration": 1.171
   },
   "valuePerCredit": 1.012,
   "valueProjected": 0.967,
@@ -23352,7 +23360,7 @@
    "sd": 5.72,
    "floor": 0.9,
    "ceiling": 9.5,
-   "p90": 15.0,
+   "p90": 14.9,
    "bandIfPlays": true
   },
   "valueOverPrice": 0.1,
@@ -23435,7 +23443,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.28,
   "valueMarket": 0.0,
-  "bargainScore": 42.2,
+  "bargainScore": 42.4,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -23556,7 +23564,7 @@
   "valuePerCredit": 0.942,
   "valueProjected": 0.847,
   "valueMarket": 0.974,
-  "bargainScore": 63.4,
+  "bargainScore": 63.7,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -23657,17 +23665,17 @@
    "plusMinusAvg": 1.6,
    "minutesPrior": null
   },
-  "projectedFp": 10.48,
-  "projectedIfPlays": 11.03,
+  "projectedFp": 10.47,
+  "projectedIfPlays": 11.02,
   "playProb": 0.95,
   "expectedMinutes": 21.9,
   "matchup": {
    "opponentFactor": 1.021,
    "homeFactor": 1.029,
-   "calibration": 0.949
+   "calibration": 0.948
   },
   "valuePerCredit": 1.127,
-  "valueProjected": 1.059,
+  "valueProjected": 1.058,
   "valueMarket": 1.131,
   "bargainScore": 89.0,
   "schedule": {
@@ -23694,15 +23702,15 @@
   "availability": null,
   "outlook": {
    "breakEven": 10.8,
-   "expectedChange": 0.01,
+   "expectedChange": 0.0,
    "riseProb": 0.449,
    "sd": 14.1,
    "floor": 5.0,
-   "ceiling": 16.1,
+   "ceiling": 16.0,
    "p90": 22.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.74,
+  "valueOverPrice": 0.73,
   "thumb": "/fotos/4675.webp?v=0fbd82d6",
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
  },
@@ -23771,18 +23779,18 @@
    "minutesPrior": null
   },
   "projectedFp": 7.85,
-  "projectedIfPlays": 13.96,
+  "projectedIfPlays": 13.95,
   "playProb": 0.562,
   "expectedMinutes": 24.3,
   "matchup": {
-   "opponentFactor": 0.906,
+   "opponentFactor": 0.905,
    "homeFactor": 1.029,
    "calibration": 0.912
   },
   "valuePerCredit": 1.413,
   "valueProjected": 0.66,
   "valueMarket": 1.429,
-  "bargainScore": 19.8,
+  "bargainScore": 20.3,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -23809,7 +23817,7 @@
    "breakEven": 13.0,
    "expectedChange": -0.02,
    "riseProb": 0.277,
-   "sd": 13.59,
+   "sd": 13.58,
    "floor": 6.9,
    "ceiling": 19.6,
    "p90": 25.6,
@@ -23895,7 +23903,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.28,
   "valueMarket": 0.0,
-  "bargainScore": 42.2,
+  "bargainScore": 42.4,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -24016,7 +24024,7 @@
   "valuePerCredit": 0.824,
   "valueProjected": 0.791,
   "valueMarket": 0.822,
-  "bargainScore": 51.2,
+  "bargainScore": 51.6,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -24042,8 +24050,8 @@
   "outlook": {
    "breakEven": 9.8,
    "expectedChange": -0.09,
-   "riseProb": 0.357,
-   "sd": 11.01,
+   "riseProb": 0.356,
+   "sd": 11.0,
    "floor": 2.3,
    "ceiling": 12.1,
    "p90": 17.8,
@@ -24129,7 +24137,7 @@
   "valuePerCredit": 0.735,
   "valueProjected": 0.715,
   "valueMarket": 0.733,
-  "bargainScore": 55.5,
+  "bargainScore": 55.8,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -24231,13 +24239,13 @@
    "minutesPrior": null
   },
   "projectedFp": 2.15,
-  "projectedIfPlays": 10.76,
+  "projectedIfPlays": 10.75,
   "playProb": 0.2,
   "expectedMinutes": 18.6,
   "matchup": {
    "opponentFactor": 0.968,
    "homeFactor": 1.029,
-   "calibration": 0.954
+   "calibration": 0.953
   },
   "valuePerCredit": 1.137,
   "valueProjected": 0.203,
@@ -24277,7 +24285,7 @@
    "breakEven": 11.5,
    "expectedChange": -0.09,
    "riseProb": 0.086,
-   "sd": 6.67,
+   "sd": 6.66,
    "floor": 4.8,
    "ceiling": 15.7,
    "p90": 22.0,
@@ -24363,7 +24371,7 @@
   "valuePerCredit": 0.916,
   "valueProjected": 0.851,
   "valueMarket": 0.913,
-  "bargainScore": 57.4,
+  "bargainScore": 57.7,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -24476,7 +24484,7 @@
   "valuePerCredit": 1.055,
   "valueProjected": 1.051,
   "valueMarket": 1.062,
-  "bargainScore": 87.1,
+  "bargainScore": 86.9,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -24503,7 +24511,7 @@
    "breakEven": 10.4,
    "expectedChange": 0.0,
    "riseProb": 0.43,
-   "sd": 8.93,
+   "sd": 8.92,
    "floor": 4.7,
    "ceiling": 15.6,
    "p90": 21.9,
@@ -24702,7 +24710,7 @@
   "valuePerCredit": 1.089,
   "valueProjected": 1.055,
   "valueMarket": 1.091,
-  "bargainScore": 87.1,
+  "bargainScore": 86.9,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -24848,7 +24856,7 @@
    "p90": 21.4,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.26,
+  "valueOverPrice": -0.25,
   "thumb": "/fotos/7197.webp?v=9c4dbef3",
   "clubCrestThumb": "/escudos/TEL.webp?v=ab1efd9a"
  },
@@ -25041,7 +25049,7 @@
   "valuePerCredit": 1.13,
   "valueProjected": 1.052,
   "valueMarket": 1.134,
-  "bargainScore": 89.8,
+  "bargainScore": 89.7,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -25154,7 +25162,7 @@
   "valuePerCredit": 0.884,
   "valueProjected": 0.785,
   "valueMarket": 0.878,
-  "bargainScore": 57.4,
+  "bargainScore": 57.7,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -25509,7 +25517,7 @@
   "valuePerCredit": 0.563,
   "valueProjected": 0.578,
   "valueMarket": 0.567,
-  "bargainScore": 45.3,
+  "bargainScore": 45.6,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -25848,7 +25856,7 @@
   "valuePerCredit": 0.635,
   "valueProjected": 0.212,
   "valueMarket": 0.625,
-  "bargainScore": 35.2,
+  "bargainScore": 35.5,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -25957,17 +25965,17 @@
    "plusMinusAvg": 1.4,
    "minutesPrior": null
   },
-  "projectedFp": 9.52,
-  "projectedIfPlays": 10.02,
+  "projectedFp": 9.51,
+  "projectedIfPlays": 10.01,
   "playProb": 0.95,
   "expectedMinutes": 21.6,
   "matchup": {
    "opponentFactor": 0.931,
    "homeFactor": 0.971,
-   "calibration": 0.968
+   "calibration": 0.967
   },
   "valuePerCredit": 1.282,
-  "valueProjected": 1.12,
+  "valueProjected": 1.119,
   "valueMarket": 1.282,
   "bargainScore": 94.6,
   "schedule": {
@@ -25994,7 +26002,7 @@
   "availability": null,
   "outlook": {
    "breakEven": 9.2,
-   "expectedChange": 0.03,
+   "expectedChange": 0.02,
    "riseProb": 0.46,
    "sd": 11.5,
    "floor": 4.3,
@@ -26002,7 +26010,7 @@
    "p90": 21.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": 1.2,
+  "valueOverPrice": 1.19,
   "thumb": "/fotos/7217.webp?v=497f05ab",
   "clubCrestThumb": "/escudos/RED.webp?v=d642c5fb"
  },
@@ -26082,7 +26090,7 @@
   "valuePerCredit": 1.062,
   "valueProjected": 0.91,
   "valueMarket": 1.059,
-  "bargainScore": 64.2,
+  "bargainScore": 64.5,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -26195,7 +26203,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 16.3,
+  "bargainScore": 16.6,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -26464,7 +26472,7 @@
    "breakEven": 14.7,
    "expectedChange": 0.01,
    "riseProb": 0.441,
-   "sd": 10.72,
+   "sd": 10.71,
    "floor": 7.7,
    "ceiling": 20.9,
    "p90": 27.2,
@@ -26550,7 +26558,7 @@
   "valuePerCredit": 1.171,
   "valueProjected": 1.087,
   "valueMarket": 1.173,
-  "bargainScore": 87.5,
+  "bargainScore": 87.6,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -26583,7 +26591,7 @@
    "p90": 17.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.67,
+  "valueOverPrice": 0.68,
   "thumb": "/fotos/7223.webp?v=c5270370",
   "clubCrestThumb": "/escudos/BAS.webp?v=9ea920ed"
  },
@@ -26663,7 +26671,7 @@
   "valuePerCredit": 0.646,
   "valueProjected": 0.848,
   "valueMarket": 0.646,
-  "bargainScore": 71.2,
+  "bargainScore": 71.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -26689,7 +26697,7 @@
   "outlook": {
    "breakEven": 5.1,
    "expectedChange": -0.04,
-   "riseProb": 0.359,
+   "riseProb": 0.358,
    "sd": 6.73,
    "floor": 0.2,
    "ceiling": 7.7,
@@ -26776,7 +26784,7 @@
   "valuePerCredit": 1.243,
   "valueProjected": 1.116,
   "valueMarket": 1.242,
-  "bargainScore": 95.3,
+  "bargainScore": 95.6,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -26889,7 +26897,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.268,
   "valueMarket": 0.0,
-  "bargainScore": 39.1,
+  "bargainScore": 39.4,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -26924,7 +26932,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.098,
-   "sd": 3.68,
+   "sd": 3.67,
    "floor": 0.8,
    "ceiling": 9.2,
    "p90": 14.6,
@@ -27123,7 +27131,7 @@
   "valuePerCredit": 0.786,
   "valueProjected": 0.193,
   "valueMarket": 0.786,
-  "bargainScore": 30.7,
+  "bargainScore": 31.0,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -27150,7 +27158,7 @@
    "breakEven": 4.5,
    "expectedChange": -0.08,
    "riseProb": 0.073,
-   "sd": 2.72,
+   "sd": 2.71,
    "floor": 0.1,
    "ceiling": 7.7,
    "p90": 12.7,
@@ -27236,7 +27244,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.283,
   "valueMarket": 0.0,
-  "bargainScore": 38.7,
+  "bargainScore": 39.0,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -27350,7 +27358,7 @@
   "playProb": 0.95,
   "expectedMinutes": 16.0,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
    "calibration": 1.149
   },
@@ -27384,7 +27392,7 @@
    "breakEven": 6.0,
    "expectedChange": -0.01,
    "riseProb": 0.378,
-   "sd": 5.76,
+   "sd": 5.75,
    "floor": 1.1,
    "ceiling": 9.9,
    "p90": 15.4,
@@ -27470,7 +27478,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.235,
   "valueMarket": 0.0,
-  "bargainScore": 24.7,
+  "bargainScore": 25.0,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -27511,7 +27519,7 @@
    "p90": 15.8,
    "bandIfPlays": true
   },
-  "valueOverPrice": -3.68,
+  "valueOverPrice": -3.67,
   "thumb": "/fotos/7234.webp?v=376c1325",
   "clubCrestThumb": "/escudos/PAM.webp?v=1b054be1"
  },
@@ -27737,7 +27745,7 @@
   "outlook": {
    "breakEven": 9.8,
    "expectedChange": -0.1,
-   "riseProb": 0.063,
+   "riseProb": 0.062,
    "sd": 4.3,
    "floor": 2.4,
    "ceiling": 12.3,
@@ -27824,7 +27832,7 @@
   "valuePerCredit": 1.088,
   "valueProjected": 1.057,
   "valueMarket": 1.1,
-  "bargainScore": 84.0,
+  "bargainScore": 84.3,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -27937,7 +27945,7 @@
   "valuePerCredit": 1.375,
   "valueProjected": 0.748,
   "valueMarket": 1.375,
-  "bargainScore": 66.1,
+  "bargainScore": 66.4,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -28047,18 +28055,18 @@
    "minutesPrior": null
   },
   "projectedFp": 5.42,
-  "projectedIfPlays": 5.7,
+  "projectedIfPlays": 5.71,
   "playProb": 0.95,
   "expectedMinutes": 14.7,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
    "calibration": 1.156
   },
   "valuePerCredit": 0.753,
   "valueProjected": 0.847,
   "valueMarket": 0.75,
-  "bargainScore": 66.1,
+  "bargainScore": 66.4,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -28084,7 +28092,7 @@
   "outlook": {
    "breakEven": 6.9,
    "expectedChange": -0.05,
-   "riseProb": 0.328,
+   "riseProb": 0.329,
    "sd": 6.16,
    "floor": 1.0,
    "ceiling": 9.8,
@@ -28171,7 +28179,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.172,
   "valueMarket": 0.0,
-  "bargainScore": 31.7,
+  "bargainScore": 32.0,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -28284,7 +28292,7 @@
   "valuePerCredit": 0.018,
   "valueProjected": 0.0,
   "valueMarket": 0.025,
-  "bargainScore": 21.9,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -28405,7 +28413,7 @@
   "valuePerCredit": 0.638,
   "valueProjected": 0.505,
   "valueMarket": 0.675,
-  "bargainScore": 50.6,
+  "bargainScore": 50.9,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -28518,7 +28526,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 21.9,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -28627,8 +28635,8 @@
    "plusMinusAvg": null,
    "minutesPrior": null
   },
-  "projectedFp": 1.19,
-  "projectedIfPlays": 5.93,
+  "projectedFp": 1.18,
+  "projectedIfPlays": 5.92,
   "playProb": 0.2,
   "expectedMinutes": 13.4,
   "matchup": {
@@ -28637,9 +28645,9 @@
    "calibration": 1.138
   },
   "valuePerCredit": 0.0,
-  "valueProjected": 0.297,
+  "valueProjected": 0.295,
   "valueMarket": 0.0,
-  "bargainScore": 43.6,
+  "bargainScore": 43.9,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -28674,13 +28682,13 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.104,
-   "sd": 4.08,
-   "floor": 1.2,
+   "sd": 4.07,
+   "floor": 1.1,
    "ceiling": 10.1,
    "p90": 15.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -2.57,
+  "valueOverPrice": -2.58,
   "thumb": "/fotos/7254.webp?v=4ee94aa9",
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
  },
@@ -28760,7 +28768,7 @@
   "valuePerCredit": 0.558,
   "valueProjected": 0.545,
   "valueMarket": 0.55,
-  "bargainScore": 53.2,
+  "bargainScore": 53.5,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -28986,7 +28994,7 @@
   "valuePerCredit": 1.079,
   "valueProjected": 0.929,
   "valueMarket": 1.09,
-  "bargainScore": 71.9,
+  "bargainScore": 72.1,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -29099,7 +29107,7 @@
   "valuePerCredit": 0.994,
   "valueProjected": 0.696,
   "valueMarket": 0.99,
-  "bargainScore": 34.0,
+  "bargainScore": 34.3,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -29133,7 +29141,7 @@
   "outlook": {
    "breakEven": 11.1,
    "expectedChange": -0.07,
-   "riseProb": 0.301,
+   "riseProb": 0.3,
    "sd": 10.74,
    "floor": 3.8,
    "ceiling": 14.2,
@@ -29220,7 +29228,7 @@
   "valuePerCredit": 0.44,
   "valueProjected": 0.262,
   "valueMarket": 0.44,
-  "bargainScore": 27.0,
+  "bargainScore": 27.3,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -29321,19 +29329,19 @@
    "plusMinusAvg": -7.0,
    "minutesPrior": null
   },
-  "projectedFp": 9.19,
-  "projectedIfPlays": 9.67,
+  "projectedFp": 9.18,
+  "projectedIfPlays": 9.66,
   "playProb": 0.95,
   "expectedMinutes": 22.1,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
-   "calibration": 0.976
+   "calibration": 0.975
   },
   "valuePerCredit": 1.114,
-  "valueProjected": 0.999,
+  "valueProjected": 0.998,
   "valueMarket": 1.12,
-  "bargainScore": 80.7,
+  "bargainScore": 80.1,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -29359,14 +29367,14 @@
   "outlook": {
    "breakEven": 10.0,
    "expectedChange": -0.02,
-   "riseProb": 0.412,
-   "sd": 9.38,
+   "riseProb": 0.411,
+   "sd": 9.37,
    "floor": 4.0,
    "ceiling": 14.4,
    "p90": 20.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.16,
+  "valueOverPrice": 0.15,
   "thumb": "/fotos/7338.webp?v=fd9f52a1",
   "clubCrestThumb": "/escudos/ASV.webp?v=db62ba9d"
  },
@@ -29435,7 +29443,7 @@
    "minutesPrior": null
   },
   "projectedFp": 2.35,
-  "projectedIfPlays": 12.53,
+  "projectedIfPlays": 12.52,
   "playProb": 0.188,
   "expectedMinutes": 24.2,
   "matchup": {
@@ -29473,8 +29481,8 @@
    "breakEven": 8.9,
    "expectedChange": -0.05,
    "riseProb": 0.106,
-   "sd": 7.9,
-   "floor": 6.0,
+   "sd": 7.89,
+   "floor": 5.9,
    "ceiling": 17.9,
    "p90": 24.0,
    "bandIfPlays": true
@@ -29559,7 +29567,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.282,
   "valueMarket": 0.0,
-  "bargainScore": 43.0,
+  "bargainScore": 43.3,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -29594,7 +29602,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.101,
-   "sd": 3.88,
+   "sd": 3.87,
    "floor": 1.0,
    "ceiling": 9.7,
    "p90": 15.1,
@@ -29801,7 +29809,7 @@
   "valuePerCredit": 0.702,
   "valueProjected": 0.477,
   "valueMarket": 0.702,
-  "bargainScore": 45.9,
+  "bargainScore": 46.2,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -29903,18 +29911,18 @@
    "minutesPrior": null
   },
   "projectedFp": 2.02,
-  "projectedIfPlays": 4.04,
+  "projectedIfPlays": 4.03,
   "playProb": 0.5,
   "expectedMinutes": 9.3,
   "matchup": {
    "opponentFactor": 1.049,
    "homeFactor": 1.029,
-   "calibration": 1.423
+   "calibration": 1.424
   },
   "valuePerCredit": 0.386,
   "valueProjected": 0.404,
   "valueMarket": 0.38,
-  "bargainScore": 37.2,
+  "bargainScore": 37.5,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -29944,7 +29952,7 @@
    "sd": 3.72,
    "floor": 0.0,
    "ceiling": 7.3,
-   "p90": 12.2,
+   "p90": 12.1,
    "bandIfPlays": true
   },
   "valueOverPrice": -2.75,
@@ -30027,7 +30035,7 @@
   "valuePerCredit": 0.478,
   "valueProjected": 0.794,
   "valueMarket": 0.484,
-  "bargainScore": 61.0,
+  "bargainScore": 61.3,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -30253,7 +30261,7 @@
   "valuePerCredit": 0.856,
   "valueProjected": 0.844,
   "valueMarket": 0.847,
-  "bargainScore": 67.0,
+  "bargainScore": 67.3,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -30286,7 +30294,7 @@
    "p90": 16.0,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.71,
+  "valueOverPrice": -0.7,
   "thumb": "/fotos/7867.webp?v=a1a1fe66",
   "clubCrestThumb": "/escudos/TEL.webp?v=ab1efd9a"
  },
@@ -30366,7 +30374,7 @@
   "valuePerCredit": 0.665,
   "valueProjected": 0.536,
   "valueMarket": 0.662,
-  "bargainScore": 29.4,
+  "bargainScore": 29.7,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -30506,7 +30514,7 @@
    "breakEven": 8.9,
    "expectedChange": -0.03,
    "riseProb": 0.389,
-   "sd": 8.05,
+   "sd": 8.04,
    "floor": 2.8,
    "ceiling": 12.8,
    "p90": 18.6,
@@ -30705,7 +30713,7 @@
   "valuePerCredit": 0.6,
   "valueProjected": 0.475,
   "valueMarket": 0.6,
-  "bargainScore": 49.9,
+  "bargainScore": 50.1,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -30818,7 +30826,7 @@
   "valuePerCredit": 0.928,
   "valueProjected": 1.189,
   "valueMarket": 0.936,
-  "bargainScore": 93.6,
+  "bargainScore": 93.8,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -30931,7 +30939,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.18,
   "valueMarket": 0.0,
-  "bargainScore": 32.3,
+  "bargainScore": 32.6,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -30958,7 +30966,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.08,
    "riseProb": 0.064,
-   "sd": 3.17,
+   "sd": 3.16,
    "floor": 1.0,
    "ceiling": 9.8,
    "p90": 15.3,
@@ -31044,7 +31052,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 21.9,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -31192,7 +31200,7 @@
    "breakEven": 9.1,
    "expectedChange": -0.02,
    "riseProb": 0.398,
-   "sd": 8.96,
+   "sd": 8.95,
    "floor": 3.1,
    "ceiling": 13.3,
    "p90": 19.1,
@@ -31278,7 +31286,7 @@
   "valuePerCredit": 0.869,
   "valueProjected": 0.778,
   "valueMarket": 0.872,
-  "bargainScore": 50.9,
+  "bargainScore": 51.2,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -31380,13 +31388,13 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 8.97,
+  "projectedIfPlays": 8.96,
   "playProb": 0.0,
   "expectedMinutes": 21.5,
   "matchup": {
    "opponentFactor": 1.022,
    "homeFactor": 1.029,
-   "calibration": 0.993
+   "calibration": 0.992
   },
   "valuePerCredit": 1.166,
   "valueProjected": 0.0,
@@ -31429,10 +31437,10 @@
    "sd": 0.0,
    "floor": 3.4,
    "ceiling": 13.6,
-   "p90": 19.6,
+   "p90": 19.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -7.11,
+  "valueOverPrice": -7.1,
   "thumb": "/fotos/8727.webp?v=1ceb86bf",
   "clubCrestThumb": "/escudos/ULK.webp?v=123f6590"
  },
@@ -31633,7 +31641,7 @@
   "valuePerCredit": 1.153,
   "valueProjected": 0.998,
   "valueMarket": 1.16,
-  "bargainScore": 79.8,
+  "bargainScore": 80.1,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -31660,13 +31668,13 @@
    "breakEven": 10.2,
    "expectedChange": 0.01,
    "riseProb": 0.411,
-   "sd": 9.66,
+   "sd": 9.65,
    "floor": 4.8,
    "ceiling": 15.7,
    "p90": 22.0,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.14,
+  "valueOverPrice": 0.15,
   "thumb": "/fotos/8762.webp?v=295f727a",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
  },
@@ -31746,7 +31754,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.275,
   "valueMarket": 0.0,
-  "bargainScore": 40.8,
+  "bargainScore": 41.1,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -31781,7 +31789,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.1,
-   "sd": 3.79,
+   "sd": 3.78,
    "floor": 0.9,
    "ceiling": 9.5,
    "p90": 14.9,
@@ -31867,7 +31875,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.278,
   "valueMarket": 0.0,
-  "bargainScore": 41.4,
+  "bargainScore": 41.7,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -31988,7 +31996,7 @@
   "valuePerCredit": 0.989,
   "valueProjected": 0.203,
   "valueMarket": 1.01,
-  "bargainScore": 3.8,
+  "bargainScore": 3.6,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -32097,8 +32105,8 @@
    "plusMinusAvg": -1.3,
    "minutesPrior": null
   },
-  "projectedFp": 9.08,
-  "projectedIfPlays": 11.17,
+  "projectedFp": 9.07,
+  "projectedIfPlays": 11.16,
   "playProb": 0.812,
   "expectedMinutes": 20.7,
   "matchup": {
@@ -32107,9 +32115,9 @@
    "calibration": 0.947
   },
   "valuePerCredit": 1.234,
-  "valueProjected": 0.927,
+  "valueProjected": 0.926,
   "valueMarket": 1.235,
-  "bargainScore": 69.9,
+  "bargainScore": 69.8,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -32136,13 +32144,13 @@
    "breakEven": 10.7,
    "expectedChange": -0.0,
    "riseProb": 0.383,
-   "sd": 10.33,
+   "sd": 10.32,
    "floor": 5.1,
    "ceiling": 16.2,
    "p90": 22.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.56,
+  "valueOverPrice": -0.57,
   "thumb": "/fotos/8815.webp?v=7a4720ff",
   "clubCrestThumb": "/escudos/IST.webp?v=0924bbee"
  },
@@ -32222,7 +32230,7 @@
   "valuePerCredit": 0.042,
   "valueProjected": 0.13,
   "valueMarket": 0.05,
-  "bargainScore": 29.4,
+  "bargainScore": 29.7,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -32343,7 +32351,7 @@
   "valuePerCredit": -0.276,
   "valueProjected": 0.248,
   "valueMarket": -0.28,
-  "bargainScore": 26.2,
+  "bargainScore": 26.5,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -32456,7 +32464,7 @@
   "valuePerCredit": 1.541,
   "valueProjected": 0.879,
   "valueMarket": 1.541,
-  "bargainScore": 62.5,
+  "bargainScore": 62.8,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -32602,7 +32610,7 @@
    "p90": 20.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": 2.06,
+  "valueOverPrice": 2.07,
   "thumb": "/fotos/8993.webp?v=c5e247ef",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
  },
@@ -32682,7 +32690,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 24.0,
+  "bargainScore": 24.3,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -32795,7 +32803,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.268,
   "valueMarket": 0.0,
-  "bargainScore": 39.1,
+  "bargainScore": 39.4,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -32916,7 +32924,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.278,
   "valueMarket": 0.0,
-  "bargainScore": 41.4,
+  "bargainScore": 41.7,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -32951,7 +32959,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.101,
-   "sd": 3.83,
+   "sd": 3.82,
    "floor": 0.9,
    "ceiling": 9.6,
    "p90": 15.0,
@@ -33032,12 +33040,12 @@
   "matchup": {
    "opponentFactor": 1.04,
    "homeFactor": 0.971,
-   "calibration": 1.181
+   "calibration": 1.179
   },
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 40.0,
+  "bargainScore": 40.3,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -33158,7 +33166,7 @@
   "valuePerCredit": 0.898,
   "valueProjected": 0.915,
   "valueMarket": 0.908,
-  "bargainScore": 69.5,
+  "bargainScore": 70.2,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -33191,7 +33199,7 @@
    "p90": 18.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.57,
+  "valueOverPrice": -0.56,
   "thumb": "/fotos/9064.webp?v=1ecb6384",
   "clubCrestThumb": "/escudos/VIR.webp?v=0bbbfd14"
  },
@@ -33271,7 +33279,7 @@
   "valuePerCredit": 0.824,
   "valueProjected": 0.261,
   "valueMarket": 0.824,
-  "bargainScore": 25.9,
+  "bargainScore": 26.2,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -33304,7 +33312,7 @@
    "p90": 12.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -3.55,
+  "valueOverPrice": -3.54,
   "thumb": "/fotos/10947.webp?v=96577073",
   "clubCrestThumb": "/escudos/DUB.webp?v=2efdf9e3"
  },
@@ -33372,19 +33380,19 @@
    "plusMinusAvg": -1.1,
    "minutesPrior": null
   },
-  "projectedFp": 13.4,
-  "projectedIfPlays": 14.1,
+  "projectedFp": 13.39,
+  "projectedIfPlays": 14.09,
   "playProb": 0.95,
   "expectedMinutes": 24.0,
   "matchup": {
    "opponentFactor": 0.992,
    "homeFactor": 1.029,
-   "calibration": 0.911
+   "calibration": 0.91
   },
   "valuePerCredit": 1.082,
-  "valueProjected": 0.924,
+  "valueProjected": 0.923,
   "valueMarket": 1.083,
-  "bargainScore": 62.8,
+  "bargainScore": 63.1,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -33411,13 +33419,13 @@
    "breakEven": 15.8,
    "expectedChange": -0.07,
    "riseProb": 0.375,
-   "sd": 11.31,
+   "sd": 11.3,
    "floor": 7.0,
    "ceiling": 19.8,
    "p90": 25.8,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.01,
+  "valueOverPrice": -1.02,
   "thumb": "/fotos/11487.webp?v=1e5c3fc3",
   "clubCrestThumb": "/escudos/IST.webp?v=0924bbee"
  },
@@ -33497,7 +33505,7 @@
   "valuePerCredit": 0.788,
   "valueProjected": 0.839,
   "valueMarket": 0.792,
-  "bargainScore": 63.4,
+  "bargainScore": 64.1,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -33530,7 +33538,7 @@
    "p90": 16.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.97,
+  "valueOverPrice": -0.96,
   "thumb": "/fotos/11488.webp?v=a3ac2e64",
   "clubCrestThumb": "/escudos/IST.webp?v=0924bbee"
  },
@@ -33603,14 +33611,14 @@
   "playProb": 0.95,
   "expectedMinutes": 13.9,
   "matchup": {
-   "opponentFactor": 0.966,
+   "opponentFactor": 0.965,
    "homeFactor": 0.971,
    "calibration": 1.099
   },
   "valuePerCredit": 0.875,
   "valueProjected": 0.797,
   "valueMarket": 0.87,
-  "bargainScore": 58.1,
+  "bargainScore": 58.4,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -33723,7 +33731,7 @@
   "valuePerCredit": 0.662,
   "valueProjected": 0.736,
   "valueMarket": 0.667,
-  "bargainScore": 54.7,
+  "bargainScore": 55.2,
   "schedule": {
    "difficulty": 26.0,
    "next": {
@@ -33756,7 +33764,7 @@
    "p90": 14.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.54,
+  "valueOverPrice": -1.53,
   "thumb": "/fotos/11490.webp?v=0ab2b6ba",
   "clubCrestThumb": "/escudos/MIL.webp?v=ca2299c5"
  },
@@ -33824,19 +33832,19 @@
    "plusMinusAvg": -2.5,
    "minutesPrior": null
   },
-  "projectedFp": 5.87,
-  "projectedIfPlays": 7.22,
+  "projectedFp": 5.86,
+  "projectedIfPlays": 7.21,
   "playProb": 0.812,
   "expectedMinutes": 18.1,
   "matchup": {
-   "opponentFactor": 0.906,
+   "opponentFactor": 0.905,
    "homeFactor": 1.029,
    "calibration": 1.057
   },
   "valuePerCredit": 0.778,
-  "valueProjected": 0.716,
+  "valueProjected": 0.715,
   "valueMarket": 0.78,
-  "bargainScore": 46.5,
+  "bargainScore": 46.7,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -33862,14 +33870,14 @@
   "outlook": {
    "breakEven": 8.9,
    "expectedChange": -0.07,
-   "riseProb": 0.29,
+   "riseProb": 0.289,
    "sd": 7.69,
    "floor": 2.0,
    "ceiling": 11.7,
    "p90": 17.4,
    "bandIfPlays": true
   },
-  "valueOverPrice": -2.15,
+  "valueOverPrice": -2.16,
   "thumb": "/fotos/11491.webp?v=6837585f",
   "clubCrestThumb": "/escudos/BES.webp?v=d0e21f12"
  },
@@ -33938,11 +33946,11 @@
    "minutesPrior": null
   },
   "projectedFp": 0.0,
-  "projectedIfPlays": 8.22,
+  "projectedIfPlays": 8.21,
   "playProb": 0.0,
   "expectedMinutes": 21.3,
   "matchup": {
-   "opponentFactor": 0.906,
+   "opponentFactor": 0.905,
    "homeFactor": 1.029,
    "calibration": 1.016
   },
@@ -33986,7 +33994,7 @@
    "riseProb": 0.0,
    "sd": 0.0,
    "floor": 2.7,
-   "ceiling": 12.8,
+   "ceiling": 12.7,
    "p90": 18.5,
    "bandIfPlays": true
   },
@@ -34191,7 +34199,7 @@
   "valuePerCredit": 0.77,
   "valueProjected": 0.22,
   "valueMarket": 0.775,
-  "bargainScore": 35.8,
+  "bargainScore": 36.0,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -34312,7 +34320,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.015,
   "valueMarket": 0.0,
-  "bargainScore": 23.3,
+  "bargainScore": 23.5,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -34425,7 +34433,7 @@
   "valuePerCredit": 0.511,
   "valueProjected": 0.183,
   "valueMarket": 0.532,
-  "bargainScore": 25.3,
+  "bargainScore": 25.6,
   "schedule": {
    "difficulty": 74.0,
    "next": {
@@ -34535,13 +34543,13 @@
    "minutesPrior": null
   },
   "projectedFp": 1.46,
-  "projectedIfPlays": 7.3,
+  "projectedIfPlays": 7.29,
   "playProb": 0.2,
   "expectedMinutes": 16.7,
   "matchup": {
    "opponentFactor": 0.995,
    "homeFactor": 0.971,
-   "calibration": 1.053
+   "calibration": 1.052
   },
   "valuePerCredit": 0.836,
   "valueProjected": 0.182,
@@ -34587,7 +34595,7 @@
    "p90": 17.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -6.36,
+  "valueOverPrice": -6.35,
   "thumb": "/fotos/11499.webp?v=3f08bece",
   "clubCrestThumb": "/escudos/BAR.webp?v=8e182a46"
  },
@@ -34667,7 +34675,7 @@
   "valuePerCredit": 0.771,
   "valueProjected": 0.903,
   "valueMarket": 0.773,
-  "bargainScore": 70.5,
+  "bargainScore": 70.8,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -34893,7 +34901,7 @@
   "valuePerCredit": 0.897,
   "valueProjected": 0.992,
   "valueMarket": 0.894,
-  "bargainScore": 80.2,
+  "bargainScore": 80.7,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -34926,7 +34934,7 @@
    "p90": 17.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.15,
+  "valueOverPrice": 0.16,
   "thumb": "/fotos/11502.webp?v=b6f0d83f",
   "clubCrestThumb": "/escudos/BAR.webp?v=8e182a46"
  },
@@ -35006,7 +35014,7 @@
   "valuePerCredit": 0.736,
   "valueProjected": 0.824,
   "valueMarket": 0.747,
-  "bargainScore": 56.4,
+  "bargainScore": 56.7,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -35033,7 +35041,7 @@
    "breakEven": 9.9,
    "expectedChange": -0.06,
    "riseProb": 0.336,
-   "sd": 8.62,
+   "sd": 8.61,
    "floor": 3.0,
    "ceiling": 13.2,
    "p90": 19.0,
@@ -35232,7 +35240,7 @@
   "valuePerCredit": 0.942,
   "valueProjected": 0.666,
   "valueMarket": 0.943,
-  "bargainScore": 36.9,
+  "bargainScore": 37.2,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -35259,7 +35267,7 @@
    "breakEven": 9.6,
    "expectedChange": -0.04,
    "riseProb": 0.278,
-   "sd": 9.31,
+   "sd": 9.3,
    "floor": 3.7,
    "ceiling": 14.1,
    "p90": 20.2,
@@ -35345,7 +35353,7 @@
   "valuePerCredit": 0.843,
   "valueProjected": 0.79,
   "valueMarket": 0.843,
-  "bargainScore": 65.1,
+  "bargainScore": 65.4,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -35378,7 +35386,7 @@
    "p90": 13.9,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.85,
+  "valueOverPrice": -0.84,
   "thumb": "/fotos/11506.webp?v=2eb00b37",
   "clubCrestThumb": "/escudos/ULK.webp?v=123f6590"
  },
@@ -35446,8 +35454,8 @@
    "plusMinusAvg": -0.5,
    "minutesPrior": null
   },
-  "projectedFp": 5.65,
-  "projectedIfPlays": 7.53,
+  "projectedFp": 5.64,
+  "projectedIfPlays": 7.52,
   "playProb": 0.75,
   "expectedMinutes": 19.3,
   "matchup": {
@@ -35456,9 +35464,9 @@
    "calibration": 1.043
   },
   "valuePerCredit": 0.624,
-  "valueProjected": 0.589,
+  "valueProjected": 0.588,
   "valueMarket": 0.625,
-  "bargainScore": 20.3,
+  "bargainScore": 20.9,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -35484,14 +35492,14 @@
   "outlook": {
    "breakEven": 10.4,
    "expectedChange": -0.11,
-   "riseProb": 0.237,
-   "sd": 8.17,
-   "floor": 2.3,
+   "riseProb": 0.236,
+   "sd": 8.16,
+   "floor": 2.2,
    "ceiling": 12.0,
    "p90": 17.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -3.79,
+  "valueOverPrice": -3.8,
   "thumb": "/fotos/11507.webp?v=56eb53fe",
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
  },
@@ -35559,19 +35567,19 @@
    "plusMinusAvg": -0.9,
    "minutesPrior": null
   },
-  "projectedFp": 2.73,
-  "projectedIfPlays": 4.85,
+  "projectedFp": 2.72,
+  "projectedIfPlays": 4.84,
   "playProb": 0.562,
   "expectedMinutes": 8.8,
   "matchup": {
    "opponentFactor": 1.01,
    "homeFactor": 1.029,
-   "calibration": 1.26
+   "calibration": 1.257
   },
   "valuePerCredit": 0.578,
-  "valueProjected": 0.359,
+  "valueProjected": 0.358,
   "valueMarket": 0.579,
-  "bargainScore": 16.9,
+  "bargainScore": 17.2,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -35600,11 +35608,11 @@
    "riseProb": 0.129,
    "sd": 5.27,
    "floor": 0.5,
-   "ceiling": 8.5,
+   "ceiling": 8.4,
    "p90": 13.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -4.68,
+  "valueOverPrice": -4.69,
   "thumb": "/fotos/11508.webp?v=b91b1b9a",
   "clubCrestThumb": "/escudos/HTA.webp?v=15c61e47"
  },
@@ -35684,7 +35692,7 @@
   "valuePerCredit": 0.436,
   "valueProjected": 0.543,
   "valueMarket": 0.429,
-  "bargainScore": 45.1,
+  "bargainScore": 45.3,
   "schedule": {
    "difficulty": 16.0,
    "next": {
@@ -35797,7 +35805,7 @@
   "valuePerCredit": 1.113,
   "valueProjected": 0.869,
   "valueMarket": 1.116,
-  "bargainScore": 61.6,
+  "bargainScore": 61.9,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -35910,7 +35918,7 @@
   "valuePerCredit": 1.048,
   "valueProjected": 1.077,
   "valueMarket": 1.051,
-  "bargainScore": 90.6,
+  "bargainScore": 90.7,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -35943,7 +35951,7 @@
    "p90": 19.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.79,
+  "valueOverPrice": 0.8,
   "thumb": "/fotos/11512.webp?v=8c256f94",
   "clubCrestThumb": "/escudos/BAS.webp?v=9ea920ed"
  },
@@ -36023,7 +36031,7 @@
   "valuePerCredit": 0.903,
   "valueProjected": 0.894,
   "valueMarket": 0.9,
-  "bargainScore": 70.5,
+  "bargainScore": 70.8,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -36124,8 +36132,8 @@
    "plusMinusAvg": 0.2,
    "minutesPrior": null
   },
-  "projectedFp": 10.27,
-  "projectedIfPlays": 11.74,
+  "projectedFp": 10.28,
+  "projectedIfPlays": 11.75,
   "playProb": 0.875,
   "expectedMinutes": 21.6,
   "matchup": {
@@ -36134,9 +36142,9 @@
    "calibration": 0.938
   },
   "valuePerCredit": 1.119,
-  "valueProjected": 0.842,
+  "valueProjected": 0.843,
   "valueMarket": 1.123,
-  "bargainScore": 50.3,
+  "bargainScore": 50.6,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36164,12 +36172,12 @@
    "expectedChange": -0.07,
    "riseProb": 0.333,
    "sd": 9.45,
-   "floor": 5.4,
+   "floor": 5.5,
    "ceiling": 16.9,
    "p90": 23.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.81,
+  "valueOverPrice": -1.79,
   "thumb": "/fotos/11514.webp?v=3a9a8322",
   "clubCrestThumb": "/escudos/ASV.webp?v=db62ba9d"
  },
@@ -36249,7 +36257,7 @@
   "valuePerCredit": 1.027,
   "valueProjected": 0.815,
   "valueMarket": 1.032,
-  "bargainScore": 53.9,
+  "bargainScore": 54.4,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36355,14 +36363,14 @@
   "playProb": 0.875,
   "expectedMinutes": 22.2,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
-   "calibration": 0.985
+   "calibration": 0.984
   },
   "valuePerCredit": 1.112,
   "valueProjected": 0.892,
   "valueMarket": 1.11,
-  "bargainScore": 65.4,
+  "bargainScore": 65.7,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36475,7 +36483,7 @@
   "valuePerCredit": 1.181,
   "valueProjected": 0.779,
   "valueMarket": 1.191,
-  "bargainScore": 49.1,
+  "bargainScore": 49.4,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36502,13 +36510,13 @@
    "breakEven": 10.2,
    "expectedChange": -0.04,
    "riseProb": 0.332,
-   "sd": 11.12,
+   "sd": 11.11,
    "floor": 4.0,
    "ceiling": 14.5,
    "p90": 20.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.92,
+  "valueOverPrice": -1.91,
   "thumb": "/fotos/11517.webp?v=67a074da",
   "clubCrestThumb": "/escudos/ASV.webp?v=db62ba9d"
  },
@@ -36577,11 +36585,11 @@
    "minutesPrior": null
   },
   "projectedFp": 2.92,
-  "projectedIfPlays": 7.79,
+  "projectedIfPlays": 7.8,
   "playProb": 0.375,
   "expectedMinutes": 15.8,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
    "calibration": 1.032
   },
@@ -36701,7 +36709,7 @@
   "valuePerCredit": 1.215,
   "valueProjected": 0.945,
   "valueMarket": 1.22,
-  "bargainScore": 73.0,
+  "bargainScore": 73.3,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36807,14 +36815,14 @@
   "playProb": 0.2,
   "expectedMinutes": 14.6,
   "matchup": {
-   "opponentFactor": 0.963,
+   "opponentFactor": 0.964,
    "homeFactor": 0.971,
-   "calibration": 1.186
+   "calibration": 1.183
   },
   "valuePerCredit": 0.669,
   "valueProjected": 0.188,
   "valueMarket": 0.672,
-  "bargainScore": 17.4,
+  "bargainScore": 17.7,
   "schedule": {
    "difficulty": 89.0,
    "next": {
@@ -36855,7 +36863,7 @@
    "p90": 14.7,
    "bandIfPlays": true
   },
-  "valueOverPrice": -4.5,
+  "valueOverPrice": -4.49,
   "thumb": "/fotos/11520.webp?v=d94deed9",
   "clubCrestThumb": "/escudos/ASV.webp?v=db62ba9d"
  },
@@ -36968,7 +36976,7 @@
    "p90": 15.9,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.83,
+  "valueOverPrice": 0.84,
   "thumb": "/fotos/11521.webp?v=470200ef",
   "clubCrestThumb": "/escudos/ASV.webp?v=db62ba9d"
  },
@@ -37036,19 +37044,19 @@
    "plusMinusAvg": -5.4,
    "minutesPrior": null
   },
-  "projectedFp": 6.14,
-  "projectedIfPlays": 6.46,
+  "projectedFp": 6.15,
+  "projectedIfPlays": 6.47,
   "playProb": 0.95,
   "expectedMinutes": 17.8,
   "matchup": {
    "opponentFactor": 1.04,
    "homeFactor": 0.971,
-   "calibration": 1.099
+   "calibration": 1.098
   },
   "valuePerCredit": 0.569,
-  "valueProjected": 0.767,
+  "valueProjected": 0.769,
   "valueMarket": 0.575,
-  "bargainScore": 51.7,
+  "bargainScore": 52.2,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -37081,7 +37089,7 @@
    "p90": 16.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.68,
+  "valueOverPrice": -1.66,
   "thumb": "/fotos/11522.webp?v=c3f47e7a",
   "clubCrestThumb": "/escudos/TEL.webp?v=ab1efd9a"
  },
@@ -37161,7 +37169,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 18.6,
+  "bargainScore": 19.2,
   "schedule": {
    "difficulty": 11.0,
    "next": {
@@ -37282,7 +37290,7 @@
   "valuePerCredit": 0.158,
   "valueProjected": 0.282,
   "valueMarket": 0.15,
-  "bargainScore": 43.0,
+  "bargainScore": 43.3,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -37395,7 +37403,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 15.7,
+  "bargainScore": 15.8,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -37436,7 +37444,7 @@
    "p90": 16.9,
    "bandIfPlays": true
   },
-  "valueOverPrice": -4.88,
+  "valueOverPrice": -4.87,
   "thumb": "/fotos/11525.webp?v=d5aa018b",
   "clubCrestThumb": "/escudos/OLY.webp?v=71dce885"
  },
@@ -37516,7 +37524,7 @@
   "valuePerCredit": 0.893,
   "valueProjected": 0.88,
   "valueMarket": 0.893,
-  "bargainScore": 58.7,
+  "bargainScore": 59.2,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -37543,13 +37551,13 @@
    "breakEven": 13.3,
    "expectedChange": -0.08,
    "riseProb": 0.313,
-   "sd": 7.55,
+   "sd": 7.54,
    "floor": 5.2,
    "ceiling": 16.4,
    "p90": 22.6,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.34,
+  "valueOverPrice": -1.33,
   "thumb": "/fotos/11526.webp?v=8cb40bd4",
   "clubCrestThumb": "/escudos/PAN.webp?v=d697b66c"
  },
@@ -37617,17 +37625,17 @@
    "plusMinusAvg": -0.9,
    "minutesPrior": null
   },
-  "projectedFp": 1.93,
-  "projectedIfPlays": 9.63,
+  "projectedFp": 1.92,
+  "projectedIfPlays": 9.62,
   "playProb": 0.2,
   "expectedMinutes": 18.6,
   "matchup": {
    "opponentFactor": 1.012,
    "homeFactor": 0.971,
-   "calibration": 0.977
+   "calibration": 0.976
   },
   "valuePerCredit": 1.007,
-  "valueProjected": 0.184,
+  "valueProjected": 0.183,
   "valueMarket": 1.019,
   "bargainScore": 2.0,
   "schedule": {
@@ -37670,7 +37678,7 @@
    "p90": 20.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -8.42,
+  "valueOverPrice": -8.43,
   "thumb": "/fotos/11527.webp?v=df8c3c99",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
  },
@@ -37750,7 +37758,7 @@
   "valuePerCredit": 0.815,
   "valueProjected": 0.802,
   "valueMarket": 0.82,
-  "bargainScore": 52.9,
+  "bargainScore": 53.2,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -37775,7 +37783,7 @@
   "availability": null,
   "outlook": {
    "breakEven": 9.7,
-   "expectedChange": -0.06,
+   "expectedChange": -0.07,
    "riseProb": 0.351,
    "sd": 10.68,
    "floor": 2.7,
@@ -37851,19 +37859,19 @@
    "plusMinusAvg": 0.2,
    "minutesPrior": null
   },
-  "projectedFp": 7.58,
-  "projectedIfPlays": 8.66,
+  "projectedFp": 7.57,
+  "projectedIfPlays": 8.65,
   "playProb": 0.875,
   "expectedMinutes": 16.0,
   "matchup": {
    "opponentFactor": 1.012,
    "homeFactor": 0.971,
-   "calibration": 1.002
+   "calibration": 1.001
   },
   "valuePerCredit": 0.96,
-  "valueProjected": 0.815,
+  "valueProjected": 0.814,
   "valueMarket": 0.957,
-  "bargainScore": 53.9,
+  "bargainScore": 54.1,
   "schedule": {
    "difficulty": 84.0,
    "next": {
@@ -37889,14 +37897,14 @@
   "outlook": {
    "breakEven": 10.1,
    "expectedChange": -0.06,
-   "riseProb": 0.354,
+   "riseProb": 0.353,
    "sd": 10.75,
    "floor": 3.1,
    "ceiling": 13.3,
    "p90": 19.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": -1.55,
+  "valueOverPrice": -1.56,
   "thumb": "/fotos/11529.webp?v=5e26960b",
   "clubCrestThumb": "/escudos/PRS.webp?v=f5bcee32"
  },
@@ -38210,7 +38218,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.275,
   "valueMarket": 0.0,
-  "bargainScore": 40.8,
+  "bargainScore": 41.1,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -38245,7 +38253,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.1,
-   "sd": 3.79,
+   "sd": 3.78,
    "floor": 0.9,
    "ceiling": 9.5,
    "p90": 14.9,
@@ -38562,7 +38570,7 @@
    "minutesPrior": null
   },
   "projectedFp": 7.89,
-  "projectedIfPlays": 8.31,
+  "projectedIfPlays": 8.3,
   "playProb": 0.95,
   "expectedMinutes": 15.6,
   "matchup": {
@@ -38599,10 +38607,10 @@
   "outlook": {
    "breakEven": 8.8,
    "expectedChange": -0.02,
-   "riseProb": 0.398,
+   "riseProb": 0.397,
    "sd": 8.38,
    "floor": 2.8,
-   "ceiling": 12.9,
+   "ceiling": 12.8,
    "p90": 18.6,
    "bandIfPlays": true
   },
@@ -38686,7 +38694,7 @@
   "valuePerCredit": 0.645,
   "valueProjected": 0.748,
   "valueMarket": 0.652,
-  "bargainScore": 54.7,
+  "bargainScore": 54.8,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -38799,7 +38807,7 @@
   "valuePerCredit": 0.272,
   "valueProjected": 0.286,
   "valueMarket": 0.277,
-  "bargainScore": 18.0,
+  "bargainScore": 18.6,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -38832,7 +38840,7 @@
    "p90": 11.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": -4.44,
+  "valueOverPrice": -4.43,
   "thumb": "/fotos/11538.webp?v=08575298",
   "clubCrestThumb": "/escudos/PAM.webp?v=1b054be1"
  },
@@ -39025,7 +39033,7 @@
   "valuePerCredit": 1.048,
   "valueProjected": 1.125,
   "valueMarket": 1.045,
-  "bargainScore": 89.8,
+  "bargainScore": 90.3,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -39052,13 +39060,13 @@
    "breakEven": 4.7,
    "expectedChange": 0.02,
    "riseProb": 0.414,
-   "sd": 4.58,
+   "sd": 4.57,
    "floor": 1.0,
    "ceiling": 9.7,
    "p90": 15.2,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.78,
+  "valueOverPrice": 0.79,
   "thumb": "/fotos/11541.webp?v=175e9fb9",
   "clubCrestThumb": "/escudos/PAM.webp?v=1b054be1"
  },
@@ -39138,7 +39146,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.0,
   "valueMarket": 0.0,
-  "bargainScore": 21.9,
+  "bargainScore": 22.4,
   "schedule": {
    "difficulty": 63.0,
    "next": {
@@ -39259,7 +39267,7 @@
   "valuePerCredit": 0.638,
   "valueProjected": 0.781,
   "valueMarket": 0.643,
-  "bargainScore": 52.0,
+  "bargainScore": 52.2,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -39286,7 +39294,7 @@
    "breakEven": 9.1,
    "expectedChange": -0.09,
    "riseProb": 0.285,
-   "sd": 6.61,
+   "sd": 6.6,
    "floor": 1.8,
    "ceiling": 11.4,
    "p90": 17.1,
@@ -39372,7 +39380,7 @@
   "valuePerCredit": 0.903,
   "valueProjected": 0.957,
   "valueMarket": 0.904,
-  "bargainScore": 73.8,
+  "bargainScore": 74.0,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -39399,13 +39407,13 @@
    "breakEven": 10.2,
    "expectedChange": -0.03,
    "riseProb": 0.374,
-   "sd": 7.47,
+   "sd": 7.46,
    "floor": 3.8,
    "ceiling": 14.2,
    "p90": 20.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.24,
+  "valueOverPrice": -0.23,
   "thumb": "/fotos/11544.webp?v=789f4d13",
   "clubCrestThumb": "/escudos/VIR.webp?v=0bbbfd14"
  },
@@ -39473,19 +39481,19 @@
    "plusMinusAvg": -0.9,
    "minutesPrior": null
   },
-  "projectedFp": 9.78,
-  "projectedIfPlays": 10.29,
+  "projectedFp": 9.77,
+  "projectedIfPlays": 10.28,
   "playProb": 0.95,
   "expectedMinutes": 21.5,
   "matchup": {
    "opponentFactor": 0.954,
    "homeFactor": 1.029,
-   "calibration": 0.963
+   "calibration": 0.962
   },
   "valuePerCredit": 1.127,
-  "valueProjected": 0.998,
+  "valueProjected": 0.997,
   "valueMarket": 1.122,
-  "bargainScore": 79.8,
+  "bargainScore": 79.7,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -39511,14 +39519,14 @@
   "outlook": {
    "breakEven": 10.7,
    "expectedChange": -0.02,
-   "riseProb": 0.416,
+   "riseProb": 0.415,
    "sd": 10.23,
    "floor": 4.5,
-   "ceiling": 15.2,
+   "ceiling": 15.1,
    "p90": 21.5,
    "bandIfPlays": true
   },
-  "valueOverPrice": 0.14,
+  "valueOverPrice": 0.13,
   "thumb": "/fotos/11545.webp?v=8e732c13",
   "clubCrestThumb": "/escudos/VIR.webp?v=0bbbfd14"
  },
@@ -39593,7 +39601,7 @@
   "matchup": {
    "opponentFactor": 0.938,
    "homeFactor": 1.029,
-   "calibration": 1.02
+   "calibration": 1.022
   },
   "valuePerCredit": 0.87,
   "valueProjected": 0.185,
@@ -39639,7 +39647,7 @@
    "p90": 18.3,
    "bandIfPlays": true
   },
-  "valueOverPrice": -6.92,
+  "valueOverPrice": -6.91,
   "thumb": "/fotos/11546.webp?v=fdaf3fa1",
   "clubCrestThumb": "/escudos/VIR.webp?v=0bbbfd14"
  },
@@ -39746,7 +39754,7 @@
    "breakEven": 10.3,
    "expectedChange": -0.03,
    "riseProb": 0.398,
-   "sd": 9.03,
+   "sd": 9.02,
    "floor": 4.0,
    "ceiling": 14.5,
    "p90": 20.7,
@@ -39832,7 +39840,7 @@
   "valuePerCredit": 0.762,
   "valueProjected": 0.555,
   "valueMarket": 0.775,
-  "bargainScore": 54.7,
+  "bargainScore": 54.8,
   "schedule": {
    "difficulty": 5.0,
    "next": {
@@ -39945,7 +39953,7 @@
   "valuePerCredit": 1.202,
   "valueProjected": 0.976,
   "valueMarket": 1.205,
-  "bargainScore": 72.7,
+  "bargainScore": 73.0,
   "schedule": {
    "difficulty": 0.0,
    "next": {
@@ -40058,7 +40066,7 @@
   "valuePerCredit": 0.802,
   "valueProjected": 0.871,
   "valueMarket": 0.8,
-  "bargainScore": 68.6,
+  "bargainScore": 68.9,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -40091,7 +40099,7 @@
    "p90": 17.1,
    "bandIfPlays": true
   },
-  "valueOverPrice": -0.64,
+  "valueOverPrice": -0.63,
   "thumb": "/fotos/11558.webp?v=b39cdf8b",
   "clubCrestThumb": "/escudos/BAR.webp?v=8e182a46"
  },
@@ -40171,7 +40179,7 @@
   "valuePerCredit": 0.742,
   "valueProjected": 0.648,
   "valueMarket": 0.761,
-  "bargainScore": 46.2,
+  "bargainScore": 46.7,
   "schedule": {
    "difficulty": 21.0,
    "next": {
@@ -40197,7 +40205,7 @@
   "outlook": {
    "breakEven": 7.2,
    "expectedChange": -0.08,
-   "riseProb": 0.236,
+   "riseProb": 0.235,
    "sd": 5.54,
    "floor": 0.8,
    "ceiling": 9.2,
@@ -40284,7 +40292,7 @@
   "valuePerCredit": 0.874,
   "valueProjected": 0.474,
   "valueMarket": 0.9,
-  "bargainScore": 26.7,
+  "bargainScore": 27.0,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -40311,7 +40319,7 @@
    "breakEven": 7.6,
    "expectedChange": -0.06,
    "riseProb": 0.201,
-   "sd": 8.82,
+   "sd": 8.81,
    "floor": 2.3,
    "ceiling": 12.1,
    "p90": 17.8,
@@ -40397,7 +40405,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 40.0,
+  "bargainScore": 40.3,
   "schedule": {
    "difficulty": 95.0,
    "next": {
@@ -40511,14 +40519,14 @@
   "playProb": 0.2,
   "expectedMinutes": 13.4,
   "matchup": {
-   "opponentFactor": 0.906,
+   "opponentFactor": 0.905,
    "homeFactor": 1.029,
    "calibration": 1.213
   },
   "valuePerCredit": 0.0,
   "valueProjected": 0.26,
   "valueMarket": 0.0,
-  "bargainScore": 38.2,
+  "bargainScore": 38.4,
   "schedule": {
    "difficulty": 68.0,
    "next": {
@@ -40553,7 +40561,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.096,
-   "sd": 3.57,
+   "sd": 3.56,
    "floor": 0.7,
    "ceiling": 9.0,
    "p90": 14.3,
@@ -40639,7 +40647,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 24.0,
+  "bargainScore": 24.3,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -40752,7 +40760,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 24.0,
+  "bargainScore": 24.3,
   "schedule": {
    "difficulty": 47.0,
    "next": {
@@ -40865,7 +40873,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.177,
   "valueMarket": 0.0,
-  "bargainScore": 32.0,
+  "bargainScore": 32.3,
   "schedule": {
    "difficulty": 32.0,
    "next": {
@@ -40978,7 +40986,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.282,
   "valueMarket": 0.0,
-  "bargainScore": 43.0,
+  "bargainScore": 43.3,
   "schedule": {
    "difficulty": 37.0,
    "next": {
@@ -41013,7 +41021,7 @@
    "breakEven": 4.3,
    "expectedChange": -0.07,
    "riseProb": 0.101,
-   "sd": 3.88,
+   "sd": 3.87,
    "floor": 1.0,
    "ceiling": 9.7,
    "p90": 15.1,
@@ -41099,7 +41107,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.273,
   "valueMarket": 0.0,
-  "bargainScore": 40.0,
+  "bargainScore": 40.3,
   "schedule": {
    "difficulty": 79.0,
    "next": {
@@ -41220,7 +41228,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.09,
   "valueMarket": 0.0,
-  "bargainScore": 27.6,
+  "bargainScore": 27.9,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -41330,18 +41338,18 @@
    "minutesPrior": null
   },
   "projectedFp": 6.42,
-  "projectedIfPlays": 11.42,
+  "projectedIfPlays": 11.41,
   "playProb": 0.562,
   "expectedMinutes": 19.4,
   "matchup": {
    "opponentFactor": 1.043,
    "homeFactor": 0.971,
-   "calibration": 0.943
+   "calibration": 0.942
   },
   "valuePerCredit": 1.234,
   "valueProjected": 0.629,
   "valueMarket": 1.245,
-  "bargainScore": 25.0,
+  "bargainScore": 25.3,
   "schedule": {
    "difficulty": 100.0,
    "next": {
@@ -41368,7 +41376,7 @@
    "breakEven": 11.1,
    "expectedChange": -0.04,
    "riseProb": 0.259,
-   "sd": 9.06,
+   "sd": 9.05,
    "floor": 5.2,
    "ceiling": 16.5,
    "p90": 22.8,
@@ -41454,7 +41462,7 @@
   "valuePerCredit": 0.363,
   "valueProjected": 0.429,
   "valueMarket": 0.365,
-  "bargainScore": 28.1,
+  "bargainScore": 28.3,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -41567,7 +41575,7 @@
   "valuePerCredit": 1.203,
   "valueProjected": 0.695,
   "valueMarket": 1.197,
-  "bargainScore": 46.9,
+  "bargainScore": 47.2,
   "schedule": {
    "difficulty": 53.0,
    "next": {
@@ -41593,7 +41601,7 @@
   "outlook": {
    "breakEven": 8.2,
    "expectedChange": -0.02,
-   "riseProb": 0.279,
+   "riseProb": 0.278,
    "sd": 7.59,
    "floor": 3.7,
    "ceiling": 14.1,
@@ -41680,7 +41688,7 @@
   "valuePerCredit": 0.922,
   "valueProjected": 0.46,
   "valueMarket": 0.927,
-  "bargainScore": 18.9,
+  "bargainScore": 19.5,
   "schedule": {
    "difficulty": 58.0,
    "next": {
@@ -41788,12 +41796,12 @@
   "matchup": {
    "opponentFactor": 1.008,
    "homeFactor": 0.971,
-   "calibration": 1.002
+   "calibration": 1.001
   },
   "valuePerCredit": 0.0,
   "valueProjected": 0.194,
   "valueMarket": 0.0,
-  "bargainScore": 7.0,
+  "bargainScore": 6.8,
   "schedule": {
    "difficulty": 42.0,
    "next": {
@@ -41827,7 +41835,7 @@
   "outlook": {
    "breakEven": 9.7,
    "expectedChange": -0.09,
-   "riseProb": 0.084,
+   "riseProb": 0.083,
    "sd": 5.95,
    "floor": 3.1,
    "ceiling": 13.3,
@@ -41914,7 +41922,7 @@
   "valuePerCredit": 0.0,
   "valueProjected": 0.018,
   "valueMarket": 0.0,
-  "bargainScore": 24.0,
+  "bargainScore": 24.3,
   "schedule": {
    "difficulty": 5.0,
    "next": {

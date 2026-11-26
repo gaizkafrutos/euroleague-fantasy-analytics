@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T11:04:06.234412+00:00",
+ "generatedAt": "2026-11-26T21:43:22.798140+00:00",
  "params": {
   "rate_prior_minutes": 100.0,
   "minutes_half_life": 3.0,
@@ -21,7 +21,7 @@
   "v2c": {
    "mae": 6.032,
    "rmse": 7.67,
-   "bias": -0.076
+   "bias": -0.075
   },
   "legacy": {
    "mae": 6.366,
@@ -29,7 +29,7 @@
    "bias": 0.025
   },
   "mean": {
-   "mae": 6.374,
+   "mae": 6.375,
    "rmse": 8.184,
    "bias": -0.077
   },
@@ -50,10 +50,10 @@
    },
    "9-99": {
     "n": 773,
-    "v2": 6.327,
-    "v2c": 6.289,
-    "legacy": 6.373,
-    "mean": 6.356
+    "v2": 6.328,
+    "v2c": 6.29,
+    "legacy": 6.375,
+    "mean": 6.357
    }
   },
   "residualQuantiles": {
@@ -64,7 +64,7 @@
    "0.9": 10.27
   },
   "calibration": {
-   "slope": 0.7954,
+   "slope": 0.7953,
    "intercept": 1.783,
    "n": 2888
   },
@@ -130,7 +130,7 @@
   "ablation": {
    "noOpponent": 6.063,
    "noHome": 6.046,
-   "plain": 6.063,
+   "plain": 6.064,
    "seasonMinutes": 6.028
   },
   "frozenFromRound": 12,
@@ -138,19 +138,19 @@
    "n": 655,
    "rounds": 3,
    "v2": {
-    "mae": 6.107,
-    "rmse": 7.83,
-    "bias": -0.002
+    "mae": 6.109,
+    "rmse": 7.829,
+    "bias": -0.0
    },
    "v2c": {
-    "mae": 6.077,
+    "mae": 6.078,
     "rmse": 7.763,
-    "bias": -0.035
+    "bias": -0.033
    },
    "mean": {
-    "mae": 6.183,
+    "mae": 6.185,
     "rmse": 7.955,
-    "bias": -0.084
+    "bias": -0.082
    }
   }
  },
@@ -873,20 +873,20 @@
     "n": 340,
     "model": {
      "mae": 4.198,
-     "rmse": 6.313,
-     "bias": -0.439,
+     "rmse": 6.311,
+     "bias": -0.436,
      "spearman": 0.64
     },
     "mean": {
-     "mae": 5.327,
-     "rmse": 7.241,
-     "bias": 1.357,
-     "spearman": 0.499
+     "mae": 5.33,
+     "rmse": 7.24,
+     "bias": 1.36,
+     "spearman": 0.5
     },
     "meanPlay": {
-     "mae": 4.108,
-     "rmse": 6.385,
-     "bias": -0.587,
+     "mae": 4.111,
+     "rmse": 6.384,
+     "bias": -0.584,
      "spearman": 0.649
     },
     "biasExpensiveIfPlays": 1.062,
@@ -915,10 +915,10 @@
     },
     "lineup": {
      "projected": 136.7,
-     "real": 117.2,
+     "real": 116.6,
      "best": 305.6,
      "withCoach": true,
-     "baseline": 154.3
+     "baseline": 153.7
     },
     "bandIfPlays": true,
     "bandCoverage": 0.502,
@@ -940,7 +940,7 @@
    "mean": {
     "mae": 5.176,
     "bias": 0.702,
-    "spearman": 0.495
+    "spearman": 0.496
    },
    "meanPlay": {
     "mae": 4.511,
@@ -952,8 +952,8 @@
     "mean": {
      "mae": {
       "diff": -0.667,
-      "low": -0.863,
-      "high": -0.472
+      "low": -0.864,
+      "high": -0.473
      },
      "rmse": {
       "diff": -0.784,
@@ -963,7 +963,7 @@
     },
     "meanPlay": {
      "mae": {
-      "diff": -0.002,
+      "diff": -0.003,
       "low": -0.073,
       "high": 0.07
      },
@@ -977,7 +977,7 @@
    "lineupWins": {
     "rounds": 13,
     "model": 7,
-    "modelAvg": 140.8,
+    "modelAvg": 140.7,
     "baselineAvg": 127.4
    },
    "playProb": {
