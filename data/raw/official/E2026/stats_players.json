@@ -5187,6 +5187,38 @@
   {
    "playerRanking": 163,
    "gamesPlayed": 14.0,
+   "gamesStarted": 13.0,
+   "minutesPlayed": 25.208333333333336,
+   "pointsScored": 7.5,
+   "twoPointersMade": 3.1,
+   "twoPointersAttempted": 5.0,
+   "twoPointersPercentage": "61.4%",
+   "threePointersMade": 0.1,
+   "threePointersAttempted": 0.7,
+   "threePointersPercentage": "20%",
+   "freeThrowsMade": 0.9,
+   "freeThrowsAttempted": 1.6,
+   "freeThrowsPercentage": "59.1%",
+   "offensiveRebounds": 1.6,
+   "defensiveRebounds": 2.7,
+   "totalRebounds": 4.4,
+   "assists": 1.4,
+   "steals": 1.0,
+   "turnovers": 0.7,
+   "blocks": 0.5,
+   "blocksAgainst": 0.1,
+   "foulsCommited": 2.3,
+   "foulsDrawn": 1.8,
+   "pir": 10.2,
+   "player": {
+    "code": "006835",
+    "name": "HOARD, JAYLEN",
+    "team": "TEL"
+   }
+  },
+  {
+   "playerRanking": 163,
+   "gamesPlayed": 14.0,
    "gamesStarted": 10.0,
    "minutesPlayed": 19.65833333333333,
    "pointsScored": 11.3,
@@ -5217,7 +5249,7 @@
    }
   },
   {
-   "playerRanking": 164,
+   "playerRanking": 165,
    "gamesPlayed": 12.0,
    "gamesStarted": 1.0,
    "minutesPlayed": 18.415277777777778,
@@ -5246,38 +5278,6 @@
     "code": "011244",
     "name": "DA SILVA, OSCAR",
     "team": "MUN"
-   }
-  },
-  {
-   "playerRanking": 165,
-   "gamesPlayed": 14.0,
-   "gamesStarted": 13.0,
-   "minutesPlayed": 25.208333333333336,
-   "pointsScored": 7.5,
-   "twoPointersMade": 3.1,
-   "twoPointersAttempted": 5.0,
-   "twoPointersPercentage": "61.4%",
-   "threePointersMade": 0.1,
-   "threePointersAttempted": 0.7,
-   "threePointersPercentage": "20%",
-   "freeThrowsMade": 0.9,
-   "freeThrowsAttempted": 1.6,
-   "freeThrowsPercentage": "59.1%",
-   "offensiveRebounds": 1.6,
-   "defensiveRebounds": 2.7,
-   "totalRebounds": 4.4,
-   "assists": 1.4,
-   "steals": 1.0,
-   "turnovers": 0.7,
-   "blocks": 0.5,
-   "blocksAgainst": 0.1,
-   "foulsCommited": 2.3,
-   "foulsDrawn": 1.9,
-   "pir": 10.3,
-   "player": {
-    "code": "006835",
-    "name": "HOARD, JAYLEN",
-    "team": "TEL"
    }
   },
   {
@@ -6648,8 +6648,8 @@
    "blocks": 0.0,
    "blocksAgainst": 0.5,
    "foulsCommited": 1.8,
-   "foulsDrawn": 4.2,
-   "pir": 14.6,
+   "foulsDrawn": 4.3,
+   "pir": 14.7,
    "player": {
     "code": "011052",
     "name": "MADAR, YAM",
@@ -10801,6 +10801,28 @@
   {
    "playerRanking": 163,
    "gamesPlayed": 14.0,
+   "minutesPlayed": 25.208333333333336,
+   "effectiveFieldGoalPercentage": "57.5%",
+   "trueShootingPercentage": "58.5%",
+   "offensiveReboundsPercentage": "7.8%",
+   "defensiveReboundsPercentage": "13%",
+   "reboundsPercentage": "10.4%",
+   "assistsToTurnoversRatio": 1.9,
+   "assistsRatio": "16%",
+   "turnoversRatio": "8.4%",
+   "twoPointAttemptsRatio": "59%",
+   "threePointAttemptsRatio": "8.4%",
+   "freeThrowsRate": "27.5%",
+   "possesions": 8.5,
+   "player": {
+    "code": "006835",
+    "name": "HOARD, JAYLEN",
+    "team": "TEL"
+   }
+  },
+  {
+   "playerRanking": 163,
+   "gamesPlayed": 14.0,
    "minutesPlayed": 19.65833333333333,
    "effectiveFieldGoalPercentage": "62.6%",
    "trueShootingPercentage": "65.2%",
@@ -10821,7 +10843,7 @@
    }
   },
   {
-   "playerRanking": 164,
+   "playerRanking": 165,
    "gamesPlayed": 12.0,
    "minutesPlayed": 18.415277777777778,
    "effectiveFieldGoalPercentage": "69%",
@@ -10840,28 +10862,6 @@
     "code": "011244",
     "name": "DA SILVA, OSCAR",
     "team": "MUN"
-   }
-  },
-  {
-   "playerRanking": 165,
-   "gamesPlayed": 14.0,
-   "minutesPlayed": 25.208333333333336,
-   "effectiveFieldGoalPercentage": "57.5%",
-   "trueShootingPercentage": "58.5%",
-   "offensiveReboundsPercentage": "7.8%",
-   "defensiveReboundsPercentage": "13%",
-   "reboundsPercentage": "10.4%",
-   "assistsToTurnoversRatio": 1.9,
-   "assistsRatio": "16%",
-   "turnoversRatio": "8.4%",
-   "twoPointAttemptsRatio": "59%",
-   "threePointAttemptsRatio": "8.4%",
-   "freeThrowsRate": "27.5%",
-   "possesions": 8.5,
-   "player": {
-    "code": "006835",
-    "name": "HOARD, JAYLEN",
-    "team": "TEL"
    }
   },
   {
@@ -14641,6 +14641,21 @@
   {
    "playerRanking": 163,
    "gamesPlayed": 14.0,
+   "gamesStarted": 13.0,
+   "wins": 4.0,
+   "losses": 10.0,
+   "minutesPlayed": 25.208333333333336,
+   "doubleDoubles": 0.0,
+   "tripleDoubles": 0.0,
+   "player": {
+    "code": "006835",
+    "name": "HOARD, JAYLEN",
+    "team": "TEL"
+   }
+  },
+  {
+   "playerRanking": 163,
+   "gamesPlayed": 14.0,
    "gamesStarted": 10.0,
    "wins": 8.0,
    "losses": 6.0,
@@ -14654,7 +14669,7 @@
    }
   },
   {
-   "playerRanking": 164,
+   "playerRanking": 165,
    "gamesPlayed": 12.0,
    "gamesStarted": 1.0,
    "wins": 3.0,
@@ -14666,21 +14681,6 @@
     "code": "011244",
     "name": "DA SILVA, OSCAR",
     "team": "MUN"
-   }
-  },
-  {
-   "playerRanking": 165,
-   "gamesPlayed": 14.0,
-   "gamesStarted": 13.0,
-   "wins": 4.0,
-   "losses": 10.0,
-   "minutesPlayed": 25.208333333333336,
-   "doubleDoubles": 0.0,
-   "tripleDoubles": 0.0,
-   "player": {
-    "code": "006835",
-    "name": "HOARD, JAYLEN",
-    "team": "TEL"
    }
   },
   {
@@ -19005,6 +19005,27 @@
   {
    "playerRanking": 163,
    "gamesPlayed": 14.0,
+   "gamesStarted": 13.0,
+   "twoPointAttemptsShare": "13.3%",
+   "threePointAttemptsShare": "2.6%",
+   "freeThrowsAttemptsShare": "9.1%",
+   "twoPointersMadeShare": "14.3%",
+   "threePointersMadeShare": "1.5%",
+   "freeThrowsMadeShare": "6.9%",
+   "twoPointRate": "87.5%",
+   "threePointRate": "12.5%",
+   "pointsFromTwoPointersPercentage": "81.9%",
+   "pointsFromThreePointersPercentage": "5.7%",
+   "pointsFromFreeThrowsPercentage": "12.4%",
+   "player": {
+    "code": "006835",
+    "name": "HOARD, JAYLEN",
+    "team": "TEL"
+   }
+  },
+  {
+   "playerRanking": 163,
+   "gamesPlayed": 14.0,
    "gamesStarted": 10.0,
    "twoPointAttemptsShare": "9.2%",
    "threePointAttemptsShare": "16%",
@@ -19024,7 +19045,7 @@
    }
   },
   {
-   "playerRanking": 164,
+   "playerRanking": 165,
    "gamesPlayed": 12.0,
    "gamesStarted": 1.0,
    "twoPointAttemptsShare": "11.6%",
@@ -19042,27 +19063,6 @@
     "code": "011244",
     "name": "DA SILVA, OSCAR",
     "team": "MUN"
-   }
-  },
-  {
-   "playerRanking": 165,
-   "gamesPlayed": 14.0,
-   "gamesStarted": 13.0,
-   "twoPointAttemptsShare": "13.3%",
-   "threePointAttemptsShare": "2.6%",
-   "freeThrowsAttemptsShare": "9.1%",
-   "twoPointersMadeShare": "14.3%",
-   "threePointersMadeShare": "1.5%",
-   "freeThrowsMadeShare": "6.9%",
-   "twoPointRate": "87.5%",
-   "threePointRate": "12.5%",
-   "pointsFromTwoPointersPercentage": "81.9%",
-   "pointsFromThreePointersPercentage": "5.7%",
-   "pointsFromFreeThrowsPercentage": "12.4%",
-   "player": {
-    "code": "006835",
-    "name": "HOARD, JAYLEN",
-    "team": "TEL"
    }
   },
   {

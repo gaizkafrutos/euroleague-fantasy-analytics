@@ -1,8 +1,8 @@
 {
  "source": "BasketNews",
  "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
- "fetchedAt": "2026-11-25T14:35:28.232771+00:00",
- "updatedAt": "2026-11-25T10:25:00",
+ "fetchedAt": "2026-11-26T00:31:56.775441+00:00",
+ "updatedAt": "2026-11-25T18:55:00",
  "rows": [
   {
    "team": "Anadolu Efes Istanbul",
@@ -16,7 +16,7 @@
    "team": "Anadolu Efes Istanbul",
    "position": "PG",
    "name": "Ruzgar Fenemen",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision)"
   },
@@ -40,7 +40,7 @@
    "team": "Anadolu Efes Istanbul",
    "position": "SF",
    "name": "D. Karutasu",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision)"
   },
@@ -48,7 +48,7 @@
    "team": "Anadolu Efes Istanbul",
    "position": "SG",
    "name": "David Mutaf",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision).Played in the domestic league (11.22)"
   },
@@ -232,25 +232,25 @@
    "team": "Dubai Basketball",
    "position": "PG",
    "name": "Kosta Kondic",
-   "status": "Game-time",
+   "status": "Ready",
    "round": "Round 14",
-   "comment": "Recovered after the injury and is available for selection after DNP in Rounds 10-13 (hip/psoas muscle injury)"
+   "comment": "Included in 12-man roster after DNP in Rounds 10-13 (hip/psoas muscle injury)"
   },
   {
    "team": "Dubai Basketball",
    "position": "PG",
    "name": "Davion Mintz",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "DNP in Round 13 (coach's decision). Played in the domestic league (11.22)"
+   "comment": "Not included in 12-man roster after DNP in Round 13 (coach's decision)"
   },
   {
    "team": "Dubai Basketball",
    "position": "SG",
    "name": "Dzanan Musa",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 14",
-   "comment": "Expected to play in Round 14 (eye injury in Round 13)"
+   "comment": "Included in 12-man roster (eye injury in Round 13)"
   },
   {
    "team": "Dubai Basketball",
@@ -259,6 +259,14 @@
    "status": "Out",
    "round": "Round 14",
    "comment": "Ruled out for Round 14 (national team duties) after DNP in Rounds 8-13 (coach's decision)"
+  },
+  {
+   "team": "Dubai Basketball",
+   "position": "PG",
+   "name": "Thomas Walkup",
+   "status": "Out",
+   "round": "Round 14",
+   "comment": "Not included in 12-man roster (back)"
   },
   {
    "team": "FC Bayern Munich",
@@ -400,7 +408,7 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Tamir Blatt",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 10-13 (coach's decision). Played in the domestic league (11.21)"
   },
@@ -408,7 +416,7 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "C",
    "name": "Bruno Caboclo",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 11-13 (minor calf tear). DNP in the domestic league (11.21)"
   },
@@ -416,7 +424,7 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Khadeen Carrington",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 11-13 (coach's decision). Played in the domestic league (11.21)"
   },
@@ -424,7 +432,7 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Tyler Ennis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "Joined team practices on November 19 after suffering a long-term injury in January 2026 (torn Achilles)"
   },
@@ -440,7 +448,7 @@
    "team": "Hapoel IBI Tel Aviv",
    "position": "PG",
    "name": "Bar Timor",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 7-13 (coach's decision). Played in the domestic league (11.21)"
   },
@@ -456,7 +464,7 @@
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "C",
    "name": "Zacharie Perrin",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "New signing (11.23)"
   },
@@ -472,7 +480,7 @@
    "team": "Kosner Baskonia Vitoria-Gasteiz",
    "position": "PF",
    "name": "Tadas Sedekerskis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "Out after suffering a right thigh muscle injury in Round 7. Expected return in late November. DNP in the domestic league (11.22)"
   },
@@ -560,7 +568,7 @@
    "team": "Olympiacos Piraeus",
    "position": "PG",
    "name": "Georgios Bourneles",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision)"
   },
@@ -576,7 +584,7 @@
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Bryant Dunston",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "Only registered in Round 13. Played in Round 12. DNP in the domestic league (11.22)"
   },
@@ -584,9 +592,17 @@
    "team": "Olympiacos Piraeus",
    "position": "C",
    "name": "Antonios Karagiannidis",
-   "status": "Uncertain",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision). Played in the domestic league (11.22)"
+  },
+  {
+   "team": "Olympiacos Piraeus",
+   "position": "PG",
+   "name": "Codi Miller-McIntyre",
+   "status": "Out",
+   "round": "Round 14",
+   "comment": "Illness"
   },
   {
    "team": "Olympiacos Piraeus",
@@ -608,7 +624,7 @@
    "team": "Olympiacos Piraeus",
    "position": "SG",
    "name": "George Papas",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
    "comment": "DNP in Rounds 1-13 (coach's decision)"
   },
@@ -704,9 +720,9 @@
    "team": "Partizan Mozzart Bet Belgrade",
    "position": "PG",
    "name": "Uros Danilovic",
-   "status": "Doubtful",
+   "status": "Out",
    "round": "Round 14",
-   "comment": "DNP in Rounds 2-13 (coach's decision). DNP in the domestic league (11.22)"
+   "comment": "Not included in 12-man roster after DNP in Rounds 2-13 (coach's decision)"
   },
   {
    "team": "Partizan Mozzart Bet Belgrade",
@@ -789,6 +805,22 @@
    "comment": "Out indefinitely after a complete rupture of the plantar fascia in left foot (10.30)"
   },
   {
+   "team": "Real Madrid",
+   "position": "C",
+   "name": "Olivier Sarr",
+   "status": "Out",
+   "round": "Round 14",
+   "comment": "Not in 12-man roster in Round 14 (coach's decision)"
+  },
+  {
+   "team": "Real Madrid",
+   "position": "PG",
+   "name": "Max Shulga",
+   "status": "Out",
+   "round": "Round 14",
+   "comment": "Ruled out for Round 14 (national team duties)"
+  },
+  {
    "team": "Valencia Basket",
    "position": "SG",
    "name": "Lucas Mari",
@@ -848,7 +880,7 @@
    "team": "Zalgiris Kaunas",
    "position": "C",
    "name": "Kaodirichi Akobundu-Ehiogu",
-   "status": "Uncertain",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "Only included in 12-man roster in Round 13. DNP in the domestic league (11.22)"
   },
@@ -872,7 +904,7 @@
    "team": "Zalgiris Kaunas",
    "position": "PG",
    "name": "Maodo Lo",
-   "status": "Expected",
+   "status": "Ready",
    "round": "Round 14",
    "comment": "Expected to be ready for Round 14 after DNP in Rounds 12-13 (coach's decision). DNP in the domestic league (ankle injury)(11.22)"
   },
