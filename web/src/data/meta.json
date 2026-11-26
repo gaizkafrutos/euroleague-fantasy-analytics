@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-26T00:32:43.743309+00:00",
+ "generatedAt": "2026-11-26T11:04:30.381573+00:00",
  "currentRound": 15,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
- "priceSnapshots": 86,
- "lastPriceCapture": "2026-11-26T00:31:58.202047+00:00",
- "lastPriceCheck": "2026-11-26T00:31:58.202047+00:00",
+ "priceSnapshots": 87,
+ "lastPriceCapture": "2026-11-26T11:04:02.567121+00:00",
+ "lastPriceCheck": "2026-11-26T11:04:02.567121+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.53
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-26T00:32:02.274742+00:00",
+  "generatedAt": "2026-11-26T11:04:06.234412+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -942,6 +942,10 @@
      "bandIfPlays": true,
      "bandCoverage": 0.502,
      "aboveP90": 0.101,
+     "riseBrier": 0.1491,
+     "riseBrierConstant": 0.1723,
+     "changeMae": 0.165,
+     "changeMaeZero": 0.171,
      "generatedAt": "2026-11-24T04:52:59.645585+00:00"
     }
    ],
@@ -1038,32 +1042,23 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-26T00:32:39.976663+00:00",
-  "capturedAt": "2026-11-26T00:31:58.202047+00:00",
-  "players": 170,
-  "exact": 148,
-  "exactShare": 0.871,
-  "meanAbsoluteError": 0.044,
+  "checkedAt": "2026-11-26T11:04:27.937574+00:00",
+  "capturedAt": "2026-11-26T11:04:02.567121+00:00",
+  "players": 290,
+  "exact": 251,
+  "exactShare": 0.866,
+  "meanAbsoluteError": 0.043,
   "correlation": 0.9998,
   "coaches": {
-   "coaches": 12,
+   "coaches": 20,
    "maxAbsError": 0.0,
    "overtimeGames": 18
   },
   "foulGap": {
-   "players": 16,
-   "fouls": 18
+   "players": 32,
+   "fouls": 34
   },
-  "settlingClubs": [
-   "BAS",
-   "DUB",
-   "HTA",
-   "IST",
-   "MAD",
-   "OLY",
-   "PAR",
-   "ZAL"
-  ]
+  "settlingClubs": []
  },
  "schedule": {
   "round": 15,
@@ -1076,10 +1071,10 @@
  "injuries": {
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-  "updatedAt": "2026-11-25T18:55:00",
-  "fetchedAt": "2026-11-26T00:31:57.169520+00:00",
-  "rows": 154,
-  "matched": 108,
+  "updatedAt": "2026-11-26T07:42:00",
+  "fetchedAt": "2026-11-26T11:04:01.669510+00:00",
+  "rows": 144,
+  "matched": 98,
   "unmatched": [
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena Zvezda Meridianbet Belgrade)",
@@ -1094,17 +1089,17 @@
    {
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
-    "updatedAt": "2026-11-25T18:55:00",
-    "fetchedAt": "2026-11-26T00:31:56.775441+00:00",
-    "rows": 115,
-    "matched": 107,
+    "updatedAt": "2026-11-26T07:42:00",
+    "fetchedAt": "2026-11-26T11:04:01.274735+00:00",
+    "rows": 105,
+    "matched": 97,
     "flagged": 97
    },
    {
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-26T00:31:57.169520+00:00",
+    "fetchedAt": "2026-11-26T11:04:01.669510+00:00",
     "rows": 39,
     "matched": 39,
     "flagged": 1
@@ -1113,31 +1108,29 @@
   "nextRound": 15,
   "unregistered": 7,
   "flagged": {
-   "out": 14,
-   "doubt": 89,
-   "probable": 2
+   "out": 27,
+   "doubt": 74,
+   "probable": 4
   }
  },
- "warnings": [
-  "Precios capturados el 2026-11-26 00:31 UTC: el juego aún no ha aplicado la revalorización (J14). Se usa el precio pendiente de 275 jugadores hasta la próxima captura."
- ],
+ "warnings": [],
  "priceFreshness": {
-  "stale": true,
-  "capturedAt": "2026-11-26T00:31:58.202047+00:00",
+  "stale": false,
+  "capturedAt": "2026-11-26T11:04:02.567121+00:00",
   "lastGameAt": "2026-11-25T19:45:00+00:00",
   "round": 14,
-  "reason": "el juego aún no ha aplicado la revalorización",
+  "reason": null,
   "roundGames": 10,
   "roundPlayed": 10,
-  "pending": 275
+  "pending": 0
  },
  "priceModel": {
   "a": 0.04,
-  "b": -0.0441,
-  "c": 0.0064,
+  "b": -0.044,
+  "c": 0.0056,
   "r2": 0.991,
-  "n": 2807,
-  "source": "J1–J13"
+  "n": 3015,
+  "source": "J1–J14"
  },
  "league": {
   "zones": [
