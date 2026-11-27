@@ -1,14 +1,14 @@
 {
  "season": "E2026",
  "seasonLabel": "Euroliga 2026-27",
- "generatedAt": "2026-11-27T14:01:23.856678+00:00",
+ "generatedAt": "2026-11-27T22:48:04.113009+00:00",
  "currentRound": 15,
  "totalRounds": 38,
  "hasPrices": true,
  "isDemo": false,
  "priceSnapshots": 87,
  "lastPriceCapture": "2026-11-26T11:04:02.567121+00:00",
- "lastPriceCheck": "2026-11-27T14:00:28.801224+00:00",
+ "lastPriceCheck": "2026-11-27T22:47:25.425670+00:00",
  "performanceSource": {
   "source": "E2026",
   "isBaseline": false,
@@ -25,7 +25,7 @@
   "marginSd": 12.53
  },
  "modelBacktest": {
-  "generatedAt": "2026-11-27T14:00:32.695297+00:00",
+  "generatedAt": "2026-11-27T22:47:29.607295+00:00",
   "params": {
    "rate_prior_minutes": 100.0,
    "minutes_half_life": 3.0,
@@ -1042,7 +1042,7 @@
  },
  "formulaCheck": {
   "ok": true,
-  "checkedAt": "2026-11-27T14:01:19.299638+00:00",
+  "checkedAt": "2026-11-27T22:48:00.822246+00:00",
   "capturedAt": "2026-11-26T11:04:02.567121+00:00",
   "players": 290,
   "exact": 249,
@@ -1072,10 +1072,11 @@
   "source": "BasketNews + RotoWire",
   "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
   "updatedAt": "2026-11-26T07:42:00",
-  "fetchedAt": "2026-11-27T14:00:27.681877+00:00",
-  "rows": 145,
+  "fetchedAt": "2026-11-27T22:46:59.486168+00:00",
+  "rows": 146,
   "matched": 99,
   "unmatched": [
+   "Ze'rik Onyema (Armani Olimpia Milan)",
    "Mady Sissoko (Besiktas Istanbul)",
    "Jovan Bikic (Crvena zvezda Meridianbet)",
    "Vojin Medarevic (Crvena zvezda Meridianbet)",
@@ -1090,8 +1091,8 @@
     "source": "BasketNews",
     "url": "https://basketnews.com/news-212393-euroleague-injury-report-updated.html",
     "updatedAt": "2026-11-26T07:42:00",
-    "fetchedAt": "2026-11-27T14:00:27.237365+00:00",
-    "rows": 106,
+    "fetchedAt": "2026-11-27T22:46:58.988315+00:00",
+    "rows": 107,
     "matched": 98,
     "flagged": 98
    },
@@ -1099,7 +1100,7 @@
     "source": "RotoWire",
     "url": "https://www.rotowire.com/euro/tables/injury-report.php?team=ALL&pos=ALL",
     "updatedAt": null,
-    "fetchedAt": "2026-11-27T14:00:27.681877+00:00",
+    "fetchedAt": "2026-11-27T22:46:59.486168+00:00",
     "rows": 39,
     "matched": 39,
     "flagged": 1
